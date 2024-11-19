@@ -67,4 +67,14 @@ public interface ListRunnersRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getComputeClusterIdBytes();
+
+  /**
+   * <pre>
+   * Only return runners whose replicas are &gt;= min_replicas.
+   * </pre>
+   *
+   * <code>uint32 min_replicas = 6;</code>
+   * @return The minReplicas.
+   */
+  int getMinReplicas();
 }

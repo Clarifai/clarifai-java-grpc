@@ -495,7 +495,7 @@ private static final long serialVersionUID = 0L;
    * while other models in the workflow require large GPUs.
    * If node.id is not in the provided map, it will fall back to searching for
    * an adequate deployment the model owner owns or fall back to
-   * the serverless nodepools provided by Clarifai.
+   * the shared nodepools provided by Clarifai.
    * We recommend you specify these RunnerSelectors so that you have better understanding of where
    * processing occurs.
    * </pre>
@@ -527,7 +527,7 @@ private static final long serialVersionUID = 0L;
    * while other models in the workflow require large GPUs.
    * If node.id is not in the provided map, it will fall back to searching for
    * an adequate deployment the model owner owns or fall back to
-   * the serverless nodepools provided by Clarifai.
+   * the shared nodepools provided by Clarifai.
    * We recommend you specify these RunnerSelectors so that you have better understanding of where
    * processing occurs.
    * </pre>
@@ -549,7 +549,7 @@ private static final long serialVersionUID = 0L;
    * while other models in the workflow require large GPUs.
    * If node.id is not in the provided map, it will fall back to searching for
    * an adequate deployment the model owner owns or fall back to
-   * the serverless nodepools provided by Clarifai.
+   * the shared nodepools provided by Clarifai.
    * We recommend you specify these RunnerSelectors so that you have better understanding of where
    * processing occurs.
    * </pre>
@@ -576,7 +576,7 @@ private static final long serialVersionUID = 0L;
    * while other models in the workflow require large GPUs.
    * If node.id is not in the provided map, it will fall back to searching for
    * an adequate deployment the model owner owns or fall back to
-   * the serverless nodepools provided by Clarifai.
+   * the shared nodepools provided by Clarifai.
    * We recommend you specify these RunnerSelectors so that you have better understanding of where
    * processing occurs.
    * </pre>
@@ -2151,7 +2151,7 @@ private static final long serialVersionUID = 0L;
      * while other models in the workflow require large GPUs.
      * If node.id is not in the provided map, it will fall back to searching for
      * an adequate deployment the model owner owns or fall back to
-     * the serverless nodepools provided by Clarifai.
+     * the shared nodepools provided by Clarifai.
      * We recommend you specify these RunnerSelectors so that you have better understanding of where
      * processing occurs.
      * </pre>
@@ -2183,7 +2183,7 @@ private static final long serialVersionUID = 0L;
      * while other models in the workflow require large GPUs.
      * If node.id is not in the provided map, it will fall back to searching for
      * an adequate deployment the model owner owns or fall back to
-     * the serverless nodepools provided by Clarifai.
+     * the shared nodepools provided by Clarifai.
      * We recommend you specify these RunnerSelectors so that you have better understanding of where
      * processing occurs.
      * </pre>
@@ -2205,7 +2205,7 @@ private static final long serialVersionUID = 0L;
      * while other models in the workflow require large GPUs.
      * If node.id is not in the provided map, it will fall back to searching for
      * an adequate deployment the model owner owns or fall back to
-     * the serverless nodepools provided by Clarifai.
+     * the shared nodepools provided by Clarifai.
      * We recommend you specify these RunnerSelectors so that you have better understanding of where
      * processing occurs.
      * </pre>
@@ -2232,7 +2232,7 @@ private static final long serialVersionUID = 0L;
      * while other models in the workflow require large GPUs.
      * If node.id is not in the provided map, it will fall back to searching for
      * an adequate deployment the model owner owns or fall back to
-     * the serverless nodepools provided by Clarifai.
+     * the shared nodepools provided by Clarifai.
      * We recommend you specify these RunnerSelectors so that you have better understanding of where
      * processing occurs.
      * </pre>
@@ -2267,7 +2267,7 @@ private static final long serialVersionUID = 0L;
      * while other models in the workflow require large GPUs.
      * If node.id is not in the provided map, it will fall back to searching for
      * an adequate deployment the model owner owns or fall back to
-     * the serverless nodepools provided by Clarifai.
+     * the shared nodepools provided by Clarifai.
      * We recommend you specify these RunnerSelectors so that you have better understanding of where
      * processing occurs.
      * </pre>
@@ -2300,7 +2300,7 @@ private static final long serialVersionUID = 0L;
      * while other models in the workflow require large GPUs.
      * If node.id is not in the provided map, it will fall back to searching for
      * an adequate deployment the model owner owns or fall back to
-     * the serverless nodepools provided by Clarifai.
+     * the shared nodepools provided by Clarifai.
      * We recommend you specify these RunnerSelectors so that you have better understanding of where
      * processing occurs.
      * </pre>
@@ -2329,7 +2329,7 @@ private static final long serialVersionUID = 0L;
      * while other models in the workflow require large GPUs.
      * If node.id is not in the provided map, it will fall back to searching for
      * an adequate deployment the model owner owns or fall back to
-     * the serverless nodepools provided by Clarifai.
+     * the shared nodepools provided by Clarifai.
      * We recommend you specify these RunnerSelectors so that you have better understanding of where
      * processing occurs.
      * </pre>

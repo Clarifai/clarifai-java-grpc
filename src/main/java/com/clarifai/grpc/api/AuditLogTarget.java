@@ -67,6 +67,34 @@ private static final long serialVersionUID = 0L;
             targetCase_ = 1;
             break;
           }
+          case 18: {
+            com.clarifai.grpc.api.Role.Builder subBuilder = null;
+            if (targetCase_ == 2) {
+              subBuilder = ((com.clarifai.grpc.api.Role) target_).toBuilder();
+            }
+            target_ =
+                input.readMessage(com.clarifai.grpc.api.Role.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Role) target_);
+              target_ = subBuilder.buildPartial();
+            }
+            targetCase_ = 2;
+            break;
+          }
+          case 26: {
+            com.clarifai.grpc.api.Team.Builder subBuilder = null;
+            if (targetCase_ == 3) {
+              subBuilder = ((com.clarifai.grpc.api.Team) target_).toBuilder();
+            }
+            target_ =
+                input.readMessage(com.clarifai.grpc.api.Team.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Team) target_);
+              target_ = subBuilder.buildPartial();
+            }
+            targetCase_ = 3;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -106,7 +134,9 @@ private static final long serialVersionUID = 0L;
   public enum TargetCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    MEMBER(1),
+    USER(1),
+    ROLE(2),
+    TEAM(3),
     TARGET_NOT_SET(0);
     private final int value;
     private TargetCase(int value) {
@@ -124,7 +154,9 @@ private static final long serialVersionUID = 0L;
 
     public static TargetCase forNumber(int value) {
       switch (value) {
-        case 1: return MEMBER;
+        case 1: return USER;
+        case 2: return ROLE;
+        case 3: return TEAM;
         case 0: return TARGET_NOT_SET;
         default: return null;
       }
@@ -140,47 +172,97 @@ private static final long serialVersionUID = 0L;
         targetCase_);
   }
 
-  public static final int MEMBER_FIELD_NUMBER = 1;
+  public static final int USER_FIELD_NUMBER = 1;
   /**
-   * <pre>
-   * An organization member, only used in org audit logs.
-   * </pre>
-   *
-   * <code>.clarifai.api.User member = 1;</code>
-   * @return Whether the member field is set.
+   * <code>.clarifai.api.User user = 1;</code>
+   * @return Whether the user field is set.
    */
   @java.lang.Override
-  public boolean hasMember() {
+  public boolean hasUser() {
     return targetCase_ == 1;
   }
   /**
-   * <pre>
-   * An organization member, only used in org audit logs.
-   * </pre>
-   *
-   * <code>.clarifai.api.User member = 1;</code>
-   * @return The member.
+   * <code>.clarifai.api.User user = 1;</code>
+   * @return The user.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.User getMember() {
+  public com.clarifai.grpc.api.User getUser() {
     if (targetCase_ == 1) {
        return (com.clarifai.grpc.api.User) target_;
     }
     return com.clarifai.grpc.api.User.getDefaultInstance();
   }
   /**
-   * <pre>
-   * An organization member, only used in org audit logs.
-   * </pre>
-   *
-   * <code>.clarifai.api.User member = 1;</code>
+   * <code>.clarifai.api.User user = 1;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.UserOrBuilder getMemberOrBuilder() {
+  public com.clarifai.grpc.api.UserOrBuilder getUserOrBuilder() {
     if (targetCase_ == 1) {
        return (com.clarifai.grpc.api.User) target_;
     }
     return com.clarifai.grpc.api.User.getDefaultInstance();
+  }
+
+  public static final int ROLE_FIELD_NUMBER = 2;
+  /**
+   * <code>.clarifai.api.Role role = 2;</code>
+   * @return Whether the role field is set.
+   */
+  @java.lang.Override
+  public boolean hasRole() {
+    return targetCase_ == 2;
+  }
+  /**
+   * <code>.clarifai.api.Role role = 2;</code>
+   * @return The role.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Role getRole() {
+    if (targetCase_ == 2) {
+       return (com.clarifai.grpc.api.Role) target_;
+    }
+    return com.clarifai.grpc.api.Role.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Role role = 2;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RoleOrBuilder getRoleOrBuilder() {
+    if (targetCase_ == 2) {
+       return (com.clarifai.grpc.api.Role) target_;
+    }
+    return com.clarifai.grpc.api.Role.getDefaultInstance();
+  }
+
+  public static final int TEAM_FIELD_NUMBER = 3;
+  /**
+   * <code>.clarifai.api.Team team = 3;</code>
+   * @return Whether the team field is set.
+   */
+  @java.lang.Override
+  public boolean hasTeam() {
+    return targetCase_ == 3;
+  }
+  /**
+   * <code>.clarifai.api.Team team = 3;</code>
+   * @return The team.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Team getTeam() {
+    if (targetCase_ == 3) {
+       return (com.clarifai.grpc.api.Team) target_;
+    }
+    return com.clarifai.grpc.api.Team.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Team team = 3;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TeamOrBuilder getTeamOrBuilder() {
+    if (targetCase_ == 3) {
+       return (com.clarifai.grpc.api.Team) target_;
+    }
+    return com.clarifai.grpc.api.Team.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -200,6 +282,12 @@ private static final long serialVersionUID = 0L;
     if (targetCase_ == 1) {
       output.writeMessage(1, (com.clarifai.grpc.api.User) target_);
     }
+    if (targetCase_ == 2) {
+      output.writeMessage(2, (com.clarifai.grpc.api.Role) target_);
+    }
+    if (targetCase_ == 3) {
+      output.writeMessage(3, (com.clarifai.grpc.api.Team) target_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -212,6 +300,14 @@ private static final long serialVersionUID = 0L;
     if (targetCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, (com.clarifai.grpc.api.User) target_);
+    }
+    if (targetCase_ == 2) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, (com.clarifai.grpc.api.Role) target_);
+    }
+    if (targetCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (com.clarifai.grpc.api.Team) target_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,8 +327,16 @@ private static final long serialVersionUID = 0L;
     if (!getTargetCase().equals(other.getTargetCase())) return false;
     switch (targetCase_) {
       case 1:
-        if (!getMember()
-            .equals(other.getMember())) return false;
+        if (!getUser()
+            .equals(other.getUser())) return false;
+        break;
+      case 2:
+        if (!getRole()
+            .equals(other.getRole())) return false;
+        break;
+      case 3:
+        if (!getTeam()
+            .equals(other.getTeam())) return false;
         break;
       case 0:
       default:
@@ -250,8 +354,16 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     switch (targetCase_) {
       case 1:
-        hash = (37 * hash) + MEMBER_FIELD_NUMBER;
-        hash = (53 * hash) + getMember().hashCode();
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUser().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + ROLE_FIELD_NUMBER;
+        hash = (53 * hash) + getRole().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + TEAM_FIELD_NUMBER;
+        hash = (53 * hash) + getTeam().hashCode();
         break;
       case 0:
       default:
@@ -423,10 +535,24 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.AuditLogTarget buildPartial() {
       com.clarifai.grpc.api.AuditLogTarget result = new com.clarifai.grpc.api.AuditLogTarget(this);
       if (targetCase_ == 1) {
-        if (memberBuilder_ == null) {
+        if (userBuilder_ == null) {
           result.target_ = target_;
         } else {
-          result.target_ = memberBuilder_.build();
+          result.target_ = userBuilder_.build();
+        }
+      }
+      if (targetCase_ == 2) {
+        if (roleBuilder_ == null) {
+          result.target_ = target_;
+        } else {
+          result.target_ = roleBuilder_.build();
+        }
+      }
+      if (targetCase_ == 3) {
+        if (teamBuilder_ == null) {
+          result.target_ = target_;
+        } else {
+          result.target_ = teamBuilder_.build();
         }
       }
       result.targetCase_ = targetCase_;
@@ -479,8 +605,16 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.clarifai.grpc.api.AuditLogTarget other) {
       if (other == com.clarifai.grpc.api.AuditLogTarget.getDefaultInstance()) return this;
       switch (other.getTargetCase()) {
-        case MEMBER: {
-          mergeMember(other.getMember());
+        case USER: {
+          mergeUser(other.getUser());
+          break;
+        }
+        case ROLE: {
+          mergeRole(other.getRole());
+          break;
+        }
+        case TEAM: {
+          mergeTeam(other.getTeam());
           break;
         }
         case TARGET_NOT_SET: {
@@ -532,88 +666,68 @@ private static final long serialVersionUID = 0L;
 
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder> memberBuilder_;
+        com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder> userBuilder_;
     /**
-     * <pre>
-     * An organization member, only used in org audit logs.
-     * </pre>
-     *
-     * <code>.clarifai.api.User member = 1;</code>
-     * @return Whether the member field is set.
+     * <code>.clarifai.api.User user = 1;</code>
+     * @return Whether the user field is set.
      */
     @java.lang.Override
-    public boolean hasMember() {
+    public boolean hasUser() {
       return targetCase_ == 1;
     }
     /**
-     * <pre>
-     * An organization member, only used in org audit logs.
-     * </pre>
-     *
-     * <code>.clarifai.api.User member = 1;</code>
-     * @return The member.
+     * <code>.clarifai.api.User user = 1;</code>
+     * @return The user.
      */
     @java.lang.Override
-    public com.clarifai.grpc.api.User getMember() {
-      if (memberBuilder_ == null) {
+    public com.clarifai.grpc.api.User getUser() {
+      if (userBuilder_ == null) {
         if (targetCase_ == 1) {
           return (com.clarifai.grpc.api.User) target_;
         }
         return com.clarifai.grpc.api.User.getDefaultInstance();
       } else {
         if (targetCase_ == 1) {
-          return memberBuilder_.getMessage();
+          return userBuilder_.getMessage();
         }
         return com.clarifai.grpc.api.User.getDefaultInstance();
       }
     }
     /**
-     * <pre>
-     * An organization member, only used in org audit logs.
-     * </pre>
-     *
-     * <code>.clarifai.api.User member = 1;</code>
+     * <code>.clarifai.api.User user = 1;</code>
      */
-    public Builder setMember(com.clarifai.grpc.api.User value) {
-      if (memberBuilder_ == null) {
+    public Builder setUser(com.clarifai.grpc.api.User value) {
+      if (userBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         target_ = value;
         onChanged();
       } else {
-        memberBuilder_.setMessage(value);
+        userBuilder_.setMessage(value);
       }
       targetCase_ = 1;
       return this;
     }
     /**
-     * <pre>
-     * An organization member, only used in org audit logs.
-     * </pre>
-     *
-     * <code>.clarifai.api.User member = 1;</code>
+     * <code>.clarifai.api.User user = 1;</code>
      */
-    public Builder setMember(
+    public Builder setUser(
         com.clarifai.grpc.api.User.Builder builderForValue) {
-      if (memberBuilder_ == null) {
+      if (userBuilder_ == null) {
         target_ = builderForValue.build();
         onChanged();
       } else {
-        memberBuilder_.setMessage(builderForValue.build());
+        userBuilder_.setMessage(builderForValue.build());
       }
       targetCase_ = 1;
       return this;
     }
     /**
-     * <pre>
-     * An organization member, only used in org audit logs.
-     * </pre>
-     *
-     * <code>.clarifai.api.User member = 1;</code>
+     * <code>.clarifai.api.User user = 1;</code>
      */
-    public Builder mergeMember(com.clarifai.grpc.api.User value) {
-      if (memberBuilder_ == null) {
+    public Builder mergeUser(com.clarifai.grpc.api.User value) {
+      if (userBuilder_ == null) {
         if (targetCase_ == 1 &&
             target_ != com.clarifai.grpc.api.User.getDefaultInstance()) {
           target_ = com.clarifai.grpc.api.User.newBuilder((com.clarifai.grpc.api.User) target_)
@@ -624,23 +738,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (targetCase_ == 1) {
-          memberBuilder_.mergeFrom(value);
+          userBuilder_.mergeFrom(value);
         } else {
-          memberBuilder_.setMessage(value);
+          userBuilder_.setMessage(value);
         }
       }
       targetCase_ = 1;
       return this;
     }
     /**
-     * <pre>
-     * An organization member, only used in org audit logs.
-     * </pre>
-     *
-     * <code>.clarifai.api.User member = 1;</code>
+     * <code>.clarifai.api.User user = 1;</code>
      */
-    public Builder clearMember() {
-      if (memberBuilder_ == null) {
+    public Builder clearUser() {
+      if (userBuilder_ == null) {
         if (targetCase_ == 1) {
           targetCase_ = 0;
           target_ = null;
@@ -651,31 +761,23 @@ private static final long serialVersionUID = 0L;
           targetCase_ = 0;
           target_ = null;
         }
-        memberBuilder_.clear();
+        userBuilder_.clear();
       }
       return this;
     }
     /**
-     * <pre>
-     * An organization member, only used in org audit logs.
-     * </pre>
-     *
-     * <code>.clarifai.api.User member = 1;</code>
+     * <code>.clarifai.api.User user = 1;</code>
      */
-    public com.clarifai.grpc.api.User.Builder getMemberBuilder() {
-      return getMemberFieldBuilder().getBuilder();
+    public com.clarifai.grpc.api.User.Builder getUserBuilder() {
+      return getUserFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * An organization member, only used in org audit logs.
-     * </pre>
-     *
-     * <code>.clarifai.api.User member = 1;</code>
+     * <code>.clarifai.api.User user = 1;</code>
      */
     @java.lang.Override
-    public com.clarifai.grpc.api.UserOrBuilder getMemberOrBuilder() {
-      if ((targetCase_ == 1) && (memberBuilder_ != null)) {
-        return memberBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.UserOrBuilder getUserOrBuilder() {
+      if ((targetCase_ == 1) && (userBuilder_ != null)) {
+        return userBuilder_.getMessageOrBuilder();
       } else {
         if (targetCase_ == 1) {
           return (com.clarifai.grpc.api.User) target_;
@@ -684,20 +786,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * An organization member, only used in org audit logs.
-     * </pre>
-     *
-     * <code>.clarifai.api.User member = 1;</code>
+     * <code>.clarifai.api.User user = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder> 
-        getMemberFieldBuilder() {
-      if (memberBuilder_ == null) {
+        getUserFieldBuilder() {
+      if (userBuilder_ == null) {
         if (!(targetCase_ == 1)) {
           target_ = com.clarifai.grpc.api.User.getDefaultInstance();
         }
-        memberBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder>(
                 (com.clarifai.grpc.api.User) target_,
                 getParentForChildren(),
@@ -706,7 +804,291 @@ private static final long serialVersionUID = 0L;
       }
       targetCase_ = 1;
       onChanged();;
-      return memberBuilder_;
+      return userBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Role, com.clarifai.grpc.api.Role.Builder, com.clarifai.grpc.api.RoleOrBuilder> roleBuilder_;
+    /**
+     * <code>.clarifai.api.Role role = 2;</code>
+     * @return Whether the role field is set.
+     */
+    @java.lang.Override
+    public boolean hasRole() {
+      return targetCase_ == 2;
+    }
+    /**
+     * <code>.clarifai.api.Role role = 2;</code>
+     * @return The role.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Role getRole() {
+      if (roleBuilder_ == null) {
+        if (targetCase_ == 2) {
+          return (com.clarifai.grpc.api.Role) target_;
+        }
+        return com.clarifai.grpc.api.Role.getDefaultInstance();
+      } else {
+        if (targetCase_ == 2) {
+          return roleBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Role.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Role role = 2;</code>
+     */
+    public Builder setRole(com.clarifai.grpc.api.Role value) {
+      if (roleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        roleBuilder_.setMessage(value);
+      }
+      targetCase_ = 2;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Role role = 2;</code>
+     */
+    public Builder setRole(
+        com.clarifai.grpc.api.Role.Builder builderForValue) {
+      if (roleBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        roleBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 2;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Role role = 2;</code>
+     */
+    public Builder mergeRole(com.clarifai.grpc.api.Role value) {
+      if (roleBuilder_ == null) {
+        if (targetCase_ == 2 &&
+            target_ != com.clarifai.grpc.api.Role.getDefaultInstance()) {
+          target_ = com.clarifai.grpc.api.Role.newBuilder((com.clarifai.grpc.api.Role) target_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 2) {
+          roleBuilder_.mergeFrom(value);
+        } else {
+          roleBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 2;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Role role = 2;</code>
+     */
+    public Builder clearRole() {
+      if (roleBuilder_ == null) {
+        if (targetCase_ == 2) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 2) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        roleBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Role role = 2;</code>
+     */
+    public com.clarifai.grpc.api.Role.Builder getRoleBuilder() {
+      return getRoleFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Role role = 2;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.RoleOrBuilder getRoleOrBuilder() {
+      if ((targetCase_ == 2) && (roleBuilder_ != null)) {
+        return roleBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 2) {
+          return (com.clarifai.grpc.api.Role) target_;
+        }
+        return com.clarifai.grpc.api.Role.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Role role = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Role, com.clarifai.grpc.api.Role.Builder, com.clarifai.grpc.api.RoleOrBuilder> 
+        getRoleFieldBuilder() {
+      if (roleBuilder_ == null) {
+        if (!(targetCase_ == 2)) {
+          target_ = com.clarifai.grpc.api.Role.getDefaultInstance();
+        }
+        roleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Role, com.clarifai.grpc.api.Role.Builder, com.clarifai.grpc.api.RoleOrBuilder>(
+                (com.clarifai.grpc.api.Role) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 2;
+      onChanged();;
+      return roleBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Team, com.clarifai.grpc.api.Team.Builder, com.clarifai.grpc.api.TeamOrBuilder> teamBuilder_;
+    /**
+     * <code>.clarifai.api.Team team = 3;</code>
+     * @return Whether the team field is set.
+     */
+    @java.lang.Override
+    public boolean hasTeam() {
+      return targetCase_ == 3;
+    }
+    /**
+     * <code>.clarifai.api.Team team = 3;</code>
+     * @return The team.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Team getTeam() {
+      if (teamBuilder_ == null) {
+        if (targetCase_ == 3) {
+          return (com.clarifai.grpc.api.Team) target_;
+        }
+        return com.clarifai.grpc.api.Team.getDefaultInstance();
+      } else {
+        if (targetCase_ == 3) {
+          return teamBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Team.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Team team = 3;</code>
+     */
+    public Builder setTeam(com.clarifai.grpc.api.Team value) {
+      if (teamBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        teamBuilder_.setMessage(value);
+      }
+      targetCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Team team = 3;</code>
+     */
+    public Builder setTeam(
+        com.clarifai.grpc.api.Team.Builder builderForValue) {
+      if (teamBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        teamBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Team team = 3;</code>
+     */
+    public Builder mergeTeam(com.clarifai.grpc.api.Team value) {
+      if (teamBuilder_ == null) {
+        if (targetCase_ == 3 &&
+            target_ != com.clarifai.grpc.api.Team.getDefaultInstance()) {
+          target_ = com.clarifai.grpc.api.Team.newBuilder((com.clarifai.grpc.api.Team) target_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 3) {
+          teamBuilder_.mergeFrom(value);
+        } else {
+          teamBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Team team = 3;</code>
+     */
+    public Builder clearTeam() {
+      if (teamBuilder_ == null) {
+        if (targetCase_ == 3) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 3) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        teamBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Team team = 3;</code>
+     */
+    public com.clarifai.grpc.api.Team.Builder getTeamBuilder() {
+      return getTeamFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Team team = 3;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.TeamOrBuilder getTeamOrBuilder() {
+      if ((targetCase_ == 3) && (teamBuilder_ != null)) {
+        return teamBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 3) {
+          return (com.clarifai.grpc.api.Team) target_;
+        }
+        return com.clarifai.grpc.api.Team.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Team team = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Team, com.clarifai.grpc.api.Team.Builder, com.clarifai.grpc.api.TeamOrBuilder> 
+        getTeamFieldBuilder() {
+      if (teamBuilder_ == null) {
+        if (!(targetCase_ == 3)) {
+          target_ = com.clarifai.grpc.api.Team.getDefaultInstance();
+        }
+        teamBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Team, com.clarifai.grpc.api.Team.Builder, com.clarifai.grpc.api.TeamOrBuilder>(
+                (com.clarifai.grpc.api.Team) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 3;
+      onChanged();;
+      return teamBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

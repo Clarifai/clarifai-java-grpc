@@ -65,8 +65,8 @@ public interface AutoscaleConfigOrBuilder extends
    * for more compute and cost efficiency.
    * </pre>
    *
-   * <code>bool enable_packing = 6;</code>
-   * @return The enablePacking.
+   * <code>bool disable_packing = 7;</code>
+   * @return The disablePacking.
    */
-  boolean getEnablePacking();
+  boolean getDisablePacking();
 }

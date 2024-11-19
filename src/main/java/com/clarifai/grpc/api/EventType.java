@@ -14,12 +14,64 @@ public enum EventType
   EVENT_TYPE_NOT_SET(0),
   /**
    * <pre>
-   * APPLICATION event types : 100 - 199
+   * Event types related to organization memberships and teams: 100 - 199
    * </pre>
    *
-   * <code>APPLICATION_CREATE = 100 [(.clarifai.api.utils.description) = "Operation to create an Application"];</code>
+   * <code>ORGANIZATION_MEMBER_ADD = 100 [(.clarifai.api.utils.description) = "Organization members added"];</code>
    */
-  APPLICATION_CREATE(100),
+  ORGANIZATION_MEMBER_ADD(100),
+  /**
+   * <code>ORGANIZATION_MEMBER_CHANGE = 101 [(.clarifai.api.utils.description) = "Organization members&#92;' roles changed"];</code>
+   */
+  ORGANIZATION_MEMBER_CHANGE(101),
+  /**
+   * <code>ORGANIZATION_MEMBER_REMOVE = 102 [(.clarifai.api.utils.description) = "Organization members removed"];</code>
+   */
+  ORGANIZATION_MEMBER_REMOVE(102),
+  /**
+   * <code>ORGANIZATION_MEMBER_INVITATION_CREATE = 103 [(.clarifai.api.utils.description) = "Organization member invitations created"];</code>
+   */
+  ORGANIZATION_MEMBER_INVITATION_CREATE(103),
+  /**
+   * <code>ORGANIZATION_MEMBER_INVITATION_CANCEL = 104 [(.clarifai.api.utils.description) = "Organization member invitations canceled"];</code>
+   */
+  ORGANIZATION_MEMBER_INVITATION_CANCEL(104),
+  /**
+   * <code>ORGANIZATION_MEMBER_INVITATION_ACCEPT = 105 [(.clarifai.api.utils.description) = "Organization member invitations accepted"];</code>
+   */
+  ORGANIZATION_MEMBER_INVITATION_ACCEPT(105),
+  /**
+   * <code>ORGANIZATION_MEMBER_INVITATION_DECLINE = 106 [(.clarifai.api.utils.description) = "Organization member invitations declined"];</code>
+   */
+  ORGANIZATION_MEMBER_INVITATION_DECLINE(106),
+  /**
+   * <code>ORGANIZATION_TEAM_CREATE = 107 [(.clarifai.api.utils.description) = "Organization teams created"];</code>
+   */
+  ORGANIZATION_TEAM_CREATE(107),
+  /**
+   * <code>ORGANIZATION_TEAM_UPDATE = 108 [(.clarifai.api.utils.description) = "Organization teams updated"];</code>
+   */
+  ORGANIZATION_TEAM_UPDATE(108),
+  /**
+   * <code>ORGANIZATION_TEAM_DELETE = 109 [(.clarifai.api.utils.description) = "Organization teams deleted"];</code>
+   */
+  ORGANIZATION_TEAM_DELETE(109),
+  /**
+   * <code>ORGANIZATION_TEAM_MEMBER_ADD = 110 [(.clarifai.api.utils.description) = "Organization team members added"];</code>
+   */
+  ORGANIZATION_TEAM_MEMBER_ADD(110),
+  /**
+   * <code>ORGANIZATION_TEAM_MEMBER_REMOVE = 111 [(.clarifai.api.utils.description) = "Organization team members removed"];</code>
+   */
+  ORGANIZATION_TEAM_MEMBER_REMOVE(111),
+  /**
+   * <code>ORGANIZATION_TEAM_APP_ADD = 112 [(.clarifai.api.utils.description) = "Organization team applications added"];</code>
+   */
+  ORGANIZATION_TEAM_APP_ADD(112),
+  /**
+   * <code>ORGANIZATION_TEAM_APP_REMOVE = 113 [(.clarifai.api.utils.description) = "Organization team applications removed"];</code>
+   */
+  ORGANIZATION_TEAM_APP_REMOVE(113),
   UNRECOGNIZED(-1),
   ;
 
@@ -29,12 +81,64 @@ public enum EventType
   public static final int EVENT_TYPE_NOT_SET_VALUE = 0;
   /**
    * <pre>
-   * APPLICATION event types : 100 - 199
+   * Event types related to organization memberships and teams: 100 - 199
    * </pre>
    *
-   * <code>APPLICATION_CREATE = 100 [(.clarifai.api.utils.description) = "Operation to create an Application"];</code>
+   * <code>ORGANIZATION_MEMBER_ADD = 100 [(.clarifai.api.utils.description) = "Organization members added"];</code>
    */
-  public static final int APPLICATION_CREATE_VALUE = 100;
+  public static final int ORGANIZATION_MEMBER_ADD_VALUE = 100;
+  /**
+   * <code>ORGANIZATION_MEMBER_CHANGE = 101 [(.clarifai.api.utils.description) = "Organization members&#92;' roles changed"];</code>
+   */
+  public static final int ORGANIZATION_MEMBER_CHANGE_VALUE = 101;
+  /**
+   * <code>ORGANIZATION_MEMBER_REMOVE = 102 [(.clarifai.api.utils.description) = "Organization members removed"];</code>
+   */
+  public static final int ORGANIZATION_MEMBER_REMOVE_VALUE = 102;
+  /**
+   * <code>ORGANIZATION_MEMBER_INVITATION_CREATE = 103 [(.clarifai.api.utils.description) = "Organization member invitations created"];</code>
+   */
+  public static final int ORGANIZATION_MEMBER_INVITATION_CREATE_VALUE = 103;
+  /**
+   * <code>ORGANIZATION_MEMBER_INVITATION_CANCEL = 104 [(.clarifai.api.utils.description) = "Organization member invitations canceled"];</code>
+   */
+  public static final int ORGANIZATION_MEMBER_INVITATION_CANCEL_VALUE = 104;
+  /**
+   * <code>ORGANIZATION_MEMBER_INVITATION_ACCEPT = 105 [(.clarifai.api.utils.description) = "Organization member invitations accepted"];</code>
+   */
+  public static final int ORGANIZATION_MEMBER_INVITATION_ACCEPT_VALUE = 105;
+  /**
+   * <code>ORGANIZATION_MEMBER_INVITATION_DECLINE = 106 [(.clarifai.api.utils.description) = "Organization member invitations declined"];</code>
+   */
+  public static final int ORGANIZATION_MEMBER_INVITATION_DECLINE_VALUE = 106;
+  /**
+   * <code>ORGANIZATION_TEAM_CREATE = 107 [(.clarifai.api.utils.description) = "Organization teams created"];</code>
+   */
+  public static final int ORGANIZATION_TEAM_CREATE_VALUE = 107;
+  /**
+   * <code>ORGANIZATION_TEAM_UPDATE = 108 [(.clarifai.api.utils.description) = "Organization teams updated"];</code>
+   */
+  public static final int ORGANIZATION_TEAM_UPDATE_VALUE = 108;
+  /**
+   * <code>ORGANIZATION_TEAM_DELETE = 109 [(.clarifai.api.utils.description) = "Organization teams deleted"];</code>
+   */
+  public static final int ORGANIZATION_TEAM_DELETE_VALUE = 109;
+  /**
+   * <code>ORGANIZATION_TEAM_MEMBER_ADD = 110 [(.clarifai.api.utils.description) = "Organization team members added"];</code>
+   */
+  public static final int ORGANIZATION_TEAM_MEMBER_ADD_VALUE = 110;
+  /**
+   * <code>ORGANIZATION_TEAM_MEMBER_REMOVE = 111 [(.clarifai.api.utils.description) = "Organization team members removed"];</code>
+   */
+  public static final int ORGANIZATION_TEAM_MEMBER_REMOVE_VALUE = 111;
+  /**
+   * <code>ORGANIZATION_TEAM_APP_ADD = 112 [(.clarifai.api.utils.description) = "Organization team applications added"];</code>
+   */
+  public static final int ORGANIZATION_TEAM_APP_ADD_VALUE = 112;
+  /**
+   * <code>ORGANIZATION_TEAM_APP_REMOVE = 113 [(.clarifai.api.utils.description) = "Organization team applications removed"];</code>
+   */
+  public static final int ORGANIZATION_TEAM_APP_REMOVE_VALUE = 113;
 
 
   public final int getNumber() {
@@ -62,7 +166,20 @@ public enum EventType
   public static EventType forNumber(int value) {
     switch (value) {
       case 0: return EVENT_TYPE_NOT_SET;
-      case 100: return APPLICATION_CREATE;
+      case 100: return ORGANIZATION_MEMBER_ADD;
+      case 101: return ORGANIZATION_MEMBER_CHANGE;
+      case 102: return ORGANIZATION_MEMBER_REMOVE;
+      case 103: return ORGANIZATION_MEMBER_INVITATION_CREATE;
+      case 104: return ORGANIZATION_MEMBER_INVITATION_CANCEL;
+      case 105: return ORGANIZATION_MEMBER_INVITATION_ACCEPT;
+      case 106: return ORGANIZATION_MEMBER_INVITATION_DECLINE;
+      case 107: return ORGANIZATION_TEAM_CREATE;
+      case 108: return ORGANIZATION_TEAM_UPDATE;
+      case 109: return ORGANIZATION_TEAM_DELETE;
+      case 110: return ORGANIZATION_TEAM_MEMBER_ADD;
+      case 111: return ORGANIZATION_TEAM_MEMBER_REMOVE;
+      case 112: return ORGANIZATION_TEAM_APP_ADD;
+      case 113: return ORGANIZATION_TEAM_APP_REMOVE;
       default: return null;
     }
   }

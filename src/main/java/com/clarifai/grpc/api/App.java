@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     dataTierId_ = "";
     notes_ = "";
+    embeddingsStorage_ = 0;
   }
 
   @java.lang.Override
@@ -232,6 +233,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 208: {
+            int rawValue = input.readEnum();
+
+            embeddingsStorage_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -264,6 +271,123 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_App_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.App.class, com.clarifai.grpc.api.App.Builder.class);
+  }
+
+  /**
+   * Protobuf enum {@code clarifai.api.App.EmbeddingsStorage}
+   */
+  public enum EmbeddingsStorage
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>EMBEDDING_STORAGE_NOT_SET = 0;</code>
+     */
+    EMBEDDING_STORAGE_NOT_SET(0),
+    /**
+     * <code>POSTGRES = 1;</code>
+     */
+    POSTGRES(1),
+    /**
+     * <code>QDRANT = 2;</code>
+     */
+    QDRANT(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>EMBEDDING_STORAGE_NOT_SET = 0;</code>
+     */
+    public static final int EMBEDDING_STORAGE_NOT_SET_VALUE = 0;
+    /**
+     * <code>POSTGRES = 1;</code>
+     */
+    public static final int POSTGRES_VALUE = 1;
+    /**
+     * <code>QDRANT = 2;</code>
+     */
+    public static final int QDRANT_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EmbeddingsStorage valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EmbeddingsStorage forNumber(int value) {
+      switch (value) {
+        case 0: return EMBEDDING_STORAGE_NOT_SET;
+        case 1: return POSTGRES;
+        case 2: return QDRANT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EmbeddingsStorage>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        EmbeddingsStorage> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<EmbeddingsStorage>() {
+            public EmbeddingsStorage findValueByNumber(int number) {
+              return EmbeddingsStorage.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.App.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final EmbeddingsStorage[] VALUES = values();
+
+    public static EmbeddingsStorage valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EmbeddingsStorage(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.App.EmbeddingsStorage)
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -982,6 +1106,35 @@ private static final long serialVersionUID = 0L;
     return getExtraInfo();
   }
 
+  public static final int EMBEDDINGS_STORAGE_FIELD_NUMBER = 26;
+  private int embeddingsStorage_;
+  /**
+   * <pre>
+   * Where app embeddings are stored
+   * postgres (default), qdrant
+   * </pre>
+   *
+   * <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+   * @return The enum numeric value on the wire for embeddingsStorage.
+   */
+  @java.lang.Override public int getEmbeddingsStorageValue() {
+    return embeddingsStorage_;
+  }
+  /**
+   * <pre>
+   * Where app embeddings are stored
+   * postgres (default), qdrant
+   * </pre>
+   *
+   * <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+   * @return The embeddingsStorage.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.App.EmbeddingsStorage getEmbeddingsStorage() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.App.EmbeddingsStorage result = com.clarifai.grpc.api.App.EmbeddingsStorage.valueOf(embeddingsStorage_);
+    return result == null ? com.clarifai.grpc.api.App.EmbeddingsStorage.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1055,6 +1208,9 @@ private static final long serialVersionUID = 0L;
     }
     if (isTemplate_ != null) {
       output.writeMessage(25, getIsTemplate());
+    }
+    if (embeddingsStorage_ != com.clarifai.grpc.api.App.EmbeddingsStorage.EMBEDDING_STORAGE_NOT_SET.getNumber()) {
+      output.writeEnum(26, embeddingsStorage_);
     }
     unknownFields.writeTo(output);
   }
@@ -1137,6 +1293,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(25, getIsTemplate());
     }
+    if (embeddingsStorage_ != com.clarifai.grpc.api.App.EmbeddingsStorage.EMBEDDING_STORAGE_NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(26, embeddingsStorage_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1216,6 +1376,7 @@ private static final long serialVersionUID = 0L;
       if (!getExtraInfo()
           .equals(other.getExtraInfo())) return false;
     }
+    if (embeddingsStorage_ != other.embeddingsStorage_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1284,6 +1445,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EXTRA_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getExtraInfo().hashCode();
     }
+    hash = (37 * hash) + EMBEDDINGS_STORAGE_FIELD_NUMBER;
+    hash = (53 * hash) + embeddingsStorage_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1493,6 +1656,8 @@ private static final long serialVersionUID = 0L;
         extraInfo_ = null;
         extraInfoBuilder_ = null;
       }
+      embeddingsStorage_ = 0;
+
       return this;
     }
 
@@ -1571,6 +1736,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.extraInfo_ = extraInfoBuilder_.build();
       }
+      result.embeddingsStorage_ = embeddingsStorage_;
       onBuilt();
       return result;
     }
@@ -1686,6 +1852,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasExtraInfo()) {
         mergeExtraInfo(other.getExtraInfo());
+      }
+      if (other.embeddingsStorage_ != 0) {
+        setEmbeddingsStorageValue(other.getEmbeddingsStorageValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3855,6 +4024,85 @@ private static final long serialVersionUID = 0L;
         extraInfo_ = null;
       }
       return extraInfoBuilder_;
+    }
+
+    private int embeddingsStorage_ = 0;
+    /**
+     * <pre>
+     * Where app embeddings are stored
+     * postgres (default), qdrant
+     * </pre>
+     *
+     * <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+     * @return The enum numeric value on the wire for embeddingsStorage.
+     */
+    @java.lang.Override public int getEmbeddingsStorageValue() {
+      return embeddingsStorage_;
+    }
+    /**
+     * <pre>
+     * Where app embeddings are stored
+     * postgres (default), qdrant
+     * </pre>
+     *
+     * <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+     * @param value The enum numeric value on the wire for embeddingsStorage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmbeddingsStorageValue(int value) {
+      
+      embeddingsStorage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Where app embeddings are stored
+     * postgres (default), qdrant
+     * </pre>
+     *
+     * <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+     * @return The embeddingsStorage.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.App.EmbeddingsStorage getEmbeddingsStorage() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.App.EmbeddingsStorage result = com.clarifai.grpc.api.App.EmbeddingsStorage.valueOf(embeddingsStorage_);
+      return result == null ? com.clarifai.grpc.api.App.EmbeddingsStorage.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Where app embeddings are stored
+     * postgres (default), qdrant
+     * </pre>
+     *
+     * <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+     * @param value The embeddingsStorage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmbeddingsStorage(com.clarifai.grpc.api.App.EmbeddingsStorage value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      embeddingsStorage_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Where app embeddings are stored
+     * postgres (default), qdrant
+     * </pre>
+     *
+     * <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEmbeddingsStorage() {
+      
+      embeddingsStorage_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -204,7 +204,7 @@ public interface AuditLogEntryOrBuilder extends
    * Was the operation successful?
    * </pre>
    *
-   * <code>bool success = 7;</code>
+   * <code>bool success = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The success.
    */
   boolean getSuccess();

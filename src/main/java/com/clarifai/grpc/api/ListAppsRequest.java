@@ -154,6 +154,11 @@ private static final long serialVersionUID = 0L;
             templateOnly_ = input.readBool();
             break;
           }
+          case 136: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 17;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -200,6 +205,7 @@ private static final long serialVersionUID = 0L;
     SORT_BY_MODIFIED_AT(7),
     SORT_BY_CREATED_AT(12),
     SORT_BY_STAR_COUNT(13),
+    SORT_BY_ID(17),
     SORTBY_NOT_SET(0);
     private final int value;
     private SortByCase(int value) {
@@ -221,6 +227,7 @@ private static final long serialVersionUID = 0L;
         case 7: return SORT_BY_MODIFIED_AT;
         case 12: return SORT_BY_CREATED_AT;
         case 13: return SORT_BY_STAR_COUNT;
+        case 17: return SORT_BY_ID;
         case 0: return SORTBY_NOT_SET;
         default: return null;
       }
@@ -364,7 +371,7 @@ private static final long serialVersionUID = 0L;
   public static final int SORT_BY_NAME_FIELD_NUMBER = 6;
   /**
    * <pre>
-   * Whether to order by the name
+   * Whether to order by the name.
    * </pre>
    *
    * <code>bool sort_by_name = 6;</code>
@@ -376,7 +383,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Whether to order by the name
+   * Whether to order by the name.
    * </pre>
    *
    * <code>bool sort_by_name = 6;</code>
@@ -474,6 +481,35 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getSortByStarCount() {
     if (sortByCase_ == 13) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_ID_FIELD_NUMBER = 17;
+  /**
+   * <pre>
+   * Whether to order by the id
+   * </pre>
+   *
+   * <code>bool sort_by_id = 17;</code>
+   * @return Whether the sortById field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortById() {
+    return sortByCase_ == 17;
+  }
+  /**
+   * <pre>
+   * Whether to order by the id
+   * </pre>
+   *
+   * <code>bool sort_by_id = 17;</code>
+   * @return The sortById.
+   */
+  @java.lang.Override
+  public boolean getSortById() {
+    if (sortByCase_ == 17) {
       return (java.lang.Boolean) sortBy_;
     }
     return false;
@@ -603,7 +639,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4232
+   *     See proto/clarifai/api/service.proto;l=4214
    * @return The query.
    */
   @java.lang.Override
@@ -627,7 +663,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4232
+   *     See proto/clarifai/api/service.proto;l=4214
    * @return The bytes for query.
    */
   @java.lang.Override
@@ -655,7 +691,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4235
+   *     See proto/clarifai/api/service.proto;l=4217
    * @return The name.
    */
   @java.lang.Override
@@ -679,7 +715,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4235
+   *     See proto/clarifai/api/service.proto;l=4217
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -707,7 +743,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4238
+   *     See proto/clarifai/api/service.proto;l=4220
    * @return The id.
    */
   @java.lang.Override
@@ -731,7 +767,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4238
+   *     See proto/clarifai/api/service.proto;l=4220
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -815,6 +851,10 @@ private static final long serialVersionUID = 0L;
     if (templateOnly_ != false) {
       output.writeBool(16, templateOnly_);
     }
+    if (sortByCase_ == 17) {
+      output.writeBool(
+          17, (boolean)((java.lang.Boolean) sortBy_));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -892,6 +932,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(16, templateOnly_);
     }
+    if (sortByCase_ == 17) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            17, (boolean)((java.lang.Boolean) sortBy_));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -951,6 +996,10 @@ private static final long serialVersionUID = 0L;
       case 13:
         if (getSortByStarCount()
             != other.getSortByStarCount()) return false;
+        break;
+      case 17:
+        if (getSortById()
+            != other.getSortById()) return false;
         break;
       case 0:
       default:
@@ -1018,6 +1067,11 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + SORT_BY_STAR_COUNT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getSortByStarCount());
+        break;
+      case 17:
+        hash = (37 * hash) + SORT_BY_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortById());
         break;
       case 0:
       default:
@@ -1241,6 +1295,9 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 13) {
         result.sortBy_ = sortBy_;
       }
+      if (sortByCase_ == 17) {
+        result.sortBy_ = sortBy_;
+      }
       result.featuredOnly_ = featuredOnly_;
       result.starredOnly_ = starredOnly_;
       result.templateOnly_ = templateOnly_;
@@ -1359,6 +1416,10 @@ private static final long serialVersionUID = 0L;
         }
         case SORT_BY_STAR_COUNT: {
           setSortByStarCount(other.getSortByStarCount());
+          break;
+        }
+        case SORT_BY_ID: {
+          setSortById(other.getSortById());
           break;
         }
         case SORTBY_NOT_SET: {
@@ -1815,7 +1876,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Whether to order by the name
+     * Whether to order by the name.
      * </pre>
      *
      * <code>bool sort_by_name = 6;</code>
@@ -1826,7 +1887,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether to order by the name
+     * Whether to order by the name.
      * </pre>
      *
      * <code>bool sort_by_name = 6;</code>
@@ -1840,7 +1901,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether to order by the name
+     * Whether to order by the name.
      * </pre>
      *
      * <code>bool sort_by_name = 6;</code>
@@ -1855,7 +1916,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether to order by the name
+     * Whether to order by the name.
      * </pre>
      *
      * <code>bool sort_by_name = 6;</code>
@@ -2038,6 +2099,63 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSortByStarCount() {
       if (sortByCase_ == 13) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the id
+     * </pre>
+     *
+     * <code>bool sort_by_id = 17;</code>
+     * @return Whether the sortById field is set.
+     */
+    public boolean hasSortById() {
+      return sortByCase_ == 17;
+    }
+    /**
+     * <pre>
+     * Whether to order by the id
+     * </pre>
+     *
+     * <code>bool sort_by_id = 17;</code>
+     * @return The sortById.
+     */
+    public boolean getSortById() {
+      if (sortByCase_ == 17) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the id
+     * </pre>
+     *
+     * <code>bool sort_by_id = 17;</code>
+     * @param value The sortById to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortById(boolean value) {
+      sortByCase_ = 17;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the id
+     * </pre>
+     *
+     * <code>bool sort_by_id = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortById() {
+      if (sortByCase_ == 17) {
         sortByCase_ = 0;
         sortBy_ = null;
         onChanged();
@@ -2337,7 +2455,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4232
+     *     See proto/clarifai/api/service.proto;l=4214
      * @return The query.
      */
     @java.lang.Deprecated public java.lang.String getQuery() {
@@ -2360,7 +2478,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4232
+     *     See proto/clarifai/api/service.proto;l=4214
      * @return The bytes for query.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2384,7 +2502,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4232
+     *     See proto/clarifai/api/service.proto;l=4214
      * @param value The query to set.
      * @return This builder for chaining.
      */
@@ -2406,7 +2524,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4232
+     *     See proto/clarifai/api/service.proto;l=4214
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearQuery() {
@@ -2423,7 +2541,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4232
+     *     See proto/clarifai/api/service.proto;l=4214
      * @param value The bytes for query to set.
      * @return This builder for chaining.
      */
@@ -2448,7 +2566,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4235
+     *     See proto/clarifai/api/service.proto;l=4217
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2471,7 +2589,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4235
+     *     See proto/clarifai/api/service.proto;l=4217
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2495,7 +2613,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4235
+     *     See proto/clarifai/api/service.proto;l=4217
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2517,7 +2635,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4235
+     *     See proto/clarifai/api/service.proto;l=4217
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -2534,7 +2652,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4235
+     *     See proto/clarifai/api/service.proto;l=4217
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -2559,7 +2677,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4238
+     *     See proto/clarifai/api/service.proto;l=4220
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -2582,7 +2700,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4238
+     *     See proto/clarifai/api/service.proto;l=4220
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2606,7 +2724,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4238
+     *     See proto/clarifai/api/service.proto;l=4220
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -2628,7 +2746,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4238
+     *     See proto/clarifai/api/service.proto;l=4220
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -2645,7 +2763,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4238
+     *     See proto/clarifai/api/service.proto;l=4220
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */

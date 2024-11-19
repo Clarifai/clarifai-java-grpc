@@ -180,4 +180,19 @@ public interface UserDetailOrBuilder extends
    */
   com.google.protobuf.ByteString
       getStateBytes();
+
+  /**
+   * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+   * @return Whether the commitmentValue field is set.
+   */
+  boolean hasCommitmentValue();
+  /**
+   * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+   * @return The commitmentValue.
+   */
+  com.clarifai.grpc.api.CommitmentValue getCommitmentValue();
+  /**
+   * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+   */
+  com.clarifai.grpc.api.CommitmentValueOrBuilder getCommitmentValueOrBuilder();
 }

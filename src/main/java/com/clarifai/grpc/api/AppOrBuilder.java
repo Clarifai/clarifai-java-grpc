@@ -406,4 +406,25 @@ public interface AppOrBuilder extends
    * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
    */
   com.clarifai.grpc.api.AppExtraInfoOrBuilder getExtraInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Where app embeddings are stored
+   * postgres (default), qdrant
+   * </pre>
+   *
+   * <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+   * @return The enum numeric value on the wire for embeddingsStorage.
+   */
+  int getEmbeddingsStorageValue();
+  /**
+   * <pre>
+   * Where app embeddings are stored
+   * postgres (default), qdrant
+   * </pre>
+   *
+   * <code>.clarifai.api.App.EmbeddingsStorage embeddings_storage = 26;</code>
+   * @return The embeddingsStorage.
+   */
+  com.clarifai.grpc.api.App.EmbeddingsStorage getEmbeddingsStorage();
 }

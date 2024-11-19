@@ -167,6 +167,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 114: {
+            com.clarifai.grpc.api.CommitmentValue.Builder subBuilder = null;
+            if (commitmentValue_ != null) {
+              subBuilder = commitmentValue_.toBuilder();
+            }
+            commitmentValue_ = input.readMessage(com.clarifai.grpc.api.CommitmentValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(commitmentValue_);
+              commitmentValue_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -563,6 +576,32 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int COMMITMENT_VALUE_FIELD_NUMBER = 14;
+  private com.clarifai.grpc.api.CommitmentValue commitmentValue_;
+  /**
+   * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+   * @return Whether the commitmentValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasCommitmentValue() {
+    return commitmentValue_ != null;
+  }
+  /**
+   * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+   * @return The commitmentValue.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CommitmentValue getCommitmentValue() {
+    return commitmentValue_ == null ? com.clarifai.grpc.api.CommitmentValue.getDefaultInstance() : commitmentValue_;
+  }
+  /**
+   * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CommitmentValueOrBuilder getCommitmentValueOrBuilder() {
+    return getCommitmentValue();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -612,6 +651,9 @@ private static final long serialVersionUID = 0L;
     }
     if (datePiiConsent_ != null) {
       output.writeMessage(13, getDatePiiConsent());
+    }
+    if (commitmentValue_ != null) {
+      output.writeMessage(14, getCommitmentValue());
     }
     unknownFields.writeTo(output);
   }
@@ -665,6 +707,10 @@ private static final long serialVersionUID = 0L;
     if (datePiiConsent_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getDatePiiConsent());
+    }
+    if (commitmentValue_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getCommitmentValue());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -720,6 +766,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCountry())) return false;
     if (!getState()
         .equals(other.getState())) return false;
+    if (hasCommitmentValue() != other.hasCommitmentValue()) return false;
+    if (hasCommitmentValue()) {
+      if (!getCommitmentValue()
+          .equals(other.getCommitmentValue())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -768,6 +819,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCountry().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + getState().hashCode();
+    if (hasCommitmentValue()) {
+      hash = (37 * hash) + COMMITMENT_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getCommitmentValue().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -955,6 +1010,12 @@ private static final long serialVersionUID = 0L;
 
       state_ = "";
 
+      if (commitmentValueBuilder_ == null) {
+        commitmentValue_ = null;
+      } else {
+        commitmentValue_ = null;
+        commitmentValueBuilder_ = null;
+      }
       return this;
     }
 
@@ -1022,6 +1083,11 @@ private static final long serialVersionUID = 0L;
       result.teamsCount_ = teamsCount_;
       result.country_ = country_;
       result.state_ = state_;
+      if (commitmentValueBuilder_ == null) {
+        result.commitmentValue_ = commitmentValue_;
+      } else {
+        result.commitmentValue_ = commitmentValueBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1132,6 +1198,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getState().isEmpty()) {
         state_ = other.state_;
         onChanged();
+      }
+      if (other.hasCommitmentValue()) {
+        mergeCommitmentValue(other.getCommitmentValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2407,6 +2476,125 @@ private static final long serialVersionUID = 0L;
       state_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.CommitmentValue commitmentValue_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.CommitmentValue, com.clarifai.grpc.api.CommitmentValue.Builder, com.clarifai.grpc.api.CommitmentValueOrBuilder> commitmentValueBuilder_;
+    /**
+     * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     * @return Whether the commitmentValue field is set.
+     */
+    public boolean hasCommitmentValue() {
+      return commitmentValueBuilder_ != null || commitmentValue_ != null;
+    }
+    /**
+     * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     * @return The commitmentValue.
+     */
+    public com.clarifai.grpc.api.CommitmentValue getCommitmentValue() {
+      if (commitmentValueBuilder_ == null) {
+        return commitmentValue_ == null ? com.clarifai.grpc.api.CommitmentValue.getDefaultInstance() : commitmentValue_;
+      } else {
+        return commitmentValueBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     */
+    public Builder setCommitmentValue(com.clarifai.grpc.api.CommitmentValue value) {
+      if (commitmentValueBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        commitmentValue_ = value;
+        onChanged();
+      } else {
+        commitmentValueBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     */
+    public Builder setCommitmentValue(
+        com.clarifai.grpc.api.CommitmentValue.Builder builderForValue) {
+      if (commitmentValueBuilder_ == null) {
+        commitmentValue_ = builderForValue.build();
+        onChanged();
+      } else {
+        commitmentValueBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     */
+    public Builder mergeCommitmentValue(com.clarifai.grpc.api.CommitmentValue value) {
+      if (commitmentValueBuilder_ == null) {
+        if (commitmentValue_ != null) {
+          commitmentValue_ =
+            com.clarifai.grpc.api.CommitmentValue.newBuilder(commitmentValue_).mergeFrom(value).buildPartial();
+        } else {
+          commitmentValue_ = value;
+        }
+        onChanged();
+      } else {
+        commitmentValueBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     */
+    public Builder clearCommitmentValue() {
+      if (commitmentValueBuilder_ == null) {
+        commitmentValue_ = null;
+        onChanged();
+      } else {
+        commitmentValue_ = null;
+        commitmentValueBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     */
+    public com.clarifai.grpc.api.CommitmentValue.Builder getCommitmentValueBuilder() {
+      
+      onChanged();
+      return getCommitmentValueFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     */
+    public com.clarifai.grpc.api.CommitmentValueOrBuilder getCommitmentValueOrBuilder() {
+      if (commitmentValueBuilder_ != null) {
+        return commitmentValueBuilder_.getMessageOrBuilder();
+      } else {
+        return commitmentValue_ == null ?
+            com.clarifai.grpc.api.CommitmentValue.getDefaultInstance() : commitmentValue_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.CommitmentValue, com.clarifai.grpc.api.CommitmentValue.Builder, com.clarifai.grpc.api.CommitmentValueOrBuilder> 
+        getCommitmentValueFieldBuilder() {
+      if (commitmentValueBuilder_ == null) {
+        commitmentValueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.CommitmentValue, com.clarifai.grpc.api.CommitmentValue.Builder, com.clarifai.grpc.api.CommitmentValueOrBuilder>(
+                getCommitmentValue(),
+                getParentForChildren(),
+                isClean());
+        commitmentValue_ = null;
+      }
+      return commitmentValueBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

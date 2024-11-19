@@ -126,6 +126,11 @@ private static final long serialVersionUID = 0L;
             sourceCase_ = 6;
             break;
           }
+          case 56: {
+
+            ignoreAppConcepts_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -305,7 +310,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string workflow_id = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=502
+   *     See proto/clarifai/api/resources.proto;l=510
    * @return The workflowId.
    */
   @java.lang.Override
@@ -328,7 +333,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string workflow_id = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=502
+   *     See proto/clarifai/api/resources.proto;l=510
    * @return The bytes for workflowId.
    */
   @java.lang.Override
@@ -491,6 +496,25 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Workflow.getDefaultInstance();
   }
 
+  public static final int IGNORE_APP_CONCEPTS_FIELD_NUMBER = 7;
+  private boolean ignoreAppConcepts_;
+  /**
+   * <pre>
+   * By default, we return app concepts combined with source (model or workflow) concepts.
+   * If source is not set, then we only return app concepts.
+   * If ignore_app_concepts is true, then we only return source concepts.
+   * When use_cases are set, then ignore_app_concepts is always true, because
+   * concept use cases can only be determined in relation to a model or a workflow.
+   * </pre>
+   *
+   * <code>bool ignore_app_concepts = 7;</code>
+   * @return The ignoreAppConcepts.
+   */
+  @java.lang.Override
+  public boolean getIgnoreAppConcepts() {
+    return ignoreAppConcepts_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -527,6 +551,9 @@ private static final long serialVersionUID = 0L;
     }
     if (sourceCase_ == 6) {
       output.writeMessage(6, (com.clarifai.grpc.api.Workflow) source_);
+    }
+    if (ignoreAppConcepts_ != false) {
+      output.writeBool(7, ignoreAppConcepts_);
     }
     unknownFields.writeTo(output);
   }
@@ -566,6 +593,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.clarifai.grpc.api.Workflow) source_);
     }
+    if (ignoreAppConcepts_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, ignoreAppConcepts_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -588,6 +619,8 @@ private static final long serialVersionUID = 0L;
     if (!getWorkflowId()
         .equals(other.getWorkflowId())) return false;
     if (!useCases_.equals(other.useCases_)) return false;
+    if (getIgnoreAppConcepts()
+        != other.getIgnoreAppConcepts()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 5:
@@ -622,6 +655,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USE_CASES_FIELD_NUMBER;
       hash = (53 * hash) + useCases_.hashCode();
     }
+    hash = (37 * hash) + IGNORE_APP_CONCEPTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIgnoreAppConcepts());
     switch (sourceCase_) {
       case 5:
         hash = (37 * hash) + MODEL_FIELD_NUMBER;
@@ -779,6 +815,8 @@ private static final long serialVersionUID = 0L;
 
       useCases_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ignoreAppConcepts_ = false;
+
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -830,6 +868,7 @@ private static final long serialVersionUID = 0L;
           result.source_ = workflowBuilder_.build();
         }
       }
+      result.ignoreAppConcepts_ = ignoreAppConcepts_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -900,6 +939,9 @@ private static final long serialVersionUID = 0L;
           useCases_.addAll(other.useCases_);
         }
         onChanged();
+      }
+      if (other.getIgnoreAppConcepts() != false) {
+        setIgnoreAppConcepts(other.getIgnoreAppConcepts());
       }
       switch (other.getSourceCase()) {
         case MODEL: {
@@ -1159,7 +1201,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string workflow_id = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=502
+     *     See proto/clarifai/api/resources.proto;l=510
      * @return The workflowId.
      */
     @java.lang.Deprecated public java.lang.String getWorkflowId() {
@@ -1181,7 +1223,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string workflow_id = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=502
+     *     See proto/clarifai/api/resources.proto;l=510
      * @return The bytes for workflowId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1204,7 +1246,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string workflow_id = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=502
+     *     See proto/clarifai/api/resources.proto;l=510
      * @param value The workflowId to set.
      * @return This builder for chaining.
      */
@@ -1225,7 +1267,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string workflow_id = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=502
+     *     See proto/clarifai/api/resources.proto;l=510
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearWorkflowId() {
@@ -1241,7 +1283,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string workflow_id = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=502
+     *     See proto/clarifai/api/resources.proto;l=510
      * @param value The bytes for workflowId to set.
      * @return This builder for chaining.
      */
@@ -1739,6 +1781,61 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 6;
       onChanged();;
       return workflowBuilder_;
+    }
+
+    private boolean ignoreAppConcepts_ ;
+    /**
+     * <pre>
+     * By default, we return app concepts combined with source (model or workflow) concepts.
+     * If source is not set, then we only return app concepts.
+     * If ignore_app_concepts is true, then we only return source concepts.
+     * When use_cases are set, then ignore_app_concepts is always true, because
+     * concept use cases can only be determined in relation to a model or a workflow.
+     * </pre>
+     *
+     * <code>bool ignore_app_concepts = 7;</code>
+     * @return The ignoreAppConcepts.
+     */
+    @java.lang.Override
+    public boolean getIgnoreAppConcepts() {
+      return ignoreAppConcepts_;
+    }
+    /**
+     * <pre>
+     * By default, we return app concepts combined with source (model or workflow) concepts.
+     * If source is not set, then we only return app concepts.
+     * If ignore_app_concepts is true, then we only return source concepts.
+     * When use_cases are set, then ignore_app_concepts is always true, because
+     * concept use cases can only be determined in relation to a model or a workflow.
+     * </pre>
+     *
+     * <code>bool ignore_app_concepts = 7;</code>
+     * @param value The ignoreAppConcepts to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgnoreAppConcepts(boolean value) {
+      
+      ignoreAppConcepts_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * By default, we return app concepts combined with source (model or workflow) concepts.
+     * If source is not set, then we only return app concepts.
+     * If ignore_app_concepts is true, then we only return source concepts.
+     * When use_cases are set, then ignore_app_concepts is always true, because
+     * concept use cases can only be determined in relation to a model or a workflow.
+     * </pre>
+     *
+     * <code>bool ignore_app_concepts = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIgnoreAppConcepts() {
+      
+      ignoreAppConcepts_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

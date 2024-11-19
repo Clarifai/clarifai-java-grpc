@@ -187,7 +187,7 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * while other models in the workflow require large GPUs.
    * If node.id is not in the provided map, it will fall back to searching for
    * an adequate deployment the model owner owns or fall back to
-   * the serverless nodepools provided by Clarifai.
+   * the shared nodepools provided by Clarifai.
    * We recommend you specify these RunnerSelectors so that you have better understanding of where
    * processing occurs.
    * </pre>
@@ -205,7 +205,7 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * while other models in the workflow require large GPUs.
    * If node.id is not in the provided map, it will fall back to searching for
    * an adequate deployment the model owner owns or fall back to
-   * the serverless nodepools provided by Clarifai.
+   * the shared nodepools provided by Clarifai.
    * We recommend you specify these RunnerSelectors so that you have better understanding of where
    * processing occurs.
    * </pre>
@@ -230,7 +230,7 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * while other models in the workflow require large GPUs.
    * If node.id is not in the provided map, it will fall back to searching for
    * an adequate deployment the model owner owns or fall back to
-   * the serverless nodepools provided by Clarifai.
+   * the shared nodepools provided by Clarifai.
    * We recommend you specify these RunnerSelectors so that you have better understanding of where
    * processing occurs.
    * </pre>
@@ -249,7 +249,7 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * while other models in the workflow require large GPUs.
    * If node.id is not in the provided map, it will fall back to searching for
    * an adequate deployment the model owner owns or fall back to
-   * the serverless nodepools provided by Clarifai.
+   * the shared nodepools provided by Clarifai.
    * We recommend you specify these RunnerSelectors so that you have better understanding of where
    * processing occurs.
    * </pre>
@@ -272,7 +272,7 @@ com.clarifai.grpc.api.RunnerSelector defaultValue);
    * while other models in the workflow require large GPUs.
    * If node.id is not in the provided map, it will fall back to searching for
    * an adequate deployment the model owner owns or fall back to
-   * the serverless nodepools provided by Clarifai.
+   * the shared nodepools provided by Clarifai.
    * We recommend you specify these RunnerSelectors so that you have better understanding of where
    * processing occurs.
    * </pre>

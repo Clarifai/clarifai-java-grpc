@@ -180,6 +180,14 @@ public enum StatusCode
   CONN_NO_GDPR_CONSENT(11104),
   /**
    * <pre>
+   * when invalid range of a resource is requested
+   * </pre>
+   *
+   * <code>CONN_INVALID_RANGE = 11105;</code>
+   */
+  CONN_INVALID_RANGE(11105),
+  /**
+   * <pre>
    * authentication method is disabled
    * </pre>
    *
@@ -2255,6 +2263,14 @@ public enum StatusCode
   public static final int CONN_NO_GDPR_CONSENT_VALUE = 11104;
   /**
    * <pre>
+   * when invalid range of a resource is requested
+   * </pre>
+   *
+   * <code>CONN_INVALID_RANGE = 11105;</code>
+   */
+  public static final int CONN_INVALID_RANGE_VALUE = 11105;
+  /**
+   * <pre>
    * authentication method is disabled
    * </pre>
    *
@@ -4201,6 +4217,7 @@ public enum StatusCode
       case 11102: return CONN_INVALID_REQUEST;
       case 11103: return CONN_METHOD_NOT_ALLOWED;
       case 11104: return CONN_NO_GDPR_CONSENT;
+      case 11105: return CONN_INVALID_RANGE;
       case 11200: return CONN_AUTH_METHOD_DISABLED;
       case 21100: return MODEL_TRAINED;
       case 21101: return MODEL_TRAINING;

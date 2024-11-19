@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
    * Was the operation successful?
    * </pre>
    *
-   * <code>bool success = 7;</code>
+   * <code>bool success = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The success.
    */
   @java.lang.Override
@@ -2067,7 +2067,7 @@ private static final long serialVersionUID = 0L;
      * Was the operation successful?
      * </pre>
      *
-     * <code>bool success = 7;</code>
+     * <code>bool success = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The success.
      */
     @java.lang.Override
@@ -2079,7 +2079,7 @@ private static final long serialVersionUID = 0L;
      * Was the operation successful?
      * </pre>
      *
-     * <code>bool success = 7;</code>
+     * <code>bool success = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param value The success to set.
      * @return This builder for chaining.
      */
@@ -2094,7 +2094,7 @@ private static final long serialVersionUID = 0L;
      * Was the operation successful?
      * </pre>
      *
-     * <code>bool success = 7;</code>
+     * <code>bool success = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return This builder for chaining.
      */
     public Builder clearSuccess() {

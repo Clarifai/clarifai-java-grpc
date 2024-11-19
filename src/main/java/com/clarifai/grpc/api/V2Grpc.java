@@ -5440,68 +5440,6 @@ public final class V2Grpc {
     return getPostStatValuesAggregateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostTrendingMetricsViewRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getPostTrendingMetricsViewMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostTrendingMetricsView",
-      requestType = com.clarifai.grpc.api.PostTrendingMetricsViewRequest.class,
-      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostTrendingMetricsViewRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getPostTrendingMetricsViewMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostTrendingMetricsViewRequest, com.clarifai.grpc.api.status.BaseResponse> getPostTrendingMetricsViewMethod;
-    if ((getPostTrendingMetricsViewMethod = V2Grpc.getPostTrendingMetricsViewMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostTrendingMetricsViewMethod = V2Grpc.getPostTrendingMetricsViewMethod) == null) {
-          V2Grpc.getPostTrendingMetricsViewMethod = getPostTrendingMetricsViewMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostTrendingMetricsViewRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostTrendingMetricsView"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostTrendingMetricsViewRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostTrendingMetricsView"))
-              .build();
-        }
-      }
-    }
-    return getPostTrendingMetricsViewMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListTrendingMetricsViewsRequest,
-      com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> getListTrendingMetricsViewsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListTrendingMetricsViews",
-      requestType = com.clarifai.grpc.api.ListTrendingMetricsViewsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiTrendingMetricsViewResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListTrendingMetricsViewsRequest,
-      com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> getListTrendingMetricsViewsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListTrendingMetricsViewsRequest, com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> getListTrendingMetricsViewsMethod;
-    if ((getListTrendingMetricsViewsMethod = V2Grpc.getListTrendingMetricsViewsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getListTrendingMetricsViewsMethod = V2Grpc.getListTrendingMetricsViewsMethod) == null) {
-          V2Grpc.getListTrendingMetricsViewsMethod = getListTrendingMetricsViewsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListTrendingMetricsViewsRequest, com.clarifai.grpc.api.MultiTrendingMetricsViewResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTrendingMetricsViews"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.ListTrendingMetricsViewsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiTrendingMetricsViewResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListTrendingMetricsViews"))
-              .build();
-        }
-      }
-    }
-    return getListTrendingMetricsViewsMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleRequest,
       com.clarifai.grpc.api.SingleModuleResponse> getGetModuleMethod;
 
@@ -9248,26 +9186,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Increase the view metric for a detail view
-     * </pre>
-     */
-    public void postTrendingMetricsView(com.clarifai.grpc.api.PostTrendingMetricsViewRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostTrendingMetricsViewMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List the view metrics for a detail view
-     * </pre>
-     */
-    public void listTrendingMetricsViews(com.clarifai.grpc.api.ListTrendingMetricsViewsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTrendingMetricsViewsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * Get a specific module from an app.
      * </pre>
      */
@@ -11099,20 +11017,6 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostStatValuesAggregateRequest,
                 com.clarifai.grpc.api.MultiStatValueAggregateResponse>(
                   this, METHODID_POST_STAT_VALUES_AGGREGATE)))
-          .addMethod(
-            getPostTrendingMetricsViewMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PostTrendingMetricsViewRequest,
-                com.clarifai.grpc.api.status.BaseResponse>(
-                  this, METHODID_POST_TRENDING_METRICS_VIEW)))
-          .addMethod(
-            getListTrendingMetricsViewsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.ListTrendingMetricsViewsRequest,
-                com.clarifai.grpc.api.MultiTrendingMetricsViewResponse>(
-                  this, METHODID_LIST_TRENDING_METRICS_VIEWS)))
           .addMethod(
             getGetModuleMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -13536,28 +13440,6 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueAggregateResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostStatValuesAggregateMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Increase the view metric for a detail view
-     * </pre>
-     */
-    public void postTrendingMetricsView(com.clarifai.grpc.api.PostTrendingMetricsViewRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostTrendingMetricsViewMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List the view metrics for a detail view
-     * </pre>
-     */
-    public void listTrendingMetricsViews(com.clarifai.grpc.api.ListTrendingMetricsViewsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListTrendingMetricsViewsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -16022,26 +15904,6 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiStatValueAggregateResponse postStatValuesAggregate(com.clarifai.grpc.api.PostStatValuesAggregateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostStatValuesAggregateMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Increase the view metric for a detail view
-     * </pre>
-     */
-    public com.clarifai.grpc.api.status.BaseResponse postTrendingMetricsView(com.clarifai.grpc.api.PostTrendingMetricsViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostTrendingMetricsViewMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * List the view metrics for a detail view
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiTrendingMetricsViewResponse listTrendingMetricsViews(com.clarifai.grpc.api.ListTrendingMetricsViewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListTrendingMetricsViewsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -18594,28 +18456,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Increase the view metric for a detail view
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> postTrendingMetricsView(
-        com.clarifai.grpc.api.PostTrendingMetricsViewRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostTrendingMetricsViewMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * List the view metrics for a detail view
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> listTrendingMetricsViews(
-        com.clarifai.grpc.api.ListTrendingMetricsViewsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListTrendingMetricsViewsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * Get a specific module from an app.
      * </pre>
      */
@@ -19439,71 +19279,69 @@ public final class V2Grpc {
   private static final int METHODID_DELETE_COLLECTORS = 170;
   private static final int METHODID_POST_STAT_VALUES = 171;
   private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 172;
-  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 173;
-  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 174;
-  private static final int METHODID_GET_MODULE = 175;
-  private static final int METHODID_LIST_MODULES = 176;
-  private static final int METHODID_POST_MODULES = 177;
-  private static final int METHODID_PATCH_MODULES = 178;
-  private static final int METHODID_DELETE_MODULES = 179;
-  private static final int METHODID_GET_MODULE_VERSION = 180;
-  private static final int METHODID_LIST_MODULE_VERSIONS = 181;
-  private static final int METHODID_POST_MODULE_VERSIONS = 182;
-  private static final int METHODID_PATCH_MODULE_VERSIONS = 183;
-  private static final int METHODID_DELETE_MODULE_VERSIONS = 184;
-  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 185;
-  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 186;
-  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 187;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 188;
-  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 189;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 190;
-  private static final int METHODID_POST_BULK_OPERATIONS = 191;
-  private static final int METHODID_LIST_BULK_OPERATIONS = 192;
-  private static final int METHODID_GET_BULK_OPERATION = 193;
-  private static final int METHODID_CANCEL_BULK_OPERATIONS = 194;
-  private static final int METHODID_DELETE_BULK_OPERATIONS = 195;
-  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 196;
-  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 197;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 198;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 199;
-  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 200;
-  private static final int METHODID_POST_UPLOADS = 201;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 202;
-  private static final int METHODID_GET_UPLOAD = 203;
-  private static final int METHODID_LIST_UPLOADS = 204;
-  private static final int METHODID_DELETE_UPLOADS = 205;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 206;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 207;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 208;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 209;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 210;
-  private static final int METHODID_GET_RUNNER = 211;
-  private static final int METHODID_LIST_RUNNERS = 212;
-  private static final int METHODID_POST_RUNNERS = 213;
-  private static final int METHODID_DELETE_RUNNERS = 214;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 215;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 216;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 217;
-  private static final int METHODID_LIST_INSTANCE_TYPES = 218;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 219;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 220;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 221;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 222;
-  private static final int METHODID_GET_NODEPOOL = 223;
-  private static final int METHODID_LIST_NODEPOOLS = 224;
-  private static final int METHODID_POST_NODEPOOLS = 225;
-  private static final int METHODID_PATCH_NODEPOOLS = 226;
-  private static final int METHODID_DELETE_NODEPOOLS = 227;
-  private static final int METHODID_GET_DEPLOYMENT = 228;
-  private static final int METHODID_LIST_DEPLOYMENTS = 229;
-  private static final int METHODID_POST_DEPLOYMENTS = 230;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 231;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 232;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 233;
-  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 234;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 235;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 236;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 237;
+  private static final int METHODID_GET_MODULE = 173;
+  private static final int METHODID_LIST_MODULES = 174;
+  private static final int METHODID_POST_MODULES = 175;
+  private static final int METHODID_PATCH_MODULES = 176;
+  private static final int METHODID_DELETE_MODULES = 177;
+  private static final int METHODID_GET_MODULE_VERSION = 178;
+  private static final int METHODID_LIST_MODULE_VERSIONS = 179;
+  private static final int METHODID_POST_MODULE_VERSIONS = 180;
+  private static final int METHODID_PATCH_MODULE_VERSIONS = 181;
+  private static final int METHODID_DELETE_MODULE_VERSIONS = 182;
+  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 183;
+  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 184;
+  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 185;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 186;
+  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 187;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 188;
+  private static final int METHODID_POST_BULK_OPERATIONS = 189;
+  private static final int METHODID_LIST_BULK_OPERATIONS = 190;
+  private static final int METHODID_GET_BULK_OPERATION = 191;
+  private static final int METHODID_CANCEL_BULK_OPERATIONS = 192;
+  private static final int METHODID_DELETE_BULK_OPERATIONS = 193;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 194;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 195;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 196;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 197;
+  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 198;
+  private static final int METHODID_POST_UPLOADS = 199;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 200;
+  private static final int METHODID_GET_UPLOAD = 201;
+  private static final int METHODID_LIST_UPLOADS = 202;
+  private static final int METHODID_DELETE_UPLOADS = 203;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 204;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 205;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 206;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 207;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 208;
+  private static final int METHODID_GET_RUNNER = 209;
+  private static final int METHODID_LIST_RUNNERS = 210;
+  private static final int METHODID_POST_RUNNERS = 211;
+  private static final int METHODID_DELETE_RUNNERS = 212;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 213;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 214;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 215;
+  private static final int METHODID_LIST_INSTANCE_TYPES = 216;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 217;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 218;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 219;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 220;
+  private static final int METHODID_GET_NODEPOOL = 221;
+  private static final int METHODID_LIST_NODEPOOLS = 222;
+  private static final int METHODID_POST_NODEPOOLS = 223;
+  private static final int METHODID_PATCH_NODEPOOLS = 224;
+  private static final int METHODID_DELETE_NODEPOOLS = 225;
+  private static final int METHODID_GET_DEPLOYMENT = 226;
+  private static final int METHODID_LIST_DEPLOYMENTS = 227;
+  private static final int METHODID_POST_DEPLOYMENTS = 228;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 229;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 230;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 231;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 232;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 233;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 234;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 235;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20214,14 +20052,6 @@ public final class V2Grpc {
           serviceImpl.postStatValuesAggregate((com.clarifai.grpc.api.PostStatValuesAggregateRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueAggregateResponse>) responseObserver);
           break;
-        case METHODID_POST_TRENDING_METRICS_VIEW:
-          serviceImpl.postTrendingMetricsView((com.clarifai.grpc.api.PostTrendingMetricsViewRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
-          break;
-        case METHODID_LIST_TRENDING_METRICS_VIEWS:
-          serviceImpl.listTrendingMetricsViews((com.clarifai.grpc.api.ListTrendingMetricsViewsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrendingMetricsViewResponse>) responseObserver);
-          break;
         case METHODID_GET_MODULE:
           serviceImpl.getModule((com.clarifai.grpc.api.GetModuleRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleResponse>) responseObserver);
@@ -20707,8 +20537,6 @@ public final class V2Grpc {
               .addMethod(getDeleteCollectorsMethod())
               .addMethod(getPostStatValuesMethod())
               .addMethod(getPostStatValuesAggregateMethod())
-              .addMethod(getPostTrendingMetricsViewMethod())
-              .addMethod(getListTrendingMetricsViewsMethod())
               .addMethod(getGetModuleMethod())
               .addMethod(getListModulesMethod())
               .addMethod(getPostModulesMethod())

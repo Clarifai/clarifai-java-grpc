@@ -54,7 +54,7 @@ public interface ConceptQueryOrBuilder extends
    *
    * <code>string workflow_id = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=502
+   *     See proto/clarifai/api/resources.proto;l=510
    * @return The workflowId.
    */
   @java.lang.Deprecated java.lang.String getWorkflowId();
@@ -65,7 +65,7 @@ public interface ConceptQueryOrBuilder extends
    *
    * <code>string workflow_id = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=502
+   *     See proto/clarifai/api/resources.proto;l=510
    * @return The bytes for workflowId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -154,6 +154,20 @@ public interface ConceptQueryOrBuilder extends
    * <code>.clarifai.api.Workflow workflow = 6;</code>
    */
   com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder();
+
+  /**
+   * <pre>
+   * By default, we return app concepts combined with source (model or workflow) concepts.
+   * If source is not set, then we only return app concepts.
+   * If ignore_app_concepts is true, then we only return source concepts.
+   * When use_cases are set, then ignore_app_concepts is always true, because
+   * concept use cases can only be determined in relation to a model or a workflow.
+   * </pre>
+   *
+   * <code>bool ignore_app_concepts = 7;</code>
+   * @return The ignoreAppConcepts.
+   */
+  boolean getIgnoreAppConcepts();
 
   public com.clarifai.grpc.api.ConceptQuery.SourceCase getSourceCase();
 }

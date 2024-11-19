@@ -89,6 +89,11 @@ private static final long serialVersionUID = 0L;
             computeClusterId_ = s;
             break;
           }
+          case 48: {
+
+            minReplicas_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -257,6 +262,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MIN_REPLICAS_FIELD_NUMBER = 6;
+  private int minReplicas_;
+  /**
+   * <pre>
+   * Only return runners whose replicas are &gt;= min_replicas.
+   * </pre>
+   *
+   * <code>uint32 min_replicas = 6;</code>
+   * @return The minReplicas.
+   */
+  @java.lang.Override
+  public int getMinReplicas() {
+    return minReplicas_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -286,6 +306,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, computeClusterId_);
     }
+    if (minReplicas_ != 0) {
+      output.writeUInt32(6, minReplicas_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -312,6 +335,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, computeClusterId_);
+    }
+    if (minReplicas_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(6, minReplicas_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -341,6 +368,8 @@ private static final long serialVersionUID = 0L;
         != other.getPerPage()) return false;
     if (!getComputeClusterId()
         .equals(other.getComputeClusterId())) return false;
+    if (getMinReplicas()
+        != other.getMinReplicas()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -364,6 +393,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPerPage();
     hash = (37 * hash) + COMPUTE_CLUSTER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getComputeClusterId().hashCode();
+    hash = (37 * hash) + MIN_REPLICAS_FIELD_NUMBER;
+    hash = (53 * hash) + getMinReplicas();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -515,6 +546,8 @@ private static final long serialVersionUID = 0L;
 
       computeClusterId_ = "";
 
+      minReplicas_ = 0;
+
       return this;
     }
 
@@ -550,6 +583,7 @@ private static final long serialVersionUID = 0L;
       result.page_ = page_;
       result.perPage_ = perPage_;
       result.computeClusterId_ = computeClusterId_;
+      result.minReplicas_ = minReplicas_;
       onBuilt();
       return result;
     }
@@ -614,6 +648,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getComputeClusterId().isEmpty()) {
         computeClusterId_ = other.computeClusterId_;
         onChanged();
+      }
+      if (other.getMinReplicas() != 0) {
+        setMinReplicas(other.getMinReplicas());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1003,6 +1040,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       computeClusterId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int minReplicas_ ;
+    /**
+     * <pre>
+     * Only return runners whose replicas are &gt;= min_replicas.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 6;</code>
+     * @return The minReplicas.
+     */
+    @java.lang.Override
+    public int getMinReplicas() {
+      return minReplicas_;
+    }
+    /**
+     * <pre>
+     * Only return runners whose replicas are &gt;= min_replicas.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 6;</code>
+     * @param value The minReplicas to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinReplicas(int value) {
+      
+      minReplicas_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Only return runners whose replicas are &gt;= min_replicas.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMinReplicas() {
+      
+      minReplicas_ = 0;
       onChanged();
       return this;
     }

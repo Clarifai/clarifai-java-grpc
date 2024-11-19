@@ -80,9 +80,9 @@ private static final long serialVersionUID = 0L;
             scaleUpDelaySeconds_ = input.readUInt32();
             break;
           }
-          case 48: {
+          case 56: {
 
-            enablePacking_ = input.readBool();
+            disablePacking_ = input.readBool();
             break;
           }
           default: {
@@ -196,20 +196,20 @@ private static final long serialVersionUID = 0L;
     return scaleUpDelaySeconds_;
   }
 
-  public static final int ENABLE_PACKING_FIELD_NUMBER = 6;
-  private boolean enablePacking_;
+  public static final int DISABLE_PACKING_FIELD_NUMBER = 7;
+  private boolean disablePacking_;
   /**
    * <pre>
    * Depending on your plan you may be able to enable packing of resources into a single node
    * for more compute and cost efficiency.
    * </pre>
    *
-   * <code>bool enable_packing = 6;</code>
-   * @return The enablePacking.
+   * <code>bool disable_packing = 7;</code>
+   * @return The disablePacking.
    */
   @java.lang.Override
-  public boolean getEnablePacking() {
-    return enablePacking_;
+  public boolean getDisablePacking() {
+    return disablePacking_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -241,8 +241,8 @@ private static final long serialVersionUID = 0L;
     if (scaleUpDelaySeconds_ != 0) {
       output.writeUInt32(5, scaleUpDelaySeconds_);
     }
-    if (enablePacking_ != false) {
-      output.writeBool(6, enablePacking_);
+    if (disablePacking_ != false) {
+      output.writeBool(7, disablePacking_);
     }
     unknownFields.writeTo(output);
   }
@@ -273,9 +273,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(5, scaleUpDelaySeconds_);
     }
-    if (enablePacking_ != false) {
+    if (disablePacking_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, enablePacking_);
+        .computeBoolSize(7, disablePacking_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -302,8 +302,8 @@ private static final long serialVersionUID = 0L;
         != other.getScaleDownDelaySeconds()) return false;
     if (getScaleUpDelaySeconds()
         != other.getScaleUpDelaySeconds()) return false;
-    if (getEnablePacking()
-        != other.getEnablePacking()) return false;
+    if (getDisablePacking()
+        != other.getDisablePacking()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -325,9 +325,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getScaleDownDelaySeconds();
     hash = (37 * hash) + SCALE_UP_DELAY_SECONDS_FIELD_NUMBER;
     hash = (53 * hash) + getScaleUpDelaySeconds();
-    hash = (37 * hash) + ENABLE_PACKING_FIELD_NUMBER;
+    hash = (37 * hash) + DISABLE_PACKING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnablePacking());
+        getDisablePacking());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -478,7 +478,7 @@ private static final long serialVersionUID = 0L;
 
       scaleUpDelaySeconds_ = 0;
 
-      enablePacking_ = false;
+      disablePacking_ = false;
 
       return this;
     }
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
       result.trafficHistorySeconds_ = trafficHistorySeconds_;
       result.scaleDownDelaySeconds_ = scaleDownDelaySeconds_;
       result.scaleUpDelaySeconds_ = scaleUpDelaySeconds_;
-      result.enablePacking_ = enablePacking_;
+      result.disablePacking_ = disablePacking_;
       onBuilt();
       return result;
     }
@@ -575,8 +575,8 @@ private static final long serialVersionUID = 0L;
       if (other.getScaleUpDelaySeconds() != 0) {
         setScaleUpDelaySeconds(other.getScaleUpDelaySeconds());
       }
-      if (other.getEnablePacking() != false) {
-        setEnablePacking(other.getEnablePacking());
+      if (other.getDisablePacking() != false) {
+        setDisablePacking(other.getDisablePacking());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -828,19 +828,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean enablePacking_ ;
+    private boolean disablePacking_ ;
     /**
      * <pre>
      * Depending on your plan you may be able to enable packing of resources into a single node
      * for more compute and cost efficiency.
      * </pre>
      *
-     * <code>bool enable_packing = 6;</code>
-     * @return The enablePacking.
+     * <code>bool disable_packing = 7;</code>
+     * @return The disablePacking.
      */
     @java.lang.Override
-    public boolean getEnablePacking() {
-      return enablePacking_;
+    public boolean getDisablePacking() {
+      return disablePacking_;
     }
     /**
      * <pre>
@@ -848,13 +848,13 @@ private static final long serialVersionUID = 0L;
      * for more compute and cost efficiency.
      * </pre>
      *
-     * <code>bool enable_packing = 6;</code>
-     * @param value The enablePacking to set.
+     * <code>bool disable_packing = 7;</code>
+     * @param value The disablePacking to set.
      * @return This builder for chaining.
      */
-    public Builder setEnablePacking(boolean value) {
+    public Builder setDisablePacking(boolean value) {
       
-      enablePacking_ = value;
+      disablePacking_ = value;
       onChanged();
       return this;
     }
@@ -864,12 +864,12 @@ private static final long serialVersionUID = 0L;
      * for more compute and cost efficiency.
      * </pre>
      *
-     * <code>bool enable_packing = 6;</code>
+     * <code>bool disable_packing = 7;</code>
      * @return This builder for chaining.
      */
-    public Builder clearEnablePacking() {
+    public Builder clearDisablePacking() {
       
-      enablePacking_ = false;
+      disablePacking_ = false;
       onChanged();
       return this;
     }

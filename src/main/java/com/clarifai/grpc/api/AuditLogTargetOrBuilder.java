@@ -8,31 +8,49 @@ public interface AuditLogTargetOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * An organization member, only used in org audit logs.
-   * </pre>
-   *
-   * <code>.clarifai.api.User member = 1;</code>
-   * @return Whether the member field is set.
+   * <code>.clarifai.api.User user = 1;</code>
+   * @return Whether the user field is set.
    */
-  boolean hasMember();
+  boolean hasUser();
   /**
-   * <pre>
-   * An organization member, only used in org audit logs.
-   * </pre>
-   *
-   * <code>.clarifai.api.User member = 1;</code>
-   * @return The member.
+   * <code>.clarifai.api.User user = 1;</code>
+   * @return The user.
    */
-  com.clarifai.grpc.api.User getMember();
+  com.clarifai.grpc.api.User getUser();
   /**
-   * <pre>
-   * An organization member, only used in org audit logs.
-   * </pre>
-   *
-   * <code>.clarifai.api.User member = 1;</code>
+   * <code>.clarifai.api.User user = 1;</code>
    */
-  com.clarifai.grpc.api.UserOrBuilder getMemberOrBuilder();
+  com.clarifai.grpc.api.UserOrBuilder getUserOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Role role = 2;</code>
+   * @return Whether the role field is set.
+   */
+  boolean hasRole();
+  /**
+   * <code>.clarifai.api.Role role = 2;</code>
+   * @return The role.
+   */
+  com.clarifai.grpc.api.Role getRole();
+  /**
+   * <code>.clarifai.api.Role role = 2;</code>
+   */
+  com.clarifai.grpc.api.RoleOrBuilder getRoleOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Team team = 3;</code>
+   * @return Whether the team field is set.
+   */
+  boolean hasTeam();
+  /**
+   * <code>.clarifai.api.Team team = 3;</code>
+   * @return The team.
+   */
+  com.clarifai.grpc.api.Team getTeam();
+  /**
+   * <code>.clarifai.api.Team team = 3;</code>
+   */
+  com.clarifai.grpc.api.TeamOrBuilder getTeamOrBuilder();
 
   public com.clarifai.grpc.api.AuditLogTarget.TargetCase getTargetCase();
 }
