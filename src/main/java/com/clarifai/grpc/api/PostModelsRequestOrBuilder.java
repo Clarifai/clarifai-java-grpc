@@ -32,7 +32,7 @@ public interface PostModelsRequestOrBuilder extends
    *
    * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.PostModelsRequest.model is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5486
+   *     See proto/clarifai/api/service.proto;l=5499
    * @return Whether the model field is set.
    */
   @java.lang.Deprecated boolean hasModel();
@@ -46,7 +46,7 @@ public interface PostModelsRequestOrBuilder extends
    *
    * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.PostModelsRequest.model is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5486
+   *     See proto/clarifai/api/service.proto;l=5499
    * @return The model.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.Model getModel();

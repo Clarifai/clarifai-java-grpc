@@ -55,4 +55,24 @@ public interface ProcessingInfoOrBuilder extends
    * <code>.clarifai.api.status.Status status = 2;</code>
    */
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
+
+  /**
+   * <pre>
+   * Internal field to track processing. Runners will not have access to this.
+   * </pre>
+   *
+   * <code>string processing_id = 3;</code>
+   * @return The processingId.
+   */
+  java.lang.String getProcessingId();
+  /**
+   * <pre>
+   * Internal field to track processing. Runners will not have access to this.
+   * </pre>
+   *
+   * <code>string processing_id = 3;</code>
+   * @return The bytes for processingId.
+   */
+  com.google.protobuf.ByteString
+      getProcessingIdBytes();
 }
