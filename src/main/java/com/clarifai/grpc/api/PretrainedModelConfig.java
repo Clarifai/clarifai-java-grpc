@@ -85,6 +85,11 @@ private static final long serialVersionUID = 0L;
             modelZipUrl_ = s;
             break;
           }
+          case 64: {
+
+            localDev_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -248,6 +253,24 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LOCAL_DEV_FIELD_NUMBER = 8;
+  private boolean localDev_;
+  /**
+   * <pre>
+   * Whether to overwrite the model for the existing internal id
+   * If this is a local dev model that runs external to the platform, set this to true.
+   * This helps during development of models before uploading them to the platform.
+   * These models MUST run in an associated compute cluster with cluster_type = "local-dev"
+   * </pre>
+   *
+   * <code>bool local_dev = 8;</code>
+   * @return The localDev.
+   */
+  @java.lang.Override
+  public boolean getLocalDev() {
+    return localDev_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -271,6 +294,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelZipUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, modelZipUrl_);
     }
+    if (localDev_ != false) {
+      output.writeBool(8, localDev_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -290,6 +316,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelZipUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, modelZipUrl_);
+    }
+    if (localDev_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, localDev_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -318,6 +348,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelZipUrl()
         .equals(other.getModelZipUrl())) return false;
+    if (getLocalDev()
+        != other.getLocalDev()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -339,6 +371,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MODEL_ZIP_URL_FIELD_NUMBER;
     hash = (53 * hash) + getModelZipUrl().hashCode();
+    hash = (37 * hash) + LOCAL_DEV_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getLocalDev());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -490,6 +525,8 @@ private static final long serialVersionUID = 0L;
       }
       modelZipUrl_ = "";
 
+      localDev_ = false;
+
       return this;
     }
 
@@ -527,6 +564,7 @@ private static final long serialVersionUID = 0L;
         result.outputFieldsMap_ = outputFieldsMapBuilder_.build();
       }
       result.modelZipUrl_ = modelZipUrl_;
+      result.localDev_ = localDev_;
       onBuilt();
       return result;
     }
@@ -584,6 +622,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getModelZipUrl().isEmpty()) {
         modelZipUrl_ = other.modelZipUrl_;
         onChanged();
+      }
+      if (other.getLocalDev() != false) {
+        setLocalDev(other.getLocalDev());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1035,6 +1076,58 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       modelZipUrl_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean localDev_ ;
+    /**
+     * <pre>
+     * Whether to overwrite the model for the existing internal id
+     * If this is a local dev model that runs external to the platform, set this to true.
+     * This helps during development of models before uploading them to the platform.
+     * These models MUST run in an associated compute cluster with cluster_type = "local-dev"
+     * </pre>
+     *
+     * <code>bool local_dev = 8;</code>
+     * @return The localDev.
+     */
+    @java.lang.Override
+    public boolean getLocalDev() {
+      return localDev_;
+    }
+    /**
+     * <pre>
+     * Whether to overwrite the model for the existing internal id
+     * If this is a local dev model that runs external to the platform, set this to true.
+     * This helps during development of models before uploading them to the platform.
+     * These models MUST run in an associated compute cluster with cluster_type = "local-dev"
+     * </pre>
+     *
+     * <code>bool local_dev = 8;</code>
+     * @param value The localDev to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalDev(boolean value) {
+      
+      localDev_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to overwrite the model for the existing internal id
+     * If this is a local dev model that runs external to the platform, set this to true.
+     * This helps during development of models before uploading them to the platform.
+     * These models MUST run in an associated compute cluster with cluster_type = "local-dev"
+     * </pre>
+     *
+     * <code>bool local_dev = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLocalDev() {
+      
+      localDev_ = false;
       onChanged();
       return this;
     }

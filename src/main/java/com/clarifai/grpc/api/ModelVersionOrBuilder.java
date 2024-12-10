@@ -105,16 +105,34 @@ public interface ModelVersionOrBuilder extends
   int getTotalInputCount();
 
   /**
+   * <pre>
+   * When a model has already been trained externally, you can upload
+   * it directly to the platform as a model version directly by
+   * setting the PretrainedModelConfig
+   * </pre>
+   *
    * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
    * @return Whether the pretrainedModelConfig field is set.
    */
   boolean hasPretrainedModelConfig();
   /**
+   * <pre>
+   * When a model has already been trained externally, you can upload
+   * it directly to the platform as a model version directly by
+   * setting the PretrainedModelConfig
+   * </pre>
+   *
    * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
    * @return The pretrainedModelConfig.
    */
   com.clarifai.grpc.api.PretrainedModelConfig getPretrainedModelConfig();
   /**
+   * <pre>
+   * When a model has already been trained externally, you can upload
+   * it directly to the platform as a model version directly by
+   * setting the PretrainedModelConfig
+   * </pre>
+   *
    * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
    */
   com.clarifai.grpc.api.PretrainedModelConfigOrBuilder getPretrainedModelConfigOrBuilder();

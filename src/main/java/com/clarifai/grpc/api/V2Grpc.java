@@ -6804,6 +6804,68 @@ public final class V2Grpc {
     return getPostModelVersionsTrainingTimeEstimateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCloudProvidersRequest,
+      com.clarifai.grpc.api.MultiCloudProviderResponse> getListCloudProvidersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCloudProviders",
+      requestType = com.clarifai.grpc.api.ListCloudProvidersRequest.class,
+      responseType = com.clarifai.grpc.api.MultiCloudProviderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCloudProvidersRequest,
+      com.clarifai.grpc.api.MultiCloudProviderResponse> getListCloudProvidersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCloudProvidersRequest, com.clarifai.grpc.api.MultiCloudProviderResponse> getListCloudProvidersMethod;
+    if ((getListCloudProvidersMethod = V2Grpc.getListCloudProvidersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListCloudProvidersMethod = V2Grpc.getListCloudProvidersMethod) == null) {
+          V2Grpc.getListCloudProvidersMethod = getListCloudProvidersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListCloudProvidersRequest, com.clarifai.grpc.api.MultiCloudProviderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCloudProviders"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListCloudProvidersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiCloudProviderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListCloudProviders"))
+              .build();
+        }
+      }
+    }
+    return getListCloudProvidersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCloudRegionsRequest,
+      com.clarifai.grpc.api.MultiCloudRegionResponse> getListCloudRegionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCloudRegions",
+      requestType = com.clarifai.grpc.api.ListCloudRegionsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiCloudRegionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCloudRegionsRequest,
+      com.clarifai.grpc.api.MultiCloudRegionResponse> getListCloudRegionsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCloudRegionsRequest, com.clarifai.grpc.api.MultiCloudRegionResponse> getListCloudRegionsMethod;
+    if ((getListCloudRegionsMethod = V2Grpc.getListCloudRegionsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListCloudRegionsMethod = V2Grpc.getListCloudRegionsMethod) == null) {
+          V2Grpc.getListCloudRegionsMethod = getListCloudRegionsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListCloudRegionsRequest, com.clarifai.grpc.api.MultiCloudRegionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCloudRegions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListCloudRegionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiCloudRegionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListCloudRegions"))
+              .build();
+        }
+      }
+    }
+    return getListCloudRegionsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListInstanceTypesRequest,
       com.clarifai.grpc.api.MultiInstanceTypeResponse> getListInstanceTypesMethod;
 
@@ -7329,6 +7391,37 @@ public final class V2Grpc {
       }
     }
     return getListWorkflowEvaluationTemplatesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListLogEntriesRequest,
+      com.clarifai.grpc.api.MultiLogEntryResponse> getListLogEntriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListLogEntries",
+      requestType = com.clarifai.grpc.api.ListLogEntriesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiLogEntryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListLogEntriesRequest,
+      com.clarifai.grpc.api.MultiLogEntryResponse> getListLogEntriesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListLogEntriesRequest, com.clarifai.grpc.api.MultiLogEntryResponse> getListLogEntriesMethod;
+    if ((getListLogEntriesMethod = V2Grpc.getListLogEntriesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListLogEntriesMethod = V2Grpc.getListLogEntriesMethod) == null) {
+          V2Grpc.getListLogEntriesMethod = getListLogEntriesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListLogEntriesRequest, com.clarifai.grpc.api.MultiLogEntryResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListLogEntries"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListLogEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiLogEntryResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListLogEntries"))
+              .build();
+        }
+      }
+    }
+    return getListLogEntriesMethod;
   }
 
   /**
@@ -9652,6 +9745,26 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List Available Cloud Providers
+     * </pre>
+     */
+    public void listCloudProviders(com.clarifai.grpc.api.ListCloudProvidersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCloudProviderResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCloudProvidersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List Regions for given Cloud Provider
+     * </pre>
+     */
+    public void listCloudRegions(com.clarifai.grpc.api.ListCloudRegionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCloudRegionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCloudRegionsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get InstanceTypes given Cloud Provider and Region
      * </pre>
      */
@@ -9788,6 +9901,13 @@ public final class V2Grpc {
     public void listWorkflowEvaluationTemplates(com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListWorkflowEvaluationTemplatesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listLogEntries(com.clarifai.grpc.api.ListLogEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLogEntryResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLogEntriesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -11326,6 +11446,20 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse>(
                   this, METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE)))
           .addMethod(
+            getListCloudProvidersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListCloudProvidersRequest,
+                com.clarifai.grpc.api.MultiCloudProviderResponse>(
+                  this, METHODID_LIST_CLOUD_PROVIDERS)))
+          .addMethod(
+            getListCloudRegionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListCloudRegionsRequest,
+                com.clarifai.grpc.api.MultiCloudRegionResponse>(
+                  this, METHODID_LIST_CLOUD_REGIONS)))
+          .addMethod(
             getListInstanceTypesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -11444,6 +11578,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest,
                 com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse>(
                   this, METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES)))
+          .addMethod(
+            getListLogEntriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListLogEntriesRequest,
+                com.clarifai.grpc.api.MultiLogEntryResponse>(
+                  this, METHODID_LIST_LOG_ENTRIES)))
           .build();
     }
   }
@@ -13954,6 +14095,28 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List Available Cloud Providers
+     * </pre>
+     */
+    public void listCloudProviders(com.clarifai.grpc.api.ListCloudProvidersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCloudProviderResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCloudProvidersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List Regions for given Cloud Provider
+     * </pre>
+     */
+    public void listCloudRegions(com.clarifai.grpc.api.ListCloudRegionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCloudRegionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCloudRegionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get InstanceTypes given Cloud Provider and Region
      * </pre>
      */
@@ -14107,6 +14270,14 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListWorkflowEvaluationTemplatesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listLogEntries(com.clarifai.grpc.api.ListLogEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLogEntryResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListLogEntriesMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -16359,6 +16530,26 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List Available Cloud Providers
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiCloudProviderResponse listCloudProviders(com.clarifai.grpc.api.ListCloudProvidersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCloudProvidersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List Regions for given Cloud Provider
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiCloudRegionResponse listCloudRegions(com.clarifai.grpc.api.ListCloudRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCloudRegionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Get InstanceTypes given Cloud Provider and Region
      * </pre>
      */
@@ -16495,6 +16686,13 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse listWorkflowEvaluationTemplates(com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListWorkflowEvaluationTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiLogEntryResponse listLogEntries(com.clarifai.grpc.api.ListLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLogEntriesMethod(), getCallOptions(), request);
     }
   }
 
@@ -18950,6 +19148,28 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List Available Cloud Providers
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCloudProviderResponse> listCloudProviders(
+        com.clarifai.grpc.api.ListCloudProvidersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCloudProvidersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List Regions for given Cloud Provider
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCloudRegionResponse> listCloudRegions(
+        com.clarifai.grpc.api.ListCloudRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCloudRegionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get InstanceTypes given Cloud Provider and Region
      * </pre>
      */
@@ -19103,6 +19323,14 @@ public final class V2Grpc {
         com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWorkflowEvaluationTemplatesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiLogEntryResponse> listLogEntries(
+        com.clarifai.grpc.api.ListLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListLogEntriesMethod(), getCallOptions()), request);
     }
   }
 
@@ -19322,26 +19550,29 @@ public final class V2Grpc {
   private static final int METHODID_LIST_RUNNER_ITEMS = 213;
   private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 214;
   private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 215;
-  private static final int METHODID_LIST_INSTANCE_TYPES = 216;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 217;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 218;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 219;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 220;
-  private static final int METHODID_GET_NODEPOOL = 221;
-  private static final int METHODID_LIST_NODEPOOLS = 222;
-  private static final int METHODID_POST_NODEPOOLS = 223;
-  private static final int METHODID_PATCH_NODEPOOLS = 224;
-  private static final int METHODID_DELETE_NODEPOOLS = 225;
-  private static final int METHODID_GET_DEPLOYMENT = 226;
-  private static final int METHODID_LIST_DEPLOYMENTS = 227;
-  private static final int METHODID_POST_DEPLOYMENTS = 228;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 229;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 230;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 231;
-  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 232;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 233;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 234;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 235;
+  private static final int METHODID_LIST_CLOUD_PROVIDERS = 216;
+  private static final int METHODID_LIST_CLOUD_REGIONS = 217;
+  private static final int METHODID_LIST_INSTANCE_TYPES = 218;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 219;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 220;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 221;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 222;
+  private static final int METHODID_GET_NODEPOOL = 223;
+  private static final int METHODID_LIST_NODEPOOLS = 224;
+  private static final int METHODID_POST_NODEPOOLS = 225;
+  private static final int METHODID_PATCH_NODEPOOLS = 226;
+  private static final int METHODID_DELETE_NODEPOOLS = 227;
+  private static final int METHODID_GET_DEPLOYMENT = 228;
+  private static final int METHODID_LIST_DEPLOYMENTS = 229;
+  private static final int METHODID_POST_DEPLOYMENTS = 230;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 231;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 232;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 233;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 234;
+  private static final int METHODID_LIST_LOG_ENTRIES = 235;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 236;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 237;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 238;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20224,6 +20455,14 @@ public final class V2Grpc {
           serviceImpl.postModelVersionsTrainingTimeEstimate((com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse>) responseObserver);
           break;
+        case METHODID_LIST_CLOUD_PROVIDERS:
+          serviceImpl.listCloudProviders((com.clarifai.grpc.api.ListCloudProvidersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCloudProviderResponse>) responseObserver);
+          break;
+        case METHODID_LIST_CLOUD_REGIONS:
+          serviceImpl.listCloudRegions((com.clarifai.grpc.api.ListCloudRegionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCloudRegionResponse>) responseObserver);
+          break;
         case METHODID_LIST_INSTANCE_TYPES:
           serviceImpl.listInstanceTypes((com.clarifai.grpc.api.ListInstanceTypesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstanceTypeResponse>) responseObserver);
@@ -20291,6 +20530,10 @@ public final class V2Grpc {
         case METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES:
           serviceImpl.listWorkflowEvaluationTemplates((com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse>) responseObserver);
+          break;
+        case METHODID_LIST_LOG_ENTRIES:
+          serviceImpl.listLogEntries((com.clarifai.grpc.api.ListLogEntriesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLogEntryResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -20581,6 +20824,8 @@ public final class V2Grpc {
               .addMethod(getPostRunnerItemOutputsMethod())
               .addMethod(getProcessRunnerItemsMethod())
               .addMethod(getPostModelVersionsTrainingTimeEstimateMethod())
+              .addMethod(getListCloudProvidersMethod())
+              .addMethod(getListCloudRegionsMethod())
               .addMethod(getListInstanceTypesMethod())
               .addMethod(getGetComputeClusterMethod())
               .addMethod(getListComputeClustersMethod())
@@ -20598,6 +20843,7 @@ public final class V2Grpc {
               .addMethod(getDeleteDeploymentsMethod())
               .addMethod(getPostAuditLogSearchesMethod())
               .addMethod(getListWorkflowEvaluationTemplatesMethod())
+              .addMethod(getListLogEntriesMethod())
               .build();
         }
       }

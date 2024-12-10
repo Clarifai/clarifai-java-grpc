@@ -489,6 +489,12 @@ private static final long serialVersionUID = 0L;
   public static final int PRETRAINED_MODEL_CONFIG_FIELD_NUMBER = 7;
   private com.clarifai.grpc.api.PretrainedModelConfig pretrainedModelConfig_;
   /**
+   * <pre>
+   * When a model has already been trained externally, you can upload
+   * it directly to the platform as a model version directly by
+   * setting the PretrainedModelConfig
+   * </pre>
+   *
    * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
    * @return Whether the pretrainedModelConfig field is set.
    */
@@ -497,6 +503,12 @@ private static final long serialVersionUID = 0L;
     return pretrainedModelConfig_ != null;
   }
   /**
+   * <pre>
+   * When a model has already been trained externally, you can upload
+   * it directly to the platform as a model version directly by
+   * setting the PretrainedModelConfig
+   * </pre>
+   *
    * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
    * @return The pretrainedModelConfig.
    */
@@ -505,6 +517,12 @@ private static final long serialVersionUID = 0L;
     return pretrainedModelConfig_ == null ? com.clarifai.grpc.api.PretrainedModelConfig.getDefaultInstance() : pretrainedModelConfig_;
   }
   /**
+   * <pre>
+   * When a model has already been trained externally, you can upload
+   * it directly to the platform as a model version directly by
+   * setting the PretrainedModelConfig
+   * </pre>
+   *
    * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
    */
   @java.lang.Override
@@ -2560,6 +2578,12 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.PretrainedModelConfig, com.clarifai.grpc.api.PretrainedModelConfig.Builder, com.clarifai.grpc.api.PretrainedModelConfigOrBuilder> pretrainedModelConfigBuilder_;
     /**
+     * <pre>
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     * </pre>
+     *
      * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      * @return Whether the pretrainedModelConfig field is set.
      */
@@ -2567,6 +2591,12 @@ private static final long serialVersionUID = 0L;
       return pretrainedModelConfigBuilder_ != null || pretrainedModelConfig_ != null;
     }
     /**
+     * <pre>
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     * </pre>
+     *
      * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      * @return The pretrainedModelConfig.
      */
@@ -2578,6 +2608,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     * </pre>
+     *
      * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      */
     public Builder setPretrainedModelConfig(com.clarifai.grpc.api.PretrainedModelConfig value) {
@@ -2594,6 +2630,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     * </pre>
+     *
      * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      */
     public Builder setPretrainedModelConfig(
@@ -2608,6 +2650,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     * </pre>
+     *
      * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      */
     public Builder mergePretrainedModelConfig(com.clarifai.grpc.api.PretrainedModelConfig value) {
@@ -2626,6 +2674,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     * </pre>
+     *
      * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      */
     public Builder clearPretrainedModelConfig() {
@@ -2640,6 +2694,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     * </pre>
+     *
      * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      */
     public com.clarifai.grpc.api.PretrainedModelConfig.Builder getPretrainedModelConfigBuilder() {
@@ -2648,6 +2708,12 @@ private static final long serialVersionUID = 0L;
       return getPretrainedModelConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     * </pre>
+     *
      * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      */
     public com.clarifai.grpc.api.PretrainedModelConfigOrBuilder getPretrainedModelConfigOrBuilder() {
@@ -2659,6 +2725,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * When a model has already been trained externally, you can upload
+     * it directly to the platform as a model version directly by
+     * setting the PretrainedModelConfig
+     * </pre>
+     *
      * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

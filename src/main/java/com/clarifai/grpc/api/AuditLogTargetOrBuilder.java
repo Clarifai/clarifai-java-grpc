@@ -52,5 +52,50 @@ public interface AuditLogTargetOrBuilder extends
    */
   com.clarifai.grpc.api.TeamOrBuilder getTeamOrBuilder();
 
+  /**
+   * <code>.clarifai.api.App app = 4;</code>
+   * @return Whether the app field is set.
+   */
+  boolean hasApp();
+  /**
+   * <code>.clarifai.api.App app = 4;</code>
+   * @return The app.
+   */
+  com.clarifai.grpc.api.App getApp();
+  /**
+   * <code>.clarifai.api.App app = 4;</code>
+   */
+  com.clarifai.grpc.api.AppOrBuilder getAppOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Module module = 5;</code>
+   * @return Whether the module field is set.
+   */
+  boolean hasModule();
+  /**
+   * <code>.clarifai.api.Module module = 5;</code>
+   * @return The module.
+   */
+  com.clarifai.grpc.api.Module getModule();
+  /**
+   * <code>.clarifai.api.Module module = 5;</code>
+   */
+  com.clarifai.grpc.api.ModuleOrBuilder getModuleOrBuilder();
+
+  /**
+   * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
+   * @return Whether the moduleVersion field is set.
+   */
+  boolean hasModuleVersion();
+  /**
+   * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
+   * @return The moduleVersion.
+   */
+  com.clarifai.grpc.api.ModuleVersion getModuleVersion();
+  /**
+   * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
+   */
+  com.clarifai.grpc.api.ModuleVersionOrBuilder getModuleVersionOrBuilder();
+
   public com.clarifai.grpc.api.AuditLogTarget.TargetCase getTargetCase();
 }

@@ -87,4 +87,17 @@ public interface PretrainedModelConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getModelZipUrlBytes();
+
+  /**
+   * <pre>
+   * Whether to overwrite the model for the existing internal id
+   * If this is a local dev model that runs external to the platform, set this to true.
+   * This helps during development of models before uploading them to the platform.
+   * These models MUST run in an associated compute cluster with cluster_type = "local-dev"
+   * </pre>
+   *
+   * <code>bool local_dev = 8;</code>
+   * @return The localDev.
+   */
+  boolean getLocalDev();
 }

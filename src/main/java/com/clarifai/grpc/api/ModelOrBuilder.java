@@ -781,4 +781,10 @@ public interface ModelOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatorBytes();
+
+  /**
+   * <code>int32 version_count = 38;</code>
+   * @return The versionCount.
+   */
+  int getVersionCount();
 }

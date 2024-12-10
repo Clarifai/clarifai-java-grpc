@@ -350,6 +350,11 @@ private static final long serialVersionUID = 0L;
             creator_ = s;
             break;
           }
+          case 304: {
+
+            versionCount_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1758,6 +1763,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int VERSION_COUNT_FIELD_NUMBER = 38;
+  private int versionCount_;
+  /**
+   * <code>int32 version_count = 38;</code>
+   * @return The versionCount.
+   */
+  @java.lang.Override
+  public int getVersionCount() {
+    return versionCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1861,6 +1877,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37, creator_);
+    }
+    if (versionCount_ != 0) {
+      output.writeInt32(38, versionCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -1997,6 +2016,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, creator_);
     }
+    if (versionCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(38, versionCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2103,6 +2126,8 @@ private static final long serialVersionUID = 0L;
     if (source_ != other.source_) return false;
     if (!getCreator()
         .equals(other.getCreator())) return false;
+    if (getVersionCount()
+        != other.getVersionCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2207,6 +2232,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + source_;
     hash = (37 * hash) + CREATOR_FIELD_NUMBER;
     hash = (53 * hash) + getCreator().hashCode();
+    hash = (37 * hash) + VERSION_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getVersionCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2463,6 +2490,8 @@ private static final long serialVersionUID = 0L;
 
       creator_ = "";
 
+      versionCount_ = 0;
+
       return this;
     }
 
@@ -2588,6 +2617,7 @@ private static final long serialVersionUID = 0L;
       result.licenseType_ = licenseType_;
       result.source_ = source_;
       result.creator_ = creator_;
+      result.versionCount_ = versionCount_;
       onBuilt();
       return result;
     }
@@ -2786,6 +2816,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCreator().isEmpty()) {
         creator_ = other.creator_;
         onChanged();
+      }
+      if (other.getVersionCount() != 0) {
+        setVersionCount(other.getVersionCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6646,6 +6679,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       creator_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int versionCount_ ;
+    /**
+     * <code>int32 version_count = 38;</code>
+     * @return The versionCount.
+     */
+    @java.lang.Override
+    public int getVersionCount() {
+      return versionCount_;
+    }
+    /**
+     * <code>int32 version_count = 38;</code>
+     * @param value The versionCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionCount(int value) {
+      
+      versionCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 version_count = 38;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVersionCount() {
+      
+      versionCount_ = 0;
       onChanged();
       return this;
     }

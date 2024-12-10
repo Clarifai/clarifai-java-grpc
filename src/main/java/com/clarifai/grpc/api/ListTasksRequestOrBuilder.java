@@ -295,4 +295,64 @@ public interface ListTasksRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdsBytes(int index);
+
+  /**
+   * <pre>
+   * (optional) input source type to filter
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+   * @return The enum numeric value on the wire for inputSourceType.
+   */
+  int getInputSourceTypeValue();
+  /**
+   * <pre>
+   * (optional) input source type to filter
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+   * @return The inputSourceType.
+   */
+  com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType getInputSourceType();
+
+  /**
+   * <pre>
+   * (optional) ids of input source to be filtered
+   * </pre>
+   *
+   * <code>repeated string input_source_ids = 11;</code>
+   * @return A list containing the inputSourceIds.
+   */
+  java.util.List<java.lang.String>
+      getInputSourceIdsList();
+  /**
+   * <pre>
+   * (optional) ids of input source to be filtered
+   * </pre>
+   *
+   * <code>repeated string input_source_ids = 11;</code>
+   * @return The count of inputSourceIds.
+   */
+  int getInputSourceIdsCount();
+  /**
+   * <pre>
+   * (optional) ids of input source to be filtered
+   * </pre>
+   *
+   * <code>repeated string input_source_ids = 11;</code>
+   * @param index The index of the element to return.
+   * @return The inputSourceIds at the given index.
+   */
+  java.lang.String getInputSourceIds(int index);
+  /**
+   * <pre>
+   * (optional) ids of input source to be filtered
+   * </pre>
+   *
+   * <code>repeated string input_source_ids = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the inputSourceIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getInputSourceIdsBytes(int index);
 }

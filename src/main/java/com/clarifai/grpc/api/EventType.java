@@ -72,6 +72,34 @@ public enum EventType
    * <code>ORGANIZATION_TEAM_APP_REMOVE = 113 [(.clarifai.api.utils.description) = "Organization team applications removed"];</code>
    */
   ORGANIZATION_TEAM_APP_REMOVE(113),
+  /**
+   * <pre>
+   * Event types related to modules: 200 - 299
+   * </pre>
+   *
+   * <code>MODULE_CREATE = 200 [(.clarifai.api.utils.description) = "Modules created"];</code>
+   */
+  MODULE_CREATE(200),
+  /**
+   * <code>MODULE_UPDATE = 201 [(.clarifai.api.utils.description) = "Modules updated"];</code>
+   */
+  MODULE_UPDATE(201),
+  /**
+   * <code>MODULE_DELETE = 202 [(.clarifai.api.utils.description) = "Modules deleted"];</code>
+   */
+  MODULE_DELETE(202),
+  /**
+   * <code>MODULE_VERSION_CREATE = 203 [(.clarifai.api.utils.description) = "Module versions created"];</code>
+   */
+  MODULE_VERSION_CREATE(203),
+  /**
+   * <code>MODULE_VERSION_UPDATE = 204 [(.clarifai.api.utils.description) = "Module versions updated"];</code>
+   */
+  MODULE_VERSION_UPDATE(204),
+  /**
+   * <code>MODULE_VERSION_DELETE = 205 [(.clarifai.api.utils.description) = "Module versions deleted"];</code>
+   */
+  MODULE_VERSION_DELETE(205),
   UNRECOGNIZED(-1),
   ;
 
@@ -139,6 +167,34 @@ public enum EventType
    * <code>ORGANIZATION_TEAM_APP_REMOVE = 113 [(.clarifai.api.utils.description) = "Organization team applications removed"];</code>
    */
   public static final int ORGANIZATION_TEAM_APP_REMOVE_VALUE = 113;
+  /**
+   * <pre>
+   * Event types related to modules: 200 - 299
+   * </pre>
+   *
+   * <code>MODULE_CREATE = 200 [(.clarifai.api.utils.description) = "Modules created"];</code>
+   */
+  public static final int MODULE_CREATE_VALUE = 200;
+  /**
+   * <code>MODULE_UPDATE = 201 [(.clarifai.api.utils.description) = "Modules updated"];</code>
+   */
+  public static final int MODULE_UPDATE_VALUE = 201;
+  /**
+   * <code>MODULE_DELETE = 202 [(.clarifai.api.utils.description) = "Modules deleted"];</code>
+   */
+  public static final int MODULE_DELETE_VALUE = 202;
+  /**
+   * <code>MODULE_VERSION_CREATE = 203 [(.clarifai.api.utils.description) = "Module versions created"];</code>
+   */
+  public static final int MODULE_VERSION_CREATE_VALUE = 203;
+  /**
+   * <code>MODULE_VERSION_UPDATE = 204 [(.clarifai.api.utils.description) = "Module versions updated"];</code>
+   */
+  public static final int MODULE_VERSION_UPDATE_VALUE = 204;
+  /**
+   * <code>MODULE_VERSION_DELETE = 205 [(.clarifai.api.utils.description) = "Module versions deleted"];</code>
+   */
+  public static final int MODULE_VERSION_DELETE_VALUE = 205;
 
 
   public final int getNumber() {
@@ -180,6 +236,12 @@ public enum EventType
       case 111: return ORGANIZATION_TEAM_MEMBER_REMOVE;
       case 112: return ORGANIZATION_TEAM_APP_ADD;
       case 113: return ORGANIZATION_TEAM_APP_REMOVE;
+      case 200: return MODULE_CREATE;
+      case 201: return MODULE_UPDATE;
+      case 202: return MODULE_DELETE;
+      case 203: return MODULE_VERSION_CREATE;
+      case 204: return MODULE_VERSION_UPDATE;
+      case 205: return MODULE_VERSION_DELETE;
       default: return null;
     }
   }

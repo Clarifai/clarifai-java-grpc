@@ -25,6 +25,8 @@ private static final long serialVersionUID = 0L;
     labelOrderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    inputSourceType_ = 0;
+    inputSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -131,6 +133,21 @@ private static final long serialVersionUID = 0L;
             ids_.add(s);
             break;
           }
+          case 80: {
+            int rawValue = input.readEnum();
+
+            inputSourceType_ = rawValue;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              inputSourceIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            inputSourceIds_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -162,6 +179,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
         ids_ = ids_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        inputSourceIds_ = inputSourceIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -545,6 +565,84 @@ private static final long serialVersionUID = 0L;
     return ids_.getByteString(index);
   }
 
+  public static final int INPUT_SOURCE_TYPE_FIELD_NUMBER = 10;
+  private int inputSourceType_;
+  /**
+   * <pre>
+   * (optional) input source type to filter
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+   * @return The enum numeric value on the wire for inputSourceType.
+   */
+  @java.lang.Override public int getInputSourceTypeValue() {
+    return inputSourceType_;
+  }
+  /**
+   * <pre>
+   * (optional) input source type to filter
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+   * @return The inputSourceType.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType getInputSourceType() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType result = com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.valueOf(inputSourceType_);
+    return result == null ? com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.UNRECOGNIZED : result;
+  }
+
+  public static final int INPUT_SOURCE_IDS_FIELD_NUMBER = 11;
+  private com.google.protobuf.LazyStringList inputSourceIds_;
+  /**
+   * <pre>
+   * (optional) ids of input source to be filtered
+   * </pre>
+   *
+   * <code>repeated string input_source_ids = 11;</code>
+   * @return A list containing the inputSourceIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getInputSourceIdsList() {
+    return inputSourceIds_;
+  }
+  /**
+   * <pre>
+   * (optional) ids of input source to be filtered
+   * </pre>
+   *
+   * <code>repeated string input_source_ids = 11;</code>
+   * @return The count of inputSourceIds.
+   */
+  public int getInputSourceIdsCount() {
+    return inputSourceIds_.size();
+  }
+  /**
+   * <pre>
+   * (optional) ids of input source to be filtered
+   * </pre>
+   *
+   * <code>repeated string input_source_ids = 11;</code>
+   * @param index The index of the element to return.
+   * @return The inputSourceIds at the given index.
+   */
+  public java.lang.String getInputSourceIds(int index) {
+    return inputSourceIds_.get(index);
+  }
+  /**
+   * <pre>
+   * (optional) ids of input source to be filtered
+   * </pre>
+   *
+   * <code>repeated string input_source_ids = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the inputSourceIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getInputSourceIdsBytes(int index) {
+    return inputSourceIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -585,6 +683,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < ids_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, ids_.getRaw(i));
+    }
+    if (inputSourceType_ != com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.INPUT_SOURCE_TYPE_NOT_SET.getNumber()) {
+      output.writeEnum(10, inputSourceType_);
+    }
+    for (int i = 0; i < inputSourceIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, inputSourceIds_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -651,6 +755,18 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getIdsList().size();
     }
+    if (inputSourceType_ != com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.INPUT_SOURCE_TYPE_NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(10, inputSourceType_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < inputSourceIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(inputSourceIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getInputSourceIdsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -687,6 +803,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAdditionalFieldsList())) return false;
     if (!getIdsList()
         .equals(other.getIdsList())) return false;
+    if (inputSourceType_ != other.inputSourceType_) return false;
+    if (!getInputSourceIdsList()
+        .equals(other.getInputSourceIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -728,6 +847,12 @@ private static final long serialVersionUID = 0L;
     if (getIdsCount() > 0) {
       hash = (37 * hash) + IDS_FIELD_NUMBER;
       hash = (53 * hash) + getIdsList().hashCode();
+    }
+    hash = (37 * hash) + INPUT_SOURCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + inputSourceType_;
+    if (getInputSourceIdsCount() > 0) {
+      hash = (37 * hash) + INPUT_SOURCE_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getInputSourceIdsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -888,6 +1013,10 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000008);
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
+      inputSourceType_ = 0;
+
+      inputSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -948,6 +1077,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.ids_ = ids_;
+      result.inputSourceType_ = inputSourceType_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        inputSourceIds_ = inputSourceIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.inputSourceIds_ = inputSourceIds_;
       onBuilt();
       return result;
     }
@@ -1055,6 +1190,19 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureIdsIsMutable();
           ids_.addAll(other.ids_);
+        }
+        onChanged();
+      }
+      if (other.inputSourceType_ != 0) {
+        setInputSourceTypeValue(other.getInputSourceTypeValue());
+      }
+      if (!other.inputSourceIds_.isEmpty()) {
+        if (inputSourceIds_.isEmpty()) {
+          inputSourceIds_ = other.inputSourceIds_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureInputSourceIdsIsMutable();
+          inputSourceIds_.addAll(other.inputSourceIds_);
         }
         onChanged();
       }
@@ -2152,6 +2300,226 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureIdsIsMutable();
       ids_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private int inputSourceType_ = 0;
+    /**
+     * <pre>
+     * (optional) input source type to filter
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+     * @return The enum numeric value on the wire for inputSourceType.
+     */
+    @java.lang.Override public int getInputSourceTypeValue() {
+      return inputSourceType_;
+    }
+    /**
+     * <pre>
+     * (optional) input source type to filter
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+     * @param value The enum numeric value on the wire for inputSourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputSourceTypeValue(int value) {
+      
+      inputSourceType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) input source type to filter
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+     * @return The inputSourceType.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType getInputSourceType() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType result = com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.valueOf(inputSourceType_);
+      return result == null ? com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * (optional) input source type to filter
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+     * @param value The inputSourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputSourceType(com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      inputSourceType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) input source type to filter
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskInputSource.TaskInputSourceType input_source_type = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputSourceType() {
+      
+      inputSourceType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList inputSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureInputSourceIdsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        inputSourceIds_ = new com.google.protobuf.LazyStringArrayList(inputSourceIds_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+    /**
+     * <pre>
+     * (optional) ids of input source to be filtered
+     * </pre>
+     *
+     * <code>repeated string input_source_ids = 11;</code>
+     * @return A list containing the inputSourceIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getInputSourceIdsList() {
+      return inputSourceIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * (optional) ids of input source to be filtered
+     * </pre>
+     *
+     * <code>repeated string input_source_ids = 11;</code>
+     * @return The count of inputSourceIds.
+     */
+    public int getInputSourceIdsCount() {
+      return inputSourceIds_.size();
+    }
+    /**
+     * <pre>
+     * (optional) ids of input source to be filtered
+     * </pre>
+     *
+     * <code>repeated string input_source_ids = 11;</code>
+     * @param index The index of the element to return.
+     * @return The inputSourceIds at the given index.
+     */
+    public java.lang.String getInputSourceIds(int index) {
+      return inputSourceIds_.get(index);
+    }
+    /**
+     * <pre>
+     * (optional) ids of input source to be filtered
+     * </pre>
+     *
+     * <code>repeated string input_source_ids = 11;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the inputSourceIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getInputSourceIdsBytes(int index) {
+      return inputSourceIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * (optional) ids of input source to be filtered
+     * </pre>
+     *
+     * <code>repeated string input_source_ids = 11;</code>
+     * @param index The index to set the value at.
+     * @param value The inputSourceIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputSourceIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureInputSourceIdsIsMutable();
+      inputSourceIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) ids of input source to be filtered
+     * </pre>
+     *
+     * <code>repeated string input_source_ids = 11;</code>
+     * @param value The inputSourceIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInputSourceIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureInputSourceIdsIsMutable();
+      inputSourceIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) ids of input source to be filtered
+     * </pre>
+     *
+     * <code>repeated string input_source_ids = 11;</code>
+     * @param values The inputSourceIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInputSourceIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureInputSourceIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, inputSourceIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) ids of input source to be filtered
+     * </pre>
+     *
+     * <code>repeated string input_source_ids = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputSourceIds() {
+      inputSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) ids of input source to be filtered
+     * </pre>
+     *
+     * <code>repeated string input_source_ids = 11;</code>
+     * @param value The bytes of the inputSourceIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInputSourceIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureInputSourceIdsIsMutable();
+      inputSourceIds_.add(value);
       onChanged();
       return this;
     }

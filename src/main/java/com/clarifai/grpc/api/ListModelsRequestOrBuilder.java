@@ -46,7 +46,7 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -56,7 +56,7 @@ public interface ListModelsRequestOrBuilder extends
       getAdditionalFieldsList();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -65,7 +65,7 @@ public interface ListModelsRequestOrBuilder extends
   int getAdditionalFieldsCount();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -75,7 +75,7 @@ public interface ListModelsRequestOrBuilder extends
   java.lang.String getAdditionalFields(int index);
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -553,7 +553,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5396
+   *     See proto/clarifai/api/service.proto;l=5462
    * @return The query.
    */
   @java.lang.Deprecated java.lang.String getQuery();
@@ -565,7 +565,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5396
+   *     See proto/clarifai/api/service.proto;l=5462
    * @return The bytes for query.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -579,7 +579,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5399
+   *     See proto/clarifai/api/service.proto;l=5465
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -591,7 +591,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5399
+   *     See proto/clarifai/api/service.proto;l=5465
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -605,7 +605,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5402
+   *     See proto/clarifai/api/service.proto;l=5468
    * @return The filterByUserId.
    */
   @java.lang.Deprecated boolean getFilterByUserId();
