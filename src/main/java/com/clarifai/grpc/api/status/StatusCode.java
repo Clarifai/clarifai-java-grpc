@@ -2046,6 +2046,10 @@ public enum StatusCode
    */
   INTERNAL_AZURE_UNCATEGORIZED(98017),
   /**
+   * <code>INTERNAL_VECTORDB_UNCATEGORIZED = 98018;</code>
+   */
+  INTERNAL_VECTORDB_UNCATEGORIZED(98018),
+  /**
    * <pre>
    * Uncategorized: 99xxx: move off as soon as known
    * </pre>
@@ -4125,6 +4129,10 @@ public enum StatusCode
    */
   public static final int INTERNAL_AZURE_UNCATEGORIZED_VALUE = 98017;
   /**
+   * <code>INTERNAL_VECTORDB_UNCATEGORIZED = 98018;</code>
+   */
+  public static final int INTERNAL_VECTORDB_UNCATEGORIZED_VALUE = 98018;
+  /**
    * <pre>
    * Uncategorized: 99xxx: move off as soon as known
    * </pre>
@@ -4570,6 +4578,7 @@ public enum StatusCode
       case 98015: return INTERNAL_REDIS_UNCATEGORIZED;
       case 98016: return INTERNAL_AWS_UNCATEGORIZED;
       case 98017: return INTERNAL_AZURE_UNCATEGORIZED;
+      case 98018: return INTERNAL_VECTORDB_UNCATEGORIZED;
       case 99001: return CONN_UNCATEGORIZED;
       case 99002: return MODEL_UNCATEGORIZED;
       case 99003: return INPUT_UNCATEGORIZED;

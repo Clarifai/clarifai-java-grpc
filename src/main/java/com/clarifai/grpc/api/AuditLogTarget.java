@@ -137,6 +137,34 @@ private static final long serialVersionUID = 0L;
             targetCase_ = 6;
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.Workflow.Builder subBuilder = null;
+            if (targetCase_ == 7) {
+              subBuilder = ((com.clarifai.grpc.api.Workflow) target_).toBuilder();
+            }
+            target_ =
+                input.readMessage(com.clarifai.grpc.api.Workflow.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Workflow) target_);
+              target_ = subBuilder.buildPartial();
+            }
+            targetCase_ = 7;
+            break;
+          }
+          case 66: {
+            com.clarifai.grpc.api.WorkflowVersion.Builder subBuilder = null;
+            if (targetCase_ == 8) {
+              subBuilder = ((com.clarifai.grpc.api.WorkflowVersion) target_).toBuilder();
+            }
+            target_ =
+                input.readMessage(com.clarifai.grpc.api.WorkflowVersion.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.WorkflowVersion) target_);
+              target_ = subBuilder.buildPartial();
+            }
+            targetCase_ = 8;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -182,6 +210,8 @@ private static final long serialVersionUID = 0L;
     APP(4),
     MODULE(5),
     MODULE_VERSION(6),
+    WORKFLOW(7),
+    WORKFLOW_VERSION(8),
     TARGET_NOT_SET(0);
     private final int value;
     private TargetCase(int value) {
@@ -205,6 +235,8 @@ private static final long serialVersionUID = 0L;
         case 4: return APP;
         case 5: return MODULE;
         case 6: return MODULE_VERSION;
+        case 7: return WORKFLOW;
+        case 8: return WORKFLOW_VERSION;
         case 0: return TARGET_NOT_SET;
         default: return null;
       }
@@ -406,6 +438,68 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.ModuleVersion.getDefaultInstance();
   }
 
+  public static final int WORKFLOW_FIELD_NUMBER = 7;
+  /**
+   * <code>.clarifai.api.Workflow workflow = 7;</code>
+   * @return Whether the workflow field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkflow() {
+    return targetCase_ == 7;
+  }
+  /**
+   * <code>.clarifai.api.Workflow workflow = 7;</code>
+   * @return The workflow.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Workflow getWorkflow() {
+    if (targetCase_ == 7) {
+       return (com.clarifai.grpc.api.Workflow) target_;
+    }
+    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Workflow workflow = 7;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
+    if (targetCase_ == 7) {
+       return (com.clarifai.grpc.api.Workflow) target_;
+    }
+    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+  }
+
+  public static final int WORKFLOW_VERSION_FIELD_NUMBER = 8;
+  /**
+   * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+   * @return Whether the workflowVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkflowVersion() {
+    return targetCase_ == 8;
+  }
+  /**
+   * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+   * @return The workflowVersion.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowVersion getWorkflowVersion() {
+    if (targetCase_ == 8) {
+       return (com.clarifai.grpc.api.WorkflowVersion) target_;
+    }
+    return com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowVersionOrBuilder getWorkflowVersionOrBuilder() {
+    if (targetCase_ == 8) {
+       return (com.clarifai.grpc.api.WorkflowVersion) target_;
+    }
+    return com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -437,6 +531,12 @@ private static final long serialVersionUID = 0L;
     }
     if (targetCase_ == 6) {
       output.writeMessage(6, (com.clarifai.grpc.api.ModuleVersion) target_);
+    }
+    if (targetCase_ == 7) {
+      output.writeMessage(7, (com.clarifai.grpc.api.Workflow) target_);
+    }
+    if (targetCase_ == 8) {
+      output.writeMessage(8, (com.clarifai.grpc.api.WorkflowVersion) target_);
     }
     unknownFields.writeTo(output);
   }
@@ -470,6 +570,14 @@ private static final long serialVersionUID = 0L;
     if (targetCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.clarifai.grpc.api.ModuleVersion) target_);
+    }
+    if (targetCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.clarifai.grpc.api.Workflow) target_);
+    }
+    if (targetCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, (com.clarifai.grpc.api.WorkflowVersion) target_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -512,6 +620,14 @@ private static final long serialVersionUID = 0L;
         if (!getModuleVersion()
             .equals(other.getModuleVersion())) return false;
         break;
+      case 7:
+        if (!getWorkflow()
+            .equals(other.getWorkflow())) return false;
+        break;
+      case 8:
+        if (!getWorkflowVersion()
+            .equals(other.getWorkflowVersion())) return false;
+        break;
       case 0:
       default:
     }
@@ -550,6 +666,14 @@ private static final long serialVersionUID = 0L;
       case 6:
         hash = (37 * hash) + MODULE_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getModuleVersion().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkflow().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + WORKFLOW_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkflowVersion().hashCode();
         break;
       case 0:
       default:
@@ -762,6 +886,20 @@ private static final long serialVersionUID = 0L;
           result.target_ = moduleVersionBuilder_.build();
         }
       }
+      if (targetCase_ == 7) {
+        if (workflowBuilder_ == null) {
+          result.target_ = target_;
+        } else {
+          result.target_ = workflowBuilder_.build();
+        }
+      }
+      if (targetCase_ == 8) {
+        if (workflowVersionBuilder_ == null) {
+          result.target_ = target_;
+        } else {
+          result.target_ = workflowVersionBuilder_.build();
+        }
+      }
       result.targetCase_ = targetCase_;
       onBuilt();
       return result;
@@ -834,6 +972,14 @@ private static final long serialVersionUID = 0L;
         }
         case MODULE_VERSION: {
           mergeModuleVersion(other.getModuleVersion());
+          break;
+        }
+        case WORKFLOW: {
+          mergeWorkflow(other.getWorkflow());
+          break;
+        }
+        case WORKFLOW_VERSION: {
+          mergeWorkflowVersion(other.getWorkflowVersion());
           break;
         }
         case TARGET_NOT_SET: {
@@ -1734,6 +1880,290 @@ private static final long serialVersionUID = 0L;
       targetCase_ = 6;
       onChanged();;
       return moduleVersionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> workflowBuilder_;
+    /**
+     * <code>.clarifai.api.Workflow workflow = 7;</code>
+     * @return Whether the workflow field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkflow() {
+      return targetCase_ == 7;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 7;</code>
+     * @return The workflow.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Workflow getWorkflow() {
+      if (workflowBuilder_ == null) {
+        if (targetCase_ == 7) {
+          return (com.clarifai.grpc.api.Workflow) target_;
+        }
+        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+      } else {
+        if (targetCase_ == 7) {
+          return workflowBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 7;</code>
+     */
+    public Builder setWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (workflowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        workflowBuilder_.setMessage(value);
+      }
+      targetCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 7;</code>
+     */
+    public Builder setWorkflow(
+        com.clarifai.grpc.api.Workflow.Builder builderForValue) {
+      if (workflowBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        workflowBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 7;</code>
+     */
+    public Builder mergeWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (workflowBuilder_ == null) {
+        if (targetCase_ == 7 &&
+            target_ != com.clarifai.grpc.api.Workflow.getDefaultInstance()) {
+          target_ = com.clarifai.grpc.api.Workflow.newBuilder((com.clarifai.grpc.api.Workflow) target_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 7) {
+          workflowBuilder_.mergeFrom(value);
+        } else {
+          workflowBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 7;</code>
+     */
+    public Builder clearWorkflow() {
+      if (workflowBuilder_ == null) {
+        if (targetCase_ == 7) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 7) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        workflowBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 7;</code>
+     */
+    public com.clarifai.grpc.api.Workflow.Builder getWorkflowBuilder() {
+      return getWorkflowFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 7;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
+      if ((targetCase_ == 7) && (workflowBuilder_ != null)) {
+        return workflowBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 7) {
+          return (com.clarifai.grpc.api.Workflow) target_;
+        }
+        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> 
+        getWorkflowFieldBuilder() {
+      if (workflowBuilder_ == null) {
+        if (!(targetCase_ == 7)) {
+          target_ = com.clarifai.grpc.api.Workflow.getDefaultInstance();
+        }
+        workflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder>(
+                (com.clarifai.grpc.api.Workflow) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 7;
+      onChanged();;
+      return workflowBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder> workflowVersionBuilder_;
+    /**
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     * @return Whether the workflowVersion field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkflowVersion() {
+      return targetCase_ == 8;
+    }
+    /**
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     * @return The workflowVersion.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.WorkflowVersion getWorkflowVersion() {
+      if (workflowVersionBuilder_ == null) {
+        if (targetCase_ == 8) {
+          return (com.clarifai.grpc.api.WorkflowVersion) target_;
+        }
+        return com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance();
+      } else {
+        if (targetCase_ == 8) {
+          return workflowVersionBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     */
+    public Builder setWorkflowVersion(com.clarifai.grpc.api.WorkflowVersion value) {
+      if (workflowVersionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        workflowVersionBuilder_.setMessage(value);
+      }
+      targetCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     */
+    public Builder setWorkflowVersion(
+        com.clarifai.grpc.api.WorkflowVersion.Builder builderForValue) {
+      if (workflowVersionBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        workflowVersionBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     */
+    public Builder mergeWorkflowVersion(com.clarifai.grpc.api.WorkflowVersion value) {
+      if (workflowVersionBuilder_ == null) {
+        if (targetCase_ == 8 &&
+            target_ != com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance()) {
+          target_ = com.clarifai.grpc.api.WorkflowVersion.newBuilder((com.clarifai.grpc.api.WorkflowVersion) target_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 8) {
+          workflowVersionBuilder_.mergeFrom(value);
+        } else {
+          workflowVersionBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     */
+    public Builder clearWorkflowVersion() {
+      if (workflowVersionBuilder_ == null) {
+        if (targetCase_ == 8) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 8) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        workflowVersionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowVersion.Builder getWorkflowVersionBuilder() {
+      return getWorkflowVersionFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.WorkflowVersionOrBuilder getWorkflowVersionOrBuilder() {
+      if ((targetCase_ == 8) && (workflowVersionBuilder_ != null)) {
+        return workflowVersionBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 8) {
+          return (com.clarifai.grpc.api.WorkflowVersion) target_;
+        }
+        return com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder> 
+        getWorkflowVersionFieldBuilder() {
+      if (workflowVersionBuilder_ == null) {
+        if (!(targetCase_ == 8)) {
+          target_ = com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance();
+        }
+        workflowVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder>(
+                (com.clarifai.grpc.api.WorkflowVersion) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 8;
+      onChanged();;
+      return workflowVersionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

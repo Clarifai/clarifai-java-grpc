@@ -2220,141 +2220,155 @@ public final class Resources {
       "nner_method_type\030\001 \001(\0162\036.clarifai.api.Ru" +
       "nnerMethodType\022+\n\006status\030\002 \001(\0132\033.clarifa" +
       "i.api.status.Status\022\025\n\rprocessing_id\030\003 \001" +
-      "(\t\"\207\002\n\016AuditLogTarget\022\"\n\004user\030\001 \001(\0132\022.cl" +
+      "(\t\"\356\002\n\016AuditLogTarget\022\"\n\004user\030\001 \001(\0132\022.cl" +
       "arifai.api.UserH\000\022\"\n\004role\030\002 \001(\0132\022.clarif" +
       "ai.api.RoleH\000\022\"\n\004team\030\003 \001(\0132\022.clarifai.a" +
       "pi.TeamH\000\022 \n\003app\030\004 \001(\0132\021.clarifai.api.Ap" +
       "pH\000\022&\n\006module\030\005 \001(\0132\024.clarifai.api.Modul" +
       "eH\000\0225\n\016module_version\030\006 \001(\0132\033.clarifai.a" +
-      "pi.ModuleVersionH\000B\010\n\006target\"\233\002\n\rAuditLo" +
-      "gEntry\022-\n\ttimestamp\030\001 \001(\0132\032.google.proto" +
-      "buf.Timestamp\022 \n\004user\030\002 \001(\0132\022.clarifai.a" +
-      "pi.User\022*\n\toperation\030\003 \001(\0162\027.clarifai.ap" +
-      "i.EventType\022\023\n\013description\030\004 \001(\t\022-\n\007targ" +
-      "ets\030\005 \003(\0132\034.clarifai.api.AuditLogTarget\022" +
-      "\017\n\007details\030\006 \003(\t\022\025\n\007success\030\007 \001(\010B\004\200\265\030\001\022" +
-      "\016\n\006req_id\030\010 \001(\t\022\021\n\tsource_ip\030\t \001(\t\"\244\002\n\rA" +
-      "uditLogQuery\0222\n\016timestamp_from\030\001 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\0220\n\014timestamp_to" +
-      "\030\002 \001(\0132\032.google.protobuf.Timestamp\022\020\n\010us" +
-      "er_ids\030\003 \003(\t\022+\n\noperations\030\004 \003(\0162\027.clari" +
-      "fai.api.EventType\022-\n\007targets\030\005 \003(\0132\034.cla" +
-      "rifai.api.AuditLogTarget\022+\n\007success\030\006 \001(" +
-      "\0132\032.google.protobuf.BoolValue\022\022\n\nsource_" +
-      "ips\030\007 \003(\t\"\243\003\n\037WorkflowVersionEvaluationM" +
-      "etric\022\n\n\002id\030\001 \001(\t\022\017\n\007summary\030\002 \001(\t\022\023\n\013de" +
-      "scription\030\003 \001(\t\022I\n\tdata_type\030\004 \001(\01626.cla" +
-      "rifai.api.WorkflowVersionEvaluationMetri" +
-      "c.DataType\022[\n\022visualisation_type\030\005 \001(\0162?" +
-      ".clarifai.api.WorkflowVersionEvaluationM" +
-      "etric.VisualisationType\",\n\010DataType\022\025\n\021D" +
-      "ATA_TYPE_NOT_SET\020\000\022\t\n\005FLOAT\020\001\"x\n\021Visuali" +
-      "sationType\022\036\n\032VISUALIZATION_TYPE_NOT_SET" +
-      "\020\000\022\024\n\020CONFUSION_MATRIX\020\001\022\032\n\026PRECISION_RE" +
-      "CALL_CURVE\020\002\022\021\n\rROC_AUC_CURVE\020\003\"\252\002\n!Work" +
-      "flowVersionEvaluationTemplate\022\n\n\002id\030\001 \001(" +
-      "\t\022\023\n\013description\030\002 \001(\t\022L\n\ntask_types\030\003 \003" +
-      "(\01628.clarifai.api.WorkflowVersionEvaluat" +
-      "ionTemplate.TaskType\022Z\n#workflow_version" +
-      "_evaluation_metrics\030\004 \003(\0132-.clarifai.api" +
-      ".WorkflowVersionEvaluationMetric\":\n\010Task" +
-      "Type\022\025\n\021TASK_TYPE_NOT_SET\020\000\022\027\n\023TEXT_CLAS" +
-      "SIFICATION\020\001\"\213\001\n\010LogEntry\022\017\n\007message\030\001 \001" +
-      "(\t\022\020\n\010log_type\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\0221\n\004met" +
-      "a\030\t \001(\0132#.clarifai.api.ComputeSourceMeta" +
-      "dataJ\004\010\004\020\005J\004\010\005\020\006J\004\010\006\020\007J\004\010\007\020\010J\004\010\010\020\t\"\323\001\n\025C" +
-      "omputeSourceMetadata\022/\n\013user_app_id\030\001 \001(" +
-      "\0132\032.clarifai.api.UserAppIDSet\022\020\n\010model_i" +
-      "d\030\002 \001(\t\022\030\n\020model_version_id\030\003 \001(\t\022\023\n\013wor" +
-      "kflow_id\030\004 \001(\t\022\032\n\022compute_cluster_id\030\006 \001" +
-      "(\t\022\023\n\013nodepool_id\030\007 \001(\t\022\021\n\trunner_id\030\010 \001" +
-      "(\tJ\004\010\005\020\006*^\n\024WorkflowModelUseCase\022#\n\037WORK" +
-      "FLOW_MODEL_USE_CASE_NOT_SET\020\000\022\022\n\016CLASSIF" +
-      "ICATION\020\001\022\r\n\tDETECTION\020\002*\220\001\n\033DatasetVers" +
-      "ionRequestOrigin\022*\n&DATASET_VERSION_REQU" +
-      "EST_ORIGIN_NOT_SET\020\000\022\n\n\006MANUAL\020\001\022\014\n\010TRAI" +
-      "NING\020\002\022\025\n\021EVAL_GROUND_TRUTH\020\003\022\024\n\020EVAL_PR" +
-      "EDICTIONS\020\004*\371\001\n\036DatasetVersionMetricsGro" +
-      "upType\022.\n*DATASET_VERSION_METRICS_GROUP_" +
-      "TYPE_NOT_SET\020\000\022\016\n\nINPUT_TYPE\020\002\022\016\n\nCONCEP" +
-      "T_ID\020\n\022\022\n\016CONCEPTS_COUNT\020\013\022\030\n\024BOUNDING_B" +
-      "OXES_COUNT\020\024\022\022\n\016POLYGONS_COUNT\020\025\022\020\n\014POIN" +
-      "TS_COUNT\020\026\022\017\n\013MASKS_COUNT\020\027\022\020\n\014PIXELS_CO" +
-      "UNT\020\036\022\020\n\014ASPECT_RATIO\020\037*\205\001\n\032DatasetVersi" +
-      "onExportFormat\022)\n%DATASET_VERSION_EXPORT" +
-      "_FORMAT_NOT_SET\020\000\022\032\n\026CLARIFAI_DATA_PROTO" +
-      "BUF\020\001\022\026\n\022CLARIFAI_DATA_JSON\020\003\022\010\n\004COCO\020\002*" +
-      "H\n\020ExpirationAction\022\035\n\031EXPIRATION_ACTION" +
-      "_NOT_SET\020\000\022\t\n\005DELAY\020\001\022\n\n\006EXPIRY\020\002*M\n\014Lic" +
-      "enseScope\022\031\n\025LICENSE_SCOPE_NOT_SET\020\000\022\013\n\007" +
-      "PREDICT\020\001\022\t\n\005TRAIN\020\002\022\n\n\006SEARCH\020\003*\\\n\013Lice" +
-      "nseType\022\030\n\024UNKNOWN_LICENSE_TYPE\020\000\022\017\n\013FIR" +
-      "ST_PARTY\020\001\022\017\n\013OPEN_SOURCE\020\002\022\021\n\rCLOSED_SO" +
-      "URCE\020\003*P\n\010DataType\022\r\n\tUNDEFINED\020\000\022\n\n\006STR" +
-      "ING\020\001\022\t\n\005UINT8\020\002\022\t\n\005INT32\020\003\022\t\n\005INT64\020\004\022\010" +
-      "\n\004FP32\020\005*\217\001\n\017ValueComparator\022\035\n\031CONCEPT_" +
-      "THRESHOLD_NOT_SET\020\000\022\020\n\014GREATER_THAN\020\001\022\031\n" +
-      "\025GREATER_THAN_OR_EQUAL\020\002\022\r\n\tLESS_THAN\020\003\022" +
-      "\026\n\022LESS_THAN_OR_EQUAL\020\004\022\t\n\005EQUAL\020\005*\201\001\n\016E" +
-      "valuationType\022\r\n\tUndefined\020\000\022\022\n\016Classifi" +
-      "cation\020\001\022\r\n\tDetection\020\002\022\020\n\014Segmentation\020" +
-      "\003\022\016\n\nClustering\020\004\022\013\n\007Tracker\020\005\022\016\n\nGenera" +
-      "tion\020\006*f\n\014APIEventType\022\032\n\026API_EVENT_TYPE" +
-      "_NOT_SET\020\000\022\023\n\017ON_PREM_PREDICT\020\001\022\021\n\rON_PR" +
-      "EM_TRAIN\020\002\022\022\n\016ON_PREM_SEARCH\020\003*<\n\021UsageI" +
-      "ntervalType\022\t\n\005undef\020\000\022\007\n\003day\020\001\022\t\n\005month" +
-      "\020\002\022\010\n\004year\020\003*}\n\022AnnotationDataType\022 \n\034AN" +
-      "NOTATION_DATA_TYPE_NOT_SET\020\000\022\007\n\003TAG\020\001\022\020\n" +
-      "\014BOUNDING_BOX\020\002\022\013\n\007POLYGON\020\004\022\t\n\005POINT\020\010\022" +
-      "\010\n\004SPAN\020\020\022\010\n\004MASK\020 *\035\n\010RoleType\022\010\n\004TEAM\020" +
-      "\000\022\007\n\003ORG\020\001*$\n\020StatValueAggType\022\007\n\003SUM\020\000\022" +
-      "\007\n\003AVG\020\001*`\n\017StatTimeAggType\022\017\n\013NO_TIME_A" +
-      "GG\020\000\022\010\n\004YEAR\020\001\022\t\n\005MONTH\020\002\022\010\n\004WEEK\020\003\022\007\n\003D" +
-      "AY\020\004\022\010\n\004HOUR\020\005\022\n\n\006MINUTE\020\006*b\n\023Validation" +
-      "ErrorType\022!\n\035VALIDATION_ERROR_TYPE_NOT_S" +
-      "ET\020\000\022\016\n\nRESTRICTED\020\001\022\014\n\010DATABASE\020\002\022\n\n\006FO" +
-      "RMAT\020\003*[\n\031InputIDConflictResolution\022(\n$I" +
-      "NPUT_ID_CONFLICT_RESOLUTION_NOT_SET\020\000\022\010\n" +
-      "\004SKIP\020\001\022\n\n\006SUFFIX\020\002*s\n\020RunnerMethodType\022" +
-      "\013\n\007UNKNOWN\020\000\022\017\n\013UNARY_UNARY\020\001\022\023\n\017UNARY_S" +
-      "TREAMING\020\002\022\023\n\017STREAMING_UNARY\020\003\022\027\n\023STREA" +
-      "MING_STREAMING\020\004*\305\n\n\tEventType\022\026\n\022EVENT_" +
-      "TYPE_NOT_SET\020\000\022:\n\027ORGANIZATION_MEMBER_AD" +
-      "D\020d\032\035\302>\032Organization members added\022F\n\032OR" +
-      "GANIZATION_MEMBER_CHANGE\020e\032&\302>#Organizat" +
-      "ion members\' roles changed\022?\n\032ORGANIZATI" +
-      "ON_MEMBER_REMOVE\020f\032\037\302>\034Organization memb" +
-      "ers removed\022U\n%ORGANIZATION_MEMBER_INVIT" +
-      "ATION_CREATE\020g\032*\302>\'Organization member i" +
-      "nvitations created\022V\n%ORGANIZATION_MEMBE" +
-      "R_INVITATION_CANCEL\020h\032+\302>(Organization m" +
-      "ember invitations canceled\022V\n%ORGANIZATI" +
-      "ON_MEMBER_INVITATION_ACCEPT\020i\032+\302>(Organi" +
-      "zation member invitations accepted\022W\n&OR" +
-      "GANIZATION_MEMBER_INVITATION_DECLINE\020j\032+" +
-      "\302>(Organization member invitations decli" +
-      "ned\022;\n\030ORGANIZATION_TEAM_CREATE\020k\032\035\302>\032Or" +
-      "ganization teams created\022;\n\030ORGANIZATION" +
-      "_TEAM_UPDATE\020l\032\035\302>\032Organization teams up" +
-      "dated\022;\n\030ORGANIZATION_TEAM_DELETE\020m\032\035\302>\032" +
-      "Organization teams deleted\022D\n\034ORGANIZATI",
-      "ON_TEAM_MEMBER_ADD\020n\032\"\302>\037Organization te" +
-      "am members added\022I\n\037ORGANIZATION_TEAM_ME" +
-      "MBER_REMOVE\020o\032$\302>!Organization team memb" +
-      "ers removed\022F\n\031ORGANIZATION_TEAM_APP_ADD" +
-      "\020p\032\'\302>$Organization team applications ad" +
-      "ded\022K\n\034ORGANIZATION_TEAM_APP_REMOVE\020q\032)\302" +
-      ">&Organization team applications removed" +
-      "\022&\n\rMODULE_CREATE\020\310\001\032\022\302>\017Modules created" +
-      "\022&\n\rMODULE_UPDATE\020\311\001\032\022\302>\017Modules updated" +
-      "\022&\n\rMODULE_DELETE\020\312\001\032\022\302>\017Modules deleted" +
-      "\0226\n\025MODULE_VERSION_CREATE\020\313\001\032\032\302>\027Module " +
-      "versions created\0226\n\025MODULE_VERSION_UPDAT" +
-      "E\020\314\001\032\032\302>\027Module versions updated\0226\n\025MODU" +
-      "LE_VERSION_DELETE\020\315\001\032\032\302>\027Module versions" +
-      " deletedBY\n\025com.clarifai.grpc.apiP\001Z7git" +
-      "hub.com/Clarifai/clarifai-go-grpc/proto/" +
-      "clarifai/api\242\002\004CAIPb\006proto3"
+      "pi.ModuleVersionH\000\022*\n\010workflow\030\007 \001(\0132\026.c" +
+      "larifai.api.WorkflowH\000\0229\n\020workflow_versi" +
+      "on\030\010 \001(\0132\035.clarifai.api.WorkflowVersionH" +
+      "\000B\010\n\006target\"\233\002\n\rAuditLogEntry\022-\n\ttimesta" +
+      "mp\030\001 \001(\0132\032.google.protobuf.Timestamp\022 \n\004" +
+      "user\030\002 \001(\0132\022.clarifai.api.User\022*\n\toperat" +
+      "ion\030\003 \001(\0162\027.clarifai.api.EventType\022\023\n\013de" +
+      "scription\030\004 \001(\t\022-\n\007targets\030\005 \003(\0132\034.clari" +
+      "fai.api.AuditLogTarget\022\017\n\007details\030\006 \003(\t\022" +
+      "\025\n\007success\030\007 \001(\010B\004\200\265\030\001\022\016\n\006req_id\030\010 \001(\t\022\021" +
+      "\n\tsource_ip\030\t \001(\t\"\244\002\n\rAuditLogQuery\0222\n\016t" +
+      "imestamp_from\030\001 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\0220\n\014timestamp_to\030\002 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022\020\n\010user_ids\030\003 \003(\t\022+\n\no" +
+      "perations\030\004 \003(\0162\027.clarifai.api.EventType" +
+      "\022-\n\007targets\030\005 \003(\0132\034.clarifai.api.AuditLo" +
+      "gTarget\022+\n\007success\030\006 \001(\0132\032.google.protob" +
+      "uf.BoolValue\022\022\n\nsource_ips\030\007 \003(\t\"\243\003\n\037Wor" +
+      "kflowVersionEvaluationMetric\022\n\n\002id\030\001 \001(\t" +
+      "\022\017\n\007summary\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022I" +
+      "\n\tdata_type\030\004 \001(\01626.clarifai.api.Workflo" +
+      "wVersionEvaluationMetric.DataType\022[\n\022vis" +
+      "ualisation_type\030\005 \001(\0162?.clarifai.api.Wor" +
+      "kflowVersionEvaluationMetric.Visualisati" +
+      "onType\",\n\010DataType\022\025\n\021DATA_TYPE_NOT_SET\020" +
+      "\000\022\t\n\005FLOAT\020\001\"x\n\021VisualisationType\022\036\n\032VIS" +
+      "UALIZATION_TYPE_NOT_SET\020\000\022\024\n\020CONFUSION_M" +
+      "ATRIX\020\001\022\032\n\026PRECISION_RECALL_CURVE\020\002\022\021\n\rR" +
+      "OC_AUC_CURVE\020\003\"\252\002\n!WorkflowVersionEvalua" +
+      "tionTemplate\022\n\n\002id\030\001 \001(\t\022\023\n\013description\030" +
+      "\002 \001(\t\022L\n\ntask_types\030\003 \003(\01628.clarifai.api" +
+      ".WorkflowVersionEvaluationTemplate.TaskT" +
+      "ype\022Z\n#workflow_version_evaluation_metri" +
+      "cs\030\004 \003(\0132-.clarifai.api.WorkflowVersionE" +
+      "valuationMetric\":\n\010TaskType\022\025\n\021TASK_TYPE" +
+      "_NOT_SET\020\000\022\027\n\023TEXT_CLASSIFICATION\020\001\"\213\001\n\010" +
+      "LogEntry\022\017\n\007message\030\001 \001(\t\022\020\n\010log_type\030\002 " +
+      "\001(\t\022\013\n\003url\030\003 \001(\t\0221\n\004meta\030\t \001(\0132#.clarifa" +
+      "i.api.ComputeSourceMetadataJ\004\010\004\020\005J\004\010\005\020\006J" +
+      "\004\010\006\020\007J\004\010\007\020\010J\004\010\010\020\t\"\323\001\n\025ComputeSourceMetad" +
+      "ata\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api." +
+      "UserAppIDSet\022\020\n\010model_id\030\002 \001(\t\022\030\n\020model_" +
+      "version_id\030\003 \001(\t\022\023\n\013workflow_id\030\004 \001(\t\022\032\n" +
+      "\022compute_cluster_id\030\006 \001(\t\022\023\n\013nodepool_id" +
+      "\030\007 \001(\t\022\021\n\trunner_id\030\010 \001(\tJ\004\010\005\020\006*^\n\024Workf" +
+      "lowModelUseCase\022#\n\037WORKFLOW_MODEL_USE_CA" +
+      "SE_NOT_SET\020\000\022\022\n\016CLASSIFICATION\020\001\022\r\n\tDETE" +
+      "CTION\020\002*\220\001\n\033DatasetVersionRequestOrigin\022" +
+      "*\n&DATASET_VERSION_REQUEST_ORIGIN_NOT_SE" +
+      "T\020\000\022\n\n\006MANUAL\020\001\022\014\n\010TRAINING\020\002\022\025\n\021EVAL_GR" +
+      "OUND_TRUTH\020\003\022\024\n\020EVAL_PREDICTIONS\020\004*\371\001\n\036D" +
+      "atasetVersionMetricsGroupType\022.\n*DATASET" +
+      "_VERSION_METRICS_GROUP_TYPE_NOT_SET\020\000\022\016\n" +
+      "\nINPUT_TYPE\020\002\022\016\n\nCONCEPT_ID\020\n\022\022\n\016CONCEPT" +
+      "S_COUNT\020\013\022\030\n\024BOUNDING_BOXES_COUNT\020\024\022\022\n\016P" +
+      "OLYGONS_COUNT\020\025\022\020\n\014POINTS_COUNT\020\026\022\017\n\013MAS" +
+      "KS_COUNT\020\027\022\020\n\014PIXELS_COUNT\020\036\022\020\n\014ASPECT_R" +
+      "ATIO\020\037*\205\001\n\032DatasetVersionExportFormat\022)\n" +
+      "%DATASET_VERSION_EXPORT_FORMAT_NOT_SET\020\000" +
+      "\022\032\n\026CLARIFAI_DATA_PROTOBUF\020\001\022\026\n\022CLARIFAI" +
+      "_DATA_JSON\020\003\022\010\n\004COCO\020\002*H\n\020ExpirationActi" +
+      "on\022\035\n\031EXPIRATION_ACTION_NOT_SET\020\000\022\t\n\005DEL" +
+      "AY\020\001\022\n\n\006EXPIRY\020\002*M\n\014LicenseScope\022\031\n\025LICE" +
+      "NSE_SCOPE_NOT_SET\020\000\022\013\n\007PREDICT\020\001\022\t\n\005TRAI" +
+      "N\020\002\022\n\n\006SEARCH\020\003*\\\n\013LicenseType\022\030\n\024UNKNOW" +
+      "N_LICENSE_TYPE\020\000\022\017\n\013FIRST_PARTY\020\001\022\017\n\013OPE" +
+      "N_SOURCE\020\002\022\021\n\rCLOSED_SOURCE\020\003*P\n\010DataTyp" +
+      "e\022\r\n\tUNDEFINED\020\000\022\n\n\006STRING\020\001\022\t\n\005UINT8\020\002\022" +
+      "\t\n\005INT32\020\003\022\t\n\005INT64\020\004\022\010\n\004FP32\020\005*\217\001\n\017Valu" +
+      "eComparator\022\035\n\031CONCEPT_THRESHOLD_NOT_SET" +
+      "\020\000\022\020\n\014GREATER_THAN\020\001\022\031\n\025GREATER_THAN_OR_" +
+      "EQUAL\020\002\022\r\n\tLESS_THAN\020\003\022\026\n\022LESS_THAN_OR_E" +
+      "QUAL\020\004\022\t\n\005EQUAL\020\005*\201\001\n\016EvaluationType\022\r\n\t" +
+      "Undefined\020\000\022\022\n\016Classification\020\001\022\r\n\tDetec" +
+      "tion\020\002\022\020\n\014Segmentation\020\003\022\016\n\nClustering\020\004" +
+      "\022\013\n\007Tracker\020\005\022\016\n\nGeneration\020\006*f\n\014APIEven" +
+      "tType\022\032\n\026API_EVENT_TYPE_NOT_SET\020\000\022\023\n\017ON_" +
+      "PREM_PREDICT\020\001\022\021\n\rON_PREM_TRAIN\020\002\022\022\n\016ON_" +
+      "PREM_SEARCH\020\003*<\n\021UsageIntervalType\022\t\n\005un" +
+      "def\020\000\022\007\n\003day\020\001\022\t\n\005month\020\002\022\010\n\004year\020\003*}\n\022A" +
+      "nnotationDataType\022 \n\034ANNOTATION_DATA_TYP" +
+      "E_NOT_SET\020\000\022\007\n\003TAG\020\001\022\020\n\014BOUNDING_BOX\020\002\022\013" +
+      "\n\007POLYGON\020\004\022\t\n\005POINT\020\010\022\010\n\004SPAN\020\020\022\010\n\004MASK" +
+      "\020 *\035\n\010RoleType\022\010\n\004TEAM\020\000\022\007\n\003ORG\020\001*$\n\020Sta" +
+      "tValueAggType\022\007\n\003SUM\020\000\022\007\n\003AVG\020\001*`\n\017StatT" +
+      "imeAggType\022\017\n\013NO_TIME_AGG\020\000\022\010\n\004YEAR\020\001\022\t\n" +
+      "\005MONTH\020\002\022\010\n\004WEEK\020\003\022\007\n\003DAY\020\004\022\010\n\004HOUR\020\005\022\n\n" +
+      "\006MINUTE\020\006*b\n\023ValidationErrorType\022!\n\035VALI" +
+      "DATION_ERROR_TYPE_NOT_SET\020\000\022\016\n\nRESTRICTE" +
+      "D\020\001\022\014\n\010DATABASE\020\002\022\n\n\006FORMAT\020\003*[\n\031InputID" +
+      "ConflictResolution\022(\n$INPUT_ID_CONFLICT_" +
+      "RESOLUTION_NOT_SET\020\000\022\010\n\004SKIP\020\001\022\n\n\006SUFFIX" +
+      "\020\002*s\n\020RunnerMethodType\022\013\n\007UNKNOWN\020\000\022\017\n\013U" +
+      "NARY_UNARY\020\001\022\023\n\017UNARY_STREAMING\020\002\022\023\n\017STR" +
+      "EAMING_UNARY\020\003\022\027\n\023STREAMING_STREAMING\020\004*" +
+      "\224\016\n\tEventType\022\026\n\022EVENT_TYPE_NOT_SET\020\000\022:\n" +
+      "\027ORGANIZATION_MEMBER_ADD\020d\032\035\302>\032Organizat" +
+      "ion members added\022F\n\032ORGANIZATION_MEMBER" +
+      "_CHANGE\020e\032&\302>#Organization members\' role" +
+      "s changed\022?\n\032ORGANIZATION_MEMBER_REMOVE\020" +
+      "f\032\037\302>\034Organization members removed\022U\n%OR" +
+      "GANIZATION_MEMBER_INVITATION_CREATE\020g\032*\302" +
+      ">\'Organization member invitations create" +
+      "d\022V\n%ORGANIZATION_MEMBER_INVITATION_CANC" +
+      "EL\020h\032+\302>(Organization member invitations" +
+      " canceled\022V\n%ORGANIZATION_MEMBER_INVITAT" +
+      "ION_ACCEPT\020i\032+\302>(Organization member inv" +
+      "itations accepted\022W\n&ORGANIZATION_MEMBER" +
+      "_INVITATION_DECLINE\020j\032+\302>(Organization m" +
+      "ember invitations declined\022;\n\030ORGANIZATI" +
+      "ON_TEAM_CREATE\020k\032\035\302>\032Organization teams " +
+      "created\022;\n\030ORGANIZATION_TEAM_UPDATE\020l\032\035\302",
+      ">\032Organization teams updated\022;\n\030ORGANIZA" +
+      "TION_TEAM_DELETE\020m\032\035\302>\032Organization team" +
+      "s deleted\022D\n\034ORGANIZATION_TEAM_MEMBER_AD" +
+      "D\020n\032\"\302>\037Organization team members added\022" +
+      "I\n\037ORGANIZATION_TEAM_MEMBER_REMOVE\020o\032$\302>" +
+      "!Organization team members removed\022F\n\031OR" +
+      "GANIZATION_TEAM_APP_ADD\020p\032\'\302>$Organizati" +
+      "on team applications added\022K\n\034ORGANIZATI" +
+      "ON_TEAM_APP_REMOVE\020q\032)\302>&Organization te" +
+      "am applications removed\022&\n\rMODULE_CREATE" +
+      "\020\310\001\032\022\302>\017Modules created\022&\n\rMODULE_UPDATE" +
+      "\020\311\001\032\022\302>\017Modules updated\022&\n\rMODULE_DELETE" +
+      "\020\312\001\032\022\302>\017Modules deleted\0226\n\025MODULE_VERSIO" +
+      "N_CREATE\020\313\001\032\032\302>\027Module versions created\022" +
+      "6\n\025MODULE_VERSION_UPDATE\020\314\001\032\032\302>\027Module v" +
+      "ersions updated\0226\n\025MODULE_VERSION_DELETE" +
+      "\020\315\001\032\032\302>\027Module versions deleted\022*\n\017WORKF" +
+      "LOW_CREATE\020\220\003\032\024\302>\021Workflows created\022*\n\017W" +
+      "ORKFLOW_UPDATE\020\221\003\032\024\302>\021Workflows updated\022" +
+      "*\n\017WORKFLOW_DELETE\020\222\003\032\024\302>\021Workflows dele" +
+      "ted\022:\n\027WORKFLOW_VERSION_CREATE\020\223\003\032\034\302>\031Wo" +
+      "rkflow versions created\022:\n\027WORKFLOW_VERS" +
+      "ION_UPDATE\020\224\003\032\034\302>\031Workflow versions upda" +
+      "ted\022:\n\027WORKFLOW_VERSION_DELETE\020\225\003\032\034\302>\031Wo" +
+      "rkflow versions deleted\022-\n\020COLLABORATOR_" +
+      "ADD\020\274\005\032\026\302>\023Collaborators added\0222\n\023COLLAB" +
+      "ORATOR_UPDATE\020\275\005\032\030\302>\025Collaborators updat" +
+      "ed\0222\n\023COLLABORATOR_REMOVE\020\276\005\032\030\302>\025Collabo" +
+      "rators removedBY\n\025com.clarifai.grpc.apiP" +
+      "\001Z7github.com/Clarifai/clarifai-go-grpc/" +
+      "proto/clarifai/api\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3669,7 +3683,7 @@ public final class Resources {
     internal_static_clarifai_api_AuditLogTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_AuditLogTarget_descriptor,
-        new java.lang.String[] { "User", "Role", "Team", "App", "Module", "ModuleVersion", "Target", });
+        new java.lang.String[] { "User", "Role", "Team", "App", "Module", "ModuleVersion", "Workflow", "WorkflowVersion", "Target", });
     internal_static_clarifai_api_AuditLogEntry_descriptor =
       getDescriptor().getMessageTypes().get(213);
     internal_static_clarifai_api_AuditLogEntry_fieldAccessorTable = new

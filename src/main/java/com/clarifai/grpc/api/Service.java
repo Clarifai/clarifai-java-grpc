@@ -3104,7 +3104,7 @@ public final class Service {
       "\017\n\013LABEL_START\020\001\022\020\n\014LABEL_SUBMIT\020\002\022\020\n\014RE" +
       "VIEW_START\020\n\022\022\n\016REVIEW_APPROVE\020\013\022\032\n\026REVI" +
       "EW_REQUEST_CHANGES\020\014\022\021\n\rREVIEW_REJECT\020\r2" +
-      "\300\272\003\n\002V2\022\256\002\n\024ListConceptRelations\022).clari" +
+      "\373\273\003\n\002V2\022\256\002\n\024ListConceptRelations\022).clari" +
       "fai.api.ListConceptRelationsRequest\032*.cl" +
       "arifai.api.MultiConceptRelationResponse\"" +
       "\276\001\202\323\344\223\002\253\001\022Y/v2/users/{user_app_id.user_i" +
@@ -4508,21 +4508,26 @@ public final class Service {
       "lowEvaluationTemplatesRequest\0325.clarifai" +
       ".api.MultiWorkflowEvaluationTemplateResp" +
       "onse\"=\202\323\344\223\002+\022)/v2/workflow-version-evalu" +
-      "ation-templates\230\234\'\005\220\234\'-\220\234\'\023\022\305\003\n\016ListLogE" +
+      "ation-templates\230\234\'\005\220\234\'-\220\234\'\023\022\200\005\n\016ListLogE" +
       "ntries\022#.clarifai.api.ListLogEntriesRequ" +
       "est\032#.clarifai.api.MultiLogEntryResponse" +
-      "\"\350\002\202\323\344\223\002\330\002\022\201\001/v2/users/{user_app_id.user" +
+      "\"\243\004\202\323\344\223\002\223\004\022\201\001/v2/users/{user_app_id.user" +
       "_id}/compute_clusters/{compute_cluster_i" +
       "d}/nodepools/{nodepool_id}/runners/{runn" +
-      "er_id}/{log_type}/logsZW\022U/v2/users/{use" +
-      "r_app_id.user_id}/compute_clusters/{comp" +
-      "ute_cluster_id}/{log_type}/logsZy\022w/v2/u" +
-      "sers/{user_app_id.user_id}/apps/{user_ap" +
-      "p_id.app_id}/models/{model_id}/versions/" +
-      "{model_version_id}/{log_type}/logs\230\234\'\005\220\234" +
-      "\'\227\001BY\n\025com.clarifai.grpc.apiP\001Z7github.c" +
-      "om/Clarifai/clarifai-go-grpc/proto/clari" +
-      "fai/api\242\002\004CAIPb\006proto3"
+      "er_id}/{log_type}/logsZ\270\001\022\265\001/v2/users/{u" +
+      "ser_app_id.user_id}/apps/{user_app_id.ap" +
+      "p_id}/models/{model_id}/versions/{model_" +
+      "version_id}/compute_clusters/{compute_cl" +
+      "uster_id}/nodepools/{nodepool_id}/{log_t" +
+      "ype}/logsZW\022U/v2/users/{user_app_id.user" +
+      "_id}/compute_clusters/{compute_cluster_i" +
+      "d}/{log_type}/logsZy\022w/v2/users/{user_ap" +
+      "p_id.user_id}/apps/{user_app_id.app_id}/" +
+      "models/{model_id}/versions/{model_versio" +
+      "n_id}/{log_type}/logs\230\234\'\005\220\234\'\227\001BY\n\025com.cl" +
+      "arifai.grpc.apiP\001Z7github.com/Clarifai/c" +
+      "larifai-go-grpc/proto/clarifai/api\242\002\004CAI" +
+      "Pb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

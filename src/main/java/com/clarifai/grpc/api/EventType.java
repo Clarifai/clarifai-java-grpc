@@ -100,6 +100,50 @@ public enum EventType
    * <code>MODULE_VERSION_DELETE = 205 [(.clarifai.api.utils.description) = "Module versions deleted"];</code>
    */
   MODULE_VERSION_DELETE(205),
+  /**
+   * <pre>
+   * Event types related to workflows: 400 - 499
+   * </pre>
+   *
+   * <code>WORKFLOW_CREATE = 400 [(.clarifai.api.utils.description) = "Workflows created"];</code>
+   */
+  WORKFLOW_CREATE(400),
+  /**
+   * <code>WORKFLOW_UPDATE = 401 [(.clarifai.api.utils.description) = "Workflows updated"];</code>
+   */
+  WORKFLOW_UPDATE(401),
+  /**
+   * <code>WORKFLOW_DELETE = 402 [(.clarifai.api.utils.description) = "Workflows deleted"];</code>
+   */
+  WORKFLOW_DELETE(402),
+  /**
+   * <code>WORKFLOW_VERSION_CREATE = 403 [(.clarifai.api.utils.description) = "Workflow versions created"];</code>
+   */
+  WORKFLOW_VERSION_CREATE(403),
+  /**
+   * <code>WORKFLOW_VERSION_UPDATE = 404 [(.clarifai.api.utils.description) = "Workflow versions updated"];</code>
+   */
+  WORKFLOW_VERSION_UPDATE(404),
+  /**
+   * <code>WORKFLOW_VERSION_DELETE = 405 [(.clarifai.api.utils.description) = "Workflow versions deleted"];</code>
+   */
+  WORKFLOW_VERSION_DELETE(405),
+  /**
+   * <pre>
+   * Event types related to collaborators: 700 - 799
+   * </pre>
+   *
+   * <code>COLLABORATOR_ADD = 700 [(.clarifai.api.utils.description) = "Collaborators added"];</code>
+   */
+  COLLABORATOR_ADD(700),
+  /**
+   * <code>COLLABORATOR_UPDATE = 701 [(.clarifai.api.utils.description) = "Collaborators updated"];</code>
+   */
+  COLLABORATOR_UPDATE(701),
+  /**
+   * <code>COLLABORATOR_REMOVE = 702 [(.clarifai.api.utils.description) = "Collaborators removed"];</code>
+   */
+  COLLABORATOR_REMOVE(702),
   UNRECOGNIZED(-1),
   ;
 
@@ -195,6 +239,50 @@ public enum EventType
    * <code>MODULE_VERSION_DELETE = 205 [(.clarifai.api.utils.description) = "Module versions deleted"];</code>
    */
   public static final int MODULE_VERSION_DELETE_VALUE = 205;
+  /**
+   * <pre>
+   * Event types related to workflows: 400 - 499
+   * </pre>
+   *
+   * <code>WORKFLOW_CREATE = 400 [(.clarifai.api.utils.description) = "Workflows created"];</code>
+   */
+  public static final int WORKFLOW_CREATE_VALUE = 400;
+  /**
+   * <code>WORKFLOW_UPDATE = 401 [(.clarifai.api.utils.description) = "Workflows updated"];</code>
+   */
+  public static final int WORKFLOW_UPDATE_VALUE = 401;
+  /**
+   * <code>WORKFLOW_DELETE = 402 [(.clarifai.api.utils.description) = "Workflows deleted"];</code>
+   */
+  public static final int WORKFLOW_DELETE_VALUE = 402;
+  /**
+   * <code>WORKFLOW_VERSION_CREATE = 403 [(.clarifai.api.utils.description) = "Workflow versions created"];</code>
+   */
+  public static final int WORKFLOW_VERSION_CREATE_VALUE = 403;
+  /**
+   * <code>WORKFLOW_VERSION_UPDATE = 404 [(.clarifai.api.utils.description) = "Workflow versions updated"];</code>
+   */
+  public static final int WORKFLOW_VERSION_UPDATE_VALUE = 404;
+  /**
+   * <code>WORKFLOW_VERSION_DELETE = 405 [(.clarifai.api.utils.description) = "Workflow versions deleted"];</code>
+   */
+  public static final int WORKFLOW_VERSION_DELETE_VALUE = 405;
+  /**
+   * <pre>
+   * Event types related to collaborators: 700 - 799
+   * </pre>
+   *
+   * <code>COLLABORATOR_ADD = 700 [(.clarifai.api.utils.description) = "Collaborators added"];</code>
+   */
+  public static final int COLLABORATOR_ADD_VALUE = 700;
+  /**
+   * <code>COLLABORATOR_UPDATE = 701 [(.clarifai.api.utils.description) = "Collaborators updated"];</code>
+   */
+  public static final int COLLABORATOR_UPDATE_VALUE = 701;
+  /**
+   * <code>COLLABORATOR_REMOVE = 702 [(.clarifai.api.utils.description) = "Collaborators removed"];</code>
+   */
+  public static final int COLLABORATOR_REMOVE_VALUE = 702;
 
 
   public final int getNumber() {
@@ -242,6 +330,15 @@ public enum EventType
       case 203: return MODULE_VERSION_CREATE;
       case 204: return MODULE_VERSION_UPDATE;
       case 205: return MODULE_VERSION_DELETE;
+      case 400: return WORKFLOW_CREATE;
+      case 401: return WORKFLOW_UPDATE;
+      case 402: return WORKFLOW_DELETE;
+      case 403: return WORKFLOW_VERSION_CREATE;
+      case 404: return WORKFLOW_VERSION_UPDATE;
+      case 405: return WORKFLOW_VERSION_DELETE;
+      case 700: return COLLABORATOR_ADD;
+      case 701: return COLLABORATOR_UPDATE;
+      case 702: return COLLABORATOR_REMOVE;
       default: return null;
     }
   }
