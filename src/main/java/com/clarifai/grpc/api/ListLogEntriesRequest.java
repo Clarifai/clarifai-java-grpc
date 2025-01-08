@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-   * Defaults to 1.
+   * Defaults to last page.
    * </pre>
    *
    * <code>uint32 page = 1;</code>
@@ -175,7 +175,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (optional URL parameter) The number of results that will be contained in each page. Defaults
-   * to 128.
+   * to 32.
    * </pre>
    *
    * <code>uint32 per_page = 2;</code>
@@ -1005,7 +1005,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     * Defaults to 1.
+     * Defaults to last page.
      * </pre>
      *
      * <code>uint32 page = 1;</code>
@@ -1018,7 +1018,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     * Defaults to 1.
+     * Defaults to last page.
      * </pre>
      *
      * <code>uint32 page = 1;</code>
@@ -1034,7 +1034,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     * Defaults to 1.
+     * Defaults to last page.
      * </pre>
      *
      * <code>uint32 page = 1;</code>
@@ -1051,7 +1051,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 128.
+     * to 32.
      * </pre>
      *
      * <code>uint32 per_page = 2;</code>
@@ -1064,7 +1064,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 128.
+     * to 32.
      * </pre>
      *
      * <code>uint32 per_page = 2;</code>
@@ -1080,7 +1080,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 128.
+     * to 32.
      * </pre>
      *
      * <code>uint32 per_page = 2;</code>

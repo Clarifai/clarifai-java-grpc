@@ -142,5 +142,22 @@ public interface OperationOrBuilder extends
    */
   com.clarifai.grpc.api.SplitIntoDatasetsOrBuilder getSplitIntoDatasetsOrBuilder();
 
+  /**
+   * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+   * @return Whether the deleteAnnotations field is set.
+   */
+  boolean hasDeleteAnnotations();
+  /**
+   * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+   * @return The deleteAnnotations.
+   */
+  com.clarifai.grpc.api.DeleteAnnotations getDeleteAnnotations();
+  /**
+   * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+   */
+  com.clarifai.grpc.api.DeleteAnnotationsOrBuilder getDeleteAnnotationsOrBuilder();
+
   public com.clarifai.grpc.api.Operation.OperationCase getOperationCase();
+
+  public com.clarifai.grpc.api.Operation.AnnotationOperationCase getAnnotationOperationCase();
 }

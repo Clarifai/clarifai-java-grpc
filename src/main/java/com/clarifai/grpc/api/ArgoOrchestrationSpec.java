@@ -4,28 +4,28 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf type {@code clarifai.api.ImageInfo}
+ * Protobuf type {@code clarifai.api.ArgoOrchestrationSpec}
  */
-public final class ImageInfo extends
+public final class ArgoOrchestrationSpec extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.ImageInfo)
-    ImageInfoOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.ArgoOrchestrationSpec)
+    ArgoOrchestrationSpecOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ImageInfo.newBuilder() to construct.
-  private ImageInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ArgoOrchestrationSpec.newBuilder() to construct.
+  private ArgoOrchestrationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImageInfo() {
-    format_ = "";
-    colorMode_ = "";
-    mode_ = "";
+  private ArgoOrchestrationSpec() {
+    id_ = "";
+    apiVersion_ = "";
+    specJson_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ImageInfo();
+    return new ArgoOrchestrationSpec();
   }
 
   @java.lang.Override
@@ -33,7 +33,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ImageInfo(
+  private ArgoOrchestrationSpec(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -51,32 +51,22 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            width_ = input.readInt32();
+            id_ = s;
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            height_ = input.readInt32();
+            apiVersion_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            format_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            colorMode_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            mode_ = s;
+            specJson_ = s;
             break;
           }
           default: {
@@ -102,179 +92,143 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ImageInfo_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ArgoOrchestrationSpec_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ImageInfo_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ArgoOrchestrationSpec_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.ImageInfo.class, com.clarifai.grpc.api.ImageInfo.Builder.class);
+            com.clarifai.grpc.api.ArgoOrchestrationSpec.class, com.clarifai.grpc.api.ArgoOrchestrationSpec.Builder.class);
   }
 
-  public static final int WIDTH_FIELD_NUMBER = 1;
-  private int width_;
+  public static final int ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object id_;
   /**
-   * <pre>
-   * width
-   * </pre>
-   *
-   * <code>int32 width = 1;</code>
-   * @return The width.
+   * <code>string id = 1;</code>
+   * @return The id.
    */
   @java.lang.Override
-  public int getWidth() {
-    return width_;
-  }
-
-  public static final int HEIGHT_FIELD_NUMBER = 2;
-  private int height_;
-  /**
-   * <pre>
-   * height
-   * </pre>
-   *
-   * <code>int32 height = 2;</code>
-   * @return The height.
-   */
-  @java.lang.Override
-  public int getHeight() {
-    return height_;
-  }
-
-  public static final int FORMAT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object format_;
-  /**
-   * <pre>
-   * image format
-   * </pre>
-   *
-   * <code>string format = 3;</code>
-   * @return The format.
-   */
-  @java.lang.Override
-  public java.lang.String getFormat() {
-    java.lang.Object ref = format_;
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      format_ = s;
+      id_ = s;
       return s;
     }
   }
   /**
-   * <pre>
-   * image format
-   * </pre>
-   *
-   * <code>string format = 3;</code>
-   * @return The bytes for format.
+   * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getFormatBytes() {
-    java.lang.Object ref = format_;
+      getIdBytes() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      format_ = b;
+      id_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int COLOR_MODE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object colorMode_;
+  public static final int API_VERSION_FIELD_NUMBER = 2;
+  private volatile java.lang.Object apiVersion_;
   /**
    * <pre>
-   * image color mode
+   * The API version of the orchestration specification.
+   * Example: "argoproj.io/v1alpha1", "argoproj.io/v1beta1"
    * </pre>
    *
-   * <code>string color_mode = 4;</code>
-   * @return The colorMode.
+   * <code>string api_version = 2;</code>
+   * @return The apiVersion.
    */
   @java.lang.Override
-  public java.lang.String getColorMode() {
-    java.lang.Object ref = colorMode_;
+  public java.lang.String getApiVersion() {
+    java.lang.Object ref = apiVersion_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      colorMode_ = s;
+      apiVersion_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * image color mode
+   * The API version of the orchestration specification.
+   * Example: "argoproj.io/v1alpha1", "argoproj.io/v1beta1"
    * </pre>
    *
-   * <code>string color_mode = 4;</code>
-   * @return The bytes for colorMode.
+   * <code>string api_version = 2;</code>
+   * @return The bytes for apiVersion.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getColorModeBytes() {
-    java.lang.Object ref = colorMode_;
+      getApiVersionBytes() {
+    java.lang.Object ref = apiVersion_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      colorMode_ = b;
+      apiVersion_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int MODE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object mode_;
+  public static final int SPEC_JSON_FIELD_NUMBER = 3;
+  private volatile java.lang.Object specJson_;
   /**
    * <pre>
-   * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
+   * The JSON representation of the Argo orchestration specification.
    * </pre>
    *
-   * <code>string mode = 5;</code>
-   * @return The mode.
+   * <code>string spec_json = 3;</code>
+   * @return The specJson.
    */
   @java.lang.Override
-  public java.lang.String getMode() {
-    java.lang.Object ref = mode_;
+  public java.lang.String getSpecJson() {
+    java.lang.Object ref = specJson_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      mode_ = s;
+      specJson_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
+   * The JSON representation of the Argo orchestration specification.
    * </pre>
    *
-   * <code>string mode = 5;</code>
-   * @return The bytes for mode.
+   * <code>string spec_json = 3;</code>
+   * @return The bytes for specJson.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getModeBytes() {
-    java.lang.Object ref = mode_;
+      getSpecJsonBytes() {
+    java.lang.Object ref = specJson_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      mode_ = b;
+      specJson_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -295,20 +249,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (width_ != 0) {
-      output.writeInt32(1, width_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (height_ != 0) {
-      output.writeInt32(2, height_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiVersion_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, format_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(colorMode_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, colorMode_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, mode_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specJson_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, specJson_);
     }
     unknownFields.writeTo(output);
   }
@@ -319,22 +267,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (width_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, width_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (height_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, height_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiVersion_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, format_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(colorMode_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, colorMode_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, mode_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specJson_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, specJson_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -346,21 +286,17 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.ImageInfo)) {
+    if (!(obj instanceof com.clarifai.grpc.api.ArgoOrchestrationSpec)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.ImageInfo other = (com.clarifai.grpc.api.ImageInfo) obj;
+    com.clarifai.grpc.api.ArgoOrchestrationSpec other = (com.clarifai.grpc.api.ArgoOrchestrationSpec) obj;
 
-    if (getWidth()
-        != other.getWidth()) return false;
-    if (getHeight()
-        != other.getHeight()) return false;
-    if (!getFormat()
-        .equals(other.getFormat())) return false;
-    if (!getColorMode()
-        .equals(other.getColorMode())) return false;
-    if (!getMode()
-        .equals(other.getMode())) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
+    if (!getApiVersion()
+        .equals(other.getApiVersion())) return false;
+    if (!getSpecJson()
+        .equals(other.getSpecJson())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -372,84 +308,80 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + WIDTH_FIELD_NUMBER;
-    hash = (53 * hash) + getWidth();
-    hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
-    hash = (53 * hash) + getHeight();
-    hash = (37 * hash) + FORMAT_FIELD_NUMBER;
-    hash = (53 * hash) + getFormat().hashCode();
-    hash = (37 * hash) + COLOR_MODE_FIELD_NUMBER;
-    hash = (53 * hash) + getColorMode().hashCode();
-    hash = (37 * hash) + MODE_FIELD_NUMBER;
-    hash = (53 * hash) + getMode().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + API_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getApiVersion().hashCode();
+    hash = (37 * hash) + SPEC_JSON_FIELD_NUMBER;
+    hash = (53 * hash) + getSpecJson().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseDelimitedFrom(
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.ImageInfo parseFrom(
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -462,7 +394,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.ImageInfo prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.ArgoOrchestrationSpec prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -478,26 +410,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code clarifai.api.ImageInfo}
+   * Protobuf type {@code clarifai.api.ArgoOrchestrationSpec}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.ImageInfo)
-      com.clarifai.grpc.api.ImageInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.ArgoOrchestrationSpec)
+      com.clarifai.grpc.api.ArgoOrchestrationSpecOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ImageInfo_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ArgoOrchestrationSpec_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ImageInfo_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ArgoOrchestrationSpec_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.ImageInfo.class, com.clarifai.grpc.api.ImageInfo.Builder.class);
+              com.clarifai.grpc.api.ArgoOrchestrationSpec.class, com.clarifai.grpc.api.ArgoOrchestrationSpec.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.ImageInfo.newBuilder()
+    // Construct using com.clarifai.grpc.api.ArgoOrchestrationSpec.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -515,15 +447,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      width_ = 0;
+      id_ = "";
 
-      height_ = 0;
+      apiVersion_ = "";
 
-      format_ = "";
-
-      colorMode_ = "";
-
-      mode_ = "";
+      specJson_ = "";
 
       return this;
     }
@@ -531,17 +459,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ImageInfo_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ArgoOrchestrationSpec_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.ImageInfo getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.ImageInfo.getDefaultInstance();
+    public com.clarifai.grpc.api.ArgoOrchestrationSpec getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.ArgoOrchestrationSpec.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.ImageInfo build() {
-      com.clarifai.grpc.api.ImageInfo result = buildPartial();
+    public com.clarifai.grpc.api.ArgoOrchestrationSpec build() {
+      com.clarifai.grpc.api.ArgoOrchestrationSpec result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -549,13 +477,11 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.ImageInfo buildPartial() {
-      com.clarifai.grpc.api.ImageInfo result = new com.clarifai.grpc.api.ImageInfo(this);
-      result.width_ = width_;
-      result.height_ = height_;
-      result.format_ = format_;
-      result.colorMode_ = colorMode_;
-      result.mode_ = mode_;
+    public com.clarifai.grpc.api.ArgoOrchestrationSpec buildPartial() {
+      com.clarifai.grpc.api.ArgoOrchestrationSpec result = new com.clarifai.grpc.api.ArgoOrchestrationSpec(this);
+      result.id_ = id_;
+      result.apiVersion_ = apiVersion_;
+      result.specJson_ = specJson_;
       onBuilt();
       return result;
     }
@@ -594,32 +520,26 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.ImageInfo) {
-        return mergeFrom((com.clarifai.grpc.api.ImageInfo)other);
+      if (other instanceof com.clarifai.grpc.api.ArgoOrchestrationSpec) {
+        return mergeFrom((com.clarifai.grpc.api.ArgoOrchestrationSpec)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.ImageInfo other) {
-      if (other == com.clarifai.grpc.api.ImageInfo.getDefaultInstance()) return this;
-      if (other.getWidth() != 0) {
-        setWidth(other.getWidth());
-      }
-      if (other.getHeight() != 0) {
-        setHeight(other.getHeight());
-      }
-      if (!other.getFormat().isEmpty()) {
-        format_ = other.format_;
+    public Builder mergeFrom(com.clarifai.grpc.api.ArgoOrchestrationSpec other) {
+      if (other == com.clarifai.grpc.api.ArgoOrchestrationSpec.getDefaultInstance()) return this;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
         onChanged();
       }
-      if (!other.getColorMode().isEmpty()) {
-        colorMode_ = other.colorMode_;
+      if (!other.getApiVersion().isEmpty()) {
+        apiVersion_ = other.apiVersion_;
         onChanged();
       }
-      if (!other.getMode().isEmpty()) {
-        mode_ = other.mode_;
+      if (!other.getSpecJson().isEmpty()) {
+        specJson_ = other.specJson_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -637,11 +557,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.ImageInfo parsedMessage = null;
+      com.clarifai.grpc.api.ArgoOrchestrationSpec parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.ImageInfo) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.ArgoOrchestrationSpec) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -651,108 +571,99 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int width_ ;
+    private java.lang.Object id_ = "";
     /**
-     * <pre>
-     * width
-     * </pre>
-     *
-     * <code>int32 width = 1;</code>
-     * @return The width.
+     * <code>string id = 1;</code>
+     * @return The id.
      */
-    @java.lang.Override
-    public int getWidth() {
-      return width_;
-    }
-    /**
-     * <pre>
-     * width
-     * </pre>
-     *
-     * <code>int32 width = 1;</code>
-     * @param value The width to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWidth(int value) {
-      
-      width_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * width
-     * </pre>
-     *
-     * <code>int32 width = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearWidth() {
-      
-      width_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int height_ ;
-    /**
-     * <pre>
-     * height
-     * </pre>
-     *
-     * <code>int32 height = 2;</code>
-     * @return The height.
-     */
-    @java.lang.Override
-    public int getHeight() {
-      return height_;
-    }
-    /**
-     * <pre>
-     * height
-     * </pre>
-     *
-     * <code>int32 height = 2;</code>
-     * @param value The height to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHeight(int value) {
-      
-      height_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * height
-     * </pre>
-     *
-     * <code>int32 height = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearHeight() {
-      
-      height_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object format_ = "";
-    /**
-     * <pre>
-     * image format
-     * </pre>
-     *
-     * <code>string format = 3;</code>
-     * @return The format.
-     */
-    public java.lang.String getFormat() {
-      java.lang.Object ref = format_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        format_ = s;
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object apiVersion_ = "";
+    /**
+     * <pre>
+     * The API version of the orchestration specification.
+     * Example: "argoproj.io/v1alpha1", "argoproj.io/v1beta1"
+     * </pre>
+     *
+     * <code>string api_version = 2;</code>
+     * @return The apiVersion.
+     */
+    public java.lang.String getApiVersion() {
+      java.lang.Object ref = apiVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiVersion_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -760,20 +671,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image format
+     * The API version of the orchestration specification.
+     * Example: "argoproj.io/v1alpha1", "argoproj.io/v1beta1"
      * </pre>
      *
-     * <code>string format = 3;</code>
-     * @return The bytes for format.
+     * <code>string api_version = 2;</code>
+     * @return The bytes for apiVersion.
      */
     public com.google.protobuf.ByteString
-        getFormatBytes() {
-      java.lang.Object ref = format_;
+        getApiVersionBytes() {
+      java.lang.Object ref = apiVersion_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        format_ = b;
+        apiVersion_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -781,74 +693,77 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image format
+     * The API version of the orchestration specification.
+     * Example: "argoproj.io/v1alpha1", "argoproj.io/v1beta1"
      * </pre>
      *
-     * <code>string format = 3;</code>
-     * @param value The format to set.
+     * <code>string api_version = 2;</code>
+     * @param value The apiVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setFormat(
+    public Builder setApiVersion(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      format_ = value;
+      apiVersion_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * image format
+     * The API version of the orchestration specification.
+     * Example: "argoproj.io/v1alpha1", "argoproj.io/v1beta1"
      * </pre>
      *
-     * <code>string format = 3;</code>
+     * <code>string api_version = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearFormat() {
+    public Builder clearApiVersion() {
       
-      format_ = getDefaultInstance().getFormat();
+      apiVersion_ = getDefaultInstance().getApiVersion();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * image format
+     * The API version of the orchestration specification.
+     * Example: "argoproj.io/v1alpha1", "argoproj.io/v1beta1"
      * </pre>
      *
-     * <code>string format = 3;</code>
-     * @param value The bytes for format to set.
+     * <code>string api_version = 2;</code>
+     * @param value The bytes for apiVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setFormatBytes(
+    public Builder setApiVersionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      format_ = value;
+      apiVersion_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object colorMode_ = "";
+    private java.lang.Object specJson_ = "";
     /**
      * <pre>
-     * image color mode
+     * The JSON representation of the Argo orchestration specification.
      * </pre>
      *
-     * <code>string color_mode = 4;</code>
-     * @return The colorMode.
+     * <code>string spec_json = 3;</code>
+     * @return The specJson.
      */
-    public java.lang.String getColorMode() {
-      java.lang.Object ref = colorMode_;
+    public java.lang.String getSpecJson() {
+      java.lang.Object ref = specJson_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        colorMode_ = s;
+        specJson_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -856,20 +771,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image color mode
+     * The JSON representation of the Argo orchestration specification.
      * </pre>
      *
-     * <code>string color_mode = 4;</code>
-     * @return The bytes for colorMode.
+     * <code>string spec_json = 3;</code>
+     * @return The bytes for specJson.
      */
     public com.google.protobuf.ByteString
-        getColorModeBytes() {
-      java.lang.Object ref = colorMode_;
+        getSpecJsonBytes() {
+      java.lang.Object ref = specJson_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        colorMode_ = b;
+        specJson_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -877,150 +792,54 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image color mode
+     * The JSON representation of the Argo orchestration specification.
      * </pre>
      *
-     * <code>string color_mode = 4;</code>
-     * @param value The colorMode to set.
+     * <code>string spec_json = 3;</code>
+     * @param value The specJson to set.
      * @return This builder for chaining.
      */
-    public Builder setColorMode(
+    public Builder setSpecJson(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      colorMode_ = value;
+      specJson_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * image color mode
+     * The JSON representation of the Argo orchestration specification.
      * </pre>
      *
-     * <code>string color_mode = 4;</code>
+     * <code>string spec_json = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearColorMode() {
+    public Builder clearSpecJson() {
       
-      colorMode_ = getDefaultInstance().getColorMode();
+      specJson_ = getDefaultInstance().getSpecJson();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * image color mode
+     * The JSON representation of the Argo orchestration specification.
      * </pre>
      *
-     * <code>string color_mode = 4;</code>
-     * @param value The bytes for colorMode to set.
+     * <code>string spec_json = 3;</code>
+     * @param value The bytes for specJson to set.
      * @return This builder for chaining.
      */
-    public Builder setColorModeBytes(
+    public Builder setSpecJsonBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      colorMode_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object mode_ = "";
-    /**
-     * <pre>
-     * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
-     * </pre>
-     *
-     * <code>string mode = 5;</code>
-     * @return The mode.
-     */
-    public java.lang.String getMode() {
-      java.lang.Object ref = mode_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        mode_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
-     * </pre>
-     *
-     * <code>string mode = 5;</code>
-     * @return The bytes for mode.
-     */
-    public com.google.protobuf.ByteString
-        getModeBytes() {
-      java.lang.Object ref = mode_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        mode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
-     * </pre>
-     *
-     * <code>string mode = 5;</code>
-     * @param value The mode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMode(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      mode_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
-     * </pre>
-     *
-     * <code>string mode = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMode() {
-      
-      mode_ = getDefaultInstance().getMode();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
-     * </pre>
-     *
-     * <code>string mode = 5;</code>
-     * @param value The bytes for mode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      mode_ = value;
+      specJson_ = value;
       onChanged();
       return this;
     }
@@ -1037,41 +856,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.ImageInfo)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.ArgoOrchestrationSpec)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.ImageInfo)
-  private static final com.clarifai.grpc.api.ImageInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.ArgoOrchestrationSpec)
+  private static final com.clarifai.grpc.api.ArgoOrchestrationSpec DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.ImageInfo();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.ArgoOrchestrationSpec();
   }
 
-  public static com.clarifai.grpc.api.ImageInfo getDefaultInstance() {
+  public static com.clarifai.grpc.api.ArgoOrchestrationSpec getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImageInfo>
-      PARSER = new com.google.protobuf.AbstractParser<ImageInfo>() {
+  private static final com.google.protobuf.Parser<ArgoOrchestrationSpec>
+      PARSER = new com.google.protobuf.AbstractParser<ArgoOrchestrationSpec>() {
     @java.lang.Override
-    public ImageInfo parsePartialFrom(
+    public ArgoOrchestrationSpec parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImageInfo(input, extensionRegistry);
+      return new ArgoOrchestrationSpec(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ImageInfo> parser() {
+  public static com.google.protobuf.Parser<ArgoOrchestrationSpec> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImageInfo> getParserForType() {
+  public com.google.protobuf.Parser<ArgoOrchestrationSpec> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.ImageInfo getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.ArgoOrchestrationSpec getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

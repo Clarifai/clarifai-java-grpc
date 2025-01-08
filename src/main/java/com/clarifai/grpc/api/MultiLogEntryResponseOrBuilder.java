@@ -65,4 +65,24 @@ public interface MultiLogEntryResponseOrBuilder extends
    */
   com.clarifai.grpc.api.LogEntryOrBuilder getLogEntriesOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The page the log entries are from. If the request's page was omitted or greater than the total pages, then this is set to the last page.
+   * </pre>
+   *
+   * <code>uint32 page = 4;</code>
+   * @return The page.
+   */
+  int getPage();
+
+  /**
+   * <pre>
+   * The number of results contained in each page.
+   * </pre>
+   *
+   * <code>uint32 per_page = 5;</code>
+   * @return The perPage.
+   */
+  int getPerPage();
 }

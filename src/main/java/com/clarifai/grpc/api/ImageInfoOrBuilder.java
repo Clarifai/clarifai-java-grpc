@@ -66,4 +66,24 @@ public interface ImageInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getColorModeBytes();
+
+  /**
+   * <pre>
+   * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
+   * </pre>
+   *
+   * <code>string mode = 5;</code>
+   * @return The mode.
+   */
+  java.lang.String getMode();
+  /**
+   * <pre>
+   * mode (when used for decoded_bytes) (RGB, RGBA, P, L, etc.)
+   * </pre>
+   *
+   * <code>string mode = 5;</code>
+   * @return The bytes for mode.
+   */
+  com.google.protobuf.ByteString
+      getModeBytes();
 }

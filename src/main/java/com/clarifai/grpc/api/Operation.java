@@ -174,6 +174,20 @@ private static final long serialVersionUID = 0L;
             operationCase_ = 9;
             break;
           }
+          case 82: {
+            com.clarifai.grpc.api.DeleteAnnotations.Builder subBuilder = null;
+            if (annotationOperationCase_ == 10) {
+              subBuilder = ((com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_).toBuilder();
+            }
+            annotationOperation_ =
+                input.readMessage(com.clarifai.grpc.api.DeleteAnnotations.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_);
+              annotationOperation_ = subBuilder.buildPartial();
+            }
+            annotationOperationCase_ = 10;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -261,6 +275,45 @@ private static final long serialVersionUID = 0L;
   getOperationCase() {
     return OperationCase.forNumber(
         operationCase_);
+  }
+
+  private int annotationOperationCase_ = 0;
+  private java.lang.Object annotationOperation_;
+  public enum AnnotationOperationCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DELETE_ANNOTATIONS(10),
+    ANNOTATIONOPERATION_NOT_SET(0);
+    private final int value;
+    private AnnotationOperationCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AnnotationOperationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AnnotationOperationCase forNumber(int value) {
+      switch (value) {
+        case 10: return DELETE_ANNOTATIONS;
+        case 0: return ANNOTATIONOPERATION_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AnnotationOperationCase
+  getAnnotationOperationCase() {
+    return AnnotationOperationCase.forNumber(
+        annotationOperationCase_);
   }
 
   public static final int ADD_CONCEPTS_FIELD_NUMBER = 1;
@@ -542,6 +595,37 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.SplitIntoDatasets.getDefaultInstance();
   }
 
+  public static final int DELETE_ANNOTATIONS_FIELD_NUMBER = 10;
+  /**
+   * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+   * @return Whether the deleteAnnotations field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeleteAnnotations() {
+    return annotationOperationCase_ == 10;
+  }
+  /**
+   * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+   * @return The deleteAnnotations.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeleteAnnotations getDeleteAnnotations() {
+    if (annotationOperationCase_ == 10) {
+       return (com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_;
+    }
+    return com.clarifai.grpc.api.DeleteAnnotations.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeleteAnnotationsOrBuilder getDeleteAnnotationsOrBuilder() {
+    if (annotationOperationCase_ == 10) {
+       return (com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_;
+    }
+    return com.clarifai.grpc.api.DeleteAnnotations.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -582,6 +666,9 @@ private static final long serialVersionUID = 0L;
     }
     if (operationCase_ == 9) {
       output.writeMessage(9, (com.clarifai.grpc.api.SplitIntoDatasets) operation_);
+    }
+    if (annotationOperationCase_ == 10) {
+      output.writeMessage(10, (com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_);
     }
     unknownFields.writeTo(output);
   }
@@ -627,6 +714,10 @@ private static final long serialVersionUID = 0L;
     if (operationCase_ == 9) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, (com.clarifai.grpc.api.SplitIntoDatasets) operation_);
+    }
+    if (annotationOperationCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, (com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -684,6 +775,15 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
+    if (!getAnnotationOperationCase().equals(other.getAnnotationOperationCase())) return false;
+    switch (annotationOperationCase_) {
+      case 10:
+        if (!getDeleteAnnotations()
+            .equals(other.getDeleteAnnotations())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -731,6 +831,14 @@ private static final long serialVersionUID = 0L;
       case 9:
         hash = (37 * hash) + SPLIT_INTO_DATASETS_FIELD_NUMBER;
         hash = (53 * hash) + getSplitIntoDatasets().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (annotationOperationCase_) {
+      case 10:
+        hash = (37 * hash) + DELETE_ANNOTATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getDeleteAnnotations().hashCode();
         break;
       case 0:
       default:
@@ -870,6 +978,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       operationCase_ = 0;
       operation_ = null;
+      annotationOperationCase_ = 0;
+      annotationOperation_ = null;
       return this;
     }
 
@@ -959,7 +1069,15 @@ private static final long serialVersionUID = 0L;
           result.operation_ = splitIntoDatasetsBuilder_.build();
         }
       }
+      if (annotationOperationCase_ == 10) {
+        if (deleteAnnotationsBuilder_ == null) {
+          result.annotationOperation_ = annotationOperation_;
+        } else {
+          result.annotationOperation_ = deleteAnnotationsBuilder_.build();
+        }
+      }
       result.operationCase_ = operationCase_;
+      result.annotationOperationCase_ = annotationOperationCase_;
       onBuilt();
       return result;
     }
@@ -1049,6 +1167,15 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
+      switch (other.getAnnotationOperationCase()) {
+        case DELETE_ANNOTATIONS: {
+          mergeDeleteAnnotations(other.getDeleteAnnotations());
+          break;
+        }
+        case ANNOTATIONOPERATION_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1088,6 +1215,21 @@ private static final long serialVersionUID = 0L;
     public Builder clearOperation() {
       operationCase_ = 0;
       operation_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int annotationOperationCase_ = 0;
+    private java.lang.Object annotationOperation_;
+    public AnnotationOperationCase
+        getAnnotationOperationCase() {
+      return AnnotationOperationCase.forNumber(
+          annotationOperationCase_);
+    }
+
+    public Builder clearAnnotationOperation() {
+      annotationOperationCase_ = 0;
+      annotationOperation_ = null;
       onChanged();
       return this;
     }
@@ -2369,6 +2511,148 @@ private static final long serialVersionUID = 0L;
       operationCase_ = 9;
       onChanged();;
       return splitIntoDatasetsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DeleteAnnotations, com.clarifai.grpc.api.DeleteAnnotations.Builder, com.clarifai.grpc.api.DeleteAnnotationsOrBuilder> deleteAnnotationsBuilder_;
+    /**
+     * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     * @return Whether the deleteAnnotations field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeleteAnnotations() {
+      return annotationOperationCase_ == 10;
+    }
+    /**
+     * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     * @return The deleteAnnotations.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.DeleteAnnotations getDeleteAnnotations() {
+      if (deleteAnnotationsBuilder_ == null) {
+        if (annotationOperationCase_ == 10) {
+          return (com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_;
+        }
+        return com.clarifai.grpc.api.DeleteAnnotations.getDefaultInstance();
+      } else {
+        if (annotationOperationCase_ == 10) {
+          return deleteAnnotationsBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.DeleteAnnotations.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     */
+    public Builder setDeleteAnnotations(com.clarifai.grpc.api.DeleteAnnotations value) {
+      if (deleteAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        annotationOperation_ = value;
+        onChanged();
+      } else {
+        deleteAnnotationsBuilder_.setMessage(value);
+      }
+      annotationOperationCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     */
+    public Builder setDeleteAnnotations(
+        com.clarifai.grpc.api.DeleteAnnotations.Builder builderForValue) {
+      if (deleteAnnotationsBuilder_ == null) {
+        annotationOperation_ = builderForValue.build();
+        onChanged();
+      } else {
+        deleteAnnotationsBuilder_.setMessage(builderForValue.build());
+      }
+      annotationOperationCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     */
+    public Builder mergeDeleteAnnotations(com.clarifai.grpc.api.DeleteAnnotations value) {
+      if (deleteAnnotationsBuilder_ == null) {
+        if (annotationOperationCase_ == 10 &&
+            annotationOperation_ != com.clarifai.grpc.api.DeleteAnnotations.getDefaultInstance()) {
+          annotationOperation_ = com.clarifai.grpc.api.DeleteAnnotations.newBuilder((com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          annotationOperation_ = value;
+        }
+        onChanged();
+      } else {
+        if (annotationOperationCase_ == 10) {
+          deleteAnnotationsBuilder_.mergeFrom(value);
+        } else {
+          deleteAnnotationsBuilder_.setMessage(value);
+        }
+      }
+      annotationOperationCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     */
+    public Builder clearDeleteAnnotations() {
+      if (deleteAnnotationsBuilder_ == null) {
+        if (annotationOperationCase_ == 10) {
+          annotationOperationCase_ = 0;
+          annotationOperation_ = null;
+          onChanged();
+        }
+      } else {
+        if (annotationOperationCase_ == 10) {
+          annotationOperationCase_ = 0;
+          annotationOperation_ = null;
+        }
+        deleteAnnotationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     */
+    public com.clarifai.grpc.api.DeleteAnnotations.Builder getDeleteAnnotationsBuilder() {
+      return getDeleteAnnotationsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.DeleteAnnotationsOrBuilder getDeleteAnnotationsOrBuilder() {
+      if ((annotationOperationCase_ == 10) && (deleteAnnotationsBuilder_ != null)) {
+        return deleteAnnotationsBuilder_.getMessageOrBuilder();
+      } else {
+        if (annotationOperationCase_ == 10) {
+          return (com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_;
+        }
+        return com.clarifai.grpc.api.DeleteAnnotations.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.DeleteAnnotations delete_annotations = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DeleteAnnotations, com.clarifai.grpc.api.DeleteAnnotations.Builder, com.clarifai.grpc.api.DeleteAnnotationsOrBuilder> 
+        getDeleteAnnotationsFieldBuilder() {
+      if (deleteAnnotationsBuilder_ == null) {
+        if (!(annotationOperationCase_ == 10)) {
+          annotationOperation_ = com.clarifai.grpc.api.DeleteAnnotations.getDefaultInstance();
+        }
+        deleteAnnotationsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DeleteAnnotations, com.clarifai.grpc.api.DeleteAnnotations.Builder, com.clarifai.grpc.api.DeleteAnnotationsOrBuilder>(
+                (com.clarifai.grpc.api.DeleteAnnotations) annotationOperation_,
+                getParentForChildren(),
+                isClean());
+        annotationOperation_ = null;
+      }
+      annotationOperationCase_ = 10;
+      onChanged();;
+      return deleteAnnotationsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

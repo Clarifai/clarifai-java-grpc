@@ -176,6 +176,20 @@ private static final long serialVersionUID = 0L;
             inputSourceCase_ = 11;
             break;
           }
+          case 98: {
+            com.clarifai.grpc.api.Search.Builder subBuilder = null;
+            if (annotationSourceCase_ == 12) {
+              subBuilder = ((com.clarifai.grpc.api.Search) annotationSource_).toBuilder();
+            }
+            annotationSource_ =
+                input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Search) annotationSource_);
+              annotationSource_ = subBuilder.buildPartial();
+            }
+            annotationSourceCase_ = 12;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -251,6 +265,45 @@ private static final long serialVersionUID = 0L;
   getInputSourceCase() {
     return InputSourceCase.forNumber(
         inputSourceCase_);
+  }
+
+  private int annotationSourceCase_ = 0;
+  private java.lang.Object annotationSource_;
+  public enum AnnotationSourceCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    ANNOTATION_SEARCH(12),
+    ANNOTATIONSOURCE_NOT_SET(0);
+    private final int value;
+    private AnnotationSourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AnnotationSourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AnnotationSourceCase forNumber(int value) {
+      switch (value) {
+        case 12: return ANNOTATION_SEARCH;
+        case 0: return ANNOTATIONSOURCE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AnnotationSourceCase
+  getAnnotationSourceCase() {
+    return AnnotationSourceCase.forNumber(
+        annotationSourceCase_);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -390,6 +443,37 @@ private static final long serialVersionUID = 0L;
        return (com.clarifai.grpc.api.Dataset) inputSource_;
     }
     return com.clarifai.grpc.api.Dataset.getDefaultInstance();
+  }
+
+  public static final int ANNOTATION_SEARCH_FIELD_NUMBER = 12;
+  /**
+   * <code>.clarifai.api.Search annotation_search = 12;</code>
+   * @return Whether the annotationSearch field is set.
+   */
+  @java.lang.Override
+  public boolean hasAnnotationSearch() {
+    return annotationSourceCase_ == 12;
+  }
+  /**
+   * <code>.clarifai.api.Search annotation_search = 12;</code>
+   * @return The annotationSearch.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Search getAnnotationSearch() {
+    if (annotationSourceCase_ == 12) {
+       return (com.clarifai.grpc.api.Search) annotationSource_;
+    }
+    return com.clarifai.grpc.api.Search.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Search annotation_search = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.SearchOrBuilder getAnnotationSearchOrBuilder() {
+    if (annotationSourceCase_ == 12) {
+       return (com.clarifai.grpc.api.Search) annotationSource_;
+    }
+    return com.clarifai.grpc.api.Search.getDefaultInstance();
   }
 
   public static final int OPERATION_FIELD_NUMBER = 3;
@@ -733,6 +817,9 @@ private static final long serialVersionUID = 0L;
     if (inputSourceCase_ == 11) {
       output.writeMessage(11, (com.clarifai.grpc.api.Dataset) inputSource_);
     }
+    if (annotationSourceCase_ == 12) {
+      output.writeMessage(12, (com.clarifai.grpc.api.Search) annotationSource_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -782,6 +869,10 @@ private static final long serialVersionUID = 0L;
     if (inputSourceCase_ == 11) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, (com.clarifai.grpc.api.Dataset) inputSource_);
+    }
+    if (annotationSourceCase_ == 12) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, (com.clarifai.grpc.api.Search) annotationSource_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -846,6 +937,15 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
+    if (!getAnnotationSourceCase().equals(other.getAnnotationSourceCase())) return false;
+    switch (annotationSourceCase_) {
+      case 12:
+        if (!getAnnotationSearch()
+            .equals(other.getAnnotationSearch())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -895,6 +995,14 @@ private static final long serialVersionUID = 0L;
       case 11:
         hash = (37 * hash) + DATASET_FIELD_NUMBER;
         hash = (53 * hash) + getDataset().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (annotationSourceCase_) {
+      case 12:
+        hash = (37 * hash) + ANNOTATION_SEARCH_FIELD_NUMBER;
+        hash = (53 * hash) + getAnnotationSearch().hashCode();
         break;
       case 0:
       default:
@@ -1070,6 +1178,8 @@ private static final long serialVersionUID = 0L;
       }
       inputSourceCase_ = 0;
       inputSource_ = null;
+      annotationSourceCase_ = 0;
+      annotationSource_ = null;
       return this;
     }
 
@@ -1118,6 +1228,13 @@ private static final long serialVersionUID = 0L;
           result.inputSource_ = datasetBuilder_.build();
         }
       }
+      if (annotationSourceCase_ == 12) {
+        if (annotationSearchBuilder_ == null) {
+          result.annotationSource_ = annotationSource_;
+        } else {
+          result.annotationSource_ = annotationSearchBuilder_.build();
+        }
+      }
       if (operationBuilder_ == null) {
         result.operation_ = operation_;
       } else {
@@ -1146,6 +1263,7 @@ private static final long serialVersionUID = 0L;
         result.lastModifiedAt_ = lastModifiedAtBuilder_.build();
       }
       result.inputSourceCase_ = inputSourceCase_;
+      result.annotationSourceCase_ = annotationSourceCase_;
       onBuilt();
       return result;
     }
@@ -1238,6 +1356,15 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
+      switch (other.getAnnotationSourceCase()) {
+        case ANNOTATION_SEARCH: {
+          mergeAnnotationSearch(other.getAnnotationSearch());
+          break;
+        }
+        case ANNOTATIONSOURCE_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1277,6 +1404,21 @@ private static final long serialVersionUID = 0L;
     public Builder clearInputSource() {
       inputSourceCase_ = 0;
       inputSource_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int annotationSourceCase_ = 0;
+    private java.lang.Object annotationSource_;
+    public AnnotationSourceCase
+        getAnnotationSourceCase() {
+      return AnnotationSourceCase.forNumber(
+          annotationSourceCase_);
+    }
+
+    public Builder clearAnnotationSource() {
+      annotationSourceCase_ = 0;
+      annotationSource_ = null;
       onChanged();
       return this;
     }
@@ -1802,6 +1944,148 @@ private static final long serialVersionUID = 0L;
       inputSourceCase_ = 11;
       onChanged();;
       return datasetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> annotationSearchBuilder_;
+    /**
+     * <code>.clarifai.api.Search annotation_search = 12;</code>
+     * @return Whether the annotationSearch field is set.
+     */
+    @java.lang.Override
+    public boolean hasAnnotationSearch() {
+      return annotationSourceCase_ == 12;
+    }
+    /**
+     * <code>.clarifai.api.Search annotation_search = 12;</code>
+     * @return The annotationSearch.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Search getAnnotationSearch() {
+      if (annotationSearchBuilder_ == null) {
+        if (annotationSourceCase_ == 12) {
+          return (com.clarifai.grpc.api.Search) annotationSource_;
+        }
+        return com.clarifai.grpc.api.Search.getDefaultInstance();
+      } else {
+        if (annotationSourceCase_ == 12) {
+          return annotationSearchBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Search.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Search annotation_search = 12;</code>
+     */
+    public Builder setAnnotationSearch(com.clarifai.grpc.api.Search value) {
+      if (annotationSearchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        annotationSource_ = value;
+        onChanged();
+      } else {
+        annotationSearchBuilder_.setMessage(value);
+      }
+      annotationSourceCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search annotation_search = 12;</code>
+     */
+    public Builder setAnnotationSearch(
+        com.clarifai.grpc.api.Search.Builder builderForValue) {
+      if (annotationSearchBuilder_ == null) {
+        annotationSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        annotationSearchBuilder_.setMessage(builderForValue.build());
+      }
+      annotationSourceCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search annotation_search = 12;</code>
+     */
+    public Builder mergeAnnotationSearch(com.clarifai.grpc.api.Search value) {
+      if (annotationSearchBuilder_ == null) {
+        if (annotationSourceCase_ == 12 &&
+            annotationSource_ != com.clarifai.grpc.api.Search.getDefaultInstance()) {
+          annotationSource_ = com.clarifai.grpc.api.Search.newBuilder((com.clarifai.grpc.api.Search) annotationSource_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          annotationSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (annotationSourceCase_ == 12) {
+          annotationSearchBuilder_.mergeFrom(value);
+        } else {
+          annotationSearchBuilder_.setMessage(value);
+        }
+      }
+      annotationSourceCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search annotation_search = 12;</code>
+     */
+    public Builder clearAnnotationSearch() {
+      if (annotationSearchBuilder_ == null) {
+        if (annotationSourceCase_ == 12) {
+          annotationSourceCase_ = 0;
+          annotationSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (annotationSourceCase_ == 12) {
+          annotationSourceCase_ = 0;
+          annotationSource_ = null;
+        }
+        annotationSearchBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search annotation_search = 12;</code>
+     */
+    public com.clarifai.grpc.api.Search.Builder getAnnotationSearchBuilder() {
+      return getAnnotationSearchFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Search annotation_search = 12;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.SearchOrBuilder getAnnotationSearchOrBuilder() {
+      if ((annotationSourceCase_ == 12) && (annotationSearchBuilder_ != null)) {
+        return annotationSearchBuilder_.getMessageOrBuilder();
+      } else {
+        if (annotationSourceCase_ == 12) {
+          return (com.clarifai.grpc.api.Search) annotationSource_;
+        }
+        return com.clarifai.grpc.api.Search.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Search annotation_search = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
+        getAnnotationSearchFieldBuilder() {
+      if (annotationSearchBuilder_ == null) {
+        if (!(annotationSourceCase_ == 12)) {
+          annotationSource_ = com.clarifai.grpc.api.Search.getDefaultInstance();
+        }
+        annotationSearchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder>(
+                (com.clarifai.grpc.api.Search) annotationSource_,
+                getParentForChildren(),
+                isClean());
+        annotationSource_ = null;
+      }
+      annotationSourceCase_ = 12;
+      onChanged();;
+      return annotationSearchBuilder_;
     }
 
     private com.clarifai.grpc.api.Operation operation_;

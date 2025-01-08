@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private Image() {
     url_ = "";
     base64_ = com.google.protobuf.ByteString.EMPTY;
+    decodedBytes_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -108,6 +109,11 @@ private static final long serialVersionUID = 0L;
                 HostedImageInfoDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             hostedImageInfo_.getMutableMap().put(
                 hostedImageInfo__.getKey(), hostedImageInfo__.getValue());
+            break;
+          }
+          case 66: {
+
+            decodedBytes_ = input.readBytes();
             break;
           }
           default: {
@@ -412,6 +418,21 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int DECODED_BYTES_FIELD_NUMBER = 8;
+  private com.google.protobuf.ByteString decodedBytes_;
+  /**
+   * <pre>
+   * For internal processing of already decoded bytes.
+   * </pre>
+   *
+   * <code>bytes decoded_bytes = 8;</code>
+   * @return The decodedBytes.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDecodedBytes() {
+    return decodedBytes_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -447,6 +468,9 @@ private static final long serialVersionUID = 0L;
         internalGetHostedImageInfo(),
         HostedImageInfoDefaultEntryHolder.defaultEntry,
         7);
+    if (!decodedBytes_.isEmpty()) {
+      output.writeBytes(8, decodedBytes_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -485,6 +509,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, hostedImageInfo__);
     }
+    if (!decodedBytes_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(8, decodedBytes_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -518,6 +546,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!internalGetHostedImageInfo().equals(
         other.internalGetHostedImageInfo())) return false;
+    if (!getDecodedBytes()
+        .equals(other.getDecodedBytes())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -548,6 +578,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + HOSTED_IMAGE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + internalGetHostedImageInfo().hashCode();
     }
+    hash = (37 * hash) + DECODED_BYTES_FIELD_NUMBER;
+    hash = (53 * hash) + getDecodedBytes().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -726,6 +758,8 @@ private static final long serialVersionUID = 0L;
         imageInfoBuilder_ = null;
       }
       internalGetMutableHostedImageInfo().clear();
+      decodedBytes_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -768,6 +802,7 @@ private static final long serialVersionUID = 0L;
       }
       result.hostedImageInfo_ = internalGetHostedImageInfo();
       result.hostedImageInfo_.makeImmutable();
+      result.decodedBytes_ = decodedBytes_;
       onBuilt();
       return result;
     }
@@ -834,6 +869,9 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableHostedImageInfo().mergeFrom(
           other.internalGetHostedImageInfo());
+      if (other.getDecodedBytes() != com.google.protobuf.ByteString.EMPTY) {
+        setDecodedBytes(other.getDecodedBytes());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1530,6 +1568,52 @@ private static final long serialVersionUID = 0L;
         java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> values) {
       internalGetMutableHostedImageInfo().getMutableMap()
           .putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.ByteString decodedBytes_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * For internal processing of already decoded bytes.
+     * </pre>
+     *
+     * <code>bytes decoded_bytes = 8;</code>
+     * @return The decodedBytes.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDecodedBytes() {
+      return decodedBytes_;
+    }
+    /**
+     * <pre>
+     * For internal processing of already decoded bytes.
+     * </pre>
+     *
+     * <code>bytes decoded_bytes = 8;</code>
+     * @param value The decodedBytes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDecodedBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      decodedBytes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For internal processing of already decoded bytes.
+     * </pre>
+     *
+     * <code>bytes decoded_bytes = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDecodedBytes() {
+      
+      decodedBytes_ = getDefaultInstance().getDecodedBytes();
+      onChanged();
       return this;
     }
     @java.lang.Override

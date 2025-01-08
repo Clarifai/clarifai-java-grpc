@@ -130,6 +130,22 @@ public enum EventType
   WORKFLOW_VERSION_DELETE(405),
   /**
    * <pre>
+   * Event types related to applications: 600 - 699
+   * </pre>
+   *
+   * <code>APPLICATION_CREATE = 600 [(.clarifai.api.utils.description) = "Applications created"];</code>
+   */
+  APPLICATION_CREATE(600),
+  /**
+   * <code>APPLICATION_UPDATE = 601 [(.clarifai.api.utils.description) = "Applications updated"];</code>
+   */
+  APPLICATION_UPDATE(601),
+  /**
+   * <code>APPLICATION_DELETE = 602 [(.clarifai.api.utils.description) = "Applications deleted"];</code>
+   */
+  APPLICATION_DELETE(602),
+  /**
+   * <pre>
    * Event types related to collaborators: 700 - 799
    * </pre>
    *
@@ -269,6 +285,22 @@ public enum EventType
   public static final int WORKFLOW_VERSION_DELETE_VALUE = 405;
   /**
    * <pre>
+   * Event types related to applications: 600 - 699
+   * </pre>
+   *
+   * <code>APPLICATION_CREATE = 600 [(.clarifai.api.utils.description) = "Applications created"];</code>
+   */
+  public static final int APPLICATION_CREATE_VALUE = 600;
+  /**
+   * <code>APPLICATION_UPDATE = 601 [(.clarifai.api.utils.description) = "Applications updated"];</code>
+   */
+  public static final int APPLICATION_UPDATE_VALUE = 601;
+  /**
+   * <code>APPLICATION_DELETE = 602 [(.clarifai.api.utils.description) = "Applications deleted"];</code>
+   */
+  public static final int APPLICATION_DELETE_VALUE = 602;
+  /**
+   * <pre>
    * Event types related to collaborators: 700 - 799
    * </pre>
    *
@@ -336,6 +368,9 @@ public enum EventType
       case 403: return WORKFLOW_VERSION_CREATE;
       case 404: return WORKFLOW_VERSION_UPDATE;
       case 405: return WORKFLOW_VERSION_DELETE;
+      case 600: return APPLICATION_CREATE;
+      case 601: return APPLICATION_UPDATE;
+      case 602: return APPLICATION_DELETE;
       case 700: return COLLABORATOR_ADD;
       case 701: return COLLABORATOR_UPDATE;
       case 702: return COLLABORATOR_REMOVE;

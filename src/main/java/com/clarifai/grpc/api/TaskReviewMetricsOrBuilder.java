@@ -9,7 +9,7 @@ public interface TaskReviewMetricsOrBuilder extends
 
   /**
    * <pre>
-   * Estimated number of reviewed inputs.
+   * Estimated number of reviewed inputs by at least one reviewer.
    * </pre>
    *
    * <code>uint64 inputs_count_estimated = 1;</code>
@@ -19,8 +19,62 @@ public interface TaskReviewMetricsOrBuilder extends
 
   /**
    * <pre>
-   * Estimated percent of inputs that were reviewed. Calculated as count of reviewed inputs / total task inputs
+   * Estimated number of reviewed inputs per reviewer index.
+   * The reviewer indexes are based on task.review.users.
+   * An input is considered reviewed by a reviewer if:
+   * * the reviewer approved the input
+   * * ANY reviewer rejected the input (as rejection is final)
+   * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+   * The reviewer will have to review the input again after work has been completed.
+   * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+   * </pre>
+   *
+   * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+   * @return A list containing the inputsCountEstimatedPerReviewer.
+   */
+  java.util.List<java.lang.Long> getInputsCountEstimatedPerReviewerList();
+  /**
+   * <pre>
+   * Estimated number of reviewed inputs per reviewer index.
+   * The reviewer indexes are based on task.review.users.
+   * An input is considered reviewed by a reviewer if:
+   * * the reviewer approved the input
+   * * ANY reviewer rejected the input (as rejection is final)
+   * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+   * The reviewer will have to review the input again after work has been completed.
+   * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+   * </pre>
+   *
+   * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+   * @return The count of inputsCountEstimatedPerReviewer.
+   */
+  int getInputsCountEstimatedPerReviewerCount();
+  /**
+   * <pre>
+   * Estimated number of reviewed inputs per reviewer index.
+   * The reviewer indexes are based on task.review.users.
+   * An input is considered reviewed by a reviewer if:
+   * * the reviewer approved the input
+   * * ANY reviewer rejected the input (as rejection is final)
+   * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+   * The reviewer will have to review the input again after work has been completed.
+   * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+   * </pre>
+   *
+   * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+   * @param index The index of the element to return.
+   * @return The inputsCountEstimatedPerReviewer at the given index.
+   */
+  long getInputsCountEstimatedPerReviewer(int index);
+
+  /**
+   * <pre>
+   * Estimated percent of review work that was finished.
    * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+   * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
+   * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
+   * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
+   * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
    * </pre>
    *
    * <code>uint32 inputs_percent_estimated = 2;</code>

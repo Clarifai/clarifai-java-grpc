@@ -189,6 +189,7 @@ public interface ListTasksRequestOrBuilder extends
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
    * - metrics.review.inputs_count_estimated
+   * - metrics.review.inputs_count_estimated_per_reviewer
    * - metrics.review.inputs_percent_estimated
    * </pre>
    *
@@ -208,6 +209,7 @@ public interface ListTasksRequestOrBuilder extends
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
    * - metrics.review.inputs_count_estimated
+   * - metrics.review.inputs_count_estimated_per_reviewer
    * - metrics.review.inputs_percent_estimated
    * </pre>
    *
@@ -226,6 +228,7 @@ public interface ListTasksRequestOrBuilder extends
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
    * - metrics.review.inputs_count_estimated
+   * - metrics.review.inputs_count_estimated_per_reviewer
    * - metrics.review.inputs_percent_estimated
    * </pre>
    *
@@ -245,6 +248,7 @@ public interface ListTasksRequestOrBuilder extends
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
    * - metrics.review.inputs_count_estimated
+   * - metrics.review.inputs_count_estimated_per_reviewer
    * - metrics.review.inputs_percent_estimated
    * </pre>
    *

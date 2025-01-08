@@ -73,6 +73,21 @@ public interface BulkOperationOrBuilder extends
   com.clarifai.grpc.api.DatasetOrBuilder getDatasetOrBuilder();
 
   /**
+   * <code>.clarifai.api.Search annotation_search = 12;</code>
+   * @return Whether the annotationSearch field is set.
+   */
+  boolean hasAnnotationSearch();
+  /**
+   * <code>.clarifai.api.Search annotation_search = 12;</code>
+   * @return The annotationSearch.
+   */
+  com.clarifai.grpc.api.Search getAnnotationSearch();
+  /**
+   * <code>.clarifai.api.Search annotation_search = 12;</code>
+   */
+  com.clarifai.grpc.api.SearchOrBuilder getAnnotationSearchOrBuilder();
+
+  /**
    * <pre>
    * Operation to perform
    * </pre>
@@ -260,4 +275,6 @@ public interface BulkOperationOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastModifiedAtOrBuilder();
 
   public com.clarifai.grpc.api.BulkOperation.InputSourceCase getInputSourceCase();
+
+  public com.clarifai.grpc.api.BulkOperation.AnnotationSourceCase getAnnotationSourceCase();
 }

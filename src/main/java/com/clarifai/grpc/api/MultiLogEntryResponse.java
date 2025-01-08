@@ -72,6 +72,16 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.LogEntry.parser(), extensionRegistry));
             break;
           }
+          case 32: {
+
+            page_ = input.readUInt32();
+            break;
+          }
+          case 40: {
+
+            perPage_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -195,6 +205,36 @@ private static final long serialVersionUID = 0L;
     return logEntries_.get(index);
   }
 
+  public static final int PAGE_FIELD_NUMBER = 4;
+  private int page_;
+  /**
+   * <pre>
+   * The page the log entries are from. If the request's page was omitted or greater than the total pages, then this is set to the last page.
+   * </pre>
+   *
+   * <code>uint32 page = 4;</code>
+   * @return The page.
+   */
+  @java.lang.Override
+  public int getPage() {
+    return page_;
+  }
+
+  public static final int PER_PAGE_FIELD_NUMBER = 5;
+  private int perPage_;
+  /**
+   * <pre>
+   * The number of results contained in each page.
+   * </pre>
+   *
+   * <code>uint32 per_page = 5;</code>
+   * @return The perPage.
+   */
+  @java.lang.Override
+  public int getPerPage() {
+    return perPage_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -215,6 +255,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < logEntries_.size(); i++) {
       output.writeMessage(2, logEntries_.get(i));
     }
+    if (page_ != 0) {
+      output.writeUInt32(4, page_);
+    }
+    if (perPage_ != 0) {
+      output.writeUInt32(5, perPage_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -231,6 +277,14 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < logEntries_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, logEntries_.get(i));
+    }
+    if (page_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(4, page_);
+    }
+    if (perPage_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(5, perPage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -254,6 +308,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLogEntriesList()
         .equals(other.getLogEntriesList())) return false;
+    if (getPage()
+        != other.getPage()) return false;
+    if (getPerPage()
+        != other.getPerPage()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -273,6 +331,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LOG_ENTRIES_FIELD_NUMBER;
       hash = (53 * hash) + getLogEntriesList().hashCode();
     }
+    hash = (37 * hash) + PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPage();
+    hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPerPage();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -419,6 +481,10 @@ private static final long serialVersionUID = 0L;
       } else {
         logEntriesBuilder_.clear();
       }
+      page_ = 0;
+
+      perPage_ = 0;
+
       return this;
     }
 
@@ -460,6 +526,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.logEntries_ = logEntriesBuilder_.build();
       }
+      result.page_ = page_;
+      result.perPage_ = perPage_;
       onBuilt();
       return result;
     }
@@ -536,6 +604,12 @@ private static final long serialVersionUID = 0L;
             logEntriesBuilder_.addAllMessages(other.logEntries_);
           }
         }
+      }
+      if (other.getPage() != 0) {
+        setPage(other.getPage());
+      }
+      if (other.getPerPage() != 0) {
+        setPerPage(other.getPerPage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -996,6 +1070,92 @@ private static final long serialVersionUID = 0L;
         logEntries_ = null;
       }
       return logEntriesBuilder_;
+    }
+
+    private int page_ ;
+    /**
+     * <pre>
+     * The page the log entries are from. If the request's page was omitted or greater than the total pages, then this is set to the last page.
+     * </pre>
+     *
+     * <code>uint32 page = 4;</code>
+     * @return The page.
+     */
+    @java.lang.Override
+    public int getPage() {
+      return page_;
+    }
+    /**
+     * <pre>
+     * The page the log entries are from. If the request's page was omitted or greater than the total pages, then this is set to the last page.
+     * </pre>
+     *
+     * <code>uint32 page = 4;</code>
+     * @param value The page to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPage(int value) {
+      
+      page_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The page the log entries are from. If the request's page was omitted or greater than the total pages, then this is set to the last page.
+     * </pre>
+     *
+     * <code>uint32 page = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPage() {
+      
+      page_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int perPage_ ;
+    /**
+     * <pre>
+     * The number of results contained in each page.
+     * </pre>
+     *
+     * <code>uint32 per_page = 5;</code>
+     * @return The perPage.
+     */
+    @java.lang.Override
+    public int getPerPage() {
+      return perPage_;
+    }
+    /**
+     * <pre>
+     * The number of results contained in each page.
+     * </pre>
+     *
+     * <code>uint32 per_page = 5;</code>
+     * @param value The perPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerPage(int value) {
+      
+      perPage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The number of results contained in each page.
+     * </pre>
+     *
+     * <code>uint32 per_page = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPerPage() {
+      
+      perPage_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

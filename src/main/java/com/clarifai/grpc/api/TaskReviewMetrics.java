@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TaskReviewMetrics() {
+    inputsCountEstimatedPerReviewer_ = emptyLongList();
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -58,6 +60,27 @@ private static final long serialVersionUID = 0L;
             inputsPercentEstimated_ = input.readUInt32();
             break;
           }
+          case 24: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              inputsCountEstimatedPerReviewer_ = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            inputsCountEstimatedPerReviewer_.addLong(input.readUInt64());
+            break;
+          }
+          case 26: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              inputsCountEstimatedPerReviewer_ = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              inputsCountEstimatedPerReviewer_.addLong(input.readUInt64());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -75,6 +98,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        inputsCountEstimatedPerReviewer_.makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -96,7 +122,7 @@ private static final long serialVersionUID = 0L;
   private long inputsCountEstimated_;
   /**
    * <pre>
-   * Estimated number of reviewed inputs.
+   * Estimated number of reviewed inputs by at least one reviewer.
    * </pre>
    *
    * <code>uint64 inputs_count_estimated = 1;</code>
@@ -107,12 +133,77 @@ private static final long serialVersionUID = 0L;
     return inputsCountEstimated_;
   }
 
+  public static final int INPUTS_COUNT_ESTIMATED_PER_REVIEWER_FIELD_NUMBER = 3;
+  private com.google.protobuf.Internal.LongList inputsCountEstimatedPerReviewer_;
+  /**
+   * <pre>
+   * Estimated number of reviewed inputs per reviewer index.
+   * The reviewer indexes are based on task.review.users.
+   * An input is considered reviewed by a reviewer if:
+   * * the reviewer approved the input
+   * * ANY reviewer rejected the input (as rejection is final)
+   * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+   * The reviewer will have to review the input again after work has been completed.
+   * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+   * </pre>
+   *
+   * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+   * @return A list containing the inputsCountEstimatedPerReviewer.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Long>
+      getInputsCountEstimatedPerReviewerList() {
+    return inputsCountEstimatedPerReviewer_;
+  }
+  /**
+   * <pre>
+   * Estimated number of reviewed inputs per reviewer index.
+   * The reviewer indexes are based on task.review.users.
+   * An input is considered reviewed by a reviewer if:
+   * * the reviewer approved the input
+   * * ANY reviewer rejected the input (as rejection is final)
+   * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+   * The reviewer will have to review the input again after work has been completed.
+   * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+   * </pre>
+   *
+   * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+   * @return The count of inputsCountEstimatedPerReviewer.
+   */
+  public int getInputsCountEstimatedPerReviewerCount() {
+    return inputsCountEstimatedPerReviewer_.size();
+  }
+  /**
+   * <pre>
+   * Estimated number of reviewed inputs per reviewer index.
+   * The reviewer indexes are based on task.review.users.
+   * An input is considered reviewed by a reviewer if:
+   * * the reviewer approved the input
+   * * ANY reviewer rejected the input (as rejection is final)
+   * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+   * The reviewer will have to review the input again after work has been completed.
+   * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+   * </pre>
+   *
+   * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+   * @param index The index of the element to return.
+   * @return The inputsCountEstimatedPerReviewer at the given index.
+   */
+  public long getInputsCountEstimatedPerReviewer(int index) {
+    return inputsCountEstimatedPerReviewer_.getLong(index);
+  }
+  private int inputsCountEstimatedPerReviewerMemoizedSerializedSize = -1;
+
   public static final int INPUTS_PERCENT_ESTIMATED_FIELD_NUMBER = 2;
   private int inputsPercentEstimated_;
   /**
    * <pre>
-   * Estimated percent of inputs that were reviewed. Calculated as count of reviewed inputs / total task inputs
+   * Estimated percent of review work that was finished.
    * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+   * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
+   * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
+   * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
+   * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
    * </pre>
    *
    * <code>uint32 inputs_percent_estimated = 2;</code>
@@ -137,11 +228,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (inputsCountEstimated_ != 0L) {
       output.writeUInt64(1, inputsCountEstimated_);
     }
     if (inputsPercentEstimated_ != 0) {
       output.writeUInt32(2, inputsPercentEstimated_);
+    }
+    if (getInputsCountEstimatedPerReviewerList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(inputsCountEstimatedPerReviewerMemoizedSerializedSize);
+    }
+    for (int i = 0; i < inputsCountEstimatedPerReviewer_.size(); i++) {
+      output.writeUInt64NoTag(inputsCountEstimatedPerReviewer_.getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -160,6 +259,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, inputsPercentEstimated_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < inputsCountEstimatedPerReviewer_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeUInt64SizeNoTag(inputsCountEstimatedPerReviewer_.getLong(i));
+      }
+      size += dataSize;
+      if (!getInputsCountEstimatedPerReviewerList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      inputsCountEstimatedPerReviewerMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -177,6 +290,8 @@ private static final long serialVersionUID = 0L;
 
     if (getInputsCountEstimated()
         != other.getInputsCountEstimated()) return false;
+    if (!getInputsCountEstimatedPerReviewerList()
+        .equals(other.getInputsCountEstimatedPerReviewerList())) return false;
     if (getInputsPercentEstimated()
         != other.getInputsPercentEstimated()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -193,6 +308,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INPUTS_COUNT_ESTIMATED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getInputsCountEstimated());
+    if (getInputsCountEstimatedPerReviewerCount() > 0) {
+      hash = (37 * hash) + INPUTS_COUNT_ESTIMATED_PER_REVIEWER_FIELD_NUMBER;
+      hash = (53 * hash) + getInputsCountEstimatedPerReviewerList().hashCode();
+    }
     hash = (37 * hash) + INPUTS_PERCENT_ESTIMATED_FIELD_NUMBER;
     hash = (53 * hash) + getInputsPercentEstimated();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -330,6 +449,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       inputsCountEstimated_ = 0L;
 
+      inputsCountEstimatedPerReviewer_ = emptyLongList();
+      bitField0_ = (bitField0_ & ~0x00000001);
       inputsPercentEstimated_ = 0;
 
       return this;
@@ -358,7 +479,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.TaskReviewMetrics buildPartial() {
       com.clarifai.grpc.api.TaskReviewMetrics result = new com.clarifai.grpc.api.TaskReviewMetrics(this);
+      int from_bitField0_ = bitField0_;
       result.inputsCountEstimated_ = inputsCountEstimated_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        inputsCountEstimatedPerReviewer_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.inputsCountEstimatedPerReviewer_ = inputsCountEstimatedPerReviewer_;
       result.inputsPercentEstimated_ = inputsPercentEstimated_;
       onBuilt();
       return result;
@@ -411,6 +538,16 @@ private static final long serialVersionUID = 0L;
       if (other.getInputsCountEstimated() != 0L) {
         setInputsCountEstimated(other.getInputsCountEstimated());
       }
+      if (!other.inputsCountEstimatedPerReviewer_.isEmpty()) {
+        if (inputsCountEstimatedPerReviewer_.isEmpty()) {
+          inputsCountEstimatedPerReviewer_ = other.inputsCountEstimatedPerReviewer_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureInputsCountEstimatedPerReviewerIsMutable();
+          inputsCountEstimatedPerReviewer_.addAll(other.inputsCountEstimatedPerReviewer_);
+        }
+        onChanged();
+      }
       if (other.getInputsPercentEstimated() != 0) {
         setInputsPercentEstimated(other.getInputsPercentEstimated());
       }
@@ -442,11 +579,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private long inputsCountEstimated_ ;
     /**
      * <pre>
-     * Estimated number of reviewed inputs.
+     * Estimated number of reviewed inputs by at least one reviewer.
      * </pre>
      *
      * <code>uint64 inputs_count_estimated = 1;</code>
@@ -458,7 +596,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimated number of reviewed inputs.
+     * Estimated number of reviewed inputs by at least one reviewer.
      * </pre>
      *
      * <code>uint64 inputs_count_estimated = 1;</code>
@@ -473,7 +611,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimated number of reviewed inputs.
+     * Estimated number of reviewed inputs by at least one reviewer.
      * </pre>
      *
      * <code>uint64 inputs_count_estimated = 1;</code>
@@ -486,11 +624,171 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.Internal.LongList inputsCountEstimatedPerReviewer_ = emptyLongList();
+    private void ensureInputsCountEstimatedPerReviewerIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        inputsCountEstimatedPerReviewer_ = mutableCopy(inputsCountEstimatedPerReviewer_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     * @return A list containing the inputsCountEstimatedPerReviewer.
+     */
+    public java.util.List<java.lang.Long>
+        getInputsCountEstimatedPerReviewerList() {
+      return ((bitField0_ & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(inputsCountEstimatedPerReviewer_) : inputsCountEstimatedPerReviewer_;
+    }
+    /**
+     * <pre>
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     * @return The count of inputsCountEstimatedPerReviewer.
+     */
+    public int getInputsCountEstimatedPerReviewerCount() {
+      return inputsCountEstimatedPerReviewer_.size();
+    }
+    /**
+     * <pre>
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     * @param index The index of the element to return.
+     * @return The inputsCountEstimatedPerReviewer at the given index.
+     */
+    public long getInputsCountEstimatedPerReviewer(int index) {
+      return inputsCountEstimatedPerReviewer_.getLong(index);
+    }
+    /**
+     * <pre>
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The inputsCountEstimatedPerReviewer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputsCountEstimatedPerReviewer(
+        int index, long value) {
+      ensureInputsCountEstimatedPerReviewerIsMutable();
+      inputsCountEstimatedPerReviewer_.setLong(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     * @param value The inputsCountEstimatedPerReviewer to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInputsCountEstimatedPerReviewer(long value) {
+      ensureInputsCountEstimatedPerReviewerIsMutable();
+      inputsCountEstimatedPerReviewer_.addLong(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     * @param values The inputsCountEstimatedPerReviewer to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInputsCountEstimatedPerReviewer(
+        java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureInputsCountEstimatedPerReviewerIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, inputsCountEstimatedPerReviewer_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Estimated number of reviewed inputs per reviewer index.
+     * The reviewer indexes are based on task.review.users.
+     * An input is considered reviewed by a reviewer if:
+     * * the reviewer approved the input
+     * * ANY reviewer rejected the input (as rejection is final)
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * The reviewer will have to review the input again after work has been completed.
+     * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_count_estimated_per_reviewer = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputsCountEstimatedPerReviewer() {
+      inputsCountEstimatedPerReviewer_ = emptyLongList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
     private int inputsPercentEstimated_ ;
     /**
      * <pre>
-     * Estimated percent of inputs that were reviewed. Calculated as count of reviewed inputs / total task inputs
+     * Estimated percent of review work that was finished.
      * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
+     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
+     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
+     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
      * </pre>
      *
      * <code>uint32 inputs_percent_estimated = 2;</code>
@@ -502,8 +800,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimated percent of inputs that were reviewed. Calculated as count of reviewed inputs / total task inputs
+     * Estimated percent of review work that was finished.
      * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
+     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
+     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
+     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
      * </pre>
      *
      * <code>uint32 inputs_percent_estimated = 2;</code>
@@ -518,8 +820,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimated percent of inputs that were reviewed. Calculated as count of reviewed inputs / total task inputs
+     * Estimated percent of review work that was finished.
      * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
+     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
+     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
+     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
      * </pre>
      *
      * <code>uint32 inputs_percent_estimated = 2;</code>

@@ -164,4 +164,14 @@ com.clarifai.grpc.api.ImageInfo defaultValue);
 
   com.clarifai.grpc.api.ImageInfo getHostedImageInfoOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * For internal processing of already decoded bytes.
+   * </pre>
+   *
+   * <code>bytes decoded_bytes = 8;</code>
+   * @return The decodedBytes.
+   */
+  com.google.protobuf.ByteString getDecodedBytes();
 }
