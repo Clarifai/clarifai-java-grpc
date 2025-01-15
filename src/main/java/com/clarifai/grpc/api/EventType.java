@@ -102,6 +102,34 @@ public enum EventType
   MODULE_VERSION_DELETE(205),
   /**
    * <pre>
+   * Event types related to models: 300 - 399
+   * </pre>
+   *
+   * <code>MODEL_CREATE = 300 [(.clarifai.api.utils.description) = "Models created"];</code>
+   */
+  MODEL_CREATE(300),
+  /**
+   * <code>MODEL_UPDATE = 301 [(.clarifai.api.utils.description) = "Models updated"];</code>
+   */
+  MODEL_UPDATE(301),
+  /**
+   * <code>MODEL_DELETE = 302 [(.clarifai.api.utils.description) = "Models deleted"];</code>
+   */
+  MODEL_DELETE(302),
+  /**
+   * <code>MODEL_VERSION_CREATE = 303 [(.clarifai.api.utils.description) = "Model versions created"];</code>
+   */
+  MODEL_VERSION_CREATE(303),
+  /**
+   * <code>MODEL_VERSION_UPDATE = 304 [(.clarifai.api.utils.description) = "Model versions updated"];</code>
+   */
+  MODEL_VERSION_UPDATE(304),
+  /**
+   * <code>MODEL_VERSION_DELETE = 305 [(.clarifai.api.utils.description) = "Model versions deleted"];</code>
+   */
+  MODEL_VERSION_DELETE(305),
+  /**
+   * <pre>
    * Event types related to workflows: 400 - 499
    * </pre>
    *
@@ -160,6 +188,14 @@ public enum EventType
    * <code>COLLABORATOR_REMOVE = 702 [(.clarifai.api.utils.description) = "Collaborators removed"];</code>
    */
   COLLABORATOR_REMOVE(702),
+  /**
+   * <pre>
+   * Event types related to users: 800 - 899
+   * </pre>
+   *
+   * <code>USER_UPDATE = 800 [(.clarifai.api.utils.description) = "Users updated"];</code>
+   */
+  USER_UPDATE(800),
   UNRECOGNIZED(-1),
   ;
 
@@ -257,6 +293,34 @@ public enum EventType
   public static final int MODULE_VERSION_DELETE_VALUE = 205;
   /**
    * <pre>
+   * Event types related to models: 300 - 399
+   * </pre>
+   *
+   * <code>MODEL_CREATE = 300 [(.clarifai.api.utils.description) = "Models created"];</code>
+   */
+  public static final int MODEL_CREATE_VALUE = 300;
+  /**
+   * <code>MODEL_UPDATE = 301 [(.clarifai.api.utils.description) = "Models updated"];</code>
+   */
+  public static final int MODEL_UPDATE_VALUE = 301;
+  /**
+   * <code>MODEL_DELETE = 302 [(.clarifai.api.utils.description) = "Models deleted"];</code>
+   */
+  public static final int MODEL_DELETE_VALUE = 302;
+  /**
+   * <code>MODEL_VERSION_CREATE = 303 [(.clarifai.api.utils.description) = "Model versions created"];</code>
+   */
+  public static final int MODEL_VERSION_CREATE_VALUE = 303;
+  /**
+   * <code>MODEL_VERSION_UPDATE = 304 [(.clarifai.api.utils.description) = "Model versions updated"];</code>
+   */
+  public static final int MODEL_VERSION_UPDATE_VALUE = 304;
+  /**
+   * <code>MODEL_VERSION_DELETE = 305 [(.clarifai.api.utils.description) = "Model versions deleted"];</code>
+   */
+  public static final int MODEL_VERSION_DELETE_VALUE = 305;
+  /**
+   * <pre>
    * Event types related to workflows: 400 - 499
    * </pre>
    *
@@ -315,6 +379,14 @@ public enum EventType
    * <code>COLLABORATOR_REMOVE = 702 [(.clarifai.api.utils.description) = "Collaborators removed"];</code>
    */
   public static final int COLLABORATOR_REMOVE_VALUE = 702;
+  /**
+   * <pre>
+   * Event types related to users: 800 - 899
+   * </pre>
+   *
+   * <code>USER_UPDATE = 800 [(.clarifai.api.utils.description) = "Users updated"];</code>
+   */
+  public static final int USER_UPDATE_VALUE = 800;
 
 
   public final int getNumber() {
@@ -362,6 +434,12 @@ public enum EventType
       case 203: return MODULE_VERSION_CREATE;
       case 204: return MODULE_VERSION_UPDATE;
       case 205: return MODULE_VERSION_DELETE;
+      case 300: return MODEL_CREATE;
+      case 301: return MODEL_UPDATE;
+      case 302: return MODEL_DELETE;
+      case 303: return MODEL_VERSION_CREATE;
+      case 304: return MODEL_VERSION_UPDATE;
+      case 305: return MODEL_VERSION_DELETE;
       case 400: return WORKFLOW_CREATE;
       case 401: return WORKFLOW_UPDATE;
       case 402: return WORKFLOW_DELETE;
@@ -374,6 +452,7 @@ public enum EventType
       case 700: return COLLABORATOR_ADD;
       case 701: return COLLABORATOR_UPDATE;
       case 702: return COLLABORATOR_REMOVE;
+      case 800: return USER_UPDATE;
       default: return null;
     }
   }

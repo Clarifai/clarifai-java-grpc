@@ -127,5 +127,35 @@ public interface AuditLogTargetOrBuilder extends
    */
   com.clarifai.grpc.api.WorkflowVersionOrBuilder getWorkflowVersionOrBuilder();
 
+  /**
+   * <code>.clarifai.api.Model model = 9;</code>
+   * @return Whether the model field is set.
+   */
+  boolean hasModel();
+  /**
+   * <code>.clarifai.api.Model model = 9;</code>
+   * @return The model.
+   */
+  com.clarifai.grpc.api.Model getModel();
+  /**
+   * <code>.clarifai.api.Model model = 9;</code>
+   */
+  com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
+
+  /**
+   * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+   * @return Whether the modelVersion field is set.
+   */
+  boolean hasModelVersion();
+  /**
+   * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+   * @return The modelVersion.
+   */
+  com.clarifai.grpc.api.ModelVersion getModelVersion();
+  /**
+   * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+   */
+  com.clarifai.grpc.api.ModelVersionOrBuilder getModelVersionOrBuilder();
+
   public com.clarifai.grpc.api.AuditLogTarget.TargetCase getTargetCase();
 }

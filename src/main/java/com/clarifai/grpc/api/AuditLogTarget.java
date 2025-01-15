@@ -165,6 +165,34 @@ private static final long serialVersionUID = 0L;
             targetCase_ = 8;
             break;
           }
+          case 74: {
+            com.clarifai.grpc.api.Model.Builder subBuilder = null;
+            if (targetCase_ == 9) {
+              subBuilder = ((com.clarifai.grpc.api.Model) target_).toBuilder();
+            }
+            target_ =
+                input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Model) target_);
+              target_ = subBuilder.buildPartial();
+            }
+            targetCase_ = 9;
+            break;
+          }
+          case 82: {
+            com.clarifai.grpc.api.ModelVersion.Builder subBuilder = null;
+            if (targetCase_ == 10) {
+              subBuilder = ((com.clarifai.grpc.api.ModelVersion) target_).toBuilder();
+            }
+            target_ =
+                input.readMessage(com.clarifai.grpc.api.ModelVersion.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.ModelVersion) target_);
+              target_ = subBuilder.buildPartial();
+            }
+            targetCase_ = 10;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -212,6 +240,8 @@ private static final long serialVersionUID = 0L;
     MODULE_VERSION(6),
     WORKFLOW(7),
     WORKFLOW_VERSION(8),
+    MODEL(9),
+    MODEL_VERSION(10),
     TARGET_NOT_SET(0);
     private final int value;
     private TargetCase(int value) {
@@ -237,6 +267,8 @@ private static final long serialVersionUID = 0L;
         case 6: return MODULE_VERSION;
         case 7: return WORKFLOW;
         case 8: return WORKFLOW_VERSION;
+        case 9: return MODEL;
+        case 10: return MODEL_VERSION;
         case 0: return TARGET_NOT_SET;
         default: return null;
       }
@@ -500,6 +532,68 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance();
   }
 
+  public static final int MODEL_FIELD_NUMBER = 9;
+  /**
+   * <code>.clarifai.api.Model model = 9;</code>
+   * @return Whether the model field is set.
+   */
+  @java.lang.Override
+  public boolean hasModel() {
+    return targetCase_ == 9;
+  }
+  /**
+   * <code>.clarifai.api.Model model = 9;</code>
+   * @return The model.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Model getModel() {
+    if (targetCase_ == 9) {
+       return (com.clarifai.grpc.api.Model) target_;
+    }
+    return com.clarifai.grpc.api.Model.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Model model = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+    if (targetCase_ == 9) {
+       return (com.clarifai.grpc.api.Model) target_;
+    }
+    return com.clarifai.grpc.api.Model.getDefaultInstance();
+  }
+
+  public static final int MODEL_VERSION_FIELD_NUMBER = 10;
+  /**
+   * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+   * @return Whether the modelVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelVersion() {
+    return targetCase_ == 10;
+  }
+  /**
+   * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+   * @return The modelVersion.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelVersion getModelVersion() {
+    if (targetCase_ == 10) {
+       return (com.clarifai.grpc.api.ModelVersion) target_;
+    }
+    return com.clarifai.grpc.api.ModelVersion.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelVersionOrBuilder getModelVersionOrBuilder() {
+    if (targetCase_ == 10) {
+       return (com.clarifai.grpc.api.ModelVersion) target_;
+    }
+    return com.clarifai.grpc.api.ModelVersion.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -537,6 +631,12 @@ private static final long serialVersionUID = 0L;
     }
     if (targetCase_ == 8) {
       output.writeMessage(8, (com.clarifai.grpc.api.WorkflowVersion) target_);
+    }
+    if (targetCase_ == 9) {
+      output.writeMessage(9, (com.clarifai.grpc.api.Model) target_);
+    }
+    if (targetCase_ == 10) {
+      output.writeMessage(10, (com.clarifai.grpc.api.ModelVersion) target_);
     }
     unknownFields.writeTo(output);
   }
@@ -578,6 +678,14 @@ private static final long serialVersionUID = 0L;
     if (targetCase_ == 8) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, (com.clarifai.grpc.api.WorkflowVersion) target_);
+    }
+    if (targetCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, (com.clarifai.grpc.api.Model) target_);
+    }
+    if (targetCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, (com.clarifai.grpc.api.ModelVersion) target_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -628,6 +736,14 @@ private static final long serialVersionUID = 0L;
         if (!getWorkflowVersion()
             .equals(other.getWorkflowVersion())) return false;
         break;
+      case 9:
+        if (!getModel()
+            .equals(other.getModel())) return false;
+        break;
+      case 10:
+        if (!getModelVersion()
+            .equals(other.getModelVersion())) return false;
+        break;
       case 0:
       default:
     }
@@ -674,6 +790,14 @@ private static final long serialVersionUID = 0L;
       case 8:
         hash = (37 * hash) + WORKFLOW_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getWorkflowVersion().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + MODEL_FIELD_NUMBER;
+        hash = (53 * hash) + getModel().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + MODEL_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getModelVersion().hashCode();
         break;
       case 0:
       default:
@@ -900,6 +1024,20 @@ private static final long serialVersionUID = 0L;
           result.target_ = workflowVersionBuilder_.build();
         }
       }
+      if (targetCase_ == 9) {
+        if (modelBuilder_ == null) {
+          result.target_ = target_;
+        } else {
+          result.target_ = modelBuilder_.build();
+        }
+      }
+      if (targetCase_ == 10) {
+        if (modelVersionBuilder_ == null) {
+          result.target_ = target_;
+        } else {
+          result.target_ = modelVersionBuilder_.build();
+        }
+      }
       result.targetCase_ = targetCase_;
       onBuilt();
       return result;
@@ -980,6 +1118,14 @@ private static final long serialVersionUID = 0L;
         }
         case WORKFLOW_VERSION: {
           mergeWorkflowVersion(other.getWorkflowVersion());
+          break;
+        }
+        case MODEL: {
+          mergeModel(other.getModel());
+          break;
+        }
+        case MODEL_VERSION: {
+          mergeModelVersion(other.getModelVersion());
           break;
         }
         case TARGET_NOT_SET: {
@@ -2164,6 +2310,290 @@ private static final long serialVersionUID = 0L;
       targetCase_ = 8;
       onChanged();;
       return workflowVersionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelBuilder_;
+    /**
+     * <code>.clarifai.api.Model model = 9;</code>
+     * @return Whether the model field is set.
+     */
+    @java.lang.Override
+    public boolean hasModel() {
+      return targetCase_ == 9;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 9;</code>
+     * @return The model.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Model getModel() {
+      if (modelBuilder_ == null) {
+        if (targetCase_ == 9) {
+          return (com.clarifai.grpc.api.Model) target_;
+        }
+        return com.clarifai.grpc.api.Model.getDefaultInstance();
+      } else {
+        if (targetCase_ == 9) {
+          return modelBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Model.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public Builder setModel(com.clarifai.grpc.api.Model value) {
+      if (modelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        modelBuilder_.setMessage(value);
+      }
+      targetCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public Builder setModel(
+        com.clarifai.grpc.api.Model.Builder builderForValue) {
+      if (modelBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public Builder mergeModel(com.clarifai.grpc.api.Model value) {
+      if (modelBuilder_ == null) {
+        if (targetCase_ == 9 &&
+            target_ != com.clarifai.grpc.api.Model.getDefaultInstance()) {
+          target_ = com.clarifai.grpc.api.Model.newBuilder((com.clarifai.grpc.api.Model) target_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 9) {
+          modelBuilder_.mergeFrom(value);
+        } else {
+          modelBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public Builder clearModel() {
+      if (modelBuilder_ == null) {
+        if (targetCase_ == 9) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 9) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        modelBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public com.clarifai.grpc.api.Model.Builder getModelBuilder() {
+      return getModelFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+      if ((targetCase_ == 9) && (modelBuilder_ != null)) {
+        return modelBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 9) {
+          return (com.clarifai.grpc.api.Model) target_;
+        }
+        return com.clarifai.grpc.api.Model.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
+        getModelFieldBuilder() {
+      if (modelBuilder_ == null) {
+        if (!(targetCase_ == 9)) {
+          target_ = com.clarifai.grpc.api.Model.getDefaultInstance();
+        }
+        modelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
+                (com.clarifai.grpc.api.Model) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 9;
+      onChanged();;
+      return modelBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ModelVersion, com.clarifai.grpc.api.ModelVersion.Builder, com.clarifai.grpc.api.ModelVersionOrBuilder> modelVersionBuilder_;
+    /**
+     * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     * @return Whether the modelVersion field is set.
+     */
+    @java.lang.Override
+    public boolean hasModelVersion() {
+      return targetCase_ == 10;
+    }
+    /**
+     * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     * @return The modelVersion.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ModelVersion getModelVersion() {
+      if (modelVersionBuilder_ == null) {
+        if (targetCase_ == 10) {
+          return (com.clarifai.grpc.api.ModelVersion) target_;
+        }
+        return com.clarifai.grpc.api.ModelVersion.getDefaultInstance();
+      } else {
+        if (targetCase_ == 10) {
+          return modelVersionBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.ModelVersion.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     */
+    public Builder setModelVersion(com.clarifai.grpc.api.ModelVersion value) {
+      if (modelVersionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        modelVersionBuilder_.setMessage(value);
+      }
+      targetCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     */
+    public Builder setModelVersion(
+        com.clarifai.grpc.api.ModelVersion.Builder builderForValue) {
+      if (modelVersionBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelVersionBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     */
+    public Builder mergeModelVersion(com.clarifai.grpc.api.ModelVersion value) {
+      if (modelVersionBuilder_ == null) {
+        if (targetCase_ == 10 &&
+            target_ != com.clarifai.grpc.api.ModelVersion.getDefaultInstance()) {
+          target_ = com.clarifai.grpc.api.ModelVersion.newBuilder((com.clarifai.grpc.api.ModelVersion) target_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 10) {
+          modelVersionBuilder_.mergeFrom(value);
+        } else {
+          modelVersionBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     */
+    public Builder clearModelVersion() {
+      if (modelVersionBuilder_ == null) {
+        if (targetCase_ == 10) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 10) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        modelVersionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     */
+    public com.clarifai.grpc.api.ModelVersion.Builder getModelVersionBuilder() {
+      return getModelVersionFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ModelVersionOrBuilder getModelVersionOrBuilder() {
+      if ((targetCase_ == 10) && (modelVersionBuilder_ != null)) {
+        return modelVersionBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 10) {
+          return (com.clarifai.grpc.api.ModelVersion) target_;
+        }
+        return com.clarifai.grpc.api.ModelVersion.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ModelVersion model_version = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ModelVersion, com.clarifai.grpc.api.ModelVersion.Builder, com.clarifai.grpc.api.ModelVersionOrBuilder> 
+        getModelVersionFieldBuilder() {
+      if (modelVersionBuilder_ == null) {
+        if (!(targetCase_ == 10)) {
+          target_ = com.clarifai.grpc.api.ModelVersion.getDefaultInstance();
+        }
+        modelVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ModelVersion, com.clarifai.grpc.api.ModelVersion.Builder, com.clarifai.grpc.api.ModelVersionOrBuilder>(
+                (com.clarifai.grpc.api.ModelVersion) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 10;
+      onChanged();;
+      return modelVersionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
