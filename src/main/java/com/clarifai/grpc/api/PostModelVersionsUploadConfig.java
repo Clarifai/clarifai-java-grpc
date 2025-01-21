@@ -91,6 +91,11 @@ private static final long serialVersionUID = 0L;
             isV3_ = input.readBool();
             break;
           }
+          case 48: {
+
+            storageRequestSize_ = input.readUInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -265,6 +270,21 @@ private static final long serialVersionUID = 0L;
     return isV3_;
   }
 
+  public static final int STORAGE_REQUEST_SIZE_FIELD_NUMBER = 6;
+  private long storageRequestSize_;
+  /**
+   * <pre>
+   * Number of bytes requested for the build process.
+   * </pre>
+   *
+   * <code>uint64 storage_request_size = 6;</code>
+   * @return The storageRequestSize.
+   */
+  @java.lang.Override
+  public long getStorageRequestSize() {
+    return storageRequestSize_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -294,6 +314,9 @@ private static final long serialVersionUID = 0L;
     if (isV3_ != false) {
       output.writeBool(5, isV3_);
     }
+    if (storageRequestSize_ != 0L) {
+      output.writeUInt64(6, storageRequestSize_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -321,6 +344,10 @@ private static final long serialVersionUID = 0L;
     if (isV3_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, isV3_);
+    }
+    if (storageRequestSize_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(6, storageRequestSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -353,6 +380,8 @@ private static final long serialVersionUID = 0L;
         != other.getTotalSize()) return false;
     if (getIsV3()
         != other.getIsV3()) return false;
+    if (getStorageRequestSize()
+        != other.getStorageRequestSize()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -380,6 +409,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_V3_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsV3());
+    hash = (37 * hash) + STORAGE_REQUEST_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getStorageRequestSize());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -531,6 +563,8 @@ private static final long serialVersionUID = 0L;
 
       isV3_ = false;
 
+      storageRequestSize_ = 0L;
+
       return this;
     }
 
@@ -570,6 +604,7 @@ private static final long serialVersionUID = 0L;
       }
       result.totalSize_ = totalSize_;
       result.isV3_ = isV3_;
+      result.storageRequestSize_ = storageRequestSize_;
       onBuilt();
       return result;
     }
@@ -633,6 +668,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsV3() != false) {
         setIsV3(other.getIsV3());
+      }
+      if (other.getStorageRequestSize() != 0L) {
+        setStorageRequestSize(other.getStorageRequestSize());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1115,6 +1153,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsV3() {
       
       isV3_ = false;
+      onChanged();
+      return this;
+    }
+
+    private long storageRequestSize_ ;
+    /**
+     * <pre>
+     * Number of bytes requested for the build process.
+     * </pre>
+     *
+     * <code>uint64 storage_request_size = 6;</code>
+     * @return The storageRequestSize.
+     */
+    @java.lang.Override
+    public long getStorageRequestSize() {
+      return storageRequestSize_;
+    }
+    /**
+     * <pre>
+     * Number of bytes requested for the build process.
+     * </pre>
+     *
+     * <code>uint64 storage_request_size = 6;</code>
+     * @param value The storageRequestSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageRequestSize(long value) {
+      
+      storageRequestSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of bytes requested for the build process.
+     * </pre>
+     *
+     * <code>uint64 storage_request_size = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStorageRequestSize() {
+      
+      storageRequestSize_ = 0L;
       onChanged();
       return this;
     }

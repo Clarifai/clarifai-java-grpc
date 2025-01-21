@@ -167,4 +167,24 @@ public interface OutputOrBuilder extends
    * <code>.clarifai.api.Data data = 6;</code>
    */
   com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder();
+
+  /**
+   * <pre>
+   * Number of prompt tokens as reported by the model or third-party API.
+   * </pre>
+   *
+   * <code>uint32 prompt_tokens = 7;</code>
+   * @return The promptTokens.
+   */
+  int getPromptTokens();
+
+  /**
+   * <pre>
+   * Number of completion tokens as reported by the model or third-party API.
+   * </pre>
+   *
+   * <code>uint32 completion_tokens = 8;</code>
+   * @return The completionTokens.
+   */
+  int getCompletionTokens();
 }

@@ -124,6 +124,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 56: {
+
+            promptTokens_ = input.readUInt32();
+            break;
+          }
+          case 64: {
+
+            completionTokens_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -400,6 +410,36 @@ private static final long serialVersionUID = 0L;
     return getData();
   }
 
+  public static final int PROMPT_TOKENS_FIELD_NUMBER = 7;
+  private int promptTokens_;
+  /**
+   * <pre>
+   * Number of prompt tokens as reported by the model or third-party API.
+   * </pre>
+   *
+   * <code>uint32 prompt_tokens = 7;</code>
+   * @return The promptTokens.
+   */
+  @java.lang.Override
+  public int getPromptTokens() {
+    return promptTokens_;
+  }
+
+  public static final int COMPLETION_TOKENS_FIELD_NUMBER = 8;
+  private int completionTokens_;
+  /**
+   * <pre>
+   * Number of completion tokens as reported by the model or third-party API.
+   * </pre>
+   *
+   * <code>uint32 completion_tokens = 8;</code>
+   * @return The completionTokens.
+   */
+  @java.lang.Override
+  public int getCompletionTokens() {
+    return completionTokens_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -432,6 +472,12 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(6, getData());
     }
+    if (promptTokens_ != 0) {
+      output.writeUInt32(7, promptTokens_);
+    }
+    if (completionTokens_ != 0) {
+      output.writeUInt32(8, completionTokens_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -463,6 +509,14 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getData());
+    }
+    if (promptTokens_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(7, promptTokens_);
+    }
+    if (completionTokens_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(8, completionTokens_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -506,6 +560,10 @@ private static final long serialVersionUID = 0L;
       if (!getData()
           .equals(other.getData())) return false;
     }
+    if (getPromptTokens()
+        != other.getPromptTokens()) return false;
+    if (getCompletionTokens()
+        != other.getCompletionTokens()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -539,6 +597,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
     }
+    hash = (37 * hash) + PROMPT_TOKENS_FIELD_NUMBER;
+    hash = (53 * hash) + getPromptTokens();
+    hash = (37 * hash) + COMPLETION_TOKENS_FIELD_NUMBER;
+    hash = (53 * hash) + getCompletionTokens();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -708,6 +770,10 @@ private static final long serialVersionUID = 0L;
         data_ = null;
         dataBuilder_ = null;
       }
+      promptTokens_ = 0;
+
+      completionTokens_ = 0;
+
       return this;
     }
 
@@ -760,6 +826,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.data_ = dataBuilder_.build();
       }
+      result.promptTokens_ = promptTokens_;
+      result.completionTokens_ = completionTokens_;
       onBuilt();
       return result;
     }
@@ -826,6 +894,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasData()) {
         mergeData(other.getData());
+      }
+      if (other.getPromptTokens() != 0) {
+        setPromptTokens(other.getPromptTokens());
+      }
+      if (other.getCompletionTokens() != 0) {
+        setCompletionTokens(other.getCompletionTokens());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1743,6 +1817,92 @@ private static final long serialVersionUID = 0L;
         data_ = null;
       }
       return dataBuilder_;
+    }
+
+    private int promptTokens_ ;
+    /**
+     * <pre>
+     * Number of prompt tokens as reported by the model or third-party API.
+     * </pre>
+     *
+     * <code>uint32 prompt_tokens = 7;</code>
+     * @return The promptTokens.
+     */
+    @java.lang.Override
+    public int getPromptTokens() {
+      return promptTokens_;
+    }
+    /**
+     * <pre>
+     * Number of prompt tokens as reported by the model or third-party API.
+     * </pre>
+     *
+     * <code>uint32 prompt_tokens = 7;</code>
+     * @param value The promptTokens to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptTokens(int value) {
+      
+      promptTokens_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of prompt tokens as reported by the model or third-party API.
+     * </pre>
+     *
+     * <code>uint32 prompt_tokens = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPromptTokens() {
+      
+      promptTokens_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int completionTokens_ ;
+    /**
+     * <pre>
+     * Number of completion tokens as reported by the model or third-party API.
+     * </pre>
+     *
+     * <code>uint32 completion_tokens = 8;</code>
+     * @return The completionTokens.
+     */
+    @java.lang.Override
+    public int getCompletionTokens() {
+      return completionTokens_;
+    }
+    /**
+     * <pre>
+     * Number of completion tokens as reported by the model or third-party API.
+     * </pre>
+     *
+     * <code>uint32 completion_tokens = 8;</code>
+     * @param value The completionTokens to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompletionTokens(int value) {
+      
+      completionTokens_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of completion tokens as reported by the model or third-party API.
+     * </pre>
+     *
+     * <code>uint32 completion_tokens = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCompletionTokens() {
+      
+      completionTokens_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -88,4 +88,14 @@ public interface PostModelVersionsUploadConfigOrBuilder extends
    * @return The isV3.
    */
   boolean getIsV3();
+
+  /**
+   * <pre>
+   * Number of bytes requested for the build process.
+   * </pre>
+   *
+   * <code>uint64 storage_request_size = 6;</code>
+   * @return The storageRequestSize.
+   */
+  long getStorageRequestSize();
 }
