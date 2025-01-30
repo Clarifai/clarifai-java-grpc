@@ -126,4 +126,14 @@ public interface PostModelOutputsRequestOrBuilder extends
    * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
    */
   com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorOrBuilder();
+
+  /**
+   * <pre>
+   * Configure the prediction cache to avoid expensive compute for predict requests
+   * </pre>
+   *
+   * <code>bool use_predict_cache = 7;</code>
+   * @return The usePredictCache.
+   */
+  boolean getUsePredictCache();
 }

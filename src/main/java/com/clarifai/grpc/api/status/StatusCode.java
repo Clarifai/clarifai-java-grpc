@@ -963,12 +963,20 @@ public enum StatusCode
   INSTANCE_TYPE_INVALID_REQUEST(162, 26002),
   /**
    * <pre>
+   * Compute plane related codes 261xx
+   * </pre>
+   *
+   * <code>COMPUTE_PLANE_METRICS_INVALID_REQUEST = 26100;</code>
+   */
+  COMPUTE_PLANE_METRICS_INVALID_REQUEST(163, 26100),
+  /**
+   * <pre>
    * Input:Image related 30xxx
    * </pre>
    *
    * <code>INPUT_SUCCESS = 30000;</code>
    */
-  INPUT_SUCCESS(163, 30000),
+  INPUT_SUCCESS(164, 30000),
   /**
    * <pre>
    * when things are async, this is the default status.
@@ -976,7 +984,7 @@ public enum StatusCode
    *
    * <code>INPUT_PENDING = 30001;</code>
    */
-  INPUT_PENDING(164, 30001),
+  INPUT_PENDING(165, 30001),
   /**
    * <pre>
    * any type of error downloading and processing
@@ -984,99 +992,99 @@ public enum StatusCode
    *
    * <code>INPUT_FAILED = 30002;</code>
    */
-  INPUT_FAILED(165, 30002),
+  INPUT_FAILED(166, 30002),
   /**
    * <code>INPUT_IN_PROGRESS = 30003;</code>
    */
-  INPUT_IN_PROGRESS(166, 30003),
+  INPUT_IN_PROGRESS(167, 30003),
   /**
    * <code>INPUT_STATUS_UPDATE_FAILED = 30004;</code>
    */
-  INPUT_STATUS_UPDATE_FAILED(171, 30004),
+  INPUT_STATUS_UPDATE_FAILED(172, 30004),
   /**
    * <code>INPUT_DELETE_FAILED = 30005;</code>
    */
-  INPUT_DELETE_FAILED(172, 30005),
+  INPUT_DELETE_FAILED(173, 30005),
   /**
    * <code>INPUT_DUPLICATE = 30100;</code>
    */
-  INPUT_DUPLICATE(173, 30100),
+  INPUT_DUPLICATE(174, 30100),
   /**
    * <code>INPUT_UNSUPPORTED_FORMAT = 30101;</code>
    */
-  INPUT_UNSUPPORTED_FORMAT(174, 30101),
+  INPUT_UNSUPPORTED_FORMAT(175, 30101),
   /**
    * <code>INPUT_DOES_NOT_EXIST = 30102;</code>
    */
-  INPUT_DOES_NOT_EXIST(175, 30102),
+  INPUT_DOES_NOT_EXIST(176, 30102),
   /**
    * <code>INPUT_PERMISSION_DENIED = 30103;</code>
    */
-  INPUT_PERMISSION_DENIED(176, 30103),
+  INPUT_PERMISSION_DENIED(177, 30103),
   /**
    * <code>INPUT_INVALID_ARGUMENT = 30104;</code>
    */
-  INPUT_INVALID_ARGUMENT(177, 30104),
+  INPUT_INVALID_ARGUMENT(178, 30104),
   /**
    * <code>INPUT_OVER_LIMIT = 30105;</code>
    */
-  INPUT_OVER_LIMIT(178, 30105),
+  INPUT_OVER_LIMIT(179, 30105),
   /**
    * <code>INPUT_INVALID_URL = 30106;</code>
    */
-  INPUT_INVALID_URL(179, 30106),
+  INPUT_INVALID_URL(180, 30106),
   /**
    * <code>INPUT_MODIFY_SUCCESS = 30200;</code>
    */
-  INPUT_MODIFY_SUCCESS(180, 30200),
+  INPUT_MODIFY_SUCCESS(181, 30200),
   /**
    * <code>INPUT_MODIFY_PENDING = 30201;</code>
    */
-  INPUT_MODIFY_PENDING(181, 30201),
+  INPUT_MODIFY_PENDING(182, 30201),
   /**
    * <code>INPUT_MODIFY_FAILED = 30203;</code>
    */
-  INPUT_MODIFY_FAILED(182, 30203),
+  INPUT_MODIFY_FAILED(183, 30203),
   /**
    * <code>INPUT_STORAGE_HOST_FAILED = 30210;</code>
    */
-  INPUT_STORAGE_HOST_FAILED(183, 30210),
+  INPUT_STORAGE_HOST_FAILED(184, 30210),
   /**
    * <code>ALL_INPUT_INVALID_BYTES = 30300;</code>
    */
-  ALL_INPUT_INVALID_BYTES(184, 30300),
+  ALL_INPUT_INVALID_BYTES(185, 30300),
   /**
    * <code>INPUT_CLUSTER_SUCCESS = 30400;</code>
    */
-  INPUT_CLUSTER_SUCCESS(185, 30400),
+  INPUT_CLUSTER_SUCCESS(186, 30400),
   /**
    * <code>INPUT_CLUSTER_PENDING = 30401;</code>
    */
-  INPUT_CLUSTER_PENDING(186, 30401),
+  INPUT_CLUSTER_PENDING(187, 30401),
   /**
    * <code>INPUT_CLUSTER_FAILED = 30402;</code>
    */
-  INPUT_CLUSTER_FAILED(187, 30402),
+  INPUT_CLUSTER_FAILED(188, 30402),
   /**
    * <code>INPUT_CLUSTER_IN_PROGRESS = 30403;</code>
    */
-  INPUT_CLUSTER_IN_PROGRESS(188, 30403),
+  INPUT_CLUSTER_IN_PROGRESS(189, 30403),
   /**
    * <code>INPUT_REINDEX_SUCCESS = 30500;</code>
    */
-  INPUT_REINDEX_SUCCESS(189, 30500),
+  INPUT_REINDEX_SUCCESS(190, 30500),
   /**
    * <code>INPUT_REINDEX_PENDING = 30501;</code>
    */
-  INPUT_REINDEX_PENDING(190, 30501),
+  INPUT_REINDEX_PENDING(191, 30501),
   /**
    * <code>INPUT_REINDEX_FAILED = 30502;</code>
    */
-  INPUT_REINDEX_FAILED(191, 30502),
+  INPUT_REINDEX_FAILED(192, 30502),
   /**
    * <code>INPUT_REINDEX_IN_PROGRESS = 30503;</code>
    */
-  INPUT_REINDEX_IN_PROGRESS(192, 30503),
+  INPUT_REINDEX_IN_PROGRESS(193, 30503),
   /**
    * <pre>
    * Input:Video related 31xxx -- Deprecated
@@ -1084,95 +1092,95 @@ public enum StatusCode
    *
    * <code>INPUT_VIDEO_DOWNLOAD_SUCCESS = 31000;</code>
    */
-  INPUT_VIDEO_DOWNLOAD_SUCCESS(193, 31000),
+  INPUT_VIDEO_DOWNLOAD_SUCCESS(194, 31000),
   /**
    * <code>INPUT_VIDEO_DOWNLOAD_PENDING = 31001;</code>
    */
-  INPUT_VIDEO_DOWNLOAD_PENDING(194, 31001),
+  INPUT_VIDEO_DOWNLOAD_PENDING(195, 31001),
   /**
    * <code>INPUT_VIDEO_DOWNLOAD_FAILED = 31002;</code>
    */
-  INPUT_VIDEO_DOWNLOAD_FAILED(195, 31002),
+  INPUT_VIDEO_DOWNLOAD_FAILED(196, 31002),
   /**
    * <code>INPUT_VIDEO_DUPLICATE = 31100;</code>
    */
-  INPUT_VIDEO_DUPLICATE(196, 31100),
+  INPUT_VIDEO_DUPLICATE(197, 31100),
   /**
    * <code>INPUT_VIDEO_UNSUPPORTED_FORMAT = 31101;</code>
    */
-  INPUT_VIDEO_UNSUPPORTED_FORMAT(197, 31101),
+  INPUT_VIDEO_UNSUPPORTED_FORMAT(198, 31101),
   /**
    * <code>INPUT_VIDEO_DOES_NOT_EXIST = 31102;</code>
    */
-  INPUT_VIDEO_DOES_NOT_EXIST(198, 31102),
+  INPUT_VIDEO_DOES_NOT_EXIST(199, 31102),
   /**
    * <code>INPUT_VIDEO_PERMISSION_DENIED = 31103;</code>
    */
-  INPUT_VIDEO_PERMISSION_DENIED(199, 31103),
+  INPUT_VIDEO_PERMISSION_DENIED(200, 31103),
   /**
    * <code>INPUT_VIDEO_INVALID_ARGUMENT = 31104;</code>
    */
-  INPUT_VIDEO_INVALID_ARGUMENT(200, 31104),
+  INPUT_VIDEO_INVALID_ARGUMENT(201, 31104),
   /**
    * <code>INPUT_VIDEO_OVER_LIMIT = 31105;</code>
    */
-  INPUT_VIDEO_OVER_LIMIT(201, 31105),
+  INPUT_VIDEO_OVER_LIMIT(202, 31105),
   /**
    * <code>INPUT_VIDEO_INVALID_URL = 31106;</code>
    */
-  INPUT_VIDEO_INVALID_URL(202, 31106),
+  INPUT_VIDEO_INVALID_URL(203, 31106),
   /**
    * <code>INPUT_VIDEO_MODIFY_SUCCESS = 31200;</code>
    */
-  INPUT_VIDEO_MODIFY_SUCCESS(203, 31200),
+  INPUT_VIDEO_MODIFY_SUCCESS(204, 31200),
   /**
    * <code>INPUT_VIDEO_MODIFY_PENDING = 31201;</code>
    */
-  INPUT_VIDEO_MODIFY_PENDING(204, 31201),
+  INPUT_VIDEO_MODIFY_PENDING(205, 31201),
   /**
    * <code>INPUT_VIDEO_MODIFY_FAILED = 31203;</code>
    */
-  INPUT_VIDEO_MODIFY_FAILED(205, 31203),
+  INPUT_VIDEO_MODIFY_FAILED(206, 31203),
   /**
    * <code>INPUT_VIDEO_STORAGE_HOST_FAILED = 31210;</code>
    */
-  INPUT_VIDEO_STORAGE_HOST_FAILED(206, 31210),
+  INPUT_VIDEO_STORAGE_HOST_FAILED(207, 31210),
   /**
    * <code>ALL_INPUT_VIDEOS_INVALID_BYTES = 31300;</code>
    */
-  ALL_INPUT_VIDEOS_INVALID_BYTES(207, 31300),
+  ALL_INPUT_VIDEOS_INVALID_BYTES(208, 31300),
   /**
    * <code>INPUT_VIDEO_PROCESSING_SUCCESS = 31400;</code>
    */
-  INPUT_VIDEO_PROCESSING_SUCCESS(208, 31400),
+  INPUT_VIDEO_PROCESSING_SUCCESS(209, 31400),
   /**
    * <code>INPUT_VIDEO_PROCESSING_PENDING = 31410;</code>
    */
-  INPUT_VIDEO_PROCESSING_PENDING(209, 31410),
+  INPUT_VIDEO_PROCESSING_PENDING(210, 31410),
   /**
    * <code>INPUT_VIDEO_PROCESSING_FAILED = 31420;</code>
    */
-  INPUT_VIDEO_PROCESSING_FAILED(210, 31420),
+  INPUT_VIDEO_PROCESSING_FAILED(211, 31420),
   /**
    * <code>INPUT_VIDEO_STORAGE_INCONSISTENCY = 31430;</code>
    */
-  INPUT_VIDEO_STORAGE_INCONSISTENCY(211, 31430),
+  INPUT_VIDEO_STORAGE_INCONSISTENCY(212, 31430),
   /**
    * <code>INPUT_VIDEO_STORAGE_FAILURE = 31440;</code>
    */
-  INPUT_VIDEO_STORAGE_FAILURE(212, 31440),
+  INPUT_VIDEO_STORAGE_FAILURE(213, 31440),
   /**
    * <code>INPUT_VIDEO_URL_GENERATION_FAILURE = 31450;</code>
    */
-  INPUT_VIDEO_URL_GENERATION_FAILURE(213, 31450),
+  INPUT_VIDEO_URL_GENERATION_FAILURE(214, 31450),
   /**
    * <code>INPUT_CONNECTION_FAILED = 39996;</code>
    */
-  INPUT_CONNECTION_FAILED(214, 39996),
+  INPUT_CONNECTION_FAILED(215, 39996),
   /**
    * <code>REQUEST_DISABLED_FOR_MAINTENANCE = 39997;</code>
    */
-  REQUEST_DISABLED_FOR_MAINTENANCE(215, 39997),
+  REQUEST_DISABLED_FOR_MAINTENANCE(216, 39997),
   /**
    * <pre>
    * deprecate this one. Use REQUEST_DISABLED_FOR_MAINTENANCE
@@ -1181,11 +1189,11 @@ public enum StatusCode
    * <code>INPUT_WRITES_DISABLED_FOR_MAINTENANCE = 39998 [deprecated = true];</code>
    */
   @java.lang.Deprecated
-  INPUT_WRITES_DISABLED_FOR_MAINTENANCE(216, 39998),
+  INPUT_WRITES_DISABLED_FOR_MAINTENANCE(217, 39998),
   /**
    * <code>INPUT_INVALID_REQUEST = 39999;</code>
    */
-  INPUT_INVALID_REQUEST(217, 39999),
+  INPUT_INVALID_REQUEST(218, 39999),
   /**
    * <pre>
    * API formatting issues 4000x
@@ -1193,19 +1201,19 @@ public enum StatusCode
    *
    * <code>PREDICT_INVALID_REQUEST = 40001;</code>
    */
-  PREDICT_INVALID_REQUEST(218, 40001),
+  PREDICT_INVALID_REQUEST(219, 40001),
   /**
    * <code>SEARCH_INVALID_REQUEST = 40002;</code>
    */
-  SEARCH_INVALID_REQUEST(219, 40002),
+  SEARCH_INVALID_REQUEST(220, 40002),
   /**
    * <code>CONCEPTS_INVALID_REQUEST = 40003;</code>
    */
-  CONCEPTS_INVALID_REQUEST(220, 40003),
+  CONCEPTS_INVALID_REQUEST(221, 40003),
   /**
    * <code>STATS_INVALID_REQUEST = 40004;</code>
    */
-  STATS_INVALID_REQUEST(221, 40004),
+  STATS_INVALID_REQUEST(222, 40004),
   /**
    * <pre>
    * Other related 400xx
@@ -1213,75 +1221,75 @@ public enum StatusCode
    *
    * <code>DATABASE_DUPLICATE_KEY = 40010;</code>
    */
-  DATABASE_DUPLICATE_KEY(222, 40010),
+  DATABASE_DUPLICATE_KEY(223, 40010),
   /**
    * <code>DATABASE_STATEMENT_TIMEOUT = 40011;</code>
    */
-  DATABASE_STATEMENT_TIMEOUT(223, 40011),
+  DATABASE_STATEMENT_TIMEOUT(224, 40011),
   /**
    * <code>DATABASE_INVALID_ROWS_AFFECTED = 40012;</code>
    */
-  DATABASE_INVALID_ROWS_AFFECTED(224, 40012),
+  DATABASE_INVALID_ROWS_AFFECTED(225, 40012),
   /**
    * <code>DATABASE_DEADLOCK_DETECTED = 40013;</code>
    */
-  DATABASE_DEADLOCK_DETECTED(225, 40013),
+  DATABASE_DEADLOCK_DETECTED(226, 40013),
   /**
    * <code>DATABASE_FAIL_TASK = 40014;</code>
    */
-  DATABASE_FAIL_TASK(226, 40014),
+  DATABASE_FAIL_TASK(227, 40014),
   /**
    * <code>DATABASE_FAIL_TO_GET_CONNECTIONS = 40015;</code>
    */
-  DATABASE_FAIL_TO_GET_CONNECTIONS(227, 40015),
+  DATABASE_FAIL_TO_GET_CONNECTIONS(228, 40015),
   /**
    * <code>DATABASE_TOO_MANY_CLIENTS = 40016;</code>
    */
-  DATABASE_TOO_MANY_CLIENTS(228, 40016),
+  DATABASE_TOO_MANY_CLIENTS(229, 40016),
   /**
    * <code>DATABASE_CONSTRAINT_VIOLATED = 40017;</code>
    */
-  DATABASE_CONSTRAINT_VIOLATED(229, 40017),
+  DATABASE_CONSTRAINT_VIOLATED(230, 40017),
   /**
    * <code>DATABASE_CANCELED = 40021;</code>
    */
-  DATABASE_CANCELED(230, 40021),
+  DATABASE_CANCELED(231, 40021),
   /**
    * <code>ASYNC_WORKER_MULTI_ERRORS = 40020;</code>
    */
-  ASYNC_WORKER_MULTI_ERRORS(231, 40020),
+  ASYNC_WORKER_MULTI_ERRORS(232, 40020),
   /**
    * <code>RPC_REQUEST_QUEUE_FULL = 40030;</code>
    */
-  RPC_REQUEST_QUEUE_FULL(232, 40030),
+  RPC_REQUEST_QUEUE_FULL(233, 40030),
   /**
    * <code>RPC_SERVER_UNAVAILABLE = 40031;</code>
    */
-  RPC_SERVER_UNAVAILABLE(233, 40031),
+  RPC_SERVER_UNAVAILABLE(234, 40031),
   /**
    * <code>RPC_REQUEST_TIMEOUT = 40032;</code>
    */
-  RPC_REQUEST_TIMEOUT(234, 40032),
+  RPC_REQUEST_TIMEOUT(235, 40032),
   /**
    * <code>RPC_MAX_MESSAGE_SIZE_EXCEEDED = 40033;</code>
    */
-  RPC_MAX_MESSAGE_SIZE_EXCEEDED(235, 40033),
+  RPC_MAX_MESSAGE_SIZE_EXCEEDED(236, 40033),
   /**
    * <code>RPC_CANCELED = 40035;</code>
    */
-  RPC_CANCELED(236, 40035),
+  RPC_CANCELED(237, 40035),
   /**
    * <code>RPC_UNKNOWN_METHOD = 40036;</code>
    */
-  RPC_UNKNOWN_METHOD(237, 40036),
+  RPC_UNKNOWN_METHOD(238, 40036),
   /**
    * <code>REQUEST_CANCELED_BY_USER = 40037;</code>
    */
-  REQUEST_CANCELED_BY_USER(238, 40037),
+  REQUEST_CANCELED_BY_USER(239, 40037),
   /**
    * <code>CLUSTER_INTERNAL_FAILURE = 43040;</code>
    */
-  CLUSTER_INTERNAL_FAILURE(239, 43040),
+  CLUSTER_INTERNAL_FAILURE(240, 43040),
   /**
    * <pre>
    * could not connect to external services
@@ -1289,11 +1297,11 @@ public enum StatusCode
    *
    * <code>EXTERNAL_CONNECTION_ERROR = 40034;</code>
    */
-  EXTERNAL_CONNECTION_ERROR(240, 40034),
+  EXTERNAL_CONNECTION_ERROR(241, 40034),
   /**
    * <code>QUERY_INVALID_SYNTAX = 40050;</code>
    */
-  QUERY_INVALID_SYNTAX(241, 40050),
+  QUERY_INVALID_SYNTAX(242, 40050),
   /**
    * <pre>
    * Queue related errors 41xxx
@@ -1301,47 +1309,47 @@ public enum StatusCode
    *
    * <code>QUEUE_CONN_ERROR = 41000;</code>
    */
-  QUEUE_CONN_ERROR(242, 41000),
+  QUEUE_CONN_ERROR(243, 41000),
   /**
    * <code>QUEUE_CLOSE_REQUEST_TIMEOUT = 41002;</code>
    */
-  QUEUE_CLOSE_REQUEST_TIMEOUT(243, 41002),
+  QUEUE_CLOSE_REQUEST_TIMEOUT(244, 41002),
   /**
    * <code>QUEUE_CONN_CLOSED = 41003;</code>
    */
-  QUEUE_CONN_CLOSED(244, 41003),
+  QUEUE_CONN_CLOSED(245, 41003),
   /**
    * <code>QUEUE_PUBLISH_ACK_TIMEOUT = 41004;</code>
    */
-  QUEUE_PUBLISH_ACK_TIMEOUT(245, 41004),
+  QUEUE_PUBLISH_ACK_TIMEOUT(246, 41004),
   /**
    * <code>QUEUE_PUBLISH_ERROR = 41005;</code>
    */
-  QUEUE_PUBLISH_ERROR(246, 41005),
+  QUEUE_PUBLISH_ERROR(247, 41005),
   /**
    * <code>QUEUE_SUBSCRIPTION_TIMEOUT = 41006;</code>
    */
-  QUEUE_SUBSCRIPTION_TIMEOUT(247, 41006),
+  QUEUE_SUBSCRIPTION_TIMEOUT(248, 41006),
   /**
    * <code>QUEUE_SUBSCRIPTION_ERROR = 41007;</code>
    */
-  QUEUE_SUBSCRIPTION_ERROR(248, 41007),
+  QUEUE_SUBSCRIPTION_ERROR(249, 41007),
   /**
    * <code>QUEUE_MARSHALLING_FAILED = 41008;</code>
    */
-  QUEUE_MARSHALLING_FAILED(249, 41008),
+  QUEUE_MARSHALLING_FAILED(250, 41008),
   /**
    * <code>QUEUE_UNMARSHALLING_FAILED = 41009;</code>
    */
-  QUEUE_UNMARSHALLING_FAILED(250, 41009),
+  QUEUE_UNMARSHALLING_FAILED(251, 41009),
   /**
    * <code>QUEUE_MAX_MSG_REDELIVERY_EXCEEDED = 41010;</code>
    */
-  QUEUE_MAX_MSG_REDELIVERY_EXCEEDED(251, 41010),
+  QUEUE_MAX_MSG_REDELIVERY_EXCEEDED(252, 41010),
   /**
    * <code>QUEUE_ACK_FAILURE = 41011;</code>
    */
-  QUEUE_ACK_FAILURE(252, 41011),
+  QUEUE_ACK_FAILURE(253, 41011),
   /**
    * <pre>
    * SQS related errors 411xx
@@ -1349,15 +1357,15 @@ public enum StatusCode
    *
    * <code>SQS_OVERLIMIT = 41100;</code>
    */
-  SQS_OVERLIMIT(253, 41100),
+  SQS_OVERLIMIT(254, 41100),
   /**
    * <code>SQS_INVALID_RECEIPT_HANDLE = 41101;</code>
    */
-  SQS_INVALID_RECEIPT_HANDLE(254, 41101),
+  SQS_INVALID_RECEIPT_HANDLE(255, 41101),
   /**
    * <code>SQS_UNKNOWN = 41102;</code>
    */
-  SQS_UNKNOWN(255, 41102),
+  SQS_UNKNOWN(256, 41102),
   /**
    * <pre>
    *Search related errors 43xxxx
@@ -1365,27 +1373,27 @@ public enum StatusCode
    *
    * <code>SEARCH_INTERNAL_FAILURE = 43001;</code>
    */
-  SEARCH_INTERNAL_FAILURE(256, 43001),
+  SEARCH_INTERNAL_FAILURE(257, 43001),
   /**
    * <code>SEARCH_PROJECTION_FAILURE = 43002;</code>
    */
-  SEARCH_PROJECTION_FAILURE(257, 43002),
+  SEARCH_PROJECTION_FAILURE(258, 43002),
   /**
    * <code>SEARCH_PREDICTION_FAILURE = 43003;</code>
    */
-  SEARCH_PREDICTION_FAILURE(258, 43003),
+  SEARCH_PREDICTION_FAILURE(259, 43003),
   /**
    * <code>SEARCH_BY_NOT_FULLY_INDEXED_INPUT = 43004;</code>
    */
-  SEARCH_BY_NOT_FULLY_INDEXED_INPUT(259, 43004),
+  SEARCH_BY_NOT_FULLY_INDEXED_INPUT(260, 43004),
   /**
    * <code>SAVED_SEARCH_MODIFY_FAILED = 43005;</code>
    */
-  SAVED_SEARCH_MODIFY_FAILED(260, 43005),
+  SAVED_SEARCH_MODIFY_FAILED(261, 43005),
   /**
    * <code>SEARCH_COUNTS_UNAVAILABLE = 43006;</code>
    */
-  SEARCH_COUNTS_UNAVAILABLE(261, 43006),
+  SEARCH_COUNTS_UNAVAILABLE(262, 43006),
   /**
    * <pre>
    * Workflow evaluation err code
@@ -1393,43 +1401,43 @@ public enum StatusCode
    *
    * <code>EVALUATION_QUEUED = 43100;</code>
    */
-  EVALUATION_QUEUED(262, 43100),
+  EVALUATION_QUEUED(263, 43100),
   /**
    * <code>EVALUATION_IN_PROGRESS = 43101;</code>
    */
-  EVALUATION_IN_PROGRESS(263, 43101),
+  EVALUATION_IN_PROGRESS(264, 43101),
   /**
    * <code>EVALUATION_SUCCESS = 43102;</code>
    */
-  EVALUATION_SUCCESS(264, 43102),
+  EVALUATION_SUCCESS(265, 43102),
   /**
    * <code>EVALUATION_FAILED_TO_RETRIEVE_DATA = 43103;</code>
    */
-  EVALUATION_FAILED_TO_RETRIEVE_DATA(265, 43103),
+  EVALUATION_FAILED_TO_RETRIEVE_DATA(266, 43103),
   /**
    * <code>EVALUATION_INVALID_ARGUMENT = 43104;</code>
    */
-  EVALUATION_INVALID_ARGUMENT(266, 43104),
+  EVALUATION_INVALID_ARGUMENT(267, 43104),
   /**
    * <code>EVALUATION_FAILED = 43105;</code>
    */
-  EVALUATION_FAILED(267, 43105),
+  EVALUATION_FAILED(268, 43105),
   /**
    * <code>EVALUATION_PENDING = 43106;</code>
    */
-  EVALUATION_PENDING(268, 43106),
+  EVALUATION_PENDING(269, 43106),
   /**
    * <code>EVALUATION_TIMED_OUT = 43107;</code>
    */
-  EVALUATION_TIMED_OUT(269, 43107),
+  EVALUATION_TIMED_OUT(270, 43107),
   /**
    * <code>EVALUATION_UNEXPECTED_ERROR = 43108;</code>
    */
-  EVALUATION_UNEXPECTED_ERROR(270, 43108),
+  EVALUATION_UNEXPECTED_ERROR(271, 43108),
   /**
    * <code>EVALUATION_MIXED = 43109;</code>
    */
-  EVALUATION_MIXED(271, 43109),
+  EVALUATION_MIXED(272, 43109),
   /**
    * <pre>
    * Stripe 44xxx
@@ -1437,7 +1445,7 @@ public enum StatusCode
    *
    * <code>STRIPE_EVENT_ERROR = 44001;</code>
    */
-  STRIPE_EVENT_ERROR(272, 44001),
+  STRIPE_EVENT_ERROR(273, 44001),
   /**
    * <pre>
    * Redis/Cache 45xxx
@@ -1445,23 +1453,23 @@ public enum StatusCode
    *
    * <code>CACHE_MISS = 45001;</code>
    */
-  CACHE_MISS(273, 45001),
+  CACHE_MISS(274, 45001),
   /**
    * <code>REDIS_SCRIPT_EXITED_WITH_FAILURE = 45002;</code>
    */
-  REDIS_SCRIPT_EXITED_WITH_FAILURE(274, 45002),
+  REDIS_SCRIPT_EXITED_WITH_FAILURE(275, 45002),
   /**
    * <code>REDIS_STREAM_ERR = 45003;</code>
    */
-  REDIS_STREAM_ERR(275, 45003),
+  REDIS_STREAM_ERR(276, 45003),
   /**
    * <code>REDIS_NO_CONSUMERS = 45004;</code>
    */
-  REDIS_NO_CONSUMERS(276, 45004),
+  REDIS_NO_CONSUMERS(277, 45004),
   /**
    * <code>REDIS_STREAM_BACKOFF = 45005;</code>
    */
-  REDIS_STREAM_BACKOFF(277, 45005),
+  REDIS_STREAM_BACKOFF(278, 45005),
   /**
    * <pre>
    * Sift Science 46xxx
@@ -1469,15 +1477,15 @@ public enum StatusCode
    *
    * <code>SIGNUP_EVENT_ERROR = 46001;</code>
    */
-  SIGNUP_EVENT_ERROR(278, 46001),
+  SIGNUP_EVENT_ERROR(279, 46001),
   /**
    * <code>SIGNUP_FLAGGED = 46002;</code>
    */
-  SIGNUP_FLAGGED(279, 46002),
+  SIGNUP_FLAGGED(280, 46002),
   /**
    * <code>FILETYPE_UNSUPPORTED = 46003;</code>
    */
-  FILETYPE_UNSUPPORTED(280, 46003),
+  FILETYPE_UNSUPPORTED(281, 46003),
   /**
    * <pre>
    * Application counts related errors 470xx
@@ -1485,19 +1493,19 @@ public enum StatusCode
    *
    * <code>APP_COUNT_INVALID_MESSAGE = 47001;</code>
    */
-  APP_COUNT_INVALID_MESSAGE(281, 47001),
+  APP_COUNT_INVALID_MESSAGE(282, 47001),
   /**
    * <code>APP_COUNT_UPDATE_INCREMENT_FAILED = 47002;</code>
    */
-  APP_COUNT_UPDATE_INCREMENT_FAILED(282, 47002),
+  APP_COUNT_UPDATE_INCREMENT_FAILED(283, 47002),
   /**
    * <code>APP_COUNT_REBUILD_FAILED = 47003;</code>
    */
-  APP_COUNT_REBUILD_FAILED(283, 47003),
+  APP_COUNT_REBUILD_FAILED(284, 47003),
   /**
    * <code>APP_COUNT_INTERNAL_FAILURE = 47004;</code>
    */
-  APP_COUNT_INTERNAL_FAILURE(284, 47004),
+  APP_COUNT_INTERNAL_FAILURE(285, 47004),
   /**
    * <pre>
    * Media processor related errors 471xx -- DEPRECATED
@@ -1505,27 +1513,27 @@ public enum StatusCode
    *
    * <code>MP_DOWNLOAD_ERROR = 47101;</code>
    */
-  MP_DOWNLOAD_ERROR(285, 47101),
+  MP_DOWNLOAD_ERROR(286, 47101),
   /**
    * <code>MP_RESOLVE_DNS_ERROR = 47102;</code>
    */
-  MP_RESOLVE_DNS_ERROR(286, 47102),
+  MP_RESOLVE_DNS_ERROR(287, 47102),
   /**
    * <code>MP_DOWNLOAD_MAX_SIZE_EXCEEDED_ERROR = 47103;</code>
    */
-  MP_DOWNLOAD_MAX_SIZE_EXCEEDED_ERROR(287, 47103),
+  MP_DOWNLOAD_MAX_SIZE_EXCEEDED_ERROR(288, 47103),
   /**
    * <code>MP_IMAGE_DECODE_ERROR = 47104;</code>
    */
-  MP_IMAGE_DECODE_ERROR(288, 47104),
+  MP_IMAGE_DECODE_ERROR(289, 47104),
   /**
    * <code>MP_INVALID_ARGUMENT = 47105;</code>
    */
-  MP_INVALID_ARGUMENT(289, 47105),
+  MP_INVALID_ARGUMENT(290, 47105),
   /**
    * <code>MP_IMAGE_PROCESSING_ERROR = 47106;</code>
    */
-  MP_IMAGE_PROCESSING_ERROR(290, 47106),
+  MP_IMAGE_PROCESSING_ERROR(291, 47106),
   /**
    * <pre>
    * DataTier related error 472xx
@@ -1533,7 +1541,7 @@ public enum StatusCode
    *
    * <code>DATATIER_CONN_ERROR = 47201;</code>
    */
-  DATATIER_CONN_ERROR(291, 47201),
+  DATATIER_CONN_ERROR(292, 47201),
   /**
    * <pre>
    * User legal consent stauts related 50xxx
@@ -1541,7 +1549,7 @@ public enum StatusCode
    *
    * <code>USER_CONSENT_FACE = 50001;</code>
    */
-  USER_CONSENT_FACE(292, 50001),
+  USER_CONSENT_FACE(293, 50001),
   /**
    * <pre>
    * Workers 51xxx
@@ -1549,15 +1557,15 @@ public enum StatusCode
    *
    * <code>WORKER_MISSING = 51000;</code>
    */
-  WORKER_MISSING(293, 51000),
+  WORKER_MISSING(294, 51000),
   /**
    * <code>WORKER_ACTIVE = 51001;</code>
    */
-  WORKER_ACTIVE(294, 51001),
+  WORKER_ACTIVE(295, 51001),
   /**
    * <code>WORKER_INACTIVE = 51002;</code>
    */
-  WORKER_INACTIVE(295, 51002),
+  WORKER_INACTIVE(296, 51002),
   /**
    * <pre>
    * Collectors 52xxx
@@ -1565,19 +1573,19 @@ public enum StatusCode
    *
    * <code>COLLECTOR_MISSING = 52000;</code>
    */
-  COLLECTOR_MISSING(296, 52000),
+  COLLECTOR_MISSING(297, 52000),
   /**
    * <code>COLLECTOR_ACTIVE = 52001;</code>
    */
-  COLLECTOR_ACTIVE(297, 52001),
+  COLLECTOR_ACTIVE(298, 52001),
   /**
    * <code>COLLECTOR_INACTIVE = 52002;</code>
    */
-  COLLECTOR_INACTIVE(298, 52002),
+  COLLECTOR_INACTIVE(299, 52002),
   /**
    * <code>COLLECTOR_POST_INPUT_FAILED = 52003;</code>
    */
-  COLLECTOR_POST_INPUT_FAILED(299, 52003),
+  COLLECTOR_POST_INPUT_FAILED(300, 52003),
   /**
    * <pre>
    * SSO 53xxx
@@ -1585,7 +1593,7 @@ public enum StatusCode
    *
    * <code>SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST = 53001;</code>
    */
-  SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST(300, 53001),
+  SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST(301, 53001),
   /**
    * <pre>
    * Tasks 54xxx
@@ -1594,7 +1602,7 @@ public enum StatusCode
    *
    * <code>TASK_IN_PROGRESS = 54001;</code>
    */
-  TASK_IN_PROGRESS(301, 54001),
+  TASK_IN_PROGRESS(302, 54001),
   /**
    * <pre>
    * The task is completed.
@@ -1602,7 +1610,7 @@ public enum StatusCode
    *
    * <code>TASK_DONE = 54002;</code>
    */
-  TASK_DONE(302, 54002),
+  TASK_DONE(303, 54002),
   /**
    * <pre>
    * The task is marked as abandoned.
@@ -1610,7 +1618,7 @@ public enum StatusCode
    *
    * <code>TASK_WONT_DO = 54003;</code>
    */
-  TASK_WONT_DO(303, 54003),
+  TASK_WONT_DO(304, 54003),
   /**
    * <pre>
    * An error occurred during add-task-annotations or add-auto-annotations pipeline.
@@ -1618,7 +1626,7 @@ public enum StatusCode
    *
    * <code>TASK_FAILED = 54005;</code>
    */
-  TASK_FAILED(304, 54005),
+  TASK_FAILED(305, 54005),
   /**
    * <pre>
    * When an Auto Annotation task job has finished processing its last batch and is waiting for more dataset assets.
@@ -1626,7 +1634,7 @@ public enum StatusCode
    *
    * <code>TASK_IDLE = 54006;</code>
    */
-  TASK_IDLE(305, 54006),
+  TASK_IDLE(306, 54006),
   /**
    * <pre>
    * The task operation is in conflict with the current state of the server.
@@ -1634,7 +1642,7 @@ public enum StatusCode
    *
    * <code>TASK_CONFLICT = 54100;</code>
    */
-  TASK_CONFLICT(306, 54100),
+  TASK_CONFLICT(307, 54100),
   /**
    * <pre>
    * Certain task-related scenarios are not implemented.
@@ -1642,7 +1650,7 @@ public enum StatusCode
    *
    * <code>TASK_NOT_IMPLEMENTED = 54101;</code>
    */
-  TASK_NOT_IMPLEMENTED(307, 54101),
+  TASK_NOT_IMPLEMENTED(308, 54101),
   /**
    * <pre>
    * Task was not found.
@@ -1650,7 +1658,7 @@ public enum StatusCode
    *
    * <code>TASK_MISSING = 54102;</code>
    */
-  TASK_MISSING(308, 54102),
+  TASK_MISSING(309, 54102),
   /**
    * <pre>
    * Not allowed to perform a task-related action.
@@ -1658,7 +1666,7 @@ public enum StatusCode
    *
    * <code>TASK_PERMISSION_DENIED = 54103;</code>
    */
-  TASK_PERMISSION_DENIED(309, 54103),
+  TASK_PERMISSION_DENIED(310, 54103),
   /**
    * <pre>
    * Task Assignments 542xx
@@ -1666,23 +1674,23 @@ public enum StatusCode
    *
    * <code>TASK_ASSIGNMENT_SUCCESS = 54200;</code>
    */
-  TASK_ASSIGNMENT_SUCCESS(310, 54200),
+  TASK_ASSIGNMENT_SUCCESS(311, 54200),
   /**
    * <code>TASK_ASSIGNMENT_PENDING = 54201;</code>
    */
-  TASK_ASSIGNMENT_PENDING(311, 54201),
+  TASK_ASSIGNMENT_PENDING(312, 54201),
   /**
    * <code>TASK_ASSIGNMENT_AWAITING_REVIEW = 54202;</code>
    */
-  TASK_ASSIGNMENT_AWAITING_REVIEW(312, 54202),
+  TASK_ASSIGNMENT_AWAITING_REVIEW(313, 54202),
   /**
    * <code>TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW = 54203;</code>
    */
-  TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW(313, 54203),
+  TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW(314, 54203),
   /**
    * <code>TASK_ASSIGNMENT_REJECTED = 54204;</code>
    */
-  TASK_ASSIGNMENT_REJECTED(314, 54204),
+  TASK_ASSIGNMENT_REJECTED(315, 54204),
   /**
    * <pre>
    * Task Assignment Reviews 543xx
@@ -1690,15 +1698,15 @@ public enum StatusCode
    *
    * <code>TASK_ASSIGNMENT_REVIEW_SUCCESS = 54300;</code>
    */
-  TASK_ASSIGNMENT_REVIEW_SUCCESS(315, 54300),
+  TASK_ASSIGNMENT_REVIEW_SUCCESS(316, 54300),
   /**
    * <code>TASK_ASSIGNMENT_REVIEW_PENDING = 54301;</code>
    */
-  TASK_ASSIGNMENT_REVIEW_PENDING(316, 54301),
+  TASK_ASSIGNMENT_REVIEW_PENDING(317, 54301),
   /**
    * <code>TASK_ASSIGNMENT_REVIEW_DISMISSED = 54302;</code>
    */
-  TASK_ASSIGNMENT_REVIEW_DISMISSED(317, 54302),
+  TASK_ASSIGNMENT_REVIEW_DISMISSED(318, 54302),
   /**
    * <pre>
    * Label Order Related Status Code 55xxx
@@ -1706,19 +1714,19 @@ public enum StatusCode
    *
    * <code>LABEL_ORDER_PENDING = 55001;</code>
    */
-  LABEL_ORDER_PENDING(318, 55001),
+  LABEL_ORDER_PENDING(319, 55001),
   /**
    * <code>LABEL_ORDER_IN_PROGRESS = 55002;</code>
    */
-  LABEL_ORDER_IN_PROGRESS(319, 55002),
+  LABEL_ORDER_IN_PROGRESS(320, 55002),
   /**
    * <code>LABEL_ORDER_SUCCESS = 55003;</code>
    */
-  LABEL_ORDER_SUCCESS(320, 55003),
+  LABEL_ORDER_SUCCESS(321, 55003),
   /**
    * <code>LABEL_ORDER_CANCELED = 55004;</code>
    */
-  LABEL_ORDER_CANCELED(321, 55004),
+  LABEL_ORDER_CANCELED(322, 55004),
   /**
    * <pre>
    * License Related Status Code 600xx
@@ -1726,23 +1734,23 @@ public enum StatusCode
    *
    * <code>LICENSE_ACTIVE = 60000;</code>
    */
-  LICENSE_ACTIVE(322, 60000),
+  LICENSE_ACTIVE(323, 60000),
   /**
    * <code>LICENSE_DOES_NOT_EXIST = 60001;</code>
    */
-  LICENSE_DOES_NOT_EXIST(323, 60001),
+  LICENSE_DOES_NOT_EXIST(324, 60001),
   /**
    * <code>LICENSE_NEED_UPDATE = 60002;</code>
    */
-  LICENSE_NEED_UPDATE(324, 60002),
+  LICENSE_NEED_UPDATE(325, 60002),
   /**
    * <code>LICENSE_EXPIRED = 60003;</code>
    */
-  LICENSE_EXPIRED(325, 60003),
+  LICENSE_EXPIRED(326, 60003),
   /**
    * <code>LICENSE_REVOKED = 60004;</code>
    */
-  LICENSE_REVOKED(326, 60004),
+  LICENSE_REVOKED(327, 60004),
   /**
    * <pre>
    * hidden state not reflected to users
@@ -1750,11 +1758,11 @@ public enum StatusCode
    *
    * <code>LICENSE_DELETED = 60005;</code>
    */
-  LICENSE_DELETED(327, 60005),
+  LICENSE_DELETED(328, 60005),
   /**
    * <code>LICENSE_VOLUME_EXCEEDED = 60006;</code>
    */
-  LICENSE_VOLUME_EXCEEDED(328, 60006),
+  LICENSE_VOLUME_EXCEEDED(329, 60006),
   /**
    * <pre>
    * Password Related Status Code
@@ -1762,15 +1770,15 @@ public enum StatusCode
    *
    * <code>PASSWORD_VALIDATION_SUCCESS = 61000;</code>
    */
-  PASSWORD_VALIDATION_SUCCESS(329, 61000),
+  PASSWORD_VALIDATION_SUCCESS(330, 61000),
   /**
    * <code>PASSWORD_VALIDATION_FAILED = 61001;</code>
    */
-  PASSWORD_VALIDATION_FAILED(330, 61001),
+  PASSWORD_VALIDATION_FAILED(331, 61001),
   /**
    * <code>PASSWORDPOLICY_INVALID_ARGUMENT = 61002;</code>
    */
-  PASSWORDPOLICY_INVALID_ARGUMENT(331, 61002),
+  PASSWORDPOLICY_INVALID_ARGUMENT(332, 61002),
   /**
    * <pre>
    * Feature flags status code
@@ -1778,15 +1786,15 @@ public enum StatusCode
    *
    * <code>FEATUREFLAG_CONFIG_NOT_FOUND = 62000;</code>
    */
-  FEATUREFLAG_CONFIG_NOT_FOUND(332, 62000),
+  FEATUREFLAG_CONFIG_NOT_FOUND(333, 62000),
   /**
    * <code>FEATUREFLAG_INVALID_ARGUMENT = 62001;</code>
    */
-  FEATUREFLAG_INVALID_ARGUMENT(333, 62001),
+  FEATUREFLAG_INVALID_ARGUMENT(334, 62001),
   /**
    * <code>FEATUREFLAG_BLOCKED = 62002;</code>
    */
-  FEATUREFLAG_BLOCKED(334, 62002),
+  FEATUREFLAG_BLOCKED(335, 62002),
   /**
    * <pre>
    * Maintenance status code
@@ -1794,11 +1802,11 @@ public enum StatusCode
    *
    * <code>MAINTENANCE_SUCCESS = 63000;</code>
    */
-  MAINTENANCE_SUCCESS(335, 63000),
+  MAINTENANCE_SUCCESS(336, 63000),
   /**
    * <code>MAINTENANCE_FAILED = 63001;</code>
    */
-  MAINTENANCE_FAILED(336, 63001),
+  MAINTENANCE_FAILED(337, 63001),
   /**
    * <pre>
    * Datasets 64xxx
@@ -1807,7 +1815,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_PENDING = 64005;</code>
    */
-  DATASET_VERSION_PENDING(337, 64005),
+  DATASET_VERSION_PENDING(338, 64005),
   /**
    * <pre>
    * The dataset version is currently being processed.
@@ -1815,7 +1823,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_IN_PROGRESS = 64010;</code>
    */
-  DATASET_VERSION_IN_PROGRESS(338, 64010),
+  DATASET_VERSION_IN_PROGRESS(339, 64010),
   /**
    * <pre>
    * The dataset version is ready to be used.
@@ -1823,7 +1831,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_READY = 64015;</code>
    */
-  DATASET_VERSION_READY(339, 64015),
+  DATASET_VERSION_READY(340, 64015),
   /**
    * <pre>
    * An error occurred during the dataset version processing.
@@ -1831,7 +1839,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_FAILURE = 64020;</code>
    */
-  DATASET_VERSION_FAILURE(340, 64020),
+  DATASET_VERSION_FAILURE(341, 64020),
   /**
    * <pre>
    * An unexpected error occurred during the dataset version processing.
@@ -1839,7 +1847,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_UNEXPECTED_ERROR = 64025;</code>
    */
-  DATASET_VERSION_UNEXPECTED_ERROR(341, 64025),
+  DATASET_VERSION_UNEXPECTED_ERROR(342, 64025),
   /**
    * <pre>
    * An alteration to dataset version would create a conflict
@@ -1847,7 +1855,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_CONFLICT = 64030;</code>
    */
-  DATASET_VERSION_CONFLICT(342, 64030),
+  DATASET_VERSION_CONFLICT(343, 64030),
   /**
    * <pre>
    * The dataset input was successfully added.
@@ -1855,7 +1863,7 @@ public enum StatusCode
    *
    * <code>DATASET_INPUT_SUCCESS = 64100;</code>
    */
-  DATASET_INPUT_SUCCESS(343, 64100),
+  DATASET_INPUT_SUCCESS(344, 64100),
   /**
    * <pre>
    * The dataset input is a duplicate.
@@ -1864,7 +1872,7 @@ public enum StatusCode
    *
    * <code>DATASET_INPUT_DUPLICATE = 64101;</code>
    */
-  DATASET_INPUT_DUPLICATE(344, 64101),
+  DATASET_INPUT_DUPLICATE(345, 64101),
   /**
    * <pre>
    * The dataset version export is completed.
@@ -1872,7 +1880,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_EXPORT_SUCCESS = 64200;</code>
    */
-  DATASET_VERSION_EXPORT_SUCCESS(345, 64200),
+  DATASET_VERSION_EXPORT_SUCCESS(346, 64200),
   /**
    * <pre>
    * The dataset version is pending to be exported.
@@ -1880,7 +1888,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_EXPORT_PENDING = 64201;</code>
    */
-  DATASET_VERSION_EXPORT_PENDING(346, 64201),
+  DATASET_VERSION_EXPORT_PENDING(347, 64201),
   /**
    * <pre>
    * An error occurred during the dataset version export.
@@ -1888,7 +1896,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_EXPORT_FAILED = 64202;</code>
    */
-  DATASET_VERSION_EXPORT_FAILED(347, 64202),
+  DATASET_VERSION_EXPORT_FAILED(348, 64202),
   /**
    * <pre>
    * The dataset version is currently being exported.
@@ -1896,7 +1904,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_EXPORT_IN_PROGRESS = 64203;</code>
    */
-  DATASET_VERSION_EXPORT_IN_PROGRESS(348, 64203),
+  DATASET_VERSION_EXPORT_IN_PROGRESS(349, 64203),
   /**
    * <pre>
    * An unexpected error occurred during the dataset version export.
@@ -1904,7 +1912,7 @@ public enum StatusCode
    *
    * <code>DATASET_VERSION_EXPORT_UNEXPECTED_ERROR = 64204;</code>
    */
-  DATASET_VERSION_EXPORT_UNEXPECTED_ERROR(349, 64204),
+  DATASET_VERSION_EXPORT_UNEXPECTED_ERROR(350, 64204),
   /**
    * <pre>
    * Generic Job status codes
@@ -1912,31 +1920,31 @@ public enum StatusCode
    *
    * <code>JOB_QUEUED = 64000;</code>
    */
-  JOB_QUEUED(350, 64000),
+  JOB_QUEUED(351, 64000),
   /**
    * <code>JOB_RUNNING = 64001;</code>
    */
-  JOB_RUNNING(351, 64001),
+  JOB_RUNNING(352, 64001),
   /**
    * <code>JOB_COMPLETED = 64002;</code>
    */
-  JOB_COMPLETED(352, 64002),
+  JOB_COMPLETED(353, 64002),
   /**
    * <code>JOB_FAILED = 64003;</code>
    */
-  JOB_FAILED(353, 64003),
+  JOB_FAILED(354, 64003),
   /**
    * <code>JOB_CANCELLED = 64004;</code>
    */
-  JOB_CANCELLED(354, 64004),
+  JOB_CANCELLED(355, 64004),
   /**
    * <code>JOB_UNEXPECTED_ERROR = 64006;</code>
    */
-  JOB_UNEXPECTED_ERROR(355, 64006),
+  JOB_UNEXPECTED_ERROR(356, 64006),
   /**
    * <code>JOB_CONFLICT = 64007;</code>
    */
-  JOB_CONFLICT(356, 64007),
+  JOB_CONFLICT(357, 64007),
   /**
    * <pre>
    *auth issues
@@ -1944,15 +1952,15 @@ public enum StatusCode
    *
    * <code>AUTH_MISSING_IDP_ASSOC = 65000;</code>
    */
-  AUTH_MISSING_IDP_ASSOC(357, 65000),
+  AUTH_MISSING_IDP_ASSOC(358, 65000),
   /**
    * <code>LIST_OBJECTS_FAILED = 66000;</code>
    */
-  LIST_OBJECTS_FAILED(358, 66000),
+  LIST_OBJECTS_FAILED(359, 66000),
   /**
    * <code>ARCHIVE_EXTRACT_FAILED = 67000;</code>
    */
-  ARCHIVE_EXTRACT_FAILED(359, 67000),
+  ARCHIVE_EXTRACT_FAILED(360, 67000),
   /**
    * <pre>
    * Multipart uploading status codes
@@ -1960,31 +1968,31 @@ public enum StatusCode
    *
    * <code>UPLOAD_IN_PROGRESS = 68000;</code>
    */
-  UPLOAD_IN_PROGRESS(360, 68000),
+  UPLOAD_IN_PROGRESS(361, 68000),
   /**
    * <code>UPLOAD_DONE = 68001;</code>
    */
-  UPLOAD_DONE(361, 68001),
+  UPLOAD_DONE(362, 68001),
   /**
    * <code>UPLOAD_FAILED = 68002;</code>
    */
-  UPLOAD_FAILED(362, 68002),
+  UPLOAD_FAILED(363, 68002),
   /**
    * <code>UPLOAD_UNEXPECTED_ERROR = 68003;</code>
    */
-  UPLOAD_UNEXPECTED_ERROR(363, 68003),
+  UPLOAD_UNEXPECTED_ERROR(364, 68003),
   /**
    * <code>UPLOAD_EXPIRED = 68004;</code>
    */
-  UPLOAD_EXPIRED(364, 68004),
+  UPLOAD_EXPIRED(365, 68004),
   /**
    * <code>UPLOAD_CANCELED = 68005;</code>
    */
-  UPLOAD_CANCELED(365, 68005),
+  UPLOAD_CANCELED(366, 68005),
   /**
    * <code>UPLOAD_CONFLICT = 68006;</code>
    */
-  UPLOAD_CONFLICT(366, 68006),
+  UPLOAD_CONFLICT(367, 68006),
   /**
    * <pre>
    * Billing related issues: 69xxx
@@ -1992,7 +2000,7 @@ public enum StatusCode
    *
    * <code>BILLING_INVALID_INFO = 69000;</code>
    */
-  BILLING_INVALID_INFO(367, 69000),
+  BILLING_INVALID_INFO(368, 69000),
   /**
    * <pre>
    * Logs related issues: 70000;
@@ -2000,7 +2008,7 @@ public enum StatusCode
    *
    * <code>LOG_ENTRIES_INVALID_REQUEST = 70000;</code>
    */
-  LOG_ENTRIES_INVALID_REQUEST(368, 70000),
+  LOG_ENTRIES_INVALID_REQUEST(369, 70000),
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -2008,59 +2016,59 @@ public enum StatusCode
    *
    * <code>INTERNAL_SERVER_ISSUE = 98004;</code>
    */
-  INTERNAL_SERVER_ISSUE(369, 98004),
+  INTERNAL_SERVER_ISSUE(370, 98004),
   /**
    * <code>INTERNAL_FETCHING_ISSUE = 98005;</code>
    */
-  INTERNAL_FETCHING_ISSUE(370, 98005),
+  INTERNAL_FETCHING_ISSUE(371, 98005),
   /**
    * <code>INTERNAL_DATABASE_ISSUE = 98006;</code>
    */
-  INTERNAL_DATABASE_ISSUE(371, 98006),
+  INTERNAL_DATABASE_ISSUE(372, 98006),
   /**
    * <code>INTERNAL_CONTEXT_CANCELED = 98008;</code>
    */
-  INTERNAL_CONTEXT_CANCELED(372, 98008),
+  INTERNAL_CONTEXT_CANCELED(373, 98008),
   /**
    * <code>INTERNAL_UNEXPECTED_TIMEOUT = 98009;</code>
    */
-  INTERNAL_UNEXPECTED_TIMEOUT(373, 98009),
+  INTERNAL_UNEXPECTED_TIMEOUT(374, 98009),
   /**
    * <code>INTERNAL_UNEXPECTED_V1 = 98010;</code>
    */
-  INTERNAL_UNEXPECTED_V1(374, 98010),
+  INTERNAL_UNEXPECTED_V1(375, 98010),
   /**
    * <code>INTERNAL_UNEXPECTED_PANIC = 98011;</code>
    */
-  INTERNAL_UNEXPECTED_PANIC(375, 98011),
+  INTERNAL_UNEXPECTED_PANIC(376, 98011),
   /**
    * <code>INTERNAL_UNEXPECTED_SPIRE = 98012;</code>
    */
-  INTERNAL_UNEXPECTED_SPIRE(376, 98012),
+  INTERNAL_UNEXPECTED_SPIRE(377, 98012),
   /**
    * <code>INTERNAL_REDIS_UNAVAILABLE = 98013;</code>
    */
-  INTERNAL_REDIS_UNAVAILABLE(377, 98013),
+  INTERNAL_REDIS_UNAVAILABLE(378, 98013),
   /**
    * <code>INTERNAL_RESOURCE_EXHAUSTED = 98014;</code>
    */
-  INTERNAL_RESOURCE_EXHAUSTED(378, 98014),
+  INTERNAL_RESOURCE_EXHAUSTED(379, 98014),
   /**
    * <code>INTERNAL_REDIS_UNCATEGORIZED = 98015;</code>
    */
-  INTERNAL_REDIS_UNCATEGORIZED(379, 98015),
+  INTERNAL_REDIS_UNCATEGORIZED(380, 98015),
   /**
    * <code>INTERNAL_AWS_UNCATEGORIZED = 98016;</code>
    */
-  INTERNAL_AWS_UNCATEGORIZED(380, 98016),
+  INTERNAL_AWS_UNCATEGORIZED(381, 98016),
   /**
    * <code>INTERNAL_AZURE_UNCATEGORIZED = 98017;</code>
    */
-  INTERNAL_AZURE_UNCATEGORIZED(381, 98017),
+  INTERNAL_AZURE_UNCATEGORIZED(382, 98017),
   /**
    * <code>INTERNAL_VECTORDB_UNCATEGORIZED = 98018;</code>
    */
-  INTERNAL_VECTORDB_UNCATEGORIZED(382, 98018),
+  INTERNAL_VECTORDB_UNCATEGORIZED(383, 98018),
   /**
    * <pre>
    * Uncategorized: 99xxx: move off as soon as known
@@ -2068,27 +2076,27 @@ public enum StatusCode
    *
    * <code>CONN_UNCATEGORIZED = 99001;</code>
    */
-  CONN_UNCATEGORIZED(383, 99001),
+  CONN_UNCATEGORIZED(384, 99001),
   /**
    * <code>MODEL_UNCATEGORIZED = 99002;</code>
    */
-  MODEL_UNCATEGORIZED(384, 99002),
+  MODEL_UNCATEGORIZED(385, 99002),
   /**
    * <code>INPUT_UNCATEGORIZED = 99003;</code>
    */
-  INPUT_UNCATEGORIZED(385, 99003),
+  INPUT_UNCATEGORIZED(386, 99003),
   /**
    * <code>ANNOTATION_UNCATEGORIZED = 99004;</code>
    */
-  ANNOTATION_UNCATEGORIZED(386, 99004),
+  ANNOTATION_UNCATEGORIZED(387, 99004),
   /**
    * <code>BILLING_UNCATEGORIZED = 99005;</code>
    */
-  BILLING_UNCATEGORIZED(387, 99005),
+  BILLING_UNCATEGORIZED(388, 99005),
   /**
    * <code>INTERNAL_UNCATEGORIZED = 99009;</code>
    */
-  INTERNAL_UNCATEGORIZED(388, 99009),
+  INTERNAL_UNCATEGORIZED(389, 99009),
   /**
    * <pre>
    * Deprecated: migrate off to one of the internal issues
@@ -2096,7 +2104,7 @@ public enum StatusCode
    *
    * <code>BAD_REQUEST = 90400;</code>
    */
-  BAD_REQUEST(389, 90400),
+  BAD_REQUEST(390, 90400),
   /**
    * <pre>
    * Deprecated: migrate off to one of the internal issues
@@ -2104,7 +2112,7 @@ public enum StatusCode
    *
    * <code>SERVER_ERROR = 90500;</code>
    */
-  SERVER_ERROR(390, 90500),
+  SERVER_ERROR(391, 90500),
   UNRECOGNIZED(-1, -1),
   ;
 
@@ -3078,6 +3086,14 @@ public enum StatusCode
    * <code>INSTANCE_TYPE_INVALID_REQUEST = 26002;</code>
    */
   public static final int INSTANCE_TYPE_INVALID_REQUEST_VALUE = 26002;
+  /**
+   * <pre>
+   * Compute plane related codes 261xx
+   * </pre>
+   *
+   * <code>COMPUTE_PLANE_METRICS_INVALID_REQUEST = 26100;</code>
+   */
+  public static final int COMPUTE_PLANE_METRICS_INVALID_REQUEST_VALUE = 26100;
   /**
    * <pre>
    * Input:Image related 30xxx
@@ -4431,6 +4447,7 @@ public enum StatusCode
       case 26000: return INSTANCE_TYPE_DOES_NOT_EXIST;
       case 26001: return INSTANCE_TYPE_INVALID_ARGUMENT;
       case 26002: return INSTANCE_TYPE_INVALID_REQUEST;
+      case 26100: return COMPUTE_PLANE_METRICS_INVALID_REQUEST;
       case 30000: return INPUT_SUCCESS;
       case 30001: return INPUT_PENDING;
       case 30002: return INPUT_FAILED;
@@ -4691,7 +4708,7 @@ public enum StatusCode
   private static final StatusCode[] VALUES = getStaticValuesArray();
   private static StatusCode[] getStaticValuesArray() {
     return new StatusCode[] {
-      ZERO, SUCCESS, MIXED_STATUS, FAILURE, TRY_AGAIN, NOT_IMPLEMENTED, MOVED, TEAPOT, CONN_ACCOUNT_ISSUES, CONN_TOKEN_INVALID, CONN_CREDENTIALS_INVALID, CONN_EXCEED_HOURLY_LIMIT, CONN_EXCEED_MONTHLY_LIMIT, CONN_THROTTLED, CONN_EXCEEDS_LIMITS, CONN_INSUFFICIENT_SCOPES, CONN_KEY_INVALID, CONN_KEY_NOT_FOUND, CONN_BAD_REQUEST_FORMAT, CONN_DOES_NOT_EXIST, CONN_INVALID_REQUEST, CONN_METHOD_NOT_ALLOWED, CONN_NO_GDPR_CONSENT, CONN_INVALID_RANGE, CONN_AUTH_METHOD_DISABLED, MODEL_TRAINED, MODEL_TRAINING, MODEL_UNTRAINED, MODEL_QUEUED_FOR_TRAINING, MODEL_UPLOADING, MODEL_UPLOADING_FAILED, MODEL_TRAINING_FAILED, MODEL_BUILDING, MODEL_BUILDING_FAILED, MODEL_BUILD_UNEXPECTED_ERROR, MODEL_TRAINING_NO_DATA, MODEL_TRAINING_NO_POSITIVES, MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS, MODEL_TRAINING_TIMED_OUT, MODEL_TRAINING_WAITING_ERROR, MODEL_TRAINING_UNKNOWN_ERROR, MODEL_TRAINING_MSG_REDELIVER, MODEL_TRAINING_INSUFFICIENT_DATA, MODEL_TRAINING_INVALID_PARAMS, MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED, MODEL_MODIFY_SUCCESS, MODEL_MODIFY_PENDING, MODEL_MODIFY_FAILED, MODEL_DOES_NOT_EXIST, MODEL_PERMISSION_DENIED, MODEL_INVALID_ARGUMENT, MODEL_INVALID_REQUEST, MODEL_EVALUATED, MODEL_EVALUATING, MODEL_NOT_EVALUATED, MODEL_QUEUED_FOR_EVALUATION, MODEL_EVALUATION_TIMED_OUT, MODEL_EVALUATION_WAITING_ERROR, MODEL_EVALUATION_UNKNOWN_ERROR, MODEL_PREDICTION_FAILED, MODEL_EVALUATION_MSG_REDELIVER, MODEL_EVALUATION_NEED_LABELS, MODEL_EVALUATION_NEED_INPUTS, MODEL_EVALUATION_FAILED, MODEL_DEPLOYMENT_FAILED, MODEL_DEPLOYING, MODEL_QUEUED_FOR_DEPLOYMENT, MODEL_NOT_DEPLOYED, MODEL_BUSY_PLEASE_RETRY, MODEL_LOADING, MODEL_REFERENCE_INVALID_ARGUMENT, MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT, MODEL_EXPORTED, MODEL_EXPORTING, MODEL_EXPORTING_FAILED, MODEL_EXPORT_PENDING, WORKFLOW_NO_MATCHING_INPUT, WORKFLOW_REQUIRE_TRAINED_MODEL, WORKFLOW_DUPLICATE, WORKFLOW_UNSUPPORTED_FORMAT, WORKFLOW_DOES_NOT_EXIST, WORKFLOW_PERMISSION_DENIED, WORKFLOW_INVALID_ARGUMENT, WORKFLOW_INVALID_RECIPE, WORKFLOW_INVALID_TEMPLATE, WORKFLOW_INVALID_GRAPH, WORKFLOW_INTERNAL_FAILURE, WORKFLOW_INVALID_REQUEST, WORKFLOW_MODIFY_SUCCESS, WORKFLOW_MODIFY_PENDING, WORKFLOW_MODIFY_FAILED, WORKFLOW_REINDEX_FAILED, CONCEPT_MODIFY_SUCCESS, CONCEPT_MODIFY_PENDING, CONCEPT_MODIFY_FAILED, ANNOTATION_SUCCESS, ANNOTATION_PENDING, ANNOTATION_FAILED, ANNOTATION_UNKNOWN_STATUS, ANNOTATION_INVALID_ARGUMENT, ANNOTATION_PERMISSION_DENIED, ANNOTATION_AWAITING_REVIEW, ANNOTATION_AWAITING_CONSENSUS_REVIEW, ANNOTATION_REVIEW_DENIED, ANNOTATION_MODIFY_SUCCESS, ANNOTATION_MODIFY_PENDING, ANNOTATION_MODIFY_FAILED, METADATA_INVALID_PATCH_ARGUMENTS, METADATA_PARSING_ISSUE, METADATA_MANIPULATION_ISSUE, TRAINER_JOB_STATE_NONE, TRAINER_JOB_STATE_QUEUED, TRAINER_JOB_STATE_RUNNING, TRAINER_JOB_STATE_COMPLETE, TRAINER_JOB_STATE_ERROR, DATA_DUMP_SUCCESS, DATA_DUMP_PENDING, DATA_DUMP_FAILED, DATA_DUMP_IN_PROGRESS, DATA_DUMP_NO_DATA, DATA_DUMP_UNEXPECTED_ERROR, DATA_DUMP_EXPORT_SUCCESS, DATA_DUMP_EXPORT_PENDING, DATA_DUMP_EXPORT_FAILED, DATA_DUMP_EXPORT_IN_PROGRESS, DATA_DUMP_EXPORT_UNEXPECTED_ERROR, APP_DUPLICATION_SUCCESS, APP_DUPLICATION_FAILED, APP_DUPLICATION_PENDING, APP_DUPLICATION_IN_PROGRESS, APP_DUPLICATION_INVALID_REQUEST, MODULE_DOES_NOT_EXIST, MODULE_PERMISSION_DENIED, MODULE_INVALID_ARGUMENT, MODULE_INVALID_REQUEST, BULK_OPERATION_SUCCESS, BULK_OPERATION_FAILED, BULK_OPERATION_PENDING, BULK_OPERATION_IN_PROGRESS, BULK_OPERATION_INVALID_REQUEST, BULK_OPERATION_CANCELLED, BULK_OPERATION_UNEXPECTED_ERROR, RUNNER_DOES_NOT_EXIST, RUNNER_PERMISSION_DENIED, RUNNER_INVALID_ARGUMENT, RUNNER_INVALID_REQUEST, RUNNER_NEEDS_RETRY, RUNNER_STREAM_START, RUNNER_STREAM_END, RUNNER_ITEM_CANCELLED, RUNNER_PROCESSING_FAILED, NODEPOOL_DOES_NOT_EXIST, NODEPOOL_INVALID_ARGUMENT, NODEPOOL_INVALID_REQUEST, COMPUTE_CLUSTER_DOES_NOT_EXIST, COMPUTE_CLUSTER_INVALID_ARGUMENT, COMPUTE_CLUSTER_INVALID_REQUEST, DEPLOYMENT_DOES_NOT_EXIST, DEPLOYMENT_INVALID_ARGUMENT, DEPLOYMENT_INVALID_REQUEST, INSTANCE_TYPE_DOES_NOT_EXIST, INSTANCE_TYPE_INVALID_ARGUMENT, INSTANCE_TYPE_INVALID_REQUEST, INPUT_SUCCESS, INPUT_PENDING, INPUT_FAILED, INPUT_IN_PROGRESS, INPUT_DOWNLOAD_SUCCESS, INPUT_DOWNLOAD_PENDING, INPUT_DOWNLOAD_FAILED, INPUT_DOWNLOAD_IN_PROGRESS, INPUT_STATUS_UPDATE_FAILED, INPUT_DELETE_FAILED, INPUT_DUPLICATE, INPUT_UNSUPPORTED_FORMAT, INPUT_DOES_NOT_EXIST, INPUT_PERMISSION_DENIED, INPUT_INVALID_ARGUMENT, INPUT_OVER_LIMIT, INPUT_INVALID_URL, INPUT_MODIFY_SUCCESS, INPUT_MODIFY_PENDING, INPUT_MODIFY_FAILED, INPUT_STORAGE_HOST_FAILED, ALL_INPUT_INVALID_BYTES, INPUT_CLUSTER_SUCCESS, INPUT_CLUSTER_PENDING, INPUT_CLUSTER_FAILED, INPUT_CLUSTER_IN_PROGRESS, INPUT_REINDEX_SUCCESS, INPUT_REINDEX_PENDING, INPUT_REINDEX_FAILED, INPUT_REINDEX_IN_PROGRESS, INPUT_VIDEO_DOWNLOAD_SUCCESS, INPUT_VIDEO_DOWNLOAD_PENDING, INPUT_VIDEO_DOWNLOAD_FAILED, INPUT_VIDEO_DUPLICATE, INPUT_VIDEO_UNSUPPORTED_FORMAT, INPUT_VIDEO_DOES_NOT_EXIST, INPUT_VIDEO_PERMISSION_DENIED, INPUT_VIDEO_INVALID_ARGUMENT, INPUT_VIDEO_OVER_LIMIT, INPUT_VIDEO_INVALID_URL, INPUT_VIDEO_MODIFY_SUCCESS, INPUT_VIDEO_MODIFY_PENDING, INPUT_VIDEO_MODIFY_FAILED, INPUT_VIDEO_STORAGE_HOST_FAILED, ALL_INPUT_VIDEOS_INVALID_BYTES, INPUT_VIDEO_PROCESSING_SUCCESS, INPUT_VIDEO_PROCESSING_PENDING, INPUT_VIDEO_PROCESSING_FAILED, INPUT_VIDEO_STORAGE_INCONSISTENCY, INPUT_VIDEO_STORAGE_FAILURE, INPUT_VIDEO_URL_GENERATION_FAILURE, INPUT_CONNECTION_FAILED, REQUEST_DISABLED_FOR_MAINTENANCE, INPUT_WRITES_DISABLED_FOR_MAINTENANCE, INPUT_INVALID_REQUEST, PREDICT_INVALID_REQUEST, SEARCH_INVALID_REQUEST, CONCEPTS_INVALID_REQUEST, STATS_INVALID_REQUEST, DATABASE_DUPLICATE_KEY, DATABASE_STATEMENT_TIMEOUT, DATABASE_INVALID_ROWS_AFFECTED, DATABASE_DEADLOCK_DETECTED, DATABASE_FAIL_TASK, DATABASE_FAIL_TO_GET_CONNECTIONS, DATABASE_TOO_MANY_CLIENTS, DATABASE_CONSTRAINT_VIOLATED, DATABASE_CANCELED, ASYNC_WORKER_MULTI_ERRORS, RPC_REQUEST_QUEUE_FULL, RPC_SERVER_UNAVAILABLE, RPC_REQUEST_TIMEOUT, RPC_MAX_MESSAGE_SIZE_EXCEEDED, RPC_CANCELED, RPC_UNKNOWN_METHOD, REQUEST_CANCELED_BY_USER, CLUSTER_INTERNAL_FAILURE, EXTERNAL_CONNECTION_ERROR, QUERY_INVALID_SYNTAX, QUEUE_CONN_ERROR, QUEUE_CLOSE_REQUEST_TIMEOUT, QUEUE_CONN_CLOSED, QUEUE_PUBLISH_ACK_TIMEOUT, QUEUE_PUBLISH_ERROR, QUEUE_SUBSCRIPTION_TIMEOUT, QUEUE_SUBSCRIPTION_ERROR, QUEUE_MARSHALLING_FAILED, QUEUE_UNMARSHALLING_FAILED, QUEUE_MAX_MSG_REDELIVERY_EXCEEDED, QUEUE_ACK_FAILURE, SQS_OVERLIMIT, SQS_INVALID_RECEIPT_HANDLE, SQS_UNKNOWN, SEARCH_INTERNAL_FAILURE, SEARCH_PROJECTION_FAILURE, SEARCH_PREDICTION_FAILURE, SEARCH_BY_NOT_FULLY_INDEXED_INPUT, SAVED_SEARCH_MODIFY_FAILED, SEARCH_COUNTS_UNAVAILABLE, EVALUATION_QUEUED, EVALUATION_IN_PROGRESS, EVALUATION_SUCCESS, EVALUATION_FAILED_TO_RETRIEVE_DATA, EVALUATION_INVALID_ARGUMENT, EVALUATION_FAILED, EVALUATION_PENDING, EVALUATION_TIMED_OUT, EVALUATION_UNEXPECTED_ERROR, EVALUATION_MIXED, STRIPE_EVENT_ERROR, CACHE_MISS, REDIS_SCRIPT_EXITED_WITH_FAILURE, REDIS_STREAM_ERR, REDIS_NO_CONSUMERS, REDIS_STREAM_BACKOFF, SIGNUP_EVENT_ERROR, SIGNUP_FLAGGED, FILETYPE_UNSUPPORTED, APP_COUNT_INVALID_MESSAGE, APP_COUNT_UPDATE_INCREMENT_FAILED, APP_COUNT_REBUILD_FAILED, APP_COUNT_INTERNAL_FAILURE, MP_DOWNLOAD_ERROR, MP_RESOLVE_DNS_ERROR, MP_DOWNLOAD_MAX_SIZE_EXCEEDED_ERROR, MP_IMAGE_DECODE_ERROR, MP_INVALID_ARGUMENT, MP_IMAGE_PROCESSING_ERROR, DATATIER_CONN_ERROR, USER_CONSENT_FACE, WORKER_MISSING, WORKER_ACTIVE, WORKER_INACTIVE, COLLECTOR_MISSING, COLLECTOR_ACTIVE, COLLECTOR_INACTIVE, COLLECTOR_POST_INPUT_FAILED, SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST, TASK_IN_PROGRESS, TASK_DONE, TASK_WONT_DO, TASK_FAILED, TASK_IDLE, TASK_CONFLICT, TASK_NOT_IMPLEMENTED, TASK_MISSING, TASK_PERMISSION_DENIED, TASK_ASSIGNMENT_SUCCESS, TASK_ASSIGNMENT_PENDING, TASK_ASSIGNMENT_AWAITING_REVIEW, TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW, TASK_ASSIGNMENT_REJECTED, TASK_ASSIGNMENT_REVIEW_SUCCESS, TASK_ASSIGNMENT_REVIEW_PENDING, TASK_ASSIGNMENT_REVIEW_DISMISSED, LABEL_ORDER_PENDING, LABEL_ORDER_IN_PROGRESS, LABEL_ORDER_SUCCESS, LABEL_ORDER_CANCELED, LICENSE_ACTIVE, LICENSE_DOES_NOT_EXIST, LICENSE_NEED_UPDATE, LICENSE_EXPIRED, LICENSE_REVOKED, LICENSE_DELETED, LICENSE_VOLUME_EXCEEDED, PASSWORD_VALIDATION_SUCCESS, PASSWORD_VALIDATION_FAILED, PASSWORDPOLICY_INVALID_ARGUMENT, FEATUREFLAG_CONFIG_NOT_FOUND, FEATUREFLAG_INVALID_ARGUMENT, FEATUREFLAG_BLOCKED, MAINTENANCE_SUCCESS, MAINTENANCE_FAILED, DATASET_VERSION_PENDING, DATASET_VERSION_IN_PROGRESS, DATASET_VERSION_READY, DATASET_VERSION_FAILURE, DATASET_VERSION_UNEXPECTED_ERROR, DATASET_VERSION_CONFLICT, DATASET_INPUT_SUCCESS, DATASET_INPUT_DUPLICATE, DATASET_VERSION_EXPORT_SUCCESS, DATASET_VERSION_EXPORT_PENDING, DATASET_VERSION_EXPORT_FAILED, DATASET_VERSION_EXPORT_IN_PROGRESS, DATASET_VERSION_EXPORT_UNEXPECTED_ERROR, JOB_QUEUED, JOB_RUNNING, JOB_COMPLETED, JOB_FAILED, JOB_CANCELLED, JOB_UNEXPECTED_ERROR, JOB_CONFLICT, AUTH_MISSING_IDP_ASSOC, LIST_OBJECTS_FAILED, ARCHIVE_EXTRACT_FAILED, UPLOAD_IN_PROGRESS, UPLOAD_DONE, UPLOAD_FAILED, UPLOAD_UNEXPECTED_ERROR, UPLOAD_EXPIRED, UPLOAD_CANCELED, UPLOAD_CONFLICT, BILLING_INVALID_INFO, LOG_ENTRIES_INVALID_REQUEST, INTERNAL_SERVER_ISSUE, INTERNAL_FETCHING_ISSUE, INTERNAL_DATABASE_ISSUE, INTERNAL_CONTEXT_CANCELED, INTERNAL_UNEXPECTED_TIMEOUT, INTERNAL_UNEXPECTED_V1, INTERNAL_UNEXPECTED_PANIC, INTERNAL_UNEXPECTED_SPIRE, INTERNAL_REDIS_UNAVAILABLE, INTERNAL_RESOURCE_EXHAUSTED, INTERNAL_REDIS_UNCATEGORIZED, INTERNAL_AWS_UNCATEGORIZED, INTERNAL_AZURE_UNCATEGORIZED, INTERNAL_VECTORDB_UNCATEGORIZED, CONN_UNCATEGORIZED, MODEL_UNCATEGORIZED, INPUT_UNCATEGORIZED, ANNOTATION_UNCATEGORIZED, BILLING_UNCATEGORIZED, INTERNAL_UNCATEGORIZED, BAD_REQUEST, SERVER_ERROR, 
+      ZERO, SUCCESS, MIXED_STATUS, FAILURE, TRY_AGAIN, NOT_IMPLEMENTED, MOVED, TEAPOT, CONN_ACCOUNT_ISSUES, CONN_TOKEN_INVALID, CONN_CREDENTIALS_INVALID, CONN_EXCEED_HOURLY_LIMIT, CONN_EXCEED_MONTHLY_LIMIT, CONN_THROTTLED, CONN_EXCEEDS_LIMITS, CONN_INSUFFICIENT_SCOPES, CONN_KEY_INVALID, CONN_KEY_NOT_FOUND, CONN_BAD_REQUEST_FORMAT, CONN_DOES_NOT_EXIST, CONN_INVALID_REQUEST, CONN_METHOD_NOT_ALLOWED, CONN_NO_GDPR_CONSENT, CONN_INVALID_RANGE, CONN_AUTH_METHOD_DISABLED, MODEL_TRAINED, MODEL_TRAINING, MODEL_UNTRAINED, MODEL_QUEUED_FOR_TRAINING, MODEL_UPLOADING, MODEL_UPLOADING_FAILED, MODEL_TRAINING_FAILED, MODEL_BUILDING, MODEL_BUILDING_FAILED, MODEL_BUILD_UNEXPECTED_ERROR, MODEL_TRAINING_NO_DATA, MODEL_TRAINING_NO_POSITIVES, MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS, MODEL_TRAINING_TIMED_OUT, MODEL_TRAINING_WAITING_ERROR, MODEL_TRAINING_UNKNOWN_ERROR, MODEL_TRAINING_MSG_REDELIVER, MODEL_TRAINING_INSUFFICIENT_DATA, MODEL_TRAINING_INVALID_PARAMS, MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED, MODEL_MODIFY_SUCCESS, MODEL_MODIFY_PENDING, MODEL_MODIFY_FAILED, MODEL_DOES_NOT_EXIST, MODEL_PERMISSION_DENIED, MODEL_INVALID_ARGUMENT, MODEL_INVALID_REQUEST, MODEL_EVALUATED, MODEL_EVALUATING, MODEL_NOT_EVALUATED, MODEL_QUEUED_FOR_EVALUATION, MODEL_EVALUATION_TIMED_OUT, MODEL_EVALUATION_WAITING_ERROR, MODEL_EVALUATION_UNKNOWN_ERROR, MODEL_PREDICTION_FAILED, MODEL_EVALUATION_MSG_REDELIVER, MODEL_EVALUATION_NEED_LABELS, MODEL_EVALUATION_NEED_INPUTS, MODEL_EVALUATION_FAILED, MODEL_DEPLOYMENT_FAILED, MODEL_DEPLOYING, MODEL_QUEUED_FOR_DEPLOYMENT, MODEL_NOT_DEPLOYED, MODEL_BUSY_PLEASE_RETRY, MODEL_LOADING, MODEL_REFERENCE_INVALID_ARGUMENT, MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT, MODEL_EXPORTED, MODEL_EXPORTING, MODEL_EXPORTING_FAILED, MODEL_EXPORT_PENDING, WORKFLOW_NO_MATCHING_INPUT, WORKFLOW_REQUIRE_TRAINED_MODEL, WORKFLOW_DUPLICATE, WORKFLOW_UNSUPPORTED_FORMAT, WORKFLOW_DOES_NOT_EXIST, WORKFLOW_PERMISSION_DENIED, WORKFLOW_INVALID_ARGUMENT, WORKFLOW_INVALID_RECIPE, WORKFLOW_INVALID_TEMPLATE, WORKFLOW_INVALID_GRAPH, WORKFLOW_INTERNAL_FAILURE, WORKFLOW_INVALID_REQUEST, WORKFLOW_MODIFY_SUCCESS, WORKFLOW_MODIFY_PENDING, WORKFLOW_MODIFY_FAILED, WORKFLOW_REINDEX_FAILED, CONCEPT_MODIFY_SUCCESS, CONCEPT_MODIFY_PENDING, CONCEPT_MODIFY_FAILED, ANNOTATION_SUCCESS, ANNOTATION_PENDING, ANNOTATION_FAILED, ANNOTATION_UNKNOWN_STATUS, ANNOTATION_INVALID_ARGUMENT, ANNOTATION_PERMISSION_DENIED, ANNOTATION_AWAITING_REVIEW, ANNOTATION_AWAITING_CONSENSUS_REVIEW, ANNOTATION_REVIEW_DENIED, ANNOTATION_MODIFY_SUCCESS, ANNOTATION_MODIFY_PENDING, ANNOTATION_MODIFY_FAILED, METADATA_INVALID_PATCH_ARGUMENTS, METADATA_PARSING_ISSUE, METADATA_MANIPULATION_ISSUE, TRAINER_JOB_STATE_NONE, TRAINER_JOB_STATE_QUEUED, TRAINER_JOB_STATE_RUNNING, TRAINER_JOB_STATE_COMPLETE, TRAINER_JOB_STATE_ERROR, DATA_DUMP_SUCCESS, DATA_DUMP_PENDING, DATA_DUMP_FAILED, DATA_DUMP_IN_PROGRESS, DATA_DUMP_NO_DATA, DATA_DUMP_UNEXPECTED_ERROR, DATA_DUMP_EXPORT_SUCCESS, DATA_DUMP_EXPORT_PENDING, DATA_DUMP_EXPORT_FAILED, DATA_DUMP_EXPORT_IN_PROGRESS, DATA_DUMP_EXPORT_UNEXPECTED_ERROR, APP_DUPLICATION_SUCCESS, APP_DUPLICATION_FAILED, APP_DUPLICATION_PENDING, APP_DUPLICATION_IN_PROGRESS, APP_DUPLICATION_INVALID_REQUEST, MODULE_DOES_NOT_EXIST, MODULE_PERMISSION_DENIED, MODULE_INVALID_ARGUMENT, MODULE_INVALID_REQUEST, BULK_OPERATION_SUCCESS, BULK_OPERATION_FAILED, BULK_OPERATION_PENDING, BULK_OPERATION_IN_PROGRESS, BULK_OPERATION_INVALID_REQUEST, BULK_OPERATION_CANCELLED, BULK_OPERATION_UNEXPECTED_ERROR, RUNNER_DOES_NOT_EXIST, RUNNER_PERMISSION_DENIED, RUNNER_INVALID_ARGUMENT, RUNNER_INVALID_REQUEST, RUNNER_NEEDS_RETRY, RUNNER_STREAM_START, RUNNER_STREAM_END, RUNNER_ITEM_CANCELLED, RUNNER_PROCESSING_FAILED, NODEPOOL_DOES_NOT_EXIST, NODEPOOL_INVALID_ARGUMENT, NODEPOOL_INVALID_REQUEST, COMPUTE_CLUSTER_DOES_NOT_EXIST, COMPUTE_CLUSTER_INVALID_ARGUMENT, COMPUTE_CLUSTER_INVALID_REQUEST, DEPLOYMENT_DOES_NOT_EXIST, DEPLOYMENT_INVALID_ARGUMENT, DEPLOYMENT_INVALID_REQUEST, INSTANCE_TYPE_DOES_NOT_EXIST, INSTANCE_TYPE_INVALID_ARGUMENT, INSTANCE_TYPE_INVALID_REQUEST, COMPUTE_PLANE_METRICS_INVALID_REQUEST, INPUT_SUCCESS, INPUT_PENDING, INPUT_FAILED, INPUT_IN_PROGRESS, INPUT_DOWNLOAD_SUCCESS, INPUT_DOWNLOAD_PENDING, INPUT_DOWNLOAD_FAILED, INPUT_DOWNLOAD_IN_PROGRESS, INPUT_STATUS_UPDATE_FAILED, INPUT_DELETE_FAILED, INPUT_DUPLICATE, INPUT_UNSUPPORTED_FORMAT, INPUT_DOES_NOT_EXIST, INPUT_PERMISSION_DENIED, INPUT_INVALID_ARGUMENT, INPUT_OVER_LIMIT, INPUT_INVALID_URL, INPUT_MODIFY_SUCCESS, INPUT_MODIFY_PENDING, INPUT_MODIFY_FAILED, INPUT_STORAGE_HOST_FAILED, ALL_INPUT_INVALID_BYTES, INPUT_CLUSTER_SUCCESS, INPUT_CLUSTER_PENDING, INPUT_CLUSTER_FAILED, INPUT_CLUSTER_IN_PROGRESS, INPUT_REINDEX_SUCCESS, INPUT_REINDEX_PENDING, INPUT_REINDEX_FAILED, INPUT_REINDEX_IN_PROGRESS, INPUT_VIDEO_DOWNLOAD_SUCCESS, INPUT_VIDEO_DOWNLOAD_PENDING, INPUT_VIDEO_DOWNLOAD_FAILED, INPUT_VIDEO_DUPLICATE, INPUT_VIDEO_UNSUPPORTED_FORMAT, INPUT_VIDEO_DOES_NOT_EXIST, INPUT_VIDEO_PERMISSION_DENIED, INPUT_VIDEO_INVALID_ARGUMENT, INPUT_VIDEO_OVER_LIMIT, INPUT_VIDEO_INVALID_URL, INPUT_VIDEO_MODIFY_SUCCESS, INPUT_VIDEO_MODIFY_PENDING, INPUT_VIDEO_MODIFY_FAILED, INPUT_VIDEO_STORAGE_HOST_FAILED, ALL_INPUT_VIDEOS_INVALID_BYTES, INPUT_VIDEO_PROCESSING_SUCCESS, INPUT_VIDEO_PROCESSING_PENDING, INPUT_VIDEO_PROCESSING_FAILED, INPUT_VIDEO_STORAGE_INCONSISTENCY, INPUT_VIDEO_STORAGE_FAILURE, INPUT_VIDEO_URL_GENERATION_FAILURE, INPUT_CONNECTION_FAILED, REQUEST_DISABLED_FOR_MAINTENANCE, INPUT_WRITES_DISABLED_FOR_MAINTENANCE, INPUT_INVALID_REQUEST, PREDICT_INVALID_REQUEST, SEARCH_INVALID_REQUEST, CONCEPTS_INVALID_REQUEST, STATS_INVALID_REQUEST, DATABASE_DUPLICATE_KEY, DATABASE_STATEMENT_TIMEOUT, DATABASE_INVALID_ROWS_AFFECTED, DATABASE_DEADLOCK_DETECTED, DATABASE_FAIL_TASK, DATABASE_FAIL_TO_GET_CONNECTIONS, DATABASE_TOO_MANY_CLIENTS, DATABASE_CONSTRAINT_VIOLATED, DATABASE_CANCELED, ASYNC_WORKER_MULTI_ERRORS, RPC_REQUEST_QUEUE_FULL, RPC_SERVER_UNAVAILABLE, RPC_REQUEST_TIMEOUT, RPC_MAX_MESSAGE_SIZE_EXCEEDED, RPC_CANCELED, RPC_UNKNOWN_METHOD, REQUEST_CANCELED_BY_USER, CLUSTER_INTERNAL_FAILURE, EXTERNAL_CONNECTION_ERROR, QUERY_INVALID_SYNTAX, QUEUE_CONN_ERROR, QUEUE_CLOSE_REQUEST_TIMEOUT, QUEUE_CONN_CLOSED, QUEUE_PUBLISH_ACK_TIMEOUT, QUEUE_PUBLISH_ERROR, QUEUE_SUBSCRIPTION_TIMEOUT, QUEUE_SUBSCRIPTION_ERROR, QUEUE_MARSHALLING_FAILED, QUEUE_UNMARSHALLING_FAILED, QUEUE_MAX_MSG_REDELIVERY_EXCEEDED, QUEUE_ACK_FAILURE, SQS_OVERLIMIT, SQS_INVALID_RECEIPT_HANDLE, SQS_UNKNOWN, SEARCH_INTERNAL_FAILURE, SEARCH_PROJECTION_FAILURE, SEARCH_PREDICTION_FAILURE, SEARCH_BY_NOT_FULLY_INDEXED_INPUT, SAVED_SEARCH_MODIFY_FAILED, SEARCH_COUNTS_UNAVAILABLE, EVALUATION_QUEUED, EVALUATION_IN_PROGRESS, EVALUATION_SUCCESS, EVALUATION_FAILED_TO_RETRIEVE_DATA, EVALUATION_INVALID_ARGUMENT, EVALUATION_FAILED, EVALUATION_PENDING, EVALUATION_TIMED_OUT, EVALUATION_UNEXPECTED_ERROR, EVALUATION_MIXED, STRIPE_EVENT_ERROR, CACHE_MISS, REDIS_SCRIPT_EXITED_WITH_FAILURE, REDIS_STREAM_ERR, REDIS_NO_CONSUMERS, REDIS_STREAM_BACKOFF, SIGNUP_EVENT_ERROR, SIGNUP_FLAGGED, FILETYPE_UNSUPPORTED, APP_COUNT_INVALID_MESSAGE, APP_COUNT_UPDATE_INCREMENT_FAILED, APP_COUNT_REBUILD_FAILED, APP_COUNT_INTERNAL_FAILURE, MP_DOWNLOAD_ERROR, MP_RESOLVE_DNS_ERROR, MP_DOWNLOAD_MAX_SIZE_EXCEEDED_ERROR, MP_IMAGE_DECODE_ERROR, MP_INVALID_ARGUMENT, MP_IMAGE_PROCESSING_ERROR, DATATIER_CONN_ERROR, USER_CONSENT_FACE, WORKER_MISSING, WORKER_ACTIVE, WORKER_INACTIVE, COLLECTOR_MISSING, COLLECTOR_ACTIVE, COLLECTOR_INACTIVE, COLLECTOR_POST_INPUT_FAILED, SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST, TASK_IN_PROGRESS, TASK_DONE, TASK_WONT_DO, TASK_FAILED, TASK_IDLE, TASK_CONFLICT, TASK_NOT_IMPLEMENTED, TASK_MISSING, TASK_PERMISSION_DENIED, TASK_ASSIGNMENT_SUCCESS, TASK_ASSIGNMENT_PENDING, TASK_ASSIGNMENT_AWAITING_REVIEW, TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW, TASK_ASSIGNMENT_REJECTED, TASK_ASSIGNMENT_REVIEW_SUCCESS, TASK_ASSIGNMENT_REVIEW_PENDING, TASK_ASSIGNMENT_REVIEW_DISMISSED, LABEL_ORDER_PENDING, LABEL_ORDER_IN_PROGRESS, LABEL_ORDER_SUCCESS, LABEL_ORDER_CANCELED, LICENSE_ACTIVE, LICENSE_DOES_NOT_EXIST, LICENSE_NEED_UPDATE, LICENSE_EXPIRED, LICENSE_REVOKED, LICENSE_DELETED, LICENSE_VOLUME_EXCEEDED, PASSWORD_VALIDATION_SUCCESS, PASSWORD_VALIDATION_FAILED, PASSWORDPOLICY_INVALID_ARGUMENT, FEATUREFLAG_CONFIG_NOT_FOUND, FEATUREFLAG_INVALID_ARGUMENT, FEATUREFLAG_BLOCKED, MAINTENANCE_SUCCESS, MAINTENANCE_FAILED, DATASET_VERSION_PENDING, DATASET_VERSION_IN_PROGRESS, DATASET_VERSION_READY, DATASET_VERSION_FAILURE, DATASET_VERSION_UNEXPECTED_ERROR, DATASET_VERSION_CONFLICT, DATASET_INPUT_SUCCESS, DATASET_INPUT_DUPLICATE, DATASET_VERSION_EXPORT_SUCCESS, DATASET_VERSION_EXPORT_PENDING, DATASET_VERSION_EXPORT_FAILED, DATASET_VERSION_EXPORT_IN_PROGRESS, DATASET_VERSION_EXPORT_UNEXPECTED_ERROR, JOB_QUEUED, JOB_RUNNING, JOB_COMPLETED, JOB_FAILED, JOB_CANCELLED, JOB_UNEXPECTED_ERROR, JOB_CONFLICT, AUTH_MISSING_IDP_ASSOC, LIST_OBJECTS_FAILED, ARCHIVE_EXTRACT_FAILED, UPLOAD_IN_PROGRESS, UPLOAD_DONE, UPLOAD_FAILED, UPLOAD_UNEXPECTED_ERROR, UPLOAD_EXPIRED, UPLOAD_CANCELED, UPLOAD_CONFLICT, BILLING_INVALID_INFO, LOG_ENTRIES_INVALID_REQUEST, INTERNAL_SERVER_ISSUE, INTERNAL_FETCHING_ISSUE, INTERNAL_DATABASE_ISSUE, INTERNAL_CONTEXT_CANCELED, INTERNAL_UNEXPECTED_TIMEOUT, INTERNAL_UNEXPECTED_V1, INTERNAL_UNEXPECTED_PANIC, INTERNAL_UNEXPECTED_SPIRE, INTERNAL_REDIS_UNAVAILABLE, INTERNAL_RESOURCE_EXHAUSTED, INTERNAL_REDIS_UNCATEGORIZED, INTERNAL_AWS_UNCATEGORIZED, INTERNAL_AZURE_UNCATEGORIZED, INTERNAL_VECTORDB_UNCATEGORIZED, CONN_UNCATEGORIZED, MODEL_UNCATEGORIZED, INPUT_UNCATEGORIZED, ANNOTATION_UNCATEGORIZED, BILLING_UNCATEGORIZED, INTERNAL_UNCATEGORIZED, BAD_REQUEST, SERVER_ERROR, 
     };
   }
   public static StatusCode valueOf(

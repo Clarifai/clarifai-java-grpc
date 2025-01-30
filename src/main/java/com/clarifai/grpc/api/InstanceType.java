@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   private InstanceType() {
     id_ = "";
     description_ = "";
+    price_ = "";
   }
 
   @java.lang.Override
@@ -78,6 +79,12 @@ private static final long serialVersionUID = 0L;
               computeInfo_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            price_ = s;
             break;
           }
           default: {
@@ -224,6 +231,44 @@ private static final long serialVersionUID = 0L;
     return getComputeInfo();
   }
 
+  public static final int PRICE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object price_;
+  /**
+   * <code>string price = 4;</code>
+   * @return The price.
+   */
+  @java.lang.Override
+  public java.lang.String getPrice() {
+    java.lang.Object ref = price_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      price_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string price = 4;</code>
+   * @return The bytes for price.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPriceBytes() {
+    java.lang.Object ref = price_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      price_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -247,6 +292,9 @@ private static final long serialVersionUID = 0L;
     if (computeInfo_ != null) {
       output.writeMessage(3, getComputeInfo());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, price_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -265,6 +313,9 @@ private static final long serialVersionUID = 0L;
     if (computeInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getComputeInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, price_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,6 +341,8 @@ private static final long serialVersionUID = 0L;
       if (!getComputeInfo()
           .equals(other.getComputeInfo())) return false;
     }
+    if (!getPrice()
+        .equals(other.getPrice())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -309,6 +362,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COMPUTE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getComputeInfo().hashCode();
     }
+    hash = (37 * hash) + PRICE_FIELD_NUMBER;
+    hash = (53 * hash) + getPrice().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -457,6 +512,8 @@ private static final long serialVersionUID = 0L;
         computeInfo_ = null;
         computeInfoBuilder_ = null;
       }
+      price_ = "";
+
       return this;
     }
 
@@ -490,6 +547,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.computeInfo_ = computeInfoBuilder_.build();
       }
+      result.price_ = price_;
       onBuilt();
       return result;
     }
@@ -548,6 +606,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasComputeInfo()) {
         mergeComputeInfo(other.getComputeInfo());
+      }
+      if (!other.getPrice().isEmpty()) {
+        price_ = other.price_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -867,6 +929,82 @@ private static final long serialVersionUID = 0L;
         computeInfo_ = null;
       }
       return computeInfoBuilder_;
+    }
+
+    private java.lang.Object price_ = "";
+    /**
+     * <code>string price = 4;</code>
+     * @return The price.
+     */
+    public java.lang.String getPrice() {
+      java.lang.Object ref = price_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        price_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string price = 4;</code>
+     * @return The bytes for price.
+     */
+    public com.google.protobuf.ByteString
+        getPriceBytes() {
+      java.lang.Object ref = price_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        price_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string price = 4;</code>
+     * @param value The price to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrice(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      price_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string price = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPrice() {
+      
+      price_ = getDefaultInstance().getPrice();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string price = 4;</code>
+     * @param value The bytes for price to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      price_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -53,4 +53,16 @@ public interface InstanceTypeOrBuilder extends
    * <code>.clarifai.api.ComputeInfo compute_info = 3;</code>
    */
   com.clarifai.grpc.api.ComputeInfoOrBuilder getComputeInfoOrBuilder();
+
+  /**
+   * <code>string price = 4;</code>
+   * @return The price.
+   */
+  java.lang.String getPrice();
+  /**
+   * <code>string price = 4;</code>
+   * @return The bytes for price.
+   */
+  com.google.protobuf.ByteString
+      getPriceBytes();
 }

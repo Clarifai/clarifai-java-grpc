@@ -119,6 +119,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 56: {
+
+            usePredictCache_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -377,6 +382,21 @@ private static final long serialVersionUID = 0L;
     return getRunnerSelector();
   }
 
+  public static final int USE_PREDICT_CACHE_FIELD_NUMBER = 7;
+  private boolean usePredictCache_;
+  /**
+   * <pre>
+   * Configure the prediction cache to avoid expensive compute for predict requests
+   * </pre>
+   *
+   * <code>bool use_predict_cache = 7;</code>
+   * @return The usePredictCache.
+   */
+  @java.lang.Override
+  public boolean getUsePredictCache() {
+    return usePredictCache_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -409,6 +429,9 @@ private static final long serialVersionUID = 0L;
     if (runnerSelector_ != null) {
       output.writeMessage(6, getRunnerSelector());
     }
+    if (usePredictCache_ != false) {
+      output.writeBool(7, usePredictCache_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -439,6 +462,10 @@ private static final long serialVersionUID = 0L;
     if (runnerSelector_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getRunnerSelector());
+    }
+    if (usePredictCache_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, usePredictCache_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -476,6 +503,8 @@ private static final long serialVersionUID = 0L;
       if (!getRunnerSelector()
           .equals(other.getRunnerSelector())) return false;
     }
+    if (getUsePredictCache()
+        != other.getUsePredictCache()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -507,6 +536,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RUNNER_SELECTOR_FIELD_NUMBER;
       hash = (53 * hash) + getRunnerSelector().hashCode();
     }
+    hash = (37 * hash) + USE_PREDICT_CACHE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getUsePredictCache());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -676,6 +708,8 @@ private static final long serialVersionUID = 0L;
         runnerSelector_ = null;
         runnerSelectorBuilder_ = null;
       }
+      usePredictCache_ = false;
+
       return this;
     }
 
@@ -729,6 +763,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.runnerSelector_ = runnerSelectorBuilder_.build();
       }
+      result.usePredictCache_ = usePredictCache_;
       onBuilt();
       return result;
     }
@@ -819,6 +854,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasRunnerSelector()) {
         mergeRunnerSelector(other.getRunnerSelector());
+      }
+      if (other.getUsePredictCache() != false) {
+        setUsePredictCache(other.getUsePredictCache());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1678,6 +1716,49 @@ private static final long serialVersionUID = 0L;
         runnerSelector_ = null;
       }
       return runnerSelectorBuilder_;
+    }
+
+    private boolean usePredictCache_ ;
+    /**
+     * <pre>
+     * Configure the prediction cache to avoid expensive compute for predict requests
+     * </pre>
+     *
+     * <code>bool use_predict_cache = 7;</code>
+     * @return The usePredictCache.
+     */
+    @java.lang.Override
+    public boolean getUsePredictCache() {
+      return usePredictCache_;
+    }
+    /**
+     * <pre>
+     * Configure the prediction cache to avoid expensive compute for predict requests
+     * </pre>
+     *
+     * <code>bool use_predict_cache = 7;</code>
+     * @param value The usePredictCache to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsePredictCache(boolean value) {
+      
+      usePredictCache_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Configure the prediction cache to avoid expensive compute for predict requests
+     * </pre>
+     *
+     * <code>bool use_predict_cache = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsePredictCache() {
+      
+      usePredictCache_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
