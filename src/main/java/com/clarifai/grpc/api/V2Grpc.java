@@ -7393,6 +7393,37 @@ public final class V2Grpc {
     return getListWorkflowEvaluationTemplatesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostLogEntriesRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostLogEntriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostLogEntries",
+      requestType = com.clarifai.grpc.api.PostLogEntriesRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostLogEntriesRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostLogEntriesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostLogEntriesRequest, com.clarifai.grpc.api.status.BaseResponse> getPostLogEntriesMethod;
+    if ((getPostLogEntriesMethod = V2Grpc.getPostLogEntriesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostLogEntriesMethod = V2Grpc.getPostLogEntriesMethod) == null) {
+          V2Grpc.getPostLogEntriesMethod = getPostLogEntriesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostLogEntriesRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostLogEntries"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostLogEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostLogEntries"))
+              .build();
+        }
+      }
+    }
+    return getPostLogEntriesMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListLogEntriesRequest,
       com.clarifai.grpc.api.MultiLogEntryResponse> getListLogEntriesMethod;
 
@@ -7422,6 +7453,68 @@ public final class V2Grpc {
       }
     }
     return getListLogEntriesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamLogEntriesRequest,
+      com.clarifai.grpc.api.MultiLogEntryResponse> getStreamLogEntriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamLogEntries",
+      requestType = com.clarifai.grpc.api.StreamLogEntriesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiLogEntryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamLogEntriesRequest,
+      com.clarifai.grpc.api.MultiLogEntryResponse> getStreamLogEntriesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamLogEntriesRequest, com.clarifai.grpc.api.MultiLogEntryResponse> getStreamLogEntriesMethod;
+    if ((getStreamLogEntriesMethod = V2Grpc.getStreamLogEntriesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getStreamLogEntriesMethod = V2Grpc.getStreamLogEntriesMethod) == null) {
+          V2Grpc.getStreamLogEntriesMethod = getStreamLogEntriesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.StreamLogEntriesRequest, com.clarifai.grpc.api.MultiLogEntryResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StreamLogEntries"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.StreamLogEntriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiLogEntryResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("StreamLogEntries"))
+              .build();
+        }
+      }
+    }
+    return getStreamLogEntriesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostComputePlaneMetricsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostComputePlaneMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostComputePlaneMetrics",
+      requestType = com.clarifai.grpc.api.PostComputePlaneMetricsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostComputePlaneMetricsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostComputePlaneMetricsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostComputePlaneMetricsRequest, com.clarifai.grpc.api.status.BaseResponse> getPostComputePlaneMetricsMethod;
+    if ((getPostComputePlaneMetricsMethod = V2Grpc.getPostComputePlaneMetricsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostComputePlaneMetricsMethod = V2Grpc.getPostComputePlaneMetricsMethod) == null) {
+          V2Grpc.getPostComputePlaneMetricsMethod = getPostComputePlaneMetricsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostComputePlaneMetricsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostComputePlaneMetrics"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostComputePlaneMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostComputePlaneMetrics"))
+              .build();
+        }
+      }
+    }
+    return getPostComputePlaneMetricsMethod;
   }
 
   /**
@@ -9905,9 +9998,30 @@ public final class V2Grpc {
 
     /**
      */
+    public void postLogEntries(com.clarifai.grpc.api.PostLogEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostLogEntriesMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void listLogEntries(com.clarifai.grpc.api.ListLogEntriesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLogEntryResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLogEntriesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void streamLogEntries(com.clarifai.grpc.api.StreamLogEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLogEntryResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStreamLogEntriesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void postComputePlaneMetrics(com.clarifai.grpc.api.PostComputePlaneMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostComputePlaneMetricsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -11579,12 +11693,33 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse>(
                   this, METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES)))
           .addMethod(
+            getPostLogEntriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostLogEntriesRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_POST_LOG_ENTRIES)))
+          .addMethod(
             getListLogEntriesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.clarifai.grpc.api.ListLogEntriesRequest,
                 com.clarifai.grpc.api.MultiLogEntryResponse>(
                   this, METHODID_LIST_LOG_ENTRIES)))
+          .addMethod(
+            getStreamLogEntriesMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.StreamLogEntriesRequest,
+                com.clarifai.grpc.api.MultiLogEntryResponse>(
+                  this, METHODID_STREAM_LOG_ENTRIES)))
+          .addMethod(
+            getPostComputePlaneMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostComputePlaneMetricsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_POST_COMPUTE_PLANE_METRICS)))
           .build();
     }
   }
@@ -14274,10 +14409,34 @@ public final class V2Grpc {
 
     /**
      */
+    public void postLogEntries(com.clarifai.grpc.api.PostLogEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostLogEntriesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void listLogEntries(com.clarifai.grpc.api.ListLogEntriesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLogEntryResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListLogEntriesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void streamLogEntries(com.clarifai.grpc.api.StreamLogEntriesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLogEntryResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getStreamLogEntriesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void postComputePlaneMetrics(com.clarifai.grpc.api.PostComputePlaneMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostComputePlaneMetricsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -16690,9 +16849,31 @@ public final class V2Grpc {
 
     /**
      */
+    public com.clarifai.grpc.api.status.BaseResponse postLogEntries(com.clarifai.grpc.api.PostLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostLogEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.clarifai.grpc.api.MultiLogEntryResponse listLogEntries(com.clarifai.grpc.api.ListLogEntriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListLogEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.clarifai.grpc.api.MultiLogEntryResponse> streamLogEntries(
+        com.clarifai.grpc.api.StreamLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getStreamLogEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.status.BaseResponse postComputePlaneMetrics(com.clarifai.grpc.api.PostComputePlaneMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostComputePlaneMetricsMethod(), getCallOptions(), request);
     }
   }
 
@@ -19327,10 +19508,26 @@ public final class V2Grpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> postLogEntries(
+        com.clarifai.grpc.api.PostLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostLogEntriesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiLogEntryResponse> listLogEntries(
         com.clarifai.grpc.api.ListLogEntriesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListLogEntriesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> postComputePlaneMetrics(
+        com.clarifai.grpc.api.PostComputePlaneMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostComputePlaneMetricsMethod(), getCallOptions()), request);
     }
   }
 
@@ -19569,10 +19766,13 @@ public final class V2Grpc {
   private static final int METHODID_DELETE_DEPLOYMENTS = 232;
   private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 233;
   private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 234;
-  private static final int METHODID_LIST_LOG_ENTRIES = 235;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 236;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 237;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 238;
+  private static final int METHODID_POST_LOG_ENTRIES = 235;
+  private static final int METHODID_LIST_LOG_ENTRIES = 236;
+  private static final int METHODID_STREAM_LOG_ENTRIES = 237;
+  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 238;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 239;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 240;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 241;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20531,9 +20731,21 @@ public final class V2Grpc {
           serviceImpl.listWorkflowEvaluationTemplates((com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse>) responseObserver);
           break;
+        case METHODID_POST_LOG_ENTRIES:
+          serviceImpl.postLogEntries((com.clarifai.grpc.api.PostLogEntriesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
         case METHODID_LIST_LOG_ENTRIES:
           serviceImpl.listLogEntries((com.clarifai.grpc.api.ListLogEntriesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLogEntryResponse>) responseObserver);
+          break;
+        case METHODID_STREAM_LOG_ENTRIES:
+          serviceImpl.streamLogEntries((com.clarifai.grpc.api.StreamLogEntriesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLogEntryResponse>) responseObserver);
+          break;
+        case METHODID_POST_COMPUTE_PLANE_METRICS:
+          serviceImpl.postComputePlaneMetrics((com.clarifai.grpc.api.PostComputePlaneMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -20843,7 +21055,10 @@ public final class V2Grpc {
               .addMethod(getDeleteDeploymentsMethod())
               .addMethod(getPostAuditLogSearchesMethod())
               .addMethod(getListWorkflowEvaluationTemplatesMethod())
+              .addMethod(getPostLogEntriesMethod())
               .addMethod(getListLogEntriesMethod())
+              .addMethod(getStreamLogEntriesMethod())
+              .addMethod(getPostComputePlaneMetricsMethod())
               .build();
         }
       }
