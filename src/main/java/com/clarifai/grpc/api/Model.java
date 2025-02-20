@@ -355,6 +355,11 @@ private static final long serialVersionUID = 0L;
             versionCount_ = input.readInt32();
             break;
           }
+          case 312: {
+
+            usesTokens_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -580,7 +585,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1390
+   *     See proto/clarifai/api/resources.proto;l=1402
    * @return The name.
    */
   @java.lang.Override
@@ -603,7 +608,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1390
+   *     See proto/clarifai/api/resources.proto;l=1402
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -765,7 +770,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1403
+   *     See proto/clarifai/api/resources.proto;l=1415
    * @return Whether the outputInfo field is set.
    */
   @java.lang.Override
@@ -780,7 +785,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1403
+   *     See proto/clarifai/api/resources.proto;l=1415
    * @return The outputInfo.
    */
   @java.lang.Override
@@ -850,7 +855,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1408
+   *     See proto/clarifai/api/resources.proto;l=1420
    * @return The displayName.
    */
   @java.lang.Override
@@ -873,7 +878,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1408
+   *     See proto/clarifai/api/resources.proto;l=1420
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -1774,6 +1779,17 @@ private static final long serialVersionUID = 0L;
     return versionCount_;
   }
 
+  public static final int USES_TOKENS_FIELD_NUMBER = 39;
+  private boolean usesTokens_;
+  /**
+   * <code>bool uses_tokens = 39;</code>
+   * @return The usesTokens.
+   */
+  @java.lang.Override
+  public boolean getUsesTokens() {
+    return usesTokens_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1880,6 +1896,9 @@ private static final long serialVersionUID = 0L;
     }
     if (versionCount_ != 0) {
       output.writeInt32(38, versionCount_);
+    }
+    if (usesTokens_ != false) {
+      output.writeBool(39, usesTokens_);
     }
     unknownFields.writeTo(output);
   }
@@ -2020,6 +2039,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(38, versionCount_);
     }
+    if (usesTokens_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(39, usesTokens_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2128,6 +2151,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCreator())) return false;
     if (getVersionCount()
         != other.getVersionCount()) return false;
+    if (getUsesTokens()
+        != other.getUsesTokens()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2234,6 +2259,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCreator().hashCode();
     hash = (37 * hash) + VERSION_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getVersionCount();
+    hash = (37 * hash) + USES_TOKENS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getUsesTokens());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2492,6 +2520,8 @@ private static final long serialVersionUID = 0L;
 
       versionCount_ = 0;
 
+      usesTokens_ = false;
+
       return this;
     }
 
@@ -2618,6 +2648,7 @@ private static final long serialVersionUID = 0L;
       result.source_ = source_;
       result.creator_ = creator_;
       result.versionCount_ = versionCount_;
+      result.usesTokens_ = usesTokens_;
       onBuilt();
       return result;
     }
@@ -2820,6 +2851,9 @@ private static final long serialVersionUID = 0L;
       if (other.getVersionCount() != 0) {
         setVersionCount(other.getVersionCount());
       }
+      if (other.getUsesTokens() != false) {
+        setUsesTokens(other.getUsesTokens());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2954,7 +2988,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1390
+     *     See proto/clarifai/api/resources.proto;l=1402
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2976,7 +3010,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1390
+     *     See proto/clarifai/api/resources.proto;l=1402
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2999,7 +3033,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1390
+     *     See proto/clarifai/api/resources.proto;l=1402
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -3020,7 +3054,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1390
+     *     See proto/clarifai/api/resources.proto;l=1402
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -3036,7 +3070,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1390
+     *     See proto/clarifai/api/resources.proto;l=1402
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -3505,7 +3539,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1403
+     *     See proto/clarifai/api/resources.proto;l=1415
      * @return Whether the outputInfo field is set.
      */
     @java.lang.Deprecated public boolean hasOutputInfo() {
@@ -3519,7 +3553,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1403
+     *     See proto/clarifai/api/resources.proto;l=1415
      * @return The outputInfo.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
@@ -3834,7 +3868,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1408
+     *     See proto/clarifai/api/resources.proto;l=1420
      * @return The displayName.
      */
     @java.lang.Deprecated public java.lang.String getDisplayName() {
@@ -3856,7 +3890,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1408
+     *     See proto/clarifai/api/resources.proto;l=1420
      * @return The bytes for displayName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -3879,7 +3913,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1408
+     *     See proto/clarifai/api/resources.proto;l=1420
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -3900,7 +3934,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1408
+     *     See proto/clarifai/api/resources.proto;l=1420
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDisplayName() {
@@ -3916,7 +3950,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1408
+     *     See proto/clarifai/api/resources.proto;l=1420
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -6710,6 +6744,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearVersionCount() {
       
       versionCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean usesTokens_ ;
+    /**
+     * <code>bool uses_tokens = 39;</code>
+     * @return The usesTokens.
+     */
+    @java.lang.Override
+    public boolean getUsesTokens() {
+      return usesTokens_;
+    }
+    /**
+     * <code>bool uses_tokens = 39;</code>
+     * @param value The usesTokens to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsesTokens(boolean value) {
+      
+      usesTokens_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool uses_tokens = 39;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsesTokens() {
+      
+      usesTokens_ = false;
       onChanged();
       return this;
     }

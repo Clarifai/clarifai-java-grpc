@@ -690,4 +690,64 @@ public interface DataOrBuilder extends
    * <code>.clarifai.api.NDArray ndarray = 20;</code>
    */
   com.clarifai.grpc.api.NDArrayOrBuilder getNdarrayOrBuilder();
+
+  /**
+   * <pre>
+   * Input and output integer number 
+   * </pre>
+   *
+   * <code>int64 int_value = 21;</code>
+   * @return The intValue.
+   */
+  long getIntValue();
+
+  /**
+   * <pre>
+   * Input and output floating number
+   * </pre>
+   *
+   * <code>double float_value = 22;</code>
+   * @return The floatValue.
+   */
+  double getFloatValue();
+
+  /**
+   * <pre>
+   * Input and output bytes data
+   * </pre>
+   *
+   * <code>bytes bytes_value = 23;</code>
+   * @return The bytesValue.
+   */
+  com.google.protobuf.ByteString getBytesValue();
+
+  /**
+   * <pre>
+   * Input and output bool data
+   * </pre>
+   *
+   * <code>bool bool_value = 24;</code>
+   * @return The boolValue.
+   */
+  boolean getBoolValue();
+
+  /**
+   * <pre>
+   * Input and output string data
+   * </pre>
+   *
+   * <code>string string_value = 25;</code>
+   * @return The stringValue.
+   */
+  java.lang.String getStringValue();
+  /**
+   * <pre>
+   * Input and output string data
+   * </pre>
+   *
+   * <code>string string_value = 25;</code>
+   * @return The bytes for stringValue.
+   */
+  com.google.protobuf.ByteString
+      getStringValueBytes();
 }

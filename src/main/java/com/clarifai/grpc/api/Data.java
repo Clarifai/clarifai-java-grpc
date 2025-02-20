@@ -31,6 +31,8 @@ private static final long serialVersionUID = 0L;
     hits_ = java.util.Collections.emptyList();
     heatmaps_ = java.util.Collections.emptyList();
     parts_ = java.util.Collections.emptyList();
+    bytesValue_ = com.google.protobuf.ByteString.EMPTY;
+    stringValue_ = "";
   }
 
   @java.lang.Override
@@ -252,6 +254,32 @@ private static final long serialVersionUID = 0L;
               ndarray_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 168: {
+
+            intValue_ = input.readInt64();
+            break;
+          }
+          case 177: {
+
+            floatValue_ = input.readDouble();
+            break;
+          }
+          case 186: {
+
+            bytesValue_ = input.readBytes();
+            break;
+          }
+          case 192: {
+
+            boolValue_ = input.readBool();
+            break;
+          }
+          case 202: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            stringValue_ = s;
             break;
           }
           default: {
@@ -1258,6 +1286,112 @@ private static final long serialVersionUID = 0L;
     return getNdarray();
   }
 
+  public static final int INT_VALUE_FIELD_NUMBER = 21;
+  private long intValue_;
+  /**
+   * <pre>
+   * Input and output integer number 
+   * </pre>
+   *
+   * <code>int64 int_value = 21;</code>
+   * @return The intValue.
+   */
+  @java.lang.Override
+  public long getIntValue() {
+    return intValue_;
+  }
+
+  public static final int FLOAT_VALUE_FIELD_NUMBER = 22;
+  private double floatValue_;
+  /**
+   * <pre>
+   * Input and output floating number
+   * </pre>
+   *
+   * <code>double float_value = 22;</code>
+   * @return The floatValue.
+   */
+  @java.lang.Override
+  public double getFloatValue() {
+    return floatValue_;
+  }
+
+  public static final int BYTES_VALUE_FIELD_NUMBER = 23;
+  private com.google.protobuf.ByteString bytesValue_;
+  /**
+   * <pre>
+   * Input and output bytes data
+   * </pre>
+   *
+   * <code>bytes bytes_value = 23;</code>
+   * @return The bytesValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBytesValue() {
+    return bytesValue_;
+  }
+
+  public static final int BOOL_VALUE_FIELD_NUMBER = 24;
+  private boolean boolValue_;
+  /**
+   * <pre>
+   * Input and output bool data
+   * </pre>
+   *
+   * <code>bool bool_value = 24;</code>
+   * @return The boolValue.
+   */
+  @java.lang.Override
+  public boolean getBoolValue() {
+    return boolValue_;
+  }
+
+  public static final int STRING_VALUE_FIELD_NUMBER = 25;
+  private volatile java.lang.Object stringValue_;
+  /**
+   * <pre>
+   * Input and output string data
+   * </pre>
+   *
+   * <code>string string_value = 25;</code>
+   * @return The stringValue.
+   */
+  @java.lang.Override
+  public java.lang.String getStringValue() {
+    java.lang.Object ref = stringValue_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stringValue_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Input and output string data
+   * </pre>
+   *
+   * <code>string string_value = 25;</code>
+   * @return The bytes for stringValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStringValueBytes() {
+    java.lang.Object ref = stringValue_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      stringValue_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1325,6 +1459,21 @@ private static final long serialVersionUID = 0L;
     }
     if (ndarray_ != null) {
       output.writeMessage(20, getNdarray());
+    }
+    if (intValue_ != 0L) {
+      output.writeInt64(21, intValue_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(floatValue_) != 0) {
+      output.writeDouble(22, floatValue_);
+    }
+    if (!bytesValue_.isEmpty()) {
+      output.writeBytes(23, bytesValue_);
+    }
+    if (boolValue_ != false) {
+      output.writeBool(24, boolValue_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stringValue_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, stringValue_);
     }
     unknownFields.writeTo(output);
   }
@@ -1407,6 +1556,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, getNdarray());
     }
+    if (intValue_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(21, intValue_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(floatValue_) != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(22, floatValue_);
+    }
+    if (!bytesValue_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(23, bytesValue_);
+    }
+    if (boolValue_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(24, boolValue_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stringValue_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, stringValue_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1479,6 +1647,17 @@ private static final long serialVersionUID = 0L;
       if (!getNdarray()
           .equals(other.getNdarray())) return false;
     }
+    if (getIntValue()
+        != other.getIntValue()) return false;
+    if (java.lang.Double.doubleToLongBits(getFloatValue())
+        != java.lang.Double.doubleToLongBits(
+            other.getFloatValue())) return false;
+    if (!getBytesValue()
+        .equals(other.getBytesValue())) return false;
+    if (getBoolValue()
+        != other.getBoolValue()) return false;
+    if (!getStringValue()
+        .equals(other.getStringValue())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1562,6 +1741,19 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NDARRAY_FIELD_NUMBER;
       hash = (53 * hash) + getNdarray().hashCode();
     }
+    hash = (37 * hash) + INT_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getIntValue());
+    hash = (37 * hash) + FLOAT_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getFloatValue()));
+    hash = (37 * hash) + BYTES_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getBytesValue().hashCode();
+    hash = (37 * hash) + BOOL_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getBoolValue());
+    hash = (37 * hash) + STRING_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getStringValue().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1818,6 +2010,16 @@ private static final long serialVersionUID = 0L;
         ndarray_ = null;
         ndarrayBuilder_ = null;
       }
+      intValue_ = 0L;
+
+      floatValue_ = 0D;
+
+      bytesValue_ = com.google.protobuf.ByteString.EMPTY;
+
+      boolValue_ = false;
+
+      stringValue_ = "";
+
       return this;
     }
 
@@ -1979,6 +2181,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.ndarray_ = ndarrayBuilder_.build();
       }
+      result.intValue_ = intValue_;
+      result.floatValue_ = floatValue_;
+      result.bytesValue_ = bytesValue_;
+      result.boolValue_ = boolValue_;
+      result.stringValue_ = stringValue_;
       onBuilt();
       return result;
     }
@@ -2333,6 +2540,22 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasNdarray()) {
         mergeNdarray(other.getNdarray());
+      }
+      if (other.getIntValue() != 0L) {
+        setIntValue(other.getIntValue());
+      }
+      if (other.getFloatValue() != 0D) {
+        setFloatValue(other.getFloatValue());
+      }
+      if (other.getBytesValue() != com.google.protobuf.ByteString.EMPTY) {
+        setBytesValue(other.getBytesValue());
+      }
+      if (other.getBoolValue() != false) {
+        setBoolValue(other.getBoolValue());
+      }
+      if (!other.getStringValue().isEmpty()) {
+        stringValue_ = other.stringValue_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6915,6 +7138,277 @@ private static final long serialVersionUID = 0L;
         ndarray_ = null;
       }
       return ndarrayBuilder_;
+    }
+
+    private long intValue_ ;
+    /**
+     * <pre>
+     * Input and output integer number 
+     * </pre>
+     *
+     * <code>int64 int_value = 21;</code>
+     * @return The intValue.
+     */
+    @java.lang.Override
+    public long getIntValue() {
+      return intValue_;
+    }
+    /**
+     * <pre>
+     * Input and output integer number 
+     * </pre>
+     *
+     * <code>int64 int_value = 21;</code>
+     * @param value The intValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntValue(long value) {
+      
+      intValue_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Input and output integer number 
+     * </pre>
+     *
+     * <code>int64 int_value = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIntValue() {
+      
+      intValue_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private double floatValue_ ;
+    /**
+     * <pre>
+     * Input and output floating number
+     * </pre>
+     *
+     * <code>double float_value = 22;</code>
+     * @return The floatValue.
+     */
+    @java.lang.Override
+    public double getFloatValue() {
+      return floatValue_;
+    }
+    /**
+     * <pre>
+     * Input and output floating number
+     * </pre>
+     *
+     * <code>double float_value = 22;</code>
+     * @param value The floatValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFloatValue(double value) {
+      
+      floatValue_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Input and output floating number
+     * </pre>
+     *
+     * <code>double float_value = 22;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFloatValue() {
+      
+      floatValue_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString bytesValue_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Input and output bytes data
+     * </pre>
+     *
+     * <code>bytes bytes_value = 23;</code>
+     * @return The bytesValue.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBytesValue() {
+      return bytesValue_;
+    }
+    /**
+     * <pre>
+     * Input and output bytes data
+     * </pre>
+     *
+     * <code>bytes bytes_value = 23;</code>
+     * @param value The bytesValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBytesValue(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      bytesValue_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Input and output bytes data
+     * </pre>
+     *
+     * <code>bytes bytes_value = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBytesValue() {
+      
+      bytesValue_ = getDefaultInstance().getBytesValue();
+      onChanged();
+      return this;
+    }
+
+    private boolean boolValue_ ;
+    /**
+     * <pre>
+     * Input and output bool data
+     * </pre>
+     *
+     * <code>bool bool_value = 24;</code>
+     * @return The boolValue.
+     */
+    @java.lang.Override
+    public boolean getBoolValue() {
+      return boolValue_;
+    }
+    /**
+     * <pre>
+     * Input and output bool data
+     * </pre>
+     *
+     * <code>bool bool_value = 24;</code>
+     * @param value The boolValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBoolValue(boolean value) {
+      
+      boolValue_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Input and output bool data
+     * </pre>
+     *
+     * <code>bool bool_value = 24;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBoolValue() {
+      
+      boolValue_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object stringValue_ = "";
+    /**
+     * <pre>
+     * Input and output string data
+     * </pre>
+     *
+     * <code>string string_value = 25;</code>
+     * @return The stringValue.
+     */
+    public java.lang.String getStringValue() {
+      java.lang.Object ref = stringValue_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stringValue_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Input and output string data
+     * </pre>
+     *
+     * <code>string string_value = 25;</code>
+     * @return The bytes for stringValue.
+     */
+    public com.google.protobuf.ByteString
+        getStringValueBytes() {
+      java.lang.Object ref = stringValue_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stringValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Input and output string data
+     * </pre>
+     *
+     * <code>string string_value = 25;</code>
+     * @param value The stringValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStringValue(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      stringValue_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Input and output string data
+     * </pre>
+     *
+     * <code>string string_value = 25;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStringValue() {
+      
+      stringValue_ = getDefaultInstance().getStringValue();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Input and output string data
+     * </pre>
+     *
+     * <code>string string_value = 25;</code>
+     * @param value The bytes for stringValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStringValueBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      stringValue_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

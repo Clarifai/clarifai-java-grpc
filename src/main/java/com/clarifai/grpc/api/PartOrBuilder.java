@@ -33,4 +33,24 @@ public interface PartOrBuilder extends
    * <code>.clarifai.api.Data data = 1;</code>
    */
   com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder();
+
+  /**
+   * <pre>
+   * A unique id for the part.
+   * </pre>
+   *
+   * <code>string id = 2;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <pre>
+   * A unique id for the part.
+   * </pre>
+   *
+   * <code>string id = 2;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
 }
