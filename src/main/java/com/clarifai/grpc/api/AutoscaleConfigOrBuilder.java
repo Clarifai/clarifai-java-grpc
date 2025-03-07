@@ -69,4 +69,14 @@ public interface AutoscaleConfigOrBuilder extends
    * @return The disablePacking.
    */
   boolean getDisablePacking();
+
+  /**
+   * <pre>
+   * The idle time before scaling down to zero
+   * </pre>
+   *
+   * <code>uint32 scale_to_zero_delay_seconds = 8;</code>
+   * @return The scaleToZeroDelaySeconds.
+   */
+  int getScaleToZeroDelaySeconds();
 }

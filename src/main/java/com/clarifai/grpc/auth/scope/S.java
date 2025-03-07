@@ -504,14 +504,6 @@ public enum S
   LabelOrders_Delete(69),
   /**
    * <pre>
-   * Read from user_feature_configs table
-   * </pre>
-   *
-   * <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  UserFeatureConfigs_Get(71),
-  /**
-   * <pre>
    * CRUD on FindDuplicateAnnotationsJobs table
    * </pre>
    *
@@ -770,6 +762,14 @@ public enum S
    * <code>LogEntries_Get = 151 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   LogEntries_Get(151),
+  /**
+   * <code>WorkflowVersionEvaluations_Get = 152 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  WorkflowVersionEvaluations_Get(152),
+  /**
+   * <code>WorkflowVersionEvaluations_Add = 153 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowVersionEvaluations_Get];</code>
+   */
+  WorkflowVersionEvaluations_Add(153),
   UNRECOGNIZED(-1),
   ;
 
@@ -1236,14 +1236,6 @@ public enum S
   public static final int LabelOrders_Delete_VALUE = 69;
   /**
    * <pre>
-   * Read from user_feature_configs table
-   * </pre>
-   *
-   * <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  public static final int UserFeatureConfigs_Get_VALUE = 71;
-  /**
-   * <pre>
    * CRUD on FindDuplicateAnnotationsJobs table
    * </pre>
    *
@@ -1502,6 +1494,14 @@ public enum S
    * <code>LogEntries_Get = 151 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int LogEntries_Get_VALUE = 151;
+  /**
+   * <code>WorkflowVersionEvaluations_Get = 152 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int WorkflowVersionEvaluations_Get_VALUE = 152;
+  /**
+   * <code>WorkflowVersionEvaluations_Add = 153 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowVersionEvaluations_Get];</code>
+   */
+  public static final int WorkflowVersionEvaluations_Add_VALUE = 153;
 
 
   public final int getNumber() {
@@ -1586,7 +1586,6 @@ public enum S
       case 67: return LabelOrders_Get;
       case 68: return LabelOrders_Add;
       case 69: return LabelOrders_Delete;
-      case 71: return UserFeatureConfigs_Get;
       case 102: return FindDuplicateAnnotationsJobs_Add;
       case 103: return FindDuplicateAnnotationsJobs_Get;
       case 104: return FindDuplicateAnnotationsJobs_Delete;
@@ -1631,6 +1630,8 @@ public enum S
       case 148: return InstanceTypes_Get;
       case 149: return AuditLogs_Get;
       case 151: return LogEntries_Get;
+      case 152: return WorkflowVersionEvaluations_Get;
+      case 153: return WorkflowVersionEvaluations_Add;
       default: return null;
     }
   }

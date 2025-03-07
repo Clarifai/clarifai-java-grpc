@@ -195,4 +195,44 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getComputeClusterIdBytes();
+
+  /**
+   * <pre>
+   * Used by agent runners to specify their cloud provider.
+   * </pre>
+   *
+   * <code>string cloud_provider_id = 9;</code>
+   * @return The cloudProviderId.
+   */
+  java.lang.String getCloudProviderId();
+  /**
+   * <pre>
+   * Used by agent runners to specify their cloud provider.
+   * </pre>
+   *
+   * <code>string cloud_provider_id = 9;</code>
+   * @return The bytes for cloudProviderId.
+   */
+  com.google.protobuf.ByteString
+      getCloudProviderIdBytes();
+
+  /**
+   * <pre>
+   * Used by agent runners to specify their region.
+   * </pre>
+   *
+   * <code>string region = 10;</code>
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   * <pre>
+   * Used by agent runners to specify their region.
+   * </pre>
+   *
+   * <code>string region = 10;</code>
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString
+      getRegionBytes();
 }

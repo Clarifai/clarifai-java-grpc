@@ -1290,7 +1290,7 @@ private static final long serialVersionUID = 0L;
   private long intValue_;
   /**
    * <pre>
-   * Input and output integer number 
+   * Input and output integer number
    * </pre>
    *
    * <code>int64 int_value = 21;</code>
@@ -7143,7 +7143,7 @@ private static final long serialVersionUID = 0L;
     private long intValue_ ;
     /**
      * <pre>
-     * Input and output integer number 
+     * Input and output integer number
      * </pre>
      *
      * <code>int64 int_value = 21;</code>
@@ -7155,7 +7155,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output integer number 
+     * Input and output integer number
      * </pre>
      *
      * <code>int64 int_value = 21;</code>
@@ -7170,7 +7170,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output integer number 
+     * Input and output integer number
      * </pre>
      *
      * <code>int64 int_value = 21;</code>

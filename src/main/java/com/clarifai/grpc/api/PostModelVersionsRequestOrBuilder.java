@@ -107,4 +107,14 @@ public interface PostModelVersionsRequestOrBuilder extends
    * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
    */
   com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder();
+
+  /**
+   * <pre>
+   * When set to true, we will convert the model into a containerized model after training.
+   * </pre>
+   *
+   * <code>bool do_migration = 11;</code>
+   * @return The doMigration.
+   */
+  boolean getDoMigration();
 }

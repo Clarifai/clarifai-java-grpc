@@ -95,6 +95,20 @@ private static final long serialVersionUID = 0L;
             requestCase_ = 4;
             break;
           }
+          case 42: {
+            com.clarifai.grpc.api.SyncStateRequest.Builder subBuilder = null;
+            if (requestCase_ == 5) {
+              subBuilder = ((com.clarifai.grpc.api.SyncStateRequest) request_).toBuilder();
+            }
+            request_ =
+                input.readMessage(com.clarifai.grpc.api.SyncStateRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.SyncStateRequest) request_);
+              request_ = subBuilder.buildPartial();
+            }
+            requestCase_ = 5;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -135,6 +149,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     POST_MODEL_OUTPUTS_REQUEST(4),
+    SYNC_STATE_REQUEST(5),
     REQUEST_NOT_SET(0);
     private final int value;
     private RequestCase(int value) {
@@ -153,6 +168,7 @@ private static final long serialVersionUID = 0L;
     public static RequestCase forNumber(int value) {
       switch (value) {
         case 4: return POST_MODEL_OUTPUTS_REQUEST;
+        case 5: return SYNC_STATE_REQUEST;
         case 0: return REQUEST_NOT_SET;
         default: return null;
       }
@@ -341,6 +357,49 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance();
   }
 
+  public static final int SYNC_STATE_REQUEST_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Agent sync request from control plane.
+   * </pre>
+   *
+   * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+   * @return Whether the syncStateRequest field is set.
+   */
+  @java.lang.Override
+  public boolean hasSyncStateRequest() {
+    return requestCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Agent sync request from control plane.
+   * </pre>
+   *
+   * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+   * @return The syncStateRequest.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.SyncStateRequest getSyncStateRequest() {
+    if (requestCase_ == 5) {
+       return (com.clarifai.grpc.api.SyncStateRequest) request_;
+    }
+    return com.clarifai.grpc.api.SyncStateRequest.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Agent sync request from control plane.
+   * </pre>
+   *
+   * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.SyncStateRequestOrBuilder getSyncStateRequestOrBuilder() {
+    if (requestCase_ == 5) {
+       return (com.clarifai.grpc.api.SyncStateRequest) request_;
+    }
+    return com.clarifai.grpc.api.SyncStateRequest.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -367,6 +426,9 @@ private static final long serialVersionUID = 0L;
     if (requestCase_ == 4) {
       output.writeMessage(4, (com.clarifai.grpc.api.PostModelOutputsRequest) request_);
     }
+    if (requestCase_ == 5) {
+      output.writeMessage(5, (com.clarifai.grpc.api.SyncStateRequest) request_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -389,6 +451,10 @@ private static final long serialVersionUID = 0L;
     if (requestCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.clarifai.grpc.api.PostModelOutputsRequest) request_);
+    }
+    if (requestCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, (com.clarifai.grpc.api.SyncStateRequest) request_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -420,6 +486,10 @@ private static final long serialVersionUID = 0L;
         if (!getPostModelOutputsRequest()
             .equals(other.getPostModelOutputsRequest())) return false;
         break;
+      case 5:
+        if (!getSyncStateRequest()
+            .equals(other.getSyncStateRequest())) return false;
+        break;
       case 0:
       default:
     }
@@ -446,6 +516,10 @@ private static final long serialVersionUID = 0L;
       case 4:
         hash = (37 * hash) + POST_MODEL_OUTPUTS_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getPostModelOutputsRequest().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + SYNC_STATE_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getSyncStateRequest().hashCode();
         break;
       case 0:
       default:
@@ -641,6 +715,13 @@ private static final long serialVersionUID = 0L;
           result.request_ = postModelOutputsRequestBuilder_.build();
         }
       }
+      if (requestCase_ == 5) {
+        if (syncStateRequestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = syncStateRequestBuilder_.build();
+        }
+      }
       result.requestCase_ = requestCase_;
       onBuilt();
       return result;
@@ -704,6 +785,10 @@ private static final long serialVersionUID = 0L;
       switch (other.getRequestCase()) {
         case POST_MODEL_OUTPUTS_REQUEST: {
           mergePostModelOutputsRequest(other.getPostModelOutputsRequest());
+          break;
+        }
+        case SYNC_STATE_REQUEST: {
+          mergeSyncStateRequest(other.getSyncStateRequest());
           break;
         }
         case REQUEST_NOT_SET: {
@@ -1277,6 +1362,184 @@ private static final long serialVersionUID = 0L;
       requestCase_ = 4;
       onChanged();;
       return postModelOutputsRequestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.SyncStateRequest, com.clarifai.grpc.api.SyncStateRequest.Builder, com.clarifai.grpc.api.SyncStateRequestOrBuilder> syncStateRequestBuilder_;
+    /**
+     * <pre>
+     * Agent sync request from control plane.
+     * </pre>
+     *
+     * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     * @return Whether the syncStateRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasSyncStateRequest() {
+      return requestCase_ == 5;
+    }
+    /**
+     * <pre>
+     * Agent sync request from control plane.
+     * </pre>
+     *
+     * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     * @return The syncStateRequest.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.SyncStateRequest getSyncStateRequest() {
+      if (syncStateRequestBuilder_ == null) {
+        if (requestCase_ == 5) {
+          return (com.clarifai.grpc.api.SyncStateRequest) request_;
+        }
+        return com.clarifai.grpc.api.SyncStateRequest.getDefaultInstance();
+      } else {
+        if (requestCase_ == 5) {
+          return syncStateRequestBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.SyncStateRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Agent sync request from control plane.
+     * </pre>
+     *
+     * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     */
+    public Builder setSyncStateRequest(com.clarifai.grpc.api.SyncStateRequest value) {
+      if (syncStateRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        request_ = value;
+        onChanged();
+      } else {
+        syncStateRequestBuilder_.setMessage(value);
+      }
+      requestCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Agent sync request from control plane.
+     * </pre>
+     *
+     * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     */
+    public Builder setSyncStateRequest(
+        com.clarifai.grpc.api.SyncStateRequest.Builder builderForValue) {
+      if (syncStateRequestBuilder_ == null) {
+        request_ = builderForValue.build();
+        onChanged();
+      } else {
+        syncStateRequestBuilder_.setMessage(builderForValue.build());
+      }
+      requestCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Agent sync request from control plane.
+     * </pre>
+     *
+     * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     */
+    public Builder mergeSyncStateRequest(com.clarifai.grpc.api.SyncStateRequest value) {
+      if (syncStateRequestBuilder_ == null) {
+        if (requestCase_ == 5 &&
+            request_ != com.clarifai.grpc.api.SyncStateRequest.getDefaultInstance()) {
+          request_ = com.clarifai.grpc.api.SyncStateRequest.newBuilder((com.clarifai.grpc.api.SyncStateRequest) request_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          request_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestCase_ == 5) {
+          syncStateRequestBuilder_.mergeFrom(value);
+        } else {
+          syncStateRequestBuilder_.setMessage(value);
+        }
+      }
+      requestCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Agent sync request from control plane.
+     * </pre>
+     *
+     * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     */
+    public Builder clearSyncStateRequest() {
+      if (syncStateRequestBuilder_ == null) {
+        if (requestCase_ == 5) {
+          requestCase_ = 0;
+          request_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestCase_ == 5) {
+          requestCase_ = 0;
+          request_ = null;
+        }
+        syncStateRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Agent sync request from control plane.
+     * </pre>
+     *
+     * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     */
+    public com.clarifai.grpc.api.SyncStateRequest.Builder getSyncStateRequestBuilder() {
+      return getSyncStateRequestFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Agent sync request from control plane.
+     * </pre>
+     *
+     * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.SyncStateRequestOrBuilder getSyncStateRequestOrBuilder() {
+      if ((requestCase_ == 5) && (syncStateRequestBuilder_ != null)) {
+        return syncStateRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestCase_ == 5) {
+          return (com.clarifai.grpc.api.SyncStateRequest) request_;
+        }
+        return com.clarifai.grpc.api.SyncStateRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Agent sync request from control plane.
+     * </pre>
+     *
+     * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.SyncStateRequest, com.clarifai.grpc.api.SyncStateRequest.Builder, com.clarifai.grpc.api.SyncStateRequestOrBuilder> 
+        getSyncStateRequestFieldBuilder() {
+      if (syncStateRequestBuilder_ == null) {
+        if (!(requestCase_ == 5)) {
+          request_ = com.clarifai.grpc.api.SyncStateRequest.getDefaultInstance();
+        }
+        syncStateRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.SyncStateRequest, com.clarifai.grpc.api.SyncStateRequest.Builder, com.clarifai.grpc.api.SyncStateRequestOrBuilder>(
+                (com.clarifai.grpc.api.SyncStateRequest) request_,
+                getParentForChildren(),
+                isClean());
+        request_ = null;
+      }
+      requestCase_ = 5;
+      onChanged();;
+      return syncStateRequestBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

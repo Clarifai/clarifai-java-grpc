@@ -31,6 +31,8 @@ private static final long serialVersionUID = 0L;
     runnerItemOutputs_ = java.util.Collections.emptyList();
     runnerReplicaId_ = "";
     computeClusterId_ = "";
+    cloudProviderId_ = "";
+    region_ = "";
   }
 
   @java.lang.Override
@@ -127,6 +129,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             computeClusterId_ = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            cloudProviderId_ = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            region_ = s;
             break;
           }
           default: {
@@ -523,6 +537,98 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CLOUD_PROVIDER_ID_FIELD_NUMBER = 9;
+  private volatile java.lang.Object cloudProviderId_;
+  /**
+   * <pre>
+   * Used by agent runners to specify their cloud provider.
+   * </pre>
+   *
+   * <code>string cloud_provider_id = 9;</code>
+   * @return The cloudProviderId.
+   */
+  @java.lang.Override
+  public java.lang.String getCloudProviderId() {
+    java.lang.Object ref = cloudProviderId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cloudProviderId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Used by agent runners to specify their cloud provider.
+   * </pre>
+   *
+   * <code>string cloud_provider_id = 9;</code>
+   * @return The bytes for cloudProviderId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCloudProviderIdBytes() {
+    java.lang.Object ref = cloudProviderId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      cloudProviderId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REGION_FIELD_NUMBER = 10;
+  private volatile java.lang.Object region_;
+  /**
+   * <pre>
+   * Used by agent runners to specify their region.
+   * </pre>
+   *
+   * <code>string region = 10;</code>
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Used by agent runners to specify their region.
+   * </pre>
+   *
+   * <code>string region = 10;</code>
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -561,6 +667,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, computeClusterId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudProviderId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, cloudProviderId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, region_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -596,6 +708,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, computeClusterId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudProviderId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, cloudProviderId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, region_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -634,6 +752,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRunnerReplicaId())) return false;
     if (!getComputeClusterId()
         .equals(other.getComputeClusterId())) return false;
+    if (!getCloudProviderId()
+        .equals(other.getCloudProviderId())) return false;
+    if (!getRegion()
+        .equals(other.getRegion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -667,6 +789,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getRunnerReplicaId().hashCode();
     hash = (37 * hash) + COMPUTE_CLUSTER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getComputeClusterId().hashCode();
+    hash = (37 * hash) + CLOUD_PROVIDER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCloudProviderId().hashCode();
+    hash = (37 * hash) + REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getRegion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -838,6 +964,10 @@ private static final long serialVersionUID = 0L;
 
       computeClusterId_ = "";
 
+      cloudProviderId_ = "";
+
+      region_ = "";
+
       return this;
     }
 
@@ -889,6 +1019,8 @@ private static final long serialVersionUID = 0L;
       }
       result.runnerReplicaId_ = runnerReplicaId_;
       result.computeClusterId_ = computeClusterId_;
+      result.cloudProviderId_ = cloudProviderId_;
+      result.region_ = region_;
       onBuilt();
       return result;
     }
@@ -987,6 +1119,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getComputeClusterId().isEmpty()) {
         computeClusterId_ = other.computeClusterId_;
+        onChanged();
+      }
+      if (!other.getCloudProviderId().isEmpty()) {
+        cloudProviderId_ = other.cloudProviderId_;
+        onChanged();
+      }
+      if (!other.getRegion().isEmpty()) {
+        region_ = other.region_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2093,6 +2233,198 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       computeClusterId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cloudProviderId_ = "";
+    /**
+     * <pre>
+     * Used by agent runners to specify their cloud provider.
+     * </pre>
+     *
+     * <code>string cloud_provider_id = 9;</code>
+     * @return The cloudProviderId.
+     */
+    public java.lang.String getCloudProviderId() {
+      java.lang.Object ref = cloudProviderId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cloudProviderId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Used by agent runners to specify their cloud provider.
+     * </pre>
+     *
+     * <code>string cloud_provider_id = 9;</code>
+     * @return The bytes for cloudProviderId.
+     */
+    public com.google.protobuf.ByteString
+        getCloudProviderIdBytes() {
+      java.lang.Object ref = cloudProviderId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cloudProviderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Used by agent runners to specify their cloud provider.
+     * </pre>
+     *
+     * <code>string cloud_provider_id = 9;</code>
+     * @param value The cloudProviderId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudProviderId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      cloudProviderId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Used by agent runners to specify their cloud provider.
+     * </pre>
+     *
+     * <code>string cloud_provider_id = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCloudProviderId() {
+      
+      cloudProviderId_ = getDefaultInstance().getCloudProviderId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Used by agent runners to specify their cloud provider.
+     * </pre>
+     *
+     * <code>string cloud_provider_id = 9;</code>
+     * @param value The bytes for cloudProviderId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudProviderIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      cloudProviderId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object region_ = "";
+    /**
+     * <pre>
+     * Used by agent runners to specify their region.
+     * </pre>
+     *
+     * <code>string region = 10;</code>
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Used by agent runners to specify their region.
+     * </pre>
+     *
+     * <code>string region = 10;</code>
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString
+        getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Used by agent runners to specify their region.
+     * </pre>
+     *
+     * <code>string region = 10;</code>
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      region_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Used by agent runners to specify their region.
+     * </pre>
+     *
+     * <code>string region = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      
+      region_ = getDefaultInstance().getRegion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Used by agent runners to specify their region.
+     * </pre>
+     *
+     * <code>string region = 10;</code>
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      region_ = value;
       onChanged();
       return this;
     }

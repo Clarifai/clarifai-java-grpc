@@ -47,6 +47,7 @@ private static final long serialVersionUID = 0L;
     licenseType_ = 0;
     source_ = 0;
     creator_ = "";
+    billingType_ = 0;
   }
 
   @java.lang.Override
@@ -355,9 +356,10 @@ private static final long serialVersionUID = 0L;
             versionCount_ = input.readInt32();
             break;
           }
-          case 312: {
+          case 320: {
+            int rawValue = input.readEnum();
 
-            usesTokens_ = input.readBool();
+            billingType_ = rawValue;
             break;
           }
           default: {
@@ -528,6 +530,123 @@ private static final long serialVersionUID = 0L;
     }
 
     // @@protoc_insertion_point(enum_scope:clarifai.api.Model.Source)
+  }
+
+  /**
+   * Protobuf enum {@code clarifai.api.Model.BillingType}
+   */
+  public enum BillingType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>Unknown = 0;</code>
+     */
+    Unknown(0),
+    /**
+     * <code>Tokens = 1;</code>
+     */
+    Tokens(1),
+    /**
+     * <code>Ops = 2;</code>
+     */
+    Ops(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>Unknown = 0;</code>
+     */
+    public static final int Unknown_VALUE = 0;
+    /**
+     * <code>Tokens = 1;</code>
+     */
+    public static final int Tokens_VALUE = 1;
+    /**
+     * <code>Ops = 2;</code>
+     */
+    public static final int Ops_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BillingType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BillingType forNumber(int value) {
+      switch (value) {
+        case 0: return Unknown;
+        case 1: return Tokens;
+        case 2: return Ops;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BillingType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        BillingType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BillingType>() {
+            public BillingType findValueByNumber(int number) {
+              return BillingType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.Model.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final BillingType[] VALUES = values();
+
+    public static BillingType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BillingType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.Model.BillingType)
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -1779,15 +1898,23 @@ private static final long serialVersionUID = 0L;
     return versionCount_;
   }
 
-  public static final int USES_TOKENS_FIELD_NUMBER = 39;
-  private boolean usesTokens_;
+  public static final int BILLING_TYPE_FIELD_NUMBER = 40;
+  private int billingType_;
   /**
-   * <code>bool uses_tokens = 39;</code>
-   * @return The usesTokens.
+   * <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+   * @return The enum numeric value on the wire for billingType.
    */
-  @java.lang.Override
-  public boolean getUsesTokens() {
-    return usesTokens_;
+  @java.lang.Override public int getBillingTypeValue() {
+    return billingType_;
+  }
+  /**
+   * <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+   * @return The billingType.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.Model.BillingType getBillingType() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.Model.BillingType result = com.clarifai.grpc.api.Model.BillingType.valueOf(billingType_);
+    return result == null ? com.clarifai.grpc.api.Model.BillingType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1897,8 +2024,8 @@ private static final long serialVersionUID = 0L;
     if (versionCount_ != 0) {
       output.writeInt32(38, versionCount_);
     }
-    if (usesTokens_ != false) {
-      output.writeBool(39, usesTokens_);
+    if (billingType_ != com.clarifai.grpc.api.Model.BillingType.Unknown.getNumber()) {
+      output.writeEnum(40, billingType_);
     }
     unknownFields.writeTo(output);
   }
@@ -2039,9 +2166,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(38, versionCount_);
     }
-    if (usesTokens_ != false) {
+    if (billingType_ != com.clarifai.grpc.api.Model.BillingType.Unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(39, usesTokens_);
+        .computeEnumSize(40, billingType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2151,8 +2278,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCreator())) return false;
     if (getVersionCount()
         != other.getVersionCount()) return false;
-    if (getUsesTokens()
-        != other.getUsesTokens()) return false;
+    if (billingType_ != other.billingType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2259,9 +2385,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCreator().hashCode();
     hash = (37 * hash) + VERSION_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getVersionCount();
-    hash = (37 * hash) + USES_TOKENS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getUsesTokens());
+    hash = (37 * hash) + BILLING_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + billingType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2520,7 +2645,7 @@ private static final long serialVersionUID = 0L;
 
       versionCount_ = 0;
 
-      usesTokens_ = false;
+      billingType_ = 0;
 
       return this;
     }
@@ -2648,7 +2773,7 @@ private static final long serialVersionUID = 0L;
       result.source_ = source_;
       result.creator_ = creator_;
       result.versionCount_ = versionCount_;
-      result.usesTokens_ = usesTokens_;
+      result.billingType_ = billingType_;
       onBuilt();
       return result;
     }
@@ -2851,8 +2976,8 @@ private static final long serialVersionUID = 0L;
       if (other.getVersionCount() != 0) {
         setVersionCount(other.getVersionCount());
       }
-      if (other.getUsesTokens() != false) {
-        setUsesTokens(other.getUsesTokens());
+      if (other.billingType_ != 0) {
+        setBillingTypeValue(other.getBillingTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6748,33 +6873,56 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean usesTokens_ ;
+    private int billingType_ = 0;
     /**
-     * <code>bool uses_tokens = 39;</code>
-     * @return The usesTokens.
+     * <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+     * @return The enum numeric value on the wire for billingType.
      */
-    @java.lang.Override
-    public boolean getUsesTokens() {
-      return usesTokens_;
+    @java.lang.Override public int getBillingTypeValue() {
+      return billingType_;
     }
     /**
-     * <code>bool uses_tokens = 39;</code>
-     * @param value The usesTokens to set.
+     * <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+     * @param value The enum numeric value on the wire for billingType to set.
      * @return This builder for chaining.
      */
-    public Builder setUsesTokens(boolean value) {
+    public Builder setBillingTypeValue(int value) {
       
-      usesTokens_ = value;
+      billingType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool uses_tokens = 39;</code>
+     * <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+     * @return The billingType.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Model.BillingType getBillingType() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.Model.BillingType result = com.clarifai.grpc.api.Model.BillingType.valueOf(billingType_);
+      return result == null ? com.clarifai.grpc.api.Model.BillingType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+     * @param value The billingType to set.
      * @return This builder for chaining.
      */
-    public Builder clearUsesTokens() {
+    public Builder setBillingType(com.clarifai.grpc.api.Model.BillingType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       
-      usesTokens_ = false;
+      billingType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBillingType() {
+      
+      billingType_ = 0;
       onChanged();
       return this;
     }

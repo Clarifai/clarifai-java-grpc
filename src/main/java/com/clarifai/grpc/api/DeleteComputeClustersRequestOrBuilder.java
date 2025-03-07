@@ -36,7 +36,7 @@ public interface DeleteComputeClustersRequestOrBuilder extends
 
   /**
    * <pre>
-   * List of nodepool ids to be deleted
+   * List of compute cluster ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -46,7 +46,7 @@ public interface DeleteComputeClustersRequestOrBuilder extends
       getIdsList();
   /**
    * <pre>
-   * List of nodepool ids to be deleted
+   * List of compute cluster ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -55,7 +55,7 @@ public interface DeleteComputeClustersRequestOrBuilder extends
   int getIdsCount();
   /**
    * <pre>
-   * List of nodepool ids to be deleted
+   * List of compute cluster ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -65,7 +65,7 @@ public interface DeleteComputeClustersRequestOrBuilder extends
   java.lang.String getIds(int index);
   /**
    * <pre>
-   * List of nodepool ids to be deleted
+   * List of compute cluster ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>

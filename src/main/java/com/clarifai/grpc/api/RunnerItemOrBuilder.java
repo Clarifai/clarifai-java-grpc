@@ -101,5 +101,32 @@ public interface RunnerItemOrBuilder extends
    */
   com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder getPostModelOutputsRequestOrBuilder();
 
+  /**
+   * <pre>
+   * Agent sync request from control plane.
+   * </pre>
+   *
+   * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+   * @return Whether the syncStateRequest field is set.
+   */
+  boolean hasSyncStateRequest();
+  /**
+   * <pre>
+   * Agent sync request from control plane.
+   * </pre>
+   *
+   * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+   * @return The syncStateRequest.
+   */
+  com.clarifai.grpc.api.SyncStateRequest getSyncStateRequest();
+  /**
+   * <pre>
+   * Agent sync request from control plane.
+   * </pre>
+   *
+   * <code>.clarifai.api.SyncStateRequest sync_state_request = 5;</code>
+   */
+  com.clarifai.grpc.api.SyncStateRequestOrBuilder getSyncStateRequestOrBuilder();
+
   public com.clarifai.grpc.api.RunnerItem.RequestCase getRequestCase();
 }

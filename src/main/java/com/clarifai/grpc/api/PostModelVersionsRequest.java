@@ -103,6 +103,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 88: {
+
+            doMigration_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -331,6 +336,21 @@ private static final long serialVersionUID = 0L;
     return getEvalInfo();
   }
 
+  public static final int DO_MIGRATION_FIELD_NUMBER = 11;
+  private boolean doMigration_;
+  /**
+   * <pre>
+   * When set to true, we will convert the model into a containerized model after training.
+   * </pre>
+   *
+   * <code>bool do_migration = 11;</code>
+   * @return The doMigration.
+   */
+  @java.lang.Override
+  public boolean getDoMigration() {
+    return doMigration_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -360,6 +380,9 @@ private static final long serialVersionUID = 0L;
     if (evalInfo_ != null) {
       output.writeMessage(10, getEvalInfo());
     }
+    if (doMigration_ != false) {
+      output.writeBool(11, doMigration_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -386,6 +409,10 @@ private static final long serialVersionUID = 0L;
     if (evalInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getEvalInfo());
+    }
+    if (doMigration_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, doMigration_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -418,6 +445,8 @@ private static final long serialVersionUID = 0L;
       if (!getEvalInfo()
           .equals(other.getEvalInfo())) return false;
     }
+    if (getDoMigration()
+        != other.getDoMigration()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -445,6 +474,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EVAL_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getEvalInfo().hashCode();
     }
+    hash = (37 * hash) + DO_MIGRATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDoMigration());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -605,6 +637,8 @@ private static final long serialVersionUID = 0L;
         evalInfo_ = null;
         evalInfoBuilder_ = null;
       }
+      doMigration_ = false;
+
       return this;
     }
 
@@ -653,6 +687,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.evalInfo_ = evalInfoBuilder_.build();
       }
+      result.doMigration_ = doMigration_;
       onBuilt();
       return result;
     }
@@ -740,6 +775,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasEvalInfo()) {
         mergeEvalInfo(other.getEvalInfo());
+      }
+      if (other.getDoMigration() != false) {
+        setDoMigration(other.getDoMigration());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1464,6 +1502,49 @@ private static final long serialVersionUID = 0L;
         evalInfo_ = null;
       }
       return evalInfoBuilder_;
+    }
+
+    private boolean doMigration_ ;
+    /**
+     * <pre>
+     * When set to true, we will convert the model into a containerized model after training.
+     * </pre>
+     *
+     * <code>bool do_migration = 11;</code>
+     * @return The doMigration.
+     */
+    @java.lang.Override
+    public boolean getDoMigration() {
+      return doMigration_;
+    }
+    /**
+     * <pre>
+     * When set to true, we will convert the model into a containerized model after training.
+     * </pre>
+     *
+     * <code>bool do_migration = 11;</code>
+     * @param value The doMigration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDoMigration(boolean value) {
+      
+      doMigration_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * When set to true, we will convert the model into a containerized model after training.
+     * </pre>
+     *
+     * <code>bool do_migration = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDoMigration() {
+      
+      doMigration_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

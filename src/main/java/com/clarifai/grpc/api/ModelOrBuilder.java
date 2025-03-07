@@ -789,8 +789,13 @@ public interface ModelOrBuilder extends
   int getVersionCount();
 
   /**
-   * <code>bool uses_tokens = 39;</code>
-   * @return The usesTokens.
+   * <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+   * @return The enum numeric value on the wire for billingType.
    */
-  boolean getUsesTokens();
+  int getBillingTypeValue();
+  /**
+   * <code>.clarifai.api.Model.BillingType billing_type = 40;</code>
+   * @return The billingType.
+   */
+  com.clarifai.grpc.api.Model.BillingType getBillingType();
 }

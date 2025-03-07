@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList ids_;
   /**
    * <pre>
-   * List of nodepool ids to be deleted
+   * List of compute cluster ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of nodepool ids to be deleted
+   * List of compute cluster ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of nodepool ids to be deleted
+   * List of compute cluster ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -186,7 +186,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of nodepool ids to be deleted
+   * List of compute cluster ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -713,7 +713,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of nodepool ids to be deleted
+     * List of compute cluster ids to be deleted
      * </pre>
      *
      * <code>repeated string ids = 2;</code>
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of nodepool ids to be deleted
+     * List of compute cluster ids to be deleted
      * </pre>
      *
      * <code>repeated string ids = 2;</code>
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of nodepool ids to be deleted
+     * List of compute cluster ids to be deleted
      * </pre>
      *
      * <code>repeated string ids = 2;</code>
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of nodepool ids to be deleted
+     * List of compute cluster ids to be deleted
      * </pre>
      *
      * <code>repeated string ids = 2;</code>
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of nodepool ids to be deleted
+     * List of compute cluster ids to be deleted
      * </pre>
      *
      * <code>repeated string ids = 2;</code>
@@ -781,7 +781,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of nodepool ids to be deleted
+     * List of compute cluster ids to be deleted
      * </pre>
      *
      * <code>repeated string ids = 2;</code>
@@ -800,7 +800,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of nodepool ids to be deleted
+     * List of compute cluster ids to be deleted
      * </pre>
      *
      * <code>repeated string ids = 2;</code>
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of nodepool ids to be deleted
+     * List of compute cluster ids to be deleted
      * </pre>
      *
      * <code>repeated string ids = 2;</code>
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of nodepool ids to be deleted
+     * List of compute cluster ids to be deleted
      * </pre>
      *
      * <code>repeated string ids = 2;</code>

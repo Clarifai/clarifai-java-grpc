@@ -693,7 +693,7 @@ public interface DataOrBuilder extends
 
   /**
    * <pre>
-   * Input and output integer number 
+   * Input and output integer number
    * </pre>
    *
    * <code>int64 int_value = 21;</code>

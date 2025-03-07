@@ -85,6 +85,11 @@ private static final long serialVersionUID = 0L;
             disablePacking_ = input.readBool();
             break;
           }
+          case 64: {
+
+            scaleToZeroDelaySeconds_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -212,6 +217,21 @@ private static final long serialVersionUID = 0L;
     return disablePacking_;
   }
 
+  public static final int SCALE_TO_ZERO_DELAY_SECONDS_FIELD_NUMBER = 8;
+  private int scaleToZeroDelaySeconds_;
+  /**
+   * <pre>
+   * The idle time before scaling down to zero
+   * </pre>
+   *
+   * <code>uint32 scale_to_zero_delay_seconds = 8;</code>
+   * @return The scaleToZeroDelaySeconds.
+   */
+  @java.lang.Override
+  public int getScaleToZeroDelaySeconds() {
+    return scaleToZeroDelaySeconds_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -243,6 +263,9 @@ private static final long serialVersionUID = 0L;
     }
     if (disablePacking_ != false) {
       output.writeBool(7, disablePacking_);
+    }
+    if (scaleToZeroDelaySeconds_ != 0) {
+      output.writeUInt32(8, scaleToZeroDelaySeconds_);
     }
     unknownFields.writeTo(output);
   }
@@ -277,6 +300,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, disablePacking_);
     }
+    if (scaleToZeroDelaySeconds_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(8, scaleToZeroDelaySeconds_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -304,6 +331,8 @@ private static final long serialVersionUID = 0L;
         != other.getScaleUpDelaySeconds()) return false;
     if (getDisablePacking()
         != other.getDisablePacking()) return false;
+    if (getScaleToZeroDelaySeconds()
+        != other.getScaleToZeroDelaySeconds()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -328,6 +357,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DISABLE_PACKING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDisablePacking());
+    hash = (37 * hash) + SCALE_TO_ZERO_DELAY_SECONDS_FIELD_NUMBER;
+    hash = (53 * hash) + getScaleToZeroDelaySeconds();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -480,6 +511,8 @@ private static final long serialVersionUID = 0L;
 
       disablePacking_ = false;
 
+      scaleToZeroDelaySeconds_ = 0;
+
       return this;
     }
 
@@ -512,6 +545,7 @@ private static final long serialVersionUID = 0L;
       result.scaleDownDelaySeconds_ = scaleDownDelaySeconds_;
       result.scaleUpDelaySeconds_ = scaleUpDelaySeconds_;
       result.disablePacking_ = disablePacking_;
+      result.scaleToZeroDelaySeconds_ = scaleToZeroDelaySeconds_;
       onBuilt();
       return result;
     }
@@ -577,6 +611,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getDisablePacking() != false) {
         setDisablePacking(other.getDisablePacking());
+      }
+      if (other.getScaleToZeroDelaySeconds() != 0) {
+        setScaleToZeroDelaySeconds(other.getScaleToZeroDelaySeconds());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -870,6 +907,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearDisablePacking() {
       
       disablePacking_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int scaleToZeroDelaySeconds_ ;
+    /**
+     * <pre>
+     * The idle time before scaling down to zero
+     * </pre>
+     *
+     * <code>uint32 scale_to_zero_delay_seconds = 8;</code>
+     * @return The scaleToZeroDelaySeconds.
+     */
+    @java.lang.Override
+    public int getScaleToZeroDelaySeconds() {
+      return scaleToZeroDelaySeconds_;
+    }
+    /**
+     * <pre>
+     * The idle time before scaling down to zero
+     * </pre>
+     *
+     * <code>uint32 scale_to_zero_delay_seconds = 8;</code>
+     * @param value The scaleToZeroDelaySeconds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScaleToZeroDelaySeconds(int value) {
+      
+      scaleToZeroDelaySeconds_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The idle time before scaling down to zero
+     * </pre>
+     *
+     * <code>uint32 scale_to_zero_delay_seconds = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearScaleToZeroDelaySeconds() {
+      
+      scaleToZeroDelaySeconds_ = 0;
       onChanged();
       return this;
     }
