@@ -244,4 +244,48 @@ public interface ComputePlaneMetricsOrBuilder extends
    */
   com.google.protobuf.ByteString
       getHostnameBytes();
+
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.CpuMetrics> 
+      getCpuMetricsList();
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  com.clarifai.grpc.api.CpuMetrics getCpuMetrics(int index);
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  int getCpuMetricsCount();
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.CpuMetricsOrBuilder> 
+      getCpuMetricsOrBuilderList();
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  com.clarifai.grpc.api.CpuMetricsOrBuilder getCpuMetricsOrBuilder(
+      int index);
 }

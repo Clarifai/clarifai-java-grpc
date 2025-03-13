@@ -47,6 +47,8 @@ public interface GetTaskRequestOrBuilder extends
    * - metrics.review.inputs_count_estimated
    * - metrics.review.inputs_count_estimated_per_reviewer
    * - metrics.review.inputs_percent_estimated
+   * - metrics.review.inputs_percent_estimated_per_reviewer
+   * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -67,6 +69,8 @@ public interface GetTaskRequestOrBuilder extends
    * - metrics.review.inputs_count_estimated
    * - metrics.review.inputs_count_estimated_per_reviewer
    * - metrics.review.inputs_percent_estimated
+   * - metrics.review.inputs_percent_estimated_per_reviewer
+   * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -86,6 +90,8 @@ public interface GetTaskRequestOrBuilder extends
    * - metrics.review.inputs_count_estimated
    * - metrics.review.inputs_count_estimated_per_reviewer
    * - metrics.review.inputs_percent_estimated
+   * - metrics.review.inputs_percent_estimated_per_reviewer
+   * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -106,6 +112,8 @@ public interface GetTaskRequestOrBuilder extends
    * - metrics.review.inputs_count_estimated
    * - metrics.review.inputs_count_estimated_per_reviewer
    * - metrics.review.inputs_percent_estimated
+   * - metrics.review.inputs_percent_estimated_per_reviewer
+   * - metrics.review.inputs_reviewable_count_estimated_per_reviewer
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>

@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private TaskReviewMetrics() {
     inputsCountEstimatedPerReviewer_ = emptyLongList();
+    inputsReviewableCountEstimatedPerReviewer_ = emptyLongList();
+    inputsPercentEstimatedPerReviewer_ = emptyIntList();
   }
 
   @java.lang.Override
@@ -81,6 +83,48 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
+          case 32: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              inputsReviewableCountEstimatedPerReviewer_ = newLongList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            inputsReviewableCountEstimatedPerReviewer_.addLong(input.readUInt64());
+            break;
+          }
+          case 34: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              inputsReviewableCountEstimatedPerReviewer_ = newLongList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              inputsReviewableCountEstimatedPerReviewer_.addLong(input.readUInt64());
+            }
+            input.popLimit(limit);
+            break;
+          }
+          case 40: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              inputsPercentEstimatedPerReviewer_ = newIntList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            inputsPercentEstimatedPerReviewer_.addInt(input.readUInt32());
+            break;
+          }
+          case 42: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+              inputsPercentEstimatedPerReviewer_ = newIntList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              inputsPercentEstimatedPerReviewer_.addInt(input.readUInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -100,6 +144,12 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         inputsCountEstimatedPerReviewer_.makeImmutable(); // C
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        inputsReviewableCountEstimatedPerReviewer_.makeImmutable(); // C
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        inputsPercentEstimatedPerReviewer_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -122,7 +172,11 @@ private static final long serialVersionUID = 0L;
   private long inputsCountEstimated_;
   /**
    * <pre>
-   * Estimated number of reviewed inputs by at least one reviewer.
+   * Estimated number of fully reviewed inputs.
+   * An input is considered fully reviewed if it has been reviewed by all necessary reviewers.
+   * Example: if task has no review, then an input is considered fully reviewed right after it's labeled (as review is skipped).
+   * Example: if task has manual review with single-reviewer per input, then an input is considered fully reviewed when 1 reviewer has approved/rejected it.
+   * Example: if task has consensus review with 3 reviewers per input, then an input is considered fully reviewed when 3 reviewers have approved it or 1 reviewer has rejected it.
    * </pre>
    *
    * <code>uint64 inputs_count_estimated = 1;</code>
@@ -133,6 +187,25 @@ private static final long serialVersionUID = 0L;
     return inputsCountEstimated_;
   }
 
+  public static final int INPUTS_PERCENT_ESTIMATED_FIELD_NUMBER = 2;
+  private int inputsPercentEstimated_;
+  /**
+   * <pre>
+   * Estimated percent of review work that was finished.
+   * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+   * Calculated as inputs_count_estimated/task.metrics.input_source.inputs_count_estimated.
+   * As the counts are estimated, the percentage is also estimated.
+   * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+   * </pre>
+   *
+   * <code>uint32 inputs_percent_estimated = 2;</code>
+   * @return The inputsPercentEstimated.
+   */
+  @java.lang.Override
+  public int getInputsPercentEstimated() {
+    return inputsPercentEstimated_;
+  }
+
   public static final int INPUTS_COUNT_ESTIMATED_PER_REVIEWER_FIELD_NUMBER = 3;
   private com.google.protobuf.Internal.LongList inputsCountEstimatedPerReviewer_;
   /**
@@ -141,8 +214,8 @@ private static final long serialVersionUID = 0L;
    * The reviewer indexes are based on task.review.users.
    * An input is considered reviewed by a reviewer if:
    * * the reviewer approved the input
-   * * ANY reviewer rejected the input (as rejection is final)
-   * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+   * * the reviewer rejected the input
+   * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
    * The reviewer will have to review the input again after work has been completed.
    * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
    * </pre>
@@ -161,8 +234,8 @@ private static final long serialVersionUID = 0L;
    * The reviewer indexes are based on task.review.users.
    * An input is considered reviewed by a reviewer if:
    * * the reviewer approved the input
-   * * ANY reviewer rejected the input (as rejection is final)
-   * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+   * * the reviewer rejected the input
+   * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
    * The reviewer will have to review the input again after work has been completed.
    * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
    * </pre>
@@ -179,8 +252,8 @@ private static final long serialVersionUID = 0L;
    * The reviewer indexes are based on task.review.users.
    * An input is considered reviewed by a reviewer if:
    * * the reviewer approved the input
-   * * ANY reviewer rejected the input (as rejection is final)
-   * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+   * * the reviewer rejected the input
+   * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
    * The reviewer will have to review the input again after work has been completed.
    * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
    * </pre>
@@ -194,25 +267,118 @@ private static final long serialVersionUID = 0L;
   }
   private int inputsCountEstimatedPerReviewerMemoizedSerializedSize = -1;
 
-  public static final int INPUTS_PERCENT_ESTIMATED_FIELD_NUMBER = 2;
-  private int inputsPercentEstimated_;
+  public static final int INPUTS_REVIEWABLE_COUNT_ESTIMATED_PER_REVIEWER_FIELD_NUMBER = 4;
+  private com.google.protobuf.Internal.LongList inputsReviewableCountEstimatedPerReviewer_;
   /**
    * <pre>
-   * Estimated percent of review work that was finished.
-   * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
-   * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
-   * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
-   * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
-   * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
+   * The number of inputs actually available for review for each reviewer.
+   * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+   * Several situations may result in different values:
+   * * When task has no review, then this is 0 for each reviewer.
+   * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+   * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+   * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+   * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
    * </pre>
    *
-   * <code>uint32 inputs_percent_estimated = 2;</code>
-   * @return The inputsPercentEstimated.
+   * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+   * @return A list containing the inputsReviewableCountEstimatedPerReviewer.
    */
   @java.lang.Override
-  public int getInputsPercentEstimated() {
-    return inputsPercentEstimated_;
+  public java.util.List<java.lang.Long>
+      getInputsReviewableCountEstimatedPerReviewerList() {
+    return inputsReviewableCountEstimatedPerReviewer_;
   }
+  /**
+   * <pre>
+   * The number of inputs actually available for review for each reviewer.
+   * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+   * Several situations may result in different values:
+   * * When task has no review, then this is 0 for each reviewer.
+   * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+   * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+   * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+   * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
+   * </pre>
+   *
+   * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+   * @return The count of inputsReviewableCountEstimatedPerReviewer.
+   */
+  public int getInputsReviewableCountEstimatedPerReviewerCount() {
+    return inputsReviewableCountEstimatedPerReviewer_.size();
+  }
+  /**
+   * <pre>
+   * The number of inputs actually available for review for each reviewer.
+   * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+   * Several situations may result in different values:
+   * * When task has no review, then this is 0 for each reviewer.
+   * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+   * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+   * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+   * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
+   * </pre>
+   *
+   * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+   * @param index The index of the element to return.
+   * @return The inputsReviewableCountEstimatedPerReviewer at the given index.
+   */
+  public long getInputsReviewableCountEstimatedPerReviewer(int index) {
+    return inputsReviewableCountEstimatedPerReviewer_.getLong(index);
+  }
+  private int inputsReviewableCountEstimatedPerReviewerMemoizedSerializedSize = -1;
+
+  public static final int INPUTS_PERCENT_ESTIMATED_PER_REVIEWER_FIELD_NUMBER = 5;
+  private com.google.protobuf.Internal.IntList inputsPercentEstimatedPerReviewer_;
+  /**
+   * <pre>
+   * Estimated percent of review work that was finished per reviewer.
+   * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+   * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+   * As the counts are estimated, the percentage is also estimated.
+   * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+   * </pre>
+   *
+   * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+   * @return A list containing the inputsPercentEstimatedPerReviewer.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+      getInputsPercentEstimatedPerReviewerList() {
+    return inputsPercentEstimatedPerReviewer_;
+  }
+  /**
+   * <pre>
+   * Estimated percent of review work that was finished per reviewer.
+   * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+   * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+   * As the counts are estimated, the percentage is also estimated.
+   * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+   * </pre>
+   *
+   * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+   * @return The count of inputsPercentEstimatedPerReviewer.
+   */
+  public int getInputsPercentEstimatedPerReviewerCount() {
+    return inputsPercentEstimatedPerReviewer_.size();
+  }
+  /**
+   * <pre>
+   * Estimated percent of review work that was finished per reviewer.
+   * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+   * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+   * As the counts are estimated, the percentage is also estimated.
+   * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+   * </pre>
+   *
+   * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+   * @param index The index of the element to return.
+   * @return The inputsPercentEstimatedPerReviewer at the given index.
+   */
+  public int getInputsPercentEstimatedPerReviewer(int index) {
+    return inputsPercentEstimatedPerReviewer_.getInt(index);
+  }
+  private int inputsPercentEstimatedPerReviewerMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -241,6 +407,20 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < inputsCountEstimatedPerReviewer_.size(); i++) {
       output.writeUInt64NoTag(inputsCountEstimatedPerReviewer_.getLong(i));
+    }
+    if (getInputsReviewableCountEstimatedPerReviewerList().size() > 0) {
+      output.writeUInt32NoTag(34);
+      output.writeUInt32NoTag(inputsReviewableCountEstimatedPerReviewerMemoizedSerializedSize);
+    }
+    for (int i = 0; i < inputsReviewableCountEstimatedPerReviewer_.size(); i++) {
+      output.writeUInt64NoTag(inputsReviewableCountEstimatedPerReviewer_.getLong(i));
+    }
+    if (getInputsPercentEstimatedPerReviewerList().size() > 0) {
+      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(inputsPercentEstimatedPerReviewerMemoizedSerializedSize);
+    }
+    for (int i = 0; i < inputsPercentEstimatedPerReviewer_.size(); i++) {
+      output.writeUInt32NoTag(inputsPercentEstimatedPerReviewer_.getInt(i));
     }
     unknownFields.writeTo(output);
   }
@@ -273,6 +453,34 @@ private static final long serialVersionUID = 0L;
       }
       inputsCountEstimatedPerReviewerMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < inputsReviewableCountEstimatedPerReviewer_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeUInt64SizeNoTag(inputsReviewableCountEstimatedPerReviewer_.getLong(i));
+      }
+      size += dataSize;
+      if (!getInputsReviewableCountEstimatedPerReviewerList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      inputsReviewableCountEstimatedPerReviewerMemoizedSerializedSize = dataSize;
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < inputsPercentEstimatedPerReviewer_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(inputsPercentEstimatedPerReviewer_.getInt(i));
+      }
+      size += dataSize;
+      if (!getInputsPercentEstimatedPerReviewerList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      inputsPercentEstimatedPerReviewerMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -290,10 +498,14 @@ private static final long serialVersionUID = 0L;
 
     if (getInputsCountEstimated()
         != other.getInputsCountEstimated()) return false;
-    if (!getInputsCountEstimatedPerReviewerList()
-        .equals(other.getInputsCountEstimatedPerReviewerList())) return false;
     if (getInputsPercentEstimated()
         != other.getInputsPercentEstimated()) return false;
+    if (!getInputsCountEstimatedPerReviewerList()
+        .equals(other.getInputsCountEstimatedPerReviewerList())) return false;
+    if (!getInputsReviewableCountEstimatedPerReviewerList()
+        .equals(other.getInputsReviewableCountEstimatedPerReviewerList())) return false;
+    if (!getInputsPercentEstimatedPerReviewerList()
+        .equals(other.getInputsPercentEstimatedPerReviewerList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -308,12 +520,20 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INPUTS_COUNT_ESTIMATED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getInputsCountEstimated());
+    hash = (37 * hash) + INPUTS_PERCENT_ESTIMATED_FIELD_NUMBER;
+    hash = (53 * hash) + getInputsPercentEstimated();
     if (getInputsCountEstimatedPerReviewerCount() > 0) {
       hash = (37 * hash) + INPUTS_COUNT_ESTIMATED_PER_REVIEWER_FIELD_NUMBER;
       hash = (53 * hash) + getInputsCountEstimatedPerReviewerList().hashCode();
     }
-    hash = (37 * hash) + INPUTS_PERCENT_ESTIMATED_FIELD_NUMBER;
-    hash = (53 * hash) + getInputsPercentEstimated();
+    if (getInputsReviewableCountEstimatedPerReviewerCount() > 0) {
+      hash = (37 * hash) + INPUTS_REVIEWABLE_COUNT_ESTIMATED_PER_REVIEWER_FIELD_NUMBER;
+      hash = (53 * hash) + getInputsReviewableCountEstimatedPerReviewerList().hashCode();
+    }
+    if (getInputsPercentEstimatedPerReviewerCount() > 0) {
+      hash = (37 * hash) + INPUTS_PERCENT_ESTIMATED_PER_REVIEWER_FIELD_NUMBER;
+      hash = (53 * hash) + getInputsPercentEstimatedPerReviewerList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -449,10 +669,14 @@ private static final long serialVersionUID = 0L;
       super.clear();
       inputsCountEstimated_ = 0L;
 
-      inputsCountEstimatedPerReviewer_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       inputsPercentEstimated_ = 0;
 
+      inputsCountEstimatedPerReviewer_ = emptyLongList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inputsReviewableCountEstimatedPerReviewer_ = emptyLongList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      inputsPercentEstimatedPerReviewer_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -481,12 +705,22 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.TaskReviewMetrics result = new com.clarifai.grpc.api.TaskReviewMetrics(this);
       int from_bitField0_ = bitField0_;
       result.inputsCountEstimated_ = inputsCountEstimated_;
+      result.inputsPercentEstimated_ = inputsPercentEstimated_;
       if (((bitField0_ & 0x00000001) != 0)) {
         inputsCountEstimatedPerReviewer_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.inputsCountEstimatedPerReviewer_ = inputsCountEstimatedPerReviewer_;
-      result.inputsPercentEstimated_ = inputsPercentEstimated_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        inputsReviewableCountEstimatedPerReviewer_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.inputsReviewableCountEstimatedPerReviewer_ = inputsReviewableCountEstimatedPerReviewer_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        inputsPercentEstimatedPerReviewer_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.inputsPercentEstimatedPerReviewer_ = inputsPercentEstimatedPerReviewer_;
       onBuilt();
       return result;
     }
@@ -538,6 +772,9 @@ private static final long serialVersionUID = 0L;
       if (other.getInputsCountEstimated() != 0L) {
         setInputsCountEstimated(other.getInputsCountEstimated());
       }
+      if (other.getInputsPercentEstimated() != 0) {
+        setInputsPercentEstimated(other.getInputsPercentEstimated());
+      }
       if (!other.inputsCountEstimatedPerReviewer_.isEmpty()) {
         if (inputsCountEstimatedPerReviewer_.isEmpty()) {
           inputsCountEstimatedPerReviewer_ = other.inputsCountEstimatedPerReviewer_;
@@ -548,8 +785,25 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (other.getInputsPercentEstimated() != 0) {
-        setInputsPercentEstimated(other.getInputsPercentEstimated());
+      if (!other.inputsReviewableCountEstimatedPerReviewer_.isEmpty()) {
+        if (inputsReviewableCountEstimatedPerReviewer_.isEmpty()) {
+          inputsReviewableCountEstimatedPerReviewer_ = other.inputsReviewableCountEstimatedPerReviewer_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureInputsReviewableCountEstimatedPerReviewerIsMutable();
+          inputsReviewableCountEstimatedPerReviewer_.addAll(other.inputsReviewableCountEstimatedPerReviewer_);
+        }
+        onChanged();
+      }
+      if (!other.inputsPercentEstimatedPerReviewer_.isEmpty()) {
+        if (inputsPercentEstimatedPerReviewer_.isEmpty()) {
+          inputsPercentEstimatedPerReviewer_ = other.inputsPercentEstimatedPerReviewer_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureInputsPercentEstimatedPerReviewerIsMutable();
+          inputsPercentEstimatedPerReviewer_.addAll(other.inputsPercentEstimatedPerReviewer_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -584,7 +838,11 @@ private static final long serialVersionUID = 0L;
     private long inputsCountEstimated_ ;
     /**
      * <pre>
-     * Estimated number of reviewed inputs by at least one reviewer.
+     * Estimated number of fully reviewed inputs.
+     * An input is considered fully reviewed if it has been reviewed by all necessary reviewers.
+     * Example: if task has no review, then an input is considered fully reviewed right after it's labeled (as review is skipped).
+     * Example: if task has manual review with single-reviewer per input, then an input is considered fully reviewed when 1 reviewer has approved/rejected it.
+     * Example: if task has consensus review with 3 reviewers per input, then an input is considered fully reviewed when 3 reviewers have approved it or 1 reviewer has rejected it.
      * </pre>
      *
      * <code>uint64 inputs_count_estimated = 1;</code>
@@ -596,7 +854,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimated number of reviewed inputs by at least one reviewer.
+     * Estimated number of fully reviewed inputs.
+     * An input is considered fully reviewed if it has been reviewed by all necessary reviewers.
+     * Example: if task has no review, then an input is considered fully reviewed right after it's labeled (as review is skipped).
+     * Example: if task has manual review with single-reviewer per input, then an input is considered fully reviewed when 1 reviewer has approved/rejected it.
+     * Example: if task has consensus review with 3 reviewers per input, then an input is considered fully reviewed when 3 reviewers have approved it or 1 reviewer has rejected it.
      * </pre>
      *
      * <code>uint64 inputs_count_estimated = 1;</code>
@@ -611,7 +873,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Estimated number of reviewed inputs by at least one reviewer.
+     * Estimated number of fully reviewed inputs.
+     * An input is considered fully reviewed if it has been reviewed by all necessary reviewers.
+     * Example: if task has no review, then an input is considered fully reviewed right after it's labeled (as review is skipped).
+     * Example: if task has manual review with single-reviewer per input, then an input is considered fully reviewed when 1 reviewer has approved/rejected it.
+     * Example: if task has consensus review with 3 reviewers per input, then an input is considered fully reviewed when 3 reviewers have approved it or 1 reviewer has rejected it.
      * </pre>
      *
      * <code>uint64 inputs_count_estimated = 1;</code>
@@ -620,6 +886,61 @@ private static final long serialVersionUID = 0L;
     public Builder clearInputsCountEstimated() {
       
       inputsCountEstimated_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int inputsPercentEstimated_ ;
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated/task.metrics.input_source.inputs_count_estimated.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>uint32 inputs_percent_estimated = 2;</code>
+     * @return The inputsPercentEstimated.
+     */
+    @java.lang.Override
+    public int getInputsPercentEstimated() {
+      return inputsPercentEstimated_;
+    }
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated/task.metrics.input_source.inputs_count_estimated.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>uint32 inputs_percent_estimated = 2;</code>
+     * @param value The inputsPercentEstimated to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputsPercentEstimated(int value) {
+      
+      inputsPercentEstimated_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated/task.metrics.input_source.inputs_count_estimated.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>uint32 inputs_percent_estimated = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputsPercentEstimated() {
+      
+      inputsPercentEstimated_ = 0;
       onChanged();
       return this;
     }
@@ -637,8 +958,8 @@ private static final long serialVersionUID = 0L;
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      * </pre>
@@ -657,8 +978,8 @@ private static final long serialVersionUID = 0L;
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      * </pre>
@@ -675,8 +996,8 @@ private static final long serialVersionUID = 0L;
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      * </pre>
@@ -694,8 +1015,8 @@ private static final long serialVersionUID = 0L;
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      * </pre>
@@ -718,8 +1039,8 @@ private static final long serialVersionUID = 0L;
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      * </pre>
@@ -740,8 +1061,8 @@ private static final long serialVersionUID = 0L;
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      * </pre>
@@ -764,8 +1085,8 @@ private static final long serialVersionUID = 0L;
      * The reviewer indexes are based on task.review.users.
      * An input is considered reviewed by a reviewer if:
      * * the reviewer approved the input
-     * * ANY reviewer rejected the input (as rejection is final)
-     * Note that when a reviewer requests changes for an input, the input is sent to back to work again.
+     * * the reviewer rejected the input
+     * Note that when a reviewer requests changes for an input, the input is sent to back to work again, so the whole work &amp; review process is restarted.
      * The reviewer will have to review the input again after work has been completed.
      * As such, the review that requests changes for an input is immediately dis-regarded and not counted in this metric.
      * </pre>
@@ -780,60 +1101,293 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int inputsPercentEstimated_ ;
-    /**
-     * <pre>
-     * Estimated percent of review work that was finished.
-     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
-     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
-     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
-     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
-     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
-     * </pre>
-     *
-     * <code>uint32 inputs_percent_estimated = 2;</code>
-     * @return The inputsPercentEstimated.
-     */
-    @java.lang.Override
-    public int getInputsPercentEstimated() {
-      return inputsPercentEstimated_;
+    private com.google.protobuf.Internal.LongList inputsReviewableCountEstimatedPerReviewer_ = emptyLongList();
+    private void ensureInputsReviewableCountEstimatedPerReviewerIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        inputsReviewableCountEstimatedPerReviewer_ = mutableCopy(inputsReviewableCountEstimatedPerReviewer_);
+        bitField0_ |= 0x00000002;
+       }
     }
     /**
      * <pre>
-     * Estimated percent of review work that was finished.
-     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
-     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
-     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
-     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
-     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
      * </pre>
      *
-     * <code>uint32 inputs_percent_estimated = 2;</code>
-     * @param value The inputsPercentEstimated to set.
+     * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+     * @return A list containing the inputsReviewableCountEstimatedPerReviewer.
+     */
+    public java.util.List<java.lang.Long>
+        getInputsReviewableCountEstimatedPerReviewerList() {
+      return ((bitField0_ & 0x00000002) != 0) ?
+               java.util.Collections.unmodifiableList(inputsReviewableCountEstimatedPerReviewer_) : inputsReviewableCountEstimatedPerReviewer_;
+    }
+    /**
+     * <pre>
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+     * @return The count of inputsReviewableCountEstimatedPerReviewer.
+     */
+    public int getInputsReviewableCountEstimatedPerReviewerCount() {
+      return inputsReviewableCountEstimatedPerReviewer_.size();
+    }
+    /**
+     * <pre>
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+     * @param index The index of the element to return.
+     * @return The inputsReviewableCountEstimatedPerReviewer at the given index.
+     */
+    public long getInputsReviewableCountEstimatedPerReviewer(int index) {
+      return inputsReviewableCountEstimatedPerReviewer_.getLong(index);
+    }
+    /**
+     * <pre>
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The inputsReviewableCountEstimatedPerReviewer to set.
      * @return This builder for chaining.
      */
-    public Builder setInputsPercentEstimated(int value) {
-      
-      inputsPercentEstimated_ = value;
+    public Builder setInputsReviewableCountEstimatedPerReviewer(
+        int index, long value) {
+      ensureInputsReviewableCountEstimatedPerReviewerIsMutable();
+      inputsReviewableCountEstimatedPerReviewer_.setLong(index, value);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Estimated percent of review work that was finished.
-     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
-     * Calculated as sum(inputs_count_estimated_per_reviewer) / (total inputs to review * number of reviewers per input).
-     * The total inputs to review is stored in task.metrics.input_source.inputs_count_estimated.
-     * The number of reviewers per input is based on task review strategy. For example, for consensus review strategy,
-     * the number of reviewers per input is stored in task.review.consensus_strategy_info.approval_threshold_reviewers.
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
      * </pre>
      *
-     * <code>uint32 inputs_percent_estimated = 2;</code>
+     * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+     * @param value The inputsReviewableCountEstimatedPerReviewer to add.
      * @return This builder for chaining.
      */
-    public Builder clearInputsPercentEstimated() {
-      
-      inputsPercentEstimated_ = 0;
+    public Builder addInputsReviewableCountEstimatedPerReviewer(long value) {
+      ensureInputsReviewableCountEstimatedPerReviewerIsMutable();
+      inputsReviewableCountEstimatedPerReviewer_.addLong(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+     * @param values The inputsReviewableCountEstimatedPerReviewer to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInputsReviewableCountEstimatedPerReviewer(
+        java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureInputsReviewableCountEstimatedPerReviewerIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, inputsReviewableCountEstimatedPerReviewer_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The number of inputs actually available for review for each reviewer.
+     * Most times, this equals task.metrics.input_source.inputs_count_estimated.
+     * Several situations may result in different values:
+     * * When task has no review, then this is 0 for each reviewer.
+     * * When task has auto-annotation, then this number equals the inputs that have been auto-annotated with AWAITING_REVIEW status. All other inputs are considered completed by the auto-annotation process.
+     * * When task has consensus review with approval_threshold_labelers &gt; 0, then it's possible that labelers will approve inputs through consensus, which skips review. In this case, the number of inputs available for review is less than task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = 1, then all inputs are assigned only to one reviewer, so each reviewer will get only a part of the inputs to review. It's expected that the sum(inputs_reviewable_count_estimated) = task.metrics.input_source.inputs_count_estimated.
+     * * When task has consensus review with approval_threshold_reviewers = -1, then all inputs are assigned to all reviewers. However, if an input is rejected, then rejection is final and all other reviewers will not review it. In this case, the number of inputs available for review for other reviewers will be less than task.metrics.input_source.inputs_count_estimated.
+     * </pre>
+     *
+     * <code>repeated uint64 inputs_reviewable_count_estimated_per_reviewer = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputsReviewableCountEstimatedPerReviewer() {
+      inputsReviewableCountEstimatedPerReviewer_ = emptyLongList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList inputsPercentEstimatedPerReviewer_ = emptyIntList();
+    private void ensureInputsPercentEstimatedPerReviewerIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        inputsPercentEstimatedPerReviewer_ = mutableCopy(inputsPercentEstimatedPerReviewer_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     * @return A list containing the inputsPercentEstimatedPerReviewer.
+     */
+    public java.util.List<java.lang.Integer>
+        getInputsPercentEstimatedPerReviewerList() {
+      return ((bitField0_ & 0x00000004) != 0) ?
+               java.util.Collections.unmodifiableList(inputsPercentEstimatedPerReviewer_) : inputsPercentEstimatedPerReviewer_;
+    }
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     * @return The count of inputsPercentEstimatedPerReviewer.
+     */
+    public int getInputsPercentEstimatedPerReviewerCount() {
+      return inputsPercentEstimatedPerReviewer_.size();
+    }
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     * @param index The index of the element to return.
+     * @return The inputsPercentEstimatedPerReviewer at the given index.
+     */
+    public int getInputsPercentEstimatedPerReviewer(int index) {
+      return inputsPercentEstimatedPerReviewer_.getInt(index);
+    }
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The inputsPercentEstimatedPerReviewer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputsPercentEstimatedPerReviewer(
+        int index, int value) {
+      ensureInputsPercentEstimatedPerReviewerIsMutable();
+      inputsPercentEstimatedPerReviewer_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     * @param value The inputsPercentEstimatedPerReviewer to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInputsPercentEstimatedPerReviewer(int value) {
+      ensureInputsPercentEstimatedPerReviewerIsMutable();
+      inputsPercentEstimatedPerReviewer_.addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     * @param values The inputsPercentEstimatedPerReviewer to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInputsPercentEstimatedPerReviewer(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureInputsPercentEstimatedPerReviewerIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, inputsPercentEstimatedPerReviewer_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Estimated percent of review work that was finished per reviewer.
+     * This is a value between 0 and 100, where 0 = 0% and 100 = 100%.
+     * Calculated as inputs_count_estimated_per_reviewer/inputs_reviewable_count_estimated_per_reviewer.
+     * As the counts are estimated, the percentage is also estimated.
+     * However, additional checks are made to ensure that 100% percentage is only returned when all inputs are reviewed - giving a guarantee that the 100% percentage is always accurate.
+     * </pre>
+     *
+     * <code>repeated uint32 inputs_percent_estimated_per_reviewer = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputsPercentEstimatedPerReviewer() {
+      inputsPercentEstimatedPerReviewer_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

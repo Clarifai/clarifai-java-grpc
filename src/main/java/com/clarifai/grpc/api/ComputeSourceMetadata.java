@@ -26,6 +26,9 @@ private static final long serialVersionUID = 0L;
     computeClusterId_ = "";
     nodepoolId_ = "";
     runnerId_ = "";
+    pipelineId_ = "";
+    pipelineVersionId_ = "";
+    pipelineVersionRunId_ = "";
   }
 
   @java.lang.Override
@@ -105,6 +108,24 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             runnerId_ = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            pipelineId_ = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            pipelineVersionId_ = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            pipelineVersionRunId_ = s;
             break;
           }
           default: {
@@ -439,6 +460,128 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PIPELINE_ID_FIELD_NUMBER = 9;
+  private volatile java.lang.Object pipelineId_;
+  /**
+   * <pre>
+   * Pipeline related data, if any
+   * </pre>
+   *
+   * <code>string pipeline_id = 9;</code>
+   * @return The pipelineId.
+   */
+  @java.lang.Override
+  public java.lang.String getPipelineId() {
+    java.lang.Object ref = pipelineId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pipelineId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Pipeline related data, if any
+   * </pre>
+   *
+   * <code>string pipeline_id = 9;</code>
+   * @return The bytes for pipelineId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPipelineIdBytes() {
+    java.lang.Object ref = pipelineId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      pipelineId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PIPELINE_VERSION_ID_FIELD_NUMBER = 10;
+  private volatile java.lang.Object pipelineVersionId_;
+  /**
+   * <code>string pipeline_version_id = 10;</code>
+   * @return The pipelineVersionId.
+   */
+  @java.lang.Override
+  public java.lang.String getPipelineVersionId() {
+    java.lang.Object ref = pipelineVersionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pipelineVersionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string pipeline_version_id = 10;</code>
+   * @return The bytes for pipelineVersionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPipelineVersionIdBytes() {
+    java.lang.Object ref = pipelineVersionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      pipelineVersionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PIPELINE_VERSION_RUN_ID_FIELD_NUMBER = 11;
+  private volatile java.lang.Object pipelineVersionRunId_;
+  /**
+   * <code>string pipeline_version_run_id = 11;</code>
+   * @return The pipelineVersionRunId.
+   */
+  @java.lang.Override
+  public java.lang.String getPipelineVersionRunId() {
+    java.lang.Object ref = pipelineVersionRunId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pipelineVersionRunId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string pipeline_version_run_id = 11;</code>
+   * @return The bytes for pipelineVersionRunId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPipelineVersionRunIdBytes() {
+    java.lang.Object ref = pipelineVersionRunId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      pipelineVersionRunId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -474,6 +617,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, runnerId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pipelineId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineVersionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, pipelineVersionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineVersionRunId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, pipelineVersionRunId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -504,6 +656,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, runnerId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pipelineId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineVersionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, pipelineVersionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineVersionRunId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, pipelineVersionRunId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -537,6 +698,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNodepoolId())) return false;
     if (!getRunnerId()
         .equals(other.getRunnerId())) return false;
+    if (!getPipelineId()
+        .equals(other.getPipelineId())) return false;
+    if (!getPipelineVersionId()
+        .equals(other.getPipelineVersionId())) return false;
+    if (!getPipelineVersionRunId()
+        .equals(other.getPipelineVersionRunId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -564,6 +731,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getNodepoolId().hashCode();
     hash = (37 * hash) + RUNNER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRunnerId().hashCode();
+    hash = (37 * hash) + PIPELINE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPipelineId().hashCode();
+    hash = (37 * hash) + PIPELINE_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPipelineVersionId().hashCode();
+    hash = (37 * hash) + PIPELINE_VERSION_RUN_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPipelineVersionRunId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -719,6 +892,12 @@ private static final long serialVersionUID = 0L;
 
       runnerId_ = "";
 
+      pipelineId_ = "";
+
+      pipelineVersionId_ = "";
+
+      pipelineVersionRunId_ = "";
+
       return this;
     }
 
@@ -756,6 +935,9 @@ private static final long serialVersionUID = 0L;
       result.computeClusterId_ = computeClusterId_;
       result.nodepoolId_ = nodepoolId_;
       result.runnerId_ = runnerId_;
+      result.pipelineId_ = pipelineId_;
+      result.pipelineVersionId_ = pipelineVersionId_;
+      result.pipelineVersionRunId_ = pipelineVersionRunId_;
       onBuilt();
       return result;
     }
@@ -829,6 +1011,18 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRunnerId().isEmpty()) {
         runnerId_ = other.runnerId_;
+        onChanged();
+      }
+      if (!other.getPipelineId().isEmpty()) {
+        pipelineId_ = other.pipelineId_;
+        onChanged();
+      }
+      if (!other.getPipelineVersionId().isEmpty()) {
+        pipelineVersionId_ = other.pipelineVersionId_;
+        onChanged();
+      }
+      if (!other.getPipelineVersionRunId().isEmpty()) {
+        pipelineVersionRunId_ = other.pipelineVersionRunId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1547,6 +1741,254 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       runnerId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pipelineId_ = "";
+    /**
+     * <pre>
+     * Pipeline related data, if any
+     * </pre>
+     *
+     * <code>string pipeline_id = 9;</code>
+     * @return The pipelineId.
+     */
+    public java.lang.String getPipelineId() {
+      java.lang.Object ref = pipelineId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pipelineId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Pipeline related data, if any
+     * </pre>
+     *
+     * <code>string pipeline_id = 9;</code>
+     * @return The bytes for pipelineId.
+     */
+    public com.google.protobuf.ByteString
+        getPipelineIdBytes() {
+      java.lang.Object ref = pipelineId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pipelineId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Pipeline related data, if any
+     * </pre>
+     *
+     * <code>string pipeline_id = 9;</code>
+     * @param value The pipelineId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      pipelineId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Pipeline related data, if any
+     * </pre>
+     *
+     * <code>string pipeline_id = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPipelineId() {
+      
+      pipelineId_ = getDefaultInstance().getPipelineId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Pipeline related data, if any
+     * </pre>
+     *
+     * <code>string pipeline_id = 9;</code>
+     * @param value The bytes for pipelineId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      pipelineId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pipelineVersionId_ = "";
+    /**
+     * <code>string pipeline_version_id = 10;</code>
+     * @return The pipelineVersionId.
+     */
+    public java.lang.String getPipelineVersionId() {
+      java.lang.Object ref = pipelineVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pipelineVersionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string pipeline_version_id = 10;</code>
+     * @return The bytes for pipelineVersionId.
+     */
+    public com.google.protobuf.ByteString
+        getPipelineVersionIdBytes() {
+      java.lang.Object ref = pipelineVersionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pipelineVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string pipeline_version_id = 10;</code>
+     * @param value The pipelineVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineVersionId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      pipelineVersionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string pipeline_version_id = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPipelineVersionId() {
+      
+      pipelineVersionId_ = getDefaultInstance().getPipelineVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string pipeline_version_id = 10;</code>
+     * @param value The bytes for pipelineVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineVersionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      pipelineVersionId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pipelineVersionRunId_ = "";
+    /**
+     * <code>string pipeline_version_run_id = 11;</code>
+     * @return The pipelineVersionRunId.
+     */
+    public java.lang.String getPipelineVersionRunId() {
+      java.lang.Object ref = pipelineVersionRunId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pipelineVersionRunId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string pipeline_version_run_id = 11;</code>
+     * @return The bytes for pipelineVersionRunId.
+     */
+    public com.google.protobuf.ByteString
+        getPipelineVersionRunIdBytes() {
+      java.lang.Object ref = pipelineVersionRunId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pipelineVersionRunId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string pipeline_version_run_id = 11;</code>
+     * @param value The pipelineVersionRunId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineVersionRunId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      pipelineVersionRunId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string pipeline_version_run_id = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPipelineVersionRunId() {
+      
+      pipelineVersionRunId_ = getDefaultInstance().getPipelineVersionRunId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string pipeline_version_run_id = 11;</code>
+     * @param value The bytes for pipelineVersionRunId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineVersionRunIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      pipelineVersionRunId_ = value;
       onChanged();
       return this;
     }

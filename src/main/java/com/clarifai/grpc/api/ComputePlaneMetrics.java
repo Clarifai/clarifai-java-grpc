@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     eventType_ = "";
     gpuMetrics_ = java.util.Collections.emptyList();
     hostname_ = "";
+    cpuMetrics_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -142,6 +143,15 @@ private static final long serialVersionUID = 0L;
             hostname_ = s;
             break;
           }
+          case 98: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              cpuMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.CpuMetrics>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            cpuMetrics_.add(
+                input.readMessage(com.clarifai.grpc.api.CpuMetrics.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -161,6 +171,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         gpuMetrics_ = java.util.Collections.unmodifiableList(gpuMetrics_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        cpuMetrics_ = java.util.Collections.unmodifiableList(cpuMetrics_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -621,6 +634,66 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CPU_METRICS_FIELD_NUMBER = 12;
+  private java.util.List<com.clarifai.grpc.api.CpuMetrics> cpuMetrics_;
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.CpuMetrics> getCpuMetricsList() {
+    return cpuMetrics_;
+  }
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.CpuMetricsOrBuilder> 
+      getCpuMetricsOrBuilderList() {
+    return cpuMetrics_;
+  }
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  @java.lang.Override
+  public int getCpuMetricsCount() {
+    return cpuMetrics_.size();
+  }
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CpuMetrics getCpuMetrics(int index) {
+    return cpuMetrics_.get(index);
+  }
+  /**
+   * <pre>
+   * CPU metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CpuMetricsOrBuilder getCpuMetricsOrBuilder(
+      int index) {
+    return cpuMetrics_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -667,6 +740,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, hostname_);
+    }
+    for (int i = 0; i < cpuMetrics_.size(); i++) {
+      output.writeMessage(12, cpuMetrics_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -715,6 +791,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, hostname_);
     }
+    for (int i = 0; i < cpuMetrics_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, cpuMetrics_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -759,6 +839,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getGpuMetricsList())) return false;
     if (!getHostname()
         .equals(other.getHostname())) return false;
+    if (!getCpuMetricsList()
+        .equals(other.getCpuMetricsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -799,6 +881,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + HOSTNAME_FIELD_NUMBER;
     hash = (53 * hash) + getHostname().hashCode();
+    if (getCpuMetricsCount() > 0) {
+      hash = (37 * hash) + CPU_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getCpuMetricsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -933,6 +1019,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getGpuMetricsFieldBuilder();
+        getCpuMetricsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -972,6 +1059,12 @@ private static final long serialVersionUID = 0L;
       }
       hostname_ = "";
 
+      if (cpuMetricsBuilder_ == null) {
+        cpuMetrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        cpuMetricsBuilder_.clear();
+      }
       return this;
     }
 
@@ -1026,6 +1119,15 @@ private static final long serialVersionUID = 0L;
         result.gpuMetrics_ = gpuMetricsBuilder_.build();
       }
       result.hostname_ = hostname_;
+      if (cpuMetricsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          cpuMetrics_ = java.util.Collections.unmodifiableList(cpuMetrics_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.cpuMetrics_ = cpuMetrics_;
+      } else {
+        result.cpuMetrics_ = cpuMetricsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1135,6 +1237,32 @@ private static final long serialVersionUID = 0L;
       if (!other.getHostname().isEmpty()) {
         hostname_ = other.hostname_;
         onChanged();
+      }
+      if (cpuMetricsBuilder_ == null) {
+        if (!other.cpuMetrics_.isEmpty()) {
+          if (cpuMetrics_.isEmpty()) {
+            cpuMetrics_ = other.cpuMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureCpuMetricsIsMutable();
+            cpuMetrics_.addAll(other.cpuMetrics_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cpuMetrics_.isEmpty()) {
+          if (cpuMetricsBuilder_.isEmpty()) {
+            cpuMetricsBuilder_.dispose();
+            cpuMetricsBuilder_ = null;
+            cpuMetrics_ = other.cpuMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            cpuMetricsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCpuMetricsFieldBuilder() : null;
+          } else {
+            cpuMetricsBuilder_.addAllMessages(other.cpuMetrics_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2448,6 +2576,318 @@ private static final long serialVersionUID = 0L;
       hostname_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.CpuMetrics> cpuMetrics_ =
+      java.util.Collections.emptyList();
+    private void ensureCpuMetricsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        cpuMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.CpuMetrics>(cpuMetrics_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.CpuMetrics, com.clarifai.grpc.api.CpuMetrics.Builder, com.clarifai.grpc.api.CpuMetricsOrBuilder> cpuMetricsBuilder_;
+
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.CpuMetrics> getCpuMetricsList() {
+      if (cpuMetricsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cpuMetrics_);
+      } else {
+        return cpuMetricsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public int getCpuMetricsCount() {
+      if (cpuMetricsBuilder_ == null) {
+        return cpuMetrics_.size();
+      } else {
+        return cpuMetricsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public com.clarifai.grpc.api.CpuMetrics getCpuMetrics(int index) {
+      if (cpuMetricsBuilder_ == null) {
+        return cpuMetrics_.get(index);
+      } else {
+        return cpuMetricsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public Builder setCpuMetrics(
+        int index, com.clarifai.grpc.api.CpuMetrics value) {
+      if (cpuMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCpuMetricsIsMutable();
+        cpuMetrics_.set(index, value);
+        onChanged();
+      } else {
+        cpuMetricsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public Builder setCpuMetrics(
+        int index, com.clarifai.grpc.api.CpuMetrics.Builder builderForValue) {
+      if (cpuMetricsBuilder_ == null) {
+        ensureCpuMetricsIsMutable();
+        cpuMetrics_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cpuMetricsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public Builder addCpuMetrics(com.clarifai.grpc.api.CpuMetrics value) {
+      if (cpuMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCpuMetricsIsMutable();
+        cpuMetrics_.add(value);
+        onChanged();
+      } else {
+        cpuMetricsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public Builder addCpuMetrics(
+        int index, com.clarifai.grpc.api.CpuMetrics value) {
+      if (cpuMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCpuMetricsIsMutable();
+        cpuMetrics_.add(index, value);
+        onChanged();
+      } else {
+        cpuMetricsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public Builder addCpuMetrics(
+        com.clarifai.grpc.api.CpuMetrics.Builder builderForValue) {
+      if (cpuMetricsBuilder_ == null) {
+        ensureCpuMetricsIsMutable();
+        cpuMetrics_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cpuMetricsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public Builder addCpuMetrics(
+        int index, com.clarifai.grpc.api.CpuMetrics.Builder builderForValue) {
+      if (cpuMetricsBuilder_ == null) {
+        ensureCpuMetricsIsMutable();
+        cpuMetrics_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cpuMetricsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public Builder addAllCpuMetrics(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.CpuMetrics> values) {
+      if (cpuMetricsBuilder_ == null) {
+        ensureCpuMetricsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cpuMetrics_);
+        onChanged();
+      } else {
+        cpuMetricsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public Builder clearCpuMetrics() {
+      if (cpuMetricsBuilder_ == null) {
+        cpuMetrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        cpuMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public Builder removeCpuMetrics(int index) {
+      if (cpuMetricsBuilder_ == null) {
+        ensureCpuMetricsIsMutable();
+        cpuMetrics_.remove(index);
+        onChanged();
+      } else {
+        cpuMetricsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public com.clarifai.grpc.api.CpuMetrics.Builder getCpuMetricsBuilder(
+        int index) {
+      return getCpuMetricsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public com.clarifai.grpc.api.CpuMetricsOrBuilder getCpuMetricsOrBuilder(
+        int index) {
+      if (cpuMetricsBuilder_ == null) {
+        return cpuMetrics_.get(index);  } else {
+        return cpuMetricsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.CpuMetricsOrBuilder> 
+         getCpuMetricsOrBuilderList() {
+      if (cpuMetricsBuilder_ != null) {
+        return cpuMetricsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cpuMetrics_);
+      }
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public com.clarifai.grpc.api.CpuMetrics.Builder addCpuMetricsBuilder() {
+      return getCpuMetricsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.CpuMetrics.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public com.clarifai.grpc.api.CpuMetrics.Builder addCpuMetricsBuilder(
+        int index) {
+      return getCpuMetricsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.CpuMetrics.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * CPU metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.CpuMetrics cpu_metrics = 12;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.CpuMetrics.Builder> 
+         getCpuMetricsBuilderList() {
+      return getCpuMetricsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.CpuMetrics, com.clarifai.grpc.api.CpuMetrics.Builder, com.clarifai.grpc.api.CpuMetricsOrBuilder> 
+        getCpuMetricsFieldBuilder() {
+      if (cpuMetricsBuilder_ == null) {
+        cpuMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.CpuMetrics, com.clarifai.grpc.api.CpuMetrics.Builder, com.clarifai.grpc.api.CpuMetricsOrBuilder>(
+                cpuMetrics_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        cpuMetrics_ = null;
+      }
+      return cpuMetricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

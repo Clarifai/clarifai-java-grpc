@@ -182,4 +182,48 @@ public interface ListLogEntriesRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRunnerIdBytes();
+
+  /**
+   * <pre>
+   * Pipelines that produced the logs.
+   * </pre>
+   *
+   * <code>string pipeline_id = 12;</code>
+   * @return The pipelineId.
+   */
+  java.lang.String getPipelineId();
+  /**
+   * <pre>
+   * Pipelines that produced the logs.
+   * </pre>
+   *
+   * <code>string pipeline_id = 12;</code>
+   * @return The bytes for pipelineId.
+   */
+  com.google.protobuf.ByteString
+      getPipelineIdBytes();
+
+  /**
+   * <code>string pipeline_version_id = 13;</code>
+   * @return The pipelineVersionId.
+   */
+  java.lang.String getPipelineVersionId();
+  /**
+   * <code>string pipeline_version_id = 13;</code>
+   * @return The bytes for pipelineVersionId.
+   */
+  com.google.protobuf.ByteString
+      getPipelineVersionIdBytes();
+
+  /**
+   * <code>string pipeline_version_run_id = 14;</code>
+   * @return The pipelineVersionRunId.
+   */
+  java.lang.String getPipelineVersionRunId();
+  /**
+   * <code>string pipeline_version_run_id = 14;</code>
+   * @return The bytes for pipelineVersionRunId.
+   */
+  com.google.protobuf.ByteString
+      getPipelineVersionRunIdBytes();
 }

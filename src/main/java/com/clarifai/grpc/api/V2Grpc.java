@@ -6680,6 +6680,37 @@ public final class V2Grpc {
     return getPostRunnersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchRunnersRequest,
+      com.clarifai.grpc.api.MultiRunnerResponse> getPatchRunnersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchRunners",
+      requestType = com.clarifai.grpc.api.PatchRunnersRequest.class,
+      responseType = com.clarifai.grpc.api.MultiRunnerResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchRunnersRequest,
+      com.clarifai.grpc.api.MultiRunnerResponse> getPatchRunnersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchRunnersRequest, com.clarifai.grpc.api.MultiRunnerResponse> getPatchRunnersMethod;
+    if ((getPatchRunnersMethod = V2Grpc.getPatchRunnersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchRunnersMethod = V2Grpc.getPatchRunnersMethod) == null) {
+          V2Grpc.getPatchRunnersMethod = getPatchRunnersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchRunnersRequest, com.clarifai.grpc.api.MultiRunnerResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchRunners"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchRunnersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiRunnerResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchRunners"))
+              .build();
+        }
+      }
+    }
+    return getPatchRunnersMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteRunnersRequest,
       com.clarifai.grpc.api.status.BaseResponse> getDeleteRunnersMethod;
 
@@ -9946,6 +9977,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Patch runners of a user.
+     * </pre>
+     */
+    public void patchRunners(com.clarifai.grpc.api.PatchRunnersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchRunnersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Delete multiple runners in one request.
      * </pre>
      */
@@ -11724,6 +11765,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostRunnersRequest,
                 com.clarifai.grpc.api.MultiRunnerResponse>(
                   this, METHODID_POST_RUNNERS)))
+          .addMethod(
+            getPatchRunnersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchRunnersRequest,
+                com.clarifai.grpc.api.MultiRunnerResponse>(
+                  this, METHODID_PATCH_RUNNERS)))
           .addMethod(
             getDeleteRunnersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -14407,6 +14455,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Patch runners of a user.
+     * </pre>
+     */
+    public void patchRunners(com.clarifai.grpc.api.PatchRunnersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPatchRunnersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Delete multiple runners in one request.
      * </pre>
      */
@@ -16924,6 +16983,16 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiRunnerResponse postRunners(com.clarifai.grpc.api.PostRunnersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostRunnersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Patch runners of a user.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiRunnerResponse patchRunners(com.clarifai.grpc.api.PatchRunnersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchRunnersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -19603,6 +19672,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Patch runners of a user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiRunnerResponse> patchRunners(
+        com.clarifai.grpc.api.PatchRunnersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPatchRunnersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Delete multiple runners in one request.
      * </pre>
      */
@@ -20096,40 +20176,41 @@ public final class V2Grpc {
   private static final int METHODID_GET_RUNNER = 210;
   private static final int METHODID_LIST_RUNNERS = 211;
   private static final int METHODID_POST_RUNNERS = 212;
-  private static final int METHODID_DELETE_RUNNERS = 213;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 214;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 215;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 216;
-  private static final int METHODID_LIST_CLOUD_PROVIDERS = 217;
-  private static final int METHODID_LIST_CLOUD_REGIONS = 218;
-  private static final int METHODID_LIST_INSTANCE_TYPES = 219;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 220;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 221;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 222;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 223;
-  private static final int METHODID_GET_NODEPOOL = 224;
-  private static final int METHODID_LIST_NODEPOOLS = 225;
-  private static final int METHODID_POST_NODEPOOLS = 226;
-  private static final int METHODID_PATCH_NODEPOOLS = 227;
-  private static final int METHODID_DELETE_NODEPOOLS = 228;
-  private static final int METHODID_GET_DEPLOYMENT = 229;
-  private static final int METHODID_LIST_DEPLOYMENTS = 230;
-  private static final int METHODID_POST_DEPLOYMENTS = 231;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 232;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 233;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 234;
-  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 235;
-  private static final int METHODID_POST_LOG_ENTRIES = 236;
-  private static final int METHODID_LIST_LOG_ENTRIES = 237;
-  private static final int METHODID_STREAM_LOG_ENTRIES = 238;
-  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 239;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 240;
-  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 241;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 242;
-  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 243;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 244;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 245;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 246;
+  private static final int METHODID_PATCH_RUNNERS = 213;
+  private static final int METHODID_DELETE_RUNNERS = 214;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 215;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 216;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 217;
+  private static final int METHODID_LIST_CLOUD_PROVIDERS = 218;
+  private static final int METHODID_LIST_CLOUD_REGIONS = 219;
+  private static final int METHODID_LIST_INSTANCE_TYPES = 220;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 221;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 222;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 223;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 224;
+  private static final int METHODID_GET_NODEPOOL = 225;
+  private static final int METHODID_LIST_NODEPOOLS = 226;
+  private static final int METHODID_POST_NODEPOOLS = 227;
+  private static final int METHODID_PATCH_NODEPOOLS = 228;
+  private static final int METHODID_DELETE_NODEPOOLS = 229;
+  private static final int METHODID_GET_DEPLOYMENT = 230;
+  private static final int METHODID_LIST_DEPLOYMENTS = 231;
+  private static final int METHODID_POST_DEPLOYMENTS = 232;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 233;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 234;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 235;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 236;
+  private static final int METHODID_POST_LOG_ENTRIES = 237;
+  private static final int METHODID_LIST_LOG_ENTRIES = 238;
+  private static final int METHODID_STREAM_LOG_ENTRIES = 239;
+  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 240;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 241;
+  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 242;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 243;
+  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 244;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 245;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 246;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 247;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21000,6 +21081,10 @@ public final class V2Grpc {
           serviceImpl.postRunners((com.clarifai.grpc.api.PostRunnersRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse>) responseObserver);
           break;
+        case METHODID_PATCH_RUNNERS:
+          serviceImpl.patchRunners((com.clarifai.grpc.api.PatchRunnersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse>) responseObserver);
+          break;
         case METHODID_DELETE_RUNNERS:
           serviceImpl.deleteRunners((com.clarifai.grpc.api.DeleteRunnersRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
@@ -21409,6 +21494,7 @@ public final class V2Grpc {
               .addMethod(getGetRunnerMethod())
               .addMethod(getListRunnersMethod())
               .addMethod(getPostRunnersMethod())
+              .addMethod(getPatchRunnersMethod())
               .addMethod(getDeleteRunnersMethod())
               .addMethod(getListRunnerItemsMethod())
               .addMethod(getPostRunnerItemOutputsMethod())
