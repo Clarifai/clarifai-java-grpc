@@ -43,7 +43,8 @@ public interface ModelTypeFieldOrBuilder extends
 
   /**
    * <pre>
-   * The field for this field.
+   * The field for this field. This is often used for displaying the field in the UI whereas
+   * the DataType enum below defines the specific type of datain the Python function.
    * </pre>
    *
    * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
@@ -52,7 +53,8 @@ public interface ModelTypeFieldOrBuilder extends
   int getFieldTypeValue();
   /**
    * <pre>
-   * The field for this field.
+   * The field for this field. This is often used for displaying the field in the UI whereas
+   * the DataType enum below defines the specific type of datain the Python function.
    * </pre>
    *
    * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
@@ -222,4 +224,126 @@ public interface ModelTypeFieldOrBuilder extends
    * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
    */
   com.clarifai.grpc.api.ModelTypeRangeInfoOrBuilder getModelTypeRangeInfoOrBuilder();
+
+  /**
+   * <pre>
+   * name of method signature argument
+   * </pre>
+   *
+   * <code>string name = 10;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * name of method signature argument
+   * </pre>
+   *
+   * <code>string name = 10;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
+   * The type of the argument.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   * <pre>
+   * The type of the argument.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+   * @return The type.
+   */
+  com.clarifai.grpc.api.ModelTypeField.DataType getType();
+
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.ModelTypeField> 
+      getTypeArgsList();
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  com.clarifai.grpc.api.ModelTypeField getTypeArgs(int index);
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  int getTypeArgsCount();
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
+      getTypeArgsOrBuilderList();
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  com.clarifai.grpc.api.ModelTypeFieldOrBuilder getTypeArgsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * this will be use to define whether the method argument supports streaming as an iterator.
+   * </pre>
+   *
+   * <code>bool iterator = 13;</code>
+   * @return The iterator.
+   */
+  boolean getIterator();
+
+  /**
+   * <pre>
+   * This specify the default value of the method argument. We define this as a string
+   * because the default value can be a string, int, float, bool, or a complex object like a JSON
+   * The default_value field above should not also be used.
+   * </pre>
+   *
+   * <code>string default = 14;</code>
+   * @return The default.
+   */
+  java.lang.String getDefault();
+  /**
+   * <pre>
+   * This specify the default value of the method argument. We define this as a string
+   * because the default value can be a string, int, float, bool, or a complex object like a JSON
+   * The default_value field above should not also be used.
+   * </pre>
+   *
+   * <code>string default = 14;</code>
+   * @return The bytes for default.
+   */
+  com.google.protobuf.ByteString
+      getDefaultBytes();
 }

@@ -516,4 +516,48 @@ public interface ModelVersionOrBuilder extends
    * <code>.clarifai.api.BuildInfo build_info = 25;</code>
    */
   com.clarifai.grpc.api.BuildInfoOrBuilder getBuildInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Model signature information for the model version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.MethodSignature> 
+      getMethodSignatureList();
+  /**
+   * <pre>
+   * Model signature information for the model version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   */
+  com.clarifai.grpc.api.MethodSignature getMethodSignature(int index);
+  /**
+   * <pre>
+   * Model signature information for the model version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   */
+  int getMethodSignatureCount();
+  /**
+   * <pre>
+   * Model signature information for the model version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.MethodSignatureOrBuilder> 
+      getMethodSignatureOrBuilderList();
+  /**
+   * <pre>
+   * Model signature information for the model version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   */
+  com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignatureOrBuilder(
+      int index);
 }

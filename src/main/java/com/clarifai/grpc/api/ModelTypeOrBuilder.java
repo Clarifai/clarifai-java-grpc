@@ -345,4 +345,58 @@ public interface ModelTypeOrBuilder extends
    * @return The evaluationType.
    */
   com.clarifai.grpc.api.EvaluationType getEvaluationType();
+
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.MethodSignature> 
+      getMethodSignaturesList();
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  com.clarifai.grpc.api.MethodSignature getMethodSignatures(int index);
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  int getMethodSignaturesCount();
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.MethodSignatureOrBuilder> 
+      getMethodSignaturesOrBuilderList();
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignaturesOrBuilder(
+      int index);
 }

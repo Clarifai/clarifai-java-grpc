@@ -25,6 +25,10 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     placeholder_ = "";
     modelTypeEnumOptions_ = java.util.Collections.emptyList();
+    name_ = "";
+    type_ = 0;
+    typeArgs_ = java.util.Collections.emptyList();
+    default_ = "";
   }
 
   @java.lang.Override
@@ -127,6 +131,38 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 88: {
+            int rawValue = input.readEnum();
+
+            type_ = rawValue;
+            break;
+          }
+          case 98: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              typeArgs_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelTypeField>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            typeArgs_.add(
+                input.readMessage(com.clarifai.grpc.api.ModelTypeField.parser(), extensionRegistry));
+            break;
+          }
+          case 104: {
+
+            iterator_ = input.readBool();
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            default_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -146,6 +182,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         modelTypeEnumOptions_ = java.util.Collections.unmodifiableList(modelTypeEnumOptions_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        typeArgs_ = java.util.Collections.unmodifiableList(typeArgs_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -604,6 +643,401 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:clarifai.api.ModelTypeField.ModelTypeFieldType)
   }
 
+  /**
+   * <pre>
+   * DataType is used in MethodSignature to define all the possible types that a python function
+   * may have that we want to support. These include built-ins like int, float, str, bool, and
+   * more complex types like JSON, numpy arrays, List, Tuple, Dict (as Named Fields), as well as Clarifai provided
+   * unstructured types like Image, Video, Text, etc.
+   * </pre>
+   *
+   * Protobuf enum {@code clarifai.api.ModelTypeField.DataType}
+   */
+  public enum DataType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NOT_SET = 0;</code>
+     */
+    NOT_SET(0),
+    /**
+     * <pre>
+     * A string value.
+     * </pre>
+     *
+     * <code>STR = 1;</code>
+     */
+    STR(1),
+    /**
+     * <pre>
+     * A byte string. This is used for binary data.
+     * </pre>
+     *
+     * <code>BYTES = 2;</code>
+     */
+    BYTES(2),
+    /**
+     * <pre>
+     * An integer value.
+     * </pre>
+     *
+     * <code>INT = 3;</code>
+     */
+    INT(3),
+    /**
+     * <pre>
+     * A float value.
+     * </pre>
+     *
+     * <code>FLOAT = 4;</code>
+     */
+    FLOAT(4),
+    /**
+     * <pre>
+     * A boolean value.
+     * </pre>
+     *
+     * <code>BOOL = 5;</code>
+     */
+    BOOL(5),
+    /**
+     * <pre>
+     * A proto representation for numpy arrays.
+     * </pre>
+     *
+     * <code>NDARRAY = 6;</code>
+     */
+    NDARRAY(6),
+    /**
+     * <pre>
+     * For arbitrary json object: "{...}"
+     * </pre>
+     *
+     * <code>JSON_DATA = 7;</code>
+     */
+    JSON_DATA(7),
+    /**
+     * <pre>
+     * For text data
+     * </pre>
+     *
+     * <code>TEXT = 8;</code>
+     */
+    TEXT(8),
+    /**
+     * <pre>
+     * A image is a image proto for url or bytes.
+     * </pre>
+     *
+     * <code>IMAGE = 9;</code>
+     */
+    IMAGE(9),
+    /**
+     * <pre>
+     * A concept is a concept proto that represents a concept in the app.
+     * </pre>
+     *
+     * <code>CONCEPT = 10;</code>
+     */
+    CONCEPT(10),
+    /**
+     * <pre>
+     * A region is a bounding box in an image or video frame.
+     * </pre>
+     *
+     * <code>REGION = 11;</code>
+     */
+    REGION(11),
+    /**
+     * <pre>
+     * A frame is a single image in a video stream
+     * </pre>
+     *
+     * <code>FRAME = 12;</code>
+     */
+    FRAME(12),
+    /**
+     * <pre>
+     * A audio is a audio proto for url or bytes.
+     * </pre>
+     *
+     * <code>AUDIO = 13;</code>
+     */
+    AUDIO(13),
+    /**
+     * <pre>
+     * A video is a video proto for url or bytes.
+     * </pre>
+     *
+     * <code>VIDEO = 14;</code>
+     */
+    VIDEO(14),
+    /**
+     * <pre>
+     * this can be used to store named fields with values similar to Dict
+     * </pre>
+     *
+     * <code>NAMED_FIELDS = 20;</code>
+     */
+    NAMED_FIELDS(20),
+    /**
+     * <pre>
+     * An arg that is a tuple.
+     * </pre>
+     *
+     * <code>TUPLE = 21;</code>
+     */
+    TUPLE(21),
+    /**
+     * <pre>
+     * An arg that is a list.
+     * </pre>
+     *
+     * <code>LIST = 22;</code>
+     */
+    LIST(22),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>NOT_SET = 0;</code>
+     */
+    public static final int NOT_SET_VALUE = 0;
+    /**
+     * <pre>
+     * A string value.
+     * </pre>
+     *
+     * <code>STR = 1;</code>
+     */
+    public static final int STR_VALUE = 1;
+    /**
+     * <pre>
+     * A byte string. This is used for binary data.
+     * </pre>
+     *
+     * <code>BYTES = 2;</code>
+     */
+    public static final int BYTES_VALUE = 2;
+    /**
+     * <pre>
+     * An integer value.
+     * </pre>
+     *
+     * <code>INT = 3;</code>
+     */
+    public static final int INT_VALUE = 3;
+    /**
+     * <pre>
+     * A float value.
+     * </pre>
+     *
+     * <code>FLOAT = 4;</code>
+     */
+    public static final int FLOAT_VALUE = 4;
+    /**
+     * <pre>
+     * A boolean value.
+     * </pre>
+     *
+     * <code>BOOL = 5;</code>
+     */
+    public static final int BOOL_VALUE = 5;
+    /**
+     * <pre>
+     * A proto representation for numpy arrays.
+     * </pre>
+     *
+     * <code>NDARRAY = 6;</code>
+     */
+    public static final int NDARRAY_VALUE = 6;
+    /**
+     * <pre>
+     * For arbitrary json object: "{...}"
+     * </pre>
+     *
+     * <code>JSON_DATA = 7;</code>
+     */
+    public static final int JSON_DATA_VALUE = 7;
+    /**
+     * <pre>
+     * For text data
+     * </pre>
+     *
+     * <code>TEXT = 8;</code>
+     */
+    public static final int TEXT_VALUE = 8;
+    /**
+     * <pre>
+     * A image is a image proto for url or bytes.
+     * </pre>
+     *
+     * <code>IMAGE = 9;</code>
+     */
+    public static final int IMAGE_VALUE = 9;
+    /**
+     * <pre>
+     * A concept is a concept proto that represents a concept in the app.
+     * </pre>
+     *
+     * <code>CONCEPT = 10;</code>
+     */
+    public static final int CONCEPT_VALUE = 10;
+    /**
+     * <pre>
+     * A region is a bounding box in an image or video frame.
+     * </pre>
+     *
+     * <code>REGION = 11;</code>
+     */
+    public static final int REGION_VALUE = 11;
+    /**
+     * <pre>
+     * A frame is a single image in a video stream
+     * </pre>
+     *
+     * <code>FRAME = 12;</code>
+     */
+    public static final int FRAME_VALUE = 12;
+    /**
+     * <pre>
+     * A audio is a audio proto for url or bytes.
+     * </pre>
+     *
+     * <code>AUDIO = 13;</code>
+     */
+    public static final int AUDIO_VALUE = 13;
+    /**
+     * <pre>
+     * A video is a video proto for url or bytes.
+     * </pre>
+     *
+     * <code>VIDEO = 14;</code>
+     */
+    public static final int VIDEO_VALUE = 14;
+    /**
+     * <pre>
+     * this can be used to store named fields with values similar to Dict
+     * </pre>
+     *
+     * <code>NAMED_FIELDS = 20;</code>
+     */
+    public static final int NAMED_FIELDS_VALUE = 20;
+    /**
+     * <pre>
+     * An arg that is a tuple.
+     * </pre>
+     *
+     * <code>TUPLE = 21;</code>
+     */
+    public static final int TUPLE_VALUE = 21;
+    /**
+     * <pre>
+     * An arg that is a list.
+     * </pre>
+     *
+     * <code>LIST = 22;</code>
+     */
+    public static final int LIST_VALUE = 22;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DataType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DataType forNumber(int value) {
+      switch (value) {
+        case 0: return NOT_SET;
+        case 1: return STR;
+        case 2: return BYTES;
+        case 3: return INT;
+        case 4: return FLOAT;
+        case 5: return BOOL;
+        case 6: return NDARRAY;
+        case 7: return JSON_DATA;
+        case 8: return TEXT;
+        case 9: return IMAGE;
+        case 10: return CONCEPT;
+        case 11: return REGION;
+        case 12: return FRAME;
+        case 13: return AUDIO;
+        case 14: return VIDEO;
+        case 20: return NAMED_FIELDS;
+        case 21: return TUPLE;
+        case 22: return LIST;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DataType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        DataType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<DataType>() {
+            public DataType findValueByNumber(int number) {
+              return DataType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.ModelTypeField.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final DataType[] VALUES = values();
+
+    public static DataType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DataType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.ModelTypeField.DataType)
+  }
+
   public static final int PATH_FIELD_NUMBER = 1;
   private volatile java.lang.Object path_;
   /**
@@ -668,7 +1102,8 @@ private static final long serialVersionUID = 0L;
   private int fieldType_;
   /**
    * <pre>
-   * The field for this field.
+   * The field for this field. This is often used for displaying the field in the UI whereas
+   * the DataType enum below defines the specific type of datain the Python function.
    * </pre>
    *
    * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
@@ -679,7 +1114,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The field for this field.
+   * The field for this field. This is often used for displaying the field in the UI whereas
+   * the DataType enum below defines the specific type of datain the Python function.
    * </pre>
    *
    * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
@@ -954,6 +1390,209 @@ private static final long serialVersionUID = 0L;
     return getModelTypeRangeInfo();
   }
 
+  public static final int NAME_FIELD_NUMBER = 10;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * name of method signature argument
+   * </pre>
+   *
+   * <code>string name = 10;</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * name of method signature argument
+   * </pre>
+   *
+   * <code>string name = 10;</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TYPE_FIELD_NUMBER = 11;
+  private int type_;
+  /**
+   * <pre>
+   * The type of the argument.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override public int getTypeValue() {
+    return type_;
+  }
+  /**
+   * <pre>
+   * The type of the argument.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+   * @return The type.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.ModelTypeField.DataType getType() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.ModelTypeField.DataType result = com.clarifai.grpc.api.ModelTypeField.DataType.valueOf(type_);
+    return result == null ? com.clarifai.grpc.api.ModelTypeField.DataType.UNRECOGNIZED : result;
+  }
+
+  public static final int TYPE_ARGS_FIELD_NUMBER = 12;
+  private java.util.List<com.clarifai.grpc.api.ModelTypeField> typeArgs_;
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.ModelTypeField> getTypeArgsList() {
+    return typeArgs_;
+  }
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
+      getTypeArgsOrBuilderList() {
+    return typeArgs_;
+  }
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  @java.lang.Override
+  public int getTypeArgsCount() {
+    return typeArgs_.size();
+  }
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelTypeField getTypeArgs(int index) {
+    return typeArgs_.get(index);
+  }
+  /**
+   * <pre>
+   * type enum, and recursively set type_args with
+   * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelTypeFieldOrBuilder getTypeArgsOrBuilder(
+      int index) {
+    return typeArgs_.get(index);
+  }
+
+  public static final int ITERATOR_FIELD_NUMBER = 13;
+  private boolean iterator_;
+  /**
+   * <pre>
+   * this will be use to define whether the method argument supports streaming as an iterator.
+   * </pre>
+   *
+   * <code>bool iterator = 13;</code>
+   * @return The iterator.
+   */
+  @java.lang.Override
+  public boolean getIterator() {
+    return iterator_;
+  }
+
+  public static final int DEFAULT_FIELD_NUMBER = 14;
+  private volatile java.lang.Object default_;
+  /**
+   * <pre>
+   * This specify the default value of the method argument. We define this as a string
+   * because the default value can be a string, int, float, bool, or a complex object like a JSON
+   * The default_value field above should not also be used.
+   * </pre>
+   *
+   * <code>string default = 14;</code>
+   * @return The default.
+   */
+  @java.lang.Override
+  public java.lang.String getDefault() {
+    java.lang.Object ref = default_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      default_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * This specify the default value of the method argument. We define this as a string
+   * because the default value can be a string, int, float, bool, or a complex object like a JSON
+   * The default_value field above should not also be used.
+   * </pre>
+   *
+   * <code>string default = 14;</code>
+   * @return The bytes for default.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDefaultBytes() {
+    java.lang.Object ref = default_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      default_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -994,6 +1633,21 @@ private static final long serialVersionUID = 0L;
     }
     if (modelTypeRangeInfo_ != null) {
       output.writeMessage(9, getModelTypeRangeInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, name_);
+    }
+    if (type_ != com.clarifai.grpc.api.ModelTypeField.DataType.NOT_SET.getNumber()) {
+      output.writeEnum(11, type_);
+    }
+    for (int i = 0; i < typeArgs_.size(); i++) {
+      output.writeMessage(12, typeArgs_.get(i));
+    }
+    if (iterator_ != false) {
+      output.writeBool(13, iterator_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(default_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, default_);
     }
     unknownFields.writeTo(output);
   }
@@ -1037,6 +1691,24 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getModelTypeRangeInfo());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, name_);
+    }
+    if (type_ != com.clarifai.grpc.api.ModelTypeField.DataType.NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(11, type_);
+    }
+    for (int i = 0; i < typeArgs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, typeArgs_.get(i));
+    }
+    if (iterator_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, iterator_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(default_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, default_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1075,6 +1747,15 @@ private static final long serialVersionUID = 0L;
       if (!getModelTypeRangeInfo()
           .equals(other.getModelTypeRangeInfo())) return false;
     }
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (type_ != other.type_) return false;
+    if (!getTypeArgsList()
+        .equals(other.getTypeArgsList())) return false;
+    if (getIterator()
+        != other.getIterator()) return false;
+    if (!getDefault()
+        .equals(other.getDefault())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1112,6 +1793,19 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODEL_TYPE_RANGE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getModelTypeRangeInfo().hashCode();
     }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
+    if (getTypeArgsCount() > 0) {
+      hash = (37 * hash) + TYPE_ARGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTypeArgsList().hashCode();
+    }
+    hash = (37 * hash) + ITERATOR_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIterator());
+    hash = (37 * hash) + DEFAULT_FIELD_NUMBER;
+    hash = (53 * hash) + getDefault().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1245,6 +1939,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getModelTypeEnumOptionsFieldBuilder();
+        getTypeArgsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1280,6 +1975,20 @@ private static final long serialVersionUID = 0L;
         modelTypeRangeInfo_ = null;
         modelTypeRangeInfoBuilder_ = null;
       }
+      name_ = "";
+
+      type_ = 0;
+
+      if (typeArgsBuilder_ == null) {
+        typeArgs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        typeArgsBuilder_.clear();
+      }
+      iterator_ = false;
+
+      default_ = "";
+
       return this;
     }
 
@@ -1332,6 +2041,19 @@ private static final long serialVersionUID = 0L;
       } else {
         result.modelTypeRangeInfo_ = modelTypeRangeInfoBuilder_.build();
       }
+      result.name_ = name_;
+      result.type_ = type_;
+      if (typeArgsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          typeArgs_ = java.util.Collections.unmodifiableList(typeArgs_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.typeArgs_ = typeArgs_;
+      } else {
+        result.typeArgs_ = typeArgsBuilder_.build();
+      }
+      result.iterator_ = iterator_;
+      result.default_ = default_;
       onBuilt();
       return result;
     }
@@ -1432,6 +2154,46 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModelTypeRangeInfo()) {
         mergeModelTypeRangeInfo(other.getModelTypeRangeInfo());
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
+      }
+      if (typeArgsBuilder_ == null) {
+        if (!other.typeArgs_.isEmpty()) {
+          if (typeArgs_.isEmpty()) {
+            typeArgs_ = other.typeArgs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureTypeArgsIsMutable();
+            typeArgs_.addAll(other.typeArgs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.typeArgs_.isEmpty()) {
+          if (typeArgsBuilder_.isEmpty()) {
+            typeArgsBuilder_.dispose();
+            typeArgsBuilder_ = null;
+            typeArgs_ = other.typeArgs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            typeArgsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTypeArgsFieldBuilder() : null;
+          } else {
+            typeArgsBuilder_.addAllMessages(other.typeArgs_);
+          }
+        }
+      }
+      if (other.getIterator() != false) {
+        setIterator(other.getIterator());
+      }
+      if (!other.getDefault().isEmpty()) {
+        default_ = other.default_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1597,7 +2359,8 @@ private static final long serialVersionUID = 0L;
     private int fieldType_ = 0;
     /**
      * <pre>
-     * The field for this field.
+     * The field for this field. This is often used for displaying the field in the UI whereas
+     * the DataType enum below defines the specific type of datain the Python function.
      * </pre>
      *
      * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
@@ -1608,7 +2371,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The field for this field.
+     * The field for this field. This is often used for displaying the field in the UI whereas
+     * the DataType enum below defines the specific type of datain the Python function.
      * </pre>
      *
      * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
@@ -1623,7 +2387,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The field for this field.
+     * The field for this field. This is often used for displaying the field in the UI whereas
+     * the DataType enum below defines the specific type of datain the Python function.
      * </pre>
      *
      * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
@@ -1637,7 +2402,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The field for this field.
+     * The field for this field. This is often used for displaying the field in the UI whereas
+     * the DataType enum below defines the specific type of datain the Python function.
      * </pre>
      *
      * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
@@ -1655,7 +2421,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The field for this field.
+     * The field for this field. This is often used for displaying the field in the UI whereas
+     * the DataType enum below defines the specific type of datain the Python function.
      * </pre>
      *
      * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
@@ -2581,6 +3348,655 @@ private static final long serialVersionUID = 0L;
         modelTypeRangeInfo_ = null;
       }
       return modelTypeRangeInfoBuilder_;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * name of method signature argument
+     * </pre>
+     *
+     * <code>string name = 10;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * name of method signature argument
+     * </pre>
+     *
+     * <code>string name = 10;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * name of method signature argument
+     * </pre>
+     *
+     * <code>string name = 10;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * name of method signature argument
+     * </pre>
+     *
+     * <code>string name = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * name of method signature argument
+     * </pre>
+     *
+     * <code>string name = 10;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     * <pre>
+     * The type of the argument.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * The type of the argument.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The type of the argument.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ModelTypeField.DataType getType() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.ModelTypeField.DataType result = com.clarifai.grpc.api.ModelTypeField.DataType.valueOf(type_);
+      return result == null ? com.clarifai.grpc.api.ModelTypeField.DataType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The type of the argument.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.clarifai.grpc.api.ModelTypeField.DataType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The type of the argument.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField.DataType type = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.ModelTypeField> typeArgs_ =
+      java.util.Collections.emptyList();
+    private void ensureTypeArgsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        typeArgs_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelTypeField>(typeArgs_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder> typeArgsBuilder_;
+
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.ModelTypeField> getTypeArgsList() {
+      if (typeArgsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(typeArgs_);
+      } else {
+        return typeArgsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public int getTypeArgsCount() {
+      if (typeArgsBuilder_ == null) {
+        return typeArgs_.size();
+      } else {
+        return typeArgsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeField getTypeArgs(int index) {
+      if (typeArgsBuilder_ == null) {
+        return typeArgs_.get(index);
+      } else {
+        return typeArgsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public Builder setTypeArgs(
+        int index, com.clarifai.grpc.api.ModelTypeField value) {
+      if (typeArgsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTypeArgsIsMutable();
+        typeArgs_.set(index, value);
+        onChanged();
+      } else {
+        typeArgsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public Builder setTypeArgs(
+        int index, com.clarifai.grpc.api.ModelTypeField.Builder builderForValue) {
+      if (typeArgsBuilder_ == null) {
+        ensureTypeArgsIsMutable();
+        typeArgs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        typeArgsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public Builder addTypeArgs(com.clarifai.grpc.api.ModelTypeField value) {
+      if (typeArgsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTypeArgsIsMutable();
+        typeArgs_.add(value);
+        onChanged();
+      } else {
+        typeArgsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public Builder addTypeArgs(
+        int index, com.clarifai.grpc.api.ModelTypeField value) {
+      if (typeArgsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTypeArgsIsMutable();
+        typeArgs_.add(index, value);
+        onChanged();
+      } else {
+        typeArgsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public Builder addTypeArgs(
+        com.clarifai.grpc.api.ModelTypeField.Builder builderForValue) {
+      if (typeArgsBuilder_ == null) {
+        ensureTypeArgsIsMutable();
+        typeArgs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        typeArgsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public Builder addTypeArgs(
+        int index, com.clarifai.grpc.api.ModelTypeField.Builder builderForValue) {
+      if (typeArgsBuilder_ == null) {
+        ensureTypeArgsIsMutable();
+        typeArgs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        typeArgsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public Builder addAllTypeArgs(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.ModelTypeField> values) {
+      if (typeArgsBuilder_ == null) {
+        ensureTypeArgsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, typeArgs_);
+        onChanged();
+      } else {
+        typeArgsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public Builder clearTypeArgs() {
+      if (typeArgsBuilder_ == null) {
+        typeArgs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        typeArgsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public Builder removeTypeArgs(int index) {
+      if (typeArgsBuilder_ == null) {
+        ensureTypeArgsIsMutable();
+        typeArgs_.remove(index);
+        onChanged();
+      } else {
+        typeArgsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeField.Builder getTypeArgsBuilder(
+        int index) {
+      return getTypeArgsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeFieldOrBuilder getTypeArgsOrBuilder(
+        int index) {
+      if (typeArgsBuilder_ == null) {
+        return typeArgs_.get(index);  } else {
+        return typeArgsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
+         getTypeArgsOrBuilderList() {
+      if (typeArgsBuilder_ != null) {
+        return typeArgsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(typeArgs_);
+      }
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeField.Builder addTypeArgsBuilder() {
+      return getTypeArgsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.ModelTypeField.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeField.Builder addTypeArgsBuilder(
+        int index) {
+      return getTypeArgsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.ModelTypeField.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * type enum, and recursively set type_args with
+     * the inner type argumets in complex objects (e.g. List[Tuple[int, str]])
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeField type_args = 12;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.ModelTypeField.Builder> 
+         getTypeArgsBuilderList() {
+      return getTypeArgsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
+        getTypeArgsFieldBuilder() {
+      if (typeArgsBuilder_ == null) {
+        typeArgsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder>(
+                typeArgs_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        typeArgs_ = null;
+      }
+      return typeArgsBuilder_;
+    }
+
+    private boolean iterator_ ;
+    /**
+     * <pre>
+     * this will be use to define whether the method argument supports streaming as an iterator.
+     * </pre>
+     *
+     * <code>bool iterator = 13;</code>
+     * @return The iterator.
+     */
+    @java.lang.Override
+    public boolean getIterator() {
+      return iterator_;
+    }
+    /**
+     * <pre>
+     * this will be use to define whether the method argument supports streaming as an iterator.
+     * </pre>
+     *
+     * <code>bool iterator = 13;</code>
+     * @param value The iterator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIterator(boolean value) {
+      
+      iterator_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * this will be use to define whether the method argument supports streaming as an iterator.
+     * </pre>
+     *
+     * <code>bool iterator = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIterator() {
+      
+      iterator_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object default_ = "";
+    /**
+     * <pre>
+     * This specify the default value of the method argument. We define this as a string
+     * because the default value can be a string, int, float, bool, or a complex object like a JSON
+     * The default_value field above should not also be used.
+     * </pre>
+     *
+     * <code>string default = 14;</code>
+     * @return The default.
+     */
+    public java.lang.String getDefault() {
+      java.lang.Object ref = default_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        default_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This specify the default value of the method argument. We define this as a string
+     * because the default value can be a string, int, float, bool, or a complex object like a JSON
+     * The default_value field above should not also be used.
+     * </pre>
+     *
+     * <code>string default = 14;</code>
+     * @return The bytes for default.
+     */
+    public com.google.protobuf.ByteString
+        getDefaultBytes() {
+      java.lang.Object ref = default_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        default_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This specify the default value of the method argument. We define this as a string
+     * because the default value can be a string, int, float, bool, or a complex object like a JSON
+     * The default_value field above should not also be used.
+     * </pre>
+     *
+     * <code>string default = 14;</code>
+     * @param value The default to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefault(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      default_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This specify the default value of the method argument. We define this as a string
+     * because the default value can be a string, int, float, bool, or a complex object like a JSON
+     * The default_value field above should not also be used.
+     * </pre>
+     *
+     * <code>string default = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDefault() {
+      
+      default_ = getDefaultInstance().getDefault();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This specify the default value of the method argument. We define this as a string
+     * because the default value can be a string, int, float, bool, or a complex object like a JSON
+     * The default_value field above should not also be used.
+     * </pre>
+     *
+     * <code>string default = 14;</code>
+     * @param value The bytes for default to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      default_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -379,6 +379,12 @@ private static final long serialVersionUID = 0L;
   public static final int PARAMS_SPECS_FIELD_NUMBER = 8;
   private java.util.List<com.clarifai.grpc.api.ModelTypeField> paramsSpecs_;
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   @java.lang.Override
@@ -386,6 +392,12 @@ private static final long serialVersionUID = 0L;
     return paramsSpecs_;
   }
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   @java.lang.Override
@@ -394,6 +406,12 @@ private static final long serialVersionUID = 0L;
     return paramsSpecs_;
   }
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   @java.lang.Override
@@ -401,6 +419,12 @@ private static final long serialVersionUID = 0L;
     return paramsSpecs_.size();
   }
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   @java.lang.Override
@@ -408,6 +432,12 @@ private static final long serialVersionUID = 0L;
     return paramsSpecs_.get(index);
   }
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   @java.lang.Override
@@ -1671,6 +1701,12 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder> paramsSpecsBuilder_;
 
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public java.util.List<com.clarifai.grpc.api.ModelTypeField> getParamsSpecsList() {
@@ -1681,6 +1717,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public int getParamsSpecsCount() {
@@ -1691,6 +1733,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public com.clarifai.grpc.api.ModelTypeField getParamsSpecs(int index) {
@@ -1701,6 +1749,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public Builder setParamsSpecs(
@@ -1718,6 +1772,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public Builder setParamsSpecs(
@@ -1732,6 +1792,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public Builder addParamsSpecs(com.clarifai.grpc.api.ModelTypeField value) {
@@ -1748,6 +1814,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public Builder addParamsSpecs(
@@ -1765,6 +1837,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public Builder addParamsSpecs(
@@ -1779,6 +1857,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public Builder addParamsSpecs(
@@ -1793,6 +1877,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public Builder addAllParamsSpecs(
@@ -1808,6 +1898,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public Builder clearParamsSpecs() {
@@ -1821,6 +1917,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public Builder removeParamsSpecs(int index) {
@@ -1834,6 +1936,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public com.clarifai.grpc.api.ModelTypeField.Builder getParamsSpecsBuilder(
@@ -1841,6 +1949,12 @@ private static final long serialVersionUID = 0L;
       return getParamsSpecsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public com.clarifai.grpc.api.ModelTypeFieldOrBuilder getParamsSpecsOrBuilder(
@@ -1851,6 +1965,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
@@ -1862,6 +1982,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public com.clarifai.grpc.api.ModelTypeField.Builder addParamsSpecsBuilder() {
@@ -1869,6 +1995,12 @@ private static final long serialVersionUID = 0L;
           com.clarifai.grpc.api.ModelTypeField.getDefaultInstance());
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public com.clarifai.grpc.api.ModelTypeField.Builder addParamsSpecsBuilder(
@@ -1877,6 +2009,12 @@ private static final long serialVersionUID = 0L;
           index, com.clarifai.grpc.api.ModelTypeField.getDefaultInstance());
     }
     /**
+     * <pre>
+     * These allow you to specifcy addition fields that a specific model supports beyond those defined
+     * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+     * proto.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
      */
     public java.util.List<com.clarifai.grpc.api.ModelTypeField.Builder> 

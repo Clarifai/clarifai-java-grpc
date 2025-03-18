@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     expectedInputLayers_ = java.util.Collections.emptyList();
     expectedOutputLayers_ = java.util.Collections.emptyList();
     evaluationType_ = 0;
+    methodSignatures_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -152,6 +153,15 @@ private static final long serialVersionUID = 0L;
             evaluationType_ = rawValue;
             break;
           }
+          case 154: {
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              methodSignatures_ = new java.util.ArrayList<com.clarifai.grpc.api.MethodSignature>();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            methodSignatures_.add(
+                input.readMessage(com.clarifai.grpc.api.MethodSignature.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -183,6 +193,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
         expectedOutputLayers_ = java.util.Collections.unmodifiableList(expectedOutputLayers_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        methodSignatures_ = java.util.Collections.unmodifiableList(methodSignatures_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -714,6 +727,76 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.clarifai.grpc.api.EvaluationType.UNRECOGNIZED : result;
   }
 
+  public static final int METHOD_SIGNATURES_FIELD_NUMBER = 19;
+  private java.util.List<com.clarifai.grpc.api.MethodSignature> methodSignatures_;
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.MethodSignature> getMethodSignaturesList() {
+    return methodSignatures_;
+  }
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.MethodSignatureOrBuilder> 
+      getMethodSignaturesOrBuilderList() {
+    return methodSignatures_;
+  }
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  @java.lang.Override
+  public int getMethodSignaturesCount() {
+    return methodSignatures_.size();
+  }
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.MethodSignature getMethodSignatures(int index) {
+    return methodSignatures_.get(index);
+  }
+  /**
+   * <pre>
+   * method signature for this model type
+   * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+   * as it can define any python function call.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignaturesOrBuilder(
+      int index) {
+    return methodSignatures_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -766,6 +849,9 @@ private static final long serialVersionUID = 0L;
     }
     if (evaluationType_ != com.clarifai.grpc.api.EvaluationType.Undefined.getNumber()) {
       output.writeEnum(18, evaluationType_);
+    }
+    for (int i = 0; i < methodSignatures_.size(); i++) {
+      output.writeMessage(19, methodSignatures_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -833,6 +919,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(18, evaluationType_);
     }
+    for (int i = 0; i < methodSignatures_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, methodSignatures_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -873,6 +963,8 @@ private static final long serialVersionUID = 0L;
     if (!getExpectedOutputLayersList()
         .equals(other.getExpectedOutputLayersList())) return false;
     if (evaluationType_ != other.evaluationType_) return false;
+    if (!getMethodSignaturesList()
+        .equals(other.getMethodSignaturesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -924,6 +1016,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + EVALUATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + evaluationType_;
+    if (getMethodSignaturesCount() > 0) {
+      hash = (37 * hash) + METHOD_SIGNATURES_FIELD_NUMBER;
+      hash = (53 * hash) + getMethodSignaturesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1060,6 +1156,7 @@ private static final long serialVersionUID = 0L;
         getModelTypeFieldsFieldBuilder();
         getExpectedInputLayersFieldBuilder();
         getExpectedOutputLayersFieldBuilder();
+        getMethodSignaturesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1103,6 +1200,12 @@ private static final long serialVersionUID = 0L;
       }
       evaluationType_ = 0;
 
+      if (methodSignaturesBuilder_ == null) {
+        methodSignatures_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      } else {
+        methodSignaturesBuilder_.clear();
+      }
       return this;
     }
 
@@ -1175,6 +1278,15 @@ private static final long serialVersionUID = 0L;
         result.expectedOutputLayers_ = expectedOutputLayersBuilder_.build();
       }
       result.evaluationType_ = evaluationType_;
+      if (methodSignaturesBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          methodSignatures_ = java.util.Collections.unmodifiableList(methodSignatures_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.methodSignatures_ = methodSignatures_;
+      } else {
+        result.methodSignatures_ = methodSignaturesBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1347,6 +1459,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.evaluationType_ != 0) {
         setEvaluationTypeValue(other.getEvaluationTypeValue());
+      }
+      if (methodSignaturesBuilder_ == null) {
+        if (!other.methodSignatures_.isEmpty()) {
+          if (methodSignatures_.isEmpty()) {
+            methodSignatures_ = other.methodSignatures_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureMethodSignaturesIsMutable();
+            methodSignatures_.addAll(other.methodSignatures_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.methodSignatures_.isEmpty()) {
+          if (methodSignaturesBuilder_.isEmpty()) {
+            methodSignaturesBuilder_.dispose();
+            methodSignaturesBuilder_ = null;
+            methodSignatures_ = other.methodSignatures_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            methodSignaturesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMethodSignaturesFieldBuilder() : null;
+          } else {
+            methodSignaturesBuilder_.addAllMessages(other.methodSignatures_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3153,6 +3291,354 @@ private static final long serialVersionUID = 0L;
       evaluationType_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.MethodSignature> methodSignatures_ =
+      java.util.Collections.emptyList();
+    private void ensureMethodSignaturesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        methodSignatures_ = new java.util.ArrayList<com.clarifai.grpc.api.MethodSignature>(methodSignatures_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.MethodSignature, com.clarifai.grpc.api.MethodSignature.Builder, com.clarifai.grpc.api.MethodSignatureOrBuilder> methodSignaturesBuilder_;
+
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.MethodSignature> getMethodSignaturesList() {
+      if (methodSignaturesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(methodSignatures_);
+      } else {
+        return methodSignaturesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public int getMethodSignaturesCount() {
+      if (methodSignaturesBuilder_ == null) {
+        return methodSignatures_.size();
+      } else {
+        return methodSignaturesBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public com.clarifai.grpc.api.MethodSignature getMethodSignatures(int index) {
+      if (methodSignaturesBuilder_ == null) {
+        return methodSignatures_.get(index);
+      } else {
+        return methodSignaturesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public Builder setMethodSignatures(
+        int index, com.clarifai.grpc.api.MethodSignature value) {
+      if (methodSignaturesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.set(index, value);
+        onChanged();
+      } else {
+        methodSignaturesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public Builder setMethodSignatures(
+        int index, com.clarifai.grpc.api.MethodSignature.Builder builderForValue) {
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        methodSignaturesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public Builder addMethodSignatures(com.clarifai.grpc.api.MethodSignature value) {
+      if (methodSignaturesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.add(value);
+        onChanged();
+      } else {
+        methodSignaturesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public Builder addMethodSignatures(
+        int index, com.clarifai.grpc.api.MethodSignature value) {
+      if (methodSignaturesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.add(index, value);
+        onChanged();
+      } else {
+        methodSignaturesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public Builder addMethodSignatures(
+        com.clarifai.grpc.api.MethodSignature.Builder builderForValue) {
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.add(builderForValue.build());
+        onChanged();
+      } else {
+        methodSignaturesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public Builder addMethodSignatures(
+        int index, com.clarifai.grpc.api.MethodSignature.Builder builderForValue) {
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        methodSignaturesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public Builder addAllMethodSignatures(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.MethodSignature> values) {
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, methodSignatures_);
+        onChanged();
+      } else {
+        methodSignaturesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public Builder clearMethodSignatures() {
+      if (methodSignaturesBuilder_ == null) {
+        methodSignatures_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        methodSignaturesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public Builder removeMethodSignatures(int index) {
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.remove(index);
+        onChanged();
+      } else {
+        methodSignaturesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public com.clarifai.grpc.api.MethodSignature.Builder getMethodSignaturesBuilder(
+        int index) {
+      return getMethodSignaturesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignaturesOrBuilder(
+        int index) {
+      if (methodSignaturesBuilder_ == null) {
+        return methodSignatures_.get(index);  } else {
+        return methodSignaturesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.MethodSignatureOrBuilder> 
+         getMethodSignaturesOrBuilderList() {
+      if (methodSignaturesBuilder_ != null) {
+        return methodSignaturesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(methodSignatures_);
+      }
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public com.clarifai.grpc.api.MethodSignature.Builder addMethodSignaturesBuilder() {
+      return getMethodSignaturesFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.MethodSignature.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public com.clarifai.grpc.api.MethodSignature.Builder addMethodSignaturesBuilder(
+        int index) {
+      return getMethodSignaturesFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.MethodSignature.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * method signature for this model type
+     * This will be used in the future to replace input_fields, output_fields, and model_type_fields
+     * as it can define any python function call.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 19;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.MethodSignature.Builder> 
+         getMethodSignaturesBuilderList() {
+      return getMethodSignaturesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.MethodSignature, com.clarifai.grpc.api.MethodSignature.Builder, com.clarifai.grpc.api.MethodSignatureOrBuilder> 
+        getMethodSignaturesFieldBuilder() {
+      if (methodSignaturesBuilder_ == null) {
+        methodSignaturesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.MethodSignature, com.clarifai.grpc.api.MethodSignature.Builder, com.clarifai.grpc.api.MethodSignatureOrBuilder>(
+                methodSignatures_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        methodSignatures_ = null;
+      }
+      return methodSignaturesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

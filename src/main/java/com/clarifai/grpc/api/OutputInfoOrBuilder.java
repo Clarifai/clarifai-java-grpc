@@ -148,24 +148,54 @@ public interface OutputInfoOrBuilder extends
   com.google.protobuf.StructOrBuilder getParamsOrBuilder();
 
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   java.util.List<com.clarifai.grpc.api.ModelTypeField> 
       getParamsSpecsList();
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   com.clarifai.grpc.api.ModelTypeField getParamsSpecs(int index);
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   int getParamsSpecsCount();
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
       getParamsSpecsOrBuilderList();
   /**
+   * <pre>
+   * These allow you to specifcy addition fields that a specific model supports beyond those defined
+   * in it's ModelType. This field is to be deprecated and will be replaced by MethodSignature
+   * proto.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
    */
   com.clarifai.grpc.api.ModelTypeFieldOrBuilder getParamsSpecsOrBuilder(
