@@ -26,7 +26,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     license_ = "";
     trainLog_ = "";
-    methodSignature_ = java.util.Collections.emptyList();
+    methodSignatures_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -290,10 +290,10 @@ private static final long serialVersionUID = 0L;
           }
           case 210: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              methodSignature_ = new java.util.ArrayList<com.clarifai.grpc.api.MethodSignature>();
+              methodSignatures_ = new java.util.ArrayList<com.clarifai.grpc.api.MethodSignature>();
               mutable_bitField0_ |= 0x00000001;
             }
-            methodSignature_.add(
+            methodSignatures_.add(
                 input.readMessage(com.clarifai.grpc.api.MethodSignature.parser(), extensionRegistry));
             break;
           }
@@ -315,7 +315,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        methodSignature_ = java.util.Collections.unmodifiableList(methodSignature_);
+        methodSignatures_ = java.util.Collections.unmodifiableList(methodSignatures_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1164,64 +1164,64 @@ private static final long serialVersionUID = 0L;
     return getBuildInfo();
   }
 
-  public static final int METHOD_SIGNATURE_FIELD_NUMBER = 26;
-  private java.util.List<com.clarifai.grpc.api.MethodSignature> methodSignature_;
+  public static final int METHOD_SIGNATURES_FIELD_NUMBER = 26;
+  private java.util.List<com.clarifai.grpc.api.MethodSignature> methodSignatures_;
   /**
    * <pre>
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
   @java.lang.Override
-  public java.util.List<com.clarifai.grpc.api.MethodSignature> getMethodSignatureList() {
-    return methodSignature_;
+  public java.util.List<com.clarifai.grpc.api.MethodSignature> getMethodSignaturesList() {
+    return methodSignatures_;
   }
   /**
    * <pre>
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.MethodSignatureOrBuilder> 
-      getMethodSignatureOrBuilderList() {
-    return methodSignature_;
+      getMethodSignaturesOrBuilderList() {
+    return methodSignatures_;
   }
   /**
    * <pre>
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
   @java.lang.Override
-  public int getMethodSignatureCount() {
-    return methodSignature_.size();
+  public int getMethodSignaturesCount() {
+    return methodSignatures_.size();
   }
   /**
    * <pre>
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.MethodSignature getMethodSignature(int index) {
-    return methodSignature_.get(index);
+  public com.clarifai.grpc.api.MethodSignature getMethodSignatures(int index) {
+    return methodSignatures_.get(index);
   }
   /**
    * <pre>
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignatureOrBuilder(
+  public com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignaturesOrBuilder(
       int index) {
-    return methodSignature_.get(index);
+    return methodSignatures_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1304,8 +1304,8 @@ private static final long serialVersionUID = 0L;
     if (buildInfo_ != null) {
       output.writeMessage(25, getBuildInfo());
     }
-    for (int i = 0; i < methodSignature_.size(); i++) {
-      output.writeMessage(26, methodSignature_.get(i));
+    for (int i = 0; i < methodSignatures_.size(); i++) {
+      output.writeMessage(26, methodSignatures_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1398,9 +1398,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(25, getBuildInfo());
     }
-    for (int i = 0; i < methodSignature_.size(); i++) {
+    for (int i = 0; i < methodSignatures_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(26, methodSignature_.get(i));
+        .computeMessageSize(26, methodSignatures_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1503,8 +1503,8 @@ private static final long serialVersionUID = 0L;
       if (!getBuildInfo()
           .equals(other.getBuildInfo())) return false;
     }
-    if (!getMethodSignatureList()
-        .equals(other.getMethodSignatureList())) return false;
+    if (!getMethodSignaturesList()
+        .equals(other.getMethodSignaturesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1588,9 +1588,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BUILD_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getBuildInfo().hashCode();
     }
-    if (getMethodSignatureCount() > 0) {
-      hash = (37 * hash) + METHOD_SIGNATURE_FIELD_NUMBER;
-      hash = (53 * hash) + getMethodSignatureList().hashCode();
+    if (getMethodSignaturesCount() > 0) {
+      hash = (37 * hash) + METHOD_SIGNATURES_FIELD_NUMBER;
+      hash = (53 * hash) + getMethodSignaturesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1724,7 +1724,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getMethodSignatureFieldBuilder();
+        getMethodSignaturesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1830,11 +1830,11 @@ private static final long serialVersionUID = 0L;
         buildInfo_ = null;
         buildInfoBuilder_ = null;
       }
-      if (methodSignatureBuilder_ == null) {
-        methodSignature_ = java.util.Collections.emptyList();
+      if (methodSignaturesBuilder_ == null) {
+        methodSignatures_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        methodSignatureBuilder_.clear();
+        methodSignaturesBuilder_.clear();
       }
       return this;
     }
@@ -1941,14 +1941,14 @@ private static final long serialVersionUID = 0L;
       } else {
         result.buildInfo_ = buildInfoBuilder_.build();
       }
-      if (methodSignatureBuilder_ == null) {
+      if (methodSignaturesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          methodSignature_ = java.util.Collections.unmodifiableList(methodSignature_);
+          methodSignatures_ = java.util.Collections.unmodifiableList(methodSignatures_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.methodSignature_ = methodSignature_;
+        result.methodSignatures_ = methodSignatures_;
       } else {
-        result.methodSignature_ = methodSignatureBuilder_.build();
+        result.methodSignatures_ = methodSignaturesBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2070,29 +2070,29 @@ private static final long serialVersionUID = 0L;
       if (other.hasBuildInfo()) {
         mergeBuildInfo(other.getBuildInfo());
       }
-      if (methodSignatureBuilder_ == null) {
-        if (!other.methodSignature_.isEmpty()) {
-          if (methodSignature_.isEmpty()) {
-            methodSignature_ = other.methodSignature_;
+      if (methodSignaturesBuilder_ == null) {
+        if (!other.methodSignatures_.isEmpty()) {
+          if (methodSignatures_.isEmpty()) {
+            methodSignatures_ = other.methodSignatures_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureMethodSignatureIsMutable();
-            methodSignature_.addAll(other.methodSignature_);
+            ensureMethodSignaturesIsMutable();
+            methodSignatures_.addAll(other.methodSignatures_);
           }
           onChanged();
         }
       } else {
-        if (!other.methodSignature_.isEmpty()) {
-          if (methodSignatureBuilder_.isEmpty()) {
-            methodSignatureBuilder_.dispose();
-            methodSignatureBuilder_ = null;
-            methodSignature_ = other.methodSignature_;
+        if (!other.methodSignatures_.isEmpty()) {
+          if (methodSignaturesBuilder_.isEmpty()) {
+            methodSignaturesBuilder_.dispose();
+            methodSignaturesBuilder_ = null;
+            methodSignatures_ = other.methodSignatures_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            methodSignatureBuilder_ = 
+            methodSignaturesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getMethodSignatureFieldBuilder() : null;
+                 getMethodSignaturesFieldBuilder() : null;
           } else {
-            methodSignatureBuilder_.addAllMessages(other.methodSignature_);
+            methodSignaturesBuilder_.addAllMessages(other.methodSignatures_);
           }
         }
       }
@@ -4942,30 +4942,30 @@ private static final long serialVersionUID = 0L;
       return buildInfoBuilder_;
     }
 
-    private java.util.List<com.clarifai.grpc.api.MethodSignature> methodSignature_ =
+    private java.util.List<com.clarifai.grpc.api.MethodSignature> methodSignatures_ =
       java.util.Collections.emptyList();
-    private void ensureMethodSignatureIsMutable() {
+    private void ensureMethodSignaturesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        methodSignature_ = new java.util.ArrayList<com.clarifai.grpc.api.MethodSignature>(methodSignature_);
+        methodSignatures_ = new java.util.ArrayList<com.clarifai.grpc.api.MethodSignature>(methodSignatures_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.MethodSignature, com.clarifai.grpc.api.MethodSignature.Builder, com.clarifai.grpc.api.MethodSignatureOrBuilder> methodSignatureBuilder_;
+        com.clarifai.grpc.api.MethodSignature, com.clarifai.grpc.api.MethodSignature.Builder, com.clarifai.grpc.api.MethodSignatureOrBuilder> methodSignaturesBuilder_;
 
     /**
      * <pre>
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public java.util.List<com.clarifai.grpc.api.MethodSignature> getMethodSignatureList() {
-      if (methodSignatureBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(methodSignature_);
+    public java.util.List<com.clarifai.grpc.api.MethodSignature> getMethodSignaturesList() {
+      if (methodSignaturesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(methodSignatures_);
       } else {
-        return methodSignatureBuilder_.getMessageList();
+        return methodSignaturesBuilder_.getMessageList();
       }
     }
     /**
@@ -4973,13 +4973,13 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public int getMethodSignatureCount() {
-      if (methodSignatureBuilder_ == null) {
-        return methodSignature_.size();
+    public int getMethodSignaturesCount() {
+      if (methodSignaturesBuilder_ == null) {
+        return methodSignatures_.size();
       } else {
-        return methodSignatureBuilder_.getCount();
+        return methodSignaturesBuilder_.getCount();
       }
     }
     /**
@@ -4987,13 +4987,13 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public com.clarifai.grpc.api.MethodSignature getMethodSignature(int index) {
-      if (methodSignatureBuilder_ == null) {
-        return methodSignature_.get(index);
+    public com.clarifai.grpc.api.MethodSignature getMethodSignatures(int index) {
+      if (methodSignaturesBuilder_ == null) {
+        return methodSignatures_.get(index);
       } else {
-        return methodSignatureBuilder_.getMessage(index);
+        return methodSignaturesBuilder_.getMessage(index);
       }
     }
     /**
@@ -5001,19 +5001,19 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public Builder setMethodSignature(
+    public Builder setMethodSignatures(
         int index, com.clarifai.grpc.api.MethodSignature value) {
-      if (methodSignatureBuilder_ == null) {
+      if (methodSignaturesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureMethodSignatureIsMutable();
-        methodSignature_.set(index, value);
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.set(index, value);
         onChanged();
       } else {
-        methodSignatureBuilder_.setMessage(index, value);
+        methodSignaturesBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -5022,16 +5022,16 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public Builder setMethodSignature(
+    public Builder setMethodSignatures(
         int index, com.clarifai.grpc.api.MethodSignature.Builder builderForValue) {
-      if (methodSignatureBuilder_ == null) {
-        ensureMethodSignatureIsMutable();
-        methodSignature_.set(index, builderForValue.build());
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.set(index, builderForValue.build());
         onChanged();
       } else {
-        methodSignatureBuilder_.setMessage(index, builderForValue.build());
+        methodSignaturesBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -5040,18 +5040,18 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public Builder addMethodSignature(com.clarifai.grpc.api.MethodSignature value) {
-      if (methodSignatureBuilder_ == null) {
+    public Builder addMethodSignatures(com.clarifai.grpc.api.MethodSignature value) {
+      if (methodSignaturesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureMethodSignatureIsMutable();
-        methodSignature_.add(value);
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.add(value);
         onChanged();
       } else {
-        methodSignatureBuilder_.addMessage(value);
+        methodSignaturesBuilder_.addMessage(value);
       }
       return this;
     }
@@ -5060,19 +5060,19 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public Builder addMethodSignature(
+    public Builder addMethodSignatures(
         int index, com.clarifai.grpc.api.MethodSignature value) {
-      if (methodSignatureBuilder_ == null) {
+      if (methodSignaturesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureMethodSignatureIsMutable();
-        methodSignature_.add(index, value);
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.add(index, value);
         onChanged();
       } else {
-        methodSignatureBuilder_.addMessage(index, value);
+        methodSignaturesBuilder_.addMessage(index, value);
       }
       return this;
     }
@@ -5081,16 +5081,16 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public Builder addMethodSignature(
+    public Builder addMethodSignatures(
         com.clarifai.grpc.api.MethodSignature.Builder builderForValue) {
-      if (methodSignatureBuilder_ == null) {
-        ensureMethodSignatureIsMutable();
-        methodSignature_.add(builderForValue.build());
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.add(builderForValue.build());
         onChanged();
       } else {
-        methodSignatureBuilder_.addMessage(builderForValue.build());
+        methodSignaturesBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -5099,16 +5099,16 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public Builder addMethodSignature(
+    public Builder addMethodSignatures(
         int index, com.clarifai.grpc.api.MethodSignature.Builder builderForValue) {
-      if (methodSignatureBuilder_ == null) {
-        ensureMethodSignatureIsMutable();
-        methodSignature_.add(index, builderForValue.build());
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.add(index, builderForValue.build());
         onChanged();
       } else {
-        methodSignatureBuilder_.addMessage(index, builderForValue.build());
+        methodSignaturesBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -5117,17 +5117,17 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public Builder addAllMethodSignature(
+    public Builder addAllMethodSignatures(
         java.lang.Iterable<? extends com.clarifai.grpc.api.MethodSignature> values) {
-      if (methodSignatureBuilder_ == null) {
-        ensureMethodSignatureIsMutable();
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, methodSignature_);
+            values, methodSignatures_);
         onChanged();
       } else {
-        methodSignatureBuilder_.addAllMessages(values);
+        methodSignaturesBuilder_.addAllMessages(values);
       }
       return this;
     }
@@ -5136,15 +5136,15 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public Builder clearMethodSignature() {
-      if (methodSignatureBuilder_ == null) {
-        methodSignature_ = java.util.Collections.emptyList();
+    public Builder clearMethodSignatures() {
+      if (methodSignaturesBuilder_ == null) {
+        methodSignatures_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        methodSignatureBuilder_.clear();
+        methodSignaturesBuilder_.clear();
       }
       return this;
     }
@@ -5153,15 +5153,15 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public Builder removeMethodSignature(int index) {
-      if (methodSignatureBuilder_ == null) {
-        ensureMethodSignatureIsMutable();
-        methodSignature_.remove(index);
+    public Builder removeMethodSignatures(int index) {
+      if (methodSignaturesBuilder_ == null) {
+        ensureMethodSignaturesIsMutable();
+        methodSignatures_.remove(index);
         onChanged();
       } else {
-        methodSignatureBuilder_.remove(index);
+        methodSignaturesBuilder_.remove(index);
       }
       return this;
     }
@@ -5170,24 +5170,24 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public com.clarifai.grpc.api.MethodSignature.Builder getMethodSignatureBuilder(
+    public com.clarifai.grpc.api.MethodSignature.Builder getMethodSignaturesBuilder(
         int index) {
-      return getMethodSignatureFieldBuilder().getBuilder(index);
+      return getMethodSignaturesFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignatureOrBuilder(
+    public com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignaturesOrBuilder(
         int index) {
-      if (methodSignatureBuilder_ == null) {
-        return methodSignature_.get(index);  } else {
-        return methodSignatureBuilder_.getMessageOrBuilder(index);
+      if (methodSignaturesBuilder_ == null) {
+        return methodSignatures_.get(index);  } else {
+        return methodSignaturesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
@@ -5195,14 +5195,14 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.MethodSignatureOrBuilder> 
-         getMethodSignatureOrBuilderList() {
-      if (methodSignatureBuilder_ != null) {
-        return methodSignatureBuilder_.getMessageOrBuilderList();
+         getMethodSignaturesOrBuilderList() {
+      if (methodSignaturesBuilder_ != null) {
+        return methodSignaturesBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(methodSignature_);
+        return java.util.Collections.unmodifiableList(methodSignatures_);
       }
     }
     /**
@@ -5210,10 +5210,10 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public com.clarifai.grpc.api.MethodSignature.Builder addMethodSignatureBuilder() {
-      return getMethodSignatureFieldBuilder().addBuilder(
+    public com.clarifai.grpc.api.MethodSignature.Builder addMethodSignaturesBuilder() {
+      return getMethodSignaturesFieldBuilder().addBuilder(
           com.clarifai.grpc.api.MethodSignature.getDefaultInstance());
     }
     /**
@@ -5221,11 +5221,11 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
-    public com.clarifai.grpc.api.MethodSignature.Builder addMethodSignatureBuilder(
+    public com.clarifai.grpc.api.MethodSignature.Builder addMethodSignaturesBuilder(
         int index) {
-      return getMethodSignatureFieldBuilder().addBuilder(
+      return getMethodSignaturesFieldBuilder().addBuilder(
           index, com.clarifai.grpc.api.MethodSignature.getDefaultInstance());
     }
     /**
@@ -5233,25 +5233,25 @@ private static final long serialVersionUID = 0L;
      * Model signature information for the model version
      * </pre>
      *
-     * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+     * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
      */
     public java.util.List<com.clarifai.grpc.api.MethodSignature.Builder> 
-         getMethodSignatureBuilderList() {
-      return getMethodSignatureFieldBuilder().getBuilderList();
+         getMethodSignaturesBuilderList() {
+      return getMethodSignaturesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.clarifai.grpc.api.MethodSignature, com.clarifai.grpc.api.MethodSignature.Builder, com.clarifai.grpc.api.MethodSignatureOrBuilder> 
-        getMethodSignatureFieldBuilder() {
-      if (methodSignatureBuilder_ == null) {
-        methodSignatureBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getMethodSignaturesFieldBuilder() {
+      if (methodSignaturesBuilder_ == null) {
+        methodSignaturesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.clarifai.grpc.api.MethodSignature, com.clarifai.grpc.api.MethodSignature.Builder, com.clarifai.grpc.api.MethodSignatureOrBuilder>(
-                methodSignature_,
+                methodSignatures_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        methodSignature_ = null;
+        methodSignatures_ = null;
       }
-      return methodSignatureBuilder_;
+      return methodSignaturesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

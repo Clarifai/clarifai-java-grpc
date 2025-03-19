@@ -522,42 +522,42 @@ public interface ModelVersionOrBuilder extends
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
   java.util.List<com.clarifai.grpc.api.MethodSignature> 
-      getMethodSignatureList();
+      getMethodSignaturesList();
   /**
    * <pre>
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
-  com.clarifai.grpc.api.MethodSignature getMethodSignature(int index);
+  com.clarifai.grpc.api.MethodSignature getMethodSignatures(int index);
   /**
    * <pre>
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
-  int getMethodSignatureCount();
+  int getMethodSignaturesCount();
   /**
    * <pre>
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.MethodSignatureOrBuilder> 
-      getMethodSignatureOrBuilderList();
+      getMethodSignaturesOrBuilderList();
   /**
    * <pre>
    * Model signature information for the model version
    * </pre>
    *
-   * <code>repeated .clarifai.api.MethodSignature method_signature = 26;</code>
+   * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
-  com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignatureOrBuilder(
+  com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignaturesOrBuilder(
       int index);
 }
