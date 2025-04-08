@@ -274,4 +274,24 @@ public interface WorkflowVersionEvaluationOrBuilder extends
    * <code>.google.protobuf.Timestamp modified_at = 12;</code>
    */
   com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
+
+  /**
+   * <pre>
+   * The ID of the node that is being evaluated.
+   * </pre>
+   *
+   * <code>string target_node_id = 13;</code>
+   * @return The targetNodeId.
+   */
+  java.lang.String getTargetNodeId();
+  /**
+   * <pre>
+   * The ID of the node that is being evaluated.
+   * </pre>
+   *
+   * <code>string target_node_id = 13;</code>
+   * @return The bytes for targetNodeId.
+   */
+  com.google.protobuf.ByteString
+      getTargetNodeIdBytes();
 }

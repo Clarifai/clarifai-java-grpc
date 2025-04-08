@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     workflowId_ = "";
     workflowVersionId_ = "";
     workflowVersionEvaluations_ = java.util.Collections.emptyList();
+    runnerSelectors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -86,6 +87,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.WorkflowVersionEvaluation.parser(), extensionRegistry));
             break;
           }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              runnerSelectors_ = new java.util.ArrayList<com.clarifai.grpc.api.RunnerSelector>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            runnerSelectors_.add(
+                input.readMessage(com.clarifai.grpc.api.RunnerSelector.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -105,6 +115,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         workflowVersionEvaluations_ = java.util.Collections.unmodifiableList(workflowVersionEvaluations_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        runnerSelectors_ = java.util.Collections.unmodifiableList(runnerSelectors_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -234,6 +247,7 @@ private static final long serialVersionUID = 0L;
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -249,6 +263,7 @@ private static final long serialVersionUID = 0L;
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -265,6 +280,7 @@ private static final long serialVersionUID = 0L;
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -280,6 +296,7 @@ private static final long serialVersionUID = 0L;
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -295,6 +312,7 @@ private static final long serialVersionUID = 0L;
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -303,6 +321,46 @@ private static final long serialVersionUID = 0L;
   public com.clarifai.grpc.api.WorkflowVersionEvaluationOrBuilder getWorkflowVersionEvaluationsOrBuilder(
       int index) {
     return workflowVersionEvaluations_.get(index);
+  }
+
+  public static final int RUNNER_SELECTORS_FIELD_NUMBER = 5;
+  private java.util.List<com.clarifai.grpc.api.RunnerSelector> runnerSelectors_;
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.RunnerSelector> getRunnerSelectorsList() {
+    return runnerSelectors_;
+  }
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.RunnerSelectorOrBuilder> 
+      getRunnerSelectorsOrBuilderList() {
+    return runnerSelectors_;
+  }
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  @java.lang.Override
+  public int getRunnerSelectorsCount() {
+    return runnerSelectors_.size();
+  }
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerSelector getRunnerSelectors(int index) {
+    return runnerSelectors_.get(index);
+  }
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorsOrBuilder(
+      int index) {
+    return runnerSelectors_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -331,6 +389,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < workflowVersionEvaluations_.size(); i++) {
       output.writeMessage(4, workflowVersionEvaluations_.get(i));
     }
+    for (int i = 0; i < runnerSelectors_.size(); i++) {
+      output.writeMessage(5, runnerSelectors_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -353,6 +414,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < workflowVersionEvaluations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, workflowVersionEvaluations_.get(i));
+    }
+    for (int i = 0; i < runnerSelectors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, runnerSelectors_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -380,6 +445,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getWorkflowVersionId())) return false;
     if (!getWorkflowVersionEvaluationsList()
         .equals(other.getWorkflowVersionEvaluationsList())) return false;
+    if (!getRunnerSelectorsList()
+        .equals(other.getRunnerSelectorsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -402,6 +469,10 @@ private static final long serialVersionUID = 0L;
     if (getWorkflowVersionEvaluationsCount() > 0) {
       hash = (37 * hash) + WORKFLOW_VERSION_EVALUATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflowVersionEvaluationsList().hashCode();
+    }
+    if (getRunnerSelectorsCount() > 0) {
+      hash = (37 * hash) + RUNNER_SELECTORS_FIELD_NUMBER;
+      hash = (53 * hash) + getRunnerSelectorsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -532,6 +603,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getWorkflowVersionEvaluationsFieldBuilder();
+        getRunnerSelectorsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -552,6 +624,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         workflowVersionEvaluationsBuilder_.clear();
+      }
+      if (runnerSelectorsBuilder_ == null) {
+        runnerSelectors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        runnerSelectorsBuilder_.clear();
       }
       return this;
     }
@@ -595,6 +673,15 @@ private static final long serialVersionUID = 0L;
         result.workflowVersionEvaluations_ = workflowVersionEvaluations_;
       } else {
         result.workflowVersionEvaluations_ = workflowVersionEvaluationsBuilder_.build();
+      }
+      if (runnerSelectorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          runnerSelectors_ = java.util.Collections.unmodifiableList(runnerSelectors_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.runnerSelectors_ = runnerSelectors_;
+      } else {
+        result.runnerSelectors_ = runnerSelectorsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -678,6 +765,32 @@ private static final long serialVersionUID = 0L;
                  getWorkflowVersionEvaluationsFieldBuilder() : null;
           } else {
             workflowVersionEvaluationsBuilder_.addAllMessages(other.workflowVersionEvaluations_);
+          }
+        }
+      }
+      if (runnerSelectorsBuilder_ == null) {
+        if (!other.runnerSelectors_.isEmpty()) {
+          if (runnerSelectors_.isEmpty()) {
+            runnerSelectors_ = other.runnerSelectors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRunnerSelectorsIsMutable();
+            runnerSelectors_.addAll(other.runnerSelectors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.runnerSelectors_.isEmpty()) {
+          if (runnerSelectorsBuilder_.isEmpty()) {
+            runnerSelectorsBuilder_.dispose();
+            runnerSelectorsBuilder_ = null;
+            runnerSelectors_ = other.runnerSelectors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            runnerSelectorsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getRunnerSelectorsFieldBuilder() : null;
+          } else {
+            runnerSelectorsBuilder_.addAllMessages(other.runnerSelectors_);
           }
         }
       }
@@ -1001,6 +1114,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1019,6 +1133,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1037,6 +1152,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1055,6 +1171,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1080,6 +1197,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1102,6 +1220,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1126,6 +1245,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1151,6 +1271,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1173,6 +1294,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1195,6 +1317,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1218,6 +1341,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1239,6 +1363,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1260,6 +1385,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1275,6 +1401,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1293,6 +1420,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1312,6 +1440,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1327,6 +1456,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1343,6 +1473,7 @@ private static final long serialVersionUID = 0L;
      * - ground_truth_dataset_id
      * - ground_truth_dataset_version_id
      * - id
+     * - target_node_id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1364,6 +1495,246 @@ private static final long serialVersionUID = 0L;
         workflowVersionEvaluations_ = null;
       }
       return workflowVersionEvaluationsBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.RunnerSelector> runnerSelectors_ =
+      java.util.Collections.emptyList();
+    private void ensureRunnerSelectorsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        runnerSelectors_ = new java.util.ArrayList<com.clarifai.grpc.api.RunnerSelector>(runnerSelectors_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder> runnerSelectorsBuilder_;
+
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.RunnerSelector> getRunnerSelectorsList() {
+      if (runnerSelectorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(runnerSelectors_);
+      } else {
+        return runnerSelectorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public int getRunnerSelectorsCount() {
+      if (runnerSelectorsBuilder_ == null) {
+        return runnerSelectors_.size();
+      } else {
+        return runnerSelectorsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelector getRunnerSelectors(int index) {
+      if (runnerSelectorsBuilder_ == null) {
+        return runnerSelectors_.get(index);
+      } else {
+        return runnerSelectorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public Builder setRunnerSelectors(
+        int index, com.clarifai.grpc.api.RunnerSelector value) {
+      if (runnerSelectorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.set(index, value);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public Builder setRunnerSelectors(
+        int index, com.clarifai.grpc.api.RunnerSelector.Builder builderForValue) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public Builder addRunnerSelectors(com.clarifai.grpc.api.RunnerSelector value) {
+      if (runnerSelectorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.add(value);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public Builder addRunnerSelectors(
+        int index, com.clarifai.grpc.api.RunnerSelector value) {
+      if (runnerSelectorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.add(index, value);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public Builder addRunnerSelectors(
+        com.clarifai.grpc.api.RunnerSelector.Builder builderForValue) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public Builder addRunnerSelectors(
+        int index, com.clarifai.grpc.api.RunnerSelector.Builder builderForValue) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public Builder addAllRunnerSelectors(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.RunnerSelector> values) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, runnerSelectors_);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public Builder clearRunnerSelectors() {
+      if (runnerSelectorsBuilder_ == null) {
+        runnerSelectors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public Builder removeRunnerSelectors(int index) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.remove(index);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelector.Builder getRunnerSelectorsBuilder(
+        int index) {
+      return getRunnerSelectorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorsOrBuilder(
+        int index) {
+      if (runnerSelectorsBuilder_ == null) {
+        return runnerSelectors_.get(index);  } else {
+        return runnerSelectorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.RunnerSelectorOrBuilder> 
+         getRunnerSelectorsOrBuilderList() {
+      if (runnerSelectorsBuilder_ != null) {
+        return runnerSelectorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(runnerSelectors_);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelector.Builder addRunnerSelectorsBuilder() {
+      return getRunnerSelectorsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.RunnerSelector.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelector.Builder addRunnerSelectorsBuilder(
+        int index) {
+      return getRunnerSelectorsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.RunnerSelector.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.RunnerSelector.Builder> 
+         getRunnerSelectorsBuilderList() {
+      return getRunnerSelectorsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder> 
+        getRunnerSelectorsFieldBuilder() {
+      if (runnerSelectorsBuilder_ == null) {
+        runnerSelectorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder>(
+                runnerSelectors_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        runnerSelectors_ = null;
+      }
+      return runnerSelectorsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

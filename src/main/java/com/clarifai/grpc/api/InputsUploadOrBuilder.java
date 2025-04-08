@@ -34,21 +34,27 @@ public interface InputsUploadOrBuilder extends
   /**
    * <pre>
    * Personal Access Token to the application to which inputs are added
+   * Deprecated: No need to send app_pat, it will be generated internally if not present
    * </pre>
    *
-   * <code>string app_pat = 2;</code>
+   * <code>string app_pat = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4584
    * @return The appPat.
    */
-  java.lang.String getAppPat();
+  @java.lang.Deprecated java.lang.String getAppPat();
   /**
    * <pre>
    * Personal Access Token to the application to which inputs are added
+   * Deprecated: No need to send app_pat, it will be generated internally if not present
    * </pre>
    *
-   * <code>string app_pat = 2;</code>
+   * <code>string app_pat = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4584
    * @return The bytes for appPat.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getAppPatBytes();
 
   /**

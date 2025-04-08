@@ -53,6 +53,7 @@ public interface PostWorkflowVersionEvaluationsRequestOrBuilder extends
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -66,6 +67,7 @@ public interface PostWorkflowVersionEvaluationsRequestOrBuilder extends
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -78,6 +80,7 @@ public interface PostWorkflowVersionEvaluationsRequestOrBuilder extends
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -90,6 +93,7 @@ public interface PostWorkflowVersionEvaluationsRequestOrBuilder extends
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -103,10 +107,35 @@ public interface PostWorkflowVersionEvaluationsRequestOrBuilder extends
    * - ground_truth_dataset_id
    * - ground_truth_dataset_version_id
    * - id
+   * - target_node_id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
    */
   com.clarifai.grpc.api.WorkflowVersionEvaluationOrBuilder getWorkflowVersionEvaluationsOrBuilder(
+      int index);
+
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.RunnerSelector> 
+      getRunnerSelectorsList();
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  com.clarifai.grpc.api.RunnerSelector getRunnerSelectors(int index);
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  int getRunnerSelectorsCount();
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.RunnerSelectorOrBuilder> 
+      getRunnerSelectorsOrBuilderList();
+  /**
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 5;</code>
+   */
+  com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorsOrBuilder(
       int index);
 }

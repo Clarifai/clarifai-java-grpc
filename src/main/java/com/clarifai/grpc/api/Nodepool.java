@@ -167,6 +167,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 104: {
+
+            enforcedMinInstances_ = input.readUInt32();
+            break;
+          }
+          case 112: {
+
+            enforcedMaxInstances_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -481,7 +491,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-   * amount.
+   * amount. This is the user desired minimum.
    * </pre>
    *
    * <code>uint32 min_instances = 9;</code>
@@ -497,7 +507,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
-   * up to this amount.
+   * up to this amount. This is the user desired maximum.
    * </pre>
    *
    * <code>uint32 max_instances = 10;</code>
@@ -506,6 +516,36 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public int getMaxInstances() {
     return maxInstances_;
+  }
+
+  public static final int ENFORCED_MIN_INSTANCES_FIELD_NUMBER = 13;
+  private int enforcedMinInstances_;
+  /**
+   * <pre>
+   * The actual minimum number of instances. Enforced by the user's plan limits.
+   * </pre>
+   *
+   * <code>uint32 enforced_min_instances = 13;</code>
+   * @return The enforcedMinInstances.
+   */
+  @java.lang.Override
+  public int getEnforcedMinInstances() {
+    return enforcedMinInstances_;
+  }
+
+  public static final int ENFORCED_MAX_INSTANCES_FIELD_NUMBER = 14;
+  private int enforcedMaxInstances_;
+  /**
+   * <pre>
+   * The actual maximum number of instances. Enforced by the user's plan limits.
+   * </pre>
+   *
+   * <code>uint32 enforced_max_instances = 14;</code>
+   * @return The enforcedMaxInstances.
+   */
+  @java.lang.Override
+  public int getEnforcedMaxInstances() {
+    return enforcedMaxInstances_;
   }
 
   public static final int VISIBILITY_FIELD_NUMBER = 11;
@@ -640,6 +680,12 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       output.writeMessage(12, getMetadata());
     }
+    if (enforcedMinInstances_ != 0) {
+      output.writeUInt32(13, enforcedMinInstances_);
+    }
+    if (enforcedMaxInstances_ != 0) {
+      output.writeUInt32(14, enforcedMaxInstances_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -691,6 +737,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getMetadata());
     }
+    if (enforcedMinInstances_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(13, enforcedMinInstances_);
+    }
+    if (enforcedMaxInstances_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(14, enforcedMaxInstances_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -736,6 +790,10 @@ private static final long serialVersionUID = 0L;
         != other.getMinInstances()) return false;
     if (getMaxInstances()
         != other.getMaxInstances()) return false;
+    if (getEnforcedMinInstances()
+        != other.getEnforcedMinInstances()) return false;
+    if (getEnforcedMaxInstances()
+        != other.getEnforcedMaxInstances()) return false;
     if (hasVisibility() != other.hasVisibility()) return false;
     if (hasVisibility()) {
       if (!getVisibility()
@@ -785,6 +843,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMinInstances();
     hash = (37 * hash) + MAX_INSTANCES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxInstances();
+    hash = (37 * hash) + ENFORCED_MIN_INSTANCES_FIELD_NUMBER;
+    hash = (53 * hash) + getEnforcedMinInstances();
+    hash = (37 * hash) + ENFORCED_MAX_INSTANCES_FIELD_NUMBER;
+    hash = (53 * hash) + getEnforcedMaxInstances();
     if (hasVisibility()) {
       hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
       hash = (53 * hash) + getVisibility().hashCode();
@@ -971,6 +1033,10 @@ private static final long serialVersionUID = 0L;
 
       maxInstances_ = 0;
 
+      enforcedMinInstances_ = 0;
+
+      enforcedMaxInstances_ = 0;
+
       if (visibilityBuilder_ == null) {
         visibility_ = null;
       } else {
@@ -1043,6 +1109,8 @@ private static final long serialVersionUID = 0L;
       }
       result.minInstances_ = minInstances_;
       result.maxInstances_ = maxInstances_;
+      result.enforcedMinInstances_ = enforcedMinInstances_;
+      result.enforcedMaxInstances_ = enforcedMaxInstances_;
       if (visibilityBuilder_ == null) {
         result.visibility_ = visibility_;
       } else {
@@ -1152,6 +1220,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMaxInstances() != 0) {
         setMaxInstances(other.getMaxInstances());
+      }
+      if (other.getEnforcedMinInstances() != 0) {
+        setEnforcedMinInstances(other.getEnforcedMinInstances());
+      }
+      if (other.getEnforcedMaxInstances() != 0) {
+        setEnforcedMaxInstances(other.getEnforcedMaxInstances());
       }
       if (other.hasVisibility()) {
         mergeVisibility(other.getVisibility());
@@ -2209,7 +2283,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     * amount.
+     * amount. This is the user desired minimum.
      * </pre>
      *
      * <code>uint32 min_instances = 9;</code>
@@ -2222,7 +2296,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     * amount.
+     * amount. This is the user desired minimum.
      * </pre>
      *
      * <code>uint32 min_instances = 9;</code>
@@ -2238,7 +2312,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     * amount.
+     * amount. This is the user desired minimum.
      * </pre>
      *
      * <code>uint32 min_instances = 9;</code>
@@ -2255,7 +2329,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
-     * up to this amount.
+     * up to this amount. This is the user desired maximum.
      * </pre>
      *
      * <code>uint32 max_instances = 10;</code>
@@ -2268,7 +2342,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
-     * up to this amount.
+     * up to this amount. This is the user desired maximum.
      * </pre>
      *
      * <code>uint32 max_instances = 10;</code>
@@ -2284,7 +2358,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
-     * up to this amount.
+     * up to this amount. This is the user desired maximum.
      * </pre>
      *
      * <code>uint32 max_instances = 10;</code>
@@ -2293,6 +2367,92 @@ private static final long serialVersionUID = 0L;
     public Builder clearMaxInstances() {
       
       maxInstances_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int enforcedMinInstances_ ;
+    /**
+     * <pre>
+     * The actual minimum number of instances. Enforced by the user's plan limits.
+     * </pre>
+     *
+     * <code>uint32 enforced_min_instances = 13;</code>
+     * @return The enforcedMinInstances.
+     */
+    @java.lang.Override
+    public int getEnforcedMinInstances() {
+      return enforcedMinInstances_;
+    }
+    /**
+     * <pre>
+     * The actual minimum number of instances. Enforced by the user's plan limits.
+     * </pre>
+     *
+     * <code>uint32 enforced_min_instances = 13;</code>
+     * @param value The enforcedMinInstances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnforcedMinInstances(int value) {
+      
+      enforcedMinInstances_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The actual minimum number of instances. Enforced by the user's plan limits.
+     * </pre>
+     *
+     * <code>uint32 enforced_min_instances = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnforcedMinInstances() {
+      
+      enforcedMinInstances_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int enforcedMaxInstances_ ;
+    /**
+     * <pre>
+     * The actual maximum number of instances. Enforced by the user's plan limits.
+     * </pre>
+     *
+     * <code>uint32 enforced_max_instances = 14;</code>
+     * @return The enforcedMaxInstances.
+     */
+    @java.lang.Override
+    public int getEnforcedMaxInstances() {
+      return enforcedMaxInstances_;
+    }
+    /**
+     * <pre>
+     * The actual maximum number of instances. Enforced by the user's plan limits.
+     * </pre>
+     *
+     * <code>uint32 enforced_max_instances = 14;</code>
+     * @param value The enforcedMaxInstances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnforcedMaxInstances(int value) {
+      
+      enforcedMaxInstances_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The actual maximum number of instances. Enforced by the user's plan limits.
+     * </pre>
+     *
+     * <code>uint32 enforced_max_instances = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnforcedMaxInstances() {
+      
+      enforcedMaxInstances_ = 0;
       onChanged();
       return this;
     }

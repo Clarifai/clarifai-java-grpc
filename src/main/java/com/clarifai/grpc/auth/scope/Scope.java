@@ -66,7 +66,7 @@ public final class Scope {
       "\023clarifai.auth.scope\032 google/protobuf/de" +
       "scriptor.proto\"F\n\tScopeList\022&\n\006scopes\030\001 " +
       "\003(\0162\026.clarifai.auth.scope.S\022\021\n\tendpoints" +
-      "\030\002 \003(\t*\234\032\n\001S\022\t\n\005undef\020\000\022\r\n\003All\020\001\032\004\360\233\'\001\022\021" +
+      "\030\002 \003(\t*\323\032\n\001S\022\t\n\005undef\020\000\022\r\n\003All\020\001\032\004\360\233\'\001\022\021" +
       "\n\007Predict\020\002\032\004\360\233\'\001\022\030\n\nInputs_Add\020\004\032\010\360\233\'\001\370" +
       "\233\'\005\022\024\n\nInputs_Get\020\005\032\004\360\233\'\001\022 \n\014Inputs_Patc" +
       "h\020\007\032\016\010\001\360\233\'\001\370\233\'\004\370\233\'\005\022\037\n\rInputs_Delete\020\010\032\014" +
@@ -149,14 +149,16 @@ public final class Scope {
       "\004\360\233\'\001\022\031\n\016LogEntries_Get\020\227\001\032\004\360\233\'\001\022)\n\036Work" +
       "flowVersionEvaluations_Get\020\230\001\032\004\360\233\'\001\022.\n\036W" +
       "orkflowVersionEvaluations_Add\020\231\001\032\t\360\233\'\001\370\233" +
-      "\'\230\001\"\004\010\036\020\036\"\004\010\037\020\037\"\004\010 \020 \"\004\010!\020!\"\004\010\"\020\"\"\004\010}\020}\"" +
-      "\004\010~\020~:<\n\017clarfai_exposed\022!.google.protob" +
-      "uf.EnumValueOptions\030\276\363\004 \001(\010:^\n\031clarifai_" +
-      "depending_scopes\022!.google.protobuf.EnumV" +
-      "alueOptions\030\277\363\004 \003(\0162\026.clarifai.auth.scop" +
-      "e.SBg\n\034com.clarifai.grpc.auth.scopeP\001Z>g" +
-      "ithub.com/Clarifai/clarifai-go-grpc/prot" +
-      "o/clarifai/auth/scope\242\002\004CAIPb\006proto3"
+      "\'\230\001\022\027\n\014Pipeline_Get\020\232\001\032\004\360\233\'\001\022\034\n\014Pipeline" +
+      "_Add\020\233\001\032\t\360\233\'\001\370\233\'\232\001\"\004\010\036\020\036\"\004\010\037\020\037\"\004\010 \020 \"\004\010!" +
+      "\020!\"\004\010\"\020\"\"\004\010}\020}\"\004\010~\020~:<\n\017clarfai_exposed\022" +
+      "!.google.protobuf.EnumValueOptions\030\276\363\004 \001" +
+      "(\010:^\n\031clarifai_depending_scopes\022!.google" +
+      ".protobuf.EnumValueOptions\030\277\363\004 \003(\0162\026.cla" +
+      "rifai.auth.scope.SBg\n\034com.clarifai.grpc." +
+      "auth.scopeP\001Z>github.com/Clarifai/clarif" +
+      "ai-go-grpc/proto/clarifai/auth/scope\242\002\004C" +
+      "AIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     predictionsDatasetId_ = "";
     predictionsDatasetVersionId_ = "";
     evaluationTemplateId_ = "";
+    targetNodeId_ = "";
   }
 
   @java.lang.Override
@@ -154,6 +155,12 @@ private static final long serialVersionUID = 0L;
               modifiedAt_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            targetNodeId_ = s;
             break;
           }
           default: {
@@ -710,6 +717,52 @@ private static final long serialVersionUID = 0L;
     return getModifiedAt();
   }
 
+  public static final int TARGET_NODE_ID_FIELD_NUMBER = 13;
+  private volatile java.lang.Object targetNodeId_;
+  /**
+   * <pre>
+   * The ID of the node that is being evaluated.
+   * </pre>
+   *
+   * <code>string target_node_id = 13;</code>
+   * @return The targetNodeId.
+   */
+  @java.lang.Override
+  public java.lang.String getTargetNodeId() {
+    java.lang.Object ref = targetNodeId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetNodeId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The ID of the node that is being evaluated.
+   * </pre>
+   *
+   * <code>string target_node_id = 13;</code>
+   * @return The bytes for targetNodeId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTargetNodeIdBytes() {
+    java.lang.Object ref = targetNodeId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      targetNodeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -760,6 +813,9 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       output.writeMessage(12, getModifiedAt());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNodeId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, targetNodeId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -808,6 +864,9 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getModifiedAt());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNodeId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, targetNodeId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -860,6 +919,8 @@ private static final long serialVersionUID = 0L;
       if (!getModifiedAt()
           .equals(other.getModifiedAt())) return false;
     }
+    if (!getTargetNodeId()
+        .equals(other.getTargetNodeId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -903,6 +964,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getModifiedAt().hashCode();
     }
+    hash = (37 * hash) + TARGET_NODE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getTargetNodeId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1076,6 +1139,8 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
         modifiedAtBuilder_ = null;
       }
+      targetNodeId_ = "";
+
       return this;
     }
 
@@ -1130,6 +1195,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.modifiedAt_ = modifiedAtBuilder_.build();
       }
+      result.targetNodeId_ = targetNodeId_;
       onBuilt();
       return result;
     }
@@ -1221,6 +1287,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModifiedAt()) {
         mergeModifiedAt(other.getModifiedAt());
+      }
+      if (!other.getTargetNodeId().isEmpty()) {
+        targetNodeId_ = other.targetNodeId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2637,6 +2707,102 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
       }
       return modifiedAtBuilder_;
+    }
+
+    private java.lang.Object targetNodeId_ = "";
+    /**
+     * <pre>
+     * The ID of the node that is being evaluated.
+     * </pre>
+     *
+     * <code>string target_node_id = 13;</code>
+     * @return The targetNodeId.
+     */
+    public java.lang.String getTargetNodeId() {
+      java.lang.Object ref = targetNodeId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetNodeId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ID of the node that is being evaluated.
+     * </pre>
+     *
+     * <code>string target_node_id = 13;</code>
+     * @return The bytes for targetNodeId.
+     */
+    public com.google.protobuf.ByteString
+        getTargetNodeIdBytes() {
+      java.lang.Object ref = targetNodeId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        targetNodeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ID of the node that is being evaluated.
+     * </pre>
+     *
+     * <code>string target_node_id = 13;</code>
+     * @param value The targetNodeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetNodeId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      targetNodeId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ID of the node that is being evaluated.
+     * </pre>
+     *
+     * <code>string target_node_id = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetNodeId() {
+      
+      targetNodeId_ = getDefaultInstance().getTargetNodeId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ID of the node that is being evaluated.
+     * </pre>
+     *
+     * <code>string target_node_id = 13;</code>
+     * @param value The bytes for targetNodeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetNodeIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      targetNodeId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

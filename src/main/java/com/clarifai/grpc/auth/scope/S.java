@@ -770,6 +770,19 @@ public enum S
    * <code>WorkflowVersionEvaluations_Add = 153 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowVersionEvaluations_Get];</code>
    */
   WorkflowVersionEvaluations_Add(153),
+  /**
+   * <pre>
+   * Pipelines feature is in development, this shouldn't be exposed yet.
+   * TODO: Expose this scope when the feature is ready.
+   * </pre>
+   *
+   * <code>Pipeline_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Pipeline_Get(154),
+  /**
+   * <code>Pipeline_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipeline_Get];</code>
+   */
+  Pipeline_Add(155),
   UNRECOGNIZED(-1),
   ;
 
@@ -1502,6 +1515,19 @@ public enum S
    * <code>WorkflowVersionEvaluations_Add = 153 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowVersionEvaluations_Get];</code>
    */
   public static final int WorkflowVersionEvaluations_Add_VALUE = 153;
+  /**
+   * <pre>
+   * Pipelines feature is in development, this shouldn't be exposed yet.
+   * TODO: Expose this scope when the feature is ready.
+   * </pre>
+   *
+   * <code>Pipeline_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Pipeline_Get_VALUE = 154;
+  /**
+   * <code>Pipeline_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipeline_Get];</code>
+   */
+  public static final int Pipeline_Add_VALUE = 155;
 
 
   public final int getNumber() {
@@ -1632,6 +1658,8 @@ public enum S
       case 151: return LogEntries_Get;
       case 152: return WorkflowVersionEvaluations_Get;
       case 153: return WorkflowVersionEvaluations_Add;
+      case 154: return Pipeline_Get;
+      case 155: return Pipeline_Add;
       default: return null;
     }
   }

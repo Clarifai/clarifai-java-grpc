@@ -184,13 +184,16 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Personal Access Token to the application to which inputs are added
+   * Deprecated: No need to send app_pat, it will be generated internally if not present
    * </pre>
    *
-   * <code>string app_pat = 2;</code>
+   * <code>string app_pat = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4584
    * @return The appPat.
    */
   @java.lang.Override
-  public java.lang.String getAppPat() {
+  @java.lang.Deprecated public java.lang.String getAppPat() {
     java.lang.Object ref = appPat_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -205,13 +208,16 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Personal Access Token to the application to which inputs are added
+   * Deprecated: No need to send app_pat, it will be generated internally if not present
    * </pre>
    *
-   * <code>string app_pat = 2;</code>
+   * <code>string app_pat = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4584
    * @return The bytes for appPat.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getAppPatBytes() {
     java.lang.Object ref = appPat_;
     if (ref instanceof java.lang.String) {
@@ -821,12 +827,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Personal Access Token to the application to which inputs are added
+     * Deprecated: No need to send app_pat, it will be generated internally if not present
      * </pre>
      *
-     * <code>string app_pat = 2;</code>
+     * <code>string app_pat = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4584
      * @return The appPat.
      */
-    public java.lang.String getAppPat() {
+    @java.lang.Deprecated public java.lang.String getAppPat() {
       java.lang.Object ref = appPat_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -841,12 +850,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Personal Access Token to the application to which inputs are added
+     * Deprecated: No need to send app_pat, it will be generated internally if not present
      * </pre>
      *
-     * <code>string app_pat = 2;</code>
+     * <code>string app_pat = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4584
      * @return The bytes for appPat.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getAppPatBytes() {
       java.lang.Object ref = appPat_;
       if (ref instanceof String) {
@@ -862,13 +874,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Personal Access Token to the application to which inputs are added
+     * Deprecated: No need to send app_pat, it will be generated internally if not present
      * </pre>
      *
-     * <code>string app_pat = 2;</code>
+     * <code>string app_pat = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4584
      * @param value The appPat to set.
      * @return This builder for chaining.
      */
-    public Builder setAppPat(
+    @java.lang.Deprecated public Builder setAppPat(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -881,12 +896,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Personal Access Token to the application to which inputs are added
+     * Deprecated: No need to send app_pat, it will be generated internally if not present
      * </pre>
      *
-     * <code>string app_pat = 2;</code>
+     * <code>string app_pat = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4584
      * @return This builder for chaining.
      */
-    public Builder clearAppPat() {
+    @java.lang.Deprecated public Builder clearAppPat() {
       
       appPat_ = getDefaultInstance().getAppPat();
       onChanged();
@@ -895,13 +913,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Personal Access Token to the application to which inputs are added
+     * Deprecated: No need to send app_pat, it will be generated internally if not present
      * </pre>
      *
-     * <code>string app_pat = 2;</code>
+     * <code>string app_pat = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4584
      * @param value The bytes for appPat to set.
      * @return This builder for chaining.
      */
-    public Builder setAppPatBytes(
+    @java.lang.Deprecated public Builder setAppPatBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

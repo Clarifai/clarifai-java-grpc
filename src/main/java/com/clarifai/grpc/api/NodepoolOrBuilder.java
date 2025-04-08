@@ -170,7 +170,7 @@ public interface NodepoolOrBuilder extends
   /**
    * <pre>
    * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-   * amount.
+   * amount. This is the user desired minimum.
    * </pre>
    *
    * <code>uint32 min_instances = 9;</code>
@@ -181,13 +181,33 @@ public interface NodepoolOrBuilder extends
   /**
    * <pre>
    * An upper limit on the number of instances in this nodepool. This allows the nodepool to scale
-   * up to this amount.
+   * up to this amount. This is the user desired maximum.
    * </pre>
    *
    * <code>uint32 max_instances = 10;</code>
    * @return The maxInstances.
    */
   int getMaxInstances();
+
+  /**
+   * <pre>
+   * The actual minimum number of instances. Enforced by the user's plan limits.
+   * </pre>
+   *
+   * <code>uint32 enforced_min_instances = 13;</code>
+   * @return The enforcedMinInstances.
+   */
+  int getEnforcedMinInstances();
+
+  /**
+   * <pre>
+   * The actual maximum number of instances. Enforced by the user's plan limits.
+   * </pre>
+   *
+   * <code>uint32 enforced_max_instances = 14;</code>
+   * @return The enforcedMaxInstances.
+   */
+  int getEnforcedMaxInstances();
 
   /**
    * <pre>

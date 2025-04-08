@@ -69,20 +69,26 @@ public interface PostInputsDataSourcesRequestOrBuilder extends
   /**
    * <pre>
    * Personal Access Token to the application to which inputs are added
+   * Deprecated: No need to send app_pat, it will be generated internally if not present
    * </pre>
    *
-   * <code>string app_pat = 4;</code>
+   * <code>string app_pat = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7910
    * @return The appPat.
    */
-  java.lang.String getAppPat();
+  @java.lang.Deprecated java.lang.String getAppPat();
   /**
    * <pre>
    * Personal Access Token to the application to which inputs are added
+   * Deprecated: No need to send app_pat, it will be generated internally if not present
    * </pre>
    *
-   * <code>string app_pat = 4;</code>
+   * <code>string app_pat = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7910
    * @return The bytes for appPat.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getAppPatBytes();
 }
