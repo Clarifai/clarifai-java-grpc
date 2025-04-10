@@ -55,4 +55,15 @@ public interface ListNodepoolsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * Only return nodepools that are actively being used (having runners with
+   * replicas &gt;= threshold and pipeline versions scheduled to run)
+   * </pre>
+   *
+   * <code>bool active_usage = 5;</code>
+   * @return The activeUsage.
+   */
+  boolean getActiveUsage();
 }

@@ -78,6 +78,11 @@ private static final long serialVersionUID = 0L;
             perPage_ = input.readUInt32();
             break;
           }
+          case 40: {
+
+            activeUsage_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -208,6 +213,22 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int ACTIVE_USAGE_FIELD_NUMBER = 5;
+  private boolean activeUsage_;
+  /**
+   * <pre>
+   * Only return nodepools that are actively being used (having runners with
+   * replicas &gt;= threshold and pipeline versions scheduled to run)
+   * </pre>
+   *
+   * <code>bool active_usage = 5;</code>
+   * @return The activeUsage.
+   */
+  @java.lang.Override
+  public boolean getActiveUsage() {
+    return activeUsage_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -234,6 +255,9 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(4, perPage_);
     }
+    if (activeUsage_ != false) {
+      output.writeBool(5, activeUsage_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -257,6 +281,10 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(4, perPage_);
+    }
+    if (activeUsage_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, activeUsage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -284,6 +312,8 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (getActiveUsage()
+        != other.getActiveUsage()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -305,6 +335,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    hash = (37 * hash) + ACTIVE_USAGE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getActiveUsage());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -450,6 +483,8 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      activeUsage_ = false;
+
       return this;
     }
 
@@ -484,6 +519,7 @@ private static final long serialVersionUID = 0L;
       result.computeClusterId_ = computeClusterId_;
       result.page_ = page_;
       result.perPage_ = perPage_;
+      result.activeUsage_ = activeUsage_;
       onBuilt();
       return result;
     }
@@ -544,6 +580,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
+      }
+      if (other.getActiveUsage() != false) {
+        setActiveUsage(other.getActiveUsage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -857,6 +896,52 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean activeUsage_ ;
+    /**
+     * <pre>
+     * Only return nodepools that are actively being used (having runners with
+     * replicas &gt;= threshold and pipeline versions scheduled to run)
+     * </pre>
+     *
+     * <code>bool active_usage = 5;</code>
+     * @return The activeUsage.
+     */
+    @java.lang.Override
+    public boolean getActiveUsage() {
+      return activeUsage_;
+    }
+    /**
+     * <pre>
+     * Only return nodepools that are actively being used (having runners with
+     * replicas &gt;= threshold and pipeline versions scheduled to run)
+     * </pre>
+     *
+     * <code>bool active_usage = 5;</code>
+     * @param value The activeUsage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveUsage(boolean value) {
+      
+      activeUsage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Only return nodepools that are actively being used (having runners with
+     * replicas &gt;= threshold and pipeline versions scheduled to run)
+     * </pre>
+     *
+     * <code>bool active_usage = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActiveUsage() {
+      
+      activeUsage_ = false;
       onChanged();
       return this;
     }
