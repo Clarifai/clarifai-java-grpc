@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3539
+   *     See proto/clarifai/api/resources.proto;l=3544
    * @return The approvalThreshold.
    */
   @java.lang.Override
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3539
+     *     See proto/clarifai/api/resources.proto;l=3544
      * @return The approvalThreshold.
      */
     @java.lang.Override
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3539
+     *     See proto/clarifai/api/resources.proto;l=3544
      * @param value The approvalThreshold to set.
      * @return This builder for chaining.
      */
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3539
+     *     See proto/clarifai/api/resources.proto;l=3544
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearApprovalThreshold() {

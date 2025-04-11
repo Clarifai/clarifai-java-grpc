@@ -798,4 +798,37 @@ public interface ModelOrBuilder extends
    * @return The billingType.
    */
   com.clarifai.grpc.api.Model.BillingType getBillingType();
+
+  /**
+   * <pre>
+   * Whether the model should be featured, and if so, the order in which it should be featured.
+   * The order is relative to other models that are also featured.
+   * Models with a higher order will be featured first.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+   * @return Whether the featuredOrder field is set.
+   */
+  boolean hasFeaturedOrder();
+  /**
+   * <pre>
+   * Whether the model should be featured, and if so, the order in which it should be featured.
+   * The order is relative to other models that are also featured.
+   * Models with a higher order will be featured first.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+   * @return The featuredOrder.
+   */
+  com.google.protobuf.Int32Value getFeaturedOrder();
+  /**
+   * <pre>
+   * Whether the model should be featured, and if so, the order in which it should be featured.
+   * The order is relative to other models that are also featured.
+   * Models with a higher order will be featured first.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+   */
+  com.google.protobuf.Int32ValueOrBuilder getFeaturedOrderOrBuilder();
 }

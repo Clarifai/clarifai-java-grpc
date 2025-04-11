@@ -362,6 +362,19 @@ private static final long serialVersionUID = 0L;
             billingType_ = rawValue;
             break;
           }
+          case 330: {
+            com.google.protobuf.Int32Value.Builder subBuilder = null;
+            if (featuredOrder_ != null) {
+              subBuilder = featuredOrder_.toBuilder();
+            }
+            featuredOrder_ = input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(featuredOrder_);
+              featuredOrder_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1917,6 +1930,50 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.clarifai.grpc.api.Model.BillingType.UNRECOGNIZED : result;
   }
 
+  public static final int FEATURED_ORDER_FIELD_NUMBER = 41;
+  private com.google.protobuf.Int32Value featuredOrder_;
+  /**
+   * <pre>
+   * Whether the model should be featured, and if so, the order in which it should be featured.
+   * The order is relative to other models that are also featured.
+   * Models with a higher order will be featured first.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+   * @return Whether the featuredOrder field is set.
+   */
+  @java.lang.Override
+  public boolean hasFeaturedOrder() {
+    return featuredOrder_ != null;
+  }
+  /**
+   * <pre>
+   * Whether the model should be featured, and if so, the order in which it should be featured.
+   * The order is relative to other models that are also featured.
+   * Models with a higher order will be featured first.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+   * @return The featuredOrder.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int32Value getFeaturedOrder() {
+    return featuredOrder_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : featuredOrder_;
+  }
+  /**
+   * <pre>
+   * Whether the model should be featured, and if so, the order in which it should be featured.
+   * The order is relative to other models that are also featured.
+   * Models with a higher order will be featured first.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int32ValueOrBuilder getFeaturedOrderOrBuilder() {
+    return getFeaturedOrder();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2026,6 +2083,9 @@ private static final long serialVersionUID = 0L;
     }
     if (billingType_ != com.clarifai.grpc.api.Model.BillingType.Unknown.getNumber()) {
       output.writeEnum(40, billingType_);
+    }
+    if (featuredOrder_ != null) {
+      output.writeMessage(41, getFeaturedOrder());
     }
     unknownFields.writeTo(output);
   }
@@ -2170,6 +2230,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(40, billingType_);
     }
+    if (featuredOrder_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(41, getFeaturedOrder());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2279,6 +2343,11 @@ private static final long serialVersionUID = 0L;
     if (getVersionCount()
         != other.getVersionCount()) return false;
     if (billingType_ != other.billingType_) return false;
+    if (hasFeaturedOrder() != other.hasFeaturedOrder()) return false;
+    if (hasFeaturedOrder()) {
+      if (!getFeaturedOrder()
+          .equals(other.getFeaturedOrder())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2387,6 +2456,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getVersionCount();
     hash = (37 * hash) + BILLING_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + billingType_;
+    if (hasFeaturedOrder()) {
+      hash = (37 * hash) + FEATURED_ORDER_FIELD_NUMBER;
+      hash = (53 * hash) + getFeaturedOrder().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2647,6 +2720,12 @@ private static final long serialVersionUID = 0L;
 
       billingType_ = 0;
 
+      if (featuredOrderBuilder_ == null) {
+        featuredOrder_ = null;
+      } else {
+        featuredOrder_ = null;
+        featuredOrderBuilder_ = null;
+      }
       return this;
     }
 
@@ -2774,6 +2853,11 @@ private static final long serialVersionUID = 0L;
       result.creator_ = creator_;
       result.versionCount_ = versionCount_;
       result.billingType_ = billingType_;
+      if (featuredOrderBuilder_ == null) {
+        result.featuredOrder_ = featuredOrder_;
+      } else {
+        result.featuredOrder_ = featuredOrderBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2978,6 +3062,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.billingType_ != 0) {
         setBillingTypeValue(other.getBillingTypeValue());
+      }
+      if (other.hasFeaturedOrder()) {
+        mergeFeaturedOrder(other.getFeaturedOrder());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6925,6 +7012,179 @@ private static final long serialVersionUID = 0L;
       billingType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Int32Value featuredOrder_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> featuredOrderBuilder_;
+    /**
+     * <pre>
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     * @return Whether the featuredOrder field is set.
+     */
+    public boolean hasFeaturedOrder() {
+      return featuredOrderBuilder_ != null || featuredOrder_ != null;
+    }
+    /**
+     * <pre>
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     * @return The featuredOrder.
+     */
+    public com.google.protobuf.Int32Value getFeaturedOrder() {
+      if (featuredOrderBuilder_ == null) {
+        return featuredOrder_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : featuredOrder_;
+      } else {
+        return featuredOrderBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     */
+    public Builder setFeaturedOrder(com.google.protobuf.Int32Value value) {
+      if (featuredOrderBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        featuredOrder_ = value;
+        onChanged();
+      } else {
+        featuredOrderBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     */
+    public Builder setFeaturedOrder(
+        com.google.protobuf.Int32Value.Builder builderForValue) {
+      if (featuredOrderBuilder_ == null) {
+        featuredOrder_ = builderForValue.build();
+        onChanged();
+      } else {
+        featuredOrderBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     */
+    public Builder mergeFeaturedOrder(com.google.protobuf.Int32Value value) {
+      if (featuredOrderBuilder_ == null) {
+        if (featuredOrder_ != null) {
+          featuredOrder_ =
+            com.google.protobuf.Int32Value.newBuilder(featuredOrder_).mergeFrom(value).buildPartial();
+        } else {
+          featuredOrder_ = value;
+        }
+        onChanged();
+      } else {
+        featuredOrderBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     */
+    public Builder clearFeaturedOrder() {
+      if (featuredOrderBuilder_ == null) {
+        featuredOrder_ = null;
+        onChanged();
+      } else {
+        featuredOrder_ = null;
+        featuredOrderBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     */
+    public com.google.protobuf.Int32Value.Builder getFeaturedOrderBuilder() {
+      
+      onChanged();
+      return getFeaturedOrderFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     */
+    public com.google.protobuf.Int32ValueOrBuilder getFeaturedOrderOrBuilder() {
+      if (featuredOrderBuilder_ != null) {
+        return featuredOrderBuilder_.getMessageOrBuilder();
+      } else {
+        return featuredOrder_ == null ?
+            com.google.protobuf.Int32Value.getDefaultInstance() : featuredOrder_;
+      }
+    }
+    /**
+     * <pre>
+     * Whether the model should be featured, and if so, the order in which it should be featured.
+     * The order is relative to other models that are also featured.
+     * Models with a higher order will be featured first.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int32Value featured_order = 41;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
+        getFeaturedOrderFieldBuilder() {
+      if (featuredOrderBuilder_ == null) {
+        featuredOrderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder>(
+                getFeaturedOrder(),
+                getParentForChildren(),
+                isClean());
+        featuredOrder_ = null;
+      }
+      return featuredOrderBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
