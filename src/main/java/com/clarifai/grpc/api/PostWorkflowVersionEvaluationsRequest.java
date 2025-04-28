@@ -243,11 +243,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * ########## Supported fields ##########
-   * - evaluation_template_id
-   * - ground_truth_dataset_id
-   * - ground_truth_dataset_version_id
+   * - ground_truth_dataset_version.app_id
+   * - ground_truth_dataset_version.dataset_id
+   * - ground_truth_dataset_version.id
    * - id
    * - target_node_id
+   * - workflow_version_evaluation_template.id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -259,11 +260,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * ########## Supported fields ##########
-   * - evaluation_template_id
-   * - ground_truth_dataset_id
-   * - ground_truth_dataset_version_id
+   * - ground_truth_dataset_version.app_id
+   * - ground_truth_dataset_version.dataset_id
+   * - ground_truth_dataset_version.id
    * - id
    * - target_node_id
+   * - workflow_version_evaluation_template.id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -276,11 +278,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * ########## Supported fields ##########
-   * - evaluation_template_id
-   * - ground_truth_dataset_id
-   * - ground_truth_dataset_version_id
+   * - ground_truth_dataset_version.app_id
+   * - ground_truth_dataset_version.dataset_id
+   * - ground_truth_dataset_version.id
    * - id
    * - target_node_id
+   * - workflow_version_evaluation_template.id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -292,11 +295,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * ########## Supported fields ##########
-   * - evaluation_template_id
-   * - ground_truth_dataset_id
-   * - ground_truth_dataset_version_id
+   * - ground_truth_dataset_version.app_id
+   * - ground_truth_dataset_version.dataset_id
+   * - ground_truth_dataset_version.id
    * - id
    * - target_node_id
+   * - workflow_version_evaluation_template.id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -308,11 +312,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * ########## Supported fields ##########
-   * - evaluation_template_id
-   * - ground_truth_dataset_id
-   * - ground_truth_dataset_version_id
+   * - ground_truth_dataset_version.app_id
+   * - ground_truth_dataset_version.dataset_id
+   * - ground_truth_dataset_version.id
    * - id
    * - target_node_id
+   * - workflow_version_evaluation_template.id
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1110,11 +1115,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1129,11 +1135,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1148,11 +1155,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1167,11 +1175,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1193,11 +1202,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1216,11 +1226,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1241,11 +1252,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1267,11 +1279,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1290,11 +1303,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1313,11 +1327,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1337,11 +1352,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1359,11 +1375,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1381,11 +1398,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1397,11 +1415,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1416,11 +1435,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1436,11 +1456,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1452,11 +1473,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>
@@ -1469,11 +1491,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ########## Supported fields ##########
-     * - evaluation_template_id
-     * - ground_truth_dataset_id
-     * - ground_truth_dataset_version_id
+     * - ground_truth_dataset_version.app_id
+     * - ground_truth_dataset_version.dataset_id
+     * - ground_truth_dataset_version.id
      * - id
      * - target_node_id
+     * - workflow_version_evaluation_template.id
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowVersionEvaluation workflow_version_evaluations = 4;</code>

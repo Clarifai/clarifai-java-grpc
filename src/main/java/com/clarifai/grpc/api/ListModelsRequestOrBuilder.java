@@ -700,5 +700,15 @@ public interface ListModelsRequestOrBuilder extends
   com.google.protobuf.ByteString
       getCreatorBytes();
 
+  /**
+   * <pre>
+   * Filter by model versions runners with replicas &gt;= min_replicas.
+   * </pre>
+   *
+   * <code>uint32 min_replicas = 33;</code>
+   * @return The minReplicas.
+   */
+  int getMinReplicas();
+
   public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }

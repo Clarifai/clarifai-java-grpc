@@ -29,147 +29,175 @@ public interface WorkflowVersionEvaluationOrBuilder extends
 
   /**
    * <pre>
-   * The ID of the workflow that is used for evaluation.
+   * Workflow version that is being evaluated.
    * </pre>
    *
-   * <code>string workflow_id = 2;</code>
-   * @return The workflowId.
+   * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+   * @return Whether the workflowVersion field is set.
    */
-  java.lang.String getWorkflowId();
+  boolean hasWorkflowVersion();
   /**
    * <pre>
-   * The ID of the workflow that is used for evaluation.
+   * Workflow version that is being evaluated.
    * </pre>
    *
-   * <code>string workflow_id = 2;</code>
-   * @return The bytes for workflowId.
+   * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+   * @return The workflowVersion.
    */
-  com.google.protobuf.ByteString
-      getWorkflowIdBytes();
+  com.clarifai.grpc.api.WorkflowVersion getWorkflowVersion();
+  /**
+   * <pre>
+   * Workflow version that is being evaluated.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+   */
+  com.clarifai.grpc.api.WorkflowVersionOrBuilder getWorkflowVersionOrBuilder();
 
   /**
    * <pre>
-   * The version of the workflow that is used for evaluation.
+   * The target node id that is being evaluated.
    * </pre>
    *
-   * <code>string workflow_version_id = 3;</code>
-   * @return The workflowVersionId.
+   * <code>string target_node_id = 3;</code>
+   * @return The targetNodeId.
    */
-  java.lang.String getWorkflowVersionId();
+  java.lang.String getTargetNodeId();
   /**
    * <pre>
-   * The version of the workflow that is used for evaluation.
+   * The target node id that is being evaluated.
    * </pre>
    *
-   * <code>string workflow_version_id = 3;</code>
-   * @return The bytes for workflowVersionId.
+   * <code>string target_node_id = 3;</code>
+   * @return The bytes for targetNodeId.
    */
   com.google.protobuf.ByteString
-      getWorkflowVersionIdBytes();
+      getTargetNodeIdBytes();
 
   /**
    * <pre>
-   * The ID of the ground-truth dataset that is used for evaluation.
+   * The dataset version that contains the ground-truth and is used for evaluation.
    * </pre>
    *
-   * <code>string ground_truth_dataset_id = 4;</code>
-   * @return The groundTruthDatasetId.
+   * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+   * @return Whether the groundTruthDatasetVersion field is set.
    */
-  java.lang.String getGroundTruthDatasetId();
+  boolean hasGroundTruthDatasetVersion();
   /**
    * <pre>
-   * The ID of the ground-truth dataset that is used for evaluation.
+   * The dataset version that contains the ground-truth and is used for evaluation.
    * </pre>
    *
-   * <code>string ground_truth_dataset_id = 4;</code>
-   * @return The bytes for groundTruthDatasetId.
+   * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+   * @return The groundTruthDatasetVersion.
    */
-  com.google.protobuf.ByteString
-      getGroundTruthDatasetIdBytes();
+  com.clarifai.grpc.api.DatasetVersion getGroundTruthDatasetVersion();
+  /**
+   * <pre>
+   * The dataset version that contains the ground-truth and is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+   */
+  com.clarifai.grpc.api.DatasetVersionOrBuilder getGroundTruthDatasetVersionOrBuilder();
 
   /**
    * <pre>
-   * The version ID of the ground-truth dataset that is used for evaluation.
+   * The dataset version that contains the predictions and is used for evaluation.
    * </pre>
    *
-   * <code>string ground_truth_dataset_version_id = 5;</code>
-   * @return The groundTruthDatasetVersionId.
+   * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+   * @return Whether the predictionsDatasetVersion field is set.
    */
-  java.lang.String getGroundTruthDatasetVersionId();
+  boolean hasPredictionsDatasetVersion();
   /**
    * <pre>
-   * The version ID of the ground-truth dataset that is used for evaluation.
+   * The dataset version that contains the predictions and is used for evaluation.
    * </pre>
    *
-   * <code>string ground_truth_dataset_version_id = 5;</code>
-   * @return The bytes for groundTruthDatasetVersionId.
+   * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+   * @return The predictionsDatasetVersion.
    */
-  com.google.protobuf.ByteString
-      getGroundTruthDatasetVersionIdBytes();
+  com.clarifai.grpc.api.DatasetVersion getPredictionsDatasetVersion();
+  /**
+   * <pre>
+   * The dataset version that contains the predictions and is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+   */
+  com.clarifai.grpc.api.DatasetVersionOrBuilder getPredictionsDatasetVersionOrBuilder();
 
   /**
    * <pre>
-   * The ID of the prediction dataset that is used for evaluation.
+   * Evaluation template that is used for evaluation.
    * </pre>
    *
-   * <code>string predictions_dataset_id = 6;</code>
-   * @return The predictionsDatasetId.
+   * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+   * @return Whether the workflowVersionEvaluationTemplate field is set.
    */
-  java.lang.String getPredictionsDatasetId();
+  boolean hasWorkflowVersionEvaluationTemplate();
   /**
    * <pre>
-   * The ID of the prediction dataset that is used for evaluation.
+   * Evaluation template that is used for evaluation.
    * </pre>
    *
-   * <code>string predictions_dataset_id = 6;</code>
-   * @return The bytes for predictionsDatasetId.
+   * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+   * @return The workflowVersionEvaluationTemplate.
    */
-  com.google.protobuf.ByteString
-      getPredictionsDatasetIdBytes();
+  com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate getWorkflowVersionEvaluationTemplate();
+  /**
+   * <pre>
+   * Evaluation template that is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+   */
+  com.clarifai.grpc.api.WorkflowVersionEvaluationTemplateOrBuilder getWorkflowVersionEvaluationTemplateOrBuilder();
 
   /**
    * <pre>
-   * The version ID of the prediction dataset that is used for evaluation.
+   * The user the workflow version evaluation belongs to.
    * </pre>
    *
-   * <code>string predictions_dataset_version_id = 7;</code>
-   * @return The predictionsDatasetVersionId.
+   * <code>string user_id = 7;</code>
+   * @return The userId.
    */
-  java.lang.String getPredictionsDatasetVersionId();
+  java.lang.String getUserId();
   /**
    * <pre>
-   * The version ID of the prediction dataset that is used for evaluation.
+   * The user the workflow version evaluation belongs to.
    * </pre>
    *
-   * <code>string predictions_dataset_version_id = 7;</code>
-   * @return The bytes for predictionsDatasetVersionId.
+   * <code>string user_id = 7;</code>
+   * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
-      getPredictionsDatasetVersionIdBytes();
+      getUserIdBytes();
 
   /**
    * <pre>
-   * Evaluation Template ID
+   * The app the workflow version evaluation belongs to.
    * </pre>
    *
-   * <code>string evaluation_template_id = 8;</code>
-   * @return The evaluationTemplateId.
+   * <code>string app_id = 8;</code>
+   * @return The appId.
    */
-  java.lang.String getEvaluationTemplateId();
+  java.lang.String getAppId();
   /**
    * <pre>
-   * Evaluation Template ID
+   * The app the workflow version evaluation belongs to.
    * </pre>
    *
-   * <code>string evaluation_template_id = 8;</code>
-   * @return The bytes for evaluationTemplateId.
+   * <code>string app_id = 8;</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
-      getEvaluationTemplateIdBytes();
+      getAppIdBytes();
 
   /**
    * <pre>
-   * The evaluation results
+   * Results of the evaluation.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -178,7 +206,7 @@ public interface WorkflowVersionEvaluationOrBuilder extends
   boolean hasWorkflowEvaluationResult();
   /**
    * <pre>
-   * The evaluation results
+   * Results of the evaluation.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -187,7 +215,7 @@ public interface WorkflowVersionEvaluationOrBuilder extends
   com.clarifai.grpc.api.WorkflowEvaluationResult getWorkflowEvaluationResult();
   /**
    * <pre>
-   * The evaluation results
+   * Results of the evaluation.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -274,24 +302,4 @@ public interface WorkflowVersionEvaluationOrBuilder extends
    * <code>.google.protobuf.Timestamp modified_at = 12;</code>
    */
   com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
-
-  /**
-   * <pre>
-   * The ID of the node that is being evaluated.
-   * </pre>
-   *
-   * <code>string target_node_id = 13;</code>
-   * @return The targetNodeId.
-   */
-  java.lang.String getTargetNodeId();
-  /**
-   * <pre>
-   * The ID of the node that is being evaluated.
-   * </pre>
-   *
-   * <code>string target_node_id = 13;</code>
-   * @return The bytes for targetNodeId.
-   */
-  com.google.protobuf.ByteString
-      getTargetNodeIdBytes();
 }

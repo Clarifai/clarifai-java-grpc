@@ -157,5 +157,50 @@ public interface AuditLogTargetOrBuilder extends
    */
   com.clarifai.grpc.api.ModelVersionOrBuilder getModelVersionOrBuilder();
 
+  /**
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+   * @return Whether the computeCluster field is set.
+   */
+  boolean hasComputeCluster();
+  /**
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+   * @return The computeCluster.
+   */
+  com.clarifai.grpc.api.ComputeCluster getComputeCluster();
+  /**
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+   */
+  com.clarifai.grpc.api.ComputeClusterOrBuilder getComputeClusterOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * @return Whether the nodepool field is set.
+   */
+  boolean hasNodepool();
+  /**
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * @return The nodepool.
+   */
+  com.clarifai.grpc.api.Nodepool getNodepool();
+  /**
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   */
+  com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Deployment deployment = 13;</code>
+   * @return Whether the deployment field is set.
+   */
+  boolean hasDeployment();
+  /**
+   * <code>.clarifai.api.Deployment deployment = 13;</code>
+   * @return The deployment.
+   */
+  com.clarifai.grpc.api.Deployment getDeployment();
+  /**
+   * <code>.clarifai.api.Deployment deployment = 13;</code>
+   */
+  com.clarifai.grpc.api.DeploymentOrBuilder getDeploymentOrBuilder();
+
   public com.clarifai.grpc.api.AuditLogTarget.TargetCase getTargetCase();
 }

@@ -163,6 +163,11 @@ private static final long serialVersionUID = 0L;
             default_ = s;
             break;
           }
+          case 120: {
+
+            isParam_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -776,25 +781,25 @@ private static final long serialVersionUID = 0L;
      * this can be used to store named fields with values similar to Dict
      * </pre>
      *
-     * <code>NAMED_FIELDS = 20;</code>
+     * <code>NAMED_FIELDS = 15;</code>
      */
-    NAMED_FIELDS(20),
+    NAMED_FIELDS(15),
     /**
      * <pre>
      * An arg that is a tuple.
      * </pre>
      *
-     * <code>TUPLE = 21;</code>
+     * <code>TUPLE = 16;</code>
      */
-    TUPLE(21),
+    TUPLE(16),
     /**
      * <pre>
      * An arg that is a list.
      * </pre>
      *
-     * <code>LIST = 22;</code>
+     * <code>LIST = 17;</code>
      */
-    LIST(22),
+    LIST(17),
     UNRECOGNIZED(-1),
     ;
 
@@ -919,25 +924,25 @@ private static final long serialVersionUID = 0L;
      * this can be used to store named fields with values similar to Dict
      * </pre>
      *
-     * <code>NAMED_FIELDS = 20;</code>
+     * <code>NAMED_FIELDS = 15;</code>
      */
-    public static final int NAMED_FIELDS_VALUE = 20;
+    public static final int NAMED_FIELDS_VALUE = 15;
     /**
      * <pre>
      * An arg that is a tuple.
      * </pre>
      *
-     * <code>TUPLE = 21;</code>
+     * <code>TUPLE = 16;</code>
      */
-    public static final int TUPLE_VALUE = 21;
+    public static final int TUPLE_VALUE = 16;
     /**
      * <pre>
      * An arg that is a list.
      * </pre>
      *
-     * <code>LIST = 22;</code>
+     * <code>LIST = 17;</code>
      */
-    public static final int LIST_VALUE = 22;
+    public static final int LIST_VALUE = 17;
 
 
     public final int getNumber() {
@@ -979,9 +984,9 @@ private static final long serialVersionUID = 0L;
         case 12: return FRAME;
         case 13: return AUDIO;
         case 14: return VIDEO;
-        case 20: return NAMED_FIELDS;
-        case 21: return TUPLE;
-        case 22: return LIST;
+        case 15: return NAMED_FIELDS;
+        case 16: return TUPLE;
+        case 17: return LIST;
         default: return null;
       }
     }
@@ -1547,7 +1552,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object default_;
   /**
    * <pre>
-   * This specify the default value of the method argument. We define this as a string
+   * This specify the default value of the method argument 
+   * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+   * We define this as a string
    * because the default value can be a string, int, float, bool, or a complex object like a JSON
    * The default_value field above should not also be used.
    * </pre>
@@ -1570,7 +1577,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This specify the default value of the method argument. We define this as a string
+   * This specify the default value of the method argument 
+   * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+   * We define this as a string
    * because the default value can be a string, int, float, bool, or a complex object like a JSON
    * The default_value field above should not also be used.
    * </pre>
@@ -1591,6 +1600,21 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int IS_PARAM_FIELD_NUMBER = 15;
+  private boolean isParam_;
+  /**
+   * <pre>
+   * wheather it's a inference param or a modeltype field
+   * </pre>
+   *
+   * <code>bool is_param = 15;</code>
+   * @return The isParam.
+   */
+  @java.lang.Override
+  public boolean getIsParam() {
+    return isParam_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1648,6 +1672,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(default_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, default_);
+    }
+    if (isParam_ != false) {
+      output.writeBool(15, isParam_);
     }
     unknownFields.writeTo(output);
   }
@@ -1709,6 +1736,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(default_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, default_);
     }
+    if (isParam_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, isParam_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1756,6 +1787,8 @@ private static final long serialVersionUID = 0L;
         != other.getIterator()) return false;
     if (!getDefault()
         .equals(other.getDefault())) return false;
+    if (getIsParam()
+        != other.getIsParam()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1806,6 +1839,9 @@ private static final long serialVersionUID = 0L;
         getIterator());
     hash = (37 * hash) + DEFAULT_FIELD_NUMBER;
     hash = (53 * hash) + getDefault().hashCode();
+    hash = (37 * hash) + IS_PARAM_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsParam());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1989,6 +2025,8 @@ private static final long serialVersionUID = 0L;
 
       default_ = "";
 
+      isParam_ = false;
+
       return this;
     }
 
@@ -2054,6 +2092,7 @@ private static final long serialVersionUID = 0L;
       }
       result.iterator_ = iterator_;
       result.default_ = default_;
+      result.isParam_ = isParam_;
       onBuilt();
       return result;
     }
@@ -2194,6 +2233,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getDefault().isEmpty()) {
         default_ = other.default_;
         onChanged();
+      }
+      if (other.getIsParam() != false) {
+        setIsParam(other.getIsParam());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3896,7 +3938,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object default_ = "";
     /**
      * <pre>
-     * This specify the default value of the method argument. We define this as a string
+     * This specify the default value of the method argument 
+     * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+     * We define this as a string
      * because the default value can be a string, int, float, bool, or a complex object like a JSON
      * The default_value field above should not also be used.
      * </pre>
@@ -3918,7 +3962,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This specify the default value of the method argument. We define this as a string
+     * This specify the default value of the method argument 
+     * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+     * We define this as a string
      * because the default value can be a string, int, float, bool, or a complex object like a JSON
      * The default_value field above should not also be used.
      * </pre>
@@ -3941,7 +3987,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This specify the default value of the method argument. We define this as a string
+     * This specify the default value of the method argument 
+     * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+     * We define this as a string
      * because the default value can be a string, int, float, bool, or a complex object like a JSON
      * The default_value field above should not also be used.
      * </pre>
@@ -3962,7 +4010,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This specify the default value of the method argument. We define this as a string
+     * This specify the default value of the method argument 
+     * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+     * We define this as a string
      * because the default value can be a string, int, float, bool, or a complex object like a JSON
      * The default_value field above should not also be used.
      * </pre>
@@ -3978,7 +4028,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This specify the default value of the method argument. We define this as a string
+     * This specify the default value of the method argument 
+     * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+     * We define this as a string
      * because the default value can be a string, int, float, bool, or a complex object like a JSON
      * The default_value field above should not also be used.
      * </pre>
@@ -3995,6 +4047,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       default_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isParam_ ;
+    /**
+     * <pre>
+     * wheather it's a inference param or a modeltype field
+     * </pre>
+     *
+     * <code>bool is_param = 15;</code>
+     * @return The isParam.
+     */
+    @java.lang.Override
+    public boolean getIsParam() {
+      return isParam_;
+    }
+    /**
+     * <pre>
+     * wheather it's a inference param or a modeltype field
+     * </pre>
+     *
+     * <code>bool is_param = 15;</code>
+     * @param value The isParam to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsParam(boolean value) {
+      
+      isParam_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * wheather it's a inference param or a modeltype field
+     * </pre>
+     *
+     * <code>bool is_param = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsParam() {
+      
+      isParam_ = false;
       onChanged();
       return this;
     }
