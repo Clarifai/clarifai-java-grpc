@@ -193,6 +193,48 @@ private static final long serialVersionUID = 0L;
             targetCase_ = 10;
             break;
           }
+          case 90: {
+            com.clarifai.grpc.api.ComputeCluster.Builder subBuilder = null;
+            if (targetCase_ == 11) {
+              subBuilder = ((com.clarifai.grpc.api.ComputeCluster) target_).toBuilder();
+            }
+            target_ =
+                input.readMessage(com.clarifai.grpc.api.ComputeCluster.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.ComputeCluster) target_);
+              target_ = subBuilder.buildPartial();
+            }
+            targetCase_ = 11;
+            break;
+          }
+          case 98: {
+            com.clarifai.grpc.api.Nodepool.Builder subBuilder = null;
+            if (targetCase_ == 12) {
+              subBuilder = ((com.clarifai.grpc.api.Nodepool) target_).toBuilder();
+            }
+            target_ =
+                input.readMessage(com.clarifai.grpc.api.Nodepool.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Nodepool) target_);
+              target_ = subBuilder.buildPartial();
+            }
+            targetCase_ = 12;
+            break;
+          }
+          case 106: {
+            com.clarifai.grpc.api.Deployment.Builder subBuilder = null;
+            if (targetCase_ == 13) {
+              subBuilder = ((com.clarifai.grpc.api.Deployment) target_).toBuilder();
+            }
+            target_ =
+                input.readMessage(com.clarifai.grpc.api.Deployment.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Deployment) target_);
+              target_ = subBuilder.buildPartial();
+            }
+            targetCase_ = 13;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -242,6 +284,9 @@ private static final long serialVersionUID = 0L;
     WORKFLOW_VERSION(8),
     MODEL(9),
     MODEL_VERSION(10),
+    COMPUTE_CLUSTER(11),
+    NODEPOOL(12),
+    DEPLOYMENT(13),
     TARGET_NOT_SET(0);
     private final int value;
     private TargetCase(int value) {
@@ -269,6 +314,9 @@ private static final long serialVersionUID = 0L;
         case 8: return WORKFLOW_VERSION;
         case 9: return MODEL;
         case 10: return MODEL_VERSION;
+        case 11: return COMPUTE_CLUSTER;
+        case 12: return NODEPOOL;
+        case 13: return DEPLOYMENT;
         case 0: return TARGET_NOT_SET;
         default: return null;
       }
@@ -594,6 +642,99 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.ModelVersion.getDefaultInstance();
   }
 
+  public static final int COMPUTE_CLUSTER_FIELD_NUMBER = 11;
+  /**
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+   * @return Whether the computeCluster field is set.
+   */
+  @java.lang.Override
+  public boolean hasComputeCluster() {
+    return targetCase_ == 11;
+  }
+  /**
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+   * @return The computeCluster.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ComputeCluster getComputeCluster() {
+    if (targetCase_ == 11) {
+       return (com.clarifai.grpc.api.ComputeCluster) target_;
+    }
+    return com.clarifai.grpc.api.ComputeCluster.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ComputeClusterOrBuilder getComputeClusterOrBuilder() {
+    if (targetCase_ == 11) {
+       return (com.clarifai.grpc.api.ComputeCluster) target_;
+    }
+    return com.clarifai.grpc.api.ComputeCluster.getDefaultInstance();
+  }
+
+  public static final int NODEPOOL_FIELD_NUMBER = 12;
+  /**
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * @return Whether the nodepool field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodepool() {
+    return targetCase_ == 12;
+  }
+  /**
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * @return The nodepool.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Nodepool getNodepool() {
+    if (targetCase_ == 12) {
+       return (com.clarifai.grpc.api.Nodepool) target_;
+    }
+    return com.clarifai.grpc.api.Nodepool.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolOrBuilder() {
+    if (targetCase_ == 12) {
+       return (com.clarifai.grpc.api.Nodepool) target_;
+    }
+    return com.clarifai.grpc.api.Nodepool.getDefaultInstance();
+  }
+
+  public static final int DEPLOYMENT_FIELD_NUMBER = 13;
+  /**
+   * <code>.clarifai.api.Deployment deployment = 13;</code>
+   * @return Whether the deployment field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeployment() {
+    return targetCase_ == 13;
+  }
+  /**
+   * <code>.clarifai.api.Deployment deployment = 13;</code>
+   * @return The deployment.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Deployment getDeployment() {
+    if (targetCase_ == 13) {
+       return (com.clarifai.grpc.api.Deployment) target_;
+    }
+    return com.clarifai.grpc.api.Deployment.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Deployment deployment = 13;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeploymentOrBuilder getDeploymentOrBuilder() {
+    if (targetCase_ == 13) {
+       return (com.clarifai.grpc.api.Deployment) target_;
+    }
+    return com.clarifai.grpc.api.Deployment.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -637,6 +778,15 @@ private static final long serialVersionUID = 0L;
     }
     if (targetCase_ == 10) {
       output.writeMessage(10, (com.clarifai.grpc.api.ModelVersion) target_);
+    }
+    if (targetCase_ == 11) {
+      output.writeMessage(11, (com.clarifai.grpc.api.ComputeCluster) target_);
+    }
+    if (targetCase_ == 12) {
+      output.writeMessage(12, (com.clarifai.grpc.api.Nodepool) target_);
+    }
+    if (targetCase_ == 13) {
+      output.writeMessage(13, (com.clarifai.grpc.api.Deployment) target_);
     }
     unknownFields.writeTo(output);
   }
@@ -686,6 +836,18 @@ private static final long serialVersionUID = 0L;
     if (targetCase_ == 10) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, (com.clarifai.grpc.api.ModelVersion) target_);
+    }
+    if (targetCase_ == 11) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, (com.clarifai.grpc.api.ComputeCluster) target_);
+    }
+    if (targetCase_ == 12) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, (com.clarifai.grpc.api.Nodepool) target_);
+    }
+    if (targetCase_ == 13) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, (com.clarifai.grpc.api.Deployment) target_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -744,6 +906,18 @@ private static final long serialVersionUID = 0L;
         if (!getModelVersion()
             .equals(other.getModelVersion())) return false;
         break;
+      case 11:
+        if (!getComputeCluster()
+            .equals(other.getComputeCluster())) return false;
+        break;
+      case 12:
+        if (!getNodepool()
+            .equals(other.getNodepool())) return false;
+        break;
+      case 13:
+        if (!getDeployment()
+            .equals(other.getDeployment())) return false;
+        break;
       case 0:
       default:
     }
@@ -798,6 +972,18 @@ private static final long serialVersionUID = 0L;
       case 10:
         hash = (37 * hash) + MODEL_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getModelVersion().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + COMPUTE_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getComputeCluster().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + NODEPOOL_FIELD_NUMBER;
+        hash = (53 * hash) + getNodepool().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + DEPLOYMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getDeployment().hashCode();
         break;
       case 0:
       default:
@@ -1038,6 +1224,27 @@ private static final long serialVersionUID = 0L;
           result.target_ = modelVersionBuilder_.build();
         }
       }
+      if (targetCase_ == 11) {
+        if (computeClusterBuilder_ == null) {
+          result.target_ = target_;
+        } else {
+          result.target_ = computeClusterBuilder_.build();
+        }
+      }
+      if (targetCase_ == 12) {
+        if (nodepoolBuilder_ == null) {
+          result.target_ = target_;
+        } else {
+          result.target_ = nodepoolBuilder_.build();
+        }
+      }
+      if (targetCase_ == 13) {
+        if (deploymentBuilder_ == null) {
+          result.target_ = target_;
+        } else {
+          result.target_ = deploymentBuilder_.build();
+        }
+      }
       result.targetCase_ = targetCase_;
       onBuilt();
       return result;
@@ -1126,6 +1333,18 @@ private static final long serialVersionUID = 0L;
         }
         case MODEL_VERSION: {
           mergeModelVersion(other.getModelVersion());
+          break;
+        }
+        case COMPUTE_CLUSTER: {
+          mergeComputeCluster(other.getComputeCluster());
+          break;
+        }
+        case NODEPOOL: {
+          mergeNodepool(other.getNodepool());
+          break;
+        }
+        case DEPLOYMENT: {
+          mergeDeployment(other.getDeployment());
           break;
         }
         case TARGET_NOT_SET: {
@@ -2594,6 +2813,432 @@ private static final long serialVersionUID = 0L;
       targetCase_ = 10;
       onChanged();;
       return modelVersionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ComputeCluster, com.clarifai.grpc.api.ComputeCluster.Builder, com.clarifai.grpc.api.ComputeClusterOrBuilder> computeClusterBuilder_;
+    /**
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     * @return Whether the computeCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasComputeCluster() {
+      return targetCase_ == 11;
+    }
+    /**
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     * @return The computeCluster.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ComputeCluster getComputeCluster() {
+      if (computeClusterBuilder_ == null) {
+        if (targetCase_ == 11) {
+          return (com.clarifai.grpc.api.ComputeCluster) target_;
+        }
+        return com.clarifai.grpc.api.ComputeCluster.getDefaultInstance();
+      } else {
+        if (targetCase_ == 11) {
+          return computeClusterBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.ComputeCluster.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     */
+    public Builder setComputeCluster(com.clarifai.grpc.api.ComputeCluster value) {
+      if (computeClusterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        computeClusterBuilder_.setMessage(value);
+      }
+      targetCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     */
+    public Builder setComputeCluster(
+        com.clarifai.grpc.api.ComputeCluster.Builder builderForValue) {
+      if (computeClusterBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        computeClusterBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     */
+    public Builder mergeComputeCluster(com.clarifai.grpc.api.ComputeCluster value) {
+      if (computeClusterBuilder_ == null) {
+        if (targetCase_ == 11 &&
+            target_ != com.clarifai.grpc.api.ComputeCluster.getDefaultInstance()) {
+          target_ = com.clarifai.grpc.api.ComputeCluster.newBuilder((com.clarifai.grpc.api.ComputeCluster) target_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 11) {
+          computeClusterBuilder_.mergeFrom(value);
+        } else {
+          computeClusterBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     */
+    public Builder clearComputeCluster() {
+      if (computeClusterBuilder_ == null) {
+        if (targetCase_ == 11) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 11) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        computeClusterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     */
+    public com.clarifai.grpc.api.ComputeCluster.Builder getComputeClusterBuilder() {
+      return getComputeClusterFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ComputeClusterOrBuilder getComputeClusterOrBuilder() {
+      if ((targetCase_ == 11) && (computeClusterBuilder_ != null)) {
+        return computeClusterBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 11) {
+          return (com.clarifai.grpc.api.ComputeCluster) target_;
+        }
+        return com.clarifai.grpc.api.ComputeCluster.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ComputeCluster, com.clarifai.grpc.api.ComputeCluster.Builder, com.clarifai.grpc.api.ComputeClusterOrBuilder> 
+        getComputeClusterFieldBuilder() {
+      if (computeClusterBuilder_ == null) {
+        if (!(targetCase_ == 11)) {
+          target_ = com.clarifai.grpc.api.ComputeCluster.getDefaultInstance();
+        }
+        computeClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ComputeCluster, com.clarifai.grpc.api.ComputeCluster.Builder, com.clarifai.grpc.api.ComputeClusterOrBuilder>(
+                (com.clarifai.grpc.api.ComputeCluster) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 11;
+      onChanged();;
+      return computeClusterBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Nodepool, com.clarifai.grpc.api.Nodepool.Builder, com.clarifai.grpc.api.NodepoolOrBuilder> nodepoolBuilder_;
+    /**
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * @return Whether the nodepool field is set.
+     */
+    @java.lang.Override
+    public boolean hasNodepool() {
+      return targetCase_ == 12;
+    }
+    /**
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * @return The nodepool.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Nodepool getNodepool() {
+      if (nodepoolBuilder_ == null) {
+        if (targetCase_ == 12) {
+          return (com.clarifai.grpc.api.Nodepool) target_;
+        }
+        return com.clarifai.grpc.api.Nodepool.getDefaultInstance();
+      } else {
+        if (targetCase_ == 12) {
+          return nodepoolBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Nodepool.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public Builder setNodepool(com.clarifai.grpc.api.Nodepool value) {
+      if (nodepoolBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        nodepoolBuilder_.setMessage(value);
+      }
+      targetCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public Builder setNodepool(
+        com.clarifai.grpc.api.Nodepool.Builder builderForValue) {
+      if (nodepoolBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        nodepoolBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public Builder mergeNodepool(com.clarifai.grpc.api.Nodepool value) {
+      if (nodepoolBuilder_ == null) {
+        if (targetCase_ == 12 &&
+            target_ != com.clarifai.grpc.api.Nodepool.getDefaultInstance()) {
+          target_ = com.clarifai.grpc.api.Nodepool.newBuilder((com.clarifai.grpc.api.Nodepool) target_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 12) {
+          nodepoolBuilder_.mergeFrom(value);
+        } else {
+          nodepoolBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 12;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public Builder clearNodepool() {
+      if (nodepoolBuilder_ == null) {
+        if (targetCase_ == 12) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 12) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        nodepoolBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public com.clarifai.grpc.api.Nodepool.Builder getNodepoolBuilder() {
+      return getNodepoolFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolOrBuilder() {
+      if ((targetCase_ == 12) && (nodepoolBuilder_ != null)) {
+        return nodepoolBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 12) {
+          return (com.clarifai.grpc.api.Nodepool) target_;
+        }
+        return com.clarifai.grpc.api.Nodepool.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Nodepool, com.clarifai.grpc.api.Nodepool.Builder, com.clarifai.grpc.api.NodepoolOrBuilder> 
+        getNodepoolFieldBuilder() {
+      if (nodepoolBuilder_ == null) {
+        if (!(targetCase_ == 12)) {
+          target_ = com.clarifai.grpc.api.Nodepool.getDefaultInstance();
+        }
+        nodepoolBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Nodepool, com.clarifai.grpc.api.Nodepool.Builder, com.clarifai.grpc.api.NodepoolOrBuilder>(
+                (com.clarifai.grpc.api.Nodepool) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 12;
+      onChanged();;
+      return nodepoolBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Deployment, com.clarifai.grpc.api.Deployment.Builder, com.clarifai.grpc.api.DeploymentOrBuilder> deploymentBuilder_;
+    /**
+     * <code>.clarifai.api.Deployment deployment = 13;</code>
+     * @return Whether the deployment field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeployment() {
+      return targetCase_ == 13;
+    }
+    /**
+     * <code>.clarifai.api.Deployment deployment = 13;</code>
+     * @return The deployment.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Deployment getDeployment() {
+      if (deploymentBuilder_ == null) {
+        if (targetCase_ == 13) {
+          return (com.clarifai.grpc.api.Deployment) target_;
+        }
+        return com.clarifai.grpc.api.Deployment.getDefaultInstance();
+      } else {
+        if (targetCase_ == 13) {
+          return deploymentBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Deployment.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Deployment deployment = 13;</code>
+     */
+    public Builder setDeployment(com.clarifai.grpc.api.Deployment value) {
+      if (deploymentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        target_ = value;
+        onChanged();
+      } else {
+        deploymentBuilder_.setMessage(value);
+      }
+      targetCase_ = 13;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Deployment deployment = 13;</code>
+     */
+    public Builder setDeployment(
+        com.clarifai.grpc.api.Deployment.Builder builderForValue) {
+      if (deploymentBuilder_ == null) {
+        target_ = builderForValue.build();
+        onChanged();
+      } else {
+        deploymentBuilder_.setMessage(builderForValue.build());
+      }
+      targetCase_ = 13;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Deployment deployment = 13;</code>
+     */
+    public Builder mergeDeployment(com.clarifai.grpc.api.Deployment value) {
+      if (deploymentBuilder_ == null) {
+        if (targetCase_ == 13 &&
+            target_ != com.clarifai.grpc.api.Deployment.getDefaultInstance()) {
+          target_ = com.clarifai.grpc.api.Deployment.newBuilder((com.clarifai.grpc.api.Deployment) target_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          target_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetCase_ == 13) {
+          deploymentBuilder_.mergeFrom(value);
+        } else {
+          deploymentBuilder_.setMessage(value);
+        }
+      }
+      targetCase_ = 13;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Deployment deployment = 13;</code>
+     */
+    public Builder clearDeployment() {
+      if (deploymentBuilder_ == null) {
+        if (targetCase_ == 13) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetCase_ == 13) {
+          targetCase_ = 0;
+          target_ = null;
+        }
+        deploymentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Deployment deployment = 13;</code>
+     */
+    public com.clarifai.grpc.api.Deployment.Builder getDeploymentBuilder() {
+      return getDeploymentFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Deployment deployment = 13;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.DeploymentOrBuilder getDeploymentOrBuilder() {
+      if ((targetCase_ == 13) && (deploymentBuilder_ != null)) {
+        return deploymentBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetCase_ == 13) {
+          return (com.clarifai.grpc.api.Deployment) target_;
+        }
+        return com.clarifai.grpc.api.Deployment.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Deployment deployment = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Deployment, com.clarifai.grpc.api.Deployment.Builder, com.clarifai.grpc.api.DeploymentOrBuilder> 
+        getDeploymentFieldBuilder() {
+      if (deploymentBuilder_ == null) {
+        if (!(targetCase_ == 13)) {
+          target_ = com.clarifai.grpc.api.Deployment.getDefaultInstance();
+        }
+        deploymentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Deployment, com.clarifai.grpc.api.Deployment.Builder, com.clarifai.grpc.api.DeploymentOrBuilder>(
+                (com.clarifai.grpc.api.Deployment) target_,
+                getParentForChildren(),
+                isClean());
+        target_ = null;
+      }
+      targetCase_ = 13;
+      onChanged();;
+      return deploymentBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -65,4 +65,51 @@ public interface InstanceTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPriceBytes();
+
+  /**
+   * <pre>
+   * The cloud provider where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+   * @return Whether the cloudProvider field is set.
+   */
+  boolean hasCloudProvider();
+  /**
+   * <pre>
+   * The cloud provider where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+   * @return The cloudProvider.
+   */
+  com.clarifai.grpc.api.CloudProvider getCloudProvider();
+  /**
+   * <pre>
+   * The cloud provider where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+   */
+  com.clarifai.grpc.api.CloudProviderOrBuilder getCloudProviderOrBuilder();
+
+  /**
+   * <pre>
+   * The region where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   * <pre>
+   * The region where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString
+      getRegionBytes();
 }

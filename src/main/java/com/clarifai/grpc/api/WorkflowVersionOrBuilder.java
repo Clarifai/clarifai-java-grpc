@@ -304,4 +304,15 @@ public interface WorkflowVersionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLicenseBytes();
+
+  /**
+   * <pre>
+   * If a model version associated with the workflow version is deleted, the workflow version
+   * will be marked as deprecated.
+   * </pre>
+   *
+   * <code>bool is_deprecated = 12;</code>
+   * @return The isDeprecated.
+   */
+  boolean getIsDeprecated();
 }

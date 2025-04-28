@@ -50,8 +50,8 @@ public interface PatchWorkflowVersionEvaluationsRequestOrBuilder extends
    * <pre>
    * ########## Supported fields ##########
    * - id
-   * - predictions_dataset_id
-   * - predictions_dataset_version_id
+   * - predictions_dataset_version.dataset_id
+   * - predictions_dataset_version.id
    * - status.code
    * - status.details
    * - workflow_evaluation_result.summary.evaluation_metric_values[].evaluation_metric_id
@@ -70,8 +70,8 @@ public interface PatchWorkflowVersionEvaluationsRequestOrBuilder extends
    * <pre>
    * ########## Supported fields ##########
    * - id
-   * - predictions_dataset_id
-   * - predictions_dataset_version_id
+   * - predictions_dataset_version.dataset_id
+   * - predictions_dataset_version.id
    * - status.code
    * - status.details
    * - workflow_evaluation_result.summary.evaluation_metric_values[].evaluation_metric_id
@@ -89,8 +89,8 @@ public interface PatchWorkflowVersionEvaluationsRequestOrBuilder extends
    * <pre>
    * ########## Supported fields ##########
    * - id
-   * - predictions_dataset_id
-   * - predictions_dataset_version_id
+   * - predictions_dataset_version.dataset_id
+   * - predictions_dataset_version.id
    * - status.code
    * - status.details
    * - workflow_evaluation_result.summary.evaluation_metric_values[].evaluation_metric_id
@@ -108,8 +108,8 @@ public interface PatchWorkflowVersionEvaluationsRequestOrBuilder extends
    * <pre>
    * ########## Supported fields ##########
    * - id
-   * - predictions_dataset_id
-   * - predictions_dataset_version_id
+   * - predictions_dataset_version.dataset_id
+   * - predictions_dataset_version.id
    * - status.code
    * - status.details
    * - workflow_evaluation_result.summary.evaluation_metric_values[].evaluation_metric_id
@@ -128,8 +128,8 @@ public interface PatchWorkflowVersionEvaluationsRequestOrBuilder extends
    * <pre>
    * ########## Supported fields ##########
    * - id
-   * - predictions_dataset_id
-   * - predictions_dataset_version_id
+   * - predictions_dataset_version.dataset_id
+   * - predictions_dataset_version.id
    * - status.code
    * - status.details
    * - workflow_evaluation_result.summary.evaluation_metric_values[].evaluation_metric_id

@@ -325,7 +325,9 @@ public interface ModelTypeFieldOrBuilder extends
 
   /**
    * <pre>
-   * This specify the default value of the method argument. We define this as a string
+   * This specify the default value of the method argument 
+   * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+   * We define this as a string
    * because the default value can be a string, int, float, bool, or a complex object like a JSON
    * The default_value field above should not also be used.
    * </pre>
@@ -336,7 +338,9 @@ public interface ModelTypeFieldOrBuilder extends
   java.lang.String getDefault();
   /**
    * <pre>
-   * This specify the default value of the method argument. We define this as a string
+   * This specify the default value of the method argument 
+   * If this argument is not passed, the input is required. If it is explicitly set to None, the input is optional
+   * We define this as a string
    * because the default value can be a string, int, float, bool, or a complex object like a JSON
    * The default_value field above should not also be used.
    * </pre>
@@ -346,4 +350,14 @@ public interface ModelTypeFieldOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDefaultBytes();
+
+  /**
+   * <pre>
+   * wheather it's a inference param or a modeltype field
+   * </pre>
+   *
+   * <code>bool is_param = 15;</code>
+   * @return The isParam.
+   */
+  boolean getIsParam();
 }

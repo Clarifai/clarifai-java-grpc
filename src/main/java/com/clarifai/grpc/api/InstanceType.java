@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     description_ = "";
     price_ = "";
+    region_ = "";
   }
 
   @java.lang.Override
@@ -85,6 +86,25 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             price_ = s;
+            break;
+          }
+          case 42: {
+            com.clarifai.grpc.api.CloudProvider.Builder subBuilder = null;
+            if (cloudProvider_ != null) {
+              subBuilder = cloudProvider_.toBuilder();
+            }
+            cloudProvider_ = input.readMessage(com.clarifai.grpc.api.CloudProvider.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(cloudProvider_);
+              cloudProvider_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            region_ = s;
             break;
           }
           default: {
@@ -269,6 +289,90 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CLOUD_PROVIDER_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.CloudProvider cloudProvider_;
+  /**
+   * <pre>
+   * The cloud provider where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+   * @return Whether the cloudProvider field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudProvider() {
+    return cloudProvider_ != null;
+  }
+  /**
+   * <pre>
+   * The cloud provider where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+   * @return The cloudProvider.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CloudProvider getCloudProvider() {
+    return cloudProvider_ == null ? com.clarifai.grpc.api.CloudProvider.getDefaultInstance() : cloudProvider_;
+  }
+  /**
+   * <pre>
+   * The cloud provider where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CloudProviderOrBuilder getCloudProviderOrBuilder() {
+    return getCloudProvider();
+  }
+
+  public static final int REGION_FIELD_NUMBER = 6;
+  private volatile java.lang.Object region_;
+  /**
+   * <pre>
+   * The region where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The region where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -295,6 +399,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, price_);
     }
+    if (cloudProvider_ != null) {
+      output.writeMessage(5, getCloudProvider());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, region_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -316,6 +426,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, price_);
+    }
+    if (cloudProvider_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getCloudProvider());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, region_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -343,6 +460,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPrice()
         .equals(other.getPrice())) return false;
+    if (hasCloudProvider() != other.hasCloudProvider()) return false;
+    if (hasCloudProvider()) {
+      if (!getCloudProvider()
+          .equals(other.getCloudProvider())) return false;
+    }
+    if (!getRegion()
+        .equals(other.getRegion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -364,6 +488,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + PRICE_FIELD_NUMBER;
     hash = (53 * hash) + getPrice().hashCode();
+    if (hasCloudProvider()) {
+      hash = (37 * hash) + CLOUD_PROVIDER_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudProvider().hashCode();
+    }
+    hash = (37 * hash) + REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getRegion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -514,6 +644,14 @@ private static final long serialVersionUID = 0L;
       }
       price_ = "";
 
+      if (cloudProviderBuilder_ == null) {
+        cloudProvider_ = null;
+      } else {
+        cloudProvider_ = null;
+        cloudProviderBuilder_ = null;
+      }
+      region_ = "";
+
       return this;
     }
 
@@ -548,6 +686,12 @@ private static final long serialVersionUID = 0L;
         result.computeInfo_ = computeInfoBuilder_.build();
       }
       result.price_ = price_;
+      if (cloudProviderBuilder_ == null) {
+        result.cloudProvider_ = cloudProvider_;
+      } else {
+        result.cloudProvider_ = cloudProviderBuilder_.build();
+      }
+      result.region_ = region_;
       onBuilt();
       return result;
     }
@@ -609,6 +753,13 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPrice().isEmpty()) {
         price_ = other.price_;
+        onChanged();
+      }
+      if (other.hasCloudProvider()) {
+        mergeCloudProvider(other.getCloudProvider());
+      }
+      if (!other.getRegion().isEmpty()) {
+        region_ = other.region_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1003,6 +1154,257 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       price_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.clarifai.grpc.api.CloudProvider cloudProvider_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.CloudProvider, com.clarifai.grpc.api.CloudProvider.Builder, com.clarifai.grpc.api.CloudProviderOrBuilder> cloudProviderBuilder_;
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     * @return Whether the cloudProvider field is set.
+     */
+    public boolean hasCloudProvider() {
+      return cloudProviderBuilder_ != null || cloudProvider_ != null;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     * @return The cloudProvider.
+     */
+    public com.clarifai.grpc.api.CloudProvider getCloudProvider() {
+      if (cloudProviderBuilder_ == null) {
+        return cloudProvider_ == null ? com.clarifai.grpc.api.CloudProvider.getDefaultInstance() : cloudProvider_;
+      } else {
+        return cloudProviderBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public Builder setCloudProvider(com.clarifai.grpc.api.CloudProvider value) {
+      if (cloudProviderBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudProvider_ = value;
+        onChanged();
+      } else {
+        cloudProviderBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public Builder setCloudProvider(
+        com.clarifai.grpc.api.CloudProvider.Builder builderForValue) {
+      if (cloudProviderBuilder_ == null) {
+        cloudProvider_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudProviderBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public Builder mergeCloudProvider(com.clarifai.grpc.api.CloudProvider value) {
+      if (cloudProviderBuilder_ == null) {
+        if (cloudProvider_ != null) {
+          cloudProvider_ =
+            com.clarifai.grpc.api.CloudProvider.newBuilder(cloudProvider_).mergeFrom(value).buildPartial();
+        } else {
+          cloudProvider_ = value;
+        }
+        onChanged();
+      } else {
+        cloudProviderBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public Builder clearCloudProvider() {
+      if (cloudProviderBuilder_ == null) {
+        cloudProvider_ = null;
+        onChanged();
+      } else {
+        cloudProvider_ = null;
+        cloudProviderBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public com.clarifai.grpc.api.CloudProvider.Builder getCloudProviderBuilder() {
+      
+      onChanged();
+      return getCloudProviderFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public com.clarifai.grpc.api.CloudProviderOrBuilder getCloudProviderOrBuilder() {
+      if (cloudProviderBuilder_ != null) {
+        return cloudProviderBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudProvider_ == null ?
+            com.clarifai.grpc.api.CloudProvider.getDefaultInstance() : cloudProvider_;
+      }
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.CloudProvider, com.clarifai.grpc.api.CloudProvider.Builder, com.clarifai.grpc.api.CloudProviderOrBuilder> 
+        getCloudProviderFieldBuilder() {
+      if (cloudProviderBuilder_ == null) {
+        cloudProviderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.CloudProvider, com.clarifai.grpc.api.CloudProvider.Builder, com.clarifai.grpc.api.CloudProviderOrBuilder>(
+                getCloudProvider(),
+                getParentForChildren(),
+                isClean());
+        cloudProvider_ = null;
+      }
+      return cloudProviderBuilder_;
+    }
+
+    private java.lang.Object region_ = "";
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString
+        getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      region_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      
+      region_ = getDefaultInstance().getRegion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      region_ = value;
       onChanged();
       return this;
     }
