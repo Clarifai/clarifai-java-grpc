@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     nodepoolId_ = "";
     modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    computeClusterId_ = "";
   }
 
   @java.lang.Override
@@ -97,6 +98,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000002;
             }
             workflowVersionIds_.add(s);
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            computeClusterId_ = s;
             break;
           }
           default: {
@@ -345,6 +352,52 @@ private static final long serialVersionUID = 0L;
     return workflowVersionIds_.getByteString(index);
   }
 
+  public static final int COMPUTE_CLUSTER_ID_FIELD_NUMBER = 7;
+  private volatile java.lang.Object computeClusterId_;
+  /**
+   * <pre>
+   * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+   * </pre>
+   *
+   * <code>string compute_cluster_id = 7;</code>
+   * @return The computeClusterId.
+   */
+  @java.lang.Override
+  public java.lang.String getComputeClusterId() {
+    java.lang.Object ref = computeClusterId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      computeClusterId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+   * </pre>
+   *
+   * <code>string compute_cluster_id = 7;</code>
+   * @return The bytes for computeClusterId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getComputeClusterIdBytes() {
+    java.lang.Object ref = computeClusterId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      computeClusterId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -376,6 +429,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < workflowVersionIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, workflowVersionIds_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, computeClusterId_);
     }
     unknownFields.writeTo(output);
   }
@@ -417,6 +473,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getWorkflowVersionIdsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, computeClusterId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -447,6 +506,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getModelVersionIdsList())) return false;
     if (!getWorkflowVersionIdsList()
         .equals(other.getWorkflowVersionIdsList())) return false;
+    if (!getComputeClusterId()
+        .equals(other.getComputeClusterId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -476,6 +537,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WORKFLOW_VERSION_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflowVersionIdsList().hashCode();
     }
+    hash = (37 * hash) + COMPUTE_CLUSTER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getComputeClusterId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -625,6 +688,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      computeClusterId_ = "";
+
       return this;
     }
 
@@ -670,6 +735,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.workflowVersionIds_ = workflowVersionIds_;
+      result.computeClusterId_ = computeClusterId_;
       onBuilt();
       return result;
     }
@@ -749,6 +815,10 @@ private static final long serialVersionUID = 0L;
           ensureWorkflowVersionIdsIsMutable();
           workflowVersionIds_.addAll(other.workflowVersionIds_);
         }
+        onChanged();
+      }
+      if (!other.getComputeClusterId().isEmpty()) {
+        computeClusterId_ = other.computeClusterId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1376,6 +1446,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureWorkflowVersionIdsIsMutable();
       workflowVersionIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object computeClusterId_ = "";
+    /**
+     * <pre>
+     * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+     * </pre>
+     *
+     * <code>string compute_cluster_id = 7;</code>
+     * @return The computeClusterId.
+     */
+    public java.lang.String getComputeClusterId() {
+      java.lang.Object ref = computeClusterId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        computeClusterId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+     * </pre>
+     *
+     * <code>string compute_cluster_id = 7;</code>
+     * @return The bytes for computeClusterId.
+     */
+    public com.google.protobuf.ByteString
+        getComputeClusterIdBytes() {
+      java.lang.Object ref = computeClusterId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        computeClusterId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+     * </pre>
+     *
+     * <code>string compute_cluster_id = 7;</code>
+     * @param value The computeClusterId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeClusterId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      computeClusterId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+     * </pre>
+     *
+     * <code>string compute_cluster_id = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearComputeClusterId() {
+      
+      computeClusterId_ = getDefaultInstance().getComputeClusterId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+     * </pre>
+     *
+     * <code>string compute_cluster_id = 7;</code>
+     * @param value The bytes for computeClusterId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeClusterIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      computeClusterId_ = value;
       onChanged();
       return this;
     }

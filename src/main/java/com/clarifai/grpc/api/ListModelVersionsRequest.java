@@ -123,6 +123,11 @@ private static final long serialVersionUID = 0L;
             sortByCase_ = 11;
             break;
           }
+          case 96: {
+
+            minReplicas_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -505,6 +510,21 @@ private static final long serialVersionUID = 0L;
     return false;
   }
 
+  public static final int MIN_REPLICAS_FIELD_NUMBER = 12;
+  private int minReplicas_;
+  /**
+   * <pre>
+   * Filter by model versions runners with replicas &gt;= min_replicas.
+   * </pre>
+   *
+   * <code>uint32 min_replicas = 12;</code>
+   * @return The minReplicas.
+   */
+  @java.lang.Override
+  public int getMinReplicas() {
+    return minReplicas_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -555,6 +575,9 @@ private static final long serialVersionUID = 0L;
     if (sortByCase_ == 11) {
       output.writeBool(
           11, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (minReplicas_ != 0) {
+      output.writeUInt32(12, minReplicas_);
     }
     unknownFields.writeTo(output);
   }
@@ -616,6 +639,10 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             11, (boolean)((java.lang.Boolean) sortBy_));
     }
+    if (minReplicas_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(12, minReplicas_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -648,6 +675,8 @@ private static final long serialVersionUID = 0L;
         != other.getTrainedOnly()) return false;
     if (getSortAscending()
         != other.getSortAscending()) return false;
+    if (getMinReplicas()
+        != other.getMinReplicas()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 8:
@@ -700,6 +729,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSortAscending());
+    hash = (37 * hash) + MIN_REPLICAS_FIELD_NUMBER;
+    hash = (53 * hash) + getMinReplicas();
     switch (sortByCase_) {
       case 8:
         hash = (37 * hash) + SORT_BY_STATUS_CODE_FIELD_NUMBER;
@@ -879,6 +910,8 @@ private static final long serialVersionUID = 0L;
 
       sortAscending_ = false;
 
+      minReplicas_ = 0;
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -935,6 +968,7 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 11) {
         result.sortBy_ = sortBy_;
       }
+      result.minReplicas_ = minReplicas_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -1012,6 +1046,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getSortAscending() != false) {
         setSortAscending(other.getSortAscending());
+      }
+      if (other.getMinReplicas() != 0) {
+        setMinReplicas(other.getMinReplicas());
       }
       switch (other.getSortByCase()) {
         case SORT_BY_STATUS_CODE: {
@@ -1839,6 +1876,49 @@ private static final long serialVersionUID = 0L;
         sortBy_ = null;
         onChanged();
       }
+      return this;
+    }
+
+    private int minReplicas_ ;
+    /**
+     * <pre>
+     * Filter by model versions runners with replicas &gt;= min_replicas.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 12;</code>
+     * @return The minReplicas.
+     */
+    @java.lang.Override
+    public int getMinReplicas() {
+      return minReplicas_;
+    }
+    /**
+     * <pre>
+     * Filter by model versions runners with replicas &gt;= min_replicas.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 12;</code>
+     * @param value The minReplicas to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinReplicas(int value) {
+      
+      minReplicas_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by model versions runners with replicas &gt;= min_replicas.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMinReplicas() {
+      
+      minReplicas_ = 0;
+      onChanged();
       return this;
     }
     @java.lang.Override

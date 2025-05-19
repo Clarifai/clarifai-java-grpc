@@ -8161,7 +8161,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * TODO(zeiler): will need to
-     * Single request but streaming resopnses.
+     * Single request but streaming responses.
      * </pre>
      */
     public void generateModelOutputs(com.clarifai.grpc.api.PostModelOutputsRequest request,
@@ -12463,7 +12463,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * TODO(zeiler): will need to
-     * Single request but streaming resopnses.
+     * Single request but streaming responses.
      * </pre>
      */
     public void generateModelOutputs(com.clarifai.grpc.api.PostModelOutputsRequest request,
@@ -15194,7 +15194,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * TODO(zeiler): will need to
-     * Single request but streaming resopnses.
+     * Single request but streaming responses.
      * </pre>
      */
     public java.util.Iterator<com.clarifai.grpc.api.MultiOutputResponse> generateModelOutputs(

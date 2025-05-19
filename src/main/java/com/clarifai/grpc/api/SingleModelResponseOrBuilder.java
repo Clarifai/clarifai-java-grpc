@@ -36,4 +36,10 @@ public interface SingleModelResponseOrBuilder extends
    * <code>.clarifai.api.Model model = 2;</code>
    */
   com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
+
+  /**
+   * <code>int32 workflow_count = 4;</code>
+   * @return The workflowCount.
+   */
+  int getWorkflowCount();
 }

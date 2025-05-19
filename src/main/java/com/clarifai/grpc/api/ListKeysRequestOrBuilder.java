@@ -45,29 +45,50 @@ public interface ListKeysRequestOrBuilder extends
   int getPerPage();
 
   /**
+   * <pre>
+   * Filtering options:
+   * If true, only return keys that have not expired.
+   * </pre>
+   *
    * <code>bool not_expired = 4;</code>
    * @return The notExpired.
    */
   boolean getNotExpired();
 
   /**
+   * <pre>
+   * Only return keys that have the listed scopes.
+   * </pre>
+   *
    * <code>repeated string scopes = 5;</code>
    * @return A list containing the scopes.
    */
   java.util.List<java.lang.String>
       getScopesList();
   /**
+   * <pre>
+   * Only return keys that have the listed scopes.
+   * </pre>
+   *
    * <code>repeated string scopes = 5;</code>
    * @return The count of scopes.
    */
   int getScopesCount();
   /**
+   * <pre>
+   * Only return keys that have the listed scopes.
+   * </pre>
+   *
    * <code>repeated string scopes = 5;</code>
    * @param index The index of the element to return.
    * @return The scopes at the given index.
    */
   java.lang.String getScopes(int index);
   /**
+   * <pre>
+   * Only return keys that have the listed scopes.
+   * </pre>
+   *
    * <code>repeated string scopes = 5;</code>
    * @param index The index of the value to return.
    * @return The bytes of the scopes at the given index.
@@ -76,27 +97,63 @@ public interface ListKeysRequestOrBuilder extends
       getScopesBytes(int index);
 
   /**
+   * <pre>
+   * Only return keys that have the listed endpoints.
+   * </pre>
+   *
    * <code>repeated string endpoints = 6;</code>
    * @return A list containing the endpoints.
    */
   java.util.List<java.lang.String>
       getEndpointsList();
   /**
+   * <pre>
+   * Only return keys that have the listed endpoints.
+   * </pre>
+   *
    * <code>repeated string endpoints = 6;</code>
    * @return The count of endpoints.
    */
   int getEndpointsCount();
   /**
+   * <pre>
+   * Only return keys that have the listed endpoints.
+   * </pre>
+   *
    * <code>repeated string endpoints = 6;</code>
    * @param index The index of the element to return.
    * @return The endpoints at the given index.
    */
   java.lang.String getEndpoints(int index);
   /**
+   * <pre>
+   * Only return keys that have the listed endpoints.
+   * </pre>
+   *
    * <code>repeated string endpoints = 6;</code>
    * @param index The index of the value to return.
    * @return The bytes of the endpoints at the given index.
    */
   com.google.protobuf.ByteString
       getEndpointsBytes(int index);
+
+  /**
+   * <pre>
+   * Only return keys with the listed type.
+   * </pre>
+   *
+   * <code>string type = 7;</code>
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   * <pre>
+   * Only return keys with the listed type.
+   * </pre>
+   *
+   * <code>string type = 7;</code>
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString
+      getTypeBytes();
 }

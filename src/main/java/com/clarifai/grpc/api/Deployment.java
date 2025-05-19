@@ -171,6 +171,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 112: {
+
+            deployLatestVersion_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -941,6 +946,21 @@ private static final long serialVersionUID = 0L;
     return getModifiedAt();
   }
 
+  public static final int DEPLOY_LATEST_VERSION_FIELD_NUMBER = 14;
+  private boolean deployLatestVersion_;
+  /**
+   * <pre>
+   * When to always deploy latest model version
+   * </pre>
+   *
+   * <code>bool deploy_latest_version = 14;</code>
+   * @return The deployLatestVersion.
+   */
+  @java.lang.Override
+  public boolean getDeployLatestVersion() {
+    return deployLatestVersion_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -987,6 +1007,9 @@ private static final long serialVersionUID = 0L;
     }
     if (modifiedAt_ != null) {
       output.writeMessage(13, getModifiedAt());
+    }
+    if (deployLatestVersion_ != false) {
+      output.writeBool(14, deployLatestVersion_);
     }
     unknownFields.writeTo(output);
   }
@@ -1037,6 +1060,10 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getModifiedAt());
+    }
+    if (deployLatestVersion_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(14, deployLatestVersion_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1092,6 +1119,8 @@ private static final long serialVersionUID = 0L;
       if (!getModifiedAt()
           .equals(other.getModifiedAt())) return false;
     }
+    if (getDeployLatestVersion()
+        != other.getDeployLatestVersion()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1139,6 +1168,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getModifiedAt().hashCode();
     }
+    hash = (37 * hash) + DEPLOY_LATEST_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDeployLatestVersion());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1329,6 +1361,8 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
         modifiedAtBuilder_ = null;
       }
+      deployLatestVersion_ = false;
+
       return this;
     }
 
@@ -1399,6 +1433,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.modifiedAt_ = modifiedAtBuilder_.build();
       }
+      result.deployLatestVersion_ = deployLatestVersion_;
       onBuilt();
       return result;
     }
@@ -1505,6 +1540,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModifiedAt()) {
         mergeModifiedAt(other.getModifiedAt());
+      }
+      if (other.getDeployLatestVersion() != false) {
+        setDeployLatestVersion(other.getDeployLatestVersion());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3262,6 +3300,49 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
       }
       return modifiedAtBuilder_;
+    }
+
+    private boolean deployLatestVersion_ ;
+    /**
+     * <pre>
+     * When to always deploy latest model version
+     * </pre>
+     *
+     * <code>bool deploy_latest_version = 14;</code>
+     * @return The deployLatestVersion.
+     */
+    @java.lang.Override
+    public boolean getDeployLatestVersion() {
+      return deployLatestVersion_;
+    }
+    /**
+     * <pre>
+     * When to always deploy latest model version
+     * </pre>
+     *
+     * <code>bool deploy_latest_version = 14;</code>
+     * @param value The deployLatestVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployLatestVersion(boolean value) {
+      
+      deployLatestVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * When to always deploy latest model version
+     * </pre>
+     *
+     * <code>bool deploy_latest_version = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeployLatestVersion() {
+      
+      deployLatestVersion_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

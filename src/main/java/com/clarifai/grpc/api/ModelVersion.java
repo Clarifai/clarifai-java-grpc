@@ -1009,36 +1009,43 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
+   * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2039
    * @return Whether the importInfo field is set.
    */
   @java.lang.Override
-  public boolean hasImportInfo() {
+  @java.lang.Deprecated public boolean hasImportInfo() {
     return importInfo_ != null;
   }
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
+   * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2039
    * @return The importInfo.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.ImportInfo getImportInfo() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo getImportInfo() {
     return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
   }
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
     return getImportInfo();
   }
 
@@ -4387,23 +4394,29 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
+     * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2039
      * @return Whether the importInfo field is set.
      */
-    public boolean hasImportInfo() {
+    @java.lang.Deprecated public boolean hasImportInfo() {
       return importInfoBuilder_ != null || importInfo_ != null;
     }
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
+     * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2039
      * @return The importInfo.
      */
-    public com.clarifai.grpc.api.ImportInfo getImportInfo() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo getImportInfo() {
       if (importInfoBuilder_ == null) {
         return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
       } else {
@@ -4413,11 +4426,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      */
-    public Builder setImportInfo(com.clarifai.grpc.api.ImportInfo value) {
+    @java.lang.Deprecated public Builder setImportInfo(com.clarifai.grpc.api.ImportInfo value) {
       if (importInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4433,11 +4447,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      */
-    public Builder setImportInfo(
+    @java.lang.Deprecated public Builder setImportInfo(
         com.clarifai.grpc.api.ImportInfo.Builder builderForValue) {
       if (importInfoBuilder_ == null) {
         importInfo_ = builderForValue.build();
@@ -4451,11 +4466,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      */
-    public Builder mergeImportInfo(com.clarifai.grpc.api.ImportInfo value) {
+    @java.lang.Deprecated public Builder mergeImportInfo(com.clarifai.grpc.api.ImportInfo value) {
       if (importInfoBuilder_ == null) {
         if (importInfo_ != null) {
           importInfo_ =
@@ -4473,11 +4489,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      */
-    public Builder clearImportInfo() {
+    @java.lang.Deprecated public Builder clearImportInfo() {
       if (importInfoBuilder_ == null) {
         importInfo_ = null;
         onChanged();
@@ -4491,11 +4508,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.ImportInfo.Builder getImportInfoBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo.Builder getImportInfoBuilder() {
       
       onChanged();
       return getImportInfoFieldBuilder().getBuilder();
@@ -4503,11 +4521,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
       if (importInfoBuilder_ != null) {
         return importInfoBuilder_.getMessageOrBuilder();
       } else {
@@ -4518,9 +4537,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder> 

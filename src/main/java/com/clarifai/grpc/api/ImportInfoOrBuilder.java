@@ -10,6 +10,7 @@ public interface ImportInfoOrBuilder extends
   /**
    * <pre>
    * Used to configure model imports from third-party toolkits.
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 1;</code>
@@ -19,6 +20,7 @@ public interface ImportInfoOrBuilder extends
   /**
    * <pre>
    * Used to configure model imports from third-party toolkits.
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 1;</code>
@@ -28,6 +30,7 @@ public interface ImportInfoOrBuilder extends
   /**
    * <pre>
    * Used to configure model imports from third-party toolkits.
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 1;</code>

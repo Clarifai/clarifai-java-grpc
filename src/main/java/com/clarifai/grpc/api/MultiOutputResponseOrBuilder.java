@@ -65,4 +65,31 @@ public interface MultiOutputResponseOrBuilder extends
    */
   com.clarifai.grpc.api.OutputOrBuilder getOutputsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Information on where the computation is executed down to specific Deployment, Nodepool and ComputeCluster
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerSelector runner_selector = 3;</code>
+   * @return Whether the runnerSelector field is set.
+   */
+  boolean hasRunnerSelector();
+  /**
+   * <pre>
+   * Information on where the computation is executed down to specific Deployment, Nodepool and ComputeCluster
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerSelector runner_selector = 3;</code>
+   * @return The runnerSelector.
+   */
+  com.clarifai.grpc.api.RunnerSelector getRunnerSelector();
+  /**
+   * <pre>
+   * Information on where the computation is executed down to specific Deployment, Nodepool and ComputeCluster
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerSelector runner_selector = 3;</code>
+   */
+  com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorOrBuilder();
 }

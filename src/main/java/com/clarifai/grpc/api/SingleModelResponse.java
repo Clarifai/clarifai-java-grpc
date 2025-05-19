@@ -78,6 +78,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 32: {
+
+            workflowCount_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -164,6 +169,17 @@ private static final long serialVersionUID = 0L;
     return getModel();
   }
 
+  public static final int WORKFLOW_COUNT_FIELD_NUMBER = 4;
+  private int workflowCount_;
+  /**
+   * <code>int32 workflow_count = 4;</code>
+   * @return The workflowCount.
+   */
+  @java.lang.Override
+  public int getWorkflowCount() {
+    return workflowCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +200,9 @@ private static final long serialVersionUID = 0L;
     if (model_ != null) {
       output.writeMessage(2, getModel());
     }
+    if (workflowCount_ != 0) {
+      output.writeInt32(4, workflowCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -200,6 +219,10 @@ private static final long serialVersionUID = 0L;
     if (model_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getModel());
+    }
+    if (workflowCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, workflowCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,6 +249,8 @@ private static final long serialVersionUID = 0L;
       if (!getModel()
           .equals(other.getModel())) return false;
     }
+    if (getWorkflowCount()
+        != other.getWorkflowCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -245,6 +270,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getModel().hashCode();
     }
+    hash = (37 * hash) + WORKFLOW_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkflowCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -394,6 +421,8 @@ private static final long serialVersionUID = 0L;
         model_ = null;
         modelBuilder_ = null;
       }
+      workflowCount_ = 0;
+
       return this;
     }
 
@@ -430,6 +459,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.model_ = modelBuilder_.build();
       }
+      result.workflowCount_ = workflowCount_;
       onBuilt();
       return result;
     }
@@ -483,6 +513,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModel()) {
         mergeModel(other.getModel());
+      }
+      if (other.getWorkflowCount() != 0) {
+        setWorkflowCount(other.getWorkflowCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -749,6 +782,37 @@ private static final long serialVersionUID = 0L;
         model_ = null;
       }
       return modelBuilder_;
+    }
+
+    private int workflowCount_ ;
+    /**
+     * <code>int32 workflow_count = 4;</code>
+     * @return The workflowCount.
+     */
+    @java.lang.Override
+    public int getWorkflowCount() {
+      return workflowCount_;
+    }
+    /**
+     * <code>int32 workflow_count = 4;</code>
+     * @param value The workflowCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowCount(int value) {
+      
+      workflowCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 workflow_count = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkflowCount() {
+      
+      workflowCount_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

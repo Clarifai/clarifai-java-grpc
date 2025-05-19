@@ -325,4 +325,14 @@ public interface DeploymentOrBuilder extends
    * <code>.google.protobuf.Timestamp modified_at = 13;</code>
    */
   com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
+
+  /**
+   * <pre>
+   * When to always deploy latest model version
+   * </pre>
+   *
+   * <code>bool deploy_latest_version = 14;</code>
+   * @return The deployLatestVersion.
+   */
+  boolean getDeployLatestVersion();
 }

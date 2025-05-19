@@ -181,4 +181,28 @@ public interface ComputeSourceMetadataOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPipelineVersionRunIdBytes();
+
+  /**
+   * <code>string pipeline_step_id = 12;</code>
+   * @return The pipelineStepId.
+   */
+  java.lang.String getPipelineStepId();
+  /**
+   * <code>string pipeline_step_id = 12;</code>
+   * @return The bytes for pipelineStepId.
+   */
+  com.google.protobuf.ByteString
+      getPipelineStepIdBytes();
+
+  /**
+   * <code>string pipeline_step_version_id = 13;</code>
+   * @return The pipelineStepVersionId.
+   */
+  java.lang.String getPipelineStepVersionId();
+  /**
+   * <code>string pipeline_step_version_id = 13;</code>
+   * @return The bytes for pipelineStepVersionId.
+   */
+  com.google.protobuf.ByteString
+      getPipelineStepVersionIdBytes();
 }

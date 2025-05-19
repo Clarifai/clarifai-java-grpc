@@ -200,5 +200,15 @@ public interface ListModelVersionsRequestOrBuilder extends
    */
   boolean getSortByCreatedAt();
 
+  /**
+   * <pre>
+   * Filter by model versions runners with replicas &gt;= min_replicas.
+   * </pre>
+   *
+   * <code>uint32 min_replicas = 12;</code>
+   * @return The minReplicas.
+   */
+  int getMinReplicas();
+
   public com.clarifai.grpc.api.ListModelVersionsRequest.SortByCase getSortByCase();
 }

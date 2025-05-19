@@ -9,8 +9,10 @@ public interface ComputeInfoOrBuilder extends
 
   /**
    * <pre>
-   * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For instances, this is the instance's CPU count.
+   * For runners, this is the maximum amount of CPU that the runner pod can use.
    * </pre>
    *
    * <code>string cpu_limit = 6;</code>
@@ -19,8 +21,10 @@ public interface ComputeInfoOrBuilder extends
   java.lang.String getCpuLimit();
   /**
    * <pre>
-   * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For instances, this is the instance's CPU count.
+   * For runners, this is the maximum amount of CPU that the runner pod can use.
    * </pre>
    *
    * <code>string cpu_limit = 6;</code>
@@ -31,9 +35,11 @@ public interface ComputeInfoOrBuilder extends
 
   /**
    * <pre>
-   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
    * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For instances, this is the instance's CPU memory.
+   * For runners, this is the maximum amount of CPU memory that the runner pod can use.
    * </pre>
    *
    * <code>string cpu_memory = 2;</code>
@@ -42,9 +48,11 @@ public interface ComputeInfoOrBuilder extends
   java.lang.String getCpuMemory();
   /**
    * <pre>
-   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
    * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For instances, this is the instance's CPU memory.
+   * For runners, this is the maximum amount of CPU memory that the runner pod can use.
    * </pre>
    *
    * <code>string cpu_memory = 2;</code>
@@ -52,6 +60,54 @@ public interface ComputeInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCpuMemoryBytes();
+
+  /**
+   * <pre>
+   * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For runners, this is the minimum amount of CPU requested for the runner pod.
+   * </pre>
+   *
+   * <code>string cpu_requests = 7;</code>
+   * @return The cpuRequests.
+   */
+  java.lang.String getCpuRequests();
+  /**
+   * <pre>
+   * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For runners, this is the minimum amount of CPU requested for the runner pod.
+   * </pre>
+   *
+   * <code>string cpu_requests = 7;</code>
+   * @return The bytes for cpuRequests.
+   */
+  com.google.protobuf.ByteString
+      getCpuRequestsBytes();
+
+  /**
+   * <pre>
+   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+   * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+   * </pre>
+   *
+   * <code>string cpu_memory_requests = 8;</code>
+   * @return The cpuMemoryRequests.
+   */
+  java.lang.String getCpuMemoryRequests();
+  /**
+   * <pre>
+   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+   * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+   * </pre>
+   *
+   * <code>string cpu_memory_requests = 8;</code>
+   * @return The bytes for cpuMemoryRequests.
+   */
+  com.google.protobuf.ByteString
+      getCpuMemoryRequestsBytes();
 
   /**
    * <pre>

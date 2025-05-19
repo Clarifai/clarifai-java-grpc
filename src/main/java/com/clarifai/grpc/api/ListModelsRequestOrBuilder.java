@@ -553,7 +553,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5660
+   *     See proto/clarifai/api/service.proto;l=5681
    * @return The query.
    */
   @java.lang.Deprecated java.lang.String getQuery();
@@ -565,7 +565,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5660
+   *     See proto/clarifai/api/service.proto;l=5681
    * @return The bytes for query.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -579,7 +579,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5663
+   *     See proto/clarifai/api/service.proto;l=5684
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -591,7 +591,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5663
+   *     See proto/clarifai/api/service.proto;l=5684
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -605,7 +605,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5666
+   *     See proto/clarifai/api/service.proto;l=5687
    * @return The filterByUserId.
    */
   @java.lang.Deprecated boolean getFilterByUserId();
@@ -699,6 +699,16 @@ public interface ListModelsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatorBytes();
+
+  /**
+   * <pre>
+   * Filter by model versions runners with replicas &gt;= min_replicas.
+   * </pre>
+   *
+   * <code>uint32 min_replicas = 33;</code>
+   * @return The minReplicas.
+   */
+  int getMinReplicas();
 
   public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }

@@ -25,6 +25,8 @@ private static final long serialVersionUID = 0L;
   private ComputeInfo() {
     cpuLimit_ = "";
     cpuMemory_ = "";
+    cpuRequests_ = "";
+    cpuMemoryRequests_ = "";
     acceleratorMemory_ = "";
     acceleratorType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -92,6 +94,18 @@ private static final long serialVersionUID = 0L;
             cpuLimit_ = s;
             break;
           }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            cpuRequests_ = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            cpuMemoryRequests_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -133,8 +147,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object cpuLimit_;
   /**
    * <pre>
-   * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For instances, this is the instance's CPU count.
+   * For runners, this is the maximum amount of CPU that the runner pod can use.
    * </pre>
    *
    * <code>string cpu_limit = 6;</code>
@@ -155,8 +171,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For instances, this is the instance's CPU count.
+   * For runners, this is the maximum amount of CPU that the runner pod can use.
    * </pre>
    *
    * <code>string cpu_limit = 6;</code>
@@ -181,9 +199,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object cpuMemory_;
   /**
    * <pre>
-   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
    * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For instances, this is the instance's CPU memory.
+   * For runners, this is the maximum amount of CPU memory that the runner pod can use.
    * </pre>
    *
    * <code>string cpu_memory = 2;</code>
@@ -204,9 +224,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
    * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For instances, this is the instance's CPU memory.
+   * For runners, this is the maximum amount of CPU memory that the runner pod can use.
    * </pre>
    *
    * <code>string cpu_memory = 2;</code>
@@ -221,6 +243,106 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       cpuMemory_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CPU_REQUESTS_FIELD_NUMBER = 7;
+  private volatile java.lang.Object cpuRequests_;
+  /**
+   * <pre>
+   * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For runners, this is the minimum amount of CPU requested for the runner pod.
+   * </pre>
+   *
+   * <code>string cpu_requests = 7;</code>
+   * @return The cpuRequests.
+   */
+  @java.lang.Override
+  public java.lang.String getCpuRequests() {
+    java.lang.Object ref = cpuRequests_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cpuRequests_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * For runners, this is the minimum amount of CPU requested for the runner pod.
+   * </pre>
+   *
+   * <code>string cpu_requests = 7;</code>
+   * @return The bytes for cpuRequests.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCpuRequestsBytes() {
+    java.lang.Object ref = cpuRequests_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      cpuRequests_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CPU_MEMORY_REQUESTS_FIELD_NUMBER = 8;
+  private volatile java.lang.Object cpuMemoryRequests_;
+  /**
+   * <pre>
+   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+   * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+   * </pre>
+   *
+   * <code>string cpu_memory_requests = 8;</code>
+   * @return The cpuMemoryRequests.
+   */
+  @java.lang.Override
+  public java.lang.String getCpuMemoryRequests() {
+    java.lang.Object ref = cpuMemoryRequests_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cpuMemoryRequests_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+   * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+   * </pre>
+   *
+   * <code>string cpu_memory_requests = 8;</code>
+   * @return The bytes for cpuMemoryRequests.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCpuMemoryRequestsBytes() {
+    java.lang.Object ref = cpuMemoryRequests_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      cpuMemoryRequests_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -378,6 +500,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuLimit_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, cpuLimit_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuRequests_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, cpuRequests_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuMemoryRequests_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, cpuMemoryRequests_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -408,6 +536,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuLimit_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, cpuLimit_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuRequests_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, cpuRequests_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuMemoryRequests_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, cpuMemoryRequests_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -427,6 +561,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCpuLimit())) return false;
     if (!getCpuMemory()
         .equals(other.getCpuMemory())) return false;
+    if (!getCpuRequests()
+        .equals(other.getCpuRequests())) return false;
+    if (!getCpuMemoryRequests()
+        .equals(other.getCpuMemoryRequests())) return false;
     if (getNumAccelerators()
         != other.getNumAccelerators()) return false;
     if (!getAcceleratorMemory()
@@ -448,6 +586,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCpuLimit().hashCode();
     hash = (37 * hash) + CPU_MEMORY_FIELD_NUMBER;
     hash = (53 * hash) + getCpuMemory().hashCode();
+    hash = (37 * hash) + CPU_REQUESTS_FIELD_NUMBER;
+    hash = (53 * hash) + getCpuRequests().hashCode();
+    hash = (37 * hash) + CPU_MEMORY_REQUESTS_FIELD_NUMBER;
+    hash = (53 * hash) + getCpuMemoryRequests().hashCode();
     hash = (37 * hash) + NUM_ACCELERATORS_FIELD_NUMBER;
     hash = (53 * hash) + getNumAccelerators();
     hash = (37 * hash) + ACCELERATOR_MEMORY_FIELD_NUMBER;
@@ -600,6 +742,10 @@ private static final long serialVersionUID = 0L;
 
       cpuMemory_ = "";
 
+      cpuRequests_ = "";
+
+      cpuMemoryRequests_ = "";
+
       numAccelerators_ = 0;
 
       acceleratorMemory_ = "";
@@ -635,6 +781,8 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       result.cpuLimit_ = cpuLimit_;
       result.cpuMemory_ = cpuMemory_;
+      result.cpuRequests_ = cpuRequests_;
+      result.cpuMemoryRequests_ = cpuMemoryRequests_;
       result.numAccelerators_ = numAccelerators_;
       result.acceleratorMemory_ = acceleratorMemory_;
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -698,6 +846,14 @@ private static final long serialVersionUID = 0L;
         cpuMemory_ = other.cpuMemory_;
         onChanged();
       }
+      if (!other.getCpuRequests().isEmpty()) {
+        cpuRequests_ = other.cpuRequests_;
+        onChanged();
+      }
+      if (!other.getCpuMemoryRequests().isEmpty()) {
+        cpuMemoryRequests_ = other.cpuMemoryRequests_;
+        onChanged();
+      }
       if (other.getNumAccelerators() != 0) {
         setNumAccelerators(other.getNumAccelerators());
       }
@@ -748,8 +904,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object cpuLimit_ = "";
     /**
      * <pre>
-     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU count.
+     * For runners, this is the maximum amount of CPU that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_limit = 6;</code>
@@ -769,8 +927,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU count.
+     * For runners, this is the maximum amount of CPU that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_limit = 6;</code>
@@ -791,8 +951,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU count.
+     * For runners, this is the maximum amount of CPU that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_limit = 6;</code>
@@ -811,8 +973,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU count.
+     * For runners, this is the maximum amount of CPU that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_limit = 6;</code>
@@ -826,8 +990,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * Amount of CPUs to use as a limit. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU count.
+     * For runners, this is the maximum amount of CPU that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_limit = 6;</code>
@@ -849,9 +1015,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object cpuMemory_ = "";
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU memory.
+     * For runners, this is the maximum amount of CPU memory that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -871,9 +1039,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU memory.
+     * For runners, this is the maximum amount of CPU memory that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -894,9 +1064,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU memory.
+     * For runners, this is the maximum amount of CPU memory that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -915,9 +1087,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU memory.
+     * For runners, this is the maximum amount of CPU memory that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -931,9 +1105,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * Amount of CPU memory to use as a limit. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For instances, this is the instance's CPU memory.
+     * For runners, this is the maximum amount of CPU memory that the runner pod can use.
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -948,6 +1124,218 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       cpuMemory_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cpuRequests_ = "";
+    /**
+     * <pre>
+     * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_requests = 7;</code>
+     * @return The cpuRequests.
+     */
+    public java.lang.String getCpuRequests() {
+      java.lang.Object ref = cpuRequests_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cpuRequests_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_requests = 7;</code>
+     * @return The bytes for cpuRequests.
+     */
+    public com.google.protobuf.ByteString
+        getCpuRequestsBytes() {
+      java.lang.Object ref = cpuRequests_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cpuRequests_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_requests = 7;</code>
+     * @param value The cpuRequests to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpuRequests(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      cpuRequests_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_requests = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCpuRequests() {
+      
+      cpuRequests_ = getDefaultInstance().getCpuRequests();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_requests = 7;</code>
+     * @param value The bytes for cpuRequests to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpuRequestsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      cpuRequests_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cpuMemoryRequests_ = "";
+    /**
+     * <pre>
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_memory_requests = 8;</code>
+     * @return The cpuMemoryRequests.
+     */
+    public java.lang.String getCpuMemoryRequests() {
+      java.lang.Object ref = cpuMemoryRequests_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cpuMemoryRequests_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_memory_requests = 8;</code>
+     * @return The bytes for cpuMemoryRequests.
+     */
+    public com.google.protobuf.ByteString
+        getCpuMemoryRequestsBytes() {
+      java.lang.Object ref = cpuMemoryRequests_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cpuMemoryRequests_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_memory_requests = 8;</code>
+     * @param value The cpuMemoryRequests to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpuMemoryRequests(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      cpuMemoryRequests_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_memory_requests = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCpuMemoryRequests() {
+      
+      cpuMemoryRequests_ = getDefaultInstance().getCpuMemoryRequests();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * </pre>
+     *
+     * <code>string cpu_memory_requests = 8;</code>
+     * @param value The bytes for cpuMemoryRequests to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpuMemoryRequestsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      cpuMemoryRequests_ = value;
       onChanged();
       return this;
     }

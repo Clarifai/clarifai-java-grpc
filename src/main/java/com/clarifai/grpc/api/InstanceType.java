@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     description_ = "";
     price_ = "";
+    region_ = "";
   }
 
   @java.lang.Override
@@ -85,6 +86,38 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             price_ = s;
+            break;
+          }
+          case 42: {
+            com.clarifai.grpc.api.CloudProvider.Builder subBuilder = null;
+            if (cloudProvider_ != null) {
+              subBuilder = cloudProvider_.toBuilder();
+            }
+            cloudProvider_ = input.readMessage(com.clarifai.grpc.api.CloudProvider.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(cloudProvider_);
+              cloudProvider_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            region_ = s;
+            break;
+          }
+          case 58: {
+            com.clarifai.grpc.api.NodeCapacityType.Builder subBuilder = null;
+            if (allowedCapacityTypes_ != null) {
+              subBuilder = allowedCapacityTypes_.toBuilder();
+            }
+            allowedCapacityTypes_ = input.readMessage(com.clarifai.grpc.api.NodeCapacityType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(allowedCapacityTypes_);
+              allowedCapacityTypes_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -269,6 +302,128 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CLOUD_PROVIDER_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.CloudProvider cloudProvider_;
+  /**
+   * <pre>
+   * The cloud provider where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+   * @return Whether the cloudProvider field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudProvider() {
+    return cloudProvider_ != null;
+  }
+  /**
+   * <pre>
+   * The cloud provider where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+   * @return The cloudProvider.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CloudProvider getCloudProvider() {
+    return cloudProvider_ == null ? com.clarifai.grpc.api.CloudProvider.getDefaultInstance() : cloudProvider_;
+  }
+  /**
+   * <pre>
+   * The cloud provider where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CloudProviderOrBuilder getCloudProviderOrBuilder() {
+    return getCloudProvider();
+  }
+
+  public static final int REGION_FIELD_NUMBER = 6;
+  private volatile java.lang.Object region_;
+  /**
+   * <pre>
+   * The region where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The region where this instance type is available, if any.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ALLOWED_CAPACITY_TYPES_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.NodeCapacityType allowedCapacityTypes_;
+  /**
+   * <pre>
+   * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+   * </pre>
+   *
+   * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+   * @return Whether the allowedCapacityTypes field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowedCapacityTypes() {
+    return allowedCapacityTypes_ != null;
+  }
+  /**
+   * <pre>
+   * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+   * </pre>
+   *
+   * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+   * @return The allowedCapacityTypes.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.NodeCapacityType getAllowedCapacityTypes() {
+    return allowedCapacityTypes_ == null ? com.clarifai.grpc.api.NodeCapacityType.getDefaultInstance() : allowedCapacityTypes_;
+  }
+  /**
+   * <pre>
+   * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+   * </pre>
+   *
+   * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.NodeCapacityTypeOrBuilder getAllowedCapacityTypesOrBuilder() {
+    return getAllowedCapacityTypes();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -295,6 +450,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, price_);
     }
+    if (cloudProvider_ != null) {
+      output.writeMessage(5, getCloudProvider());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, region_);
+    }
+    if (allowedCapacityTypes_ != null) {
+      output.writeMessage(7, getAllowedCapacityTypes());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -316,6 +480,17 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(price_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, price_);
+    }
+    if (cloudProvider_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getCloudProvider());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, region_);
+    }
+    if (allowedCapacityTypes_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getAllowedCapacityTypes());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -343,6 +518,18 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPrice()
         .equals(other.getPrice())) return false;
+    if (hasCloudProvider() != other.hasCloudProvider()) return false;
+    if (hasCloudProvider()) {
+      if (!getCloudProvider()
+          .equals(other.getCloudProvider())) return false;
+    }
+    if (!getRegion()
+        .equals(other.getRegion())) return false;
+    if (hasAllowedCapacityTypes() != other.hasAllowedCapacityTypes()) return false;
+    if (hasAllowedCapacityTypes()) {
+      if (!getAllowedCapacityTypes()
+          .equals(other.getAllowedCapacityTypes())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -364,6 +551,16 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + PRICE_FIELD_NUMBER;
     hash = (53 * hash) + getPrice().hashCode();
+    if (hasCloudProvider()) {
+      hash = (37 * hash) + CLOUD_PROVIDER_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudProvider().hashCode();
+    }
+    hash = (37 * hash) + REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getRegion().hashCode();
+    if (hasAllowedCapacityTypes()) {
+      hash = (37 * hash) + ALLOWED_CAPACITY_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getAllowedCapacityTypes().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -514,6 +711,20 @@ private static final long serialVersionUID = 0L;
       }
       price_ = "";
 
+      if (cloudProviderBuilder_ == null) {
+        cloudProvider_ = null;
+      } else {
+        cloudProvider_ = null;
+        cloudProviderBuilder_ = null;
+      }
+      region_ = "";
+
+      if (allowedCapacityTypesBuilder_ == null) {
+        allowedCapacityTypes_ = null;
+      } else {
+        allowedCapacityTypes_ = null;
+        allowedCapacityTypesBuilder_ = null;
+      }
       return this;
     }
 
@@ -548,6 +759,17 @@ private static final long serialVersionUID = 0L;
         result.computeInfo_ = computeInfoBuilder_.build();
       }
       result.price_ = price_;
+      if (cloudProviderBuilder_ == null) {
+        result.cloudProvider_ = cloudProvider_;
+      } else {
+        result.cloudProvider_ = cloudProviderBuilder_.build();
+      }
+      result.region_ = region_;
+      if (allowedCapacityTypesBuilder_ == null) {
+        result.allowedCapacityTypes_ = allowedCapacityTypes_;
+      } else {
+        result.allowedCapacityTypes_ = allowedCapacityTypesBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -610,6 +832,16 @@ private static final long serialVersionUID = 0L;
       if (!other.getPrice().isEmpty()) {
         price_ = other.price_;
         onChanged();
+      }
+      if (other.hasCloudProvider()) {
+        mergeCloudProvider(other.getCloudProvider());
+      }
+      if (!other.getRegion().isEmpty()) {
+        region_ = other.region_;
+        onChanged();
+      }
+      if (other.hasAllowedCapacityTypes()) {
+        mergeAllowedCapacityTypes(other.getAllowedCapacityTypes());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1005,6 +1237,412 @@ private static final long serialVersionUID = 0L;
       price_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.CloudProvider cloudProvider_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.CloudProvider, com.clarifai.grpc.api.CloudProvider.Builder, com.clarifai.grpc.api.CloudProviderOrBuilder> cloudProviderBuilder_;
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     * @return Whether the cloudProvider field is set.
+     */
+    public boolean hasCloudProvider() {
+      return cloudProviderBuilder_ != null || cloudProvider_ != null;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     * @return The cloudProvider.
+     */
+    public com.clarifai.grpc.api.CloudProvider getCloudProvider() {
+      if (cloudProviderBuilder_ == null) {
+        return cloudProvider_ == null ? com.clarifai.grpc.api.CloudProvider.getDefaultInstance() : cloudProvider_;
+      } else {
+        return cloudProviderBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public Builder setCloudProvider(com.clarifai.grpc.api.CloudProvider value) {
+      if (cloudProviderBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudProvider_ = value;
+        onChanged();
+      } else {
+        cloudProviderBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public Builder setCloudProvider(
+        com.clarifai.grpc.api.CloudProvider.Builder builderForValue) {
+      if (cloudProviderBuilder_ == null) {
+        cloudProvider_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudProviderBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public Builder mergeCloudProvider(com.clarifai.grpc.api.CloudProvider value) {
+      if (cloudProviderBuilder_ == null) {
+        if (cloudProvider_ != null) {
+          cloudProvider_ =
+            com.clarifai.grpc.api.CloudProvider.newBuilder(cloudProvider_).mergeFrom(value).buildPartial();
+        } else {
+          cloudProvider_ = value;
+        }
+        onChanged();
+      } else {
+        cloudProviderBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public Builder clearCloudProvider() {
+      if (cloudProviderBuilder_ == null) {
+        cloudProvider_ = null;
+        onChanged();
+      } else {
+        cloudProvider_ = null;
+        cloudProviderBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public com.clarifai.grpc.api.CloudProvider.Builder getCloudProviderBuilder() {
+      
+      onChanged();
+      return getCloudProviderFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    public com.clarifai.grpc.api.CloudProviderOrBuilder getCloudProviderOrBuilder() {
+      if (cloudProviderBuilder_ != null) {
+        return cloudProviderBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudProvider_ == null ?
+            com.clarifai.grpc.api.CloudProvider.getDefaultInstance() : cloudProvider_;
+      }
+    }
+    /**
+     * <pre>
+     * The cloud provider where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>.clarifai.api.CloudProvider cloud_provider = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.CloudProvider, com.clarifai.grpc.api.CloudProvider.Builder, com.clarifai.grpc.api.CloudProviderOrBuilder> 
+        getCloudProviderFieldBuilder() {
+      if (cloudProviderBuilder_ == null) {
+        cloudProviderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.CloudProvider, com.clarifai.grpc.api.CloudProvider.Builder, com.clarifai.grpc.api.CloudProviderOrBuilder>(
+                getCloudProvider(),
+                getParentForChildren(),
+                isClean());
+        cloudProvider_ = null;
+      }
+      return cloudProviderBuilder_;
+    }
+
+    private java.lang.Object region_ = "";
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString
+        getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      region_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      
+      region_ = getDefaultInstance().getRegion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The region where this instance type is available, if any.
+     * </pre>
+     *
+     * <code>string region = 6;</code>
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      region_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.clarifai.grpc.api.NodeCapacityType allowedCapacityTypes_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.NodeCapacityType, com.clarifai.grpc.api.NodeCapacityType.Builder, com.clarifai.grpc.api.NodeCapacityTypeOrBuilder> allowedCapacityTypesBuilder_;
+    /**
+     * <pre>
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     * </pre>
+     *
+     * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     * @return Whether the allowedCapacityTypes field is set.
+     */
+    public boolean hasAllowedCapacityTypes() {
+      return allowedCapacityTypesBuilder_ != null || allowedCapacityTypes_ != null;
+    }
+    /**
+     * <pre>
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     * </pre>
+     *
+     * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     * @return The allowedCapacityTypes.
+     */
+    public com.clarifai.grpc.api.NodeCapacityType getAllowedCapacityTypes() {
+      if (allowedCapacityTypesBuilder_ == null) {
+        return allowedCapacityTypes_ == null ? com.clarifai.grpc.api.NodeCapacityType.getDefaultInstance() : allowedCapacityTypes_;
+      } else {
+        return allowedCapacityTypesBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     * </pre>
+     *
+     * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     */
+    public Builder setAllowedCapacityTypes(com.clarifai.grpc.api.NodeCapacityType value) {
+      if (allowedCapacityTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        allowedCapacityTypes_ = value;
+        onChanged();
+      } else {
+        allowedCapacityTypesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     * </pre>
+     *
+     * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     */
+    public Builder setAllowedCapacityTypes(
+        com.clarifai.grpc.api.NodeCapacityType.Builder builderForValue) {
+      if (allowedCapacityTypesBuilder_ == null) {
+        allowedCapacityTypes_ = builderForValue.build();
+        onChanged();
+      } else {
+        allowedCapacityTypesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     * </pre>
+     *
+     * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     */
+    public Builder mergeAllowedCapacityTypes(com.clarifai.grpc.api.NodeCapacityType value) {
+      if (allowedCapacityTypesBuilder_ == null) {
+        if (allowedCapacityTypes_ != null) {
+          allowedCapacityTypes_ =
+            com.clarifai.grpc.api.NodeCapacityType.newBuilder(allowedCapacityTypes_).mergeFrom(value).buildPartial();
+        } else {
+          allowedCapacityTypes_ = value;
+        }
+        onChanged();
+      } else {
+        allowedCapacityTypesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     * </pre>
+     *
+     * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     */
+    public Builder clearAllowedCapacityTypes() {
+      if (allowedCapacityTypesBuilder_ == null) {
+        allowedCapacityTypes_ = null;
+        onChanged();
+      } else {
+        allowedCapacityTypes_ = null;
+        allowedCapacityTypesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     * </pre>
+     *
+     * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     */
+    public com.clarifai.grpc.api.NodeCapacityType.Builder getAllowedCapacityTypesBuilder() {
+      
+      onChanged();
+      return getAllowedCapacityTypesFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     * </pre>
+     *
+     * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     */
+    public com.clarifai.grpc.api.NodeCapacityTypeOrBuilder getAllowedCapacityTypesOrBuilder() {
+      if (allowedCapacityTypesBuilder_ != null) {
+        return allowedCapacityTypesBuilder_.getMessageOrBuilder();
+      } else {
+        return allowedCapacityTypes_ == null ?
+            com.clarifai.grpc.api.NodeCapacityType.getDefaultInstance() : allowedCapacityTypes_;
+      }
+    }
+    /**
+     * <pre>
+     * The capacity types allowed for this instance type. If empty - all capacity types are allowed.
+     * </pre>
+     *
+     * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.NodeCapacityType, com.clarifai.grpc.api.NodeCapacityType.Builder, com.clarifai.grpc.api.NodeCapacityTypeOrBuilder> 
+        getAllowedCapacityTypesFieldBuilder() {
+      if (allowedCapacityTypesBuilder_ == null) {
+        allowedCapacityTypesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.NodeCapacityType, com.clarifai.grpc.api.NodeCapacityType.Builder, com.clarifai.grpc.api.NodeCapacityTypeOrBuilder>(
+                getAllowedCapacityTypes(),
+                getParentForChildren(),
+                isClean());
+        allowedCapacityTypes_ = null;
+      }
+      return allowedCapacityTypesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

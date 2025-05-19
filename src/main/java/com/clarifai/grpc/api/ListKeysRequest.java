@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private ListKeysRequest() {
     scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -99,6 +100,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000002;
             }
             endpoints_.add(s);
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            type_ = s;
             break;
           }
           default: {
@@ -202,6 +209,11 @@ private static final long serialVersionUID = 0L;
   public static final int NOT_EXPIRED_FIELD_NUMBER = 4;
   private boolean notExpired_;
   /**
+   * <pre>
+   * Filtering options:
+   * If true, only return keys that have not expired.
+   * </pre>
+   *
    * <code>bool not_expired = 4;</code>
    * @return The notExpired.
    */
@@ -213,6 +225,10 @@ private static final long serialVersionUID = 0L;
   public static final int SCOPES_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList scopes_;
   /**
+   * <pre>
+   * Only return keys that have the listed scopes.
+   * </pre>
+   *
    * <code>repeated string scopes = 5;</code>
    * @return A list containing the scopes.
    */
@@ -221,6 +237,10 @@ private static final long serialVersionUID = 0L;
     return scopes_;
   }
   /**
+   * <pre>
+   * Only return keys that have the listed scopes.
+   * </pre>
+   *
    * <code>repeated string scopes = 5;</code>
    * @return The count of scopes.
    */
@@ -228,6 +248,10 @@ private static final long serialVersionUID = 0L;
     return scopes_.size();
   }
   /**
+   * <pre>
+   * Only return keys that have the listed scopes.
+   * </pre>
+   *
    * <code>repeated string scopes = 5;</code>
    * @param index The index of the element to return.
    * @return The scopes at the given index.
@@ -236,6 +260,10 @@ private static final long serialVersionUID = 0L;
     return scopes_.get(index);
   }
   /**
+   * <pre>
+   * Only return keys that have the listed scopes.
+   * </pre>
+   *
    * <code>repeated string scopes = 5;</code>
    * @param index The index of the value to return.
    * @return The bytes of the scopes at the given index.
@@ -248,6 +276,10 @@ private static final long serialVersionUID = 0L;
   public static final int ENDPOINTS_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList endpoints_;
   /**
+   * <pre>
+   * Only return keys that have the listed endpoints.
+   * </pre>
+   *
    * <code>repeated string endpoints = 6;</code>
    * @return A list containing the endpoints.
    */
@@ -256,6 +288,10 @@ private static final long serialVersionUID = 0L;
     return endpoints_;
   }
   /**
+   * <pre>
+   * Only return keys that have the listed endpoints.
+   * </pre>
+   *
    * <code>repeated string endpoints = 6;</code>
    * @return The count of endpoints.
    */
@@ -263,6 +299,10 @@ private static final long serialVersionUID = 0L;
     return endpoints_.size();
   }
   /**
+   * <pre>
+   * Only return keys that have the listed endpoints.
+   * </pre>
+   *
    * <code>repeated string endpoints = 6;</code>
    * @param index The index of the element to return.
    * @return The endpoints at the given index.
@@ -271,6 +311,10 @@ private static final long serialVersionUID = 0L;
     return endpoints_.get(index);
   }
   /**
+   * <pre>
+   * Only return keys that have the listed endpoints.
+   * </pre>
+   *
    * <code>repeated string endpoints = 6;</code>
    * @param index The index of the value to return.
    * @return The bytes of the endpoints at the given index.
@@ -278,6 +322,52 @@ private static final long serialVersionUID = 0L;
   public com.google.protobuf.ByteString
       getEndpointsBytes(int index) {
     return endpoints_.getByteString(index);
+  }
+
+  public static final int TYPE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object type_;
+  /**
+   * <pre>
+   * Only return keys with the listed type.
+   * </pre>
+   *
+   * <code>string type = 7;</code>
+   * @return The type.
+   */
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Only return keys with the listed type.
+   * </pre>
+   *
+   * <code>string type = 7;</code>
+   * @return The bytes for type.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -311,6 +401,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < endpoints_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, endpoints_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, type_);
     }
     unknownFields.writeTo(output);
   }
@@ -353,6 +446,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getEndpointsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, type_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -383,6 +479,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getScopesList())) return false;
     if (!getEndpointsList()
         .equals(other.getEndpointsList())) return false;
+    if (!getType()
+        .equals(other.getType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -413,6 +511,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ENDPOINTS_FIELD_NUMBER;
       hash = (53 * hash) + getEndpointsList().hashCode();
     }
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -566,6 +666,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      type_ = "";
+
       return this;
     }
 
@@ -611,6 +713,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.endpoints_ = endpoints_;
+      result.type_ = type_;
       onBuilt();
       return result;
     }
@@ -689,6 +792,10 @@ private static final long serialVersionUID = 0L;
           ensureEndpointsIsMutable();
           endpoints_.addAll(other.endpoints_);
         }
+        onChanged();
+      }
+      if (!other.getType().isEmpty()) {
+        type_ = other.type_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -934,6 +1041,11 @@ private static final long serialVersionUID = 0L;
 
     private boolean notExpired_ ;
     /**
+     * <pre>
+     * Filtering options:
+     * If true, only return keys that have not expired.
+     * </pre>
+     *
      * <code>bool not_expired = 4;</code>
      * @return The notExpired.
      */
@@ -942,6 +1054,11 @@ private static final long serialVersionUID = 0L;
       return notExpired_;
     }
     /**
+     * <pre>
+     * Filtering options:
+     * If true, only return keys that have not expired.
+     * </pre>
+     *
      * <code>bool not_expired = 4;</code>
      * @param value The notExpired to set.
      * @return This builder for chaining.
@@ -953,6 +1070,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Filtering options:
+     * If true, only return keys that have not expired.
+     * </pre>
+     *
      * <code>bool not_expired = 4;</code>
      * @return This builder for chaining.
      */
@@ -971,6 +1093,10 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
+     * <pre>
+     * Only return keys that have the listed scopes.
+     * </pre>
+     *
      * <code>repeated string scopes = 5;</code>
      * @return A list containing the scopes.
      */
@@ -979,6 +1105,10 @@ private static final long serialVersionUID = 0L;
       return scopes_.getUnmodifiableView();
     }
     /**
+     * <pre>
+     * Only return keys that have the listed scopes.
+     * </pre>
+     *
      * <code>repeated string scopes = 5;</code>
      * @return The count of scopes.
      */
@@ -986,6 +1116,10 @@ private static final long serialVersionUID = 0L;
       return scopes_.size();
     }
     /**
+     * <pre>
+     * Only return keys that have the listed scopes.
+     * </pre>
+     *
      * <code>repeated string scopes = 5;</code>
      * @param index The index of the element to return.
      * @return The scopes at the given index.
@@ -994,6 +1128,10 @@ private static final long serialVersionUID = 0L;
       return scopes_.get(index);
     }
     /**
+     * <pre>
+     * Only return keys that have the listed scopes.
+     * </pre>
+     *
      * <code>repeated string scopes = 5;</code>
      * @param index The index of the value to return.
      * @return The bytes of the scopes at the given index.
@@ -1003,6 +1141,10 @@ private static final long serialVersionUID = 0L;
       return scopes_.getByteString(index);
     }
     /**
+     * <pre>
+     * Only return keys that have the listed scopes.
+     * </pre>
+     *
      * <code>repeated string scopes = 5;</code>
      * @param index The index to set the value at.
      * @param value The scopes to set.
@@ -1019,6 +1161,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only return keys that have the listed scopes.
+     * </pre>
+     *
      * <code>repeated string scopes = 5;</code>
      * @param value The scopes to add.
      * @return This builder for chaining.
@@ -1034,6 +1180,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only return keys that have the listed scopes.
+     * </pre>
+     *
      * <code>repeated string scopes = 5;</code>
      * @param values The scopes to add.
      * @return This builder for chaining.
@@ -1047,6 +1197,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only return keys that have the listed scopes.
+     * </pre>
+     *
      * <code>repeated string scopes = 5;</code>
      * @return This builder for chaining.
      */
@@ -1057,6 +1211,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only return keys that have the listed scopes.
+     * </pre>
+     *
      * <code>repeated string scopes = 5;</code>
      * @param value The bytes of the scopes to add.
      * @return This builder for chaining.
@@ -1081,6 +1239,10 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
+     * <pre>
+     * Only return keys that have the listed endpoints.
+     * </pre>
+     *
      * <code>repeated string endpoints = 6;</code>
      * @return A list containing the endpoints.
      */
@@ -1089,6 +1251,10 @@ private static final long serialVersionUID = 0L;
       return endpoints_.getUnmodifiableView();
     }
     /**
+     * <pre>
+     * Only return keys that have the listed endpoints.
+     * </pre>
+     *
      * <code>repeated string endpoints = 6;</code>
      * @return The count of endpoints.
      */
@@ -1096,6 +1262,10 @@ private static final long serialVersionUID = 0L;
       return endpoints_.size();
     }
     /**
+     * <pre>
+     * Only return keys that have the listed endpoints.
+     * </pre>
+     *
      * <code>repeated string endpoints = 6;</code>
      * @param index The index of the element to return.
      * @return The endpoints at the given index.
@@ -1104,6 +1274,10 @@ private static final long serialVersionUID = 0L;
       return endpoints_.get(index);
     }
     /**
+     * <pre>
+     * Only return keys that have the listed endpoints.
+     * </pre>
+     *
      * <code>repeated string endpoints = 6;</code>
      * @param index The index of the value to return.
      * @return The bytes of the endpoints at the given index.
@@ -1113,6 +1287,10 @@ private static final long serialVersionUID = 0L;
       return endpoints_.getByteString(index);
     }
     /**
+     * <pre>
+     * Only return keys that have the listed endpoints.
+     * </pre>
+     *
      * <code>repeated string endpoints = 6;</code>
      * @param index The index to set the value at.
      * @param value The endpoints to set.
@@ -1129,6 +1307,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only return keys that have the listed endpoints.
+     * </pre>
+     *
      * <code>repeated string endpoints = 6;</code>
      * @param value The endpoints to add.
      * @return This builder for chaining.
@@ -1144,6 +1326,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only return keys that have the listed endpoints.
+     * </pre>
+     *
      * <code>repeated string endpoints = 6;</code>
      * @param values The endpoints to add.
      * @return This builder for chaining.
@@ -1157,6 +1343,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only return keys that have the listed endpoints.
+     * </pre>
+     *
      * <code>repeated string endpoints = 6;</code>
      * @return This builder for chaining.
      */
@@ -1167,6 +1357,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only return keys that have the listed endpoints.
+     * </pre>
+     *
      * <code>repeated string endpoints = 6;</code>
      * @param value The bytes of the endpoints to add.
      * @return This builder for chaining.
@@ -1179,6 +1373,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureEndpointsIsMutable();
       endpoints_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object type_ = "";
+    /**
+     * <pre>
+     * Only return keys with the listed type.
+     * </pre>
+     *
+     * <code>string type = 7;</code>
+     * @return The type.
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Only return keys with the listed type.
+     * </pre>
+     *
+     * <code>string type = 7;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Only return keys with the listed type.
+     * </pre>
+     *
+     * <code>string type = 7;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Only return keys with the listed type.
+     * </pre>
+     *
+     * <code>string type = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Only return keys with the listed type.
+     * </pre>
+     *
+     * <code>string type = 7;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      type_ = value;
       onChanged();
       return this;
     }

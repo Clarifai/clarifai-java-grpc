@@ -196,6 +196,50 @@ public enum EventType
    * <code>USER_UPDATE = 800 [(.clarifai.api.utils.description) = "Users updated"];</code>
    */
   USER_UPDATE(800),
+  /**
+   * <pre>
+   * Event types related to compute clusters: 900-999
+   * </pre>
+   *
+   * <code>COMPUTE_CLUSTER_CREATE = 900 [(.clarifai.api.utils.description) = "Compute clusters created"];</code>
+   */
+  COMPUTE_CLUSTER_CREATE(900),
+  /**
+   * <code>COMPUTE_CLUSTER_DELETE = 901 [(.clarifai.api.utils.description) = "Compute clusters deleted"];</code>
+   */
+  COMPUTE_CLUSTER_DELETE(901),
+  /**
+   * <pre>
+   * Event types related to nodepools: 1000-1099
+   * </pre>
+   *
+   * <code>NODEPOOL_CREATE = 1000 [(.clarifai.api.utils.description) = "Nodepools created"];</code>
+   */
+  NODEPOOL_CREATE(1000),
+  /**
+   * <code>NODEPOOL_UPDATE = 1001 [(.clarifai.api.utils.description) = "Nodepools updated"];</code>
+   */
+  NODEPOOL_UPDATE(1001),
+  /**
+   * <code>NODEPOOL_DELETE = 1002 [(.clarifai.api.utils.description) = "Nodepools deleted"];</code>
+   */
+  NODEPOOL_DELETE(1002),
+  /**
+   * <pre>
+   * Event types related to deployments: 1100-1199
+   * </pre>
+   *
+   * <code>DEPLOYMENT_CREATE = 1100 [(.clarifai.api.utils.description) = "Deployments created"];</code>
+   */
+  DEPLOYMENT_CREATE(1100),
+  /**
+   * <code>DEPLOYMENT_UPDATE = 1101 [(.clarifai.api.utils.description) = "Deployments updated"];</code>
+   */
+  DEPLOYMENT_UPDATE(1101),
+  /**
+   * <code>DEPLOYMENT_DELETE = 1102 [(.clarifai.api.utils.description) = "Deployments deleted"];</code>
+   */
+  DEPLOYMENT_DELETE(1102),
   UNRECOGNIZED(-1),
   ;
 
@@ -387,6 +431,50 @@ public enum EventType
    * <code>USER_UPDATE = 800 [(.clarifai.api.utils.description) = "Users updated"];</code>
    */
   public static final int USER_UPDATE_VALUE = 800;
+  /**
+   * <pre>
+   * Event types related to compute clusters: 900-999
+   * </pre>
+   *
+   * <code>COMPUTE_CLUSTER_CREATE = 900 [(.clarifai.api.utils.description) = "Compute clusters created"];</code>
+   */
+  public static final int COMPUTE_CLUSTER_CREATE_VALUE = 900;
+  /**
+   * <code>COMPUTE_CLUSTER_DELETE = 901 [(.clarifai.api.utils.description) = "Compute clusters deleted"];</code>
+   */
+  public static final int COMPUTE_CLUSTER_DELETE_VALUE = 901;
+  /**
+   * <pre>
+   * Event types related to nodepools: 1000-1099
+   * </pre>
+   *
+   * <code>NODEPOOL_CREATE = 1000 [(.clarifai.api.utils.description) = "Nodepools created"];</code>
+   */
+  public static final int NODEPOOL_CREATE_VALUE = 1000;
+  /**
+   * <code>NODEPOOL_UPDATE = 1001 [(.clarifai.api.utils.description) = "Nodepools updated"];</code>
+   */
+  public static final int NODEPOOL_UPDATE_VALUE = 1001;
+  /**
+   * <code>NODEPOOL_DELETE = 1002 [(.clarifai.api.utils.description) = "Nodepools deleted"];</code>
+   */
+  public static final int NODEPOOL_DELETE_VALUE = 1002;
+  /**
+   * <pre>
+   * Event types related to deployments: 1100-1199
+   * </pre>
+   *
+   * <code>DEPLOYMENT_CREATE = 1100 [(.clarifai.api.utils.description) = "Deployments created"];</code>
+   */
+  public static final int DEPLOYMENT_CREATE_VALUE = 1100;
+  /**
+   * <code>DEPLOYMENT_UPDATE = 1101 [(.clarifai.api.utils.description) = "Deployments updated"];</code>
+   */
+  public static final int DEPLOYMENT_UPDATE_VALUE = 1101;
+  /**
+   * <code>DEPLOYMENT_DELETE = 1102 [(.clarifai.api.utils.description) = "Deployments deleted"];</code>
+   */
+  public static final int DEPLOYMENT_DELETE_VALUE = 1102;
 
 
   public final int getNumber() {
@@ -453,6 +541,14 @@ public enum EventType
       case 701: return COLLABORATOR_UPDATE;
       case 702: return COLLABORATOR_REMOVE;
       case 800: return USER_UPDATE;
+      case 900: return COMPUTE_CLUSTER_CREATE;
+      case 901: return COMPUTE_CLUSTER_DELETE;
+      case 1000: return NODEPOOL_CREATE;
+      case 1001: return NODEPOOL_UPDATE;
+      case 1002: return NODEPOOL_DELETE;
+      case 1100: return DEPLOYMENT_CREATE;
+      case 1101: return DEPLOYMENT_UPDATE;
+      case 1102: return DEPLOYMENT_DELETE;
       default: return null;
     }
   }

@@ -145,4 +145,24 @@ public interface ListDeploymentsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getWorkflowVersionIdsBytes(int index);
+
+  /**
+   * <pre>
+   * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+   * </pre>
+   *
+   * <code>string compute_cluster_id = 7;</code>
+   * @return The computeClusterId.
+   */
+  java.lang.String getComputeClusterId();
+  /**
+   * <pre>
+   * (optional URL parameter) ComputeCluster ID. To list all deployed workers in a ComputeCluster
+   * </pre>
+   *
+   * <code>string compute_cluster_id = 7;</code>
+   * @return The bytes for computeClusterId.
+   */
+  com.google.protobuf.ByteString
+      getComputeClusterIdBytes();
 }

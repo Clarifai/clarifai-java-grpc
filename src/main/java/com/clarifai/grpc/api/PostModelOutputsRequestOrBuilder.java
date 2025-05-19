@@ -136,4 +136,14 @@ public interface PostModelOutputsRequestOrBuilder extends
    * @return The usePredictCache.
    */
   boolean getUsePredictCache();
+
+  /**
+   * <pre>
+   * Configuration to provide logs summarization when request errors out
+   * </pre>
+   *
+   * <code>bool enable_log_summary_on_error = 8;</code>
+   * @return The enableLogSummaryOnError.
+   */
+  boolean getEnableLogSummaryOnError();
 }

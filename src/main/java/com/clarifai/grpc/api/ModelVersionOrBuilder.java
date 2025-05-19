@@ -419,29 +419,36 @@ public interface ModelVersionOrBuilder extends
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
+   * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2039
    * @return Whether the importInfo field is set.
    */
-  boolean hasImportInfo();
+  @java.lang.Deprecated boolean hasImportInfo();
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
+   * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2039
    * @return The importInfo.
    */
-  com.clarifai.grpc.api.ImportInfo getImportInfo();
+  @java.lang.Deprecated com.clarifai.grpc.api.ImportInfo getImportInfo();
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder();
 
   /**
    * <pre>

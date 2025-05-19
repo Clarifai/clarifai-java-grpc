@@ -157,6 +157,11 @@ private static final long serialVersionUID = 0L;
             license_ = s;
             break;
           }
+          case 96: {
+
+            isDeprecated_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -708,6 +713,22 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_DEPRECATED_FIELD_NUMBER = 12;
+  private boolean isDeprecated_;
+  /**
+   * <pre>
+   * If a model version associated with the workflow version is deleted, the workflow version
+   * will be marked as deprecated.
+   * </pre>
+   *
+   * <code>bool is_deprecated = 12;</code>
+   * @return The isDeprecated.
+   */
+  @java.lang.Override
+  public boolean getIsDeprecated() {
+    return isDeprecated_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -755,6 +776,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, license_);
     }
+    if (isDeprecated_ != false) {
+      output.writeBool(12, isDeprecated_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -801,6 +825,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, license_);
+    }
+    if (isDeprecated_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, isDeprecated_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -851,6 +879,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDescription())) return false;
     if (!getLicense()
         .equals(other.getLicense())) return false;
+    if (getIsDeprecated()
+        != other.getIsDeprecated()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -894,6 +924,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + LICENSE_FIELD_NUMBER;
     hash = (53 * hash) + getLicense().hashCode();
+    hash = (37 * hash) + IS_DEPRECATED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsDeprecated());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1074,6 +1107,8 @@ private static final long serialVersionUID = 0L;
 
       license_ = "";
 
+      isDeprecated_ = false;
+
       return this;
     }
 
@@ -1136,6 +1171,7 @@ private static final long serialVersionUID = 0L;
       result.userId_ = userId_;
       result.description_ = description_;
       result.license_ = license_;
+      result.isDeprecated_ = isDeprecated_;
       onBuilt();
       return result;
     }
@@ -1245,6 +1281,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getLicense().isEmpty()) {
         license_ = other.license_;
         onChanged();
+      }
+      if (other.getIsDeprecated() != false) {
+        setIsDeprecated(other.getIsDeprecated());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2861,6 +2900,52 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       license_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isDeprecated_ ;
+    /**
+     * <pre>
+     * If a model version associated with the workflow version is deleted, the workflow version
+     * will be marked as deprecated.
+     * </pre>
+     *
+     * <code>bool is_deprecated = 12;</code>
+     * @return The isDeprecated.
+     */
+    @java.lang.Override
+    public boolean getIsDeprecated() {
+      return isDeprecated_;
+    }
+    /**
+     * <pre>
+     * If a model version associated with the workflow version is deleted, the workflow version
+     * will be marked as deprecated.
+     * </pre>
+     *
+     * <code>bool is_deprecated = 12;</code>
+     * @param value The isDeprecated to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsDeprecated(boolean value) {
+      
+      isDeprecated_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If a model version associated with the workflow version is deleted, the workflow version
+     * will be marked as deprecated.
+     * </pre>
+     *
+     * <code>bool is_deprecated = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsDeprecated() {
+      
+      isDeprecated_ = false;
       onChanged();
       return this;
     }

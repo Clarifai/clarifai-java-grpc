@@ -124,6 +124,11 @@ private static final long serialVersionUID = 0L;
             usePredictCache_ = input.readBool();
             break;
           }
+          case 64: {
+
+            enableLogSummaryOnError_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -397,6 +402,21 @@ private static final long serialVersionUID = 0L;
     return usePredictCache_;
   }
 
+  public static final int ENABLE_LOG_SUMMARY_ON_ERROR_FIELD_NUMBER = 8;
+  private boolean enableLogSummaryOnError_;
+  /**
+   * <pre>
+   * Configuration to provide logs summarization when request errors out
+   * </pre>
+   *
+   * <code>bool enable_log_summary_on_error = 8;</code>
+   * @return The enableLogSummaryOnError.
+   */
+  @java.lang.Override
+  public boolean getEnableLogSummaryOnError() {
+    return enableLogSummaryOnError_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -432,6 +452,9 @@ private static final long serialVersionUID = 0L;
     if (usePredictCache_ != false) {
       output.writeBool(7, usePredictCache_);
     }
+    if (enableLogSummaryOnError_ != false) {
+      output.writeBool(8, enableLogSummaryOnError_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -466,6 +489,10 @@ private static final long serialVersionUID = 0L;
     if (usePredictCache_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, usePredictCache_);
+    }
+    if (enableLogSummaryOnError_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, enableLogSummaryOnError_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -505,6 +532,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getUsePredictCache()
         != other.getUsePredictCache()) return false;
+    if (getEnableLogSummaryOnError()
+        != other.getEnableLogSummaryOnError()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -539,6 +568,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USE_PREDICT_CACHE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getUsePredictCache());
+    hash = (37 * hash) + ENABLE_LOG_SUMMARY_ON_ERROR_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnableLogSummaryOnError());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -710,6 +742,8 @@ private static final long serialVersionUID = 0L;
       }
       usePredictCache_ = false;
 
+      enableLogSummaryOnError_ = false;
+
       return this;
     }
 
@@ -764,6 +798,7 @@ private static final long serialVersionUID = 0L;
         result.runnerSelector_ = runnerSelectorBuilder_.build();
       }
       result.usePredictCache_ = usePredictCache_;
+      result.enableLogSummaryOnError_ = enableLogSummaryOnError_;
       onBuilt();
       return result;
     }
@@ -857,6 +892,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getUsePredictCache() != false) {
         setUsePredictCache(other.getUsePredictCache());
+      }
+      if (other.getEnableLogSummaryOnError() != false) {
+        setEnableLogSummaryOnError(other.getEnableLogSummaryOnError());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1757,6 +1795,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearUsePredictCache() {
       
       usePredictCache_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableLogSummaryOnError_ ;
+    /**
+     * <pre>
+     * Configuration to provide logs summarization when request errors out
+     * </pre>
+     *
+     * <code>bool enable_log_summary_on_error = 8;</code>
+     * @return The enableLogSummaryOnError.
+     */
+    @java.lang.Override
+    public boolean getEnableLogSummaryOnError() {
+      return enableLogSummaryOnError_;
+    }
+    /**
+     * <pre>
+     * Configuration to provide logs summarization when request errors out
+     * </pre>
+     *
+     * <code>bool enable_log_summary_on_error = 8;</code>
+     * @param value The enableLogSummaryOnError to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableLogSummaryOnError(boolean value) {
+      
+      enableLogSummaryOnError_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration to provide logs summarization when request errors out
+     * </pre>
+     *
+     * <code>bool enable_log_summary_on_error = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableLogSummaryOnError() {
+      
+      enableLogSummaryOnError_ = false;
       onChanged();
       return this;
     }

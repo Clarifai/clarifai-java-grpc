@@ -17,14 +17,9 @@ private static final long serialVersionUID = 0L;
   }
   private WorkflowVersionEvaluation() {
     id_ = "";
-    workflowId_ = "";
-    workflowVersionId_ = "";
-    groundTruthDatasetId_ = "";
-    groundTruthDatasetVersionId_ = "";
-    predictionsDatasetId_ = "";
-    predictionsDatasetVersionId_ = "";
-    evaluationTemplateId_ = "";
     targetNodeId_ = "";
+    userId_ = "";
+    appId_ = "";
   }
 
   @java.lang.Override
@@ -64,45 +59,73 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.clarifai.grpc.api.WorkflowVersion.Builder subBuilder = null;
+            if (workflowVersion_ != null) {
+              subBuilder = workflowVersion_.toBuilder();
+            }
+            workflowVersion_ = input.readMessage(com.clarifai.grpc.api.WorkflowVersion.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(workflowVersion_);
+              workflowVersion_ = subBuilder.buildPartial();
+            }
 
-            workflowId_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            workflowVersionId_ = s;
+            targetNodeId_ = s;
             break;
           }
           case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.clarifai.grpc.api.DatasetVersion.Builder subBuilder = null;
+            if (groundTruthDatasetVersion_ != null) {
+              subBuilder = groundTruthDatasetVersion_.toBuilder();
+            }
+            groundTruthDatasetVersion_ = input.readMessage(com.clarifai.grpc.api.DatasetVersion.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(groundTruthDatasetVersion_);
+              groundTruthDatasetVersion_ = subBuilder.buildPartial();
+            }
 
-            groundTruthDatasetId_ = s;
             break;
           }
           case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.clarifai.grpc.api.DatasetVersion.Builder subBuilder = null;
+            if (predictionsDatasetVersion_ != null) {
+              subBuilder = predictionsDatasetVersion_.toBuilder();
+            }
+            predictionsDatasetVersion_ = input.readMessage(com.clarifai.grpc.api.DatasetVersion.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(predictionsDatasetVersion_);
+              predictionsDatasetVersion_ = subBuilder.buildPartial();
+            }
 
-            groundTruthDatasetVersionId_ = s;
             break;
           }
           case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.Builder subBuilder = null;
+            if (workflowVersionEvaluationTemplate_ != null) {
+              subBuilder = workflowVersionEvaluationTemplate_.toBuilder();
+            }
+            workflowVersionEvaluationTemplate_ = input.readMessage(com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(workflowVersionEvaluationTemplate_);
+              workflowVersionEvaluationTemplate_ = subBuilder.buildPartial();
+            }
 
-            predictionsDatasetId_ = s;
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            predictionsDatasetVersionId_ = s;
+            userId_ = s;
             break;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            evaluationTemplateId_ = s;
+            appId_ = s;
             break;
           }
           case 74: {
@@ -155,12 +178,6 @@ private static final long serialVersionUID = 0L;
               modifiedAt_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 106: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            targetNodeId_ = s;
             break;
           }
           default: {
@@ -243,322 +260,290 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int WORKFLOW_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object workflowId_;
+  public static final int WORKFLOW_VERSION_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.WorkflowVersion workflowVersion_;
   /**
    * <pre>
-   * The ID of the workflow that is used for evaluation.
+   * Workflow version that is being evaluated.
    * </pre>
    *
-   * <code>string workflow_id = 2;</code>
-   * @return The workflowId.
+   * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+   * @return Whether the workflowVersion field is set.
    */
   @java.lang.Override
-  public java.lang.String getWorkflowId() {
-    java.lang.Object ref = workflowId_;
+  public boolean hasWorkflowVersion() {
+    return workflowVersion_ != null;
+  }
+  /**
+   * <pre>
+   * Workflow version that is being evaluated.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+   * @return The workflowVersion.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowVersion getWorkflowVersion() {
+    return workflowVersion_ == null ? com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance() : workflowVersion_;
+  }
+  /**
+   * <pre>
+   * Workflow version that is being evaluated.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowVersionOrBuilder getWorkflowVersionOrBuilder() {
+    return getWorkflowVersion();
+  }
+
+  public static final int TARGET_NODE_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object targetNodeId_;
+  /**
+   * <pre>
+   * The target node id that is being evaluated.
+   * </pre>
+   *
+   * <code>string target_node_id = 3;</code>
+   * @return The targetNodeId.
+   */
+  @java.lang.Override
+  public java.lang.String getTargetNodeId() {
+    java.lang.Object ref = targetNodeId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      workflowId_ = s;
+      targetNodeId_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The ID of the workflow that is used for evaluation.
+   * The target node id that is being evaluated.
    * </pre>
    *
-   * <code>string workflow_id = 2;</code>
-   * @return The bytes for workflowId.
+   * <code>string target_node_id = 3;</code>
+   * @return The bytes for targetNodeId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getWorkflowIdBytes() {
-    java.lang.Object ref = workflowId_;
+      getTargetNodeIdBytes() {
+    java.lang.Object ref = targetNodeId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      workflowId_ = b;
+      targetNodeId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int WORKFLOW_VERSION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object workflowVersionId_;
+  public static final int GROUND_TRUTH_DATASET_VERSION_FIELD_NUMBER = 4;
+  private com.clarifai.grpc.api.DatasetVersion groundTruthDatasetVersion_;
   /**
    * <pre>
-   * The version of the workflow that is used for evaluation.
+   * The dataset version that contains the ground-truth and is used for evaluation.
    * </pre>
    *
-   * <code>string workflow_version_id = 3;</code>
-   * @return The workflowVersionId.
+   * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+   * @return Whether the groundTruthDatasetVersion field is set.
    */
   @java.lang.Override
-  public java.lang.String getWorkflowVersionId() {
-    java.lang.Object ref = workflowVersionId_;
+  public boolean hasGroundTruthDatasetVersion() {
+    return groundTruthDatasetVersion_ != null;
+  }
+  /**
+   * <pre>
+   * The dataset version that contains the ground-truth and is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+   * @return The groundTruthDatasetVersion.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetVersion getGroundTruthDatasetVersion() {
+    return groundTruthDatasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : groundTruthDatasetVersion_;
+  }
+  /**
+   * <pre>
+   * The dataset version that contains the ground-truth and is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetVersionOrBuilder getGroundTruthDatasetVersionOrBuilder() {
+    return getGroundTruthDatasetVersion();
+  }
+
+  public static final int PREDICTIONS_DATASET_VERSION_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.DatasetVersion predictionsDatasetVersion_;
+  /**
+   * <pre>
+   * The dataset version that contains the predictions and is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+   * @return Whether the predictionsDatasetVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredictionsDatasetVersion() {
+    return predictionsDatasetVersion_ != null;
+  }
+  /**
+   * <pre>
+   * The dataset version that contains the predictions and is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+   * @return The predictionsDatasetVersion.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetVersion getPredictionsDatasetVersion() {
+    return predictionsDatasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : predictionsDatasetVersion_;
+  }
+  /**
+   * <pre>
+   * The dataset version that contains the predictions and is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetVersionOrBuilder getPredictionsDatasetVersionOrBuilder() {
+    return getPredictionsDatasetVersion();
+  }
+
+  public static final int WORKFLOW_VERSION_EVALUATION_TEMPLATE_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate workflowVersionEvaluationTemplate_;
+  /**
+   * <pre>
+   * Evaluation template that is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+   * @return Whether the workflowVersionEvaluationTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkflowVersionEvaluationTemplate() {
+    return workflowVersionEvaluationTemplate_ != null;
+  }
+  /**
+   * <pre>
+   * Evaluation template that is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+   * @return The workflowVersionEvaluationTemplate.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate getWorkflowVersionEvaluationTemplate() {
+    return workflowVersionEvaluationTemplate_ == null ? com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.getDefaultInstance() : workflowVersionEvaluationTemplate_;
+  }
+  /**
+   * <pre>
+   * Evaluation template that is used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowVersionEvaluationTemplateOrBuilder getWorkflowVersionEvaluationTemplateOrBuilder() {
+    return getWorkflowVersionEvaluationTemplate();
+  }
+
+  public static final int USER_ID_FIELD_NUMBER = 7;
+  private volatile java.lang.Object userId_;
+  /**
+   * <pre>
+   * The user the workflow version evaluation belongs to.
+   * </pre>
+   *
+   * <code>string user_id = 7;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      workflowVersionId_ = s;
+      userId_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The version of the workflow that is used for evaluation.
+   * The user the workflow version evaluation belongs to.
    * </pre>
    *
-   * <code>string workflow_version_id = 3;</code>
-   * @return The bytes for workflowVersionId.
+   * <code>string user_id = 7;</code>
+   * @return The bytes for userId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getWorkflowVersionIdBytes() {
-    java.lang.Object ref = workflowVersionId_;
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      workflowVersionId_ = b;
+      userId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int GROUND_TRUTH_DATASET_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object groundTruthDatasetId_;
+  public static final int APP_ID_FIELD_NUMBER = 8;
+  private volatile java.lang.Object appId_;
   /**
    * <pre>
-   * The ID of the ground-truth dataset that is used for evaluation.
+   * The app the workflow version evaluation belongs to.
    * </pre>
    *
-   * <code>string ground_truth_dataset_id = 4;</code>
-   * @return The groundTruthDatasetId.
+   * <code>string app_id = 8;</code>
+   * @return The appId.
    */
   @java.lang.Override
-  public java.lang.String getGroundTruthDatasetId() {
-    java.lang.Object ref = groundTruthDatasetId_;
+  public java.lang.String getAppId() {
+    java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      groundTruthDatasetId_ = s;
+      appId_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The ID of the ground-truth dataset that is used for evaluation.
+   * The app the workflow version evaluation belongs to.
    * </pre>
    *
-   * <code>string ground_truth_dataset_id = 4;</code>
-   * @return The bytes for groundTruthDatasetId.
+   * <code>string app_id = 8;</code>
+   * @return The bytes for appId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getGroundTruthDatasetIdBytes() {
-    java.lang.Object ref = groundTruthDatasetId_;
+      getAppIdBytes() {
+    java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      groundTruthDatasetId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int GROUND_TRUTH_DATASET_VERSION_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object groundTruthDatasetVersionId_;
-  /**
-   * <pre>
-   * The version ID of the ground-truth dataset that is used for evaluation.
-   * </pre>
-   *
-   * <code>string ground_truth_dataset_version_id = 5;</code>
-   * @return The groundTruthDatasetVersionId.
-   */
-  @java.lang.Override
-  public java.lang.String getGroundTruthDatasetVersionId() {
-    java.lang.Object ref = groundTruthDatasetVersionId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      groundTruthDatasetVersionId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The version ID of the ground-truth dataset that is used for evaluation.
-   * </pre>
-   *
-   * <code>string ground_truth_dataset_version_id = 5;</code>
-   * @return The bytes for groundTruthDatasetVersionId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getGroundTruthDatasetVersionIdBytes() {
-    java.lang.Object ref = groundTruthDatasetVersionId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      groundTruthDatasetVersionId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PREDICTIONS_DATASET_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object predictionsDatasetId_;
-  /**
-   * <pre>
-   * The ID of the prediction dataset that is used for evaluation.
-   * </pre>
-   *
-   * <code>string predictions_dataset_id = 6;</code>
-   * @return The predictionsDatasetId.
-   */
-  @java.lang.Override
-  public java.lang.String getPredictionsDatasetId() {
-    java.lang.Object ref = predictionsDatasetId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      predictionsDatasetId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The ID of the prediction dataset that is used for evaluation.
-   * </pre>
-   *
-   * <code>string predictions_dataset_id = 6;</code>
-   * @return The bytes for predictionsDatasetId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPredictionsDatasetIdBytes() {
-    java.lang.Object ref = predictionsDatasetId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      predictionsDatasetId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PREDICTIONS_DATASET_VERSION_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object predictionsDatasetVersionId_;
-  /**
-   * <pre>
-   * The version ID of the prediction dataset that is used for evaluation.
-   * </pre>
-   *
-   * <code>string predictions_dataset_version_id = 7;</code>
-   * @return The predictionsDatasetVersionId.
-   */
-  @java.lang.Override
-  public java.lang.String getPredictionsDatasetVersionId() {
-    java.lang.Object ref = predictionsDatasetVersionId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      predictionsDatasetVersionId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The version ID of the prediction dataset that is used for evaluation.
-   * </pre>
-   *
-   * <code>string predictions_dataset_version_id = 7;</code>
-   * @return The bytes for predictionsDatasetVersionId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPredictionsDatasetVersionIdBytes() {
-    java.lang.Object ref = predictionsDatasetVersionId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      predictionsDatasetVersionId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int EVALUATION_TEMPLATE_ID_FIELD_NUMBER = 8;
-  private volatile java.lang.Object evaluationTemplateId_;
-  /**
-   * <pre>
-   * Evaluation Template ID
-   * </pre>
-   *
-   * <code>string evaluation_template_id = 8;</code>
-   * @return The evaluationTemplateId.
-   */
-  @java.lang.Override
-  public java.lang.String getEvaluationTemplateId() {
-    java.lang.Object ref = evaluationTemplateId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      evaluationTemplateId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Evaluation Template ID
-   * </pre>
-   *
-   * <code>string evaluation_template_id = 8;</code>
-   * @return The bytes for evaluationTemplateId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEvaluationTemplateIdBytes() {
-    java.lang.Object ref = evaluationTemplateId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      evaluationTemplateId_ = b;
+      appId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -569,7 +554,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.WorkflowEvaluationResult workflowEvaluationResult_;
   /**
    * <pre>
-   * The evaluation results
+   * Results of the evaluation.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -581,7 +566,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The evaluation results
+   * Results of the evaluation.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -593,7 +578,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The evaluation results
+   * Results of the evaluation.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -717,52 +702,6 @@ private static final long serialVersionUID = 0L;
     return getModifiedAt();
   }
 
-  public static final int TARGET_NODE_ID_FIELD_NUMBER = 13;
-  private volatile java.lang.Object targetNodeId_;
-  /**
-   * <pre>
-   * The ID of the node that is being evaluated.
-   * </pre>
-   *
-   * <code>string target_node_id = 13;</code>
-   * @return The targetNodeId.
-   */
-  @java.lang.Override
-  public java.lang.String getTargetNodeId() {
-    java.lang.Object ref = targetNodeId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      targetNodeId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The ID of the node that is being evaluated.
-   * </pre>
-   *
-   * <code>string target_node_id = 13;</code>
-   * @return The bytes for targetNodeId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTargetNodeIdBytes() {
-    java.lang.Object ref = targetNodeId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      targetNodeId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -780,26 +719,26 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, workflowId_);
+    if (workflowVersion_ != null) {
+      output.writeMessage(2, getWorkflowVersion());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowVersionId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, workflowVersionId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNodeId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetNodeId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groundTruthDatasetId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, groundTruthDatasetId_);
+    if (groundTruthDatasetVersion_ != null) {
+      output.writeMessage(4, getGroundTruthDatasetVersion());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groundTruthDatasetVersionId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, groundTruthDatasetVersionId_);
+    if (predictionsDatasetVersion_ != null) {
+      output.writeMessage(5, getPredictionsDatasetVersion());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictionsDatasetId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, predictionsDatasetId_);
+    if (workflowVersionEvaluationTemplate_ != null) {
+      output.writeMessage(6, getWorkflowVersionEvaluationTemplate());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictionsDatasetVersionId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, predictionsDatasetVersionId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(evaluationTemplateId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, evaluationTemplateId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, appId_);
     }
     if (workflowEvaluationResult_ != null) {
       output.writeMessage(9, getWorkflowEvaluationResult());
@@ -813,9 +752,6 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       output.writeMessage(12, getModifiedAt());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNodeId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, targetNodeId_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -828,26 +764,30 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, workflowId_);
+    if (workflowVersion_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getWorkflowVersion());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowVersionId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, workflowVersionId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNodeId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetNodeId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groundTruthDatasetId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, groundTruthDatasetId_);
+    if (groundTruthDatasetVersion_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getGroundTruthDatasetVersion());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groundTruthDatasetVersionId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, groundTruthDatasetVersionId_);
+    if (predictionsDatasetVersion_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getPredictionsDatasetVersion());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictionsDatasetId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, predictionsDatasetId_);
+    if (workflowVersionEvaluationTemplate_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getWorkflowVersionEvaluationTemplate());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predictionsDatasetVersionId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, predictionsDatasetVersionId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, userId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(evaluationTemplateId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, evaluationTemplateId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, appId_);
     }
     if (workflowEvaluationResult_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -864,9 +804,6 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getModifiedAt());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetNodeId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, targetNodeId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -885,20 +822,32 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (!getWorkflowId()
-        .equals(other.getWorkflowId())) return false;
-    if (!getWorkflowVersionId()
-        .equals(other.getWorkflowVersionId())) return false;
-    if (!getGroundTruthDatasetId()
-        .equals(other.getGroundTruthDatasetId())) return false;
-    if (!getGroundTruthDatasetVersionId()
-        .equals(other.getGroundTruthDatasetVersionId())) return false;
-    if (!getPredictionsDatasetId()
-        .equals(other.getPredictionsDatasetId())) return false;
-    if (!getPredictionsDatasetVersionId()
-        .equals(other.getPredictionsDatasetVersionId())) return false;
-    if (!getEvaluationTemplateId()
-        .equals(other.getEvaluationTemplateId())) return false;
+    if (hasWorkflowVersion() != other.hasWorkflowVersion()) return false;
+    if (hasWorkflowVersion()) {
+      if (!getWorkflowVersion()
+          .equals(other.getWorkflowVersion())) return false;
+    }
+    if (!getTargetNodeId()
+        .equals(other.getTargetNodeId())) return false;
+    if (hasGroundTruthDatasetVersion() != other.hasGroundTruthDatasetVersion()) return false;
+    if (hasGroundTruthDatasetVersion()) {
+      if (!getGroundTruthDatasetVersion()
+          .equals(other.getGroundTruthDatasetVersion())) return false;
+    }
+    if (hasPredictionsDatasetVersion() != other.hasPredictionsDatasetVersion()) return false;
+    if (hasPredictionsDatasetVersion()) {
+      if (!getPredictionsDatasetVersion()
+          .equals(other.getPredictionsDatasetVersion())) return false;
+    }
+    if (hasWorkflowVersionEvaluationTemplate() != other.hasWorkflowVersionEvaluationTemplate()) return false;
+    if (hasWorkflowVersionEvaluationTemplate()) {
+      if (!getWorkflowVersionEvaluationTemplate()
+          .equals(other.getWorkflowVersionEvaluationTemplate())) return false;
+    }
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
+    if (!getAppId()
+        .equals(other.getAppId())) return false;
     if (hasWorkflowEvaluationResult() != other.hasWorkflowEvaluationResult()) return false;
     if (hasWorkflowEvaluationResult()) {
       if (!getWorkflowEvaluationResult()
@@ -919,8 +868,6 @@ private static final long serialVersionUID = 0L;
       if (!getModifiedAt()
           .equals(other.getModifiedAt())) return false;
     }
-    if (!getTargetNodeId()
-        .equals(other.getTargetNodeId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -934,20 +881,28 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getWorkflowId().hashCode();
-    hash = (37 * hash) + WORKFLOW_VERSION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getWorkflowVersionId().hashCode();
-    hash = (37 * hash) + GROUND_TRUTH_DATASET_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getGroundTruthDatasetId().hashCode();
-    hash = (37 * hash) + GROUND_TRUTH_DATASET_VERSION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getGroundTruthDatasetVersionId().hashCode();
-    hash = (37 * hash) + PREDICTIONS_DATASET_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getPredictionsDatasetId().hashCode();
-    hash = (37 * hash) + PREDICTIONS_DATASET_VERSION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getPredictionsDatasetVersionId().hashCode();
-    hash = (37 * hash) + EVALUATION_TEMPLATE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getEvaluationTemplateId().hashCode();
+    if (hasWorkflowVersion()) {
+      hash = (37 * hash) + WORKFLOW_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflowVersion().hashCode();
+    }
+    hash = (37 * hash) + TARGET_NODE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getTargetNodeId().hashCode();
+    if (hasGroundTruthDatasetVersion()) {
+      hash = (37 * hash) + GROUND_TRUTH_DATASET_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getGroundTruthDatasetVersion().hashCode();
+    }
+    if (hasPredictionsDatasetVersion()) {
+      hash = (37 * hash) + PREDICTIONS_DATASET_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getPredictionsDatasetVersion().hashCode();
+    }
+    if (hasWorkflowVersionEvaluationTemplate()) {
+      hash = (37 * hash) + WORKFLOW_VERSION_EVALUATION_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflowVersionEvaluationTemplate().hashCode();
+    }
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + APP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAppId().hashCode();
     if (hasWorkflowEvaluationResult()) {
       hash = (37 * hash) + WORKFLOW_EVALUATION_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflowEvaluationResult().hashCode();
@@ -964,8 +919,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getModifiedAt().hashCode();
     }
-    hash = (37 * hash) + TARGET_NODE_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTargetNodeId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1101,19 +1054,35 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
-      workflowId_ = "";
+      if (workflowVersionBuilder_ == null) {
+        workflowVersion_ = null;
+      } else {
+        workflowVersion_ = null;
+        workflowVersionBuilder_ = null;
+      }
+      targetNodeId_ = "";
 
-      workflowVersionId_ = "";
+      if (groundTruthDatasetVersionBuilder_ == null) {
+        groundTruthDatasetVersion_ = null;
+      } else {
+        groundTruthDatasetVersion_ = null;
+        groundTruthDatasetVersionBuilder_ = null;
+      }
+      if (predictionsDatasetVersionBuilder_ == null) {
+        predictionsDatasetVersion_ = null;
+      } else {
+        predictionsDatasetVersion_ = null;
+        predictionsDatasetVersionBuilder_ = null;
+      }
+      if (workflowVersionEvaluationTemplateBuilder_ == null) {
+        workflowVersionEvaluationTemplate_ = null;
+      } else {
+        workflowVersionEvaluationTemplate_ = null;
+        workflowVersionEvaluationTemplateBuilder_ = null;
+      }
+      userId_ = "";
 
-      groundTruthDatasetId_ = "";
-
-      groundTruthDatasetVersionId_ = "";
-
-      predictionsDatasetId_ = "";
-
-      predictionsDatasetVersionId_ = "";
-
-      evaluationTemplateId_ = "";
+      appId_ = "";
 
       if (workflowEvaluationResultBuilder_ == null) {
         workflowEvaluationResult_ = null;
@@ -1139,8 +1108,6 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
         modifiedAtBuilder_ = null;
       }
-      targetNodeId_ = "";
-
       return this;
     }
 
@@ -1168,13 +1135,29 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.WorkflowVersionEvaluation buildPartial() {
       com.clarifai.grpc.api.WorkflowVersionEvaluation result = new com.clarifai.grpc.api.WorkflowVersionEvaluation(this);
       result.id_ = id_;
-      result.workflowId_ = workflowId_;
-      result.workflowVersionId_ = workflowVersionId_;
-      result.groundTruthDatasetId_ = groundTruthDatasetId_;
-      result.groundTruthDatasetVersionId_ = groundTruthDatasetVersionId_;
-      result.predictionsDatasetId_ = predictionsDatasetId_;
-      result.predictionsDatasetVersionId_ = predictionsDatasetVersionId_;
-      result.evaluationTemplateId_ = evaluationTemplateId_;
+      if (workflowVersionBuilder_ == null) {
+        result.workflowVersion_ = workflowVersion_;
+      } else {
+        result.workflowVersion_ = workflowVersionBuilder_.build();
+      }
+      result.targetNodeId_ = targetNodeId_;
+      if (groundTruthDatasetVersionBuilder_ == null) {
+        result.groundTruthDatasetVersion_ = groundTruthDatasetVersion_;
+      } else {
+        result.groundTruthDatasetVersion_ = groundTruthDatasetVersionBuilder_.build();
+      }
+      if (predictionsDatasetVersionBuilder_ == null) {
+        result.predictionsDatasetVersion_ = predictionsDatasetVersion_;
+      } else {
+        result.predictionsDatasetVersion_ = predictionsDatasetVersionBuilder_.build();
+      }
+      if (workflowVersionEvaluationTemplateBuilder_ == null) {
+        result.workflowVersionEvaluationTemplate_ = workflowVersionEvaluationTemplate_;
+      } else {
+        result.workflowVersionEvaluationTemplate_ = workflowVersionEvaluationTemplateBuilder_.build();
+      }
+      result.userId_ = userId_;
+      result.appId_ = appId_;
       if (workflowEvaluationResultBuilder_ == null) {
         result.workflowEvaluationResult_ = workflowEvaluationResult_;
       } else {
@@ -1195,7 +1178,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.modifiedAt_ = modifiedAtBuilder_.build();
       }
-      result.targetNodeId_ = targetNodeId_;
       onBuilt();
       return result;
     }
@@ -1248,32 +1230,28 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getWorkflowId().isEmpty()) {
-        workflowId_ = other.workflowId_;
+      if (other.hasWorkflowVersion()) {
+        mergeWorkflowVersion(other.getWorkflowVersion());
+      }
+      if (!other.getTargetNodeId().isEmpty()) {
+        targetNodeId_ = other.targetNodeId_;
         onChanged();
       }
-      if (!other.getWorkflowVersionId().isEmpty()) {
-        workflowVersionId_ = other.workflowVersionId_;
+      if (other.hasGroundTruthDatasetVersion()) {
+        mergeGroundTruthDatasetVersion(other.getGroundTruthDatasetVersion());
+      }
+      if (other.hasPredictionsDatasetVersion()) {
+        mergePredictionsDatasetVersion(other.getPredictionsDatasetVersion());
+      }
+      if (other.hasWorkflowVersionEvaluationTemplate()) {
+        mergeWorkflowVersionEvaluationTemplate(other.getWorkflowVersionEvaluationTemplate());
+      }
+      if (!other.getUserId().isEmpty()) {
+        userId_ = other.userId_;
         onChanged();
       }
-      if (!other.getGroundTruthDatasetId().isEmpty()) {
-        groundTruthDatasetId_ = other.groundTruthDatasetId_;
-        onChanged();
-      }
-      if (!other.getGroundTruthDatasetVersionId().isEmpty()) {
-        groundTruthDatasetVersionId_ = other.groundTruthDatasetVersionId_;
-        onChanged();
-      }
-      if (!other.getPredictionsDatasetId().isEmpty()) {
-        predictionsDatasetId_ = other.predictionsDatasetId_;
-        onChanged();
-      }
-      if (!other.getPredictionsDatasetVersionId().isEmpty()) {
-        predictionsDatasetVersionId_ = other.predictionsDatasetVersionId_;
-        onChanged();
-      }
-      if (!other.getEvaluationTemplateId().isEmpty()) {
-        evaluationTemplateId_ = other.evaluationTemplateId_;
+      if (!other.getAppId().isEmpty()) {
+        appId_ = other.appId_;
         onChanged();
       }
       if (other.hasWorkflowEvaluationResult()) {
@@ -1287,10 +1265,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModifiedAt()) {
         mergeModifiedAt(other.getModifiedAt());
-      }
-      if (!other.getTargetNodeId().isEmpty()) {
-        targetNodeId_ = other.targetNodeId_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1417,22 +1391,177 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object workflowId_ = "";
+    private com.clarifai.grpc.api.WorkflowVersion workflowVersion_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder> workflowVersionBuilder_;
     /**
      * <pre>
-     * The ID of the workflow that is used for evaluation.
+     * Workflow version that is being evaluated.
      * </pre>
      *
-     * <code>string workflow_id = 2;</code>
-     * @return The workflowId.
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     * @return Whether the workflowVersion field is set.
      */
-    public java.lang.String getWorkflowId() {
-      java.lang.Object ref = workflowId_;
+    public boolean hasWorkflowVersion() {
+      return workflowVersionBuilder_ != null || workflowVersion_ != null;
+    }
+    /**
+     * <pre>
+     * Workflow version that is being evaluated.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     * @return The workflowVersion.
+     */
+    public com.clarifai.grpc.api.WorkflowVersion getWorkflowVersion() {
+      if (workflowVersionBuilder_ == null) {
+        return workflowVersion_ == null ? com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance() : workflowVersion_;
+      } else {
+        return workflowVersionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Workflow version that is being evaluated.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     */
+    public Builder setWorkflowVersion(com.clarifai.grpc.api.WorkflowVersion value) {
+      if (workflowVersionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workflowVersion_ = value;
+        onChanged();
+      } else {
+        workflowVersionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow version that is being evaluated.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     */
+    public Builder setWorkflowVersion(
+        com.clarifai.grpc.api.WorkflowVersion.Builder builderForValue) {
+      if (workflowVersionBuilder_ == null) {
+        workflowVersion_ = builderForValue.build();
+        onChanged();
+      } else {
+        workflowVersionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow version that is being evaluated.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     */
+    public Builder mergeWorkflowVersion(com.clarifai.grpc.api.WorkflowVersion value) {
+      if (workflowVersionBuilder_ == null) {
+        if (workflowVersion_ != null) {
+          workflowVersion_ =
+            com.clarifai.grpc.api.WorkflowVersion.newBuilder(workflowVersion_).mergeFrom(value).buildPartial();
+        } else {
+          workflowVersion_ = value;
+        }
+        onChanged();
+      } else {
+        workflowVersionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow version that is being evaluated.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     */
+    public Builder clearWorkflowVersion() {
+      if (workflowVersionBuilder_ == null) {
+        workflowVersion_ = null;
+        onChanged();
+      } else {
+        workflowVersion_ = null;
+        workflowVersionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow version that is being evaluated.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowVersion.Builder getWorkflowVersionBuilder() {
+      
+      onChanged();
+      return getWorkflowVersionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Workflow version that is being evaluated.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowVersionOrBuilder getWorkflowVersionOrBuilder() {
+      if (workflowVersionBuilder_ != null) {
+        return workflowVersionBuilder_.getMessageOrBuilder();
+      } else {
+        return workflowVersion_ == null ?
+            com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance() : workflowVersion_;
+      }
+    }
+    /**
+     * <pre>
+     * Workflow version that is being evaluated.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion workflow_version = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder> 
+        getWorkflowVersionFieldBuilder() {
+      if (workflowVersionBuilder_ == null) {
+        workflowVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder>(
+                getWorkflowVersion(),
+                getParentForChildren(),
+                isClean());
+        workflowVersion_ = null;
+      }
+      return workflowVersionBuilder_;
+    }
+
+    private java.lang.Object targetNodeId_ = "";
+    /**
+     * <pre>
+     * The target node id that is being evaluated.
+     * </pre>
+     *
+     * <code>string target_node_id = 3;</code>
+     * @return The targetNodeId.
+     */
+    public java.lang.String getTargetNodeId() {
+      java.lang.Object ref = targetNodeId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        workflowId_ = s;
+        targetNodeId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1440,20 +1569,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the workflow that is used for evaluation.
+     * The target node id that is being evaluated.
      * </pre>
      *
-     * <code>string workflow_id = 2;</code>
-     * @return The bytes for workflowId.
+     * <code>string target_node_id = 3;</code>
+     * @return The bytes for targetNodeId.
      */
     public com.google.protobuf.ByteString
-        getWorkflowIdBytes() {
-      java.lang.Object ref = workflowId_;
+        getTargetNodeIdBytes() {
+      java.lang.Object ref = targetNodeId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        workflowId_ = b;
+        targetNodeId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1461,74 +1590,539 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the workflow that is used for evaluation.
+     * The target node id that is being evaluated.
      * </pre>
      *
-     * <code>string workflow_id = 2;</code>
-     * @param value The workflowId to set.
+     * <code>string target_node_id = 3;</code>
+     * @param value The targetNodeId to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkflowId(
+    public Builder setTargetNodeId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      workflowId_ = value;
+      targetNodeId_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The ID of the workflow that is used for evaluation.
+     * The target node id that is being evaluated.
      * </pre>
      *
-     * <code>string workflow_id = 2;</code>
+     * <code>string target_node_id = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearWorkflowId() {
+    public Builder clearTargetNodeId() {
       
-      workflowId_ = getDefaultInstance().getWorkflowId();
+      targetNodeId_ = getDefaultInstance().getTargetNodeId();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The ID of the workflow that is used for evaluation.
+     * The target node id that is being evaluated.
      * </pre>
      *
-     * <code>string workflow_id = 2;</code>
-     * @param value The bytes for workflowId to set.
+     * <code>string target_node_id = 3;</code>
+     * @param value The bytes for targetNodeId to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkflowIdBytes(
+    public Builder setTargetNodeIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      workflowId_ = value;
+      targetNodeId_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object workflowVersionId_ = "";
+    private com.clarifai.grpc.api.DatasetVersion groundTruthDatasetVersion_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder> groundTruthDatasetVersionBuilder_;
     /**
      * <pre>
-     * The version of the workflow that is used for evaluation.
+     * The dataset version that contains the ground-truth and is used for evaluation.
      * </pre>
      *
-     * <code>string workflow_version_id = 3;</code>
-     * @return The workflowVersionId.
+     * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     * @return Whether the groundTruthDatasetVersion field is set.
      */
-    public java.lang.String getWorkflowVersionId() {
-      java.lang.Object ref = workflowVersionId_;
+    public boolean hasGroundTruthDatasetVersion() {
+      return groundTruthDatasetVersionBuilder_ != null || groundTruthDatasetVersion_ != null;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the ground-truth and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     * @return The groundTruthDatasetVersion.
+     */
+    public com.clarifai.grpc.api.DatasetVersion getGroundTruthDatasetVersion() {
+      if (groundTruthDatasetVersionBuilder_ == null) {
+        return groundTruthDatasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : groundTruthDatasetVersion_;
+      } else {
+        return groundTruthDatasetVersionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the ground-truth and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     */
+    public Builder setGroundTruthDatasetVersion(com.clarifai.grpc.api.DatasetVersion value) {
+      if (groundTruthDatasetVersionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        groundTruthDatasetVersion_ = value;
+        onChanged();
+      } else {
+        groundTruthDatasetVersionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the ground-truth and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     */
+    public Builder setGroundTruthDatasetVersion(
+        com.clarifai.grpc.api.DatasetVersion.Builder builderForValue) {
+      if (groundTruthDatasetVersionBuilder_ == null) {
+        groundTruthDatasetVersion_ = builderForValue.build();
+        onChanged();
+      } else {
+        groundTruthDatasetVersionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the ground-truth and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     */
+    public Builder mergeGroundTruthDatasetVersion(com.clarifai.grpc.api.DatasetVersion value) {
+      if (groundTruthDatasetVersionBuilder_ == null) {
+        if (groundTruthDatasetVersion_ != null) {
+          groundTruthDatasetVersion_ =
+            com.clarifai.grpc.api.DatasetVersion.newBuilder(groundTruthDatasetVersion_).mergeFrom(value).buildPartial();
+        } else {
+          groundTruthDatasetVersion_ = value;
+        }
+        onChanged();
+      } else {
+        groundTruthDatasetVersionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the ground-truth and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     */
+    public Builder clearGroundTruthDatasetVersion() {
+      if (groundTruthDatasetVersionBuilder_ == null) {
+        groundTruthDatasetVersion_ = null;
+        onChanged();
+      } else {
+        groundTruthDatasetVersion_ = null;
+        groundTruthDatasetVersionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the ground-truth and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersion.Builder getGroundTruthDatasetVersionBuilder() {
+      
+      onChanged();
+      return getGroundTruthDatasetVersionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the ground-truth and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersionOrBuilder getGroundTruthDatasetVersionOrBuilder() {
+      if (groundTruthDatasetVersionBuilder_ != null) {
+        return groundTruthDatasetVersionBuilder_.getMessageOrBuilder();
+      } else {
+        return groundTruthDatasetVersion_ == null ?
+            com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : groundTruthDatasetVersion_;
+      }
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the ground-truth and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion ground_truth_dataset_version = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder> 
+        getGroundTruthDatasetVersionFieldBuilder() {
+      if (groundTruthDatasetVersionBuilder_ == null) {
+        groundTruthDatasetVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder>(
+                getGroundTruthDatasetVersion(),
+                getParentForChildren(),
+                isClean());
+        groundTruthDatasetVersion_ = null;
+      }
+      return groundTruthDatasetVersionBuilder_;
+    }
+
+    private com.clarifai.grpc.api.DatasetVersion predictionsDatasetVersion_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder> predictionsDatasetVersionBuilder_;
+    /**
+     * <pre>
+     * The dataset version that contains the predictions and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     * @return Whether the predictionsDatasetVersion field is set.
+     */
+    public boolean hasPredictionsDatasetVersion() {
+      return predictionsDatasetVersionBuilder_ != null || predictionsDatasetVersion_ != null;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the predictions and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     * @return The predictionsDatasetVersion.
+     */
+    public com.clarifai.grpc.api.DatasetVersion getPredictionsDatasetVersion() {
+      if (predictionsDatasetVersionBuilder_ == null) {
+        return predictionsDatasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : predictionsDatasetVersion_;
+      } else {
+        return predictionsDatasetVersionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the predictions and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     */
+    public Builder setPredictionsDatasetVersion(com.clarifai.grpc.api.DatasetVersion value) {
+      if (predictionsDatasetVersionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        predictionsDatasetVersion_ = value;
+        onChanged();
+      } else {
+        predictionsDatasetVersionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the predictions and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     */
+    public Builder setPredictionsDatasetVersion(
+        com.clarifai.grpc.api.DatasetVersion.Builder builderForValue) {
+      if (predictionsDatasetVersionBuilder_ == null) {
+        predictionsDatasetVersion_ = builderForValue.build();
+        onChanged();
+      } else {
+        predictionsDatasetVersionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the predictions and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     */
+    public Builder mergePredictionsDatasetVersion(com.clarifai.grpc.api.DatasetVersion value) {
+      if (predictionsDatasetVersionBuilder_ == null) {
+        if (predictionsDatasetVersion_ != null) {
+          predictionsDatasetVersion_ =
+            com.clarifai.grpc.api.DatasetVersion.newBuilder(predictionsDatasetVersion_).mergeFrom(value).buildPartial();
+        } else {
+          predictionsDatasetVersion_ = value;
+        }
+        onChanged();
+      } else {
+        predictionsDatasetVersionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the predictions and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     */
+    public Builder clearPredictionsDatasetVersion() {
+      if (predictionsDatasetVersionBuilder_ == null) {
+        predictionsDatasetVersion_ = null;
+        onChanged();
+      } else {
+        predictionsDatasetVersion_ = null;
+        predictionsDatasetVersionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the predictions and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersion.Builder getPredictionsDatasetVersionBuilder() {
+      
+      onChanged();
+      return getPredictionsDatasetVersionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the predictions and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersionOrBuilder getPredictionsDatasetVersionOrBuilder() {
+      if (predictionsDatasetVersionBuilder_ != null) {
+        return predictionsDatasetVersionBuilder_.getMessageOrBuilder();
+      } else {
+        return predictionsDatasetVersion_ == null ?
+            com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : predictionsDatasetVersion_;
+      }
+    }
+    /**
+     * <pre>
+     * The dataset version that contains the predictions and is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion predictions_dataset_version = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder> 
+        getPredictionsDatasetVersionFieldBuilder() {
+      if (predictionsDatasetVersionBuilder_ == null) {
+        predictionsDatasetVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder>(
+                getPredictionsDatasetVersion(),
+                getParentForChildren(),
+                isClean());
+        predictionsDatasetVersion_ = null;
+      }
+      return predictionsDatasetVersionBuilder_;
+    }
+
+    private com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate workflowVersionEvaluationTemplate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate, com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.Builder, com.clarifai.grpc.api.WorkflowVersionEvaluationTemplateOrBuilder> workflowVersionEvaluationTemplateBuilder_;
+    /**
+     * <pre>
+     * Evaluation template that is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     * @return Whether the workflowVersionEvaluationTemplate field is set.
+     */
+    public boolean hasWorkflowVersionEvaluationTemplate() {
+      return workflowVersionEvaluationTemplateBuilder_ != null || workflowVersionEvaluationTemplate_ != null;
+    }
+    /**
+     * <pre>
+     * Evaluation template that is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     * @return The workflowVersionEvaluationTemplate.
+     */
+    public com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate getWorkflowVersionEvaluationTemplate() {
+      if (workflowVersionEvaluationTemplateBuilder_ == null) {
+        return workflowVersionEvaluationTemplate_ == null ? com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.getDefaultInstance() : workflowVersionEvaluationTemplate_;
+      } else {
+        return workflowVersionEvaluationTemplateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Evaluation template that is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     */
+    public Builder setWorkflowVersionEvaluationTemplate(com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate value) {
+      if (workflowVersionEvaluationTemplateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workflowVersionEvaluationTemplate_ = value;
+        onChanged();
+      } else {
+        workflowVersionEvaluationTemplateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Evaluation template that is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     */
+    public Builder setWorkflowVersionEvaluationTemplate(
+        com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.Builder builderForValue) {
+      if (workflowVersionEvaluationTemplateBuilder_ == null) {
+        workflowVersionEvaluationTemplate_ = builderForValue.build();
+        onChanged();
+      } else {
+        workflowVersionEvaluationTemplateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Evaluation template that is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     */
+    public Builder mergeWorkflowVersionEvaluationTemplate(com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate value) {
+      if (workflowVersionEvaluationTemplateBuilder_ == null) {
+        if (workflowVersionEvaluationTemplate_ != null) {
+          workflowVersionEvaluationTemplate_ =
+            com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.newBuilder(workflowVersionEvaluationTemplate_).mergeFrom(value).buildPartial();
+        } else {
+          workflowVersionEvaluationTemplate_ = value;
+        }
+        onChanged();
+      } else {
+        workflowVersionEvaluationTemplateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Evaluation template that is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     */
+    public Builder clearWorkflowVersionEvaluationTemplate() {
+      if (workflowVersionEvaluationTemplateBuilder_ == null) {
+        workflowVersionEvaluationTemplate_ = null;
+        onChanged();
+      } else {
+        workflowVersionEvaluationTemplate_ = null;
+        workflowVersionEvaluationTemplateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Evaluation template that is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.Builder getWorkflowVersionEvaluationTemplateBuilder() {
+      
+      onChanged();
+      return getWorkflowVersionEvaluationTemplateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Evaluation template that is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowVersionEvaluationTemplateOrBuilder getWorkflowVersionEvaluationTemplateOrBuilder() {
+      if (workflowVersionEvaluationTemplateBuilder_ != null) {
+        return workflowVersionEvaluationTemplateBuilder_.getMessageOrBuilder();
+      } else {
+        return workflowVersionEvaluationTemplate_ == null ?
+            com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.getDefaultInstance() : workflowVersionEvaluationTemplate_;
+      }
+    }
+    /**
+     * <pre>
+     * Evaluation template that is used for evaluation.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersionEvaluationTemplate workflow_version_evaluation_template = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate, com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.Builder, com.clarifai.grpc.api.WorkflowVersionEvaluationTemplateOrBuilder> 
+        getWorkflowVersionEvaluationTemplateFieldBuilder() {
+      if (workflowVersionEvaluationTemplateBuilder_ == null) {
+        workflowVersionEvaluationTemplateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate, com.clarifai.grpc.api.WorkflowVersionEvaluationTemplate.Builder, com.clarifai.grpc.api.WorkflowVersionEvaluationTemplateOrBuilder>(
+                getWorkflowVersionEvaluationTemplate(),
+                getParentForChildren(),
+                isClean());
+        workflowVersionEvaluationTemplate_ = null;
+      }
+      return workflowVersionEvaluationTemplateBuilder_;
+    }
+
+    private java.lang.Object userId_ = "";
+    /**
+     * <pre>
+     * The user the workflow version evaluation belongs to.
+     * </pre>
+     *
+     * <code>string user_id = 7;</code>
+     * @return The userId.
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        workflowVersionId_ = s;
+        userId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1536,20 +2130,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The version of the workflow that is used for evaluation.
+     * The user the workflow version evaluation belongs to.
      * </pre>
      *
-     * <code>string workflow_version_id = 3;</code>
-     * @return The bytes for workflowVersionId.
+     * <code>string user_id = 7;</code>
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
-        getWorkflowVersionIdBytes() {
-      java.lang.Object ref = workflowVersionId_;
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        workflowVersionId_ = b;
+        userId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1557,74 +2151,74 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The version of the workflow that is used for evaluation.
+     * The user the workflow version evaluation belongs to.
      * </pre>
      *
-     * <code>string workflow_version_id = 3;</code>
-     * @param value The workflowVersionId to set.
+     * <code>string user_id = 7;</code>
+     * @param value The userId to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkflowVersionId(
+    public Builder setUserId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      workflowVersionId_ = value;
+      userId_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The version of the workflow that is used for evaluation.
+     * The user the workflow version evaluation belongs to.
      * </pre>
      *
-     * <code>string workflow_version_id = 3;</code>
+     * <code>string user_id = 7;</code>
      * @return This builder for chaining.
      */
-    public Builder clearWorkflowVersionId() {
+    public Builder clearUserId() {
       
-      workflowVersionId_ = getDefaultInstance().getWorkflowVersionId();
+      userId_ = getDefaultInstance().getUserId();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The version of the workflow that is used for evaluation.
+     * The user the workflow version evaluation belongs to.
      * </pre>
      *
-     * <code>string workflow_version_id = 3;</code>
-     * @param value The bytes for workflowVersionId to set.
+     * <code>string user_id = 7;</code>
+     * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkflowVersionIdBytes(
+    public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      workflowVersionId_ = value;
+      userId_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object groundTruthDatasetId_ = "";
+    private java.lang.Object appId_ = "";
     /**
      * <pre>
-     * The ID of the ground-truth dataset that is used for evaluation.
+     * The app the workflow version evaluation belongs to.
      * </pre>
      *
-     * <code>string ground_truth_dataset_id = 4;</code>
-     * @return The groundTruthDatasetId.
+     * <code>string app_id = 8;</code>
+     * @return The appId.
      */
-    public java.lang.String getGroundTruthDatasetId() {
-      java.lang.Object ref = groundTruthDatasetId_;
+    public java.lang.String getAppId() {
+      java.lang.Object ref = appId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        groundTruthDatasetId_ = s;
+        appId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1632,20 +2226,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the ground-truth dataset that is used for evaluation.
+     * The app the workflow version evaluation belongs to.
      * </pre>
      *
-     * <code>string ground_truth_dataset_id = 4;</code>
-     * @return The bytes for groundTruthDatasetId.
+     * <code>string app_id = 8;</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
-        getGroundTruthDatasetIdBytes() {
-      java.lang.Object ref = groundTruthDatasetId_;
+        getAppIdBytes() {
+      java.lang.Object ref = appId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        groundTruthDatasetId_ = b;
+        appId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1653,438 +2247,54 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the ground-truth dataset that is used for evaluation.
+     * The app the workflow version evaluation belongs to.
      * </pre>
      *
-     * <code>string ground_truth_dataset_id = 4;</code>
-     * @param value The groundTruthDatasetId to set.
+     * <code>string app_id = 8;</code>
+     * @param value The appId to set.
      * @return This builder for chaining.
      */
-    public Builder setGroundTruthDatasetId(
+    public Builder setAppId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      groundTruthDatasetId_ = value;
+      appId_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The ID of the ground-truth dataset that is used for evaluation.
+     * The app the workflow version evaluation belongs to.
      * </pre>
      *
-     * <code>string ground_truth_dataset_id = 4;</code>
+     * <code>string app_id = 8;</code>
      * @return This builder for chaining.
      */
-    public Builder clearGroundTruthDatasetId() {
+    public Builder clearAppId() {
       
-      groundTruthDatasetId_ = getDefaultInstance().getGroundTruthDatasetId();
+      appId_ = getDefaultInstance().getAppId();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The ID of the ground-truth dataset that is used for evaluation.
+     * The app the workflow version evaluation belongs to.
      * </pre>
      *
-     * <code>string ground_truth_dataset_id = 4;</code>
-     * @param value The bytes for groundTruthDatasetId to set.
+     * <code>string app_id = 8;</code>
+     * @param value The bytes for appId to set.
      * @return This builder for chaining.
      */
-    public Builder setGroundTruthDatasetIdBytes(
+    public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      groundTruthDatasetId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object groundTruthDatasetVersionId_ = "";
-    /**
-     * <pre>
-     * The version ID of the ground-truth dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string ground_truth_dataset_version_id = 5;</code>
-     * @return The groundTruthDatasetVersionId.
-     */
-    public java.lang.String getGroundTruthDatasetVersionId() {
-      java.lang.Object ref = groundTruthDatasetVersionId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        groundTruthDatasetVersionId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The version ID of the ground-truth dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string ground_truth_dataset_version_id = 5;</code>
-     * @return The bytes for groundTruthDatasetVersionId.
-     */
-    public com.google.protobuf.ByteString
-        getGroundTruthDatasetVersionIdBytes() {
-      java.lang.Object ref = groundTruthDatasetVersionId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        groundTruthDatasetVersionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The version ID of the ground-truth dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string ground_truth_dataset_version_id = 5;</code>
-     * @param value The groundTruthDatasetVersionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGroundTruthDatasetVersionId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      groundTruthDatasetVersionId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The version ID of the ground-truth dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string ground_truth_dataset_version_id = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearGroundTruthDatasetVersionId() {
-      
-      groundTruthDatasetVersionId_ = getDefaultInstance().getGroundTruthDatasetVersionId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The version ID of the ground-truth dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string ground_truth_dataset_version_id = 5;</code>
-     * @param value The bytes for groundTruthDatasetVersionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setGroundTruthDatasetVersionIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      groundTruthDatasetVersionId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object predictionsDatasetId_ = "";
-    /**
-     * <pre>
-     * The ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_id = 6;</code>
-     * @return The predictionsDatasetId.
-     */
-    public java.lang.String getPredictionsDatasetId() {
-      java.lang.Object ref = predictionsDatasetId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        predictionsDatasetId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_id = 6;</code>
-     * @return The bytes for predictionsDatasetId.
-     */
-    public com.google.protobuf.ByteString
-        getPredictionsDatasetIdBytes() {
-      java.lang.Object ref = predictionsDatasetId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        predictionsDatasetId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_id = 6;</code>
-     * @param value The predictionsDatasetId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPredictionsDatasetId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      predictionsDatasetId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_id = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPredictionsDatasetId() {
-      
-      predictionsDatasetId_ = getDefaultInstance().getPredictionsDatasetId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_id = 6;</code>
-     * @param value The bytes for predictionsDatasetId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPredictionsDatasetIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      predictionsDatasetId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object predictionsDatasetVersionId_ = "";
-    /**
-     * <pre>
-     * The version ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_version_id = 7;</code>
-     * @return The predictionsDatasetVersionId.
-     */
-    public java.lang.String getPredictionsDatasetVersionId() {
-      java.lang.Object ref = predictionsDatasetVersionId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        predictionsDatasetVersionId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The version ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_version_id = 7;</code>
-     * @return The bytes for predictionsDatasetVersionId.
-     */
-    public com.google.protobuf.ByteString
-        getPredictionsDatasetVersionIdBytes() {
-      java.lang.Object ref = predictionsDatasetVersionId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        predictionsDatasetVersionId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The version ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_version_id = 7;</code>
-     * @param value The predictionsDatasetVersionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPredictionsDatasetVersionId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      predictionsDatasetVersionId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The version ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_version_id = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPredictionsDatasetVersionId() {
-      
-      predictionsDatasetVersionId_ = getDefaultInstance().getPredictionsDatasetVersionId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The version ID of the prediction dataset that is used for evaluation.
-     * </pre>
-     *
-     * <code>string predictions_dataset_version_id = 7;</code>
-     * @param value The bytes for predictionsDatasetVersionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPredictionsDatasetVersionIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      predictionsDatasetVersionId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object evaluationTemplateId_ = "";
-    /**
-     * <pre>
-     * Evaluation Template ID
-     * </pre>
-     *
-     * <code>string evaluation_template_id = 8;</code>
-     * @return The evaluationTemplateId.
-     */
-    public java.lang.String getEvaluationTemplateId() {
-      java.lang.Object ref = evaluationTemplateId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        evaluationTemplateId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Evaluation Template ID
-     * </pre>
-     *
-     * <code>string evaluation_template_id = 8;</code>
-     * @return The bytes for evaluationTemplateId.
-     */
-    public com.google.protobuf.ByteString
-        getEvaluationTemplateIdBytes() {
-      java.lang.Object ref = evaluationTemplateId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        evaluationTemplateId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Evaluation Template ID
-     * </pre>
-     *
-     * <code>string evaluation_template_id = 8;</code>
-     * @param value The evaluationTemplateId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEvaluationTemplateId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      evaluationTemplateId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Evaluation Template ID
-     * </pre>
-     *
-     * <code>string evaluation_template_id = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEvaluationTemplateId() {
-      
-      evaluationTemplateId_ = getDefaultInstance().getEvaluationTemplateId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Evaluation Template ID
-     * </pre>
-     *
-     * <code>string evaluation_template_id = 8;</code>
-     * @param value The bytes for evaluationTemplateId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEvaluationTemplateIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      evaluationTemplateId_ = value;
+      appId_ = value;
       onChanged();
       return this;
     }
@@ -2094,7 +2304,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.WorkflowEvaluationResult, com.clarifai.grpc.api.WorkflowEvaluationResult.Builder, com.clarifai.grpc.api.WorkflowEvaluationResultOrBuilder> workflowEvaluationResultBuilder_;
     /**
      * <pre>
-     * The evaluation results
+     * Results of the evaluation.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -2105,7 +2315,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The evaluation results
+     * Results of the evaluation.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -2120,7 +2330,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The evaluation results
+     * Results of the evaluation.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -2140,7 +2350,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The evaluation results
+     * Results of the evaluation.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -2158,7 +2368,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The evaluation results
+     * Results of the evaluation.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -2180,7 +2390,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The evaluation results
+     * Results of the evaluation.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -2198,7 +2408,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The evaluation results
+     * Results of the evaluation.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -2210,7 +2420,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The evaluation results
+     * Results of the evaluation.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -2225,7 +2435,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The evaluation results
+     * Results of the evaluation.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowEvaluationResult workflow_evaluation_result = 9;</code>
@@ -2707,102 +2917,6 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
       }
       return modifiedAtBuilder_;
-    }
-
-    private java.lang.Object targetNodeId_ = "";
-    /**
-     * <pre>
-     * The ID of the node that is being evaluated.
-     * </pre>
-     *
-     * <code>string target_node_id = 13;</code>
-     * @return The targetNodeId.
-     */
-    public java.lang.String getTargetNodeId() {
-      java.lang.Object ref = targetNodeId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        targetNodeId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The ID of the node that is being evaluated.
-     * </pre>
-     *
-     * <code>string target_node_id = 13;</code>
-     * @return The bytes for targetNodeId.
-     */
-    public com.google.protobuf.ByteString
-        getTargetNodeIdBytes() {
-      java.lang.Object ref = targetNodeId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        targetNodeId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The ID of the node that is being evaluated.
-     * </pre>
-     *
-     * <code>string target_node_id = 13;</code>
-     * @param value The targetNodeId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTargetNodeId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      targetNodeId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The ID of the node that is being evaluated.
-     * </pre>
-     *
-     * <code>string target_node_id = 13;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTargetNodeId() {
-      
-      targetNodeId_ = getDefaultInstance().getTargetNodeId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The ID of the node that is being evaluated.
-     * </pre>
-     *
-     * <code>string target_node_id = 13;</code>
-     * @param value The bytes for targetNodeId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTargetNodeIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      targetNodeId_ = value;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

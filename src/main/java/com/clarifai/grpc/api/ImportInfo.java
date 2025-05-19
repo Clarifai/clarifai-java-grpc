@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * DEPRECATED: no longer support importing models from third party toolkits
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ImportInfo}
  */
 public final class ImportInfo extends
@@ -100,6 +104,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Used to configure model imports from third-party toolkits.
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 1;</code>
@@ -112,6 +117,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Used to configure model imports from third-party toolkits.
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 1;</code>
@@ -124,6 +130,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Used to configure model imports from third-party toolkits.
+   * DEPRECATED: no longer support importing models from third party toolkits
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 1;</code>
@@ -294,6 +301,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DEPRECATED: no longer support importing models from third party toolkits
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ImportInfo}
    */
   public static final class Builder extends
@@ -454,6 +465,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 1;</code>
@@ -465,6 +477,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 1;</code>
@@ -480,6 +493,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 1;</code>
@@ -500,6 +514,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 1;</code>
@@ -518,6 +533,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 1;</code>
@@ -540,6 +556,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 1;</code>
@@ -558,6 +575,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 1;</code>
@@ -570,6 +588,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 1;</code>
@@ -585,6 +604,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Used to configure model imports from third-party toolkits.
+     * DEPRECATED: no longer support importing models from third party toolkits
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 1;</code>
