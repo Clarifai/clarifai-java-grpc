@@ -256,6 +256,7 @@ private static final long serialVersionUID = 0L;
    * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * For runners, this is the minimum amount of CPU requested for the runner pod.
+   * Optional. If unspecified, a small default is used.
    * </pre>
    *
    * <code>string cpu_requests = 7;</code>
@@ -279,6 +280,7 @@ private static final long serialVersionUID = 0L;
    * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
    * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * For runners, this is the minimum amount of CPU requested for the runner pod.
+   * Optional. If unspecified, a small default is used.
    * </pre>
    *
    * <code>string cpu_requests = 7;</code>
@@ -306,6 +308,7 @@ private static final long serialVersionUID = 0L;
    * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
    * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
    * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+   * Optional. If unspecified, a small default is used.
    * </pre>
    *
    * <code>string cpu_memory_requests = 8;</code>
@@ -329,6 +332,7 @@ private static final long serialVersionUID = 0L;
    * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
    * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
    * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+   * Optional. If unspecified, a small default is used.
    * </pre>
    *
    * <code>string cpu_memory_requests = 8;</code>
@@ -1134,6 +1138,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_requests = 7;</code>
@@ -1156,6 +1161,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_requests = 7;</code>
@@ -1179,6 +1185,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_requests = 7;</code>
@@ -1200,6 +1207,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_requests = 7;</code>
@@ -1216,6 +1224,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPUs to use as a minimum. This follows kubernetes notation like: "1", "100m", "4.5", etc.
      * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * For runners, this is the minimum amount of CPU requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_requests = 7;</code>
@@ -1240,6 +1249,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_memory_requests = 8;</code>
@@ -1262,6 +1272,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_memory_requests = 8;</code>
@@ -1285,6 +1296,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_memory_requests = 8;</code>
@@ -1306,6 +1318,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_memory_requests = 8;</code>
@@ -1322,6 +1335,7 @@ private static final long serialVersionUID = 0L;
      * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
      * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
      * For runners, this is the minimum amount of CPU memory requested for the runner pod.
+     * Optional. If unspecified, a small default is used.
      * </pre>
      *
      * <code>string cpu_memory_requests = 8;</code>
