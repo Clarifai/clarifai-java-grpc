@@ -74,7 +74,7 @@ public interface PostInputsDataSourcesRequestOrBuilder extends
    *
    * <code>string app_pat = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7982
+   *     See proto/clarifai/api/service.proto;l=7943
    * @return The appPat.
    */
   @java.lang.Deprecated java.lang.String getAppPat();
@@ -86,7 +86,7 @@ public interface PostInputsDataSourcesRequestOrBuilder extends
    *
    * <code>string app_pat = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7982
+   *     See proto/clarifai/api/service.proto;l=7943
    * @return The bytes for appPat.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

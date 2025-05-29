@@ -7703,68 +7703,6 @@ public final class V2Grpc {
     return getPatchWorkflowVersionEvaluationsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.MCPRequest,
-      com.clarifai.grpc.api.SingleMCPResponse> getGetMCPMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetMCP",
-      requestType = com.clarifai.grpc.api.MCPRequest.class,
-      responseType = com.clarifai.grpc.api.SingleMCPResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.MCPRequest,
-      com.clarifai.grpc.api.SingleMCPResponse> getGetMCPMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.MCPRequest, com.clarifai.grpc.api.SingleMCPResponse> getGetMCPMethod;
-    if ((getGetMCPMethod = V2Grpc.getGetMCPMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getGetMCPMethod = V2Grpc.getGetMCPMethod) == null) {
-          V2Grpc.getGetMCPMethod = getGetMCPMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.MCPRequest, com.clarifai.grpc.api.SingleMCPResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMCP"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MCPRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleMCPResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetMCP"))
-              .build();
-        }
-      }
-    }
-    return getGetMCPMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.MCPRequest,
-      com.clarifai.grpc.api.SingleMCPResponse> getPostMCPMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostMCP",
-      requestType = com.clarifai.grpc.api.MCPRequest.class,
-      responseType = com.clarifai.grpc.api.SingleMCPResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.MCPRequest,
-      com.clarifai.grpc.api.SingleMCPResponse> getPostMCPMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.MCPRequest, com.clarifai.grpc.api.SingleMCPResponse> getPostMCPMethod;
-    if ((getPostMCPMethod = V2Grpc.getPostMCPMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostMCPMethod = V2Grpc.getPostMCPMethod) == null) {
-          V2Grpc.getPostMCPMethod = getPostMCPMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.MCPRequest, com.clarifai.grpc.api.SingleMCPResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostMCP"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MCPRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleMCPResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostMCP"))
-              .build();
-        }
-      }
-    }
-    return getPostMCPMethod;
-  }
-
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -10320,28 +10258,6 @@ public final class V2Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchWorkflowVersionEvaluationsMethod(), responseObserver);
     }
 
-    /**
-     * <pre>
-     * The GET request to start an MCP session.
-     * Currently not supported in our API.
-     * </pre>
-     */
-    public void getMCP(com.clarifai.grpc.api.MCPRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleMCPResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMCPMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * The POST request for interacting with MCP tools.
-     * This is the simplest form of MCP tool calls with stateless execution for now.
-     * </pre>
-     */
-    public void postMCP(com.clarifai.grpc.api.MCPRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleMCPResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostMCPMethod(), responseObserver);
-    }
-
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -12080,20 +11996,6 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PatchWorkflowVersionEvaluationsRequest,
                 com.clarifai.grpc.api.MultiWorkflowVersionEvaluationResponse>(
                   this, METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS)))
-          .addMethod(
-            getGetMCPMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.MCPRequest,
-                com.clarifai.grpc.api.SingleMCPResponse>(
-                  this, METHODID_GET_MCP)))
-          .addMethod(
-            getPostMCPMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.MCPRequest,
-                com.clarifai.grpc.api.SingleMCPResponse>(
-                  this, METHODID_POST_MCP)))
           .build();
     }
   }
@@ -14866,30 +14768,6 @@ public final class V2Grpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPatchWorkflowVersionEvaluationsMethod(), getCallOptions()), request, responseObserver);
     }
-
-    /**
-     * <pre>
-     * The GET request to start an MCP session.
-     * Currently not supported in our API.
-     * </pre>
-     */
-    public void getMCP(com.clarifai.grpc.api.MCPRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleMCPResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetMCPMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * The POST request for interacting with MCP tools.
-     * This is the simplest form of MCP tool calls with stateless execution for now.
-     * </pre>
-     */
-    public void postMCP(com.clarifai.grpc.api.MCPRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleMCPResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostMCPMethod(), getCallOptions()), request, responseObserver);
-    }
   }
 
   /**
@@ -17374,28 +17252,6 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiWorkflowVersionEvaluationResponse patchWorkflowVersionEvaluations(com.clarifai.grpc.api.PatchWorkflowVersionEvaluationsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPatchWorkflowVersionEvaluationsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * The GET request to start an MCP session.
-     * Currently not supported in our API.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.SingleMCPResponse getMCP(com.clarifai.grpc.api.MCPRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetMCPMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * The POST request for interacting with MCP tools.
-     * This is the simplest form of MCP tool calls with stateless execution for now.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.SingleMCPResponse postMCP(com.clarifai.grpc.api.MCPRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostMCPMethod(), getCallOptions(), request);
     }
   }
 
@@ -20105,30 +19961,6 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPatchWorkflowVersionEvaluationsMethod(), getCallOptions()), request);
     }
-
-    /**
-     * <pre>
-     * The GET request to start an MCP session.
-     * Currently not supported in our API.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleMCPResponse> getMCP(
-        com.clarifai.grpc.api.MCPRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetMCPMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * The POST request for interacting with MCP tools.
-     * This is the simplest form of MCP tool calls with stateless execution for now.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleMCPResponse> postMCP(
-        com.clarifai.grpc.api.MCPRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostMCPMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -20376,11 +20208,9 @@ public final class V2Grpc {
   private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 242;
   private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 243;
   private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 244;
-  private static final int METHODID_GET_MCP = 245;
-  private static final int METHODID_POST_MCP = 246;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 247;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 248;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 249;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 245;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 246;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 247;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21379,14 +21209,6 @@ public final class V2Grpc {
           serviceImpl.patchWorkflowVersionEvaluations((com.clarifai.grpc.api.PatchWorkflowVersionEvaluationsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowVersionEvaluationResponse>) responseObserver);
           break;
-        case METHODID_GET_MCP:
-          serviceImpl.getMCP((com.clarifai.grpc.api.MCPRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleMCPResponse>) responseObserver);
-          break;
-        case METHODID_POST_MCP:
-          serviceImpl.postMCP((com.clarifai.grpc.api.MCPRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleMCPResponse>) responseObserver);
-          break;
         default:
           throw new AssertionError();
       }
@@ -21705,8 +21527,6 @@ public final class V2Grpc {
               .addMethod(getGetWorkflowVersionEvaluationMethod())
               .addMethod(getListWorkflowVersionEvaluationsMethod())
               .addMethod(getPatchWorkflowVersionEvaluationsMethod())
-              .addMethod(getGetMCPMethod())
-              .addMethod(getPostMCPMethod())
               .build();
         }
       }
