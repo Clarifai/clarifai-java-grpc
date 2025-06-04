@@ -771,29 +771,29 @@ public enum S
    */
   WorkflowVersionEvaluations_Add(153),
   /**
-   * <code>Pipeline_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Pipelines_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
-  Pipeline_Get(154),
+  Pipelines_Get(154),
   /**
-   * <code>Pipeline_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipeline_Get];</code>
+   * <code>Pipelines_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Get];</code>
    */
-  Pipeline_Add(155),
+  Pipelines_Add(155),
   /**
-   * <code>PipelineStep_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>PipelineSteps_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
-  PipelineStep_Get(157),
+  PipelineSteps_Get(157),
   /**
-   * <code>PipelineStep_Add = 158 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineStep_Get];</code>
+   * <code>PipelineSteps_Add = 158 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get];</code>
    */
-  PipelineStep_Add(158),
+  PipelineSteps_Add(158),
   /**
    * <pre>
    * To pull the pipeline step version's image
    * </pre>
    *
-   * <code>PipelineStep_Pull = 159 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineStep_Get];</code>
+   * <code>PipelineSteps_Pull = 159 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get];</code>
    */
-  PipelineStep_Pull(159),
+  PipelineSteps_Pull(159),
   UNRECOGNIZED(-1),
   ;
 
@@ -1527,29 +1527,29 @@ public enum S
    */
   public static final int WorkflowVersionEvaluations_Add_VALUE = 153;
   /**
-   * <code>Pipeline_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Pipelines_Get = 154 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
-  public static final int Pipeline_Get_VALUE = 154;
+  public static final int Pipelines_Get_VALUE = 154;
   /**
-   * <code>Pipeline_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipeline_Get];</code>
+   * <code>Pipelines_Add = 155 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Get];</code>
    */
-  public static final int Pipeline_Add_VALUE = 155;
+  public static final int Pipelines_Add_VALUE = 155;
   /**
-   * <code>PipelineStep_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>PipelineSteps_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
-  public static final int PipelineStep_Get_VALUE = 157;
+  public static final int PipelineSteps_Get_VALUE = 157;
   /**
-   * <code>PipelineStep_Add = 158 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineStep_Get];</code>
+   * <code>PipelineSteps_Add = 158 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get];</code>
    */
-  public static final int PipelineStep_Add_VALUE = 158;
+  public static final int PipelineSteps_Add_VALUE = 158;
   /**
    * <pre>
    * To pull the pipeline step version's image
    * </pre>
    *
-   * <code>PipelineStep_Pull = 159 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineStep_Get];</code>
+   * <code>PipelineSteps_Pull = 159 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get];</code>
    */
-  public static final int PipelineStep_Pull_VALUE = 159;
+  public static final int PipelineSteps_Pull_VALUE = 159;
 
 
   public final int getNumber() {
@@ -1680,11 +1680,11 @@ public enum S
       case 151: return LogEntries_Get;
       case 152: return WorkflowVersionEvaluations_Get;
       case 153: return WorkflowVersionEvaluations_Add;
-      case 154: return Pipeline_Get;
-      case 155: return Pipeline_Add;
-      case 157: return PipelineStep_Get;
-      case 158: return PipelineStep_Add;
-      case 159: return PipelineStep_Pull;
+      case 154: return Pipelines_Get;
+      case 155: return Pipelines_Add;
+      case 157: return PipelineSteps_Get;
+      case 158: return PipelineSteps_Add;
+      case 159: return PipelineSteps_Pull;
       default: return null;
     }
   }
