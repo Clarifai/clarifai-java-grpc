@@ -59,6 +59,7 @@ public interface StreamLogEntriesRequestOrBuilder extends
 
   /**
    * <pre>
+   * For models if you set log_type to "builder" then you get the model build logs.
    * The Model ID, if a model produced the logs.
    * </pre>
    *
@@ -68,6 +69,7 @@ public interface StreamLogEntriesRequestOrBuilder extends
   java.lang.String getModelId();
   /**
    * <pre>
+   * For models if you set log_type to "builder" then you get the model build logs.
    * The Model ID, if a model produced the logs.
    * </pre>
    *
@@ -163,7 +165,8 @@ public interface StreamLogEntriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Pipelines that produced the logs.
+   * Pipelines that produced the logs with log_type: pipeline.version.run
+   * Must include user_app_id with user_id and app_id as well.
    * </pre>
    *
    * <code>string pipeline_id = 12;</code>
@@ -172,7 +175,8 @@ public interface StreamLogEntriesRequestOrBuilder extends
   java.lang.String getPipelineId();
   /**
    * <pre>
-   * Pipelines that produced the logs.
+   * Pipelines that produced the logs with log_type: pipeline.version.run
+   * Must include user_app_id with user_id and app_id as well.
    * </pre>
    *
    * <code>string pipeline_id = 12;</code>
@@ -204,4 +208,38 @@ public interface StreamLogEntriesRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPipelineVersionRunIdBytes();
+
+  /**
+   * <pre>
+   * During pipeline step build provide these IDs with log_type: builder
+   * Must include user_app_id with user_id and app_id as well.
+   * </pre>
+   *
+   * <code>string pipeline_step_id = 15;</code>
+   * @return The pipelineStepId.
+   */
+  java.lang.String getPipelineStepId();
+  /**
+   * <pre>
+   * During pipeline step build provide these IDs with log_type: builder
+   * Must include user_app_id with user_id and app_id as well.
+   * </pre>
+   *
+   * <code>string pipeline_step_id = 15;</code>
+   * @return The bytes for pipelineStepId.
+   */
+  com.google.protobuf.ByteString
+      getPipelineStepIdBytes();
+
+  /**
+   * <code>string pipeline_step_version_id = 16;</code>
+   * @return The pipelineStepVersionId.
+   */
+  java.lang.String getPipelineStepVersionId();
+  /**
+   * <code>string pipeline_step_version_id = 16;</code>
+   * @return The bytes for pipelineStepVersionId.
+   */
+  com.google.protobuf.ByteString
+      getPipelineStepVersionIdBytes();
 }

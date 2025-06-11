@@ -599,6 +599,10 @@ private static final long serialVersionUID = 0L;
   public static final int PIPELINE_STEP_ID_FIELD_NUMBER = 12;
   private volatile java.lang.Object pipelineStepId_;
   /**
+   * <pre>
+   * Pipeline step related data for pipeline step builds.
+   * </pre>
+   *
    * <code>string pipeline_step_id = 12;</code>
    * @return The pipelineStepId.
    */
@@ -616,6 +620,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Pipeline step related data for pipeline step builds.
+   * </pre>
+   *
    * <code>string pipeline_step_id = 12;</code>
    * @return The bytes for pipelineStepId.
    */
@@ -2119,6 +2127,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pipelineStepId_ = "";
     /**
+     * <pre>
+     * Pipeline step related data for pipeline step builds.
+     * </pre>
+     *
      * <code>string pipeline_step_id = 12;</code>
      * @return The pipelineStepId.
      */
@@ -2135,6 +2147,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Pipeline step related data for pipeline step builds.
+     * </pre>
+     *
      * <code>string pipeline_step_id = 12;</code>
      * @return The bytes for pipelineStepId.
      */
@@ -2152,6 +2168,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Pipeline step related data for pipeline step builds.
+     * </pre>
+     *
      * <code>string pipeline_step_id = 12;</code>
      * @param value The pipelineStepId to set.
      * @return This builder for chaining.
@@ -2167,6 +2187,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Pipeline step related data for pipeline step builds.
+     * </pre>
+     *
      * <code>string pipeline_step_id = 12;</code>
      * @return This builder for chaining.
      */
@@ -2177,6 +2201,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Pipeline step related data for pipeline step builds.
+     * </pre>
+     *
      * <code>string pipeline_step_id = 12;</code>
      * @param value The bytes for pipelineStepId to set.
      * @return This builder for chaining.

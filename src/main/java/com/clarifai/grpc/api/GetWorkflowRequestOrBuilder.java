@@ -48,16 +48,6 @@ public interface GetWorkflowRequestOrBuilder extends
 
   /**
    * <pre>
-   * Use this flag to look into clarifai published workflows first for a Workflow ID
-   * </pre>
-   *
-   * <code>bool favor_clarifai_workflows = 3;</code>
-   * @return The favorClarifaiWorkflows.
-   */
-  boolean getFavorClarifaiWorkflows();
-
-  /**
-   * <pre>
    * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
    * </pre>
    *
@@ -96,14 +86,4 @@ public interface GetWorkflowRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAdditionalFieldsBytes(int index);
-
-  /**
-   * <pre>
-   * if true will not expand search to clarifai workflows
-   * </pre>
-   *
-   * <code>bool exclude_clarifai_workflows = 5;</code>
-   * @return The excludeClarifaiWorkflows.
-   */
-  boolean getExcludeClarifaiWorkflows();
 }

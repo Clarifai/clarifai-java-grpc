@@ -45,22 +45,26 @@ public interface AppOrBuilder extends
 
   /**
    * <pre>
-   * Default workflow id deprecated in favor of default_workflow
+   * Deprecated, use default_workflow instead.
    * </pre>
    *
-   * <code>string default_workflow_id = 4;</code>
+   * <code>string default_workflow_id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.App.default_workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=100
    * @return The defaultWorkflowId.
    */
-  java.lang.String getDefaultWorkflowId();
+  @java.lang.Deprecated java.lang.String getDefaultWorkflowId();
   /**
    * <pre>
-   * Default workflow id deprecated in favor of default_workflow
+   * Deprecated, use default_workflow instead.
    * </pre>
    *
-   * <code>string default_workflow_id = 4;</code>
+   * <code>string default_workflow_id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.App.default_workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=100
    * @return The bytes for defaultWorkflowId.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getDefaultWorkflowIdBytes();
 
   /**

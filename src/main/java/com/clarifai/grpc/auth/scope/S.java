@@ -779,6 +779,10 @@ public enum S
    */
   Pipelines_Add(155),
   /**
+   * <code>Pipelines_Delete = 156 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Add];</code>
+   */
+  Pipelines_Delete(156),
+  /**
    * <code>PipelineSteps_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   PipelineSteps_Get(157),
@@ -1535,6 +1539,10 @@ public enum S
    */
   public static final int Pipelines_Add_VALUE = 155;
   /**
+   * <code>Pipelines_Delete = 156 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Pipelines_Add];</code>
+   */
+  public static final int Pipelines_Delete_VALUE = 156;
+  /**
    * <code>PipelineSteps_Get = 157 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int PipelineSteps_Get_VALUE = 157;
@@ -1682,6 +1690,7 @@ public enum S
       case 153: return WorkflowVersionEvaluations_Add;
       case 154: return Pipelines_Get;
       case 155: return Pipelines_Add;
+      case 156: return Pipelines_Delete;
       case 157: return PipelineSteps_Get;
       case 158: return PipelineSteps_Add;
       case 159: return PipelineSteps_Pull;
