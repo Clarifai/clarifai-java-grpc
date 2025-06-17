@@ -14,12 +14,10 @@ public interface TaskAIAssistantOrBuilder extends
    * If empty, then AI assistant is disabled.
    * </pre>
    *
-   * <code>string workflow_id = 1 [deprecated = true];</code>
-   * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3579
+   * <code>string workflow_id = 1;</code>
    * @return The workflowId.
    */
-  @java.lang.Deprecated java.lang.String getWorkflowId();
+  java.lang.String getWorkflowId();
   /**
    * <pre>
    * The worker is helped by an AI assistant.
@@ -27,26 +25,9 @@ public interface TaskAIAssistantOrBuilder extends
    * If empty, then AI assistant is disabled.
    * </pre>
    *
-   * <code>string workflow_id = 1 [deprecated = true];</code>
-   * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3579
+   * <code>string workflow_id = 1;</code>
    * @return The bytes for workflowId.
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
+  com.google.protobuf.ByteString
       getWorkflowIdBytes();
-
-  /**
-   * <code>.clarifai.api.Workflow workflow = 2;</code>
-   * @return Whether the workflow field is set.
-   */
-  boolean hasWorkflow();
-  /**
-   * <code>.clarifai.api.Workflow workflow = 2;</code>
-   * @return The workflow.
-   */
-  com.clarifai.grpc.api.Workflow getWorkflow();
-  /**
-   * <code>.clarifai.api.Workflow workflow = 2;</code>
-   */
-  com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder();
 }

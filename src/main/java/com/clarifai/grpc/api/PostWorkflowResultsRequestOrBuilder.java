@@ -139,12 +139,10 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * Use this flag to look into clarifai published workflows first for a Workflow ID
    * </pre>
    *
-   * <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
-   * @deprecated clarifai.api.PostWorkflowResultsRequest.favor_clarifai_workflows is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7191
+   * <code>bool favor_clarifai_workflows = 5;</code>
    * @return The favorClarifaiWorkflows.
    */
-  @java.lang.Deprecated boolean getFavorClarifaiWorkflows();
+  boolean getFavorClarifaiWorkflows();
 
   /**
    * <pre>

@@ -183,19 +183,11 @@ public interface ComputeSourceMetadataOrBuilder extends
       getPipelineVersionRunIdBytes();
 
   /**
-   * <pre>
-   * Pipeline step related data for pipeline step builds.
-   * </pre>
-   *
    * <code>string pipeline_step_id = 12;</code>
    * @return The pipelineStepId.
    */
   java.lang.String getPipelineStepId();
   /**
-   * <pre>
-   * Pipeline step related data for pipeline step builds.
-   * </pre>
-   *
    * <code>string pipeline_step_id = 12;</code>
    * @return The bytes for pipelineStepId.
    */

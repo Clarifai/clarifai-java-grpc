@@ -39,7 +39,7 @@ public interface InputsUploadOrBuilder extends
    *
    * <code>string app_pat = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4603
+   *     See proto/clarifai/api/resources.proto;l=4602
    * @return The appPat.
    */
   @java.lang.Deprecated java.lang.String getAppPat();
@@ -51,7 +51,7 @@ public interface InputsUploadOrBuilder extends
    *
    * <code>string app_pat = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.InputsUpload.app_pat is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4603
+   *     See proto/clarifai/api/resources.proto;l=4602
    * @return The bytes for appPat.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

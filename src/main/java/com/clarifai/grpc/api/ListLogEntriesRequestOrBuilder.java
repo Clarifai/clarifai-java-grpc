@@ -185,8 +185,7 @@ public interface ListLogEntriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Pipelines that produced the logs for a given pipeline run with log_type: pipeline.version.run
-   * Must include user_app_id with user_id and app_id as well.
+   * Pipelines that produced the logs.
    * </pre>
    *
    * <code>string pipeline_id = 12;</code>
@@ -195,8 +194,7 @@ public interface ListLogEntriesRequestOrBuilder extends
   java.lang.String getPipelineId();
   /**
    * <pre>
-   * Pipelines that produced the logs for a given pipeline run with log_type: pipeline.version.run
-   * Must include user_app_id with user_id and app_id as well.
+   * Pipelines that produced the logs.
    * </pre>
    *
    * <code>string pipeline_id = 12;</code>
@@ -228,36 +226,4 @@ public interface ListLogEntriesRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPipelineVersionRunIdBytes();
-
-  /**
-   * <pre>
-   * During pipeline step build provide these IDs.
-   * </pre>
-   *
-   * <code>string pipeline_step_id = 15;</code>
-   * @return The pipelineStepId.
-   */
-  java.lang.String getPipelineStepId();
-  /**
-   * <pre>
-   * During pipeline step build provide these IDs.
-   * </pre>
-   *
-   * <code>string pipeline_step_id = 15;</code>
-   * @return The bytes for pipelineStepId.
-   */
-  com.google.protobuf.ByteString
-      getPipelineStepIdBytes();
-
-  /**
-   * <code>string pipeline_step_version_id = 16;</code>
-   * @return The pipelineStepVersionId.
-   */
-  java.lang.String getPipelineStepVersionId();
-  /**
-   * <code>string pipeline_step_version_id = 16;</code>
-   * @return The bytes for pipelineStepVersionId.
-   */
-  com.google.protobuf.ByteString
-      getPipelineStepVersionIdBytes();
 }
