@@ -407,11 +407,13 @@ private static final long serialVersionUID = 0L;
    * Use this flag to look into clarifai published workflows first for a Workflow ID
    * </pre>
    *
-   * <code>bool favor_clarifai_workflows = 5;</code>
+   * <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostWorkflowResultsRequest.favor_clarifai_workflows is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7239
    * @return The favorClarifaiWorkflows.
    */
   @java.lang.Override
-  public boolean getFavorClarifaiWorkflows() {
+  @java.lang.Deprecated public boolean getFavorClarifaiWorkflows() {
     return favorClarifaiWorkflows_;
   }
 
@@ -1905,11 +1907,13 @@ private static final long serialVersionUID = 0L;
      * Use this flag to look into clarifai published workflows first for a Workflow ID
      * </pre>
      *
-     * <code>bool favor_clarifai_workflows = 5;</code>
+     * <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostWorkflowResultsRequest.favor_clarifai_workflows is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7239
      * @return The favorClarifaiWorkflows.
      */
     @java.lang.Override
-    public boolean getFavorClarifaiWorkflows() {
+    @java.lang.Deprecated public boolean getFavorClarifaiWorkflows() {
       return favorClarifaiWorkflows_;
     }
     /**
@@ -1917,11 +1921,13 @@ private static final long serialVersionUID = 0L;
      * Use this flag to look into clarifai published workflows first for a Workflow ID
      * </pre>
      *
-     * <code>bool favor_clarifai_workflows = 5;</code>
+     * <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostWorkflowResultsRequest.favor_clarifai_workflows is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7239
      * @param value The favorClarifaiWorkflows to set.
      * @return This builder for chaining.
      */
-    public Builder setFavorClarifaiWorkflows(boolean value) {
+    @java.lang.Deprecated public Builder setFavorClarifaiWorkflows(boolean value) {
       
       favorClarifaiWorkflows_ = value;
       onChanged();
@@ -1932,10 +1938,12 @@ private static final long serialVersionUID = 0L;
      * Use this flag to look into clarifai published workflows first for a Workflow ID
      * </pre>
      *
-     * <code>bool favor_clarifai_workflows = 5;</code>
+     * <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostWorkflowResultsRequest.favor_clarifai_workflows is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7239
      * @return This builder for chaining.
      */
-    public Builder clearFavorClarifaiWorkflows() {
+    @java.lang.Deprecated public Builder clearFavorClarifaiWorkflows() {
       
       favorClarifaiWorkflows_ = false;
       onChanged();

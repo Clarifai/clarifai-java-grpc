@@ -74,11 +74,6 @@ private static final long serialVersionUID = 0L;
             workflowId_ = s;
             break;
           }
-          case 24: {
-
-            favorClarifaiWorkflows_ = input.readBool();
-            break;
-          }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -86,11 +81,6 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             additionalFields_.add(s);
-            break;
-          }
-          case 40: {
-
-            excludeClarifaiWorkflows_ = input.readBool();
             break;
           }
           default: {
@@ -206,21 +196,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FAVOR_CLARIFAI_WORKFLOWS_FIELD_NUMBER = 3;
-  private boolean favorClarifaiWorkflows_;
-  /**
-   * <pre>
-   * Use this flag to look into clarifai published workflows first for a Workflow ID
-   * </pre>
-   *
-   * <code>bool favor_clarifai_workflows = 3;</code>
-   * @return The favorClarifaiWorkflows.
-   */
-  @java.lang.Override
-  public boolean getFavorClarifaiWorkflows() {
-    return favorClarifaiWorkflows_;
-  }
-
   public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList additionalFields_;
   /**
@@ -272,21 +247,6 @@ private static final long serialVersionUID = 0L;
     return additionalFields_.getByteString(index);
   }
 
-  public static final int EXCLUDE_CLARIFAI_WORKFLOWS_FIELD_NUMBER = 5;
-  private boolean excludeClarifaiWorkflows_;
-  /**
-   * <pre>
-   * if true will not expand search to clarifai workflows
-   * </pre>
-   *
-   * <code>bool exclude_clarifai_workflows = 5;</code>
-   * @return The excludeClarifaiWorkflows.
-   */
-  @java.lang.Override
-  public boolean getExcludeClarifaiWorkflows() {
-    return excludeClarifaiWorkflows_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -307,14 +267,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, workflowId_);
     }
-    if (favorClarifaiWorkflows_ != false) {
-      output.writeBool(3, favorClarifaiWorkflows_);
-    }
     for (int i = 0; i < additionalFields_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, additionalFields_.getRaw(i));
-    }
-    if (excludeClarifaiWorkflows_ != false) {
-      output.writeBool(5, excludeClarifaiWorkflows_);
     }
     unknownFields.writeTo(output);
   }
@@ -332,10 +286,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, workflowId_);
     }
-    if (favorClarifaiWorkflows_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, favorClarifaiWorkflows_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < additionalFields_.size(); i++) {
@@ -343,10 +293,6 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getAdditionalFieldsList().size();
-    }
-    if (excludeClarifaiWorkflows_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, excludeClarifaiWorkflows_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -370,12 +316,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getWorkflowId()
         .equals(other.getWorkflowId())) return false;
-    if (getFavorClarifaiWorkflows()
-        != other.getFavorClarifaiWorkflows()) return false;
     if (!getAdditionalFieldsList()
         .equals(other.getAdditionalFieldsList())) return false;
-    if (getExcludeClarifaiWorkflows()
-        != other.getExcludeClarifaiWorkflows()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -393,16 +335,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getWorkflowId().hashCode();
-    hash = (37 * hash) + FAVOR_CLARIFAI_WORKFLOWS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getFavorClarifaiWorkflows());
     if (getAdditionalFieldsCount() > 0) {
       hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalFieldsList().hashCode();
     }
-    hash = (37 * hash) + EXCLUDE_CLARIFAI_WORKFLOWS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getExcludeClarifaiWorkflows());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -548,12 +484,8 @@ private static final long serialVersionUID = 0L;
       }
       workflowId_ = "";
 
-      favorClarifaiWorkflows_ = false;
-
       additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      excludeClarifaiWorkflows_ = false;
-
       return this;
     }
 
@@ -587,13 +519,11 @@ private static final long serialVersionUID = 0L;
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.workflowId_ = workflowId_;
-      result.favorClarifaiWorkflows_ = favorClarifaiWorkflows_;
       if (((bitField0_ & 0x00000001) != 0)) {
         additionalFields_ = additionalFields_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.additionalFields_ = additionalFields_;
-      result.excludeClarifaiWorkflows_ = excludeClarifaiWorkflows_;
       onBuilt();
       return result;
     }
@@ -649,9 +579,6 @@ private static final long serialVersionUID = 0L;
         workflowId_ = other.workflowId_;
         onChanged();
       }
-      if (other.getFavorClarifaiWorkflows() != false) {
-        setFavorClarifaiWorkflows(other.getFavorClarifaiWorkflows());
-      }
       if (!other.additionalFields_.isEmpty()) {
         if (additionalFields_.isEmpty()) {
           additionalFields_ = other.additionalFields_;
@@ -661,9 +588,6 @@ private static final long serialVersionUID = 0L;
           additionalFields_.addAll(other.additionalFields_);
         }
         onChanged();
-      }
-      if (other.getExcludeClarifaiWorkflows() != false) {
-        setExcludeClarifaiWorkflows(other.getExcludeClarifaiWorkflows());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -920,49 +844,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean favorClarifaiWorkflows_ ;
-    /**
-     * <pre>
-     * Use this flag to look into clarifai published workflows first for a Workflow ID
-     * </pre>
-     *
-     * <code>bool favor_clarifai_workflows = 3;</code>
-     * @return The favorClarifaiWorkflows.
-     */
-    @java.lang.Override
-    public boolean getFavorClarifaiWorkflows() {
-      return favorClarifaiWorkflows_;
-    }
-    /**
-     * <pre>
-     * Use this flag to look into clarifai published workflows first for a Workflow ID
-     * </pre>
-     *
-     * <code>bool favor_clarifai_workflows = 3;</code>
-     * @param value The favorClarifaiWorkflows to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFavorClarifaiWorkflows(boolean value) {
-      
-      favorClarifaiWorkflows_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Use this flag to look into clarifai published workflows first for a Workflow ID
-     * </pre>
-     *
-     * <code>bool favor_clarifai_workflows = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFavorClarifaiWorkflows() {
-      
-      favorClarifaiWorkflows_ = false;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAdditionalFieldsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
@@ -1105,49 +986,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureAdditionalFieldsIsMutable();
       additionalFields_.add(value);
-      onChanged();
-      return this;
-    }
-
-    private boolean excludeClarifaiWorkflows_ ;
-    /**
-     * <pre>
-     * if true will not expand search to clarifai workflows
-     * </pre>
-     *
-     * <code>bool exclude_clarifai_workflows = 5;</code>
-     * @return The excludeClarifaiWorkflows.
-     */
-    @java.lang.Override
-    public boolean getExcludeClarifaiWorkflows() {
-      return excludeClarifaiWorkflows_;
-    }
-    /**
-     * <pre>
-     * if true will not expand search to clarifai workflows
-     * </pre>
-     *
-     * <code>bool exclude_clarifai_workflows = 5;</code>
-     * @param value The excludeClarifaiWorkflows to set.
-     * @return This builder for chaining.
-     */
-    public Builder setExcludeClarifaiWorkflows(boolean value) {
-      
-      excludeClarifaiWorkflows_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * if true will not expand search to clarifai workflows
-     * </pre>
-     *
-     * <code>bool exclude_clarifai_workflows = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearExcludeClarifaiWorkflows() {
-      
-      excludeClarifaiWorkflows_ = false;
       onChanged();
       return this;
     }

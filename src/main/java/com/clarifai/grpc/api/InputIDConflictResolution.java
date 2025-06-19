@@ -118,7 +118,7 @@ public enum InputIDConflictResolution
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(17);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(18);
   }
 
   private static final InputIDConflictResolution[] VALUES = values();

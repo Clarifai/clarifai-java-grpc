@@ -508,14 +508,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object defaultWorkflowId_;
   /**
    * <pre>
-   * Default workflow id deprecated in favor of default_workflow
+   * Deprecated, use default_workflow instead.
    * </pre>
    *
-   * <code>string default_workflow_id = 4;</code>
+   * <code>string default_workflow_id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.App.default_workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=100
    * @return The defaultWorkflowId.
    */
   @java.lang.Override
-  public java.lang.String getDefaultWorkflowId() {
+  @java.lang.Deprecated public java.lang.String getDefaultWorkflowId() {
     java.lang.Object ref = defaultWorkflowId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -529,14 +531,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Default workflow id deprecated in favor of default_workflow
+   * Deprecated, use default_workflow instead.
    * </pre>
    *
-   * <code>string default_workflow_id = 4;</code>
+   * <code>string default_workflow_id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.App.default_workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=100
    * @return The bytes for defaultWorkflowId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getDefaultWorkflowIdBytes() {
     java.lang.Object ref = defaultWorkflowId_;
     if (ref instanceof java.lang.String) {
@@ -2116,13 +2120,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object defaultWorkflowId_ = "";
     /**
      * <pre>
-     * Default workflow id deprecated in favor of default_workflow
+     * Deprecated, use default_workflow instead.
      * </pre>
      *
-     * <code>string default_workflow_id = 4;</code>
+     * <code>string default_workflow_id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.App.default_workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=100
      * @return The defaultWorkflowId.
      */
-    public java.lang.String getDefaultWorkflowId() {
+    @java.lang.Deprecated public java.lang.String getDefaultWorkflowId() {
       java.lang.Object ref = defaultWorkflowId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -2136,13 +2142,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Default workflow id deprecated in favor of default_workflow
+     * Deprecated, use default_workflow instead.
      * </pre>
      *
-     * <code>string default_workflow_id = 4;</code>
+     * <code>string default_workflow_id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.App.default_workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=100
      * @return The bytes for defaultWorkflowId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getDefaultWorkflowIdBytes() {
       java.lang.Object ref = defaultWorkflowId_;
       if (ref instanceof String) {
@@ -2157,14 +2165,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Default workflow id deprecated in favor of default_workflow
+     * Deprecated, use default_workflow instead.
      * </pre>
      *
-     * <code>string default_workflow_id = 4;</code>
+     * <code>string default_workflow_id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.App.default_workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=100
      * @param value The defaultWorkflowId to set.
      * @return This builder for chaining.
      */
-    public Builder setDefaultWorkflowId(
+    @java.lang.Deprecated public Builder setDefaultWorkflowId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2176,13 +2186,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Default workflow id deprecated in favor of default_workflow
+     * Deprecated, use default_workflow instead.
      * </pre>
      *
-     * <code>string default_workflow_id = 4;</code>
+     * <code>string default_workflow_id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.App.default_workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=100
      * @return This builder for chaining.
      */
-    public Builder clearDefaultWorkflowId() {
+    @java.lang.Deprecated public Builder clearDefaultWorkflowId() {
       
       defaultWorkflowId_ = getDefaultInstance().getDefaultWorkflowId();
       onChanged();
@@ -2190,14 +2202,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Default workflow id deprecated in favor of default_workflow
+     * Deprecated, use default_workflow instead.
      * </pre>
      *
-     * <code>string default_workflow_id = 4;</code>
+     * <code>string default_workflow_id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.App.default_workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=100
      * @param value The bytes for defaultWorkflowId to set.
      * @return This builder for chaining.
      */
-    public Builder setDefaultWorkflowIdBytes(
+    @java.lang.Deprecated public Builder setDefaultWorkflowIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler",
+    value = "by gRPC proto compiler (version 1.51.1)",
     comments = "Source: proto/clarifai/api/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class V2Grpc {
@@ -6587,6 +6587,37 @@ public final class V2Grpc {
     return getPostInputsUploadsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineVersionRunsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionRunResponse> getListPipelineVersionRunsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPipelineVersionRuns",
+      requestType = com.clarifai.grpc.api.ListPipelineVersionRunsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineVersionRunResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineVersionRunsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionRunResponse> getListPipelineVersionRunsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineVersionRunsRequest, com.clarifai.grpc.api.MultiPipelineVersionRunResponse> getListPipelineVersionRunsMethod;
+    if ((getListPipelineVersionRunsMethod = V2Grpc.getListPipelineVersionRunsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListPipelineVersionRunsMethod = V2Grpc.getListPipelineVersionRunsMethod) == null) {
+          V2Grpc.getListPipelineVersionRunsMethod = getListPipelineVersionRunsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListPipelineVersionRunsRequest, com.clarifai.grpc.api.MultiPipelineVersionRunResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPipelineVersionRuns"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListPipelineVersionRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineVersionRunResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListPipelineVersionRuns"))
+              .build();
+        }
+      }
+    }
+    return getListPipelineVersionRunsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetRunnerRequest,
       com.clarifai.grpc.api.SingleRunnerResponse> getGetRunnerMethod;
 
@@ -7703,6 +7734,409 @@ public final class V2Grpc {
     return getPatchWorkflowVersionEvaluationsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest,
+      com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> getListWorkflowVersionEvaluationDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkflowVersionEvaluationData",
+      requestType = com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest.class,
+      responseType = com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest,
+      com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> getListWorkflowVersionEvaluationDataMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest, com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> getListWorkflowVersionEvaluationDataMethod;
+    if ((getListWorkflowVersionEvaluationDataMethod = V2Grpc.getListWorkflowVersionEvaluationDataMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListWorkflowVersionEvaluationDataMethod = V2Grpc.getListWorkflowVersionEvaluationDataMethod) == null) {
+          V2Grpc.getListWorkflowVersionEvaluationDataMethod = getListWorkflowVersionEvaluationDataMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest, com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWorkflowVersionEvaluationData"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListWorkflowVersionEvaluationData"))
+              .build();
+        }
+      }
+    }
+    return getListWorkflowVersionEvaluationDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelinesRequest,
+      com.clarifai.grpc.api.MultiPipelineResponse> getPostPipelinesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostPipelines",
+      requestType = com.clarifai.grpc.api.PostPipelinesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelinesRequest,
+      com.clarifai.grpc.api.MultiPipelineResponse> getPostPipelinesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelinesRequest, com.clarifai.grpc.api.MultiPipelineResponse> getPostPipelinesMethod;
+    if ((getPostPipelinesMethod = V2Grpc.getPostPipelinesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostPipelinesMethod = V2Grpc.getPostPipelinesMethod) == null) {
+          V2Grpc.getPostPipelinesMethod = getPostPipelinesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostPipelinesRequest, com.clarifai.grpc.api.MultiPipelineResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostPipelines"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostPipelinesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostPipelines"))
+              .build();
+        }
+      }
+    }
+    return getPostPipelinesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetPipelineRequest,
+      com.clarifai.grpc.api.SinglePipelineResponse> getGetPipelineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPipeline",
+      requestType = com.clarifai.grpc.api.GetPipelineRequest.class,
+      responseType = com.clarifai.grpc.api.SinglePipelineResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetPipelineRequest,
+      com.clarifai.grpc.api.SinglePipelineResponse> getGetPipelineMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetPipelineRequest, com.clarifai.grpc.api.SinglePipelineResponse> getGetPipelineMethod;
+    if ((getGetPipelineMethod = V2Grpc.getGetPipelineMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetPipelineMethod = V2Grpc.getGetPipelineMethod) == null) {
+          V2Grpc.getGetPipelineMethod = getGetPipelineMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetPipelineRequest, com.clarifai.grpc.api.SinglePipelineResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPipeline"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetPipelineRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SinglePipelineResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetPipeline"))
+              .build();
+        }
+      }
+    }
+    return getGetPipelineMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelinesRequest,
+      com.clarifai.grpc.api.MultiPipelineResponse> getListPipelinesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPipelines",
+      requestType = com.clarifai.grpc.api.ListPipelinesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelinesRequest,
+      com.clarifai.grpc.api.MultiPipelineResponse> getListPipelinesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelinesRequest, com.clarifai.grpc.api.MultiPipelineResponse> getListPipelinesMethod;
+    if ((getListPipelinesMethod = V2Grpc.getListPipelinesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListPipelinesMethod = V2Grpc.getListPipelinesMethod) == null) {
+          V2Grpc.getListPipelinesMethod = getListPipelinesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListPipelinesRequest, com.clarifai.grpc.api.MultiPipelineResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPipelines"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListPipelinesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListPipelines"))
+              .build();
+        }
+      }
+    }
+    return getListPipelinesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchPipelinesRequest,
+      com.clarifai.grpc.api.MultiPipelineResponse> getPatchPipelinesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchPipelines",
+      requestType = com.clarifai.grpc.api.PatchPipelinesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchPipelinesRequest,
+      com.clarifai.grpc.api.MultiPipelineResponse> getPatchPipelinesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchPipelinesRequest, com.clarifai.grpc.api.MultiPipelineResponse> getPatchPipelinesMethod;
+    if ((getPatchPipelinesMethod = V2Grpc.getPatchPipelinesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchPipelinesMethod = V2Grpc.getPatchPipelinesMethod) == null) {
+          V2Grpc.getPatchPipelinesMethod = getPatchPipelinesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchPipelinesRequest, com.clarifai.grpc.api.MultiPipelineResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchPipelines"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchPipelinesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchPipelines"))
+              .build();
+        }
+      }
+    }
+    return getPatchPipelinesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeletePipelinesRequest,
+      com.clarifai.grpc.api.MultiPipelineResponse> getDeletePipelinesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePipelines",
+      requestType = com.clarifai.grpc.api.DeletePipelinesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeletePipelinesRequest,
+      com.clarifai.grpc.api.MultiPipelineResponse> getDeletePipelinesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeletePipelinesRequest, com.clarifai.grpc.api.MultiPipelineResponse> getDeletePipelinesMethod;
+    if ((getDeletePipelinesMethod = V2Grpc.getDeletePipelinesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeletePipelinesMethod = V2Grpc.getDeletePipelinesMethod) == null) {
+          V2Grpc.getDeletePipelinesMethod = getDeletePipelinesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeletePipelinesRequest, com.clarifai.grpc.api.MultiPipelineResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePipelines"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeletePipelinesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeletePipelines"))
+              .build();
+        }
+      }
+    }
+    return getDeletePipelinesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetPipelineVersionRequest,
+      com.clarifai.grpc.api.SinglePipelineVersionResponse> getGetPipelineVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPipelineVersion",
+      requestType = com.clarifai.grpc.api.GetPipelineVersionRequest.class,
+      responseType = com.clarifai.grpc.api.SinglePipelineVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetPipelineVersionRequest,
+      com.clarifai.grpc.api.SinglePipelineVersionResponse> getGetPipelineVersionMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetPipelineVersionRequest, com.clarifai.grpc.api.SinglePipelineVersionResponse> getGetPipelineVersionMethod;
+    if ((getGetPipelineVersionMethod = V2Grpc.getGetPipelineVersionMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetPipelineVersionMethod = V2Grpc.getGetPipelineVersionMethod) == null) {
+          V2Grpc.getGetPipelineVersionMethod = getGetPipelineVersionMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetPipelineVersionRequest, com.clarifai.grpc.api.SinglePipelineVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPipelineVersion"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetPipelineVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SinglePipelineVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetPipelineVersion"))
+              .build();
+        }
+      }
+    }
+    return getGetPipelineVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineVersionsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionResponse> getListPipelineVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPipelineVersions",
+      requestType = com.clarifai.grpc.api.ListPipelineVersionsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineVersionsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionResponse> getListPipelineVersionsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineVersionsRequest, com.clarifai.grpc.api.MultiPipelineVersionResponse> getListPipelineVersionsMethod;
+    if ((getListPipelineVersionsMethod = V2Grpc.getListPipelineVersionsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListPipelineVersionsMethod = V2Grpc.getListPipelineVersionsMethod) == null) {
+          V2Grpc.getListPipelineVersionsMethod = getListPipelineVersionsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListPipelineVersionsRequest, com.clarifai.grpc.api.MultiPipelineVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPipelineVersions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListPipelineVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListPipelineVersions"))
+              .build();
+        }
+      }
+    }
+    return getListPipelineVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchPipelineVersionsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionResponse> getPatchPipelineVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchPipelineVersions",
+      requestType = com.clarifai.grpc.api.PatchPipelineVersionsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchPipelineVersionsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionResponse> getPatchPipelineVersionsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchPipelineVersionsRequest, com.clarifai.grpc.api.MultiPipelineVersionResponse> getPatchPipelineVersionsMethod;
+    if ((getPatchPipelineVersionsMethod = V2Grpc.getPatchPipelineVersionsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchPipelineVersionsMethod = V2Grpc.getPatchPipelineVersionsMethod) == null) {
+          V2Grpc.getPatchPipelineVersionsMethod = getPatchPipelineVersionsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchPipelineVersionsRequest, com.clarifai.grpc.api.MultiPipelineVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchPipelineVersions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchPipelineVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchPipelineVersions"))
+              .build();
+        }
+      }
+    }
+    return getPatchPipelineVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeletePipelineVersionsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionResponse> getDeletePipelineVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePipelineVersions",
+      requestType = com.clarifai.grpc.api.DeletePipelineVersionsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeletePipelineVersionsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionResponse> getDeletePipelineVersionsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeletePipelineVersionsRequest, com.clarifai.grpc.api.MultiPipelineVersionResponse> getDeletePipelineVersionsMethod;
+    if ((getDeletePipelineVersionsMethod = V2Grpc.getDeletePipelineVersionsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeletePipelineVersionsMethod = V2Grpc.getDeletePipelineVersionsMethod) == null) {
+          V2Grpc.getDeletePipelineVersionsMethod = getDeletePipelineVersionsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeletePipelineVersionsRequest, com.clarifai.grpc.api.MultiPipelineVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePipelineVersions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeletePipelineVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeletePipelineVersions"))
+              .build();
+        }
+      }
+    }
+    return getDeletePipelineVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetPipelineVersionRunRequest,
+      com.clarifai.grpc.api.SinglePipelineVersionRunResponse> getGetPipelineVersionRunMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPipelineVersionRun",
+      requestType = com.clarifai.grpc.api.GetPipelineVersionRunRequest.class,
+      responseType = com.clarifai.grpc.api.SinglePipelineVersionRunResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetPipelineVersionRunRequest,
+      com.clarifai.grpc.api.SinglePipelineVersionRunResponse> getGetPipelineVersionRunMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetPipelineVersionRunRequest, com.clarifai.grpc.api.SinglePipelineVersionRunResponse> getGetPipelineVersionRunMethod;
+    if ((getGetPipelineVersionRunMethod = V2Grpc.getGetPipelineVersionRunMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetPipelineVersionRunMethod = V2Grpc.getGetPipelineVersionRunMethod) == null) {
+          V2Grpc.getGetPipelineVersionRunMethod = getGetPipelineVersionRunMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetPipelineVersionRunRequest, com.clarifai.grpc.api.SinglePipelineVersionRunResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPipelineVersionRun"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetPipelineVersionRunRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SinglePipelineVersionRunResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetPipelineVersionRun"))
+              .build();
+        }
+      }
+    }
+    return getGetPipelineVersionRunMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelineVersionRunsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionRunResponse> getPostPipelineVersionRunsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostPipelineVersionRuns",
+      requestType = com.clarifai.grpc.api.PostPipelineVersionRunsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineVersionRunResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelineVersionRunsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionRunResponse> getPostPipelineVersionRunsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelineVersionRunsRequest, com.clarifai.grpc.api.MultiPipelineVersionRunResponse> getPostPipelineVersionRunsMethod;
+    if ((getPostPipelineVersionRunsMethod = V2Grpc.getPostPipelineVersionRunsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostPipelineVersionRunsMethod = V2Grpc.getPostPipelineVersionRunsMethod) == null) {
+          V2Grpc.getPostPipelineVersionRunsMethod = getPostPipelineVersionRunsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostPipelineVersionRunsRequest, com.clarifai.grpc.api.MultiPipelineVersionRunResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostPipelineVersionRuns"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostPipelineVersionRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineVersionRunResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostPipelineVersionRuns"))
+              .build();
+        }
+      }
+    }
+    return getPostPipelineVersionRunsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchPipelineVersionRunsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionRunResponse> getPatchPipelineVersionRunsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchPipelineVersionRuns",
+      requestType = com.clarifai.grpc.api.PatchPipelineVersionRunsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineVersionRunResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchPipelineVersionRunsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionRunResponse> getPatchPipelineVersionRunsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchPipelineVersionRunsRequest, com.clarifai.grpc.api.MultiPipelineVersionRunResponse> getPatchPipelineVersionRunsMethod;
+    if ((getPatchPipelineVersionRunsMethod = V2Grpc.getPatchPipelineVersionRunsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchPipelineVersionRunsMethod = V2Grpc.getPatchPipelineVersionRunsMethod) == null) {
+          V2Grpc.getPatchPipelineVersionRunsMethod = getPatchPipelineVersionRunsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchPipelineVersionRunsRequest, com.clarifai.grpc.api.MultiPipelineVersionRunResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchPipelineVersionRuns"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchPipelineVersionRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineVersionRunResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchPipelineVersionRuns"))
+              .build();
+        }
+      }
+    }
+    return getPatchPipelineVersionRunsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelineStepsRequest,
       com.clarifai.grpc.api.MultiPipelineStepResponse> getPostPipelineStepsMethod;
 
@@ -7887,6 +8321,161 @@ public final class V2Grpc {
       }
     }
     return getGetPipelineStepVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetSecretRequest,
+      com.clarifai.grpc.api.SingleSecretResponse> getGetSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSecret",
+      requestType = com.clarifai.grpc.api.GetSecretRequest.class,
+      responseType = com.clarifai.grpc.api.SingleSecretResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetSecretRequest,
+      com.clarifai.grpc.api.SingleSecretResponse> getGetSecretMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetSecretRequest, com.clarifai.grpc.api.SingleSecretResponse> getGetSecretMethod;
+    if ((getGetSecretMethod = V2Grpc.getGetSecretMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetSecretMethod = V2Grpc.getGetSecretMethod) == null) {
+          V2Grpc.getGetSecretMethod = getGetSecretMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetSecretRequest, com.clarifai.grpc.api.SingleSecretResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSecret"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleSecretResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetSecret"))
+              .build();
+        }
+      }
+    }
+    return getGetSecretMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListSecretsRequest,
+      com.clarifai.grpc.api.MultiSecretResponse> getListSecretsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSecrets",
+      requestType = com.clarifai.grpc.api.ListSecretsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiSecretResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListSecretsRequest,
+      com.clarifai.grpc.api.MultiSecretResponse> getListSecretsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListSecretsRequest, com.clarifai.grpc.api.MultiSecretResponse> getListSecretsMethod;
+    if ((getListSecretsMethod = V2Grpc.getListSecretsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListSecretsMethod = V2Grpc.getListSecretsMethod) == null) {
+          V2Grpc.getListSecretsMethod = getListSecretsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListSecretsRequest, com.clarifai.grpc.api.MultiSecretResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSecrets"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListSecretsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiSecretResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListSecrets"))
+              .build();
+        }
+      }
+    }
+    return getListSecretsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostSecretsRequest,
+      com.clarifai.grpc.api.MultiSecretResponse> getPostSecretsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostSecrets",
+      requestType = com.clarifai.grpc.api.PostSecretsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiSecretResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostSecretsRequest,
+      com.clarifai.grpc.api.MultiSecretResponse> getPostSecretsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostSecretsRequest, com.clarifai.grpc.api.MultiSecretResponse> getPostSecretsMethod;
+    if ((getPostSecretsMethod = V2Grpc.getPostSecretsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostSecretsMethod = V2Grpc.getPostSecretsMethod) == null) {
+          V2Grpc.getPostSecretsMethod = getPostSecretsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostSecretsRequest, com.clarifai.grpc.api.MultiSecretResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostSecrets"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostSecretsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiSecretResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostSecrets"))
+              .build();
+        }
+      }
+    }
+    return getPostSecretsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchSecretsRequest,
+      com.clarifai.grpc.api.MultiSecretResponse> getPatchSecretsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchSecrets",
+      requestType = com.clarifai.grpc.api.PatchSecretsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiSecretResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchSecretsRequest,
+      com.clarifai.grpc.api.MultiSecretResponse> getPatchSecretsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchSecretsRequest, com.clarifai.grpc.api.MultiSecretResponse> getPatchSecretsMethod;
+    if ((getPatchSecretsMethod = V2Grpc.getPatchSecretsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchSecretsMethod = V2Grpc.getPatchSecretsMethod) == null) {
+          V2Grpc.getPatchSecretsMethod = getPatchSecretsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchSecretsRequest, com.clarifai.grpc.api.MultiSecretResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchSecrets"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchSecretsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiSecretResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchSecrets"))
+              .build();
+        }
+      }
+    }
+    return getPatchSecretsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteSecretsRequest,
+      com.clarifai.grpc.api.MultiSecretResponse> getDeleteSecretsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSecrets",
+      requestType = com.clarifai.grpc.api.DeleteSecretsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiSecretResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteSecretsRequest,
+      com.clarifai.grpc.api.MultiSecretResponse> getDeleteSecretsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteSecretsRequest, com.clarifai.grpc.api.MultiSecretResponse> getDeleteSecretsMethod;
+    if ((getDeleteSecretsMethod = V2Grpc.getDeleteSecretsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteSecretsMethod = V2Grpc.getDeleteSecretsMethod) == null) {
+          V2Grpc.getDeleteSecretsMethod = getDeleteSecretsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteSecretsRequest, com.clarifai.grpc.api.MultiSecretResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSecrets"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteSecretsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiSecretResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteSecrets"))
+              .build();
+        }
+      }
+    }
+    return getDeleteSecretsMethod;
   }
 
   /**
@@ -10132,6 +10721,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * putting above the Get Nodepool endpoint to make it appear above the other one
+     * </pre>
+     */
+    public void listPipelineVersionRuns(com.clarifai.grpc.api.ListPipelineVersionRunsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPipelineVersionRunsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get a specific runner.
      * TODO(zeiler): runner_id is a UUID so can list globally as well.
      * </pre>
@@ -10446,6 +11045,97 @@ public final class V2Grpc {
 
     /**
      */
+    public void listWorkflowVersionEvaluationData(com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListWorkflowVersionEvaluationDataMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void postPipelines(com.clarifai.grpc.api.PostPipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostPipelinesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getPipeline(com.clarifai.grpc.api.GetPipelineRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPipelineMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listPipelines(com.clarifai.grpc.api.ListPipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPipelinesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void patchPipelines(com.clarifai.grpc.api.PatchPipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchPipelinesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deletePipelines(com.clarifai.grpc.api.DeletePipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePipelinesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getPipelineVersion(com.clarifai.grpc.api.GetPipelineVersionRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineVersionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPipelineVersionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listPipelineVersions(com.clarifai.grpc.api.ListPipelineVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPipelineVersionsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void patchPipelineVersions(com.clarifai.grpc.api.PatchPipelineVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchPipelineVersionsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deletePipelineVersions(com.clarifai.grpc.api.DeletePipelineVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePipelineVersionsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getPipelineVersionRun(com.clarifai.grpc.api.GetPipelineVersionRunRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineVersionRunResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPipelineVersionRunMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void postPipelineVersionRuns(com.clarifai.grpc.api.PostPipelineVersionRunsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostPipelineVersionRunsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void patchPipelineVersionRuns(com.clarifai.grpc.api.PatchPipelineVersionRunsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchPipelineVersionRunsMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void postPipelineSteps(com.clarifai.grpc.api.PostPipelineStepsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineStepResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostPipelineStepsMethod(), responseObserver);
@@ -10491,6 +11181,41 @@ public final class V2Grpc {
     public void getPipelineStepVersion(com.clarifai.grpc.api.GetPipelineStepVersionRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineStepVersionResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPipelineStepVersionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getSecret(com.clarifai.grpc.api.GetSecretRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleSecretResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSecretMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listSecrets(com.clarifai.grpc.api.ListSecretsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSecretsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void postSecrets(com.clarifai.grpc.api.PostSecretsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostSecretsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void patchSecrets(com.clarifai.grpc.api.PatchSecretsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchSecretsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deleteSecrets(com.clarifai.grpc.api.DeleteSecretsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSecretsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -11980,6 +12705,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiInputsAddJobResponse>(
                   this, METHODID_POST_INPUTS_UPLOADS)))
           .addMethod(
+            getListPipelineVersionRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListPipelineVersionRunsRequest,
+                com.clarifai.grpc.api.MultiPipelineVersionRunResponse>(
+                  this, METHODID_LIST_PIPELINE_VERSION_RUNS)))
+          .addMethod(
             getGetRunnerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -12232,6 +12964,97 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiWorkflowVersionEvaluationResponse>(
                   this, METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS)))
           .addMethod(
+            getListWorkflowVersionEvaluationDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest,
+                com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse>(
+                  this, METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA)))
+          .addMethod(
+            getPostPipelinesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostPipelinesRequest,
+                com.clarifai.grpc.api.MultiPipelineResponse>(
+                  this, METHODID_POST_PIPELINES)))
+          .addMethod(
+            getGetPipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetPipelineRequest,
+                com.clarifai.grpc.api.SinglePipelineResponse>(
+                  this, METHODID_GET_PIPELINE)))
+          .addMethod(
+            getListPipelinesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListPipelinesRequest,
+                com.clarifai.grpc.api.MultiPipelineResponse>(
+                  this, METHODID_LIST_PIPELINES)))
+          .addMethod(
+            getPatchPipelinesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchPipelinesRequest,
+                com.clarifai.grpc.api.MultiPipelineResponse>(
+                  this, METHODID_PATCH_PIPELINES)))
+          .addMethod(
+            getDeletePipelinesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeletePipelinesRequest,
+                com.clarifai.grpc.api.MultiPipelineResponse>(
+                  this, METHODID_DELETE_PIPELINES)))
+          .addMethod(
+            getGetPipelineVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetPipelineVersionRequest,
+                com.clarifai.grpc.api.SinglePipelineVersionResponse>(
+                  this, METHODID_GET_PIPELINE_VERSION)))
+          .addMethod(
+            getListPipelineVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListPipelineVersionsRequest,
+                com.clarifai.grpc.api.MultiPipelineVersionResponse>(
+                  this, METHODID_LIST_PIPELINE_VERSIONS)))
+          .addMethod(
+            getPatchPipelineVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchPipelineVersionsRequest,
+                com.clarifai.grpc.api.MultiPipelineVersionResponse>(
+                  this, METHODID_PATCH_PIPELINE_VERSIONS)))
+          .addMethod(
+            getDeletePipelineVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeletePipelineVersionsRequest,
+                com.clarifai.grpc.api.MultiPipelineVersionResponse>(
+                  this, METHODID_DELETE_PIPELINE_VERSIONS)))
+          .addMethod(
+            getGetPipelineVersionRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetPipelineVersionRunRequest,
+                com.clarifai.grpc.api.SinglePipelineVersionRunResponse>(
+                  this, METHODID_GET_PIPELINE_VERSION_RUN)))
+          .addMethod(
+            getPostPipelineVersionRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostPipelineVersionRunsRequest,
+                com.clarifai.grpc.api.MultiPipelineVersionRunResponse>(
+                  this, METHODID_POST_PIPELINE_VERSION_RUNS)))
+          .addMethod(
+            getPatchPipelineVersionRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchPipelineVersionRunsRequest,
+                com.clarifai.grpc.api.MultiPipelineVersionRunResponse>(
+                  this, METHODID_PATCH_PIPELINE_VERSION_RUNS)))
+          .addMethod(
             getPostPipelineStepsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -12273,6 +13096,41 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.GetPipelineStepVersionRequest,
                 com.clarifai.grpc.api.SinglePipelineStepVersionResponse>(
                   this, METHODID_GET_PIPELINE_STEP_VERSION)))
+          .addMethod(
+            getGetSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetSecretRequest,
+                com.clarifai.grpc.api.SingleSecretResponse>(
+                  this, METHODID_GET_SECRET)))
+          .addMethod(
+            getListSecretsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListSecretsRequest,
+                com.clarifai.grpc.api.MultiSecretResponse>(
+                  this, METHODID_LIST_SECRETS)))
+          .addMethod(
+            getPostSecretsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostSecretsRequest,
+                com.clarifai.grpc.api.MultiSecretResponse>(
+                  this, METHODID_POST_SECRETS)))
+          .addMethod(
+            getPatchSecretsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchSecretsRequest,
+                com.clarifai.grpc.api.MultiSecretResponse>(
+                  this, METHODID_PATCH_SECRETS)))
+          .addMethod(
+            getDeleteSecretsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteSecretsRequest,
+                com.clarifai.grpc.api.MultiSecretResponse>(
+                  this, METHODID_DELETE_SECRETS)))
           .build();
     }
   }
@@ -14698,6 +15556,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * putting above the Get Nodepool endpoint to make it appear above the other one
+     * </pre>
+     */
+    public void listPipelineVersionRuns(com.clarifai.grpc.api.ListPipelineVersionRunsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPipelineVersionRunsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get a specific runner.
      * TODO(zeiler): runner_id is a UUID so can list globally as well.
      * </pre>
@@ -15048,6 +15917,110 @@ public final class V2Grpc {
 
     /**
      */
+    public void listWorkflowVersionEvaluationData(com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListWorkflowVersionEvaluationDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void postPipelines(com.clarifai.grpc.api.PostPipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostPipelinesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getPipeline(com.clarifai.grpc.api.GetPipelineRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPipelineMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listPipelines(com.clarifai.grpc.api.ListPipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPipelinesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void patchPipelines(com.clarifai.grpc.api.PatchPipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPatchPipelinesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deletePipelines(com.clarifai.grpc.api.DeletePipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePipelinesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getPipelineVersion(com.clarifai.grpc.api.GetPipelineVersionRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineVersionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPipelineVersionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listPipelineVersions(com.clarifai.grpc.api.ListPipelineVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPipelineVersionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void patchPipelineVersions(com.clarifai.grpc.api.PatchPipelineVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPatchPipelineVersionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deletePipelineVersions(com.clarifai.grpc.api.DeletePipelineVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePipelineVersionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getPipelineVersionRun(com.clarifai.grpc.api.GetPipelineVersionRunRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineVersionRunResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPipelineVersionRunMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void postPipelineVersionRuns(com.clarifai.grpc.api.PostPipelineVersionRunsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostPipelineVersionRunsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void patchPipelineVersionRuns(com.clarifai.grpc.api.PatchPipelineVersionRunsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPatchPipelineVersionRunsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void postPipelineSteps(com.clarifai.grpc.api.PostPipelineStepsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineStepResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -15099,6 +16072,46 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineStepVersionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPipelineStepVersionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getSecret(com.clarifai.grpc.api.GetSecretRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleSecretResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSecretMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listSecrets(com.clarifai.grpc.api.ListSecretsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSecretsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void postSecrets(com.clarifai.grpc.api.PostSecretsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostSecretsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void patchSecrets(com.clarifai.grpc.api.PatchSecretsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPatchSecretsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteSecrets(com.clarifai.grpc.api.DeleteSecretsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSecretsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -17288,6 +18301,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * putting above the Get Nodepool endpoint to make it appear above the other one
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiPipelineVersionRunResponse listPipelineVersionRuns(com.clarifai.grpc.api.ListPipelineVersionRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPipelineVersionRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Get a specific runner.
      * TODO(zeiler): runner_id is a UUID so can list globally as well.
      * </pre>
@@ -17588,6 +18611,97 @@ public final class V2Grpc {
 
     /**
      */
+    public com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse listWorkflowVersionEvaluationData(com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkflowVersionEvaluationDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineResponse postPipelines(com.clarifai.grpc.api.PostPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostPipelinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.SinglePipelineResponse getPipeline(com.clarifai.grpc.api.GetPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineResponse listPipelines(com.clarifai.grpc.api.ListPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPipelinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineResponse patchPipelines(com.clarifai.grpc.api.PatchPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchPipelinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineResponse deletePipelines(com.clarifai.grpc.api.DeletePipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePipelinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.SinglePipelineVersionResponse getPipelineVersion(com.clarifai.grpc.api.GetPipelineVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPipelineVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineVersionResponse listPipelineVersions(com.clarifai.grpc.api.ListPipelineVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPipelineVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineVersionResponse patchPipelineVersions(com.clarifai.grpc.api.PatchPipelineVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchPipelineVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineVersionResponse deletePipelineVersions(com.clarifai.grpc.api.DeletePipelineVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePipelineVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.SinglePipelineVersionRunResponse getPipelineVersionRun(com.clarifai.grpc.api.GetPipelineVersionRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPipelineVersionRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineVersionRunResponse postPipelineVersionRuns(com.clarifai.grpc.api.PostPipelineVersionRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostPipelineVersionRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineVersionRunResponse patchPipelineVersionRuns(com.clarifai.grpc.api.PatchPipelineVersionRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchPipelineVersionRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.clarifai.grpc.api.MultiPipelineStepResponse postPipelineSteps(com.clarifai.grpc.api.PostPipelineStepsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostPipelineStepsMethod(), getCallOptions(), request);
@@ -17619,6 +18733,41 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.SinglePipelineStepVersionResponse getPipelineStepVersion(com.clarifai.grpc.api.GetPipelineStepVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPipelineStepVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.SingleSecretResponse getSecret(com.clarifai.grpc.api.GetSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiSecretResponse listSecrets(com.clarifai.grpc.api.ListSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiSecretResponse postSecrets(com.clarifai.grpc.api.PostSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiSecretResponse patchSecrets(com.clarifai.grpc.api.PatchSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiSecretResponse deleteSecrets(com.clarifai.grpc.api.DeleteSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSecretsMethod(), getCallOptions(), request);
     }
   }
 
@@ -20005,6 +21154,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * putting above the Get Nodepool endpoint to make it appear above the other one
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineVersionRunResponse> listPipelineVersionRuns(
+        com.clarifai.grpc.api.ListPipelineVersionRunsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPipelineVersionRunsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get a specific runner.
      * TODO(zeiler): runner_id is a UUID so can list globally as well.
      * </pre>
@@ -20331,6 +21491,110 @@ public final class V2Grpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> listWorkflowVersionEvaluationData(
+        com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListWorkflowVersionEvaluationDataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineResponse> postPipelines(
+        com.clarifai.grpc.api.PostPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostPipelinesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SinglePipelineResponse> getPipeline(
+        com.clarifai.grpc.api.GetPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPipelineMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineResponse> listPipelines(
+        com.clarifai.grpc.api.ListPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPipelinesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineResponse> patchPipelines(
+        com.clarifai.grpc.api.PatchPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPatchPipelinesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineResponse> deletePipelines(
+        com.clarifai.grpc.api.DeletePipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePipelinesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SinglePipelineVersionResponse> getPipelineVersion(
+        com.clarifai.grpc.api.GetPipelineVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPipelineVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineVersionResponse> listPipelineVersions(
+        com.clarifai.grpc.api.ListPipelineVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPipelineVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineVersionResponse> patchPipelineVersions(
+        com.clarifai.grpc.api.PatchPipelineVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPatchPipelineVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineVersionResponse> deletePipelineVersions(
+        com.clarifai.grpc.api.DeletePipelineVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePipelineVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SinglePipelineVersionRunResponse> getPipelineVersionRun(
+        com.clarifai.grpc.api.GetPipelineVersionRunRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPipelineVersionRunMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineVersionRunResponse> postPipelineVersionRuns(
+        com.clarifai.grpc.api.PostPipelineVersionRunsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostPipelineVersionRunsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineVersionRunResponse> patchPipelineVersionRuns(
+        com.clarifai.grpc.api.PatchPipelineVersionRunsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPatchPipelineVersionRunsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineStepResponse> postPipelineSteps(
         com.clarifai.grpc.api.PostPipelineStepsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -20367,6 +21631,46 @@ public final class V2Grpc {
         com.clarifai.grpc.api.GetPipelineStepVersionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPipelineStepVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleSecretResponse> getSecret(
+        com.clarifai.grpc.api.GetSecretRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSecretMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiSecretResponse> listSecrets(
+        com.clarifai.grpc.api.ListSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSecretsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiSecretResponse> postSecrets(
+        com.clarifai.grpc.api.PostSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostSecretsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiSecretResponse> patchSecrets(
+        com.clarifai.grpc.api.PatchSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPatchSecretsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiSecretResponse> deleteSecrets(
+        com.clarifai.grpc.api.DeleteSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSecretsMethod(), getCallOptions()), request);
     }
   }
 
@@ -20580,50 +21884,69 @@ public final class V2Grpc {
   private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 207;
   private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 208;
   private static final int METHODID_POST_INPUTS_UPLOADS = 209;
-  private static final int METHODID_GET_RUNNER = 210;
-  private static final int METHODID_LIST_RUNNERS = 211;
-  private static final int METHODID_POST_RUNNERS = 212;
-  private static final int METHODID_PATCH_RUNNERS = 213;
-  private static final int METHODID_DELETE_RUNNERS = 214;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 215;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 216;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 217;
-  private static final int METHODID_LIST_CLOUD_PROVIDERS = 218;
-  private static final int METHODID_LIST_CLOUD_REGIONS = 219;
-  private static final int METHODID_LIST_INSTANCE_TYPES = 220;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 221;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 222;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 223;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 224;
-  private static final int METHODID_GET_NODEPOOL = 225;
-  private static final int METHODID_LIST_NODEPOOLS = 226;
-  private static final int METHODID_POST_NODEPOOLS = 227;
-  private static final int METHODID_PATCH_NODEPOOLS = 228;
-  private static final int METHODID_DELETE_NODEPOOLS = 229;
-  private static final int METHODID_GET_DEPLOYMENT = 230;
-  private static final int METHODID_LIST_DEPLOYMENTS = 231;
-  private static final int METHODID_POST_DEPLOYMENTS = 232;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 233;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 234;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 235;
-  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 236;
-  private static final int METHODID_POST_LOG_ENTRIES = 237;
-  private static final int METHODID_LIST_LOG_ENTRIES = 238;
-  private static final int METHODID_STREAM_LOG_ENTRIES = 239;
-  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 240;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 241;
-  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 242;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 243;
-  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 244;
-  private static final int METHODID_POST_PIPELINE_STEPS = 245;
-  private static final int METHODID_GET_PIPELINE_STEP = 246;
-  private static final int METHODID_LIST_PIPELINE_STEPS = 247;
-  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 248;
-  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 249;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 250;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 251;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 252;
-  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 253;
+  private static final int METHODID_LIST_PIPELINE_VERSION_RUNS = 210;
+  private static final int METHODID_GET_RUNNER = 211;
+  private static final int METHODID_LIST_RUNNERS = 212;
+  private static final int METHODID_POST_RUNNERS = 213;
+  private static final int METHODID_PATCH_RUNNERS = 214;
+  private static final int METHODID_DELETE_RUNNERS = 215;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 216;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 217;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 218;
+  private static final int METHODID_LIST_CLOUD_PROVIDERS = 219;
+  private static final int METHODID_LIST_CLOUD_REGIONS = 220;
+  private static final int METHODID_LIST_INSTANCE_TYPES = 221;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 222;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 223;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 224;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 225;
+  private static final int METHODID_GET_NODEPOOL = 226;
+  private static final int METHODID_LIST_NODEPOOLS = 227;
+  private static final int METHODID_POST_NODEPOOLS = 228;
+  private static final int METHODID_PATCH_NODEPOOLS = 229;
+  private static final int METHODID_DELETE_NODEPOOLS = 230;
+  private static final int METHODID_GET_DEPLOYMENT = 231;
+  private static final int METHODID_LIST_DEPLOYMENTS = 232;
+  private static final int METHODID_POST_DEPLOYMENTS = 233;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 234;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 235;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 236;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 237;
+  private static final int METHODID_POST_LOG_ENTRIES = 238;
+  private static final int METHODID_LIST_LOG_ENTRIES = 239;
+  private static final int METHODID_STREAM_LOG_ENTRIES = 240;
+  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 241;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 242;
+  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 243;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 244;
+  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 245;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 246;
+  private static final int METHODID_POST_PIPELINES = 247;
+  private static final int METHODID_GET_PIPELINE = 248;
+  private static final int METHODID_LIST_PIPELINES = 249;
+  private static final int METHODID_PATCH_PIPELINES = 250;
+  private static final int METHODID_DELETE_PIPELINES = 251;
+  private static final int METHODID_GET_PIPELINE_VERSION = 252;
+  private static final int METHODID_LIST_PIPELINE_VERSIONS = 253;
+  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 254;
+  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 255;
+  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 256;
+  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 257;
+  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 258;
+  private static final int METHODID_POST_PIPELINE_STEPS = 259;
+  private static final int METHODID_GET_PIPELINE_STEP = 260;
+  private static final int METHODID_LIST_PIPELINE_STEPS = 261;
+  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 262;
+  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 263;
+  private static final int METHODID_GET_SECRET = 264;
+  private static final int METHODID_LIST_SECRETS = 265;
+  private static final int METHODID_POST_SECRETS = 266;
+  private static final int METHODID_PATCH_SECRETS = 267;
+  private static final int METHODID_DELETE_SECRETS = 268;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 269;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 270;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 271;
+  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 272;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21482,6 +22805,10 @@ public final class V2Grpc {
           serviceImpl.postInputsUploads((com.clarifai.grpc.api.PostInputsUploadsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse>) responseObserver);
           break;
+        case METHODID_LIST_PIPELINE_VERSION_RUNS:
+          serviceImpl.listPipelineVersionRuns((com.clarifai.grpc.api.ListPipelineVersionRunsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse>) responseObserver);
+          break;
         case METHODID_GET_RUNNER:
           serviceImpl.getRunner((com.clarifai.grpc.api.GetRunnerRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleRunnerResponse>) responseObserver);
@@ -21622,6 +22949,58 @@ public final class V2Grpc {
           serviceImpl.patchWorkflowVersionEvaluations((com.clarifai.grpc.api.PatchWorkflowVersionEvaluationsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowVersionEvaluationResponse>) responseObserver);
           break;
+        case METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA:
+          serviceImpl.listWorkflowVersionEvaluationData((com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse>) responseObserver);
+          break;
+        case METHODID_POST_PIPELINES:
+          serviceImpl.postPipelines((com.clarifai.grpc.api.PostPipelinesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse>) responseObserver);
+          break;
+        case METHODID_GET_PIPELINE:
+          serviceImpl.getPipeline((com.clarifai.grpc.api.GetPipelineRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PIPELINES:
+          serviceImpl.listPipelines((com.clarifai.grpc.api.ListPipelinesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_PIPELINES:
+          serviceImpl.patchPipelines((com.clarifai.grpc.api.PatchPipelinesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_PIPELINES:
+          serviceImpl.deletePipelines((com.clarifai.grpc.api.DeletePipelinesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse>) responseObserver);
+          break;
+        case METHODID_GET_PIPELINE_VERSION:
+          serviceImpl.getPipelineVersion((com.clarifai.grpc.api.GetPipelineVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineVersionResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PIPELINE_VERSIONS:
+          serviceImpl.listPipelineVersions((com.clarifai.grpc.api.ListPipelineVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_PIPELINE_VERSIONS:
+          serviceImpl.patchPipelineVersions((com.clarifai.grpc.api.PatchPipelineVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_PIPELINE_VERSIONS:
+          serviceImpl.deletePipelineVersions((com.clarifai.grpc.api.DeletePipelineVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionResponse>) responseObserver);
+          break;
+        case METHODID_GET_PIPELINE_VERSION_RUN:
+          serviceImpl.getPipelineVersionRun((com.clarifai.grpc.api.GetPipelineVersionRunRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineVersionRunResponse>) responseObserver);
+          break;
+        case METHODID_POST_PIPELINE_VERSION_RUNS:
+          serviceImpl.postPipelineVersionRuns((com.clarifai.grpc.api.PostPipelineVersionRunsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_PIPELINE_VERSION_RUNS:
+          serviceImpl.patchPipelineVersionRuns((com.clarifai.grpc.api.PatchPipelineVersionRunsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse>) responseObserver);
+          break;
         case METHODID_POST_PIPELINE_STEPS:
           serviceImpl.postPipelineSteps((com.clarifai.grpc.api.PostPipelineStepsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineStepResponse>) responseObserver);
@@ -21641,6 +23020,26 @@ public final class V2Grpc {
         case METHODID_GET_PIPELINE_STEP_VERSION:
           serviceImpl.getPipelineStepVersion((com.clarifai.grpc.api.GetPipelineStepVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePipelineStepVersionResponse>) responseObserver);
+          break;
+        case METHODID_GET_SECRET:
+          serviceImpl.getSecret((com.clarifai.grpc.api.GetSecretRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleSecretResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SECRETS:
+          serviceImpl.listSecrets((com.clarifai.grpc.api.ListSecretsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse>) responseObserver);
+          break;
+        case METHODID_POST_SECRETS:
+          serviceImpl.postSecrets((com.clarifai.grpc.api.PostSecretsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_SECRETS:
+          serviceImpl.patchSecrets((com.clarifai.grpc.api.PatchSecretsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_SECRETS:
+          serviceImpl.deleteSecrets((com.clarifai.grpc.api.DeleteSecretsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -21927,6 +23326,7 @@ public final class V2Grpc {
               .addMethod(getListInputsExtractionJobsMethod())
               .addMethod(getCancelInputsExtractionJobsMethod())
               .addMethod(getPostInputsUploadsMethod())
+              .addMethod(getListPipelineVersionRunsMethod())
               .addMethod(getGetRunnerMethod())
               .addMethod(getListRunnersMethod())
               .addMethod(getPostRunnersMethod())
@@ -21963,12 +23363,30 @@ public final class V2Grpc {
               .addMethod(getGetWorkflowVersionEvaluationMethod())
               .addMethod(getListWorkflowVersionEvaluationsMethod())
               .addMethod(getPatchWorkflowVersionEvaluationsMethod())
+              .addMethod(getListWorkflowVersionEvaluationDataMethod())
+              .addMethod(getPostPipelinesMethod())
+              .addMethod(getGetPipelineMethod())
+              .addMethod(getListPipelinesMethod())
+              .addMethod(getPatchPipelinesMethod())
+              .addMethod(getDeletePipelinesMethod())
+              .addMethod(getGetPipelineVersionMethod())
+              .addMethod(getListPipelineVersionsMethod())
+              .addMethod(getPatchPipelineVersionsMethod())
+              .addMethod(getDeletePipelineVersionsMethod())
+              .addMethod(getGetPipelineVersionRunMethod())
+              .addMethod(getPostPipelineVersionRunsMethod())
+              .addMethod(getPatchPipelineVersionRunsMethod())
               .addMethod(getPostPipelineStepsMethod())
               .addMethod(getGetPipelineStepMethod())
               .addMethod(getListPipelineStepsMethod())
               .addMethod(getPostPipelineStepVersionsUploadMethod())
               .addMethod(getListPipelineStepVersionsMethod())
               .addMethod(getGetPipelineStepVersionMethod())
+              .addMethod(getGetSecretMethod())
+              .addMethod(getListSecretsMethod())
+              .addMethod(getPostSecretsMethod())
+              .addMethod(getPatchSecretsMethod())
+              .addMethod(getDeleteSecretsMethod())
               .build();
         }
       }

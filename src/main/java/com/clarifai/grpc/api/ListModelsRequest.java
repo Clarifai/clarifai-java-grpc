@@ -1051,11 +1051,13 @@ private static final long serialVersionUID = 0L;
    * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
    * </pre>
    *
-   * <code>bool dont_fetch_from_main = 23;</code>
+   * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
+   *     See proto/clarifai/api/service.proto;l=5942
    * @return The dontFetchFromMain.
    */
   @java.lang.Override
-  public boolean getDontFetchFromMain() {
+  @java.lang.Deprecated public boolean getDontFetchFromMain() {
     return dontFetchFromMain_;
   }
 
@@ -1154,7 +1156,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5739
+   *     See proto/clarifai/api/service.proto;l=5965
    * @return The query.
    */
   @java.lang.Override
@@ -1178,7 +1180,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5739
+   *     See proto/clarifai/api/service.proto;l=5965
    * @return The bytes for query.
    */
   @java.lang.Override
@@ -1206,7 +1208,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5742
+   *     See proto/clarifai/api/service.proto;l=5968
    * @return The name.
    */
   @java.lang.Override
@@ -1230,7 +1232,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5742
+   *     See proto/clarifai/api/service.proto;l=5968
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -1258,7 +1260,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5745
+   *     See proto/clarifai/api/service.proto;l=5971
    * @return The filterByUserId.
    */
   @java.lang.Override
@@ -4226,11 +4228,13 @@ private static final long serialVersionUID = 0L;
      * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
      * </pre>
      *
-     * <code>bool dont_fetch_from_main = 23;</code>
+     * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
+     *     See proto/clarifai/api/service.proto;l=5942
      * @return The dontFetchFromMain.
      */
     @java.lang.Override
-    public boolean getDontFetchFromMain() {
+    @java.lang.Deprecated public boolean getDontFetchFromMain() {
       return dontFetchFromMain_;
     }
     /**
@@ -4239,11 +4243,13 @@ private static final long serialVersionUID = 0L;
      * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
      * </pre>
      *
-     * <code>bool dont_fetch_from_main = 23;</code>
+     * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
+     *     See proto/clarifai/api/service.proto;l=5942
      * @param value The dontFetchFromMain to set.
      * @return This builder for chaining.
      */
-    public Builder setDontFetchFromMain(boolean value) {
+    @java.lang.Deprecated public Builder setDontFetchFromMain(boolean value) {
       
       dontFetchFromMain_ = value;
       onChanged();
@@ -4255,10 +4261,12 @@ private static final long serialVersionUID = 0L;
      * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
      * </pre>
      *
-     * <code>bool dont_fetch_from_main = 23;</code>
+     * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
+     *     See proto/clarifai/api/service.proto;l=5942
      * @return This builder for chaining.
      */
-    public Builder clearDontFetchFromMain() {
+    @java.lang.Deprecated public Builder clearDontFetchFromMain() {
       
       dontFetchFromMain_ = false;
       onChanged();
@@ -4474,7 +4482,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5739
+     *     See proto/clarifai/api/service.proto;l=5965
      * @return The query.
      */
     @java.lang.Deprecated public java.lang.String getQuery() {
@@ -4497,7 +4505,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5739
+     *     See proto/clarifai/api/service.proto;l=5965
      * @return The bytes for query.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -4521,7 +4529,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5739
+     *     See proto/clarifai/api/service.proto;l=5965
      * @param value The query to set.
      * @return This builder for chaining.
      */
@@ -4543,7 +4551,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5739
+     *     See proto/clarifai/api/service.proto;l=5965
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearQuery() {
@@ -4560,7 +4568,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5739
+     *     See proto/clarifai/api/service.proto;l=5965
      * @param value The bytes for query to set.
      * @return This builder for chaining.
      */
@@ -4585,7 +4593,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5742
+     *     See proto/clarifai/api/service.proto;l=5968
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -4608,7 +4616,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5742
+     *     See proto/clarifai/api/service.proto;l=5968
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -4632,7 +4640,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5742
+     *     See proto/clarifai/api/service.proto;l=5968
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -4654,7 +4662,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5742
+     *     See proto/clarifai/api/service.proto;l=5968
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -4671,7 +4679,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5742
+     *     See proto/clarifai/api/service.proto;l=5968
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -4696,7 +4704,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5745
+     *     See proto/clarifai/api/service.proto;l=5971
      * @return The filterByUserId.
      */
     @java.lang.Override
@@ -4711,7 +4719,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5745
+     *     See proto/clarifai/api/service.proto;l=5971
      * @param value The filterByUserId to set.
      * @return This builder for chaining.
      */
@@ -4729,7 +4737,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5745
+     *     See proto/clarifai/api/service.proto;l=5971
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearFilterByUserId() {

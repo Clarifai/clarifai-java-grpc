@@ -156,4 +156,58 @@ public interface PipelineVersionRunOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
+
+  /**
+   * <pre>
+   * When the pipeline was created
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 7;</code>
+   * @return Whether the createdAt field is set.
+   */
+  boolean hasCreatedAt();
+  /**
+   * <pre>
+   * When the pipeline was created
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 7;</code>
+   * @return The createdAt.
+   */
+  com.google.protobuf.Timestamp getCreatedAt();
+  /**
+   * <pre>
+   * When the pipeline was created
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 7;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+  /**
+   * <pre>
+   * When the pipeline was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  boolean hasModifiedAt();
+  /**
+   * <pre>
+   * When the pipeline was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return The modifiedAt.
+   */
+  com.google.protobuf.Timestamp getModifiedAt();
+  /**
+   * <pre>
+   * When the pipeline was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
 }

@@ -831,4 +831,23 @@ public interface ModelOrBuilder extends
    * <code>.google.protobuf.Int32Value featured_order = 41;</code>
    */
   com.google.protobuf.Int32ValueOrBuilder getFeaturedOrderOrBuilder();
+
+  /**
+   * <pre>
+   * Deploy restriction for the model.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+   * @return The enum numeric value on the wire for deployRestriction.
+   */
+  int getDeployRestrictionValue();
+  /**
+   * <pre>
+   * Deploy restriction for the model.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+   * @return The deployRestriction.
+   */
+  com.clarifai.grpc.api.DeployRestriction getDeployRestriction();
 }

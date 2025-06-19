@@ -144,7 +144,7 @@ public enum RunnerMethodType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(18);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(19);
   }
 
   private static final RunnerMethodType[] VALUES = values();

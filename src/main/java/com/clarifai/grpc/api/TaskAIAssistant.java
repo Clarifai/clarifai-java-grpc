@@ -59,6 +59,19 @@ private static final long serialVersionUID = 0L;
             workflowId_ = s;
             break;
           }
+          case 18: {
+            com.clarifai.grpc.api.Workflow.Builder subBuilder = null;
+            if (workflow_ != null) {
+              subBuilder = workflow_.toBuilder();
+            }
+            workflow_ = input.readMessage(com.clarifai.grpc.api.Workflow.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(workflow_);
+              workflow_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -102,11 +115,13 @@ private static final long serialVersionUID = 0L;
    * If empty, then AI assistant is disabled.
    * </pre>
    *
-   * <code>string workflow_id = 1;</code>
+   * <code>string workflow_id = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3586
    * @return The workflowId.
    */
   @java.lang.Override
-  public java.lang.String getWorkflowId() {
+  @java.lang.Deprecated public java.lang.String getWorkflowId() {
     java.lang.Object ref = workflowId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -125,11 +140,13 @@ private static final long serialVersionUID = 0L;
    * If empty, then AI assistant is disabled.
    * </pre>
    *
-   * <code>string workflow_id = 1;</code>
+   * <code>string workflow_id = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3586
    * @return The bytes for workflowId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getWorkflowIdBytes() {
     java.lang.Object ref = workflowId_;
     if (ref instanceof java.lang.String) {
@@ -141,6 +158,32 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int WORKFLOW_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.Workflow workflow_;
+  /**
+   * <code>.clarifai.api.Workflow workflow = 2;</code>
+   * @return Whether the workflow field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkflow() {
+    return workflow_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Workflow workflow = 2;</code>
+   * @return The workflow.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Workflow getWorkflow() {
+    return workflow_ == null ? com.clarifai.grpc.api.Workflow.getDefaultInstance() : workflow_;
+  }
+  /**
+   * <code>.clarifai.api.Workflow workflow = 2;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
+    return getWorkflow();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -160,6 +203,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, workflowId_);
     }
+    if (workflow_ != null) {
+      output.writeMessage(2, getWorkflow());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -171,6 +217,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, workflowId_);
+    }
+    if (workflow_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getWorkflow());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -189,6 +239,11 @@ private static final long serialVersionUID = 0L;
 
     if (!getWorkflowId()
         .equals(other.getWorkflowId())) return false;
+    if (hasWorkflow() != other.hasWorkflow()) return false;
+    if (hasWorkflow()) {
+      if (!getWorkflow()
+          .equals(other.getWorkflow())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -202,6 +257,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getWorkflowId().hashCode();
+    if (hasWorkflow()) {
+      hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflow().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -341,6 +400,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       workflowId_ = "";
 
+      if (workflowBuilder_ == null) {
+        workflow_ = null;
+      } else {
+        workflow_ = null;
+        workflowBuilder_ = null;
+      }
       return this;
     }
 
@@ -368,6 +433,11 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.TaskAIAssistant buildPartial() {
       com.clarifai.grpc.api.TaskAIAssistant result = new com.clarifai.grpc.api.TaskAIAssistant(this);
       result.workflowId_ = workflowId_;
+      if (workflowBuilder_ == null) {
+        result.workflow_ = workflow_;
+      } else {
+        result.workflow_ = workflowBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -420,6 +490,9 @@ private static final long serialVersionUID = 0L;
         workflowId_ = other.workflowId_;
         onChanged();
       }
+      if (other.hasWorkflow()) {
+        mergeWorkflow(other.getWorkflow());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -457,10 +530,12 @@ private static final long serialVersionUID = 0L;
      * If empty, then AI assistant is disabled.
      * </pre>
      *
-     * <code>string workflow_id = 1;</code>
+     * <code>string workflow_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3586
      * @return The workflowId.
      */
-    public java.lang.String getWorkflowId() {
+    @java.lang.Deprecated public java.lang.String getWorkflowId() {
       java.lang.Object ref = workflowId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -479,10 +554,12 @@ private static final long serialVersionUID = 0L;
      * If empty, then AI assistant is disabled.
      * </pre>
      *
-     * <code>string workflow_id = 1;</code>
+     * <code>string workflow_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3586
      * @return The bytes for workflowId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getWorkflowIdBytes() {
       java.lang.Object ref = workflowId_;
       if (ref instanceof String) {
@@ -502,11 +579,13 @@ private static final long serialVersionUID = 0L;
      * If empty, then AI assistant is disabled.
      * </pre>
      *
-     * <code>string workflow_id = 1;</code>
+     * <code>string workflow_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3586
      * @param value The workflowId to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkflowId(
+    @java.lang.Deprecated public Builder setWorkflowId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -523,10 +602,12 @@ private static final long serialVersionUID = 0L;
      * If empty, then AI assistant is disabled.
      * </pre>
      *
-     * <code>string workflow_id = 1;</code>
+     * <code>string workflow_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3586
      * @return This builder for chaining.
      */
-    public Builder clearWorkflowId() {
+    @java.lang.Deprecated public Builder clearWorkflowId() {
       
       workflowId_ = getDefaultInstance().getWorkflowId();
       onChanged();
@@ -539,11 +620,13 @@ private static final long serialVersionUID = 0L;
      * If empty, then AI assistant is disabled.
      * </pre>
      *
-     * <code>string workflow_id = 1;</code>
+     * <code>string workflow_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3586
      * @param value The bytes for workflowId to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkflowIdBytes(
+    @java.lang.Deprecated public Builder setWorkflowIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -553,6 +636,125 @@ private static final long serialVersionUID = 0L;
       workflowId_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Workflow workflow_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> workflowBuilder_;
+    /**
+     * <code>.clarifai.api.Workflow workflow = 2;</code>
+     * @return Whether the workflow field is set.
+     */
+    public boolean hasWorkflow() {
+      return workflowBuilder_ != null || workflow_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 2;</code>
+     * @return The workflow.
+     */
+    public com.clarifai.grpc.api.Workflow getWorkflow() {
+      if (workflowBuilder_ == null) {
+        return workflow_ == null ? com.clarifai.grpc.api.Workflow.getDefaultInstance() : workflow_;
+      } else {
+        return workflowBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 2;</code>
+     */
+    public Builder setWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (workflowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workflow_ = value;
+        onChanged();
+      } else {
+        workflowBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 2;</code>
+     */
+    public Builder setWorkflow(
+        com.clarifai.grpc.api.Workflow.Builder builderForValue) {
+      if (workflowBuilder_ == null) {
+        workflow_ = builderForValue.build();
+        onChanged();
+      } else {
+        workflowBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 2;</code>
+     */
+    public Builder mergeWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (workflowBuilder_ == null) {
+        if (workflow_ != null) {
+          workflow_ =
+            com.clarifai.grpc.api.Workflow.newBuilder(workflow_).mergeFrom(value).buildPartial();
+        } else {
+          workflow_ = value;
+        }
+        onChanged();
+      } else {
+        workflowBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 2;</code>
+     */
+    public Builder clearWorkflow() {
+      if (workflowBuilder_ == null) {
+        workflow_ = null;
+        onChanged();
+      } else {
+        workflow_ = null;
+        workflowBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 2;</code>
+     */
+    public com.clarifai.grpc.api.Workflow.Builder getWorkflowBuilder() {
+      
+      onChanged();
+      return getWorkflowFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 2;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
+      if (workflowBuilder_ != null) {
+        return workflowBuilder_.getMessageOrBuilder();
+      } else {
+        return workflow_ == null ?
+            com.clarifai.grpc.api.Workflow.getDefaultInstance() : workflow_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> 
+        getWorkflowFieldBuilder() {
+      if (workflowBuilder_ == null) {
+        workflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder>(
+                getWorkflow(),
+                getParentForChildren(),
+                isClean());
+        workflow_ = null;
+      }
+      return workflowBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -48,6 +48,7 @@ private static final long serialVersionUID = 0L;
     source_ = 0;
     creator_ = "";
     billingType_ = 0;
+    deployRestriction_ = 0;
   }
 
   @java.lang.Override
@@ -373,6 +374,12 @@ private static final long serialVersionUID = 0L;
               featuredOrder_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 336: {
+            int rawValue = input.readEnum();
+
+            deployRestriction_ = rawValue;
             break;
           }
           default: {
@@ -1974,6 +1981,33 @@ private static final long serialVersionUID = 0L;
     return getFeaturedOrder();
   }
 
+  public static final int DEPLOY_RESTRICTION_FIELD_NUMBER = 42;
+  private int deployRestriction_;
+  /**
+   * <pre>
+   * Deploy restriction for the model.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+   * @return The enum numeric value on the wire for deployRestriction.
+   */
+  @java.lang.Override public int getDeployRestrictionValue() {
+    return deployRestriction_;
+  }
+  /**
+   * <pre>
+   * Deploy restriction for the model.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+   * @return The deployRestriction.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.DeployRestriction getDeployRestriction() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.DeployRestriction result = com.clarifai.grpc.api.DeployRestriction.valueOf(deployRestriction_);
+    return result == null ? com.clarifai.grpc.api.DeployRestriction.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2086,6 +2120,9 @@ private static final long serialVersionUID = 0L;
     }
     if (featuredOrder_ != null) {
       output.writeMessage(41, getFeaturedOrder());
+    }
+    if (deployRestriction_ != com.clarifai.grpc.api.DeployRestriction.USAGE_RESTRICTION_NOT_SET.getNumber()) {
+      output.writeEnum(42, deployRestriction_);
     }
     unknownFields.writeTo(output);
   }
@@ -2234,6 +2271,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(41, getFeaturedOrder());
     }
+    if (deployRestriction_ != com.clarifai.grpc.api.DeployRestriction.USAGE_RESTRICTION_NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(42, deployRestriction_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2348,6 +2389,7 @@ private static final long serialVersionUID = 0L;
       if (!getFeaturedOrder()
           .equals(other.getFeaturedOrder())) return false;
     }
+    if (deployRestriction_ != other.deployRestriction_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2460,6 +2502,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + FEATURED_ORDER_FIELD_NUMBER;
       hash = (53 * hash) + getFeaturedOrder().hashCode();
     }
+    hash = (37 * hash) + DEPLOY_RESTRICTION_FIELD_NUMBER;
+    hash = (53 * hash) + deployRestriction_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2726,6 +2770,8 @@ private static final long serialVersionUID = 0L;
         featuredOrder_ = null;
         featuredOrderBuilder_ = null;
       }
+      deployRestriction_ = 0;
+
       return this;
     }
 
@@ -2858,6 +2904,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.featuredOrder_ = featuredOrderBuilder_.build();
       }
+      result.deployRestriction_ = deployRestriction_;
       onBuilt();
       return result;
     }
@@ -3065,6 +3112,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasFeaturedOrder()) {
         mergeFeaturedOrder(other.getFeaturedOrder());
+      }
+      if (other.deployRestriction_ != 0) {
+        setDeployRestrictionValue(other.getDeployRestrictionValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7185,6 +7235,80 @@ private static final long serialVersionUID = 0L;
         featuredOrder_ = null;
       }
       return featuredOrderBuilder_;
+    }
+
+    private int deployRestriction_ = 0;
+    /**
+     * <pre>
+     * Deploy restriction for the model.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+     * @return The enum numeric value on the wire for deployRestriction.
+     */
+    @java.lang.Override public int getDeployRestrictionValue() {
+      return deployRestriction_;
+    }
+    /**
+     * <pre>
+     * Deploy restriction for the model.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+     * @param value The enum numeric value on the wire for deployRestriction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployRestrictionValue(int value) {
+      
+      deployRestriction_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Deploy restriction for the model.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+     * @return The deployRestriction.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.DeployRestriction getDeployRestriction() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.DeployRestriction result = com.clarifai.grpc.api.DeployRestriction.valueOf(deployRestriction_);
+      return result == null ? com.clarifai.grpc.api.DeployRestriction.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Deploy restriction for the model.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+     * @param value The deployRestriction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployRestriction(com.clarifai.grpc.api.DeployRestriction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      deployRestriction_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Deploy restriction for the model.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeployRestriction deploy_restriction = 42;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeployRestriction() {
+      
+      deployRestriction_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

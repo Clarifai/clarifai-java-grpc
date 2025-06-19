@@ -222,7 +222,7 @@ public interface ListModulesRequestOrBuilder extends
    *
    * <code>string name = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7542
+   *     See proto/clarifai/api/service.proto;l=7763
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -234,7 +234,7 @@ public interface ListModulesRequestOrBuilder extends
    *
    * <code>string name = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7542
+   *     See proto/clarifai/api/service.proto;l=7763
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -248,7 +248,7 @@ public interface ListModulesRequestOrBuilder extends
    *
    * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7545
+   *     See proto/clarifai/api/service.proto;l=7766
    * @return The filterByUserId.
    */
   @java.lang.Deprecated boolean getFilterByUserId();

@@ -486,10 +486,12 @@ public interface ListModelsRequestOrBuilder extends
    * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
    * </pre>
    *
-   * <code>bool dont_fetch_from_main = 23;</code>
+   * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
+   *     See proto/clarifai/api/service.proto;l=5942
    * @return The dontFetchFromMain.
    */
-  boolean getDontFetchFromMain();
+  @java.lang.Deprecated boolean getDontFetchFromMain();
 
   /**
    * <pre>
@@ -553,7 +555,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5739
+   *     See proto/clarifai/api/service.proto;l=5965
    * @return The query.
    */
   @java.lang.Deprecated java.lang.String getQuery();
@@ -565,7 +567,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5739
+   *     See proto/clarifai/api/service.proto;l=5965
    * @return The bytes for query.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -579,7 +581,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5742
+   *     See proto/clarifai/api/service.proto;l=5968
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -591,7 +593,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5742
+   *     See proto/clarifai/api/service.proto;l=5968
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -605,7 +607,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5745
+   *     See proto/clarifai/api/service.proto;l=5971
    * @return The filterByUserId.
    */
   @java.lang.Deprecated boolean getFilterByUserId();

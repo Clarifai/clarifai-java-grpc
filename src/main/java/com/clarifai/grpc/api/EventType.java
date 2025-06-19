@@ -579,7 +579,7 @@ public enum EventType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(19);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(20);
   }
 
   private static final EventType[] VALUES = values();
