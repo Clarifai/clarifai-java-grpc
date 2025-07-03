@@ -382,6 +382,11 @@ private static final long serialVersionUID = 0L;
             deployRestriction_ = rawValue;
             break;
           }
+          case 344: {
+
+            replicaCount_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -2008,6 +2013,22 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.clarifai.grpc.api.DeployRestriction.UNRECOGNIZED : result;
   }
 
+  public static final int REPLICA_COUNT_FIELD_NUMBER = 43;
+  private int replicaCount_;
+  /**
+   * <pre>
+   * replica_count indicates the number of deployed model replicas.
+   * This field is populated when `show_replicas` is true in ListModelsRequest.
+   * </pre>
+   *
+   * <code>uint32 replica_count = 43;</code>
+   * @return The replicaCount.
+   */
+  @java.lang.Override
+  public int getReplicaCount() {
+    return replicaCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2123,6 +2144,9 @@ private static final long serialVersionUID = 0L;
     }
     if (deployRestriction_ != com.clarifai.grpc.api.DeployRestriction.USAGE_RESTRICTION_NOT_SET.getNumber()) {
       output.writeEnum(42, deployRestriction_);
+    }
+    if (replicaCount_ != 0) {
+      output.writeUInt32(43, replicaCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -2275,6 +2299,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(42, deployRestriction_);
     }
+    if (replicaCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(43, replicaCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2390,6 +2418,8 @@ private static final long serialVersionUID = 0L;
           .equals(other.getFeaturedOrder())) return false;
     }
     if (deployRestriction_ != other.deployRestriction_) return false;
+    if (getReplicaCount()
+        != other.getReplicaCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2504,6 +2534,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DEPLOY_RESTRICTION_FIELD_NUMBER;
     hash = (53 * hash) + deployRestriction_;
+    hash = (37 * hash) + REPLICA_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getReplicaCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2772,6 +2804,8 @@ private static final long serialVersionUID = 0L;
       }
       deployRestriction_ = 0;
 
+      replicaCount_ = 0;
+
       return this;
     }
 
@@ -2905,6 +2939,7 @@ private static final long serialVersionUID = 0L;
         result.featuredOrder_ = featuredOrderBuilder_.build();
       }
       result.deployRestriction_ = deployRestriction_;
+      result.replicaCount_ = replicaCount_;
       onBuilt();
       return result;
     }
@@ -3115,6 +3150,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.deployRestriction_ != 0) {
         setDeployRestrictionValue(other.getDeployRestrictionValue());
+      }
+      if (other.getReplicaCount() != 0) {
+        setReplicaCount(other.getReplicaCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7307,6 +7345,52 @@ private static final long serialVersionUID = 0L;
     public Builder clearDeployRestriction() {
       
       deployRestriction_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int replicaCount_ ;
+    /**
+     * <pre>
+     * replica_count indicates the number of deployed model replicas.
+     * This field is populated when `show_replicas` is true in ListModelsRequest.
+     * </pre>
+     *
+     * <code>uint32 replica_count = 43;</code>
+     * @return The replicaCount.
+     */
+    @java.lang.Override
+    public int getReplicaCount() {
+      return replicaCount_;
+    }
+    /**
+     * <pre>
+     * replica_count indicates the number of deployed model replicas.
+     * This field is populated when `show_replicas` is true in ListModelsRequest.
+     * </pre>
+     *
+     * <code>uint32 replica_count = 43;</code>
+     * @param value The replicaCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicaCount(int value) {
+      
+      replicaCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * replica_count indicates the number of deployed model replicas.
+     * This field is populated when `show_replicas` is true in ListModelsRequest.
+     * </pre>
+     *
+     * <code>uint32 replica_count = 43;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReplicaCount() {
+      
+      replicaCount_ = 0;
       onChanged();
       return this;
     }

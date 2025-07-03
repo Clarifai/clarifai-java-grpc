@@ -850,4 +850,15 @@ public interface ModelOrBuilder extends
    * @return The deployRestriction.
    */
   com.clarifai.grpc.api.DeployRestriction getDeployRestriction();
+
+  /**
+   * <pre>
+   * replica_count indicates the number of deployed model replicas.
+   * This field is populated when `show_replicas` is true in ListModelsRequest.
+   * </pre>
+   *
+   * <code>uint32 replica_count = 43;</code>
+   * @return The replicaCount.
+   */
+  int getReplicaCount();
 }

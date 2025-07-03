@@ -77,4 +77,45 @@ public interface ListRunnersRequestOrBuilder extends
    * @return The minReplicas.
    */
   int getMinReplicas();
+
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all runners for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 7;</code>
+   * @return A list containing the modelVersionIds.
+   */
+  java.util.List<java.lang.String>
+      getModelVersionIdsList();
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all runners for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 7;</code>
+   * @return The count of modelVersionIds.
+   */
+  int getModelVersionIdsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all runners for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 7;</code>
+   * @param index The index of the element to return.
+   * @return The modelVersionIds at the given index.
+   */
+  java.lang.String getModelVersionIds(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all runners for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the modelVersionIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getModelVersionIdsBytes(int index);
 }

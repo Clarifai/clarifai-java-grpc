@@ -14,7 +14,7 @@ public interface TaskReviewConsensusStrategyInfoOrBuilder extends
    *
    * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3564
+   *     See proto/clarifai/api/resources.proto;l=3567
    * @return The approvalThreshold.
    */
   @java.lang.Deprecated int getApprovalThreshold();

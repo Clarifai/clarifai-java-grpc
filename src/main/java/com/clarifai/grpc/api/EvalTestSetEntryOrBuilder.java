@@ -111,7 +111,7 @@ public interface EvalTestSetEntryOrBuilder extends
    *
    * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2230
+   *     See proto/clarifai/api/resources.proto;l=2233
    * @return Whether the annotation field is set.
    */
   @java.lang.Deprecated boolean hasAnnotation();
@@ -124,7 +124,7 @@ public interface EvalTestSetEntryOrBuilder extends
    *
    * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2230
+   *     See proto/clarifai/api/resources.proto;l=2233
    * @return The annotation.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.Annotation getAnnotation();

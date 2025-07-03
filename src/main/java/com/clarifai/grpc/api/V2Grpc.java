@@ -7765,6 +7765,37 @@ public final class V2Grpc {
     return getListWorkflowVersionEvaluationDataMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest,
+      com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> getPostWorkflowVersionEvaluationDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostWorkflowVersionEvaluationData",
+      requestType = com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest.class,
+      responseType = com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest,
+      com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> getPostWorkflowVersionEvaluationDataMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest, com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> getPostWorkflowVersionEvaluationDataMethod;
+    if ((getPostWorkflowVersionEvaluationDataMethod = V2Grpc.getPostWorkflowVersionEvaluationDataMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostWorkflowVersionEvaluationDataMethod = V2Grpc.getPostWorkflowVersionEvaluationDataMethod) == null) {
+          V2Grpc.getPostWorkflowVersionEvaluationDataMethod = getPostWorkflowVersionEvaluationDataMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest, com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostWorkflowVersionEvaluationData"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostWorkflowVersionEvaluationData"))
+              .build();
+        }
+      }
+    }
+    return getPostWorkflowVersionEvaluationDataMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelinesRequest,
       com.clarifai.grpc.api.MultiPipelineResponse> getPostPipelinesMethod;
 
@@ -11052,6 +11083,13 @@ public final class V2Grpc {
 
     /**
      */
+    public void postWorkflowVersionEvaluationData(com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostWorkflowVersionEvaluationDataMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void postPipelines(com.clarifai.grpc.api.PostPipelinesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostPipelinesMethod(), responseObserver);
@@ -12970,6 +13008,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest,
                 com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse>(
                   this, METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA)))
+          .addMethod(
+            getPostWorkflowVersionEvaluationDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest,
+                com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse>(
+                  this, METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA)))
           .addMethod(
             getPostPipelinesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -15925,6 +15970,14 @@ public final class V2Grpc {
 
     /**
      */
+    public void postWorkflowVersionEvaluationData(com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostWorkflowVersionEvaluationDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void postPipelines(com.clarifai.grpc.api.PostPipelinesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -18614,6 +18667,13 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse listWorkflowVersionEvaluationData(com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListWorkflowVersionEvaluationDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse postWorkflowVersionEvaluationData(com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostWorkflowVersionEvaluationDataMethod(), getCallOptions(), request);
     }
 
     /**
@@ -21499,6 +21559,14 @@ public final class V2Grpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse> postWorkflowVersionEvaluationData(
+        com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostWorkflowVersionEvaluationDataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineResponse> postPipelines(
         com.clarifai.grpc.api.PostPipelinesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -21921,32 +21989,33 @@ public final class V2Grpc {
   private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 244;
   private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 245;
   private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 246;
-  private static final int METHODID_POST_PIPELINES = 247;
-  private static final int METHODID_GET_PIPELINE = 248;
-  private static final int METHODID_LIST_PIPELINES = 249;
-  private static final int METHODID_PATCH_PIPELINES = 250;
-  private static final int METHODID_DELETE_PIPELINES = 251;
-  private static final int METHODID_GET_PIPELINE_VERSION = 252;
-  private static final int METHODID_LIST_PIPELINE_VERSIONS = 253;
-  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 254;
-  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 255;
-  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 256;
-  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 257;
-  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 258;
-  private static final int METHODID_POST_PIPELINE_STEPS = 259;
-  private static final int METHODID_GET_PIPELINE_STEP = 260;
-  private static final int METHODID_LIST_PIPELINE_STEPS = 261;
-  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 262;
-  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 263;
-  private static final int METHODID_GET_SECRET = 264;
-  private static final int METHODID_LIST_SECRETS = 265;
-  private static final int METHODID_POST_SECRETS = 266;
-  private static final int METHODID_PATCH_SECRETS = 267;
-  private static final int METHODID_DELETE_SECRETS = 268;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 269;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 270;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 271;
-  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 272;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 247;
+  private static final int METHODID_POST_PIPELINES = 248;
+  private static final int METHODID_GET_PIPELINE = 249;
+  private static final int METHODID_LIST_PIPELINES = 250;
+  private static final int METHODID_PATCH_PIPELINES = 251;
+  private static final int METHODID_DELETE_PIPELINES = 252;
+  private static final int METHODID_GET_PIPELINE_VERSION = 253;
+  private static final int METHODID_LIST_PIPELINE_VERSIONS = 254;
+  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 255;
+  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 256;
+  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 257;
+  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 258;
+  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 259;
+  private static final int METHODID_POST_PIPELINE_STEPS = 260;
+  private static final int METHODID_GET_PIPELINE_STEP = 261;
+  private static final int METHODID_LIST_PIPELINE_STEPS = 262;
+  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 263;
+  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 264;
+  private static final int METHODID_GET_SECRET = 265;
+  private static final int METHODID_LIST_SECRETS = 266;
+  private static final int METHODID_POST_SECRETS = 267;
+  private static final int METHODID_PATCH_SECRETS = 268;
+  private static final int METHODID_DELETE_SECRETS = 269;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 270;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 271;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 272;
+  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 273;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -22953,6 +23022,10 @@ public final class V2Grpc {
           serviceImpl.listWorkflowVersionEvaluationData((com.clarifai.grpc.api.ListWorkflowVersionEvaluationDataRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse>) responseObserver);
           break;
+        case METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA:
+          serviceImpl.postWorkflowVersionEvaluationData((com.clarifai.grpc.api.PostWorkflowVersionEvaluationDataRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiListWorkflowVersionEvaluationDataResponse>) responseObserver);
+          break;
         case METHODID_POST_PIPELINES:
           serviceImpl.postPipelines((com.clarifai.grpc.api.PostPipelinesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineResponse>) responseObserver);
@@ -23364,6 +23437,7 @@ public final class V2Grpc {
               .addMethod(getListWorkflowVersionEvaluationsMethod())
               .addMethod(getPatchWorkflowVersionEvaluationsMethod())
               .addMethod(getListWorkflowVersionEvaluationDataMethod())
+              .addMethod(getPostWorkflowVersionEvaluationDataMethod())
               .addMethod(getPostPipelinesMethod())
               .addMethod(getGetPipelineMethod())
               .addMethod(getListPipelinesMethod())
