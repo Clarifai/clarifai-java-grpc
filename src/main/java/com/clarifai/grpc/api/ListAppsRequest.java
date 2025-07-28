@@ -159,6 +159,19 @@ private static final long serialVersionUID = 0L;
             sortByCase_ = 17;
             break;
           }
+          case 146: {
+            com.clarifai.grpc.api.Visibility.Builder subBuilder = null;
+            if (visibility_ != null) {
+              subBuilder = visibility_.toBuilder();
+            }
+            visibility_ = input.readMessage(com.clarifai.grpc.api.Visibility.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(visibility_);
+              visibility_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -561,6 +574,44 @@ private static final long serialVersionUID = 0L;
     return templateOnly_;
   }
 
+  public static final int VISIBILITY_FIELD_NUMBER = 18;
+  private com.clarifai.grpc.api.Visibility visibility_;
+  /**
+   * <pre>
+   * Filter by visibility of the app. If set, only return apps with the specified visibility.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 18;</code>
+   * @return Whether the visibility field is set.
+   */
+  @java.lang.Override
+  public boolean hasVisibility() {
+    return visibility_ != null;
+  }
+  /**
+   * <pre>
+   * Filter by visibility of the app. If set, only return apps with the specified visibility.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 18;</code>
+   * @return The visibility.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Visibility getVisibility() {
+    return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+  }
+  /**
+   * <pre>
+   * Filter by visibility of the app. If set, only return apps with the specified visibility.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 18;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+    return getVisibility();
+  }
+
   public static final int SEARCH_FIELD_NUMBER = 15;
   private volatile java.lang.Object search_;
   /**
@@ -639,7 +690,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4724
+   *     See proto/clarifai/api/service.proto;l=4727
    * @return The query.
    */
   @java.lang.Override
@@ -663,7 +714,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4724
+   *     See proto/clarifai/api/service.proto;l=4727
    * @return The bytes for query.
    */
   @java.lang.Override
@@ -691,7 +742,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4727
+   *     See proto/clarifai/api/service.proto;l=4730
    * @return The name.
    */
   @java.lang.Override
@@ -715,7 +766,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4727
+   *     See proto/clarifai/api/service.proto;l=4730
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -743,7 +794,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4730
+   *     See proto/clarifai/api/service.proto;l=4733
    * @return The id.
    */
   @java.lang.Override
@@ -767,7 +818,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4730
+   *     See proto/clarifai/api/service.proto;l=4733
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -855,6 +906,9 @@ private static final long serialVersionUID = 0L;
       output.writeBool(
           17, (boolean)((java.lang.Boolean) sortBy_));
     }
+    if (visibility_ != null) {
+      output.writeMessage(18, getVisibility());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -937,6 +991,10 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             17, (boolean)((java.lang.Boolean) sortBy_));
     }
+    if (visibility_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getVisibility());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -971,6 +1029,11 @@ private static final long serialVersionUID = 0L;
         != other.getStarredOnly()) return false;
     if (getTemplateOnly()
         != other.getTemplateOnly()) return false;
+    if (hasVisibility() != other.hasVisibility()) return false;
+    if (hasVisibility()) {
+      if (!getVisibility()
+          .equals(other.getVisibility())) return false;
+    }
     if (!getSearch()
         .equals(other.getSearch())) return false;
     if (!getQuery()
@@ -1039,6 +1102,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TEMPLATE_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getTemplateOnly());
+    if (hasVisibility()) {
+      hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
+      hash = (53 * hash) + getVisibility().hashCode();
+    }
     hash = (37 * hash) + SEARCH_FIELD_NUMBER;
     hash = (53 * hash) + getSearch().hashCode();
     hash = (37 * hash) + QUERY_FIELD_NUMBER;
@@ -1233,6 +1300,12 @@ private static final long serialVersionUID = 0L;
 
       templateOnly_ = false;
 
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
       search_ = "";
 
       query_ = "";
@@ -1301,6 +1374,11 @@ private static final long serialVersionUID = 0L;
       result.featuredOnly_ = featuredOnly_;
       result.starredOnly_ = starredOnly_;
       result.templateOnly_ = templateOnly_;
+      if (visibilityBuilder_ == null) {
+        result.visibility_ = visibility_;
+      } else {
+        result.visibility_ = visibilityBuilder_.build();
+      }
       result.search_ = search_;
       result.query_ = query_;
       result.name_ = name_;
@@ -1384,6 +1462,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTemplateOnly() != false) {
         setTemplateOnly(other.getTemplateOnly());
+      }
+      if (other.hasVisibility()) {
+        mergeVisibility(other.getVisibility());
       }
       if (!other.getSearch().isEmpty()) {
         search_ = other.search_;
@@ -2295,6 +2376,161 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.clarifai.grpc.api.Visibility visibility_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> visibilityBuilder_;
+    /**
+     * <pre>
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 18;</code>
+     * @return Whether the visibility field is set.
+     */
+    public boolean hasVisibility() {
+      return visibilityBuilder_ != null || visibility_ != null;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 18;</code>
+     * @return The visibility.
+     */
+    public com.clarifai.grpc.api.Visibility getVisibility() {
+      if (visibilityBuilder_ == null) {
+        return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      } else {
+        return visibilityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 18;</code>
+     */
+    public Builder setVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        visibility_ = value;
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 18;</code>
+     */
+    public Builder setVisibility(
+        com.clarifai.grpc.api.Visibility.Builder builderForValue) {
+      if (visibilityBuilder_ == null) {
+        visibility_ = builderForValue.build();
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 18;</code>
+     */
+    public Builder mergeVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (visibility_ != null) {
+          visibility_ =
+            com.clarifai.grpc.api.Visibility.newBuilder(visibility_).mergeFrom(value).buildPartial();
+        } else {
+          visibility_ = value;
+        }
+        onChanged();
+      } else {
+        visibilityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 18;</code>
+     */
+    public Builder clearVisibility() {
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+        onChanged();
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 18;</code>
+     */
+    public com.clarifai.grpc.api.Visibility.Builder getVisibilityBuilder() {
+      
+      onChanged();
+      return getVisibilityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 18;</code>
+     */
+    public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+      if (visibilityBuilder_ != null) {
+        return visibilityBuilder_.getMessageOrBuilder();
+      } else {
+        return visibility_ == null ?
+            com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the app. If set, only return apps with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> 
+        getVisibilityFieldBuilder() {
+      if (visibilityBuilder_ == null) {
+        visibilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder>(
+                getVisibility(),
+                getParentForChildren(),
+                isClean());
+        visibility_ = null;
+      }
+      return visibilityBuilder_;
+    }
+
     private java.lang.Object search_ = "";
     /**
      * <pre>
@@ -2455,7 +2691,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4724
+     *     See proto/clarifai/api/service.proto;l=4727
      * @return The query.
      */
     @java.lang.Deprecated public java.lang.String getQuery() {
@@ -2478,7 +2714,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4724
+     *     See proto/clarifai/api/service.proto;l=4727
      * @return The bytes for query.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2502,7 +2738,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4724
+     *     See proto/clarifai/api/service.proto;l=4727
      * @param value The query to set.
      * @return This builder for chaining.
      */
@@ -2524,7 +2760,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4724
+     *     See proto/clarifai/api/service.proto;l=4727
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearQuery() {
@@ -2541,7 +2777,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4724
+     *     See proto/clarifai/api/service.proto;l=4727
      * @param value The bytes for query to set.
      * @return This builder for chaining.
      */
@@ -2566,7 +2802,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4727
+     *     See proto/clarifai/api/service.proto;l=4730
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2589,7 +2825,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4727
+     *     See proto/clarifai/api/service.proto;l=4730
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2613,7 +2849,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4727
+     *     See proto/clarifai/api/service.proto;l=4730
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2635,7 +2871,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4727
+     *     See proto/clarifai/api/service.proto;l=4730
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -2652,7 +2888,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4727
+     *     See proto/clarifai/api/service.proto;l=4730
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -2677,7 +2913,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4730
+     *     See proto/clarifai/api/service.proto;l=4733
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -2700,7 +2936,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4730
+     *     See proto/clarifai/api/service.proto;l=4733
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2724,7 +2960,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4730
+     *     See proto/clarifai/api/service.proto;l=4733
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -2746,7 +2982,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4730
+     *     See proto/clarifai/api/service.proto;l=4733
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -2763,7 +2999,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4730
+     *     See proto/clarifai/api/service.proto;l=4733
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */

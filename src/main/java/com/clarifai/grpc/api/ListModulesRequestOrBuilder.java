@@ -222,7 +222,7 @@ public interface ListModulesRequestOrBuilder extends
    *
    * <code>string name = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7785
+   *     See proto/clarifai/api/service.proto;l=7792
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -234,7 +234,7 @@ public interface ListModulesRequestOrBuilder extends
    *
    * <code>string name = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7785
+   *     See proto/clarifai/api/service.proto;l=7792
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -248,10 +248,37 @@ public interface ListModulesRequestOrBuilder extends
    *
    * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7788
+   *     See proto/clarifai/api/service.proto;l=7795
    * @return The filterByUserId.
    */
   @java.lang.Deprecated boolean getFilterByUserId();
+
+  /**
+   * <pre>
+   * Filter by visibility of the modules. If set, only return modules with the specified visibility.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 15;</code>
+   * @return Whether the visibility field is set.
+   */
+  boolean hasVisibility();
+  /**
+   * <pre>
+   * Filter by visibility of the modules. If set, only return modules with the specified visibility.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 15;</code>
+   * @return The visibility.
+   */
+  com.clarifai.grpc.api.Visibility getVisibility();
+  /**
+   * <pre>
+   * Filter by visibility of the modules. If set, only return modules with the specified visibility.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 15;</code>
+   */
+  com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
 
   public com.clarifai.grpc.api.ListModulesRequest.SortByCase getSortByCase();
 }

@@ -270,6 +270,19 @@ private static final long serialVersionUID = 0L;
             showReplicas_ = input.readBool();
             break;
           }
+          case 282: {
+            com.clarifai.grpc.api.Visibility.Builder subBuilder = null;
+            if (visibility_ != null) {
+              subBuilder = visibility_.toBuilder();
+            }
+            visibility_ = input.readMessage(com.clarifai.grpc.api.Visibility.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(visibility_);
+              visibility_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1058,7 +1071,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5962
+   *     See proto/clarifai/api/service.proto;l=5965
    * @return The dontFetchFromMain.
    */
   @java.lang.Override
@@ -1161,7 +1174,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5985
+   *     See proto/clarifai/api/service.proto;l=5988
    * @return The query.
    */
   @java.lang.Override
@@ -1185,7 +1198,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5985
+   *     See proto/clarifai/api/service.proto;l=5988
    * @return The bytes for query.
    */
   @java.lang.Override
@@ -1213,7 +1226,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5988
+   *     See proto/clarifai/api/service.proto;l=5991
    * @return The name.
    */
   @java.lang.Override
@@ -1237,7 +1250,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5988
+   *     See proto/clarifai/api/service.proto;l=5991
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -1265,7 +1278,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5991
+   *     See proto/clarifai/api/service.proto;l=5994
    * @return The filterByUserId.
    */
   @java.lang.Override
@@ -1442,6 +1455,44 @@ private static final long serialVersionUID = 0L;
     return showReplicas_;
   }
 
+  public static final int VISIBILITY_FIELD_NUMBER = 35;
+  private com.clarifai.grpc.api.Visibility visibility_;
+  /**
+   * <pre>
+   * Filter by visibility of the model. If set, only return models with the specified visibility.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 35;</code>
+   * @return Whether the visibility field is set.
+   */
+  @java.lang.Override
+  public boolean hasVisibility() {
+    return visibility_ != null;
+  }
+  /**
+   * <pre>
+   * Filter by visibility of the model. If set, only return models with the specified visibility.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 35;</code>
+   * @return The visibility.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Visibility getVisibility() {
+    return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+  }
+  /**
+   * <pre>
+   * Filter by visibility of the model. If set, only return models with the specified visibility.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 35;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+    return getVisibility();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1556,6 +1607,9 @@ private static final long serialVersionUID = 0L;
     }
     if (showReplicas_ != false) {
       output.writeBool(34, showReplicas_);
+    }
+    if (visibility_ != null) {
+      output.writeMessage(35, getVisibility());
     }
     unknownFields.writeTo(output);
   }
@@ -1721,6 +1775,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(34, showReplicas_);
     }
+    if (visibility_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(35, getVisibility());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1792,6 +1850,11 @@ private static final long serialVersionUID = 0L;
         != other.getMinReplicas()) return false;
     if (getShowReplicas()
         != other.getShowReplicas()) return false;
+    if (hasVisibility() != other.hasVisibility()) return false;
+    if (hasVisibility()) {
+      if (!getVisibility()
+          .equals(other.getVisibility())) return false;
+    }
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 11:
@@ -1906,6 +1969,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SHOW_REPLICAS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getShowReplicas());
+    if (hasVisibility()) {
+      hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
+      hash = (53 * hash) + getVisibility().hashCode();
+    }
     switch (sortByCase_) {
       case 11:
         hash = (37 * hash) + SORT_BY_NAME_FIELD_NUMBER;
@@ -2130,6 +2197,12 @@ private static final long serialVersionUID = 0L;
 
       showReplicas_ = false;
 
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -2233,6 +2306,11 @@ private static final long serialVersionUID = 0L;
       result.creator_ = creator_;
       result.minReplicas_ = minReplicas_;
       result.showReplicas_ = showReplicas_;
+      if (visibilityBuilder_ == null) {
+        result.visibility_ = visibility_;
+      } else {
+        result.visibility_ = visibilityBuilder_.build();
+      }
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -2417,6 +2495,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getShowReplicas() != false) {
         setShowReplicas(other.getShowReplicas());
+      }
+      if (other.hasVisibility()) {
+        mergeVisibility(other.getVisibility());
       }
       switch (other.getSortByCase()) {
         case SORT_BY_NAME: {
@@ -4268,7 +4349,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5962
+     *     See proto/clarifai/api/service.proto;l=5965
      * @return The dontFetchFromMain.
      */
     @java.lang.Override
@@ -4283,7 +4364,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5962
+     *     See proto/clarifai/api/service.proto;l=5965
      * @param value The dontFetchFromMain to set.
      * @return This builder for chaining.
      */
@@ -4301,7 +4382,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5962
+     *     See proto/clarifai/api/service.proto;l=5965
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDontFetchFromMain() {
@@ -4520,7 +4601,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5985
+     *     See proto/clarifai/api/service.proto;l=5988
      * @return The query.
      */
     @java.lang.Deprecated public java.lang.String getQuery() {
@@ -4543,7 +4624,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5985
+     *     See proto/clarifai/api/service.proto;l=5988
      * @return The bytes for query.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -4567,7 +4648,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5985
+     *     See proto/clarifai/api/service.proto;l=5988
      * @param value The query to set.
      * @return This builder for chaining.
      */
@@ -4589,7 +4670,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5985
+     *     See proto/clarifai/api/service.proto;l=5988
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearQuery() {
@@ -4606,7 +4687,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5985
+     *     See proto/clarifai/api/service.proto;l=5988
      * @param value The bytes for query to set.
      * @return This builder for chaining.
      */
@@ -4631,7 +4712,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5988
+     *     See proto/clarifai/api/service.proto;l=5991
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -4654,7 +4735,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5988
+     *     See proto/clarifai/api/service.proto;l=5991
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -4678,7 +4759,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5988
+     *     See proto/clarifai/api/service.proto;l=5991
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -4700,7 +4781,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5988
+     *     See proto/clarifai/api/service.proto;l=5991
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -4717,7 +4798,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5988
+     *     See proto/clarifai/api/service.proto;l=5991
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -4742,7 +4823,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5991
+     *     See proto/clarifai/api/service.proto;l=5994
      * @return The filterByUserId.
      */
     @java.lang.Override
@@ -4757,7 +4838,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5991
+     *     See proto/clarifai/api/service.proto;l=5994
      * @param value The filterByUserId to set.
      * @return This builder for chaining.
      */
@@ -4775,7 +4856,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5991
+     *     See proto/clarifai/api/service.proto;l=5994
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearFilterByUserId() {
@@ -5228,6 +5309,161 @@ private static final long serialVersionUID = 0L;
       showReplicas_ = false;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Visibility visibility_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> visibilityBuilder_;
+    /**
+     * <pre>
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 35;</code>
+     * @return Whether the visibility field is set.
+     */
+    public boolean hasVisibility() {
+      return visibilityBuilder_ != null || visibility_ != null;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 35;</code>
+     * @return The visibility.
+     */
+    public com.clarifai.grpc.api.Visibility getVisibility() {
+      if (visibilityBuilder_ == null) {
+        return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      } else {
+        return visibilityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 35;</code>
+     */
+    public Builder setVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        visibility_ = value;
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 35;</code>
+     */
+    public Builder setVisibility(
+        com.clarifai.grpc.api.Visibility.Builder builderForValue) {
+      if (visibilityBuilder_ == null) {
+        visibility_ = builderForValue.build();
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 35;</code>
+     */
+    public Builder mergeVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (visibility_ != null) {
+          visibility_ =
+            com.clarifai.grpc.api.Visibility.newBuilder(visibility_).mergeFrom(value).buildPartial();
+        } else {
+          visibility_ = value;
+        }
+        onChanged();
+      } else {
+        visibilityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 35;</code>
+     */
+    public Builder clearVisibility() {
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+        onChanged();
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 35;</code>
+     */
+    public com.clarifai.grpc.api.Visibility.Builder getVisibilityBuilder() {
+      
+      onChanged();
+      return getVisibilityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 35;</code>
+     */
+    public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+      if (visibilityBuilder_ != null) {
+        return visibilityBuilder_.getMessageOrBuilder();
+      } else {
+        return visibility_ == null ?
+            com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by visibility of the model. If set, only return models with the specified visibility.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 35;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> 
+        getVisibilityFieldBuilder() {
+      if (visibilityBuilder_ == null) {
+        visibilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder>(
+                getVisibility(),
+                getParentForChildren(),
+                isClean());
+        visibility_ = null;
+      }
+      return visibilityBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
