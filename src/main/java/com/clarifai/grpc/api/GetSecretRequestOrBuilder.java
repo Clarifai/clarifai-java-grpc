@@ -27,18 +27,18 @@ public interface GetSecretRequestOrBuilder extends
    * The id of the secret to get
    * </pre>
    *
-   * <code>string secret_id = 2;</code>
-   * @return The secretId.
+   * <code>string id = 2;</code>
+   * @return The id.
    */
-  java.lang.String getSecretId();
+  java.lang.String getId();
   /**
    * <pre>
    * The id of the secret to get
    * </pre>
    *
-   * <code>string secret_id = 2;</code>
-   * @return The bytes for secretId.
+   * <code>string id = 2;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
-      getSecretIdBytes();
+      getIdBytes();
 }

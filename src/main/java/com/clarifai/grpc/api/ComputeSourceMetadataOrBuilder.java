@@ -99,15 +99,27 @@ public interface ComputeSourceMetadataOrBuilder extends
    * Compute Cluster, Nodepool, Runner.
    * </pre>
    *
-   * <code>string compute_cluster_id = 6;</code>
-   * @return The computeClusterId.
+   * <code>string compute_cluster_user_id = 14;</code>
+   * @return The computeClusterUserId.
    */
-  java.lang.String getComputeClusterId();
+  java.lang.String getComputeClusterUserId();
   /**
    * <pre>
    * Compute Cluster, Nodepool, Runner.
    * </pre>
    *
+   * <code>string compute_cluster_user_id = 14;</code>
+   * @return The bytes for computeClusterUserId.
+   */
+  com.google.protobuf.ByteString
+      getComputeClusterUserIdBytes();
+
+  /**
+   * <code>string compute_cluster_id = 6;</code>
+   * @return The computeClusterId.
+   */
+  java.lang.String getComputeClusterId();
+  /**
    * <code>string compute_cluster_id = 6;</code>
    * @return The bytes for computeClusterId.
    */

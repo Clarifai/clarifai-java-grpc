@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     modelId_ = "";
     modelVersionId_ = "";
     workflowId_ = "";
+    computeClusterUserId_ = "";
     computeClusterId_ = "";
     nodepoolId_ = "";
     runnerId_ = "";
@@ -143,6 +144,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             pipelineStepVersionId_ = s;
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            computeClusterUserId_ = s;
             break;
           }
           default: {
@@ -406,13 +413,55 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COMPUTE_CLUSTER_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object computeClusterId_;
+  public static final int COMPUTE_CLUSTER_USER_ID_FIELD_NUMBER = 17;
+  private volatile java.lang.Object computeClusterUserId_;
   /**
    * <pre>
    * Where the logs came from.
    * </pre>
    *
+   * <code>string compute_cluster_user_id = 17;</code>
+   * @return The computeClusterUserId.
+   */
+  @java.lang.Override
+  public java.lang.String getComputeClusterUserId() {
+    java.lang.Object ref = computeClusterUserId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      computeClusterUserId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Where the logs came from.
+   * </pre>
+   *
+   * <code>string compute_cluster_user_id = 17;</code>
+   * @return The bytes for computeClusterUserId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getComputeClusterUserIdBytes() {
+    java.lang.Object ref = computeClusterUserId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      computeClusterUserId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COMPUTE_CLUSTER_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object computeClusterId_;
+  /**
    * <code>string compute_cluster_id = 6;</code>
    * @return The computeClusterId.
    */
@@ -430,10 +479,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * Where the logs came from.
-   * </pre>
-   *
    * <code>string compute_cluster_id = 6;</code>
    * @return The bytes for computeClusterId.
    */
@@ -791,6 +836,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineStepVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, pipelineStepVersionId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterUserId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, computeClusterUserId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -840,6 +888,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineStepVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, pipelineStepVersionId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterUserId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, computeClusterUserId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -868,6 +919,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getModelVersionId())) return false;
     if (!getWorkflowId()
         .equals(other.getWorkflowId())) return false;
+    if (!getComputeClusterUserId()
+        .equals(other.getComputeClusterUserId())) return false;
     if (!getComputeClusterId()
         .equals(other.getComputeClusterId())) return false;
     if (!getNodepoolId()
@@ -907,6 +960,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getModelVersionId().hashCode();
     hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getWorkflowId().hashCode();
+    hash = (37 * hash) + COMPUTE_CLUSTER_USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getComputeClusterUserId().hashCode();
     hash = (37 * hash) + COMPUTE_CLUSTER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getComputeClusterId().hashCode();
     hash = (37 * hash) + NODEPOOL_ID_FIELD_NUMBER;
@@ -1070,6 +1125,8 @@ private static final long serialVersionUID = 0L;
 
       workflowId_ = "";
 
+      computeClusterUserId_ = "";
+
       computeClusterId_ = "";
 
       nodepoolId_ = "";
@@ -1121,6 +1178,7 @@ private static final long serialVersionUID = 0L;
       result.modelId_ = modelId_;
       result.modelVersionId_ = modelVersionId_;
       result.workflowId_ = workflowId_;
+      result.computeClusterUserId_ = computeClusterUserId_;
       result.computeClusterId_ = computeClusterId_;
       result.nodepoolId_ = nodepoolId_;
       result.runnerId_ = runnerId_;
@@ -1194,6 +1252,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getWorkflowId().isEmpty()) {
         workflowId_ = other.workflowId_;
+        onChanged();
+      }
+      if (!other.getComputeClusterUserId().isEmpty()) {
+        computeClusterUserId_ = other.computeClusterUserId_;
         onChanged();
       }
       if (!other.getComputeClusterId().isEmpty()) {
@@ -1810,12 +1872,104 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object computeClusterId_ = "";
+    private java.lang.Object computeClusterUserId_ = "";
     /**
      * <pre>
      * Where the logs came from.
      * </pre>
      *
+     * <code>string compute_cluster_user_id = 17;</code>
+     * @return The computeClusterUserId.
+     */
+    public java.lang.String getComputeClusterUserId() {
+      java.lang.Object ref = computeClusterUserId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        computeClusterUserId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Where the logs came from.
+     * </pre>
+     *
+     * <code>string compute_cluster_user_id = 17;</code>
+     * @return The bytes for computeClusterUserId.
+     */
+    public com.google.protobuf.ByteString
+        getComputeClusterUserIdBytes() {
+      java.lang.Object ref = computeClusterUserId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        computeClusterUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Where the logs came from.
+     * </pre>
+     *
+     * <code>string compute_cluster_user_id = 17;</code>
+     * @param value The computeClusterUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeClusterUserId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      computeClusterUserId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Where the logs came from.
+     * </pre>
+     *
+     * <code>string compute_cluster_user_id = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearComputeClusterUserId() {
+      
+      computeClusterUserId_ = getDefaultInstance().getComputeClusterUserId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Where the logs came from.
+     * </pre>
+     *
+     * <code>string compute_cluster_user_id = 17;</code>
+     * @param value The bytes for computeClusterUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeClusterUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      computeClusterUserId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object computeClusterId_ = "";
+    /**
      * <code>string compute_cluster_id = 6;</code>
      * @return The computeClusterId.
      */
@@ -1832,10 +1986,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Where the logs came from.
-     * </pre>
-     *
      * <code>string compute_cluster_id = 6;</code>
      * @return The bytes for computeClusterId.
      */
@@ -1853,10 +2003,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Where the logs came from.
-     * </pre>
-     *
      * <code>string compute_cluster_id = 6;</code>
      * @param value The computeClusterId to set.
      * @return This builder for chaining.
@@ -1872,10 +2018,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Where the logs came from.
-     * </pre>
-     *
      * <code>string compute_cluster_id = 6;</code>
      * @return This builder for chaining.
      */
@@ -1886,10 +2028,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Where the logs came from.
-     * </pre>
-     *
      * <code>string compute_cluster_id = 6;</code>
      * @param value The bytes for computeClusterId to set.
      * @return This builder for chaining.

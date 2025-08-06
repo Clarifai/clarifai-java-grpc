@@ -17,8 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private Secret() {
     id_ = "";
-    appId_ = "";
-    name_ = "";
+    userId_ = "";
     value_ = "";
     description_ = "";
   }
@@ -57,18 +56,6 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             id_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            appId_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
             break;
           }
           case 34: {
@@ -114,19 +101,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 74: {
-            com.clarifai.grpc.api.Visibility.Builder subBuilder = null;
-            if (visibility_ != null) {
-              subBuilder = visibility_.toBuilder();
-            }
-            visibility_ = input.readMessage(com.clarifai.grpc.api.Visibility.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(visibility_);
-              visibility_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 82: {
             com.google.protobuf.Timestamp.Builder subBuilder = null;
             if (expiresAt_ != null) {
@@ -138,6 +112,12 @@ private static final long serialVersionUID = 0L;
               expiresAt_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userId_ = s;
             break;
           }
           default: {
@@ -178,7 +158,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   * The ID of the secret.
+   * The name of the secret, corresponds to id in model_version.output_info.params.secrets
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -199,7 +179,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The ID of the secret.
+   * The name of the secret, corresponds to id in model_version.output_info.params.secrets
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -220,92 +200,46 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int APP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object appId_;
+  public static final int USER_ID_FIELD_NUMBER = 11;
+  private volatile java.lang.Object userId_;
   /**
    * <pre>
-   * The app the secret belongs to.
+   * The user the secret belongs to.
    * </pre>
    *
-   * <code>string app_id = 2;</code>
-   * @return The appId.
+   * <code>string user_id = 11;</code>
+   * @return The userId.
    */
   @java.lang.Override
-  public java.lang.String getAppId() {
-    java.lang.Object ref = appId_;
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      appId_ = s;
+      userId_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The app the secret belongs to.
+   * The user the secret belongs to.
    * </pre>
    *
-   * <code>string app_id = 2;</code>
-   * @return The bytes for appId.
+   * <code>string user_id = 11;</code>
+   * @return The bytes for userId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getAppIdBytes() {
-    java.lang.Object ref = appId_;
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      appId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
-  /**
-   * <pre>
-   * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-   * </pre>
-   *
-   * <code>string name = 3;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-   * </pre>
-   *
-   * <code>string name = 3;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
+      userId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -495,50 +429,6 @@ private static final long serialVersionUID = 0L;
     return getModifiedAt();
   }
 
-  public static final int VISIBILITY_FIELD_NUMBER = 9;
-  private com.clarifai.grpc.api.Visibility visibility_;
-  /**
-   * <pre>
-   * The visibility field represents whether this message is privately/publicly visible.
-   * To be visible to the public the App that contains it AND the User that contains the App must
-   * also be publicly visible.
-   * </pre>
-   *
-   * <code>.clarifai.api.Visibility visibility = 9;</code>
-   * @return Whether the visibility field is set.
-   */
-  @java.lang.Override
-  public boolean hasVisibility() {
-    return visibility_ != null;
-  }
-  /**
-   * <pre>
-   * The visibility field represents whether this message is privately/publicly visible.
-   * To be visible to the public the App that contains it AND the User that contains the App must
-   * also be publicly visible.
-   * </pre>
-   *
-   * <code>.clarifai.api.Visibility visibility = 9;</code>
-   * @return The visibility.
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.Visibility getVisibility() {
-    return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
-  }
-  /**
-   * <pre>
-   * The visibility field represents whether this message is privately/publicly visible.
-   * To be visible to the public the App that contains it AND the User that contains the App must
-   * also be publicly visible.
-   * </pre>
-   *
-   * <code>.clarifai.api.Visibility visibility = 9;</code>
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
-    return getVisibility();
-  }
-
   public static final int EXPIRES_AT_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp expiresAt_;
   /**
@@ -594,12 +484,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, value_);
     }
@@ -615,11 +499,11 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       output.writeMessage(8, getModifiedAt());
     }
-    if (visibility_ != null) {
-      output.writeMessage(9, getVisibility());
-    }
     if (expiresAt_ != null) {
       output.writeMessage(10, getExpiresAt());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, userId_);
     }
     unknownFields.writeTo(output);
   }
@@ -632,12 +516,6 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, value_);
@@ -657,13 +535,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getModifiedAt());
     }
-    if (visibility_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getVisibility());
-    }
     if (expiresAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getExpiresAt());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, userId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -682,10 +559,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (!getAppId()
-        .equals(other.getAppId())) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
     if (!getValue()
         .equals(other.getValue())) return false;
     if (getVersion()
@@ -701,11 +576,6 @@ private static final long serialVersionUID = 0L;
     if (hasModifiedAt()) {
       if (!getModifiedAt()
           .equals(other.getModifiedAt())) return false;
-    }
-    if (hasVisibility() != other.hasVisibility()) return false;
-    if (hasVisibility()) {
-      if (!getVisibility()
-          .equals(other.getVisibility())) return false;
     }
     if (hasExpiresAt() != other.hasExpiresAt()) return false;
     if (hasExpiresAt()) {
@@ -725,10 +595,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + APP_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getAppId().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId().hashCode();
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getValue().hashCode();
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -742,10 +610,6 @@ private static final long serialVersionUID = 0L;
     if (hasModifiedAt()) {
       hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getModifiedAt().hashCode();
-    }
-    if (hasVisibility()) {
-      hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
-      hash = (53 * hash) + getVisibility().hashCode();
     }
     if (hasExpiresAt()) {
       hash = (37 * hash) + EXPIRES_AT_FIELD_NUMBER;
@@ -886,9 +750,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
-      appId_ = "";
-
-      name_ = "";
+      userId_ = "";
 
       value_ = "";
 
@@ -907,12 +769,6 @@ private static final long serialVersionUID = 0L;
       } else {
         modifiedAt_ = null;
         modifiedAtBuilder_ = null;
-      }
-      if (visibilityBuilder_ == null) {
-        visibility_ = null;
-      } else {
-        visibility_ = null;
-        visibilityBuilder_ = null;
       }
       if (expiresAtBuilder_ == null) {
         expiresAt_ = null;
@@ -947,8 +803,7 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.Secret buildPartial() {
       com.clarifai.grpc.api.Secret result = new com.clarifai.grpc.api.Secret(this);
       result.id_ = id_;
-      result.appId_ = appId_;
-      result.name_ = name_;
+      result.userId_ = userId_;
       result.value_ = value_;
       result.version_ = version_;
       result.description_ = description_;
@@ -961,11 +816,6 @@ private static final long serialVersionUID = 0L;
         result.modifiedAt_ = modifiedAt_;
       } else {
         result.modifiedAt_ = modifiedAtBuilder_.build();
-      }
-      if (visibilityBuilder_ == null) {
-        result.visibility_ = visibility_;
-      } else {
-        result.visibility_ = visibilityBuilder_.build();
       }
       if (expiresAtBuilder_ == null) {
         result.expiresAt_ = expiresAt_;
@@ -1024,12 +874,8 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getAppId().isEmpty()) {
-        appId_ = other.appId_;
-        onChanged();
-      }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getUserId().isEmpty()) {
+        userId_ = other.userId_;
         onChanged();
       }
       if (!other.getValue().isEmpty()) {
@@ -1048,9 +894,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModifiedAt()) {
         mergeModifiedAt(other.getModifiedAt());
-      }
-      if (other.hasVisibility()) {
-        mergeVisibility(other.getVisibility());
       }
       if (other.hasExpiresAt()) {
         mergeExpiresAt(other.getExpiresAt());
@@ -1087,7 +930,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * The ID of the secret.
+     * The name of the secret, corresponds to id in model_version.output_info.params.secrets
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1107,7 +950,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the secret.
+     * The name of the secret, corresponds to id in model_version.output_info.params.secrets
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1128,7 +971,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the secret.
+     * The name of the secret, corresponds to id in model_version.output_info.params.secrets
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1147,7 +990,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the secret.
+     * The name of the secret, corresponds to id in model_version.output_info.params.secrets
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1161,7 +1004,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the secret.
+     * The name of the secret, corresponds to id in model_version.output_info.params.secrets
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1180,22 +1023,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object appId_ = "";
+    private java.lang.Object userId_ = "";
     /**
      * <pre>
-     * The app the secret belongs to.
+     * The user the secret belongs to.
      * </pre>
      *
-     * <code>string app_id = 2;</code>
-     * @return The appId.
+     * <code>string user_id = 11;</code>
+     * @return The userId.
      */
-    public java.lang.String getAppId() {
-      java.lang.Object ref = appId_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        appId_ = s;
+        userId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1203,20 +1046,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The app the secret belongs to.
+     * The user the secret belongs to.
      * </pre>
      *
-     * <code>string app_id = 2;</code>
-     * @return The bytes for appId.
+     * <code>string user_id = 11;</code>
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
-        getAppIdBytes() {
-      java.lang.Object ref = appId_;
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        appId_ = b;
+        userId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1224,150 +1067,54 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The app the secret belongs to.
+     * The user the secret belongs to.
      * </pre>
      *
-     * <code>string app_id = 2;</code>
-     * @param value The appId to set.
+     * <code>string user_id = 11;</code>
+     * @param value The userId to set.
      * @return This builder for chaining.
      */
-    public Builder setAppId(
+    public Builder setUserId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      appId_ = value;
+      userId_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The app the secret belongs to.
+     * The user the secret belongs to.
      * </pre>
      *
-     * <code>string app_id = 2;</code>
+     * <code>string user_id = 11;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAppId() {
+    public Builder clearUserId() {
       
-      appId_ = getDefaultInstance().getAppId();
+      userId_ = getDefaultInstance().getUserId();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The app the secret belongs to.
+     * The user the secret belongs to.
      * </pre>
      *
-     * <code>string app_id = 2;</code>
-     * @param value The bytes for appId to set.
+     * <code>string user_id = 11;</code>
+     * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
-    public Builder setAppIdBytes(
+    public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      appId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object name_ = "";
-    /**
-     * <pre>
-     * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-     * </pre>
-     *
-     * <code>string name = 3;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
+      userId_ = value;
       onChanged();
       return this;
     }
@@ -1915,179 +1662,6 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
       }
       return modifiedAtBuilder_;
-    }
-
-    private com.clarifai.grpc.api.Visibility visibility_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> visibilityBuilder_;
-    /**
-     * <pre>
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     * </pre>
-     *
-     * <code>.clarifai.api.Visibility visibility = 9;</code>
-     * @return Whether the visibility field is set.
-     */
-    public boolean hasVisibility() {
-      return visibilityBuilder_ != null || visibility_ != null;
-    }
-    /**
-     * <pre>
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     * </pre>
-     *
-     * <code>.clarifai.api.Visibility visibility = 9;</code>
-     * @return The visibility.
-     */
-    public com.clarifai.grpc.api.Visibility getVisibility() {
-      if (visibilityBuilder_ == null) {
-        return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
-      } else {
-        return visibilityBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     * </pre>
-     *
-     * <code>.clarifai.api.Visibility visibility = 9;</code>
-     */
-    public Builder setVisibility(com.clarifai.grpc.api.Visibility value) {
-      if (visibilityBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        visibility_ = value;
-        onChanged();
-      } else {
-        visibilityBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     * </pre>
-     *
-     * <code>.clarifai.api.Visibility visibility = 9;</code>
-     */
-    public Builder setVisibility(
-        com.clarifai.grpc.api.Visibility.Builder builderForValue) {
-      if (visibilityBuilder_ == null) {
-        visibility_ = builderForValue.build();
-        onChanged();
-      } else {
-        visibilityBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     * </pre>
-     *
-     * <code>.clarifai.api.Visibility visibility = 9;</code>
-     */
-    public Builder mergeVisibility(com.clarifai.grpc.api.Visibility value) {
-      if (visibilityBuilder_ == null) {
-        if (visibility_ != null) {
-          visibility_ =
-            com.clarifai.grpc.api.Visibility.newBuilder(visibility_).mergeFrom(value).buildPartial();
-        } else {
-          visibility_ = value;
-        }
-        onChanged();
-      } else {
-        visibilityBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     * </pre>
-     *
-     * <code>.clarifai.api.Visibility visibility = 9;</code>
-     */
-    public Builder clearVisibility() {
-      if (visibilityBuilder_ == null) {
-        visibility_ = null;
-        onChanged();
-      } else {
-        visibility_ = null;
-        visibilityBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     * </pre>
-     *
-     * <code>.clarifai.api.Visibility visibility = 9;</code>
-     */
-    public com.clarifai.grpc.api.Visibility.Builder getVisibilityBuilder() {
-      
-      onChanged();
-      return getVisibilityFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     * </pre>
-     *
-     * <code>.clarifai.api.Visibility visibility = 9;</code>
-     */
-    public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
-      if (visibilityBuilder_ != null) {
-        return visibilityBuilder_.getMessageOrBuilder();
-      } else {
-        return visibility_ == null ?
-            com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
-      }
-    }
-    /**
-     * <pre>
-     * The visibility field represents whether this message is privately/publicly visible.
-     * To be visible to the public the App that contains it AND the User that contains the App must
-     * also be publicly visible.
-     * </pre>
-     *
-     * <code>.clarifai.api.Visibility visibility = 9;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> 
-        getVisibilityFieldBuilder() {
-      if (visibilityBuilder_ == null) {
-        visibilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder>(
-                getVisibility(),
-                getParentForChildren(),
-                isClean());
-        visibility_ = null;
-      }
-      return visibilityBuilder_;
     }
 
     private com.google.protobuf.Timestamp expiresAt_;

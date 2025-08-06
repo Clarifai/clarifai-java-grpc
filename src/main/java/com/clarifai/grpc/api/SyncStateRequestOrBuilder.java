@@ -142,4 +142,28 @@ public interface SyncStateRequestOrBuilder extends
    */
   com.clarifai.grpc.api.PipelineVersionRunOrBuilder getPipelineVersionRunsOrBuilder(
       int index);
+
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.Secret> 
+      getSecretsList();
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  com.clarifai.grpc.api.Secret getSecrets(int index);
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  int getSecretsCount();
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.SecretOrBuilder> 
+      getSecretsOrBuilderList();
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  com.clarifai.grpc.api.SecretOrBuilder getSecretsOrBuilder(
+      int index);
 }

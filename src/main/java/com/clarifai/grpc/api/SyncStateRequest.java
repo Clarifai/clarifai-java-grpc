@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     nodepools_ = java.util.Collections.emptyList();
     runners_ = java.util.Collections.emptyList();
     pipelineVersionRuns_ = java.util.Collections.emptyList();
+    secrets_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -101,6 +102,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.PipelineVersionRun.parser(), extensionRegistry));
             break;
           }
+          case 50: {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              secrets_ = new java.util.ArrayList<com.clarifai.grpc.api.Secret>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            secrets_.add(
+                input.readMessage(com.clarifai.grpc.api.Secret.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -129,6 +139,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         pipelineVersionRuns_ = java.util.Collections.unmodifiableList(pipelineVersionRuns_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        secrets_ = java.util.Collections.unmodifiableList(secrets_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -373,6 +386,46 @@ private static final long serialVersionUID = 0L;
     return pipelineVersionRuns_.get(index);
   }
 
+  public static final int SECRETS_FIELD_NUMBER = 6;
+  private java.util.List<com.clarifai.grpc.api.Secret> secrets_;
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.Secret> getSecretsList() {
+    return secrets_;
+  }
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.SecretOrBuilder> 
+      getSecretsOrBuilderList() {
+    return secrets_;
+  }
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  @java.lang.Override
+  public int getSecretsCount() {
+    return secrets_.size();
+  }
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Secret getSecrets(int index) {
+    return secrets_.get(index);
+  }
+  /**
+   * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.SecretOrBuilder getSecretsOrBuilder(
+      int index) {
+    return secrets_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -402,6 +455,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < pipelineVersionRuns_.size(); i++) {
       output.writeMessage(5, pipelineVersionRuns_.get(i));
     }
+    for (int i = 0; i < secrets_.size(); i++) {
+      output.writeMessage(6, secrets_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -430,6 +486,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, pipelineVersionRuns_.get(i));
     }
+    for (int i = 0; i < secrets_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, secrets_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -455,6 +515,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRunnersList())) return false;
     if (!getPipelineVersionRunsList()
         .equals(other.getPipelineVersionRunsList())) return false;
+    if (!getSecretsList()
+        .equals(other.getSecretsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -483,6 +545,10 @@ private static final long serialVersionUID = 0L;
     if (getPipelineVersionRunsCount() > 0) {
       hash = (37 * hash) + PIPELINE_VERSION_RUNS_FIELD_NUMBER;
       hash = (53 * hash) + getPipelineVersionRunsList().hashCode();
+    }
+    if (getSecretsCount() > 0) {
+      hash = (37 * hash) + SECRETS_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -621,6 +687,7 @@ private static final long serialVersionUID = 0L;
         getNodepoolsFieldBuilder();
         getRunnersFieldBuilder();
         getPipelineVersionRunsFieldBuilder();
+        getSecretsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -651,6 +718,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         pipelineVersionRunsBuilder_.clear();
+      }
+      if (secretsBuilder_ == null) {
+        secrets_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        secretsBuilder_.clear();
       }
       return this;
     }
@@ -715,6 +788,15 @@ private static final long serialVersionUID = 0L;
         result.pipelineVersionRuns_ = pipelineVersionRuns_;
       } else {
         result.pipelineVersionRuns_ = pipelineVersionRunsBuilder_.build();
+      }
+      if (secretsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          secrets_ = java.util.Collections.unmodifiableList(secrets_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.secrets_ = secrets_;
+      } else {
+        result.secrets_ = secretsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -869,6 +951,32 @@ private static final long serialVersionUID = 0L;
                  getPipelineVersionRunsFieldBuilder() : null;
           } else {
             pipelineVersionRunsBuilder_.addAllMessages(other.pipelineVersionRuns_);
+          }
+        }
+      }
+      if (secretsBuilder_ == null) {
+        if (!other.secrets_.isEmpty()) {
+          if (secrets_.isEmpty()) {
+            secrets_ = other.secrets_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureSecretsIsMutable();
+            secrets_.addAll(other.secrets_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.secrets_.isEmpty()) {
+          if (secretsBuilder_.isEmpty()) {
+            secretsBuilder_.dispose();
+            secretsBuilder_ = null;
+            secrets_ = other.secrets_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            secretsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getSecretsFieldBuilder() : null;
+          } else {
+            secretsBuilder_.addAllMessages(other.secrets_);
           }
         }
       }
@@ -2028,6 +2136,246 @@ private static final long serialVersionUID = 0L;
         pipelineVersionRuns_ = null;
       }
       return pipelineVersionRunsBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.Secret> secrets_ =
+      java.util.Collections.emptyList();
+    private void ensureSecretsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        secrets_ = new java.util.ArrayList<com.clarifai.grpc.api.Secret>(secrets_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Secret, com.clarifai.grpc.api.Secret.Builder, com.clarifai.grpc.api.SecretOrBuilder> secretsBuilder_;
+
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Secret> getSecretsList() {
+      if (secretsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(secrets_);
+      } else {
+        return secretsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public int getSecretsCount() {
+      if (secretsBuilder_ == null) {
+        return secrets_.size();
+      } else {
+        return secretsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public com.clarifai.grpc.api.Secret getSecrets(int index) {
+      if (secretsBuilder_ == null) {
+        return secrets_.get(index);
+      } else {
+        return secretsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public Builder setSecrets(
+        int index, com.clarifai.grpc.api.Secret value) {
+      if (secretsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecretsIsMutable();
+        secrets_.set(index, value);
+        onChanged();
+      } else {
+        secretsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public Builder setSecrets(
+        int index, com.clarifai.grpc.api.Secret.Builder builderForValue) {
+      if (secretsBuilder_ == null) {
+        ensureSecretsIsMutable();
+        secrets_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        secretsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public Builder addSecrets(com.clarifai.grpc.api.Secret value) {
+      if (secretsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecretsIsMutable();
+        secrets_.add(value);
+        onChanged();
+      } else {
+        secretsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public Builder addSecrets(
+        int index, com.clarifai.grpc.api.Secret value) {
+      if (secretsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecretsIsMutable();
+        secrets_.add(index, value);
+        onChanged();
+      } else {
+        secretsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public Builder addSecrets(
+        com.clarifai.grpc.api.Secret.Builder builderForValue) {
+      if (secretsBuilder_ == null) {
+        ensureSecretsIsMutable();
+        secrets_.add(builderForValue.build());
+        onChanged();
+      } else {
+        secretsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public Builder addSecrets(
+        int index, com.clarifai.grpc.api.Secret.Builder builderForValue) {
+      if (secretsBuilder_ == null) {
+        ensureSecretsIsMutable();
+        secrets_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        secretsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public Builder addAllSecrets(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Secret> values) {
+      if (secretsBuilder_ == null) {
+        ensureSecretsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, secrets_);
+        onChanged();
+      } else {
+        secretsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public Builder clearSecrets() {
+      if (secretsBuilder_ == null) {
+        secrets_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        secretsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public Builder removeSecrets(int index) {
+      if (secretsBuilder_ == null) {
+        ensureSecretsIsMutable();
+        secrets_.remove(index);
+        onChanged();
+      } else {
+        secretsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public com.clarifai.grpc.api.Secret.Builder getSecretsBuilder(
+        int index) {
+      return getSecretsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public com.clarifai.grpc.api.SecretOrBuilder getSecretsOrBuilder(
+        int index) {
+      if (secretsBuilder_ == null) {
+        return secrets_.get(index);  } else {
+        return secretsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.SecretOrBuilder> 
+         getSecretsOrBuilderList() {
+      if (secretsBuilder_ != null) {
+        return secretsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(secrets_);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public com.clarifai.grpc.api.Secret.Builder addSecretsBuilder() {
+      return getSecretsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Secret.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public com.clarifai.grpc.api.Secret.Builder addSecretsBuilder(
+        int index) {
+      return getSecretsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Secret.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.Secret secrets = 6;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Secret.Builder> 
+         getSecretsBuilderList() {
+      return getSecretsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Secret, com.clarifai.grpc.api.Secret.Builder, com.clarifai.grpc.api.SecretOrBuilder> 
+        getSecretsFieldBuilder() {
+      if (secretsBuilder_ == null) {
+        secretsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Secret, com.clarifai.grpc.api.Secret.Builder, com.clarifai.grpc.api.SecretOrBuilder>(
+                secrets_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        secrets_ = null;
+      }
+      return secretsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

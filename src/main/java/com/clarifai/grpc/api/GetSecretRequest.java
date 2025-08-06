@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetSecretRequest() {
-    secretId_ = "";
+    id_ = "";
   }
 
   @java.lang.Override
@@ -65,7 +65,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            secretId_ = s;
+            id_ = s;
             break;
           }
           default: {
@@ -128,26 +128,26 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int SECRET_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object secretId_;
+  public static final int ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object id_;
   /**
    * <pre>
    * The id of the secret to get
    * </pre>
    *
-   * <code>string secret_id = 2;</code>
-   * @return The secretId.
+   * <code>string id = 2;</code>
+   * @return The id.
    */
   @java.lang.Override
-  public java.lang.String getSecretId() {
-    java.lang.Object ref = secretId_;
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      secretId_ = s;
+      id_ = s;
       return s;
     }
   }
@@ -156,18 +156,18 @@ private static final long serialVersionUID = 0L;
    * The id of the secret to get
    * </pre>
    *
-   * <code>string secret_id = 2;</code>
-   * @return The bytes for secretId.
+   * <code>string id = 2;</code>
+   * @return The bytes for id.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getSecretIdBytes() {
-    java.lang.Object ref = secretId_;
+      getIdBytes() {
+    java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      secretId_ = b;
+      id_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -191,8 +191,8 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secretId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     unknownFields.writeTo(output);
   }
@@ -207,8 +207,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secretId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -230,8 +230,8 @@ private static final long serialVersionUID = 0L;
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getSecretId()
-        .equals(other.getSecretId())) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -247,8 +247,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    hash = (37 * hash) + SECRET_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getSecretId().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -388,7 +388,7 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      secretId_ = "";
+      id_ = "";
 
       return this;
     }
@@ -421,7 +421,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      result.secretId_ = secretId_;
+      result.id_ = id_;
       onBuilt();
       return result;
     }
@@ -473,8 +473,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (!other.getSecretId().isEmpty()) {
-        secretId_ = other.secretId_;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -625,22 +625,22 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private java.lang.Object secretId_ = "";
+    private java.lang.Object id_ = "";
     /**
      * <pre>
      * The id of the secret to get
      * </pre>
      *
-     * <code>string secret_id = 2;</code>
-     * @return The secretId.
+     * <code>string id = 2;</code>
+     * @return The id.
      */
-    public java.lang.String getSecretId() {
-      java.lang.Object ref = secretId_;
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        secretId_ = s;
+        id_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -651,17 +651,17 @@ private static final long serialVersionUID = 0L;
      * The id of the secret to get
      * </pre>
      *
-     * <code>string secret_id = 2;</code>
-     * @return The bytes for secretId.
+     * <code>string id = 2;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
-        getSecretIdBytes() {
-      java.lang.Object ref = secretId_;
+        getIdBytes() {
+      java.lang.Object ref = id_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        secretId_ = b;
+        id_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -672,17 +672,17 @@ private static final long serialVersionUID = 0L;
      * The id of the secret to get
      * </pre>
      *
-     * <code>string secret_id = 2;</code>
-     * @param value The secretId to set.
+     * <code>string id = 2;</code>
+     * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setSecretId(
+    public Builder setId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      secretId_ = value;
+      id_ = value;
       onChanged();
       return this;
     }
@@ -691,12 +691,12 @@ private static final long serialVersionUID = 0L;
      * The id of the secret to get
      * </pre>
      *
-     * <code>string secret_id = 2;</code>
+     * <code>string id = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearSecretId() {
+    public Builder clearId() {
       
-      secretId_ = getDefaultInstance().getSecretId();
+      id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
@@ -705,18 +705,18 @@ private static final long serialVersionUID = 0L;
      * The id of the secret to get
      * </pre>
      *
-     * <code>string secret_id = 2;</code>
-     * @param value The bytes for secretId to set.
+     * <code>string id = 2;</code>
+     * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
-    public Builder setSecretIdBytes(
+    public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      secretId_ = value;
+      id_ = value;
       onChanged();
       return this;
     }

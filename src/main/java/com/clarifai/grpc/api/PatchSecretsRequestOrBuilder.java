@@ -23,64 +23,36 @@ public interface PatchSecretsRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
   java.util.List<com.clarifai.grpc.api.Secret> 
-      getSecretsList();
+      getSecretList();
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
-  com.clarifai.grpc.api.Secret getSecrets(int index);
+  com.clarifai.grpc.api.Secret getSecret(int index);
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
-  int getSecretsCount();
+  int getSecretCount();
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.SecretOrBuilder> 
-      getSecretsOrBuilderList();
+      getSecretOrBuilderList();
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
-  com.clarifai.grpc.api.SecretOrBuilder getSecretsOrBuilder(
+  com.clarifai.grpc.api.SecretOrBuilder getSecretOrBuilder(
       int index);
 
   /**
-   * <pre>
-   * For now actions 'merge', 'overwrite', and 'remove' are supported
-   * </pre>
-   *
-   * <code>string action = 3;</code>
+   * <code>string action = 8;</code>
    * @return The action.
    */
   java.lang.String getAction();
   /**
-   * <pre>
-   * For now actions 'merge', 'overwrite', and 'remove' are supported
-   * </pre>
-   *
-   * <code>string action = 3;</code>
+   * <code>string action = 8;</code>
    * @return The bytes for action.
    */
   com.google.protobuf.ByteString

@@ -144,15 +144,27 @@ public interface ListLogEntriesRequestOrBuilder extends
    * Where the logs came from.
    * </pre>
    *
-   * <code>string compute_cluster_id = 9;</code>
-   * @return The computeClusterId.
+   * <code>string compute_cluster_user_id = 17;</code>
+   * @return The computeClusterUserId.
    */
-  java.lang.String getComputeClusterId();
+  java.lang.String getComputeClusterUserId();
   /**
    * <pre>
    * Where the logs came from.
    * </pre>
    *
+   * <code>string compute_cluster_user_id = 17;</code>
+   * @return The bytes for computeClusterUserId.
+   */
+  com.google.protobuf.ByteString
+      getComputeClusterUserIdBytes();
+
+  /**
+   * <code>string compute_cluster_id = 9;</code>
+   * @return The computeClusterId.
+   */
+  java.lang.String getComputeClusterId();
+  /**
    * <code>string compute_cluster_id = 9;</code>
    * @return The bytes for computeClusterId.
    */

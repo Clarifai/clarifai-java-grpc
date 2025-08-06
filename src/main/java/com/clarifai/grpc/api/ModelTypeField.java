@@ -379,6 +379,14 @@ private static final long serialVersionUID = 0L;
      * <code>CHECKPOINT_MODEL = 22;</code>
      */
     CHECKPOINT_MODEL(22),
+    /**
+     * <pre>
+     * For model secrets
+     * </pre>
+     *
+     * <code>ARRAY_OF_SECRETS = 23;</code>
+     */
+    ARRAY_OF_SECRETS(23),
     UNRECOGNIZED(-1),
     ;
 
@@ -544,6 +552,14 @@ private static final long serialVersionUID = 0L;
      * <code>CHECKPOINT_MODEL = 22;</code>
      */
     public static final int CHECKPOINT_MODEL_VALUE = 22;
+    /**
+     * <pre>
+     * For model secrets
+     * </pre>
+     *
+     * <code>ARRAY_OF_SECRETS = 23;</code>
+     */
+    public static final int ARRAY_OF_SECRETS_VALUE = 23;
 
 
     public final int getNumber() {
@@ -592,6 +608,7 @@ private static final long serialVersionUID = 0L;
         case 20: return DATASET_VERSION;
         case 21: return ENCRYPTED_STRING;
         case 22: return CHECKPOINT_MODEL;
+        case 23: return ARRAY_OF_SECRETS;
         default: return null;
       }
     }

@@ -9,7 +9,7 @@ public interface SecretOrBuilder extends
 
   /**
    * <pre>
-   * The ID of the secret.
+   * The name of the secret, corresponds to id in model_version.output_info.params.secrets
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -18,7 +18,7 @@ public interface SecretOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   * The ID of the secret.
+   * The name of the secret, corresponds to id in model_version.output_info.params.secrets
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -29,43 +29,23 @@ public interface SecretOrBuilder extends
 
   /**
    * <pre>
-   * The app the secret belongs to.
+   * The user the secret belongs to.
    * </pre>
    *
-   * <code>string app_id = 2;</code>
-   * @return The appId.
+   * <code>string user_id = 11;</code>
+   * @return The userId.
    */
-  java.lang.String getAppId();
+  java.lang.String getUserId();
   /**
    * <pre>
-   * The app the secret belongs to.
+   * The user the secret belongs to.
    * </pre>
    *
-   * <code>string app_id = 2;</code>
-   * @return The bytes for appId.
+   * <code>string user_id = 11;</code>
+   * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
-      getAppIdBytes();
-
-  /**
-   * <pre>
-   * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-   * </pre>
-   *
-   * <code>string name = 3;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <pre>
-   * The name of the secret, corresponds to secret_name in model_version.output_info.params.secrets
-   * </pre>
-   *
-   * <code>string name = 3;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
+      getUserIdBytes();
 
   /**
    * <pre>
@@ -170,39 +150,6 @@ public interface SecretOrBuilder extends
    * <code>.google.protobuf.Timestamp modified_at = 8;</code>
    */
   com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
-
-  /**
-   * <pre>
-   * The visibility field represents whether this message is privately/publicly visible.
-   * To be visible to the public the App that contains it AND the User that contains the App must
-   * also be publicly visible.
-   * </pre>
-   *
-   * <code>.clarifai.api.Visibility visibility = 9;</code>
-   * @return Whether the visibility field is set.
-   */
-  boolean hasVisibility();
-  /**
-   * <pre>
-   * The visibility field represents whether this message is privately/publicly visible.
-   * To be visible to the public the App that contains it AND the User that contains the App must
-   * also be publicly visible.
-   * </pre>
-   *
-   * <code>.clarifai.api.Visibility visibility = 9;</code>
-   * @return The visibility.
-   */
-  com.clarifai.grpc.api.Visibility getVisibility();
-  /**
-   * <pre>
-   * The visibility field represents whether this message is privately/publicly visible.
-   * To be visible to the public the App that contains it AND the User that contains the App must
-   * also be publicly visible.
-   * </pre>
-   *
-   * <code>.clarifai.api.Visibility visibility = 9;</code>
-   */
-  com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
 
   /**
    * <pre>

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PatchSecretsRequest() {
-    secrets_ = java.util.Collections.emptyList();
+    secret_ = java.util.Collections.emptyList();
     action_ = "";
   }
 
@@ -64,16 +64,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 42: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              secrets_ = new java.util.ArrayList<com.clarifai.grpc.api.Secret>();
+              secret_ = new java.util.ArrayList<com.clarifai.grpc.api.Secret>();
               mutable_bitField0_ |= 0x00000001;
             }
-            secrets_.add(
+            secret_.add(
                 input.readMessage(com.clarifai.grpc.api.Secret.parser(), extensionRegistry));
             break;
           }
-          case 26: {
+          case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
             action_ = s;
@@ -97,7 +97,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        secrets_ = java.util.Collections.unmodifiableList(secrets_);
+        secret_ = java.util.Collections.unmodifiableList(secret_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -142,74 +142,50 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int SECRETS_FIELD_NUMBER = 2;
-  private java.util.List<com.clarifai.grpc.api.Secret> secrets_;
+  public static final int SECRET_FIELD_NUMBER = 5;
+  private java.util.List<com.clarifai.grpc.api.Secret> secret_;
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
   @java.lang.Override
-  public java.util.List<com.clarifai.grpc.api.Secret> getSecretsList() {
-    return secrets_;
+  public java.util.List<com.clarifai.grpc.api.Secret> getSecretList() {
+    return secret_;
   }
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.SecretOrBuilder> 
-      getSecretsOrBuilderList() {
-    return secrets_;
+      getSecretOrBuilderList() {
+    return secret_;
   }
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
   @java.lang.Override
-  public int getSecretsCount() {
-    return secrets_.size();
+  public int getSecretCount() {
+    return secret_.size();
   }
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.Secret getSecrets(int index) {
-    return secrets_.get(index);
+  public com.clarifai.grpc.api.Secret getSecret(int index) {
+    return secret_.get(index);
   }
   /**
-   * <pre>
-   * The secrets to patch
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+   * <code>repeated .clarifai.api.Secret secret = 5;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.SecretOrBuilder getSecretsOrBuilder(
+  public com.clarifai.grpc.api.SecretOrBuilder getSecretOrBuilder(
       int index) {
-    return secrets_.get(index);
+    return secret_.get(index);
   }
 
-  public static final int ACTION_FIELD_NUMBER = 3;
+  public static final int ACTION_FIELD_NUMBER = 8;
   private volatile java.lang.Object action_;
   /**
-   * <pre>
-   * For now actions 'merge', 'overwrite', and 'remove' are supported
-   * </pre>
-   *
-   * <code>string action = 3;</code>
+   * <code>string action = 8;</code>
    * @return The action.
    */
   @java.lang.Override
@@ -226,11 +202,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * For now actions 'merge', 'overwrite', and 'remove' are supported
-   * </pre>
-   *
-   * <code>string action = 3;</code>
+   * <code>string action = 8;</code>
    * @return The bytes for action.
    */
   @java.lang.Override
@@ -265,11 +237,11 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    for (int i = 0; i < secrets_.size(); i++) {
-      output.writeMessage(2, secrets_.get(i));
+    for (int i = 0; i < secret_.size(); i++) {
+      output.writeMessage(5, secret_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, action_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, action_);
     }
     unknownFields.writeTo(output);
   }
@@ -284,12 +256,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    for (int i = 0; i < secrets_.size(); i++) {
+    for (int i = 0; i < secret_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, secrets_.get(i));
+        .computeMessageSize(5, secret_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, action_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, action_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -311,8 +283,8 @@ private static final long serialVersionUID = 0L;
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getSecretsList()
-        .equals(other.getSecretsList())) return false;
+    if (!getSecretList()
+        .equals(other.getSecretList())) return false;
     if (!getAction()
         .equals(other.getAction())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -330,9 +302,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    if (getSecretsCount() > 0) {
-      hash = (37 * hash) + SECRETS_FIELD_NUMBER;
-      hash = (53 * hash) + getSecretsList().hashCode();
+    if (getSecretCount() > 0) {
+      hash = (37 * hash) + SECRET_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretList().hashCode();
     }
     hash = (37 * hash) + ACTION_FIELD_NUMBER;
     hash = (53 * hash) + getAction().hashCode();
@@ -464,7 +436,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getSecretsFieldBuilder();
+        getSecretFieldBuilder();
       }
     }
     @java.lang.Override
@@ -476,11 +448,11 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      if (secretsBuilder_ == null) {
-        secrets_ = java.util.Collections.emptyList();
+      if (secretBuilder_ == null) {
+        secret_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        secretsBuilder_.clear();
+        secretBuilder_.clear();
       }
       action_ = "";
 
@@ -516,14 +488,14 @@ private static final long serialVersionUID = 0L;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      if (secretsBuilder_ == null) {
+      if (secretBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          secrets_ = java.util.Collections.unmodifiableList(secrets_);
+          secret_ = java.util.Collections.unmodifiableList(secret_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.secrets_ = secrets_;
+        result.secret_ = secret_;
       } else {
-        result.secrets_ = secretsBuilder_.build();
+        result.secret_ = secretBuilder_.build();
       }
       result.action_ = action_;
       onBuilt();
@@ -577,29 +549,29 @@ private static final long serialVersionUID = 0L;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (secretsBuilder_ == null) {
-        if (!other.secrets_.isEmpty()) {
-          if (secrets_.isEmpty()) {
-            secrets_ = other.secrets_;
+      if (secretBuilder_ == null) {
+        if (!other.secret_.isEmpty()) {
+          if (secret_.isEmpty()) {
+            secret_ = other.secret_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureSecretsIsMutable();
-            secrets_.addAll(other.secrets_);
+            ensureSecretIsMutable();
+            secret_.addAll(other.secret_);
           }
           onChanged();
         }
       } else {
-        if (!other.secrets_.isEmpty()) {
-          if (secretsBuilder_.isEmpty()) {
-            secretsBuilder_.dispose();
-            secretsBuilder_ = null;
-            secrets_ = other.secrets_;
+        if (!other.secret_.isEmpty()) {
+          if (secretBuilder_.isEmpty()) {
+            secretBuilder_.dispose();
+            secretBuilder_ = null;
+            secret_ = other.secret_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            secretsBuilder_ = 
+            secretBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getSecretsFieldBuilder() : null;
+                 getSecretFieldBuilder() : null;
           } else {
-            secretsBuilder_.addAllMessages(other.secrets_);
+            secretBuilder_.addAllMessages(other.secret_);
           }
         }
       }
@@ -756,325 +728,249 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private java.util.List<com.clarifai.grpc.api.Secret> secrets_ =
+    private java.util.List<com.clarifai.grpc.api.Secret> secret_ =
       java.util.Collections.emptyList();
-    private void ensureSecretsIsMutable() {
+    private void ensureSecretIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        secrets_ = new java.util.ArrayList<com.clarifai.grpc.api.Secret>(secrets_);
+        secret_ = new java.util.ArrayList<com.clarifai.grpc.api.Secret>(secret_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.Secret, com.clarifai.grpc.api.Secret.Builder, com.clarifai.grpc.api.SecretOrBuilder> secretsBuilder_;
+        com.clarifai.grpc.api.Secret, com.clarifai.grpc.api.Secret.Builder, com.clarifai.grpc.api.SecretOrBuilder> secretBuilder_;
 
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public java.util.List<com.clarifai.grpc.api.Secret> getSecretsList() {
-      if (secretsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(secrets_);
+    public java.util.List<com.clarifai.grpc.api.Secret> getSecretList() {
+      if (secretBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(secret_);
       } else {
-        return secretsBuilder_.getMessageList();
+        return secretBuilder_.getMessageList();
       }
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public int getSecretsCount() {
-      if (secretsBuilder_ == null) {
-        return secrets_.size();
+    public int getSecretCount() {
+      if (secretBuilder_ == null) {
+        return secret_.size();
       } else {
-        return secretsBuilder_.getCount();
+        return secretBuilder_.getCount();
       }
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public com.clarifai.grpc.api.Secret getSecrets(int index) {
-      if (secretsBuilder_ == null) {
-        return secrets_.get(index);
+    public com.clarifai.grpc.api.Secret getSecret(int index) {
+      if (secretBuilder_ == null) {
+        return secret_.get(index);
       } else {
-        return secretsBuilder_.getMessage(index);
+        return secretBuilder_.getMessage(index);
       }
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public Builder setSecrets(
+    public Builder setSecret(
         int index, com.clarifai.grpc.api.Secret value) {
-      if (secretsBuilder_ == null) {
+      if (secretBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureSecretsIsMutable();
-        secrets_.set(index, value);
+        ensureSecretIsMutable();
+        secret_.set(index, value);
         onChanged();
       } else {
-        secretsBuilder_.setMessage(index, value);
+        secretBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public Builder setSecrets(
+    public Builder setSecret(
         int index, com.clarifai.grpc.api.Secret.Builder builderForValue) {
-      if (secretsBuilder_ == null) {
-        ensureSecretsIsMutable();
-        secrets_.set(index, builderForValue.build());
+      if (secretBuilder_ == null) {
+        ensureSecretIsMutable();
+        secret_.set(index, builderForValue.build());
         onChanged();
       } else {
-        secretsBuilder_.setMessage(index, builderForValue.build());
+        secretBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public Builder addSecrets(com.clarifai.grpc.api.Secret value) {
-      if (secretsBuilder_ == null) {
+    public Builder addSecret(com.clarifai.grpc.api.Secret value) {
+      if (secretBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureSecretsIsMutable();
-        secrets_.add(value);
+        ensureSecretIsMutable();
+        secret_.add(value);
         onChanged();
       } else {
-        secretsBuilder_.addMessage(value);
+        secretBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public Builder addSecrets(
+    public Builder addSecret(
         int index, com.clarifai.grpc.api.Secret value) {
-      if (secretsBuilder_ == null) {
+      if (secretBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureSecretsIsMutable();
-        secrets_.add(index, value);
+        ensureSecretIsMutable();
+        secret_.add(index, value);
         onChanged();
       } else {
-        secretsBuilder_.addMessage(index, value);
+        secretBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public Builder addSecrets(
+    public Builder addSecret(
         com.clarifai.grpc.api.Secret.Builder builderForValue) {
-      if (secretsBuilder_ == null) {
-        ensureSecretsIsMutable();
-        secrets_.add(builderForValue.build());
+      if (secretBuilder_ == null) {
+        ensureSecretIsMutable();
+        secret_.add(builderForValue.build());
         onChanged();
       } else {
-        secretsBuilder_.addMessage(builderForValue.build());
+        secretBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public Builder addSecrets(
+    public Builder addSecret(
         int index, com.clarifai.grpc.api.Secret.Builder builderForValue) {
-      if (secretsBuilder_ == null) {
-        ensureSecretsIsMutable();
-        secrets_.add(index, builderForValue.build());
+      if (secretBuilder_ == null) {
+        ensureSecretIsMutable();
+        secret_.add(index, builderForValue.build());
         onChanged();
       } else {
-        secretsBuilder_.addMessage(index, builderForValue.build());
+        secretBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public Builder addAllSecrets(
+    public Builder addAllSecret(
         java.lang.Iterable<? extends com.clarifai.grpc.api.Secret> values) {
-      if (secretsBuilder_ == null) {
-        ensureSecretsIsMutable();
+      if (secretBuilder_ == null) {
+        ensureSecretIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, secrets_);
+            values, secret_);
         onChanged();
       } else {
-        secretsBuilder_.addAllMessages(values);
+        secretBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public Builder clearSecrets() {
-      if (secretsBuilder_ == null) {
-        secrets_ = java.util.Collections.emptyList();
+    public Builder clearSecret() {
+      if (secretBuilder_ == null) {
+        secret_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        secretsBuilder_.clear();
+        secretBuilder_.clear();
       }
       return this;
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public Builder removeSecrets(int index) {
-      if (secretsBuilder_ == null) {
-        ensureSecretsIsMutable();
-        secrets_.remove(index);
+    public Builder removeSecret(int index) {
+      if (secretBuilder_ == null) {
+        ensureSecretIsMutable();
+        secret_.remove(index);
         onChanged();
       } else {
-        secretsBuilder_.remove(index);
+        secretBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public com.clarifai.grpc.api.Secret.Builder getSecretsBuilder(
+    public com.clarifai.grpc.api.Secret.Builder getSecretBuilder(
         int index) {
-      return getSecretsFieldBuilder().getBuilder(index);
+      return getSecretFieldBuilder().getBuilder(index);
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public com.clarifai.grpc.api.SecretOrBuilder getSecretsOrBuilder(
+    public com.clarifai.grpc.api.SecretOrBuilder getSecretOrBuilder(
         int index) {
-      if (secretsBuilder_ == null) {
-        return secrets_.get(index);  } else {
-        return secretsBuilder_.getMessageOrBuilder(index);
+      if (secretBuilder_ == null) {
+        return secret_.get(index);  } else {
+        return secretBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.SecretOrBuilder> 
-         getSecretsOrBuilderList() {
-      if (secretsBuilder_ != null) {
-        return secretsBuilder_.getMessageOrBuilderList();
+         getSecretOrBuilderList() {
+      if (secretBuilder_ != null) {
+        return secretBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(secrets_);
+        return java.util.Collections.unmodifiableList(secret_);
       }
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public com.clarifai.grpc.api.Secret.Builder addSecretsBuilder() {
-      return getSecretsFieldBuilder().addBuilder(
+    public com.clarifai.grpc.api.Secret.Builder addSecretBuilder() {
+      return getSecretFieldBuilder().addBuilder(
           com.clarifai.grpc.api.Secret.getDefaultInstance());
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
-    public com.clarifai.grpc.api.Secret.Builder addSecretsBuilder(
+    public com.clarifai.grpc.api.Secret.Builder addSecretBuilder(
         int index) {
-      return getSecretsFieldBuilder().addBuilder(
+      return getSecretFieldBuilder().addBuilder(
           index, com.clarifai.grpc.api.Secret.getDefaultInstance());
     }
     /**
-     * <pre>
-     * The secrets to patch
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.Secret secrets = 2;</code>
+     * <code>repeated .clarifai.api.Secret secret = 5;</code>
      */
     public java.util.List<com.clarifai.grpc.api.Secret.Builder> 
-         getSecretsBuilderList() {
-      return getSecretsFieldBuilder().getBuilderList();
+         getSecretBuilderList() {
+      return getSecretFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.clarifai.grpc.api.Secret, com.clarifai.grpc.api.Secret.Builder, com.clarifai.grpc.api.SecretOrBuilder> 
-        getSecretsFieldBuilder() {
-      if (secretsBuilder_ == null) {
-        secretsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getSecretFieldBuilder() {
+      if (secretBuilder_ == null) {
+        secretBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.clarifai.grpc.api.Secret, com.clarifai.grpc.api.Secret.Builder, com.clarifai.grpc.api.SecretOrBuilder>(
-                secrets_,
+                secret_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        secrets_ = null;
+        secret_ = null;
       }
-      return secretsBuilder_;
+      return secretBuilder_;
     }
 
     private java.lang.Object action_ = "";
     /**
-     * <pre>
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
-     * </pre>
-     *
-     * <code>string action = 3;</code>
+     * <code>string action = 8;</code>
      * @return The action.
      */
     public java.lang.String getAction() {
@@ -1090,11 +986,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
-     * </pre>
-     *
-     * <code>string action = 3;</code>
+     * <code>string action = 8;</code>
      * @return The bytes for action.
      */
     public com.google.protobuf.ByteString
@@ -1111,11 +1003,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
-     * </pre>
-     *
-     * <code>string action = 3;</code>
+     * <code>string action = 8;</code>
      * @param value The action to set.
      * @return This builder for chaining.
      */
@@ -1130,11 +1018,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
-     * </pre>
-     *
-     * <code>string action = 3;</code>
+     * <code>string action = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearAction() {
@@ -1144,11 +1028,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
-     * </pre>
-     *
-     * <code>string action = 3;</code>
+     * <code>string action = 8;</code>
      * @param value The bytes for action to set.
      * @return This builder for chaining.
      */

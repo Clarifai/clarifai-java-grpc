@@ -513,7 +513,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string default_workflow_id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.App.default_workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=100
+   *     See proto/clarifai/api/resources.proto;l=133
    * @return The defaultWorkflowId.
    */
   @java.lang.Override
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string default_workflow_id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.App.default_workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=100
+   *     See proto/clarifai/api/resources.proto;l=133
    * @return The bytes for defaultWorkflowId.
    */
   @java.lang.Override
@@ -2125,7 +2125,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_workflow_id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.App.default_workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=100
+     *     See proto/clarifai/api/resources.proto;l=133
      * @return The defaultWorkflowId.
      */
     @java.lang.Deprecated public java.lang.String getDefaultWorkflowId() {
@@ -2147,7 +2147,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_workflow_id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.App.default_workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=100
+     *     See proto/clarifai/api/resources.proto;l=133
      * @return The bytes for defaultWorkflowId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2170,7 +2170,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_workflow_id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.App.default_workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=100
+     *     See proto/clarifai/api/resources.proto;l=133
      * @param value The defaultWorkflowId to set.
      * @return This builder for chaining.
      */
@@ -2191,7 +2191,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_workflow_id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.App.default_workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=100
+     *     See proto/clarifai/api/resources.proto;l=133
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDefaultWorkflowId() {
@@ -2207,7 +2207,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_workflow_id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.App.default_workflow_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=100
+     *     See proto/clarifai/api/resources.proto;l=133
      * @param value The bytes for defaultWorkflowId to set.
      * @return This builder for chaining.
      */
