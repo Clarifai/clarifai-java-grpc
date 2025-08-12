@@ -424,7 +424,7 @@ public interface ModelVersionOrBuilder extends
    *
    * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2085
+   *     See proto/clarifai/api/resources.proto;l=2092
    * @return Whether the importInfo field is set.
    */
   @java.lang.Deprecated boolean hasImportInfo();
@@ -436,7 +436,7 @@ public interface ModelVersionOrBuilder extends
    *
    * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2085
+   *     See proto/clarifai/api/resources.proto;l=2092
    * @return The importInfo.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.ImportInfo getImportInfo();

@@ -861,4 +861,31 @@ public interface ModelOrBuilder extends
    * @return The replicaCount.
    */
   int getReplicaCount();
+
+  /**
+   * <pre>
+   * OpenRouter Info for the model
+   * </pre>
+   *
+   * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+   * @return Whether the openRouterInfo field is set.
+   */
+  boolean hasOpenRouterInfo();
+  /**
+   * <pre>
+   * OpenRouter Info for the model
+   * </pre>
+   *
+   * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+   * @return The openRouterInfo.
+   */
+  com.clarifai.grpc.api.OpenRouterInfo getOpenRouterInfo();
+  /**
+   * <pre>
+   * OpenRouter Info for the model
+   * </pre>
+   *
+   * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+   */
+  com.clarifai.grpc.api.OpenRouterInfoOrBuilder getOpenRouterInfoOrBuilder();
 }

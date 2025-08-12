@@ -23,27 +23,27 @@ public interface DeletePipelinesRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
-   * <code>repeated string pipeline_ids = 2;</code>
-   * @return A list containing the pipelineIds.
+   * <code>repeated string ids = 2;</code>
+   * @return A list containing the ids.
    */
   java.util.List<java.lang.String>
-      getPipelineIdsList();
+      getIdsList();
   /**
-   * <code>repeated string pipeline_ids = 2;</code>
-   * @return The count of pipelineIds.
+   * <code>repeated string ids = 2;</code>
+   * @return The count of ids.
    */
-  int getPipelineIdsCount();
+  int getIdsCount();
   /**
-   * <code>repeated string pipeline_ids = 2;</code>
+   * <code>repeated string ids = 2;</code>
    * @param index The index of the element to return.
-   * @return The pipelineIds at the given index.
+   * @return The ids at the given index.
    */
-  java.lang.String getPipelineIds(int index);
+  java.lang.String getIds(int index);
   /**
-   * <code>repeated string pipeline_ids = 2;</code>
+   * <code>repeated string ids = 2;</code>
    * @param index The index of the value to return.
-   * @return The bytes of the pipelineIds at the given index.
+   * @return The bytes of the ids at the given index.
    */
   com.google.protobuf.ByteString
-      getPipelineIdsBytes(int index);
+      getIdsBytes(int index);
 }

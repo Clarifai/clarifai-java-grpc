@@ -387,6 +387,19 @@ private static final long serialVersionUID = 0L;
             replicaCount_ = input.readUInt32();
             break;
           }
+          case 354: {
+            com.clarifai.grpc.api.OpenRouterInfo.Builder subBuilder = null;
+            if (openRouterInfo_ != null) {
+              subBuilder = openRouterInfo_.toBuilder();
+            }
+            openRouterInfo_ = input.readMessage(com.clarifai.grpc.api.OpenRouterInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(openRouterInfo_);
+              openRouterInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -2029,6 +2042,44 @@ private static final long serialVersionUID = 0L;
     return replicaCount_;
   }
 
+  public static final int OPEN_ROUTER_INFO_FIELD_NUMBER = 44;
+  private com.clarifai.grpc.api.OpenRouterInfo openRouterInfo_;
+  /**
+   * <pre>
+   * OpenRouter Info for the model
+   * </pre>
+   *
+   * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+   * @return Whether the openRouterInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasOpenRouterInfo() {
+    return openRouterInfo_ != null;
+  }
+  /**
+   * <pre>
+   * OpenRouter Info for the model
+   * </pre>
+   *
+   * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+   * @return The openRouterInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OpenRouterInfo getOpenRouterInfo() {
+    return openRouterInfo_ == null ? com.clarifai.grpc.api.OpenRouterInfo.getDefaultInstance() : openRouterInfo_;
+  }
+  /**
+   * <pre>
+   * OpenRouter Info for the model
+   * </pre>
+   *
+   * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OpenRouterInfoOrBuilder getOpenRouterInfoOrBuilder() {
+    return getOpenRouterInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2147,6 +2198,9 @@ private static final long serialVersionUID = 0L;
     }
     if (replicaCount_ != 0) {
       output.writeUInt32(43, replicaCount_);
+    }
+    if (openRouterInfo_ != null) {
+      output.writeMessage(44, getOpenRouterInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -2303,6 +2357,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(43, replicaCount_);
     }
+    if (openRouterInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(44, getOpenRouterInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2420,6 +2478,11 @@ private static final long serialVersionUID = 0L;
     if (deployRestriction_ != other.deployRestriction_) return false;
     if (getReplicaCount()
         != other.getReplicaCount()) return false;
+    if (hasOpenRouterInfo() != other.hasOpenRouterInfo()) return false;
+    if (hasOpenRouterInfo()) {
+      if (!getOpenRouterInfo()
+          .equals(other.getOpenRouterInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2536,6 +2599,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + deployRestriction_;
     hash = (37 * hash) + REPLICA_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getReplicaCount();
+    if (hasOpenRouterInfo()) {
+      hash = (37 * hash) + OPEN_ROUTER_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getOpenRouterInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2806,6 +2873,12 @@ private static final long serialVersionUID = 0L;
 
       replicaCount_ = 0;
 
+      if (openRouterInfoBuilder_ == null) {
+        openRouterInfo_ = null;
+      } else {
+        openRouterInfo_ = null;
+        openRouterInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -2940,6 +3013,11 @@ private static final long serialVersionUID = 0L;
       }
       result.deployRestriction_ = deployRestriction_;
       result.replicaCount_ = replicaCount_;
+      if (openRouterInfoBuilder_ == null) {
+        result.openRouterInfo_ = openRouterInfo_;
+      } else {
+        result.openRouterInfo_ = openRouterInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -3153,6 +3231,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getReplicaCount() != 0) {
         setReplicaCount(other.getReplicaCount());
+      }
+      if (other.hasOpenRouterInfo()) {
+        mergeOpenRouterInfo(other.getOpenRouterInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7393,6 +7474,161 @@ private static final long serialVersionUID = 0L;
       replicaCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.OpenRouterInfo openRouterInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OpenRouterInfo, com.clarifai.grpc.api.OpenRouterInfo.Builder, com.clarifai.grpc.api.OpenRouterInfoOrBuilder> openRouterInfoBuilder_;
+    /**
+     * <pre>
+     * OpenRouter Info for the model
+     * </pre>
+     *
+     * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     * @return Whether the openRouterInfo field is set.
+     */
+    public boolean hasOpenRouterInfo() {
+      return openRouterInfoBuilder_ != null || openRouterInfo_ != null;
+    }
+    /**
+     * <pre>
+     * OpenRouter Info for the model
+     * </pre>
+     *
+     * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     * @return The openRouterInfo.
+     */
+    public com.clarifai.grpc.api.OpenRouterInfo getOpenRouterInfo() {
+      if (openRouterInfoBuilder_ == null) {
+        return openRouterInfo_ == null ? com.clarifai.grpc.api.OpenRouterInfo.getDefaultInstance() : openRouterInfo_;
+      } else {
+        return openRouterInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * OpenRouter Info for the model
+     * </pre>
+     *
+     * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     */
+    public Builder setOpenRouterInfo(com.clarifai.grpc.api.OpenRouterInfo value) {
+      if (openRouterInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        openRouterInfo_ = value;
+        onChanged();
+      } else {
+        openRouterInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * OpenRouter Info for the model
+     * </pre>
+     *
+     * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     */
+    public Builder setOpenRouterInfo(
+        com.clarifai.grpc.api.OpenRouterInfo.Builder builderForValue) {
+      if (openRouterInfoBuilder_ == null) {
+        openRouterInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        openRouterInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * OpenRouter Info for the model
+     * </pre>
+     *
+     * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     */
+    public Builder mergeOpenRouterInfo(com.clarifai.grpc.api.OpenRouterInfo value) {
+      if (openRouterInfoBuilder_ == null) {
+        if (openRouterInfo_ != null) {
+          openRouterInfo_ =
+            com.clarifai.grpc.api.OpenRouterInfo.newBuilder(openRouterInfo_).mergeFrom(value).buildPartial();
+        } else {
+          openRouterInfo_ = value;
+        }
+        onChanged();
+      } else {
+        openRouterInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * OpenRouter Info for the model
+     * </pre>
+     *
+     * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     */
+    public Builder clearOpenRouterInfo() {
+      if (openRouterInfoBuilder_ == null) {
+        openRouterInfo_ = null;
+        onChanged();
+      } else {
+        openRouterInfo_ = null;
+        openRouterInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * OpenRouter Info for the model
+     * </pre>
+     *
+     * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     */
+    public com.clarifai.grpc.api.OpenRouterInfo.Builder getOpenRouterInfoBuilder() {
+      
+      onChanged();
+      return getOpenRouterInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * OpenRouter Info for the model
+     * </pre>
+     *
+     * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     */
+    public com.clarifai.grpc.api.OpenRouterInfoOrBuilder getOpenRouterInfoOrBuilder() {
+      if (openRouterInfoBuilder_ != null) {
+        return openRouterInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return openRouterInfo_ == null ?
+            com.clarifai.grpc.api.OpenRouterInfo.getDefaultInstance() : openRouterInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * OpenRouter Info for the model
+     * </pre>
+     *
+     * <code>.clarifai.api.OpenRouterInfo open_router_info = 44;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OpenRouterInfo, com.clarifai.grpc.api.OpenRouterInfo.Builder, com.clarifai.grpc.api.OpenRouterInfoOrBuilder> 
+        getOpenRouterInfoFieldBuilder() {
+      if (openRouterInfoBuilder_ == null) {
+        openRouterInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.OpenRouterInfo, com.clarifai.grpc.api.OpenRouterInfo.Builder, com.clarifai.grpc.api.OpenRouterInfoOrBuilder>(
+                getOpenRouterInfo(),
+                getParentForChildren(),
+                isClean());
+        openRouterInfo_ = null;
+      }
+      return openRouterInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

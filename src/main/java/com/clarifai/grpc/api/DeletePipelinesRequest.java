@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeletePipelinesRequest() {
-    pipelineIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -66,10 +66,10 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              pipelineIds_ = new com.google.protobuf.LazyStringArrayList();
+              ids_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
             }
-            pipelineIds_.add(s);
+            ids_.add(s);
             break;
           }
           default: {
@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        pipelineIds_ = pipelineIds_.getUnmodifiableView();
+        ids_ = ids_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -135,39 +135,39 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int PIPELINE_IDS_FIELD_NUMBER = 2;
-  private com.google.protobuf.LazyStringList pipelineIds_;
+  public static final int IDS_FIELD_NUMBER = 2;
+  private com.google.protobuf.LazyStringList ids_;
   /**
-   * <code>repeated string pipeline_ids = 2;</code>
-   * @return A list containing the pipelineIds.
+   * <code>repeated string ids = 2;</code>
+   * @return A list containing the ids.
    */
   public com.google.protobuf.ProtocolStringList
-      getPipelineIdsList() {
-    return pipelineIds_;
+      getIdsList() {
+    return ids_;
   }
   /**
-   * <code>repeated string pipeline_ids = 2;</code>
-   * @return The count of pipelineIds.
+   * <code>repeated string ids = 2;</code>
+   * @return The count of ids.
    */
-  public int getPipelineIdsCount() {
-    return pipelineIds_.size();
+  public int getIdsCount() {
+    return ids_.size();
   }
   /**
-   * <code>repeated string pipeline_ids = 2;</code>
+   * <code>repeated string ids = 2;</code>
    * @param index The index of the element to return.
-   * @return The pipelineIds at the given index.
+   * @return The ids at the given index.
    */
-  public java.lang.String getPipelineIds(int index) {
-    return pipelineIds_.get(index);
+  public java.lang.String getIds(int index) {
+    return ids_.get(index);
   }
   /**
-   * <code>repeated string pipeline_ids = 2;</code>
+   * <code>repeated string ids = 2;</code>
    * @param index The index of the value to return.
-   * @return The bytes of the pipelineIds at the given index.
+   * @return The bytes of the ids at the given index.
    */
   public com.google.protobuf.ByteString
-      getPipelineIdsBytes(int index) {
-    return pipelineIds_.getByteString(index);
+      getIdsBytes(int index) {
+    return ids_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -187,8 +187,8 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    for (int i = 0; i < pipelineIds_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pipelineIds_.getRaw(i));
+    for (int i = 0; i < ids_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ids_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -205,11 +205,11 @@ private static final long serialVersionUID = 0L;
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < pipelineIds_.size(); i++) {
-        dataSize += computeStringSizeNoTag(pipelineIds_.getRaw(i));
+      for (int i = 0; i < ids_.size(); i++) {
+        dataSize += computeStringSizeNoTag(ids_.getRaw(i));
       }
       size += dataSize;
-      size += 1 * getPipelineIdsList().size();
+      size += 1 * getIdsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,8 +231,8 @@ private static final long serialVersionUID = 0L;
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getPipelineIdsList()
-        .equals(other.getPipelineIdsList())) return false;
+    if (!getIdsList()
+        .equals(other.getIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -248,9 +248,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    if (getPipelineIdsCount() > 0) {
-      hash = (37 * hash) + PIPELINE_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getPipelineIdsList().hashCode();
+    if (getIdsCount() > 0) {
+      hash = (37 * hash) + IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getIdsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -391,7 +391,7 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      pipelineIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -426,10 +426,10 @@ private static final long serialVersionUID = 0L;
         result.userAppId_ = userAppIdBuilder_.build();
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        pipelineIds_ = pipelineIds_.getUnmodifiableView();
+        ids_ = ids_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
-      result.pipelineIds_ = pipelineIds_;
+      result.ids_ = ids_;
       onBuilt();
       return result;
     }
@@ -481,13 +481,13 @@ private static final long serialVersionUID = 0L;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (!other.pipelineIds_.isEmpty()) {
-        if (pipelineIds_.isEmpty()) {
-          pipelineIds_ = other.pipelineIds_;
+      if (!other.ids_.isEmpty()) {
+        if (ids_.isEmpty()) {
+          ids_ = other.ids_;
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          ensurePipelineIdsIsMutable();
-          pipelineIds_.addAll(other.pipelineIds_);
+          ensureIdsIsMutable();
+          ids_.addAll(other.ids_);
         }
         onChanged();
       }
@@ -640,112 +640,112 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList pipelineIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensurePipelineIdsIsMutable() {
+    private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureIdsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        pipelineIds_ = new com.google.protobuf.LazyStringArrayList(pipelineIds_);
+        ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
         bitField0_ |= 0x00000001;
        }
     }
     /**
-     * <code>repeated string pipeline_ids = 2;</code>
-     * @return A list containing the pipelineIds.
+     * <code>repeated string ids = 2;</code>
+     * @return A list containing the ids.
      */
     public com.google.protobuf.ProtocolStringList
-        getPipelineIdsList() {
-      return pipelineIds_.getUnmodifiableView();
+        getIdsList() {
+      return ids_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string pipeline_ids = 2;</code>
-     * @return The count of pipelineIds.
+     * <code>repeated string ids = 2;</code>
+     * @return The count of ids.
      */
-    public int getPipelineIdsCount() {
-      return pipelineIds_.size();
+    public int getIdsCount() {
+      return ids_.size();
     }
     /**
-     * <code>repeated string pipeline_ids = 2;</code>
+     * <code>repeated string ids = 2;</code>
      * @param index The index of the element to return.
-     * @return The pipelineIds at the given index.
+     * @return The ids at the given index.
      */
-    public java.lang.String getPipelineIds(int index) {
-      return pipelineIds_.get(index);
+    public java.lang.String getIds(int index) {
+      return ids_.get(index);
     }
     /**
-     * <code>repeated string pipeline_ids = 2;</code>
+     * <code>repeated string ids = 2;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the pipelineIds at the given index.
+     * @return The bytes of the ids at the given index.
      */
     public com.google.protobuf.ByteString
-        getPipelineIdsBytes(int index) {
-      return pipelineIds_.getByteString(index);
+        getIdsBytes(int index) {
+      return ids_.getByteString(index);
     }
     /**
-     * <code>repeated string pipeline_ids = 2;</code>
+     * <code>repeated string ids = 2;</code>
      * @param index The index to set the value at.
-     * @param value The pipelineIds to set.
+     * @param value The ids to set.
      * @return This builder for chaining.
      */
-    public Builder setPipelineIds(
+    public Builder setIds(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensurePipelineIdsIsMutable();
-      pipelineIds_.set(index, value);
+  ensureIdsIsMutable();
+      ids_.set(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string pipeline_ids = 2;</code>
-     * @param value The pipelineIds to add.
+     * <code>repeated string ids = 2;</code>
+     * @param value The ids to add.
      * @return This builder for chaining.
      */
-    public Builder addPipelineIds(
+    public Builder addIds(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensurePipelineIdsIsMutable();
-      pipelineIds_.add(value);
+  ensureIdsIsMutable();
+      ids_.add(value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string pipeline_ids = 2;</code>
-     * @param values The pipelineIds to add.
+     * <code>repeated string ids = 2;</code>
+     * @param values The ids to add.
      * @return This builder for chaining.
      */
-    public Builder addAllPipelineIds(
+    public Builder addAllIds(
         java.lang.Iterable<java.lang.String> values) {
-      ensurePipelineIdsIsMutable();
+      ensureIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, pipelineIds_);
+          values, ids_);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string pipeline_ids = 2;</code>
+     * <code>repeated string ids = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPipelineIds() {
-      pipelineIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    public Builder clearIds() {
+      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string pipeline_ids = 2;</code>
-     * @param value The bytes of the pipelineIds to add.
+     * <code>repeated string ids = 2;</code>
+     * @param value The bytes of the ids to add.
      * @return This builder for chaining.
      */
-    public Builder addPipelineIdsBytes(
+    public Builder addIdsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      ensurePipelineIdsIsMutable();
-      pipelineIds_.add(value);
+      ensureIdsIsMutable();
+      ids_.add(value);
       onChanged();
       return this;
     }
