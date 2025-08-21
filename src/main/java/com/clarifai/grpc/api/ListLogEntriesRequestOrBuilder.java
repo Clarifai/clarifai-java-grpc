@@ -31,7 +31,7 @@ public interface ListLogEntriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * The type of log entry. Examples: model, agent, build, training.
+   * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
    * </pre>
    *
    * <code>string log_type = 3;</code>
@@ -40,7 +40,7 @@ public interface ListLogEntriesRequestOrBuilder extends
   java.lang.String getLogType();
   /**
    * <pre>
-   * The type of log entry. Examples: model, agent, build, training.
+   * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
    * </pre>
    *
    * <code>string log_type = 3;</code>

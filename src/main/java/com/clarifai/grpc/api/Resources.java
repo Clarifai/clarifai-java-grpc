@@ -1355,15 +1355,17 @@ public final class Resources {
       "nsensus_info\030\022 \001(\0132\027.google.protobuf.Str" +
       "uct\022\017\n\007task_id\030\023 \001(\t\022$\n\006worker\030\025 \001(\0132\024.c" +
       "larifai.api.WorkerJ\004\010\004\020\005J\004\010\005\020\006J\004\010\006\020\007J\004\010\013" +
-      "\020\014J\004\010\014\020\rJ\004\010\024\020\025\"\302\002\n\017AnnotationTrack\022\n\n\002id" +
-      "\030\001 \001(\t\022\016\n\006app_id\030\002 \001(\t\022\020\n\010input_id\030\003 \001(\t" +
-      "\022&\n\007concept\030\004 \001(\0132\025.clarifai.api.Concept" +
-      "\022\017\n\007user_id\030\005 \001(\t\022+\n\006status\030\006 \001(\0132\033.clar" +
-      "ifai.api.status.Status\022\023\n\013start_frame\030\007 " +
-      "\001(\r\022\021\n\tend_frame\030\010 \001(\r\022.\n\ncreated_at\030\t \001" +
-      "(\0132\032.google.protobuf.Timestamp\022/\n\013modifi" +
-      "ed_at\030\n \001(\0132\032.google.protobuf.Timestamp\022" +
-      "\022\n\nframe_rate\030\013 \001(\r\"\210\001\n\006Worker\022\"\n\004user\030\001" +
+      "\020\014J\004\010\014\020\rJ\004\010\024\020\025\"\222\003\n\017AnnotationTrack\022\n\n\002id" +
+      "\030\001 \001(\t\022\020\n\010input_id\030\003 \001(\t\022&\n\007concept\030\004 \001(" +
+      "\0132\025.clarifai.api.Concept\022+\n\006status\030\006 \001(\013" +
+      "2\033.clarifai.api.status.Status\022\026\n\016start_f" +
+      "rame_nr\030\020 \001(\r\022\024\n\014end_frame_nr\030\021 \001(\r\022\026\n\016s" +
+      "tart_frame_ms\030\016 \001(\r\022\024\n\014end_frame_ms\030\017 \001(" +
+      "\r\022.\n\ncreated_at\030\t \001(\0132\032.google.protobuf." +
+      "Timestamp\022/\n\013modified_at\030\n \001(\0132\032.google." +
+      "protobuf.Timestamp\022\026\n\016sample_rate_ms\030\014 \001" +
+      "(\r\022\031\n\021sample_rate_frame\030\r \001(\rJ\004\010\002\020\003J\004\010\005\020" +
+      "\006J\004\010\007\020\010J\004\010\010\020\tJ\004\010\013\020\014\"\210\001\n\006Worker\022\"\n\004user\030\001" +
       " \001(\0132\022.clarifai.api.UserH\000\022$\n\005model\030\002 \001(" +
       "\0132\023.clarifai.api.ModelH\000\022*\n\010workflow\030\003 \001" +
       "(\0132\026.clarifai.api.WorkflowH\000B\010\n\006worker\"\220" +
@@ -1730,9 +1732,9 @@ public final class Resources {
       "\022\024\n\014input_fields\030\005 \003(\t\022\025\n\routput_fields\030" +
       "\006 \003(\t\022\021\n\ttrainable\030\010 \001(\010\022\021\n\tcreatable\030\t " +
       "\001(\010\022\025\n\rinternal_only\030\n \001(\010\0227\n\021model_type" +
-      "_fields\030\013 \003(\0132\034.clarifai.api.ModelTypeFi" +
+      "_fields\030\013 \003(\0132\034.clarifai.api.ModelTypeFi",
       "eld\022\"\n\032requires_sequential_frames\030\014 \001(\010\022" +
-      ";\n\025expected_input_layers\030\020 \003(\0132\034.clarifa",
+      ";\n\025expected_input_layers\030\020 \003(\0132\034.clarifa" +
       "i.api.ModelLayerInfo\022<\n\026expected_output_" +
       "layers\030\021 \003(\0132\034.clarifai.api.ModelLayerIn" +
       "fo\0225\n\017evaluation_type\030\022 \001(\0162\034.clarifai.a" +
@@ -2130,9 +2132,9 @@ public final class Resources {
       "Type\022\027\n\023WORKER_TYPE_NOT_SET\020\000\022\020\n\014WORKER_" +
       "HUMAN\020\001\022\017\n\013WORKER_AUTO\020\002B\017\n\rstrategy_inf" +
       "oJ\004\010\005\020\006J\004\010\006\020\007\"\251\002\n!TaskWorkerPartitionedS" +
-      "trategyInfo\022[\n\004type\030\001 \001(\0162M.clarifai.api" +
+      "trategyInfo\022[\n\004type\030\001 \001(\0162M.clarifai.api",
       ".TaskWorkerPartitionedStrategyInfo.TaskW" +
-      "orkerPartitionedStrategy\022\031\n\021workers_per_",
+      "orkerPartitionedStrategy\022\031\n\021workers_per_" +
       "input\030\002 \001(\005\022(\n\007weights\030\003 \001(\0132\027.google.pr" +
       "otobuf.Struct\"b\n\035TaskWorkerPartitionedSt" +
       "rategy\022\'\n#PARTITIONED_WORKER_STRATEGY_NO" +
@@ -2530,9 +2532,9 @@ public final class Resources {
       "e_s\030\007 \001(\005\022-\n\ttimestamp\030\010 \001(\0132\032.google.pr" +
       "otobuf.Timestamp\022\022\n\nevent_type\030\t \001(\t\022-\n\013" +
       "gpu_metrics\030\n \003(\0132\030.clarifai.api.GpuMetr" +
-      "ics\022\020\n\010hostname\030\013 \001(\t\022-\n\013cpu_metrics\030\014 \003" +
+      "ics\022\020\n\010hostname\030\013 \001(\t\022-\n\013cpu_metrics\030\014 \003",
       "(\0132\030.clarifai.api.CpuMetrics\"\207\001\n\nGpuMetr" +
-      "ics\022\014\n\004uuid\030\001 \001(\t\022\022\n\nmodel_name\030\002 \001(\t\022\027\n",
+      "ics\022\014\n\004uuid\030\001 \001(\t\022\022\n\nmodel_name\030\002 \001(\t\022\027\n" +
       "\017utilization_pct\030\003 \001(\002\022\036\n\026tensor_utiliza" +
       "tion_pct\030\004 \001(\002\022\036\n\026memory_utilization_pct" +
       "\030\005 \001(\002\"\242\001\n\nCpuMetrics\022-\n\ttimestamp\030\001 \001(\013" +
@@ -2849,7 +2851,7 @@ public final class Resources {
     internal_static_clarifai_api_AnnotationTrack_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_AnnotationTrack_descriptor,
-        new java.lang.String[] { "Id", "AppId", "InputId", "Concept", "UserId", "Status", "StartFrame", "EndFrame", "CreatedAt", "ModifiedAt", "FrameRate", });
+        new java.lang.String[] { "Id", "InputId", "Concept", "Status", "StartFrameNr", "EndFrameNr", "StartFrameMs", "EndFrameMs", "CreatedAt", "ModifiedAt", "SampleRateMs", "SampleRateFrame", });
     internal_static_clarifai_api_Worker_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_clarifai_api_Worker_fieldAccessorTable = new

@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object logType_;
   /**
    * <pre>
-   * The type of log entry. Examples: model, agent, build, training.
+   * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
    * </pre>
    *
    * <code>string log_type = 3;</code>
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The type of log entry. Examples: model, agent, build, training.
+   * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
    * </pre>
    *
    * <code>string log_type = 3;</code>
@@ -1486,7 +1486,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object logType_ = "";
     /**
      * <pre>
-     * The type of log entry. Examples: model, agent, build, training.
+     * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
      * </pre>
      *
      * <code>string log_type = 3;</code>
@@ -1506,7 +1506,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The type of log entry. Examples: model, agent, build, training.
+     * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
      * </pre>
      *
      * <code>string log_type = 3;</code>
@@ -1527,7 +1527,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The type of log entry. Examples: model, agent, build, training.
+     * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
      * </pre>
      *
      * <code>string log_type = 3;</code>
@@ -1546,7 +1546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The type of log entry. Examples: model, agent, build, training.
+     * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
      * </pre>
      *
      * <code>string log_type = 3;</code>
@@ -1560,7 +1560,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The type of log entry. Examples: model, agent, build, training.
+     * The type of log entry. Choose from [agent, builder, builder.events, runner, runner.events, pipeline.version.run]
      * </pre>
      *
      * <code>string log_type = 3;</code>

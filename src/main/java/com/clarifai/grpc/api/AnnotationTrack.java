@@ -21,9 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private AnnotationTrack() {
     id_ = "";
-    appId_ = "";
     inputId_ = "";
-    userId_ = "";
   }
 
   @java.lang.Override
@@ -62,12 +60,6 @@ private static final long serialVersionUID = 0L;
             id_ = s;
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            appId_ = s;
-            break;
-          }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -87,12 +79,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            userId_ = s;
-            break;
-          }
           case 50: {
             com.clarifai.grpc.api.status.Status.Builder subBuilder = null;
             if (status_ != null) {
@@ -104,16 +90,6 @@ private static final long serialVersionUID = 0L;
               status_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 56: {
-
-            startFrame_ = input.readUInt32();
-            break;
-          }
-          case 64: {
-
-            endFrame_ = input.readUInt32();
             break;
           }
           case 74: {
@@ -142,9 +118,34 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 88: {
+          case 96: {
 
-            frameRate_ = input.readUInt32();
+            sampleRateMs_ = input.readUInt32();
+            break;
+          }
+          case 104: {
+
+            sampleRateFrame_ = input.readUInt32();
+            break;
+          }
+          case 112: {
+
+            startFrameMs_ = input.readUInt32();
+            break;
+          }
+          case 120: {
+
+            endFrameMs_ = input.readUInt32();
+            break;
+          }
+          case 128: {
+
+            startFrameNr_ = input.readUInt32();
+            break;
+          }
+          case 136: {
+
+            endFrameNr_ = input.readUInt32();
             break;
           }
           default: {
@@ -221,52 +222,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int APP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object appId_;
-  /**
-   * <pre>
-   * ID of the application this annotation track is tied to
-   * </pre>
-   *
-   * <code>string app_id = 2;</code>
-   * @return The appId.
-   */
-  @java.lang.Override
-  public java.lang.String getAppId() {
-    java.lang.Object ref = appId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      appId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * ID of the application this annotation track is tied to
-   * </pre>
-   *
-   * <code>string app_id = 2;</code>
-   * @return The bytes for appId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getAppIdBytes() {
-    java.lang.Object ref = appId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      appId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -357,52 +312,6 @@ private static final long serialVersionUID = 0L;
     return getConcept();
   }
 
-  public static final int USER_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object userId_;
-  /**
-   * <pre>
-   * The user the track belongs to (app owner)
-   * </pre>
-   *
-   * <code>string user_id = 5;</code>
-   * @return The userId.
-   */
-  @java.lang.Override
-  public java.lang.String getUserId() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      userId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The user the track belongs to (app owner)
-   * </pre>
-   *
-   * <code>string user_id = 5;</code>
-   * @return The bytes for userId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUserIdBytes() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      userId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int STATUS_FIELD_NUMBER = 6;
   private com.clarifai.grpc.api.status.Status status_;
   /**
@@ -441,34 +350,64 @@ private static final long serialVersionUID = 0L;
     return getStatus();
   }
 
-  public static final int START_FRAME_FIELD_NUMBER = 7;
-  private int startFrame_;
+  public static final int START_FRAME_NR_FIELD_NUMBER = 16;
+  private int startFrameNr_;
   /**
    * <pre>
-   * Start frame of the annotation track
+   * Start frame number (in original video) of the annotation track, inclusive.
    * </pre>
    *
-   * <code>uint32 start_frame = 7;</code>
-   * @return The startFrame.
+   * <code>uint32 start_frame_nr = 16;</code>
+   * @return The startFrameNr.
    */
   @java.lang.Override
-  public int getStartFrame() {
-    return startFrame_;
+  public int getStartFrameNr() {
+    return startFrameNr_;
   }
 
-  public static final int END_FRAME_FIELD_NUMBER = 8;
-  private int endFrame_;
+  public static final int END_FRAME_NR_FIELD_NUMBER = 17;
+  private int endFrameNr_;
   /**
    * <pre>
-   * End frame of the annotation track
+   * End frame number (in original video) of the annotation track, inclusive.
    * </pre>
    *
-   * <code>uint32 end_frame = 8;</code>
-   * @return The endFrame.
+   * <code>uint32 end_frame_nr = 17;</code>
+   * @return The endFrameNr.
    */
   @java.lang.Override
-  public int getEndFrame() {
-    return endFrame_;
+  public int getEndFrameNr() {
+    return endFrameNr_;
+  }
+
+  public static final int START_FRAME_MS_FIELD_NUMBER = 14;
+  private int startFrameMs_;
+  /**
+   * <pre>
+   * Start time (in milliseconds of original video) of the annotation track, inclusive.
+   * </pre>
+   *
+   * <code>uint32 start_frame_ms = 14;</code>
+   * @return The startFrameMs.
+   */
+  @java.lang.Override
+  public int getStartFrameMs() {
+    return startFrameMs_;
+  }
+
+  public static final int END_FRAME_MS_FIELD_NUMBER = 15;
+  private int endFrameMs_;
+  /**
+   * <pre>
+   * End time (in milliseconds of original video) of the annotation track, inclusive.
+   * </pre>
+   *
+   * <code>uint32 end_frame_ms = 15;</code>
+   * @return The endFrameMs.
+   */
+  @java.lang.Override
+  public int getEndFrameMs() {
+    return endFrameMs_;
   }
 
   public static final int CREATED_AT_FIELD_NUMBER = 9;
@@ -547,22 +486,39 @@ private static final long serialVersionUID = 0L;
     return getModifiedAt();
   }
 
-  public static final int FRAME_RATE_FIELD_NUMBER = 11;
-  private int frameRate_;
+  public static final int SAMPLE_RATE_MS_FIELD_NUMBER = 12;
+  private int sampleRateMs_;
   /**
    * <pre>
-   * Frame rate of the video track.
-   * 1 means it matches the original video FPS.
-   * 2 means every second frame, etc.
-   * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+   * Sampling rate of the annotation track in milliseconds.
    * </pre>
    *
-   * <code>uint32 frame_rate = 11;</code>
-   * @return The frameRate.
+   * <code>uint32 sample_rate_ms = 12;</code>
+   * @return The sampleRateMs.
    */
   @java.lang.Override
-  public int getFrameRate() {
-    return frameRate_;
+  public int getSampleRateMs() {
+    return sampleRateMs_;
+  }
+
+  public static final int SAMPLE_RATE_FRAME_FIELD_NUMBER = 13;
+  private int sampleRateFrame_;
+  /**
+   * <pre>
+   * Sampling frame rate of the video track in frame number increments
+   * increment of 1 means it matches the original video FPS
+   * increment of 2 means every second frame is sampled, etc.
+   * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+   * Useful if client relies on simple frame access.
+   * Useful if video has variable frame rate (VFR), then annotations are also sampled with VFR in mind
+   * </pre>
+   *
+   * <code>uint32 sample_rate_frame = 13;</code>
+   * @return The sampleRateFrame.
+   */
+  @java.lang.Override
+  public int getSampleRateFrame() {
+    return sampleRateFrame_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -582,26 +538,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appId_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, inputId_);
     }
     if (concept_ != null) {
       output.writeMessage(4, getConcept());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userId_);
-    }
     if (status_ != null) {
       output.writeMessage(6, getStatus());
-    }
-    if (startFrame_ != 0) {
-      output.writeUInt32(7, startFrame_);
-    }
-    if (endFrame_ != 0) {
-      output.writeUInt32(8, endFrame_);
     }
     if (createdAt_ != null) {
       output.writeMessage(9, getCreatedAt());
@@ -609,8 +553,23 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       output.writeMessage(10, getModifiedAt());
     }
-    if (frameRate_ != 0) {
-      output.writeUInt32(11, frameRate_);
+    if (sampleRateMs_ != 0) {
+      output.writeUInt32(12, sampleRateMs_);
+    }
+    if (sampleRateFrame_ != 0) {
+      output.writeUInt32(13, sampleRateFrame_);
+    }
+    if (startFrameMs_ != 0) {
+      output.writeUInt32(14, startFrameMs_);
+    }
+    if (endFrameMs_ != 0) {
+      output.writeUInt32(15, endFrameMs_);
+    }
+    if (startFrameNr_ != 0) {
+      output.writeUInt32(16, startFrameNr_);
+    }
+    if (endFrameNr_ != 0) {
+      output.writeUInt32(17, endFrameNr_);
     }
     unknownFields.writeTo(output);
   }
@@ -624,9 +583,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appId_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, inputId_);
     }
@@ -634,20 +590,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getConcept());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, userId_);
-    }
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getStatus());
-    }
-    if (startFrame_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(7, startFrame_);
-    }
-    if (endFrame_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(8, endFrame_);
     }
     if (createdAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -657,9 +602,29 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getModifiedAt());
     }
-    if (frameRate_ != 0) {
+    if (sampleRateMs_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(11, frameRate_);
+        .computeUInt32Size(12, sampleRateMs_);
+    }
+    if (sampleRateFrame_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(13, sampleRateFrame_);
+    }
+    if (startFrameMs_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(14, startFrameMs_);
+    }
+    if (endFrameMs_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(15, endFrameMs_);
+    }
+    if (startFrameNr_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(16, startFrameNr_);
+    }
+    if (endFrameNr_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(17, endFrameNr_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -678,8 +643,6 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (!getAppId()
-        .equals(other.getAppId())) return false;
     if (!getInputId()
         .equals(other.getInputId())) return false;
     if (hasConcept() != other.hasConcept()) return false;
@@ -687,17 +650,19 @@ private static final long serialVersionUID = 0L;
       if (!getConcept()
           .equals(other.getConcept())) return false;
     }
-    if (!getUserId()
-        .equals(other.getUserId())) return false;
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (!getStatus()
           .equals(other.getStatus())) return false;
     }
-    if (getStartFrame()
-        != other.getStartFrame()) return false;
-    if (getEndFrame()
-        != other.getEndFrame()) return false;
+    if (getStartFrameNr()
+        != other.getStartFrameNr()) return false;
+    if (getEndFrameNr()
+        != other.getEndFrameNr()) return false;
+    if (getStartFrameMs()
+        != other.getStartFrameMs()) return false;
+    if (getEndFrameMs()
+        != other.getEndFrameMs()) return false;
     if (hasCreatedAt() != other.hasCreatedAt()) return false;
     if (hasCreatedAt()) {
       if (!getCreatedAt()
@@ -708,8 +673,10 @@ private static final long serialVersionUID = 0L;
       if (!getModifiedAt()
           .equals(other.getModifiedAt())) return false;
     }
-    if (getFrameRate()
-        != other.getFrameRate()) return false;
+    if (getSampleRateMs()
+        != other.getSampleRateMs()) return false;
+    if (getSampleRateFrame()
+        != other.getSampleRateFrame()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -723,24 +690,24 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + APP_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getAppId().hashCode();
     hash = (37 * hash) + INPUT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getInputId().hashCode();
     if (hasConcept()) {
       hash = (37 * hash) + CONCEPT_FIELD_NUMBER;
       hash = (53 * hash) + getConcept().hashCode();
     }
-    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getUserId().hashCode();
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
     }
-    hash = (37 * hash) + START_FRAME_FIELD_NUMBER;
-    hash = (53 * hash) + getStartFrame();
-    hash = (37 * hash) + END_FRAME_FIELD_NUMBER;
-    hash = (53 * hash) + getEndFrame();
+    hash = (37 * hash) + START_FRAME_NR_FIELD_NUMBER;
+    hash = (53 * hash) + getStartFrameNr();
+    hash = (37 * hash) + END_FRAME_NR_FIELD_NUMBER;
+    hash = (53 * hash) + getEndFrameNr();
+    hash = (37 * hash) + START_FRAME_MS_FIELD_NUMBER;
+    hash = (53 * hash) + getStartFrameMs();
+    hash = (37 * hash) + END_FRAME_MS_FIELD_NUMBER;
+    hash = (53 * hash) + getEndFrameMs();
     if (hasCreatedAt()) {
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedAt().hashCode();
@@ -749,8 +716,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getModifiedAt().hashCode();
     }
-    hash = (37 * hash) + FRAME_RATE_FIELD_NUMBER;
-    hash = (53 * hash) + getFrameRate();
+    hash = (37 * hash) + SAMPLE_RATE_MS_FIELD_NUMBER;
+    hash = (53 * hash) + getSampleRateMs();
+    hash = (37 * hash) + SAMPLE_RATE_FRAME_FIELD_NUMBER;
+    hash = (53 * hash) + getSampleRateFrame();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -890,8 +859,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
-      appId_ = "";
-
       inputId_ = "";
 
       if (conceptBuilder_ == null) {
@@ -900,17 +867,19 @@ private static final long serialVersionUID = 0L;
         concept_ = null;
         conceptBuilder_ = null;
       }
-      userId_ = "";
-
       if (statusBuilder_ == null) {
         status_ = null;
       } else {
         status_ = null;
         statusBuilder_ = null;
       }
-      startFrame_ = 0;
+      startFrameNr_ = 0;
 
-      endFrame_ = 0;
+      endFrameNr_ = 0;
+
+      startFrameMs_ = 0;
+
+      endFrameMs_ = 0;
 
       if (createdAtBuilder_ == null) {
         createdAt_ = null;
@@ -924,7 +893,9 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
         modifiedAtBuilder_ = null;
       }
-      frameRate_ = 0;
+      sampleRateMs_ = 0;
+
+      sampleRateFrame_ = 0;
 
       return this;
     }
@@ -953,21 +924,21 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.AnnotationTrack buildPartial() {
       com.clarifai.grpc.api.AnnotationTrack result = new com.clarifai.grpc.api.AnnotationTrack(this);
       result.id_ = id_;
-      result.appId_ = appId_;
       result.inputId_ = inputId_;
       if (conceptBuilder_ == null) {
         result.concept_ = concept_;
       } else {
         result.concept_ = conceptBuilder_.build();
       }
-      result.userId_ = userId_;
       if (statusBuilder_ == null) {
         result.status_ = status_;
       } else {
         result.status_ = statusBuilder_.build();
       }
-      result.startFrame_ = startFrame_;
-      result.endFrame_ = endFrame_;
+      result.startFrameNr_ = startFrameNr_;
+      result.endFrameNr_ = endFrameNr_;
+      result.startFrameMs_ = startFrameMs_;
+      result.endFrameMs_ = endFrameMs_;
       if (createdAtBuilder_ == null) {
         result.createdAt_ = createdAt_;
       } else {
@@ -978,7 +949,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.modifiedAt_ = modifiedAtBuilder_.build();
       }
-      result.frameRate_ = frameRate_;
+      result.sampleRateMs_ = sampleRateMs_;
+      result.sampleRateFrame_ = sampleRateFrame_;
       onBuilt();
       return result;
     }
@@ -1031,10 +1003,6 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
-      if (!other.getAppId().isEmpty()) {
-        appId_ = other.appId_;
-        onChanged();
-      }
       if (!other.getInputId().isEmpty()) {
         inputId_ = other.inputId_;
         onChanged();
@@ -1042,18 +1010,20 @@ private static final long serialVersionUID = 0L;
       if (other.hasConcept()) {
         mergeConcept(other.getConcept());
       }
-      if (!other.getUserId().isEmpty()) {
-        userId_ = other.userId_;
-        onChanged();
-      }
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
-      if (other.getStartFrame() != 0) {
-        setStartFrame(other.getStartFrame());
+      if (other.getStartFrameNr() != 0) {
+        setStartFrameNr(other.getStartFrameNr());
       }
-      if (other.getEndFrame() != 0) {
-        setEndFrame(other.getEndFrame());
+      if (other.getEndFrameNr() != 0) {
+        setEndFrameNr(other.getEndFrameNr());
+      }
+      if (other.getStartFrameMs() != 0) {
+        setStartFrameMs(other.getStartFrameMs());
+      }
+      if (other.getEndFrameMs() != 0) {
+        setEndFrameMs(other.getEndFrameMs());
       }
       if (other.hasCreatedAt()) {
         mergeCreatedAt(other.getCreatedAt());
@@ -1061,8 +1031,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasModifiedAt()) {
         mergeModifiedAt(other.getModifiedAt());
       }
-      if (other.getFrameRate() != 0) {
-        setFrameRate(other.getFrameRate());
+      if (other.getSampleRateMs() != 0) {
+        setSampleRateMs(other.getSampleRateMs());
+      }
+      if (other.getSampleRateFrame() != 0) {
+        setSampleRateFrame(other.getSampleRateFrame());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1185,102 +1158,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       id_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object appId_ = "";
-    /**
-     * <pre>
-     * ID of the application this annotation track is tied to
-     * </pre>
-     *
-     * <code>string app_id = 2;</code>
-     * @return The appId.
-     */
-    public java.lang.String getAppId() {
-      java.lang.Object ref = appId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        appId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * ID of the application this annotation track is tied to
-     * </pre>
-     *
-     * <code>string app_id = 2;</code>
-     * @return The bytes for appId.
-     */
-    public com.google.protobuf.ByteString
-        getAppIdBytes() {
-      java.lang.Object ref = appId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        appId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * ID of the application this annotation track is tied to
-     * </pre>
-     *
-     * <code>string app_id = 2;</code>
-     * @param value The appId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAppId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      appId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ID of the application this annotation track is tied to
-     * </pre>
-     *
-     * <code>string app_id = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAppId() {
-      
-      appId_ = getDefaultInstance().getAppId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ID of the application this annotation track is tied to
-     * </pre>
-     *
-     * <code>string app_id = 2;</code>
-     * @param value The bytes for appId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAppIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      appId_ = value;
       onChanged();
       return this;
     }
@@ -1536,102 +1413,6 @@ private static final long serialVersionUID = 0L;
       return conceptBuilder_;
     }
 
-    private java.lang.Object userId_ = "";
-    /**
-     * <pre>
-     * The user the track belongs to (app owner)
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @return The userId.
-     */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The user the track belongs to (app owner)
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @return The bytes for userId.
-     */
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The user the track belongs to (app owner)
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @param value The userId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      userId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The user the track belongs to (app owner)
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUserId() {
-      
-      userId_ = getDefaultInstance().getUserId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The user the track belongs to (app owner)
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @param value The bytes for userId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      userId_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.clarifai.grpc.api.status.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
@@ -1787,88 +1568,174 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_;
     }
 
-    private int startFrame_ ;
+    private int startFrameNr_ ;
     /**
      * <pre>
-     * Start frame of the annotation track
+     * Start frame number (in original video) of the annotation track, inclusive.
      * </pre>
      *
-     * <code>uint32 start_frame = 7;</code>
-     * @return The startFrame.
+     * <code>uint32 start_frame_nr = 16;</code>
+     * @return The startFrameNr.
      */
     @java.lang.Override
-    public int getStartFrame() {
-      return startFrame_;
+    public int getStartFrameNr() {
+      return startFrameNr_;
     }
     /**
      * <pre>
-     * Start frame of the annotation track
+     * Start frame number (in original video) of the annotation track, inclusive.
      * </pre>
      *
-     * <code>uint32 start_frame = 7;</code>
-     * @param value The startFrame to set.
+     * <code>uint32 start_frame_nr = 16;</code>
+     * @param value The startFrameNr to set.
      * @return This builder for chaining.
      */
-    public Builder setStartFrame(int value) {
+    public Builder setStartFrameNr(int value) {
       
-      startFrame_ = value;
+      startFrameNr_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Start frame of the annotation track
+     * Start frame number (in original video) of the annotation track, inclusive.
      * </pre>
      *
-     * <code>uint32 start_frame = 7;</code>
+     * <code>uint32 start_frame_nr = 16;</code>
      * @return This builder for chaining.
      */
-    public Builder clearStartFrame() {
+    public Builder clearStartFrameNr() {
       
-      startFrame_ = 0;
+      startFrameNr_ = 0;
       onChanged();
       return this;
     }
 
-    private int endFrame_ ;
+    private int endFrameNr_ ;
     /**
      * <pre>
-     * End frame of the annotation track
+     * End frame number (in original video) of the annotation track, inclusive.
      * </pre>
      *
-     * <code>uint32 end_frame = 8;</code>
-     * @return The endFrame.
+     * <code>uint32 end_frame_nr = 17;</code>
+     * @return The endFrameNr.
      */
     @java.lang.Override
-    public int getEndFrame() {
-      return endFrame_;
+    public int getEndFrameNr() {
+      return endFrameNr_;
     }
     /**
      * <pre>
-     * End frame of the annotation track
+     * End frame number (in original video) of the annotation track, inclusive.
      * </pre>
      *
-     * <code>uint32 end_frame = 8;</code>
-     * @param value The endFrame to set.
+     * <code>uint32 end_frame_nr = 17;</code>
+     * @param value The endFrameNr to set.
      * @return This builder for chaining.
      */
-    public Builder setEndFrame(int value) {
+    public Builder setEndFrameNr(int value) {
       
-      endFrame_ = value;
+      endFrameNr_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * End frame of the annotation track
+     * End frame number (in original video) of the annotation track, inclusive.
      * </pre>
      *
-     * <code>uint32 end_frame = 8;</code>
+     * <code>uint32 end_frame_nr = 17;</code>
      * @return This builder for chaining.
      */
-    public Builder clearEndFrame() {
+    public Builder clearEndFrameNr() {
       
-      endFrame_ = 0;
+      endFrameNr_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int startFrameMs_ ;
+    /**
+     * <pre>
+     * Start time (in milliseconds of original video) of the annotation track, inclusive.
+     * </pre>
+     *
+     * <code>uint32 start_frame_ms = 14;</code>
+     * @return The startFrameMs.
+     */
+    @java.lang.Override
+    public int getStartFrameMs() {
+      return startFrameMs_;
+    }
+    /**
+     * <pre>
+     * Start time (in milliseconds of original video) of the annotation track, inclusive.
+     * </pre>
+     *
+     * <code>uint32 start_frame_ms = 14;</code>
+     * @param value The startFrameMs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartFrameMs(int value) {
+      
+      startFrameMs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Start time (in milliseconds of original video) of the annotation track, inclusive.
+     * </pre>
+     *
+     * <code>uint32 start_frame_ms = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStartFrameMs() {
+      
+      startFrameMs_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int endFrameMs_ ;
+    /**
+     * <pre>
+     * End time (in milliseconds of original video) of the annotation track, inclusive.
+     * </pre>
+     *
+     * <code>uint32 end_frame_ms = 15;</code>
+     * @return The endFrameMs.
+     */
+    @java.lang.Override
+    public int getEndFrameMs() {
+      return endFrameMs_;
+    }
+    /**
+     * <pre>
+     * End time (in milliseconds of original video) of the annotation track, inclusive.
+     * </pre>
+     *
+     * <code>uint32 end_frame_ms = 15;</code>
+     * @param value The endFrameMs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndFrameMs(int value) {
+      
+      endFrameMs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * End time (in milliseconds of original video) of the annotation track, inclusive.
+     * </pre>
+     *
+     * <code>uint32 end_frame_ms = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEndFrameMs() {
+      
+      endFrameMs_ = 0;
       onChanged();
       return this;
     }
@@ -2183,54 +2050,103 @@ private static final long serialVersionUID = 0L;
       return modifiedAtBuilder_;
     }
 
-    private int frameRate_ ;
+    private int sampleRateMs_ ;
     /**
      * <pre>
-     * Frame rate of the video track.
-     * 1 means it matches the original video FPS.
-     * 2 means every second frame, etc.
-     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Sampling rate of the annotation track in milliseconds.
      * </pre>
      *
-     * <code>uint32 frame_rate = 11;</code>
-     * @return The frameRate.
+     * <code>uint32 sample_rate_ms = 12;</code>
+     * @return The sampleRateMs.
      */
     @java.lang.Override
-    public int getFrameRate() {
-      return frameRate_;
+    public int getSampleRateMs() {
+      return sampleRateMs_;
     }
     /**
      * <pre>
-     * Frame rate of the video track.
-     * 1 means it matches the original video FPS.
-     * 2 means every second frame, etc.
-     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Sampling rate of the annotation track in milliseconds.
      * </pre>
      *
-     * <code>uint32 frame_rate = 11;</code>
-     * @param value The frameRate to set.
+     * <code>uint32 sample_rate_ms = 12;</code>
+     * @param value The sampleRateMs to set.
      * @return This builder for chaining.
      */
-    public Builder setFrameRate(int value) {
+    public Builder setSampleRateMs(int value) {
       
-      frameRate_ = value;
+      sampleRateMs_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Frame rate of the video track.
-     * 1 means it matches the original video FPS.
-     * 2 means every second frame, etc.
-     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Sampling rate of the annotation track in milliseconds.
      * </pre>
      *
-     * <code>uint32 frame_rate = 11;</code>
+     * <code>uint32 sample_rate_ms = 12;</code>
      * @return This builder for chaining.
      */
-    public Builder clearFrameRate() {
+    public Builder clearSampleRateMs() {
       
-      frameRate_ = 0;
+      sampleRateMs_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int sampleRateFrame_ ;
+    /**
+     * <pre>
+     * Sampling frame rate of the video track in frame number increments
+     * increment of 1 means it matches the original video FPS
+     * increment of 2 means every second frame is sampled, etc.
+     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Useful if client relies on simple frame access.
+     * Useful if video has variable frame rate (VFR), then annotations are also sampled with VFR in mind
+     * </pre>
+     *
+     * <code>uint32 sample_rate_frame = 13;</code>
+     * @return The sampleRateFrame.
+     */
+    @java.lang.Override
+    public int getSampleRateFrame() {
+      return sampleRateFrame_;
+    }
+    /**
+     * <pre>
+     * Sampling frame rate of the video track in frame number increments
+     * increment of 1 means it matches the original video FPS
+     * increment of 2 means every second frame is sampled, etc.
+     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Useful if client relies on simple frame access.
+     * Useful if video has variable frame rate (VFR), then annotations are also sampled with VFR in mind
+     * </pre>
+     *
+     * <code>uint32 sample_rate_frame = 13;</code>
+     * @param value The sampleRateFrame to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSampleRateFrame(int value) {
+      
+      sampleRateFrame_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Sampling frame rate of the video track in frame number increments
+     * increment of 1 means it matches the original video FPS
+     * increment of 2 means every second frame is sampled, etc.
+     * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+     * Useful if client relies on simple frame access.
+     * Useful if video has variable frame rate (VFR), then annotations are also sampled with VFR in mind
+     * </pre>
+     *
+     * <code>uint32 sample_rate_frame = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSampleRateFrame() {
+      
+      sampleRateFrame_ = 0;
       onChanged();
       return this;
     }

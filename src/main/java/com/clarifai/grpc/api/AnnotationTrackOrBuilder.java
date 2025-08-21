@@ -29,26 +29,6 @@ public interface AnnotationTrackOrBuilder extends
 
   /**
    * <pre>
-   * ID of the application this annotation track is tied to
-   * </pre>
-   *
-   * <code>string app_id = 2;</code>
-   * @return The appId.
-   */
-  java.lang.String getAppId();
-  /**
-   * <pre>
-   * ID of the application this annotation track is tied to
-   * </pre>
-   *
-   * <code>string app_id = 2;</code>
-   * @return The bytes for appId.
-   */
-  com.google.protobuf.ByteString
-      getAppIdBytes();
-
-  /**
-   * <pre>
    * ID of the asset this annotation track is tied to
    * </pre>
    *
@@ -96,26 +76,6 @@ public interface AnnotationTrackOrBuilder extends
 
   /**
    * <pre>
-   * The user the track belongs to (app owner)
-   * </pre>
-   *
-   * <code>string user_id = 5;</code>
-   * @return The userId.
-   */
-  java.lang.String getUserId();
-  /**
-   * <pre>
-   * The user the track belongs to (app owner)
-   * </pre>
-   *
-   * <code>string user_id = 5;</code>
-   * @return The bytes for userId.
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
-
-  /**
-   * <pre>
    * AnnotationTrack Status
    * </pre>
    *
@@ -143,23 +103,43 @@ public interface AnnotationTrackOrBuilder extends
 
   /**
    * <pre>
-   * Start frame of the annotation track
+   * Start frame number (in original video) of the annotation track, inclusive.
    * </pre>
    *
-   * <code>uint32 start_frame = 7;</code>
-   * @return The startFrame.
+   * <code>uint32 start_frame_nr = 16;</code>
+   * @return The startFrameNr.
    */
-  int getStartFrame();
+  int getStartFrameNr();
 
   /**
    * <pre>
-   * End frame of the annotation track
+   * End frame number (in original video) of the annotation track, inclusive.
    * </pre>
    *
-   * <code>uint32 end_frame = 8;</code>
-   * @return The endFrame.
+   * <code>uint32 end_frame_nr = 17;</code>
+   * @return The endFrameNr.
    */
-  int getEndFrame();
+  int getEndFrameNr();
+
+  /**
+   * <pre>
+   * Start time (in milliseconds of original video) of the annotation track, inclusive.
+   * </pre>
+   *
+   * <code>uint32 start_frame_ms = 14;</code>
+   * @return The startFrameMs.
+   */
+  int getStartFrameMs();
+
+  /**
+   * <pre>
+   * End time (in milliseconds of original video) of the annotation track, inclusive.
+   * </pre>
+   *
+   * <code>uint32 end_frame_ms = 15;</code>
+   * @return The endFrameMs.
+   */
+  int getEndFrameMs();
 
   /**
    * <pre>
@@ -217,14 +197,26 @@ public interface AnnotationTrackOrBuilder extends
 
   /**
    * <pre>
-   * Frame rate of the video track.
-   * 1 means it matches the original video FPS.
-   * 2 means every second frame, etc.
-   * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+   * Sampling rate of the annotation track in milliseconds.
    * </pre>
    *
-   * <code>uint32 frame_rate = 11;</code>
-   * @return The frameRate.
+   * <code>uint32 sample_rate_ms = 12;</code>
+   * @return The sampleRateMs.
    */
-  int getFrameRate();
+  int getSampleRateMs();
+
+  /**
+   * <pre>
+   * Sampling frame rate of the video track in frame number increments
+   * increment of 1 means it matches the original video FPS
+   * increment of 2 means every second frame is sampled, etc.
+   * So if you have 30fps original video and frame_rate=3, your annotations in a track are stored at 30fps/3frame_rate=10 frames per second
+   * Useful if client relies on simple frame access.
+   * Useful if video has variable frame rate (VFR), then annotations are also sampled with VFR in mind
+   * </pre>
+   *
+   * <code>uint32 sample_rate_frame = 13;</code>
+   * @return The sampleRateFrame.
+   */
+  int getSampleRateFrame();
 }

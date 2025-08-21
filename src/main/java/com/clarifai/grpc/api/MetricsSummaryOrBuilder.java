@@ -10,7 +10,7 @@ public interface MetricsSummaryOrBuilder extends
   /**
    * <code>float top1_accuracy = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2322
+   *     See proto/clarifai/api/resources.proto;l=2337
    * @return The top1Accuracy.
    */
   @java.lang.Deprecated float getTop1Accuracy();
@@ -18,7 +18,7 @@ public interface MetricsSummaryOrBuilder extends
   /**
    * <code>float top5_accuracy = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2323
+   *     See proto/clarifai/api/resources.proto;l=2338
    * @return The top5Accuracy.
    */
   @java.lang.Deprecated float getTop5Accuracy();
