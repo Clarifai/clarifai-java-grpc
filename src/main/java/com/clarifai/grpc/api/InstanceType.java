@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     price_ = "";
     region_ = "";
+    featureFlagGroup_ = "";
   }
 
   @java.lang.Override
@@ -118,6 +119,12 @@ private static final long serialVersionUID = 0L;
               allowedCapacityTypes_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            featureFlagGroup_ = s;
             break;
           }
           default: {
@@ -424,6 +431,52 @@ private static final long serialVersionUID = 0L;
     return getAllowedCapacityTypes();
   }
 
+  public static final int FEATURE_FLAG_GROUP_FIELD_NUMBER = 8;
+  private volatile java.lang.Object featureFlagGroup_;
+  /**
+   * <pre>
+   * The feature flag group associated with this instance type.
+   * </pre>
+   *
+   * <code>string feature_flag_group = 8;</code>
+   * @return The featureFlagGroup.
+   */
+  @java.lang.Override
+  public java.lang.String getFeatureFlagGroup() {
+    java.lang.Object ref = featureFlagGroup_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      featureFlagGroup_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The feature flag group associated with this instance type.
+   * </pre>
+   *
+   * <code>string feature_flag_group = 8;</code>
+   * @return The bytes for featureFlagGroup.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFeatureFlagGroupBytes() {
+    java.lang.Object ref = featureFlagGroup_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      featureFlagGroup_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -459,6 +512,9 @@ private static final long serialVersionUID = 0L;
     if (allowedCapacityTypes_ != null) {
       output.writeMessage(7, getAllowedCapacityTypes());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(featureFlagGroup_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, featureFlagGroup_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -491,6 +547,9 @@ private static final long serialVersionUID = 0L;
     if (allowedCapacityTypes_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getAllowedCapacityTypes());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(featureFlagGroup_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, featureFlagGroup_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -530,6 +589,8 @@ private static final long serialVersionUID = 0L;
       if (!getAllowedCapacityTypes()
           .equals(other.getAllowedCapacityTypes())) return false;
     }
+    if (!getFeatureFlagGroup()
+        .equals(other.getFeatureFlagGroup())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -561,6 +622,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ALLOWED_CAPACITY_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedCapacityTypes().hashCode();
     }
+    hash = (37 * hash) + FEATURE_FLAG_GROUP_FIELD_NUMBER;
+    hash = (53 * hash) + getFeatureFlagGroup().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -725,6 +788,8 @@ private static final long serialVersionUID = 0L;
         allowedCapacityTypes_ = null;
         allowedCapacityTypesBuilder_ = null;
       }
+      featureFlagGroup_ = "";
+
       return this;
     }
 
@@ -770,6 +835,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.allowedCapacityTypes_ = allowedCapacityTypesBuilder_.build();
       }
+      result.featureFlagGroup_ = featureFlagGroup_;
       onBuilt();
       return result;
     }
@@ -842,6 +908,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasAllowedCapacityTypes()) {
         mergeAllowedCapacityTypes(other.getAllowedCapacityTypes());
+      }
+      if (!other.getFeatureFlagGroup().isEmpty()) {
+        featureFlagGroup_ = other.featureFlagGroup_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1643,6 +1713,102 @@ private static final long serialVersionUID = 0L;
         allowedCapacityTypes_ = null;
       }
       return allowedCapacityTypesBuilder_;
+    }
+
+    private java.lang.Object featureFlagGroup_ = "";
+    /**
+     * <pre>
+     * The feature flag group associated with this instance type.
+     * </pre>
+     *
+     * <code>string feature_flag_group = 8;</code>
+     * @return The featureFlagGroup.
+     */
+    public java.lang.String getFeatureFlagGroup() {
+      java.lang.Object ref = featureFlagGroup_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        featureFlagGroup_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The feature flag group associated with this instance type.
+     * </pre>
+     *
+     * <code>string feature_flag_group = 8;</code>
+     * @return The bytes for featureFlagGroup.
+     */
+    public com.google.protobuf.ByteString
+        getFeatureFlagGroupBytes() {
+      java.lang.Object ref = featureFlagGroup_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        featureFlagGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The feature flag group associated with this instance type.
+     * </pre>
+     *
+     * <code>string feature_flag_group = 8;</code>
+     * @param value The featureFlagGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFeatureFlagGroup(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      featureFlagGroup_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The feature flag group associated with this instance type.
+     * </pre>
+     *
+     * <code>string feature_flag_group = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFeatureFlagGroup() {
+      
+      featureFlagGroup_ = getDefaultInstance().getFeatureFlagGroup();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The feature flag group associated with this instance type.
+     * </pre>
+     *
+     * <code>string feature_flag_group = 8;</code>
+     * @param value The bytes for featureFlagGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFeatureFlagGroupBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      featureFlagGroup_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

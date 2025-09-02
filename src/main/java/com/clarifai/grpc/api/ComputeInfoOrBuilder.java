@@ -193,4 +193,57 @@ public interface ComputeInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAcceleratorTypeBytes(int index);
+
+  /**
+   * <pre>
+   * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+   * Corresponds to the tpu.googleapis.com/topology annotation.
+   * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+   * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+   * </pre>
+   *
+   * <code>repeated string accelerator_topology = 10;</code>
+   * @return A list containing the acceleratorTopology.
+   */
+  java.util.List<java.lang.String>
+      getAcceleratorTopologyList();
+  /**
+   * <pre>
+   * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+   * Corresponds to the tpu.googleapis.com/topology annotation.
+   * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+   * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+   * </pre>
+   *
+   * <code>repeated string accelerator_topology = 10;</code>
+   * @return The count of acceleratorTopology.
+   */
+  int getAcceleratorTopologyCount();
+  /**
+   * <pre>
+   * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+   * Corresponds to the tpu.googleapis.com/topology annotation.
+   * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+   * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+   * </pre>
+   *
+   * <code>repeated string accelerator_topology = 10;</code>
+   * @param index The index of the element to return.
+   * @return The acceleratorTopology at the given index.
+   */
+  java.lang.String getAcceleratorTopology(int index);
+  /**
+   * <pre>
+   * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+   * Corresponds to the tpu.googleapis.com/topology annotation.
+   * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+   * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+   * </pre>
+   *
+   * <code>repeated string accelerator_topology = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the acceleratorTopology at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAcceleratorTopologyBytes(int index);
 }

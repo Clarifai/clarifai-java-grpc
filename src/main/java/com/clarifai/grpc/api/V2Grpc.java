@@ -8633,6 +8633,68 @@ public final class V2Grpc {
     return getDeleteSecretsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostMetricsQueryRequest,
+      com.clarifai.grpc.api.MetricsQueryResponse> getPostMetricsQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostMetricsQuery",
+      requestType = com.clarifai.grpc.api.PostMetricsQueryRequest.class,
+      responseType = com.clarifai.grpc.api.MetricsQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostMetricsQueryRequest,
+      com.clarifai.grpc.api.MetricsQueryResponse> getPostMetricsQueryMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostMetricsQueryRequest, com.clarifai.grpc.api.MetricsQueryResponse> getPostMetricsQueryMethod;
+    if ((getPostMetricsQueryMethod = V2Grpc.getPostMetricsQueryMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostMetricsQueryMethod = V2Grpc.getPostMetricsQueryMethod) == null) {
+          V2Grpc.getPostMetricsQueryMethod = getPostMetricsQueryMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostMetricsQueryRequest, com.clarifai.grpc.api.MetricsQueryResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostMetricsQuery"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostMetricsQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MetricsQueryResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostMetricsQuery"))
+              .build();
+        }
+      }
+    }
+    return getPostMetricsQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListMetricLabelsRequest,
+      com.clarifai.grpc.api.MultiMetricLabelsResponse> getListMetricLabelsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMetricLabels",
+      requestType = com.clarifai.grpc.api.ListMetricLabelsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiMetricLabelsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListMetricLabelsRequest,
+      com.clarifai.grpc.api.MultiMetricLabelsResponse> getListMetricLabelsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListMetricLabelsRequest, com.clarifai.grpc.api.MultiMetricLabelsResponse> getListMetricLabelsMethod;
+    if ((getListMetricLabelsMethod = V2Grpc.getListMetricLabelsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListMetricLabelsMethod = V2Grpc.getListMetricLabelsMethod) == null) {
+          V2Grpc.getListMetricLabelsMethod = getListMetricLabelsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListMetricLabelsRequest, com.clarifai.grpc.api.MultiMetricLabelsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMetricLabels"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListMetricLabelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiMetricLabelsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListMetricLabels"))
+              .build();
+        }
+      }
+    }
+    return getListMetricLabelsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -11420,6 +11482,20 @@ public final class V2Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSecretsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void postMetricsQuery(com.clarifai.grpc.api.PostMetricsQueryRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MetricsQueryResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostMetricsQueryMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listMetricLabels(com.clarifai.grpc.api.ListMetricLabelsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiMetricLabelsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMetricLabelsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -13368,6 +13444,20 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeleteSecretsRequest,
                 com.clarifai.grpc.api.MultiSecretResponse>(
                   this, METHODID_DELETE_SECRETS)))
+          .addMethod(
+            getPostMetricsQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostMetricsQueryRequest,
+                com.clarifai.grpc.api.MetricsQueryResponse>(
+                  this, METHODID_POST_METRICS_QUERY)))
+          .addMethod(
+            getListMetricLabelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListMetricLabelsRequest,
+                com.clarifai.grpc.api.MultiMetricLabelsResponse>(
+                  this, METHODID_LIST_METRIC_LABELS)))
           .build();
     }
   }
@@ -16402,6 +16492,22 @@ public final class V2Grpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSecretsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void postMetricsQuery(com.clarifai.grpc.api.PostMetricsQueryRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MetricsQueryResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostMetricsQueryMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listMetricLabels(com.clarifai.grpc.api.ListMetricLabelsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiMetricLabelsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMetricLabelsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -19104,6 +19210,20 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiSecretResponse deleteSecrets(com.clarifai.grpc.api.DeleteSecretsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MetricsQueryResponse postMetricsQuery(com.clarifai.grpc.api.PostMetricsQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostMetricsQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiMetricLabelsResponse listMetricLabels(com.clarifai.grpc.api.ListMetricLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMetricLabelsMethod(), getCallOptions(), request);
     }
   }
 
@@ -22060,6 +22180,22 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSecretsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MetricsQueryResponse> postMetricsQuery(
+        com.clarifai.grpc.api.PostMetricsQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostMetricsQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiMetricLabelsResponse> listMetricLabels(
+        com.clarifai.grpc.api.ListMetricLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMetricLabelsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -22336,10 +22472,12 @@ public final class V2Grpc {
   private static final int METHODID_POST_SECRETS = 271;
   private static final int METHODID_PATCH_SECRETS = 272;
   private static final int METHODID_DELETE_SECRETS = 273;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 274;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 275;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 276;
-  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 277;
+  private static final int METHODID_POST_METRICS_QUERY = 274;
+  private static final int METHODID_LIST_METRIC_LABELS = 275;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 276;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 277;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 278;
+  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 279;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -23454,6 +23592,14 @@ public final class V2Grpc {
           serviceImpl.deleteSecrets((com.clarifai.grpc.api.DeleteSecretsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSecretResponse>) responseObserver);
           break;
+        case METHODID_POST_METRICS_QUERY:
+          serviceImpl.postMetricsQuery((com.clarifai.grpc.api.PostMetricsQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MetricsQueryResponse>) responseObserver);
+          break;
+        case METHODID_LIST_METRIC_LABELS:
+          serviceImpl.listMetricLabels((com.clarifai.grpc.api.ListMetricLabelsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiMetricLabelsResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -23805,6 +23951,8 @@ public final class V2Grpc {
               .addMethod(getPostSecretsMethod())
               .addMethod(getPatchSecretsMethod())
               .addMethod(getDeleteSecretsMethod())
+              .addMethod(getPostMetricsQueryMethod())
+              .addMethod(getListMetricLabelsMethod())
               .build();
         }
       }

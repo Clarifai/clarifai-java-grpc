@@ -139,4 +139,24 @@ public interface InstanceTypeOrBuilder extends
    * <code>.clarifai.api.NodeCapacityType allowed_capacity_types = 7;</code>
    */
   com.clarifai.grpc.api.NodeCapacityTypeOrBuilder getAllowedCapacityTypesOrBuilder();
+
+  /**
+   * <pre>
+   * The feature flag group associated with this instance type.
+   * </pre>
+   *
+   * <code>string feature_flag_group = 8;</code>
+   * @return The featureFlagGroup.
+   */
+  java.lang.String getFeatureFlagGroup();
+  /**
+   * <pre>
+   * The feature flag group associated with this instance type.
+   * </pre>
+   *
+   * <code>string feature_flag_group = 8;</code>
+   * @return The bytes for featureFlagGroup.
+   */
+  com.google.protobuf.ByteString
+      getFeatureFlagGroupBytes();
 }

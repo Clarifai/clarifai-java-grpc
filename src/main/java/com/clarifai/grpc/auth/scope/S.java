@@ -810,6 +810,10 @@ public enum S
    * <code>Secrets_Delete = 162 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Secrets_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Secrets_Add];</code>
    */
   Secrets_Delete(162),
+  /**
+   * <code>UserMetrics_Get = 163 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  UserMetrics_Get(163),
   UNRECOGNIZED(-1),
   ;
 
@@ -1582,6 +1586,10 @@ public enum S
    * <code>Secrets_Delete = 162 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Secrets_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Secrets_Add];</code>
    */
   public static final int Secrets_Delete_VALUE = 162;
+  /**
+   * <code>UserMetrics_Get = 163 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int UserMetrics_Get_VALUE = 163;
 
 
   public final int getNumber() {
@@ -1721,6 +1729,7 @@ public enum S
       case 160: return Secrets_Get;
       case 161: return Secrets_Add;
       case 162: return Secrets_Delete;
+      case 163: return UserMetrics_Get;
       default: return null;
     }
   }

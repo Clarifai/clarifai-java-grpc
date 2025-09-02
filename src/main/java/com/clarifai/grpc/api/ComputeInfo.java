@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     cpuMemoryRequests_ = "";
     acceleratorMemory_ = "";
     acceleratorType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    acceleratorTopology_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -106,6 +107,15 @@ private static final long serialVersionUID = 0L;
             cpuMemoryRequests_ = s;
             break;
           }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              acceleratorTopology_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            acceleratorTopology_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -125,6 +135,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         acceleratorType_ = acceleratorType_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        acceleratorTopology_ = acceleratorTopology_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -475,6 +488,69 @@ private static final long serialVersionUID = 0L;
     return acceleratorType_.getByteString(index);
   }
 
+  public static final int ACCELERATOR_TOPOLOGY_FIELD_NUMBER = 10;
+  private com.google.protobuf.LazyStringList acceleratorTopology_;
+  /**
+   * <pre>
+   * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+   * Corresponds to the tpu.googleapis.com/topology annotation.
+   * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+   * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+   * </pre>
+   *
+   * <code>repeated string accelerator_topology = 10;</code>
+   * @return A list containing the acceleratorTopology.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAcceleratorTopologyList() {
+    return acceleratorTopology_;
+  }
+  /**
+   * <pre>
+   * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+   * Corresponds to the tpu.googleapis.com/topology annotation.
+   * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+   * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+   * </pre>
+   *
+   * <code>repeated string accelerator_topology = 10;</code>
+   * @return The count of acceleratorTopology.
+   */
+  public int getAcceleratorTopologyCount() {
+    return acceleratorTopology_.size();
+  }
+  /**
+   * <pre>
+   * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+   * Corresponds to the tpu.googleapis.com/topology annotation.
+   * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+   * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+   * </pre>
+   *
+   * <code>repeated string accelerator_topology = 10;</code>
+   * @param index The index of the element to return.
+   * @return The acceleratorTopology at the given index.
+   */
+  public java.lang.String getAcceleratorTopology(int index) {
+    return acceleratorTopology_.get(index);
+  }
+  /**
+   * <pre>
+   * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+   * Corresponds to the tpu.googleapis.com/topology annotation.
+   * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+   * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+   * </pre>
+   *
+   * <code>repeated string accelerator_topology = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the acceleratorTopology at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAcceleratorTopologyBytes(int index) {
+    return acceleratorTopology_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -509,6 +585,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuMemoryRequests_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, cpuMemoryRequests_);
+    }
+    for (int i = 0; i < acceleratorTopology_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, acceleratorTopology_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -546,6 +625,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuMemoryRequests_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, cpuMemoryRequests_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < acceleratorTopology_.size(); i++) {
+        dataSize += computeStringSizeNoTag(acceleratorTopology_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAcceleratorTopologyList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -575,6 +662,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAcceleratorMemory())) return false;
     if (!getAcceleratorTypeList()
         .equals(other.getAcceleratorTypeList())) return false;
+    if (!getAcceleratorTopologyList()
+        .equals(other.getAcceleratorTopologyList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -601,6 +690,10 @@ private static final long serialVersionUID = 0L;
     if (getAcceleratorTypeCount() > 0) {
       hash = (37 * hash) + ACCELERATOR_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getAcceleratorTypeList().hashCode();
+    }
+    if (getAcceleratorTopologyCount() > 0) {
+      hash = (37 * hash) + ACCELERATOR_TOPOLOGY_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceleratorTopologyList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -756,6 +849,8 @@ private static final long serialVersionUID = 0L;
 
       acceleratorType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      acceleratorTopology_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -794,6 +889,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.acceleratorType_ = acceleratorType_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        acceleratorTopology_ = acceleratorTopology_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.acceleratorTopology_ = acceleratorTopology_;
       onBuilt();
       return result;
     }
@@ -872,6 +972,16 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureAcceleratorTypeIsMutable();
           acceleratorType_.addAll(other.acceleratorType_);
+        }
+        onChanged();
+      }
+      if (!other.acceleratorTopology_.isEmpty()) {
+        if (acceleratorTopology_.isEmpty()) {
+          acceleratorTopology_ = other.acceleratorTopology_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureAcceleratorTopologyIsMutable();
+          acceleratorTopology_.addAll(other.acceleratorTopology_);
         }
         onChanged();
       }
@@ -1659,6 +1769,179 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureAcceleratorTypeIsMutable();
       acceleratorType_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList acceleratorTopology_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAcceleratorTopologyIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        acceleratorTopology_ = new com.google.protobuf.LazyStringArrayList(acceleratorTopology_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <pre>
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     * </pre>
+     *
+     * <code>repeated string accelerator_topology = 10;</code>
+     * @return A list containing the acceleratorTopology.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAcceleratorTopologyList() {
+      return acceleratorTopology_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     * </pre>
+     *
+     * <code>repeated string accelerator_topology = 10;</code>
+     * @return The count of acceleratorTopology.
+     */
+    public int getAcceleratorTopologyCount() {
+      return acceleratorTopology_.size();
+    }
+    /**
+     * <pre>
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     * </pre>
+     *
+     * <code>repeated string accelerator_topology = 10;</code>
+     * @param index The index of the element to return.
+     * @return The acceleratorTopology at the given index.
+     */
+    public java.lang.String getAcceleratorTopology(int index) {
+      return acceleratorTopology_.get(index);
+    }
+    /**
+     * <pre>
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     * </pre>
+     *
+     * <code>repeated string accelerator_topology = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the acceleratorTopology at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAcceleratorTopologyBytes(int index) {
+      return acceleratorTopology_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     * </pre>
+     *
+     * <code>repeated string accelerator_topology = 10;</code>
+     * @param index The index to set the value at.
+     * @param value The acceleratorTopology to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAcceleratorTopology(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAcceleratorTopologyIsMutable();
+      acceleratorTopology_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     * </pre>
+     *
+     * <code>repeated string accelerator_topology = 10;</code>
+     * @param value The acceleratorTopology to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAcceleratorTopology(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAcceleratorTopologyIsMutable();
+      acceleratorTopology_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     * </pre>
+     *
+     * <code>repeated string accelerator_topology = 10;</code>
+     * @param values The acceleratorTopology to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAcceleratorTopology(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAcceleratorTopologyIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, acceleratorTopology_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     * </pre>
+     *
+     * <code>repeated string accelerator_topology = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAcceleratorTopology() {
+      acceleratorTopology_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For multi-host accelerators (i.e., TPU Slices), this defines the slice topology.
+     * Corresponds to the tpu.googleapis.com/topology annotation.
+     * Example: "2x2x1" for a 16-chip slice using v4 TPUs.
+     * Leave empty for single-host accelerators like GPUs or non-slice TPUs.
+     * </pre>
+     *
+     * <code>repeated string accelerator_topology = 10;</code>
+     * @param value The bytes of the acceleratorTopology to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAcceleratorTopologyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAcceleratorTopologyIsMutable();
+      acceleratorTopology_.add(value);
       onChanged();
       return this;
     }
