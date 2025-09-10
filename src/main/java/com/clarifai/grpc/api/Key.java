@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     apps_ = java.util.Collections.emptyList();
     authorizedIdpIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    organizationId_ = "";
   }
 
   @java.lang.Override
@@ -138,6 +139,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000008;
             }
             authorizedIdpIds_.add(s);
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            organizationId_ = s;
             break;
           }
           default: {
@@ -630,6 +637,52 @@ private static final long serialVersionUID = 0L;
     return authorizedIdpIds_.getByteString(index);
   }
 
+  public static final int ORGANIZATION_ID_FIELD_NUMBER = 10;
+  private volatile java.lang.Object organizationId_;
+  /**
+   * <pre>
+   * The organization associated with the key, if any. This is applicable only for PAT keys.
+   * </pre>
+   *
+   * <code>string organization_id = 10;</code>
+   * @return The organizationId.
+   */
+  @java.lang.Override
+  public java.lang.String getOrganizationId() {
+    java.lang.Object ref = organizationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organizationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The organization associated with the key, if any. This is applicable only for PAT keys.
+   * </pre>
+   *
+   * <code>string organization_id = 10;</code>
+   * @return The bytes for organizationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOrganizationIdBytes() {
+    java.lang.Object ref = organizationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      organizationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -670,6 +723,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < authorizedIdpIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, authorizedIdpIds_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, organizationId_);
     }
     unknownFields.writeTo(output);
   }
@@ -725,6 +781,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAuthorizedIdpIdsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, organizationId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -764,6 +823,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAuthorizedIdpIdsList()
         .equals(other.getAuthorizedIdpIdsList())) return false;
+    if (!getOrganizationId()
+        .equals(other.getOrganizationId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -805,6 +866,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + AUTHORIZED_IDP_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getAuthorizedIdpIdsList().hashCode();
     }
+    hash = (37 * hash) + ORGANIZATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getOrganizationId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -973,6 +1036,8 @@ private static final long serialVersionUID = 0L;
       }
       authorizedIdpIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      organizationId_ = "";
+
       return this;
     }
 
@@ -1037,6 +1102,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.authorizedIdpIds_ = authorizedIdpIds_;
+      result.organizationId_ = organizationId_;
       onBuilt();
       return result;
     }
@@ -1157,6 +1223,10 @@ private static final long serialVersionUID = 0L;
           ensureAuthorizedIdpIdsIsMutable();
           authorizedIdpIds_.addAll(other.authorizedIdpIds_);
         }
+        onChanged();
+      }
+      if (!other.getOrganizationId().isEmpty()) {
+        organizationId_ = other.organizationId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2587,6 +2657,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureAuthorizedIdpIdsIsMutable();
       authorizedIdpIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object organizationId_ = "";
+    /**
+     * <pre>
+     * The organization associated with the key, if any. This is applicable only for PAT keys.
+     * </pre>
+     *
+     * <code>string organization_id = 10;</code>
+     * @return The organizationId.
+     */
+    public java.lang.String getOrganizationId() {
+      java.lang.Object ref = organizationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The organization associated with the key, if any. This is applicable only for PAT keys.
+     * </pre>
+     *
+     * <code>string organization_id = 10;</code>
+     * @return The bytes for organizationId.
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationIdBytes() {
+      java.lang.Object ref = organizationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The organization associated with the key, if any. This is applicable only for PAT keys.
+     * </pre>
+     *
+     * <code>string organization_id = 10;</code>
+     * @param value The organizationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      organizationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The organization associated with the key, if any. This is applicable only for PAT keys.
+     * </pre>
+     *
+     * <code>string organization_id = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganizationId() {
+      
+      organizationId_ = getDefaultInstance().getOrganizationId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The organization associated with the key, if any. This is applicable only for PAT keys.
+     * </pre>
+     *
+     * <code>string organization_id = 10;</code>
+     * @param value The bytes for organizationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      organizationId_ = value;
       onChanged();
       return this;
     }

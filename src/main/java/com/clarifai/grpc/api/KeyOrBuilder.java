@@ -304,4 +304,24 @@ public interface KeyOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAuthorizedIdpIdsBytes(int index);
+
+  /**
+   * <pre>
+   * The organization associated with the key, if any. This is applicable only for PAT keys.
+   * </pre>
+   *
+   * <code>string organization_id = 10;</code>
+   * @return The organizationId.
+   */
+  java.lang.String getOrganizationId();
+  /**
+   * <pre>
+   * The organization associated with the key, if any. This is applicable only for PAT keys.
+   * </pre>
+   *
+   * <code>string organization_id = 10;</code>
+   * @return The bytes for organizationId.
+   */
+  com.google.protobuf.ByteString
+      getOrganizationIdBytes();
 }
