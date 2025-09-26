@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     license_ = "";
     trainLog_ = "";
     methodSignatures_ = java.util.Collections.emptyList();
+    specialHandling_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -297,6 +298,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.MethodSignature.parser(), extensionRegistry));
             break;
           }
+          case 218: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              specialHandling_ = new java.util.ArrayList<com.clarifai.grpc.api.SpecialHandling>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            specialHandling_.add(
+                input.readMessage(com.clarifai.grpc.api.SpecialHandling.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -316,6 +326,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         methodSignatures_ = java.util.Collections.unmodifiableList(methodSignatures_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        specialHandling_ = java.util.Collections.unmodifiableList(specialHandling_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1014,7 +1027,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2109
+   *     See proto/clarifai/api/resources.proto;l=2124
    * @return Whether the importInfo field is set.
    */
   @java.lang.Override
@@ -1029,7 +1042,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2109
+   *     See proto/clarifai/api/resources.proto;l=2124
    * @return The importInfo.
    */
   @java.lang.Override
@@ -1231,6 +1244,66 @@ private static final long serialVersionUID = 0L;
     return methodSignatures_.get(index);
   }
 
+  public static final int SPECIAL_HANDLING_FIELD_NUMBER = 27;
+  private java.util.List<com.clarifai.grpc.api.SpecialHandling> specialHandling_;
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.SpecialHandling> getSpecialHandlingList() {
+    return specialHandling_;
+  }
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
+      getSpecialHandlingOrBuilderList() {
+    return specialHandling_;
+  }
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  @java.lang.Override
+  public int getSpecialHandlingCount() {
+    return specialHandling_.size();
+  }
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.SpecialHandling getSpecialHandling(int index) {
+    return specialHandling_.get(index);
+  }
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
+      int index) {
+    return specialHandling_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1313,6 +1386,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < methodSignatures_.size(); i++) {
       output.writeMessage(26, methodSignatures_.get(i));
+    }
+    for (int i = 0; i < specialHandling_.size(); i++) {
+      output.writeMessage(27, specialHandling_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1408,6 +1484,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < methodSignatures_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(26, methodSignatures_.get(i));
+    }
+    for (int i = 0; i < specialHandling_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(27, specialHandling_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1512,6 +1592,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getMethodSignaturesList()
         .equals(other.getMethodSignaturesList())) return false;
+    if (!getSpecialHandlingList()
+        .equals(other.getSpecialHandlingList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1598,6 +1680,10 @@ private static final long serialVersionUID = 0L;
     if (getMethodSignaturesCount() > 0) {
       hash = (37 * hash) + METHOD_SIGNATURES_FIELD_NUMBER;
       hash = (53 * hash) + getMethodSignaturesList().hashCode();
+    }
+    if (getSpecialHandlingCount() > 0) {
+      hash = (37 * hash) + SPECIAL_HANDLING_FIELD_NUMBER;
+      hash = (53 * hash) + getSpecialHandlingList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1732,6 +1818,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getMethodSignaturesFieldBuilder();
+        getSpecialHandlingFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1842,6 +1929,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         methodSignaturesBuilder_.clear();
+      }
+      if (specialHandlingBuilder_ == null) {
+        specialHandling_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        specialHandlingBuilder_.clear();
       }
       return this;
     }
@@ -1956,6 +2049,15 @@ private static final long serialVersionUID = 0L;
         result.methodSignatures_ = methodSignatures_;
       } else {
         result.methodSignatures_ = methodSignaturesBuilder_.build();
+      }
+      if (specialHandlingBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          specialHandling_ = java.util.Collections.unmodifiableList(specialHandling_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.specialHandling_ = specialHandling_;
+      } else {
+        result.specialHandling_ = specialHandlingBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2100,6 +2202,32 @@ private static final long serialVersionUID = 0L;
                  getMethodSignaturesFieldBuilder() : null;
           } else {
             methodSignaturesBuilder_.addAllMessages(other.methodSignatures_);
+          }
+        }
+      }
+      if (specialHandlingBuilder_ == null) {
+        if (!other.specialHandling_.isEmpty()) {
+          if (specialHandling_.isEmpty()) {
+            specialHandling_ = other.specialHandling_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureSpecialHandlingIsMutable();
+            specialHandling_.addAll(other.specialHandling_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.specialHandling_.isEmpty()) {
+          if (specialHandlingBuilder_.isEmpty()) {
+            specialHandlingBuilder_.dispose();
+            specialHandlingBuilder_ = null;
+            specialHandling_ = other.specialHandling_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            specialHandlingBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getSpecialHandlingFieldBuilder() : null;
+          } else {
+            specialHandlingBuilder_.addAllMessages(other.specialHandling_);
           }
         }
       }
@@ -4399,7 +4527,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2109
+     *     See proto/clarifai/api/resources.proto;l=2124
      * @return Whether the importInfo field is set.
      */
     @java.lang.Deprecated public boolean hasImportInfo() {
@@ -4413,7 +4541,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2109
+     *     See proto/clarifai/api/resources.proto;l=2124
      * @return The importInfo.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo getImportInfo() {
@@ -5272,6 +5400,318 @@ private static final long serialVersionUID = 0L;
         methodSignatures_ = null;
       }
       return methodSignaturesBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.SpecialHandling> specialHandling_ =
+      java.util.Collections.emptyList();
+    private void ensureSpecialHandlingIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        specialHandling_ = new java.util.ArrayList<com.clarifai.grpc.api.SpecialHandling>(specialHandling_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.SpecialHandling, com.clarifai.grpc.api.SpecialHandling.Builder, com.clarifai.grpc.api.SpecialHandlingOrBuilder> specialHandlingBuilder_;
+
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.SpecialHandling> getSpecialHandlingList() {
+      if (specialHandlingBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(specialHandling_);
+      } else {
+        return specialHandlingBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public int getSpecialHandlingCount() {
+      if (specialHandlingBuilder_ == null) {
+        return specialHandling_.size();
+      } else {
+        return specialHandlingBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public com.clarifai.grpc.api.SpecialHandling getSpecialHandling(int index) {
+      if (specialHandlingBuilder_ == null) {
+        return specialHandling_.get(index);
+      } else {
+        return specialHandlingBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public Builder setSpecialHandling(
+        int index, com.clarifai.grpc.api.SpecialHandling value) {
+      if (specialHandlingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpecialHandlingIsMutable();
+        specialHandling_.set(index, value);
+        onChanged();
+      } else {
+        specialHandlingBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public Builder setSpecialHandling(
+        int index, com.clarifai.grpc.api.SpecialHandling.Builder builderForValue) {
+      if (specialHandlingBuilder_ == null) {
+        ensureSpecialHandlingIsMutable();
+        specialHandling_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        specialHandlingBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public Builder addSpecialHandling(com.clarifai.grpc.api.SpecialHandling value) {
+      if (specialHandlingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpecialHandlingIsMutable();
+        specialHandling_.add(value);
+        onChanged();
+      } else {
+        specialHandlingBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public Builder addSpecialHandling(
+        int index, com.clarifai.grpc.api.SpecialHandling value) {
+      if (specialHandlingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSpecialHandlingIsMutable();
+        specialHandling_.add(index, value);
+        onChanged();
+      } else {
+        specialHandlingBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public Builder addSpecialHandling(
+        com.clarifai.grpc.api.SpecialHandling.Builder builderForValue) {
+      if (specialHandlingBuilder_ == null) {
+        ensureSpecialHandlingIsMutable();
+        specialHandling_.add(builderForValue.build());
+        onChanged();
+      } else {
+        specialHandlingBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public Builder addSpecialHandling(
+        int index, com.clarifai.grpc.api.SpecialHandling.Builder builderForValue) {
+      if (specialHandlingBuilder_ == null) {
+        ensureSpecialHandlingIsMutable();
+        specialHandling_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        specialHandlingBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public Builder addAllSpecialHandling(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.SpecialHandling> values) {
+      if (specialHandlingBuilder_ == null) {
+        ensureSpecialHandlingIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, specialHandling_);
+        onChanged();
+      } else {
+        specialHandlingBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public Builder clearSpecialHandling() {
+      if (specialHandlingBuilder_ == null) {
+        specialHandling_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        specialHandlingBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public Builder removeSpecialHandling(int index) {
+      if (specialHandlingBuilder_ == null) {
+        ensureSpecialHandlingIsMutable();
+        specialHandling_.remove(index);
+        onChanged();
+      } else {
+        specialHandlingBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public com.clarifai.grpc.api.SpecialHandling.Builder getSpecialHandlingBuilder(
+        int index) {
+      return getSpecialHandlingFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
+        int index) {
+      if (specialHandlingBuilder_ == null) {
+        return specialHandling_.get(index);  } else {
+        return specialHandlingBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
+         getSpecialHandlingOrBuilderList() {
+      if (specialHandlingBuilder_ != null) {
+        return specialHandlingBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(specialHandling_);
+      }
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public com.clarifai.grpc.api.SpecialHandling.Builder addSpecialHandlingBuilder() {
+      return getSpecialHandlingFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.SpecialHandling.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public com.clarifai.grpc.api.SpecialHandling.Builder addSpecialHandlingBuilder(
+        int index) {
+      return getSpecialHandlingFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.SpecialHandling.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * List of special handling instructions for this model version.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.SpecialHandling.Builder> 
+         getSpecialHandlingBuilderList() {
+      return getSpecialHandlingFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.SpecialHandling, com.clarifai.grpc.api.SpecialHandling.Builder, com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
+        getSpecialHandlingFieldBuilder() {
+      if (specialHandlingBuilder_ == null) {
+        specialHandlingBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.SpecialHandling, com.clarifai.grpc.api.SpecialHandling.Builder, com.clarifai.grpc.api.SpecialHandlingOrBuilder>(
+                specialHandling_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        specialHandling_ = null;
+      }
+      return specialHandlingBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

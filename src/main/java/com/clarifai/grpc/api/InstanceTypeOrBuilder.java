@@ -159,4 +159,48 @@ public interface InstanceTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFeatureFlagGroupBytes();
+
+  /**
+   * <pre>
+   * List of special handling instructions for this instance type.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 9;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.SpecialHandling> 
+      getSpecialHandlingList();
+  /**
+   * <pre>
+   * List of special handling instructions for this instance type.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 9;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandling getSpecialHandling(int index);
+  /**
+   * <pre>
+   * List of special handling instructions for this instance type.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 9;</code>
+   */
+  int getSpecialHandlingCount();
+  /**
+   * <pre>
+   * List of special handling instructions for this instance type.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 9;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
+      getSpecialHandlingOrBuilderList();
+  /**
+   * <pre>
+   * List of special handling instructions for this instance type.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 9;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
+      int index);
 }

@@ -143,7 +143,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4738
+   *     See proto/clarifai/api/resources.proto;l=4756
    * @return A list containing the labels.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -155,7 +155,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4738
+   *     See proto/clarifai/api/resources.proto;l=4756
    * @return The count of labels.
    */
   @java.lang.Deprecated int getLabelsCount();
@@ -166,7 +166,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4738
+   *     See proto/clarifai/api/resources.proto;l=4756
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -178,7 +178,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4738
+   *     See proto/clarifai/api/resources.proto;l=4756
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -309,4 +309,48 @@ public interface RunnerOrBuilder extends
    * @return The numReplicas.
    */
   int getNumReplicas();
+
+  /**
+   * <pre>
+   * List of special handling instructions for this runner.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 12;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.SpecialHandling> 
+      getSpecialHandlingList();
+  /**
+   * <pre>
+   * List of special handling instructions for this runner.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 12;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandling getSpecialHandling(int index);
+  /**
+   * <pre>
+   * List of special handling instructions for this runner.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 12;</code>
+   */
+  int getSpecialHandlingCount();
+  /**
+   * <pre>
+   * List of special handling instructions for this runner.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 12;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
+      getSpecialHandlingOrBuilderList();
+  /**
+   * <pre>
+   * List of special handling instructions for this runner.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 12;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
+      int index);
 }

@@ -280,7 +280,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7296
+   *     See proto/clarifai/api/service.proto;l=7305
    * @return The query.
    */
   @java.lang.Deprecated java.lang.String getQuery();
@@ -292,7 +292,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7296
+   *     See proto/clarifai/api/service.proto;l=7305
    * @return The bytes for query.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -306,7 +306,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7299
+   *     See proto/clarifai/api/service.proto;l=7308
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -318,7 +318,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7299
+   *     See proto/clarifai/api/service.proto;l=7308
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -332,7 +332,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string search_term = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7302
+   *     See proto/clarifai/api/service.proto;l=7311
    * @return The searchTerm.
    */
   @java.lang.Deprecated java.lang.String getSearchTerm();
@@ -344,7 +344,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string search_term = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7302
+   *     See proto/clarifai/api/service.proto;l=7311
    * @return The bytes for searchTerm.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

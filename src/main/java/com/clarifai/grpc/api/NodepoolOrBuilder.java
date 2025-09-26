@@ -271,4 +271,48 @@ public interface NodepoolOrBuilder extends
    * <code>.google.protobuf.Struct metadata = 12;</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <pre>
+   * List of special handling instructions for this nodepool.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.SpecialHandling> 
+      getSpecialHandlingList();
+  /**
+   * <pre>
+   * List of special handling instructions for this nodepool.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandling getSpecialHandling(int index);
+  /**
+   * <pre>
+   * List of special handling instructions for this nodepool.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+   */
+  int getSpecialHandlingCount();
+  /**
+   * <pre>
+   * List of special handling instructions for this nodepool.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
+      getSpecialHandlingOrBuilderList();
+  /**
+   * <pre>
+   * List of special handling instructions for this nodepool.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 15;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
+      int index);
 }

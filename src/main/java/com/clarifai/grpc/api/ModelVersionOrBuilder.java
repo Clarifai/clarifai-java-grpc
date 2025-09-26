@@ -424,7 +424,7 @@ public interface ModelVersionOrBuilder extends
    *
    * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2109
+   *     See proto/clarifai/api/resources.proto;l=2124
    * @return Whether the importInfo field is set.
    */
   @java.lang.Deprecated boolean hasImportInfo();
@@ -436,7 +436,7 @@ public interface ModelVersionOrBuilder extends
    *
    * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2109
+   *     See proto/clarifai/api/resources.proto;l=2124
    * @return The importInfo.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.ImportInfo getImportInfo();
@@ -566,5 +566,49 @@ public interface ModelVersionOrBuilder extends
    * <code>repeated .clarifai.api.MethodSignature method_signatures = 26;</code>
    */
   com.clarifai.grpc.api.MethodSignatureOrBuilder getMethodSignaturesOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.SpecialHandling> 
+      getSpecialHandlingList();
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandling getSpecialHandling(int index);
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  int getSpecialHandlingCount();
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
+      getSpecialHandlingOrBuilderList();
+  /**
+   * <pre>
+   * List of special handling instructions for this model version.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 27;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
       int index);
 }
