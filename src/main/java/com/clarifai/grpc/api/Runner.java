@@ -171,6 +171,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.SpecialHandling.parser(), extensionRegistry));
             break;
           }
+          case 106: {
+            com.clarifai.grpc.api.RunnerMetrics.Builder subBuilder = null;
+            if (runnerMetrics_ != null) {
+              subBuilder = runnerMetrics_.toBuilder();
+            }
+            runnerMetrics_ = input.readMessage(com.clarifai.grpc.api.RunnerMetrics.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(runnerMetrics_);
+              runnerMetrics_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -434,7 +447,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4756
+   *     See proto/clarifai/api/resources.proto;l=4765
    * @return A list containing the labels.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -448,7 +461,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4756
+   *     See proto/clarifai/api/resources.proto;l=4765
    * @return The count of labels.
    */
   @java.lang.Deprecated public int getLabelsCount() {
@@ -461,7 +474,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4756
+   *     See proto/clarifai/api/resources.proto;l=4765
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -475,7 +488,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4756
+   *     See proto/clarifai/api/resources.proto;l=4765
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -707,6 +720,47 @@ private static final long serialVersionUID = 0L;
     return specialHandling_.get(index);
   }
 
+  public static final int RUNNER_METRICS_FIELD_NUMBER = 13;
+  private com.clarifai.grpc.api.RunnerMetrics runnerMetrics_;
+  /**
+   * <pre>
+   * Metrics and status for the underlying k8s deployment.
+   * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+   * @return Whether the runnerMetrics field is set.
+   */
+  @java.lang.Override
+  public boolean hasRunnerMetrics() {
+    return runnerMetrics_ != null;
+  }
+  /**
+   * <pre>
+   * Metrics and status for the underlying k8s deployment.
+   * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+   * @return The runnerMetrics.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerMetrics getRunnerMetrics() {
+    return runnerMetrics_ == null ? com.clarifai.grpc.api.RunnerMetrics.getDefaultInstance() : runnerMetrics_;
+  }
+  /**
+   * <pre>
+   * Metrics and status for the underlying k8s deployment.
+   * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerMetricsOrBuilder getRunnerMetricsOrBuilder() {
+    return getRunnerMetrics();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -753,6 +807,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < specialHandling_.size(); i++) {
       output.writeMessage(12, specialHandling_.get(i));
+    }
+    if (runnerMetrics_ != null) {
+      output.writeMessage(13, getRunnerMetrics());
     }
     unknownFields.writeTo(output);
   }
@@ -809,6 +866,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, specialHandling_.get(i));
     }
+    if (runnerMetrics_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getRunnerMetrics());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -864,6 +925,11 @@ private static final long serialVersionUID = 0L;
         != other.getNumReplicas()) return false;
     if (!getSpecialHandlingList()
         .equals(other.getSpecialHandlingList())) return false;
+    if (hasRunnerMetrics() != other.hasRunnerMetrics()) return false;
+    if (hasRunnerMetrics()) {
+      if (!getRunnerMetrics()
+          .equals(other.getRunnerMetrics())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -912,6 +978,10 @@ private static final long serialVersionUID = 0L;
     if (getSpecialHandlingCount() > 0) {
       hash = (37 * hash) + SPECIAL_HANDLING_FIELD_NUMBER;
       hash = (53 * hash) + getSpecialHandlingList().hashCode();
+    }
+    if (hasRunnerMetrics()) {
+      hash = (37 * hash) + RUNNER_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getRunnerMetrics().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1102,6 +1172,12 @@ private static final long serialVersionUID = 0L;
       } else {
         specialHandlingBuilder_.clear();
       }
+      if (runnerMetricsBuilder_ == null) {
+        runnerMetrics_ = null;
+      } else {
+        runnerMetrics_ = null;
+        runnerMetricsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1175,6 +1251,11 @@ private static final long serialVersionUID = 0L;
         result.specialHandling_ = specialHandling_;
       } else {
         result.specialHandling_ = specialHandlingBuilder_.build();
+      }
+      if (runnerMetricsBuilder_ == null) {
+        result.runnerMetrics_ = runnerMetrics_;
+      } else {
+        result.runnerMetrics_ = runnerMetricsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1288,6 +1369,9 @@ private static final long serialVersionUID = 0L;
             specialHandlingBuilder_.addAllMessages(other.specialHandling_);
           }
         }
+      }
+      if (other.hasRunnerMetrics()) {
+        mergeRunnerMetrics(other.getRunnerMetrics());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2013,7 +2097,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4756
+     *     See proto/clarifai/api/resources.proto;l=4765
      * @return A list containing the labels.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -2027,7 +2111,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4756
+     *     See proto/clarifai/api/resources.proto;l=4765
      * @return The count of labels.
      */
     @java.lang.Deprecated public int getLabelsCount() {
@@ -2040,7 +2124,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4756
+     *     See proto/clarifai/api/resources.proto;l=4765
      * @param index The index of the element to return.
      * @return The labels at the given index.
      */
@@ -2054,7 +2138,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4756
+     *     See proto/clarifai/api/resources.proto;l=4765
      * @param index The index of the value to return.
      * @return The bytes of the labels at the given index.
      */
@@ -2069,7 +2153,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4756
+     *     See proto/clarifai/api/resources.proto;l=4765
      * @param index The index to set the value at.
      * @param value The labels to set.
      * @return This builder for chaining.
@@ -2091,7 +2175,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4756
+     *     See proto/clarifai/api/resources.proto;l=4765
      * @param value The labels to add.
      * @return This builder for chaining.
      */
@@ -2112,7 +2196,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4756
+     *     See proto/clarifai/api/resources.proto;l=4765
      * @param values The labels to add.
      * @return This builder for chaining.
      */
@@ -2131,7 +2215,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4756
+     *     See proto/clarifai/api/resources.proto;l=4765
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearLabels() {
@@ -2147,7 +2231,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4756
+     *     See proto/clarifai/api/resources.proto;l=4765
      * @param value The bytes of the labels to add.
      * @return This builder for chaining.
      */
@@ -3083,6 +3167,170 @@ private static final long serialVersionUID = 0L;
         specialHandling_ = null;
       }
       return specialHandlingBuilder_;
+    }
+
+    private com.clarifai.grpc.api.RunnerMetrics runnerMetrics_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerMetrics, com.clarifai.grpc.api.RunnerMetrics.Builder, com.clarifai.grpc.api.RunnerMetricsOrBuilder> runnerMetricsBuilder_;
+    /**
+     * <pre>
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     * @return Whether the runnerMetrics field is set.
+     */
+    public boolean hasRunnerMetrics() {
+      return runnerMetricsBuilder_ != null || runnerMetrics_ != null;
+    }
+    /**
+     * <pre>
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     * @return The runnerMetrics.
+     */
+    public com.clarifai.grpc.api.RunnerMetrics getRunnerMetrics() {
+      if (runnerMetricsBuilder_ == null) {
+        return runnerMetrics_ == null ? com.clarifai.grpc.api.RunnerMetrics.getDefaultInstance() : runnerMetrics_;
+      } else {
+        return runnerMetricsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     */
+    public Builder setRunnerMetrics(com.clarifai.grpc.api.RunnerMetrics value) {
+      if (runnerMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        runnerMetrics_ = value;
+        onChanged();
+      } else {
+        runnerMetricsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     */
+    public Builder setRunnerMetrics(
+        com.clarifai.grpc.api.RunnerMetrics.Builder builderForValue) {
+      if (runnerMetricsBuilder_ == null) {
+        runnerMetrics_ = builderForValue.build();
+        onChanged();
+      } else {
+        runnerMetricsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     */
+    public Builder mergeRunnerMetrics(com.clarifai.grpc.api.RunnerMetrics value) {
+      if (runnerMetricsBuilder_ == null) {
+        if (runnerMetrics_ != null) {
+          runnerMetrics_ =
+            com.clarifai.grpc.api.RunnerMetrics.newBuilder(runnerMetrics_).mergeFrom(value).buildPartial();
+        } else {
+          runnerMetrics_ = value;
+        }
+        onChanged();
+      } else {
+        runnerMetricsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     */
+    public Builder clearRunnerMetrics() {
+      if (runnerMetricsBuilder_ == null) {
+        runnerMetrics_ = null;
+        onChanged();
+      } else {
+        runnerMetrics_ = null;
+        runnerMetricsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     */
+    public com.clarifai.grpc.api.RunnerMetrics.Builder getRunnerMetricsBuilder() {
+      
+      onChanged();
+      return getRunnerMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     */
+    public com.clarifai.grpc.api.RunnerMetricsOrBuilder getRunnerMetricsOrBuilder() {
+      if (runnerMetricsBuilder_ != null) {
+        return runnerMetricsBuilder_.getMessageOrBuilder();
+      } else {
+        return runnerMetrics_ == null ?
+            com.clarifai.grpc.api.RunnerMetrics.getDefaultInstance() : runnerMetrics_;
+      }
+    }
+    /**
+     * <pre>
+     * Metrics and status for the underlying k8s deployment.
+     * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerMetrics, com.clarifai.grpc.api.RunnerMetrics.Builder, com.clarifai.grpc.api.RunnerMetricsOrBuilder> 
+        getRunnerMetricsFieldBuilder() {
+      if (runnerMetricsBuilder_ == null) {
+        runnerMetricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.RunnerMetrics, com.clarifai.grpc.api.RunnerMetrics.Builder, com.clarifai.grpc.api.RunnerMetricsOrBuilder>(
+                getRunnerMetrics(),
+                getParentForChildren(),
+                isClean());
+        runnerMetrics_ = null;
+      }
+      return runnerMetricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

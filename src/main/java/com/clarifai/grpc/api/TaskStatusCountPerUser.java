@@ -142,7 +142,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string user_id = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3700
+   *     See proto/clarifai/api/resources.proto;l=3702
    * @return The userId.
    */
   @java.lang.Override
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string user_id = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3700
+   *     See proto/clarifai/api/resources.proto;l=3702
    * @return The bytes for userId.
    */
   @java.lang.Override
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string user_id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3700
+     *     See proto/clarifai/api/resources.proto;l=3702
      * @return The userId.
      */
     @java.lang.Deprecated public java.lang.String getUserId() {
@@ -717,7 +717,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string user_id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3700
+     *     See proto/clarifai/api/resources.proto;l=3702
      * @return The bytes for userId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -740,7 +740,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string user_id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3700
+     *     See proto/clarifai/api/resources.proto;l=3702
      * @param value The userId to set.
      * @return This builder for chaining.
      */
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string user_id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3700
+     *     See proto/clarifai/api/resources.proto;l=3702
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearUserId() {
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string user_id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3700
+     *     See proto/clarifai/api/resources.proto;l=3702
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */

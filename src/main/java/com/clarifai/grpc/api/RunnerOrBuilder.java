@@ -143,7 +143,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4756
+   *     See proto/clarifai/api/resources.proto;l=4765
    * @return A list containing the labels.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -155,7 +155,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4756
+   *     See proto/clarifai/api/resources.proto;l=4765
    * @return The count of labels.
    */
   @java.lang.Deprecated int getLabelsCount();
@@ -166,7 +166,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4756
+   *     See proto/clarifai/api/resources.proto;l=4765
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -178,7 +178,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4756
+   *     See proto/clarifai/api/resources.proto;l=4765
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -353,4 +353,34 @@ public interface RunnerOrBuilder extends
    */
   com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Metrics and status for the underlying k8s deployment.
+   * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+   * @return Whether the runnerMetrics field is set.
+   */
+  boolean hasRunnerMetrics();
+  /**
+   * <pre>
+   * Metrics and status for the underlying k8s deployment.
+   * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+   * @return The runnerMetrics.
+   */
+  com.clarifai.grpc.api.RunnerMetrics getRunnerMetrics();
+  /**
+   * <pre>
+   * Metrics and status for the underlying k8s deployment.
+   * Each Runner is 1:1 with a k8s deployment, so this field tracks deployment health and metrics.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
+   */
+  com.clarifai.grpc.api.RunnerMetricsOrBuilder getRunnerMetricsOrBuilder();
 }

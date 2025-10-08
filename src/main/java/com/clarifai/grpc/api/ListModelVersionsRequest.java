@@ -376,6 +376,21 @@ private static final long serialVersionUID = 0L;
     return trainedOnly_;
   }
 
+  public static final int MIN_REPLICAS_FIELD_NUMBER = 12;
+  private int minReplicas_;
+  /**
+   * <pre>
+   * Filter by model versions runners with replicas &gt;= min_replicas.
+   * </pre>
+   *
+   * <code>uint32 min_replicas = 12;</code>
+   * @return The minReplicas.
+   */
+  @java.lang.Override
+  public int getMinReplicas() {
+    return minReplicas_;
+  }
+
   public static final int SORT_ASCENDING_FIELD_NUMBER = 7;
   private boolean sortAscending_;
   /**
@@ -508,21 +523,6 @@ private static final long serialVersionUID = 0L;
       return (java.lang.Boolean) sortBy_;
     }
     return false;
-  }
-
-  public static final int MIN_REPLICAS_FIELD_NUMBER = 12;
-  private int minReplicas_;
-  /**
-   * <pre>
-   * Filter by model versions runners with replicas &gt;= min_replicas.
-   * </pre>
-   *
-   * <code>uint32 min_replicas = 12;</code>
-   * @return The minReplicas.
-   */
-  @java.lang.Override
-  public int getMinReplicas() {
-    return minReplicas_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -673,10 +673,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConceptIdsList())) return false;
     if (getTrainedOnly()
         != other.getTrainedOnly()) return false;
-    if (getSortAscending()
-        != other.getSortAscending()) return false;
     if (getMinReplicas()
         != other.getMinReplicas()) return false;
+    if (getSortAscending()
+        != other.getSortAscending()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 8:
@@ -726,11 +726,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRAINED_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getTrainedOnly());
+    hash = (37 * hash) + MIN_REPLICAS_FIELD_NUMBER;
+    hash = (53 * hash) + getMinReplicas();
     hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSortAscending());
-    hash = (37 * hash) + MIN_REPLICAS_FIELD_NUMBER;
-    hash = (53 * hash) + getMinReplicas();
     switch (sortByCase_) {
       case 8:
         hash = (37 * hash) + SORT_BY_STATUS_CODE_FIELD_NUMBER;
@@ -908,9 +908,9 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       trainedOnly_ = false;
 
-      sortAscending_ = false;
-
       minReplicas_ = 0;
+
+      sortAscending_ = false;
 
       sortByCase_ = 0;
       sortBy_ = null;
@@ -955,6 +955,7 @@ private static final long serialVersionUID = 0L;
       }
       result.conceptIds_ = conceptIds_;
       result.trainedOnly_ = trainedOnly_;
+      result.minReplicas_ = minReplicas_;
       result.sortAscending_ = sortAscending_;
       if (sortByCase_ == 8) {
         result.sortBy_ = sortBy_;
@@ -968,7 +969,6 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 11) {
         result.sortBy_ = sortBy_;
       }
-      result.minReplicas_ = minReplicas_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -1044,11 +1044,11 @@ private static final long serialVersionUID = 0L;
       if (other.getTrainedOnly() != false) {
         setTrainedOnly(other.getTrainedOnly());
       }
-      if (other.getSortAscending() != false) {
-        setSortAscending(other.getSortAscending());
-      }
       if (other.getMinReplicas() != 0) {
         setMinReplicas(other.getMinReplicas());
+      }
+      if (other.getSortAscending() != false) {
+        setSortAscending(other.getSortAscending());
       }
       switch (other.getSortByCase()) {
         case SORT_BY_STATUS_CODE: {
@@ -1601,6 +1601,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int minReplicas_ ;
+    /**
+     * <pre>
+     * Filter by model versions runners with replicas &gt;= min_replicas.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 12;</code>
+     * @return The minReplicas.
+     */
+    @java.lang.Override
+    public int getMinReplicas() {
+      return minReplicas_;
+    }
+    /**
+     * <pre>
+     * Filter by model versions runners with replicas &gt;= min_replicas.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 12;</code>
+     * @param value The minReplicas to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinReplicas(int value) {
+      
+      minReplicas_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by model versions runners with replicas &gt;= min_replicas.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMinReplicas() {
+      
+      minReplicas_ = 0;
+      onChanged();
+      return this;
+    }
+
     private boolean sortAscending_ ;
     /**
      * <pre>
@@ -1876,49 +1919,6 @@ private static final long serialVersionUID = 0L;
         sortBy_ = null;
         onChanged();
       }
-      return this;
-    }
-
-    private int minReplicas_ ;
-    /**
-     * <pre>
-     * Filter by model versions runners with replicas &gt;= min_replicas.
-     * </pre>
-     *
-     * <code>uint32 min_replicas = 12;</code>
-     * @return The minReplicas.
-     */
-    @java.lang.Override
-    public int getMinReplicas() {
-      return minReplicas_;
-    }
-    /**
-     * <pre>
-     * Filter by model versions runners with replicas &gt;= min_replicas.
-     * </pre>
-     *
-     * <code>uint32 min_replicas = 12;</code>
-     * @param value The minReplicas to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMinReplicas(int value) {
-      
-      minReplicas_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filter by model versions runners with replicas &gt;= min_replicas.
-     * </pre>
-     *
-     * <code>uint32 min_replicas = 12;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMinReplicas() {
-      
-      minReplicas_ = 0;
-      onChanged();
       return this;
     }
     @java.lang.Override

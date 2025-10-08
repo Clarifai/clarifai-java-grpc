@@ -153,6 +153,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 128: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 16;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -199,6 +204,7 @@ private static final long serialVersionUID = 0L;
     SORT_BY_STAR_COUNT(8),
     SORT_BY_MODIFIED_AT(9),
     SORT_BY_ID(11),
+    SORT_BY_RELEVANCE(16),
     SORTBY_NOT_SET(0);
     private final int value;
     private SortByCase(int value) {
@@ -220,6 +226,7 @@ private static final long serialVersionUID = 0L;
         case 8: return SORT_BY_STAR_COUNT;
         case 9: return SORT_BY_MODIFIED_AT;
         case 11: return SORT_BY_ID;
+        case 16: return SORT_BY_RELEVANCE;
         case 0: return SORTBY_NOT_SET;
         default: return null;
       }
@@ -460,6 +467,35 @@ private static final long serialVersionUID = 0L;
     return false;
   }
 
+  public static final int SORT_BY_RELEVANCE_FIELD_NUMBER = 16;
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 16;</code>
+   * @return Whether the sortByRelevance field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByRelevance() {
+    return sortByCase_ == 16;
+  }
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 16;</code>
+   * @return The sortByRelevance.
+   */
+  @java.lang.Override
+  public boolean getSortByRelevance() {
+    if (sortByCase_ == 16) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
   public static final int STARRED_ONLY_FIELD_NUMBER = 4;
   private boolean starredOnly_;
   /**
@@ -564,7 +600,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7901
+   *     See proto/clarifai/api/service.proto;l=7954
    * @return The name.
    */
   @java.lang.Override
@@ -588,7 +624,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7901
+   *     See proto/clarifai/api/service.proto;l=7954
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -616,7 +652,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7904
+   *     See proto/clarifai/api/service.proto;l=7957
    * @return The filterByUserId.
    */
   @java.lang.Override
@@ -725,6 +761,10 @@ private static final long serialVersionUID = 0L;
     if (visibility_ != null) {
       output.writeMessage(15, getVisibility());
     }
+    if (sortByCase_ == 16) {
+      output.writeBool(
+          16, (boolean)((java.lang.Boolean) sortBy_));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -800,6 +840,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getVisibility());
     }
+    if (sortByCase_ == 16) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            16, (boolean)((java.lang.Boolean) sortBy_));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -860,6 +905,10 @@ private static final long serialVersionUID = 0L;
       case 11:
         if (getSortById()
             != other.getSortById()) return false;
+        break;
+      case 16:
+        if (getSortByRelevance()
+            != other.getSortByRelevance()) return false;
         break;
       case 0:
       default:
@@ -927,6 +976,11 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + SORT_BY_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getSortById());
+        break;
+      case 16:
+        hash = (37 * hash) + SORT_BY_RELEVANCE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByRelevance());
         break;
       case 0:
       default:
@@ -1152,6 +1206,9 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 11) {
         result.sortBy_ = sortBy_;
       }
+      if (sortByCase_ == 16) {
+        result.sortBy_ = sortBy_;
+      }
       result.starredOnly_ = starredOnly_;
       result.bookmark_ = bookmark_;
       result.search_ = search_;
@@ -1268,6 +1325,10 @@ private static final long serialVersionUID = 0L;
         }
         case SORT_BY_ID: {
           setSortById(other.getSortById());
+          break;
+        }
+        case SORT_BY_RELEVANCE: {
+          setSortByRelevance(other.getSortByRelevance());
           break;
         }
         case SORTBY_NOT_SET: {
@@ -1914,6 +1975,63 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 16;</code>
+     * @return Whether the sortByRelevance field is set.
+     */
+    public boolean hasSortByRelevance() {
+      return sortByCase_ == 16;
+    }
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 16;</code>
+     * @return The sortByRelevance.
+     */
+    public boolean getSortByRelevance() {
+      if (sortByCase_ == 16) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 16;</code>
+     * @param value The sortByRelevance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByRelevance(boolean value) {
+      sortByCase_ = 16;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByRelevance() {
+      if (sortByCase_ == 16) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
     private boolean starredOnly_ ;
     /**
      * <pre>
@@ -2150,7 +2268,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7901
+     *     See proto/clarifai/api/service.proto;l=7954
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2173,7 +2291,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7901
+     *     See proto/clarifai/api/service.proto;l=7954
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2197,7 +2315,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7901
+     *     See proto/clarifai/api/service.proto;l=7954
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2219,7 +2337,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7901
+     *     See proto/clarifai/api/service.proto;l=7954
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -2236,7 +2354,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7901
+     *     See proto/clarifai/api/service.proto;l=7954
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -2261,7 +2379,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7904
+     *     See proto/clarifai/api/service.proto;l=7957
      * @return The filterByUserId.
      */
     @java.lang.Override
@@ -2276,7 +2394,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7904
+     *     See proto/clarifai/api/service.proto;l=7957
      * @param value The filterByUserId to set.
      * @return This builder for chaining.
      */
@@ -2294,7 +2412,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7904
+     *     See proto/clarifai/api/service.proto;l=7957
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearFilterByUserId() {

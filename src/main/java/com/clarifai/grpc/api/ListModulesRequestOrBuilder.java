@@ -158,6 +158,25 @@ public interface ListModulesRequestOrBuilder extends
 
   /**
    * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 16;</code>
+   * @return Whether the sortByRelevance field is set.
+   */
+  boolean hasSortByRelevance();
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 16;</code>
+   * @return The sortByRelevance.
+   */
+  boolean getSortByRelevance();
+
+  /**
+   * <pre>
    * Filtering options:
    * </pre>
    *
@@ -222,7 +241,7 @@ public interface ListModulesRequestOrBuilder extends
    *
    * <code>string name = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7901
+   *     See proto/clarifai/api/service.proto;l=7954
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -234,7 +253,7 @@ public interface ListModulesRequestOrBuilder extends
    *
    * <code>string name = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7901
+   *     See proto/clarifai/api/service.proto;l=7954
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -248,7 +267,7 @@ public interface ListModulesRequestOrBuilder extends
    *
    * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7904
+   *     See proto/clarifai/api/service.proto;l=7957
    * @return The filterByUserId.
    */
   @java.lang.Deprecated boolean getFilterByUserId();

@@ -158,6 +158,25 @@ public interface ListDatasetsRequestOrBuilder extends
 
   /**
    * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 14;</code>
+   * @return Whether the sortByRelevance field is set.
+   */
+  boolean hasSortByRelevance();
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 14;</code>
+   * @return The sortByRelevance.
+   */
+  boolean getSortByRelevance();
+
+  /**
+   * <pre>
    * Filtering options:
    * </pre>
    *
@@ -224,7 +243,7 @@ public interface ListDatasetsRequestOrBuilder extends
    *
    * <code>string id = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListDatasetsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5575
+   *     See proto/clarifai/api/service.proto;l=5627
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -236,7 +255,7 @@ public interface ListDatasetsRequestOrBuilder extends
    *
    * <code>string id = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListDatasetsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5575
+   *     See proto/clarifai/api/service.proto;l=5627
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

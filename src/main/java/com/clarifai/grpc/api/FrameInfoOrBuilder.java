@@ -32,4 +32,15 @@ public interface FrameInfoOrBuilder extends
    * @return The time.
    */
   int getTime();
+
+  /**
+   * <pre>
+   * The absolute number of the frame in the (original) video
+   * Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
+   * </pre>
+   *
+   * <code>uint32 number = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The number.
+   */
+  int getNumber();
 }

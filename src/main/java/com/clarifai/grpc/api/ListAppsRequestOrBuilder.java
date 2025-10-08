@@ -195,6 +195,25 @@ public interface ListAppsRequestOrBuilder extends
 
   /**
    * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 19;</code>
+   * @return Whether the sortByRelevance field is set.
+   */
+  boolean hasSortByRelevance();
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 19;</code>
+   * @return The sortByRelevance.
+   */
+  boolean getSortByRelevance();
+
+  /**
+   * <pre>
    * Filtering options:
    * If true, we only return apps that are handpicked by clarifai staff
    * </pre>
@@ -301,7 +320,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4850
+   *     See proto/clarifai/api/service.proto;l=4900
    * @return The query.
    */
   @java.lang.Deprecated java.lang.String getQuery();
@@ -313,7 +332,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4850
+   *     See proto/clarifai/api/service.proto;l=4900
    * @return The bytes for query.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -327,7 +346,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4853
+   *     See proto/clarifai/api/service.proto;l=4903
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -339,7 +358,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4853
+   *     See proto/clarifai/api/service.proto;l=4903
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -353,7 +372,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4856
+   *     See proto/clarifai/api/service.proto;l=4906
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -365,7 +384,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4856
+   *     See proto/clarifai/api/service.proto;l=4906
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

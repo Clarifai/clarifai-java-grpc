@@ -14,7 +14,7 @@ public interface TaskStatusCountPerUserOrBuilder extends
    *
    * <code>string user_id = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3700
+   *     See proto/clarifai/api/resources.proto;l=3702
    * @return The userId.
    */
   @java.lang.Deprecated java.lang.String getUserId();
@@ -25,7 +25,7 @@ public interface TaskStatusCountPerUserOrBuilder extends
    *
    * <code>string user_id = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3700
+   *     See proto/clarifai/api/resources.proto;l=3702
    * @return The bytes for userId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

@@ -62,6 +62,11 @@ private static final long serialVersionUID = 0L;
             time_ = input.readUInt32();
             break;
           }
+          case 24: {
+
+            number_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -132,6 +137,22 @@ private static final long serialVersionUID = 0L;
     return time_;
   }
 
+  public static final int NUMBER_FIELD_NUMBER = 3;
+  private int number_;
+  /**
+   * <pre>
+   * The absolute number of the frame in the (original) video
+   * Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
+   * </pre>
+   *
+   * <code>uint32 number = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The number.
+   */
+  @java.lang.Override
+  public int getNumber() {
+    return number_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -152,6 +173,9 @@ private static final long serialVersionUID = 0L;
     if (time_ != 0) {
       output.writeUInt32(2, time_);
     }
+    if (number_ != 0) {
+      output.writeUInt32(3, number_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -168,6 +192,10 @@ private static final long serialVersionUID = 0L;
     if (time_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, time_);
+    }
+    if (number_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(3, number_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -188,6 +216,8 @@ private static final long serialVersionUID = 0L;
         != other.getIndex()) return false;
     if (getTime()
         != other.getTime()) return false;
+    if (getNumber()
+        != other.getNumber()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -203,6 +233,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getIndex();
     hash = (37 * hash) + TIME_FIELD_NUMBER;
     hash = (53 * hash) + getTime();
+    hash = (37 * hash) + NUMBER_FIELD_NUMBER;
+    hash = (53 * hash) + getNumber();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -344,6 +376,8 @@ private static final long serialVersionUID = 0L;
 
       time_ = 0;
 
+      number_ = 0;
+
       return this;
     }
 
@@ -372,6 +406,7 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.FrameInfo result = new com.clarifai.grpc.api.FrameInfo(this);
       result.index_ = index_;
       result.time_ = time_;
+      result.number_ = number_;
       onBuilt();
       return result;
     }
@@ -425,6 +460,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTime() != 0) {
         setTime(other.getTime());
+      }
+      if (other.getNumber() != 0) {
+        setNumber(other.getNumber());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -555,6 +593,52 @@ private static final long serialVersionUID = 0L;
     public Builder clearTime() {
       
       time_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int number_ ;
+    /**
+     * <pre>
+     * The absolute number of the frame in the (original) video
+     * Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
+     * </pre>
+     *
+     * <code>uint32 number = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The number.
+     */
+    @java.lang.Override
+    public int getNumber() {
+      return number_;
+    }
+    /**
+     * <pre>
+     * The absolute number of the frame in the (original) video
+     * Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
+     * </pre>
+     *
+     * <code>uint32 number = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The number to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNumber(int value) {
+      
+      number_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The absolute number of the frame in the (original) video
+     * Different from index. Index is just the order in which frames were processed for search (and can be 0 for manual annotations)
+     * </pre>
+     *
+     * <code>uint32 number = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNumber() {
+      
+      number_ = 0;
       onChanged();
       return this;
     }

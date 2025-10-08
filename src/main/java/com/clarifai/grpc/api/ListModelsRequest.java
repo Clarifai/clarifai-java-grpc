@@ -28,12 +28,12 @@ private static final long serialVersionUID = 0L;
     toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    search_ = "";
-    query_ = "";
-    name_ = "";
     modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     licenseType_ = 0;
     creator_ = "";
+    search_ = "";
+    query_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
@@ -283,6 +283,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 288: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 36;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -348,6 +353,7 @@ private static final long serialVersionUID = 0L;
     SORT_BY_MODIFIED_AT(13),
     SORT_BY_CREATED_AT(24),
     SORT_BY_STAR_COUNT(25),
+    SORT_BY_RELEVANCE(36),
     SORTBY_NOT_SET(0);
     private final int value;
     private SortByCase(int value) {
@@ -370,6 +376,7 @@ private static final long serialVersionUID = 0L;
         case 13: return SORT_BY_MODIFIED_AT;
         case 24: return SORT_BY_CREATED_AT;
         case 25: return SORT_BY_STAR_COUNT;
+        case 36: return SORT_BY_RELEVANCE;
         case 0: return SORTBY_NOT_SET;
         default: return null;
       }
@@ -492,6 +499,21 @@ private static final long serialVersionUID = 0L;
   public com.google.protobuf.ByteString
       getAdditionalFieldsBytes(int index) {
     return additionalFields_.getByteString(index);
+  }
+
+  public static final int SHOW_REPLICAS_FIELD_NUMBER = 34;
+  private boolean showReplicas_;
+  /**
+   * <pre>
+   * If true, show replica counts for models.
+   * </pre>
+   *
+   * <code>bool show_replicas = 34;</code>
+   * @return The showReplicas.
+   */
+  @java.lang.Override
+  public boolean getShowReplicas() {
+    return showReplicas_;
   }
 
   public static final int SORT_ASCENDING_FIELD_NUMBER = 10;
@@ -652,6 +674,35 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getSortByStarCount() {
     if (sortByCase_ == 25) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_RELEVANCE_FIELD_NUMBER = 36;
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 36;</code>
+   * @return Whether the sortByRelevance field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByRelevance() {
+    return sortByCase_ == 36;
+  }
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 36;</code>
+   * @return The sortByRelevance.
+   */
+  @java.lang.Override
+  public boolean getSortByRelevance() {
+    if (sortByCase_ == 36) {
       return (java.lang.Boolean) sortBy_;
     }
     return false;
@@ -1071,7 +1122,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6088
+   *     See proto/clarifai/api/service.proto;l=6144
    * @return The dontFetchFromMain.
    */
   @java.lang.Override
@@ -1094,196 +1145,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getBookmark() {
     return bookmark_;
-  }
-
-  public static final int SEARCH_FIELD_NUMBER = 27;
-  private volatile java.lang.Object search_;
-  /**
-   * <pre>
-   * Searching options:
-   * Specify a search parameter in order to perform keyword search on the
-   * following fields of the model:
-   *   - id
-   *   - name
-   *   - description
-   *   - notes
-   *   - user_id (unless user_app_id.user_id is already set)
-   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
-   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
-   * NOTE: Both the list of fields searched and the exact keyword matching
-   * rules are subject to change and not guaranteed to be backwards-compatible.
-   * </pre>
-   *
-   * <code>string search = 27;</code>
-   * @return The search.
-   */
-  @java.lang.Override
-  public java.lang.String getSearch() {
-    java.lang.Object ref = search_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      search_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Searching options:
-   * Specify a search parameter in order to perform keyword search on the
-   * following fields of the model:
-   *   - id
-   *   - name
-   *   - description
-   *   - notes
-   *   - user_id (unless user_app_id.user_id is already set)
-   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
-   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
-   * NOTE: Both the list of fields searched and the exact keyword matching
-   * rules are subject to change and not guaranteed to be backwards-compatible.
-   * </pre>
-   *
-   * <code>string search = 27;</code>
-   * @return The bytes for search.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSearchBytes() {
-    java.lang.Object ref = search_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      search_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int QUERY_FIELD_NUMBER = 14;
-  private volatile java.lang.Object query_;
-  /**
-   * <pre>
-   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-   * Deprecated: use search instead.
-   * </pre>
-   *
-   * <code>string query = 14 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6111
-   * @return The query.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public java.lang.String getQuery() {
-    java.lang.Object ref = query_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      query_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-   * Deprecated: use search instead.
-   * </pre>
-   *
-   * <code>string query = 14 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6111
-   * @return The bytes for query.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.ByteString
-      getQueryBytes() {
-    java.lang.Object ref = query_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      query_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object name_;
-  /**
-   * <pre>
-   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * Deprecated: use search instead.
-   * </pre>
-   *
-   * <code>string name = 5 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6114
-   * @return The name.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * Deprecated: use search instead.
-   * </pre>
-   *
-   * <code>string name = 5 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6114
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int FILTER_BY_USER_ID_FIELD_NUMBER = 22;
-  private boolean filterByUserId_;
-  /**
-   * <pre>
-   * Extends the name filter to include the user_id of the application owner that the model belongs to.
-   * Deprecated: use search instead of name.
-   * </pre>
-   *
-   * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6117
-   * @return The filterByUserId.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean getFilterByUserId() {
-    return filterByUserId_;
   }
 
   public static final int MODEL_VERSION_IDS_FIELD_NUMBER = 28;
@@ -1440,21 +1301,6 @@ private static final long serialVersionUID = 0L;
     return minReplicas_;
   }
 
-  public static final int SHOW_REPLICAS_FIELD_NUMBER = 34;
-  private boolean showReplicas_;
-  /**
-   * <pre>
-   * If true, show replica counts for models.
-   * </pre>
-   *
-   * <code>bool show_replicas = 34;</code>
-   * @return The showReplicas.
-   */
-  @java.lang.Override
-  public boolean getShowReplicas() {
-    return showReplicas_;
-  }
-
   public static final int VISIBILITY_FIELD_NUMBER = 35;
   private com.clarifai.grpc.api.Visibility visibility_;
   /**
@@ -1491,6 +1337,196 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
+  }
+
+  public static final int SEARCH_FIELD_NUMBER = 27;
+  private volatile java.lang.Object search_;
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the model:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 27;</code>
+   * @return The search.
+   */
+  @java.lang.Override
+  public java.lang.String getSearch() {
+    java.lang.Object ref = search_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      search_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the model:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 27;</code>
+   * @return The bytes for search.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSearchBytes() {
+    java.lang.Object ref = search_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      search_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int QUERY_FIELD_NUMBER = 14;
+  private volatile java.lang.Object query_;
+  /**
+   * <pre>
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6179
+   * @return The query.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public java.lang.String getQuery() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      query_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6179
+   * @return The bytes for query.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public com.google.protobuf.ByteString
+      getQueryBytes() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      query_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_FIELD_NUMBER = 5;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6182
+   * @return The name.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6182
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FILTER_BY_USER_ID_FIELD_NUMBER = 22;
+  private boolean filterByUserId_;
+  /**
+   * <pre>
+   * Extends the name filter to include the user_id of the application owner that the model belongs to.
+   * Deprecated: use search instead of name.
+   * </pre>
+   *
+   * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6185
+   * @return The filterByUserId.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public boolean getFilterByUserId() {
+    return filterByUserId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1610,6 +1646,10 @@ private static final long serialVersionUID = 0L;
     }
     if (visibility_ != null) {
       output.writeMessage(35, getVisibility());
+    }
+    if (sortByCase_ == 36) {
+      output.writeBool(
+          36, (boolean)((java.lang.Boolean) sortBy_));
     }
     unknownFields.writeTo(output);
   }
@@ -1779,6 +1819,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(35, getVisibility());
     }
+    if (sortByCase_ == 36) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            36, (boolean)((java.lang.Boolean) sortBy_));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1805,6 +1850,8 @@ private static final long serialVersionUID = 0L;
         != other.getPerPage()) return false;
     if (!getAdditionalFieldsList()
         .equals(other.getAdditionalFieldsList())) return false;
+    if (getShowReplicas()
+        != other.getShowReplicas()) return false;
     if (getSortAscending()
         != other.getSortAscending()) return false;
     if (!getModelTypeId()
@@ -1831,14 +1878,6 @@ private static final long serialVersionUID = 0L;
         != other.getDontFetchFromMain()) return false;
     if (getBookmark()
         != other.getBookmark()) return false;
-    if (!getSearch()
-        .equals(other.getSearch())) return false;
-    if (!getQuery()
-        .equals(other.getQuery())) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (getFilterByUserId()
-        != other.getFilterByUserId()) return false;
     if (!getModelVersionIdsList()
         .equals(other.getModelVersionIdsList())) return false;
     if (licenseType_ != other.licenseType_) return false;
@@ -1848,13 +1887,19 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCreator())) return false;
     if (getMinReplicas()
         != other.getMinReplicas()) return false;
-    if (getShowReplicas()
-        != other.getShowReplicas()) return false;
     if (hasVisibility() != other.hasVisibility()) return false;
     if (hasVisibility()) {
       if (!getVisibility()
           .equals(other.getVisibility())) return false;
     }
+    if (!getSearch()
+        .equals(other.getSearch())) return false;
+    if (!getQuery()
+        .equals(other.getQuery())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (getFilterByUserId()
+        != other.getFilterByUserId()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 11:
@@ -1876,6 +1921,10 @@ private static final long serialVersionUID = 0L;
       case 25:
         if (getSortByStarCount()
             != other.getSortByStarCount()) return false;
+        break;
+      case 36:
+        if (getSortByRelevance()
+            != other.getSortByRelevance()) return false;
         break;
       case 0:
       default:
@@ -1903,6 +1952,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalFieldsList().hashCode();
     }
+    hash = (37 * hash) + SHOW_REPLICAS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getShowReplicas());
     hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSortAscending());
@@ -1945,15 +1997,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BOOKMARK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getBookmark());
-    hash = (37 * hash) + SEARCH_FIELD_NUMBER;
-    hash = (53 * hash) + getSearch().hashCode();
-    hash = (37 * hash) + QUERY_FIELD_NUMBER;
-    hash = (53 * hash) + getQuery().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + FILTER_BY_USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getFilterByUserId());
     if (getModelVersionIdsCount() > 0) {
       hash = (37 * hash) + MODEL_VERSION_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getModelVersionIdsList().hashCode();
@@ -1966,13 +2009,19 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCreator().hashCode();
     hash = (37 * hash) + MIN_REPLICAS_FIELD_NUMBER;
     hash = (53 * hash) + getMinReplicas();
-    hash = (37 * hash) + SHOW_REPLICAS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getShowReplicas());
     if (hasVisibility()) {
       hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
       hash = (53 * hash) + getVisibility().hashCode();
     }
+    hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + getSearch().hashCode();
+    hash = (37 * hash) + QUERY_FIELD_NUMBER;
+    hash = (53 * hash) + getQuery().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FILTER_BY_USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getFilterByUserId());
     switch (sortByCase_) {
       case 11:
         hash = (37 * hash) + SORT_BY_NAME_FIELD_NUMBER;
@@ -1998,6 +2047,11 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + SORT_BY_STAR_COUNT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getSortByStarCount());
+        break;
+      case 36:
+        hash = (37 * hash) + SORT_BY_RELEVANCE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByRelevance());
         break;
       case 0:
       default:
@@ -2151,6 +2205,8 @@ private static final long serialVersionUID = 0L;
 
       additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      showReplicas_ = false;
+
       sortAscending_ = false;
 
       modelTypeId_ = "";
@@ -2177,14 +2233,6 @@ private static final long serialVersionUID = 0L;
 
       bookmark_ = false;
 
-      search_ = "";
-
-      query_ = "";
-
-      name_ = "";
-
-      filterByUserId_ = false;
-
       modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000040);
       licenseType_ = 0;
@@ -2195,14 +2243,20 @@ private static final long serialVersionUID = 0L;
 
       minReplicas_ = 0;
 
-      showReplicas_ = false;
-
       if (visibilityBuilder_ == null) {
         visibility_ = null;
       } else {
         visibility_ = null;
         visibilityBuilder_ = null;
       }
+      search_ = "";
+
+      query_ = "";
+
+      name_ = "";
+
+      filterByUserId_ = false;
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -2244,6 +2298,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.additionalFields_ = additionalFields_;
+      result.showReplicas_ = showReplicas_;
       result.sortAscending_ = sortAscending_;
       if (sortByCase_ == 11) {
         result.sortBy_ = sortBy_;
@@ -2258,6 +2313,9 @@ private static final long serialVersionUID = 0L;
         result.sortBy_ = sortBy_;
       }
       if (sortByCase_ == 25) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 36) {
         result.sortBy_ = sortBy_;
       }
       result.modelTypeId_ = modelTypeId_;
@@ -2292,10 +2350,6 @@ private static final long serialVersionUID = 0L;
       result.languages_ = languages_;
       result.dontFetchFromMain_ = dontFetchFromMain_;
       result.bookmark_ = bookmark_;
-      result.search_ = search_;
-      result.query_ = query_;
-      result.name_ = name_;
-      result.filterByUserId_ = filterByUserId_;
       if (((bitField0_ & 0x00000040) != 0)) {
         modelVersionIds_ = modelVersionIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -2305,12 +2359,15 @@ private static final long serialVersionUID = 0L;
       result.source_ = source_;
       result.creator_ = creator_;
       result.minReplicas_ = minReplicas_;
-      result.showReplicas_ = showReplicas_;
       if (visibilityBuilder_ == null) {
         result.visibility_ = visibility_;
       } else {
         result.visibility_ = visibilityBuilder_.build();
       }
+      result.search_ = search_;
+      result.query_ = query_;
+      result.name_ = name_;
+      result.filterByUserId_ = filterByUserId_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -2378,6 +2435,9 @@ private static final long serialVersionUID = 0L;
           additionalFields_.addAll(other.additionalFields_);
         }
         onChanged();
+      }
+      if (other.getShowReplicas() != false) {
+        setShowReplicas(other.getShowReplicas());
       }
       if (other.getSortAscending() != false) {
         setSortAscending(other.getSortAscending());
@@ -2455,21 +2515,6 @@ private static final long serialVersionUID = 0L;
       if (other.getBookmark() != false) {
         setBookmark(other.getBookmark());
       }
-      if (!other.getSearch().isEmpty()) {
-        search_ = other.search_;
-        onChanged();
-      }
-      if (!other.getQuery().isEmpty()) {
-        query_ = other.query_;
-        onChanged();
-      }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
-      if (other.getFilterByUserId() != false) {
-        setFilterByUserId(other.getFilterByUserId());
-      }
       if (!other.modelVersionIds_.isEmpty()) {
         if (modelVersionIds_.isEmpty()) {
           modelVersionIds_ = other.modelVersionIds_;
@@ -2493,11 +2538,23 @@ private static final long serialVersionUID = 0L;
       if (other.getMinReplicas() != 0) {
         setMinReplicas(other.getMinReplicas());
       }
-      if (other.getShowReplicas() != false) {
-        setShowReplicas(other.getShowReplicas());
-      }
       if (other.hasVisibility()) {
         mergeVisibility(other.getVisibility());
+      }
+      if (!other.getSearch().isEmpty()) {
+        search_ = other.search_;
+        onChanged();
+      }
+      if (!other.getQuery().isEmpty()) {
+        query_ = other.query_;
+        onChanged();
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (other.getFilterByUserId() != false) {
+        setFilterByUserId(other.getFilterByUserId());
       }
       switch (other.getSortByCase()) {
         case SORT_BY_NAME: {
@@ -2518,6 +2575,10 @@ private static final long serialVersionUID = 0L;
         }
         case SORT_BY_STAR_COUNT: {
           setSortByStarCount(other.getSortByStarCount());
+          break;
+        }
+        case SORT_BY_RELEVANCE: {
+          setSortByRelevance(other.getSortByRelevance());
           break;
         }
         case SORTBY_NOT_SET: {
@@ -2926,6 +2987,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean showReplicas_ ;
+    /**
+     * <pre>
+     * If true, show replica counts for models.
+     * </pre>
+     *
+     * <code>bool show_replicas = 34;</code>
+     * @return The showReplicas.
+     */
+    @java.lang.Override
+    public boolean getShowReplicas() {
+      return showReplicas_;
+    }
+    /**
+     * <pre>
+     * If true, show replica counts for models.
+     * </pre>
+     *
+     * <code>bool show_replicas = 34;</code>
+     * @param value The showReplicas to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShowReplicas(boolean value) {
+      
+      showReplicas_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If true, show replica counts for models.
+     * </pre>
+     *
+     * <code>bool show_replicas = 34;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShowReplicas() {
+      
+      showReplicas_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean sortAscending_ ;
     /**
      * <pre>
@@ -3254,6 +3358,63 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSortByStarCount() {
       if (sortByCase_ == 25) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 36;</code>
+     * @return Whether the sortByRelevance field is set.
+     */
+    public boolean hasSortByRelevance() {
+      return sortByCase_ == 36;
+    }
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 36;</code>
+     * @return The sortByRelevance.
+     */
+    public boolean getSortByRelevance() {
+      if (sortByCase_ == 36) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 36;</code>
+     * @param value The sortByRelevance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByRelevance(boolean value) {
+      sortByCase_ = 36;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 36;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByRelevance() {
+      if (sortByCase_ == 36) {
         sortByCase_ = 0;
         sortBy_ = null;
         onChanged();
@@ -4349,7 +4510,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6088
+     *     See proto/clarifai/api/service.proto;l=6144
      * @return The dontFetchFromMain.
      */
     @java.lang.Override
@@ -4364,7 +4525,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6088
+     *     See proto/clarifai/api/service.proto;l=6144
      * @param value The dontFetchFromMain to set.
      * @return This builder for chaining.
      */
@@ -4382,7 +4543,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
      * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6088
+     *     See proto/clarifai/api/service.proto;l=6144
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDontFetchFromMain() {
@@ -4437,431 +4598,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearBookmark() {
       
       bookmark_ = false;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object search_ = "";
-    /**
-     * <pre>
-     * Searching options:
-     * Specify a search parameter in order to perform keyword search on the
-     * following fields of the model:
-     *   - id
-     *   - name
-     *   - description
-     *   - notes
-     *   - user_id (unless user_app_id.user_id is already set)
-     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
-     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
-     * NOTE: Both the list of fields searched and the exact keyword matching
-     * rules are subject to change and not guaranteed to be backwards-compatible.
-     * </pre>
-     *
-     * <code>string search = 27;</code>
-     * @return The search.
-     */
-    public java.lang.String getSearch() {
-      java.lang.Object ref = search_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        search_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Searching options:
-     * Specify a search parameter in order to perform keyword search on the
-     * following fields of the model:
-     *   - id
-     *   - name
-     *   - description
-     *   - notes
-     *   - user_id (unless user_app_id.user_id is already set)
-     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
-     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
-     * NOTE: Both the list of fields searched and the exact keyword matching
-     * rules are subject to change and not guaranteed to be backwards-compatible.
-     * </pre>
-     *
-     * <code>string search = 27;</code>
-     * @return The bytes for search.
-     */
-    public com.google.protobuf.ByteString
-        getSearchBytes() {
-      java.lang.Object ref = search_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        search_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Searching options:
-     * Specify a search parameter in order to perform keyword search on the
-     * following fields of the model:
-     *   - id
-     *   - name
-     *   - description
-     *   - notes
-     *   - user_id (unless user_app_id.user_id is already set)
-     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
-     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
-     * NOTE: Both the list of fields searched and the exact keyword matching
-     * rules are subject to change and not guaranteed to be backwards-compatible.
-     * </pre>
-     *
-     * <code>string search = 27;</code>
-     * @param value The search to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSearch(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      search_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Searching options:
-     * Specify a search parameter in order to perform keyword search on the
-     * following fields of the model:
-     *   - id
-     *   - name
-     *   - description
-     *   - notes
-     *   - user_id (unless user_app_id.user_id is already set)
-     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
-     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
-     * NOTE: Both the list of fields searched and the exact keyword matching
-     * rules are subject to change and not guaranteed to be backwards-compatible.
-     * </pre>
-     *
-     * <code>string search = 27;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSearch() {
-      
-      search_ = getDefaultInstance().getSearch();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Searching options:
-     * Specify a search parameter in order to perform keyword search on the
-     * following fields of the model:
-     *   - id
-     *   - name
-     *   - description
-     *   - notes
-     *   - user_id (unless user_app_id.user_id is already set)
-     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
-     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
-     * NOTE: Both the list of fields searched and the exact keyword matching
-     * rules are subject to change and not guaranteed to be backwards-compatible.
-     * </pre>
-     *
-     * <code>string search = 27;</code>
-     * @param value The bytes for search to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSearchBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      search_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object query_ = "";
-    /**
-     * <pre>
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string query = 14 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6111
-     * @return The query.
-     */
-    @java.lang.Deprecated public java.lang.String getQuery() {
-      java.lang.Object ref = query_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        query_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string query = 14 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6111
-     * @return The bytes for query.
-     */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
-        getQueryBytes() {
-      java.lang.Object ref = query_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        query_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string query = 14 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6111
-     * @param value The query to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setQuery(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      query_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string query = 14 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6111
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder clearQuery() {
-      
-      query_ = getDefaultInstance().getQuery();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string query = 14 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6111
-     * @param value The bytes for query to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setQueryBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      query_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object name_ = "";
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string name = 5 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6114
-     * @return The name.
-     */
-    @java.lang.Deprecated public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string name = 5 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6114
-     * @return The bytes for name.
-     */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string name = 5 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6114
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string name = 5 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6114
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated: use search instead.
-     * </pre>
-     *
-     * <code>string name = 5 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6114
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
-    private boolean filterByUserId_ ;
-    /**
-     * <pre>
-     * Extends the name filter to include the user_id of the application owner that the model belongs to.
-     * Deprecated: use search instead of name.
-     * </pre>
-     *
-     * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6117
-     * @return The filterByUserId.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public boolean getFilterByUserId() {
-      return filterByUserId_;
-    }
-    /**
-     * <pre>
-     * Extends the name filter to include the user_id of the application owner that the model belongs to.
-     * Deprecated: use search instead of name.
-     * </pre>
-     *
-     * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6117
-     * @param value The filterByUserId to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setFilterByUserId(boolean value) {
-      
-      filterByUserId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Extends the name filter to include the user_id of the application owner that the model belongs to.
-     * Deprecated: use search instead of name.
-     * </pre>
-     *
-     * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
-     * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=6117
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder clearFilterByUserId() {
-      
-      filterByUserId_ = false;
       onChanged();
       return this;
     }
@@ -5268,49 +5004,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean showReplicas_ ;
-    /**
-     * <pre>
-     * If true, show replica counts for models.
-     * </pre>
-     *
-     * <code>bool show_replicas = 34;</code>
-     * @return The showReplicas.
-     */
-    @java.lang.Override
-    public boolean getShowReplicas() {
-      return showReplicas_;
-    }
-    /**
-     * <pre>
-     * If true, show replica counts for models.
-     * </pre>
-     *
-     * <code>bool show_replicas = 34;</code>
-     * @param value The showReplicas to set.
-     * @return This builder for chaining.
-     */
-    public Builder setShowReplicas(boolean value) {
-      
-      showReplicas_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * If true, show replica counts for models.
-     * </pre>
-     *
-     * <code>bool show_replicas = 34;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearShowReplicas() {
-      
-      showReplicas_ = false;
-      onChanged();
-      return this;
-    }
-
     private com.clarifai.grpc.api.Visibility visibility_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> visibilityBuilder_;
@@ -5464,6 +5157,431 @@ private static final long serialVersionUID = 0L;
         visibility_ = null;
       }
       return visibilityBuilder_;
+    }
+
+    private java.lang.Object search_ = "";
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @return The search.
+     */
+    public java.lang.String getSearch() {
+      java.lang.Object ref = search_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        search_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @return The bytes for search.
+     */
+    public com.google.protobuf.ByteString
+        getSearchBytes() {
+      java.lang.Object ref = search_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        search_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @param value The search to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearch(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      search_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSearch() {
+      
+      search_ = getDefaultInstance().getSearch();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @param value The bytes for search to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      search_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object query_ = "";
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6179
+     * @return The query.
+     */
+    @java.lang.Deprecated public java.lang.String getQuery() {
+      java.lang.Object ref = query_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        query_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6179
+     * @return The bytes for query.
+     */
+    @java.lang.Deprecated public com.google.protobuf.ByteString
+        getQueryBytes() {
+      java.lang.Object ref = query_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        query_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6179
+     * @param value The query to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setQuery(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      query_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6179
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder clearQuery() {
+      
+      query_ = getDefaultInstance().getQuery();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6179
+     * @param value The bytes for query to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setQueryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      query_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6182
+     * @return The name.
+     */
+    @java.lang.Deprecated public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6182
+     * @return The bytes for name.
+     */
+    @java.lang.Deprecated public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6182
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6182
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6182
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean filterByUserId_ ;
+    /**
+     * <pre>
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * Deprecated: use search instead of name.
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6185
+     * @return The filterByUserId.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated public boolean getFilterByUserId() {
+      return filterByUserId_;
+    }
+    /**
+     * <pre>
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * Deprecated: use search instead of name.
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6185
+     * @param value The filterByUserId to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setFilterByUserId(boolean value) {
+      
+      filterByUserId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * Deprecated: use search instead of name.
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6185
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder clearFilterByUserId() {
+      
+      filterByUserId_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -167,6 +167,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 144: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 18;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -213,6 +218,7 @@ private static final long serialVersionUID = 0L;
     SORT_BY_MODIFIED_AT(7),
     SORT_BY_CREATED_AT(13),
     SORT_BY_STAR_COUNT(14),
+    SORT_BY_RELEVANCE(18),
     SORTBY_NOT_SET(0);
     private final int value;
     private SortByCase(int value) {
@@ -234,6 +240,7 @@ private static final long serialVersionUID = 0L;
         case 7: return SORT_BY_MODIFIED_AT;
         case 13: return SORT_BY_CREATED_AT;
         case 14: return SORT_BY_STAR_COUNT;
+        case 18: return SORT_BY_RELEVANCE;
         case 0: return SORTBY_NOT_SET;
         default: return null;
       }
@@ -492,6 +499,35 @@ private static final long serialVersionUID = 0L;
     return false;
   }
 
+  public static final int SORT_BY_RELEVANCE_FIELD_NUMBER = 18;
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 18;</code>
+   * @return Whether the sortByRelevance field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByRelevance() {
+    return sortByCase_ == 18;
+  }
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 18;</code>
+   * @return The sortByRelevance.
+   */
+  @java.lang.Override
+  public boolean getSortByRelevance() {
+    if (sortByCase_ == 18) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
   public static final int FEATURED_ONLY_FIELD_NUMBER = 9;
   private boolean featuredOnly_;
   /**
@@ -652,7 +688,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7305
+   *     See proto/clarifai/api/service.proto;l=7356
    * @return The query.
    */
   @java.lang.Override
@@ -676,7 +712,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7305
+   *     See proto/clarifai/api/service.proto;l=7356
    * @return The bytes for query.
    */
   @java.lang.Override
@@ -704,7 +740,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7308
+   *     See proto/clarifai/api/service.proto;l=7359
    * @return The id.
    */
   @java.lang.Override
@@ -728,7 +764,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7308
+   *     See proto/clarifai/api/service.proto;l=7359
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -756,7 +792,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string search_term = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7311
+   *     See proto/clarifai/api/service.proto;l=7362
    * @return The searchTerm.
    */
   @java.lang.Override
@@ -780,7 +816,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string search_term = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7311
+   *     See proto/clarifai/api/service.proto;l=7362
    * @return The bytes for searchTerm.
    */
   @java.lang.Override
@@ -867,6 +903,10 @@ private static final long serialVersionUID = 0L;
     if (visibility_ != null) {
       output.writeMessage(17, getVisibility());
     }
+    if (sortByCase_ == 18) {
+      output.writeBool(
+          18, (boolean)((java.lang.Boolean) sortBy_));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -948,6 +988,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getVisibility());
     }
+    if (sortByCase_ == 18) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            18, (boolean)((java.lang.Boolean) sortBy_));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1012,6 +1057,10 @@ private static final long serialVersionUID = 0L;
       case 14:
         if (getSortByStarCount()
             != other.getSortByStarCount()) return false;
+        break;
+      case 18:
+        if (getSortByRelevance()
+            != other.getSortByRelevance()) return false;
         break;
       case 0:
       default:
@@ -1083,6 +1132,11 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + SORT_BY_STAR_COUNT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getSortByStarCount());
+        break;
+      case 18:
+        hash = (37 * hash) + SORT_BY_RELEVANCE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByRelevance());
         break;
       case 0:
       default:
@@ -1312,6 +1366,9 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 14) {
         result.sortBy_ = sortBy_;
       }
+      if (sortByCase_ == 18) {
+        result.sortBy_ = sortBy_;
+      }
       result.featuredOnly_ = featuredOnly_;
       result.starredOnly_ = starredOnly_;
       result.bookmark_ = bookmark_;
@@ -1438,6 +1495,10 @@ private static final long serialVersionUID = 0L;
         }
         case SORT_BY_STAR_COUNT: {
           setSortByStarCount(other.getSortByStarCount());
+          break;
+        }
+        case SORT_BY_RELEVANCE: {
+          setSortByRelevance(other.getSortByRelevance());
           break;
         }
         case SORTBY_NOT_SET: {
@@ -2124,6 +2185,63 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 18;</code>
+     * @return Whether the sortByRelevance field is set.
+     */
+    public boolean hasSortByRelevance() {
+      return sortByCase_ == 18;
+    }
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 18;</code>
+     * @return The sortByRelevance.
+     */
+    public boolean getSortByRelevance() {
+      if (sortByCase_ == 18) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 18;</code>
+     * @param value The sortByRelevance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByRelevance(boolean value) {
+      sortByCase_ = 18;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by search query relevance. Can only be used if search is not empty.
+     * </pre>
+     *
+     * <code>bool sort_by_relevance = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByRelevance() {
+      if (sortByCase_ == 18) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
     private boolean featuredOnly_ ;
     /**
      * <pre>
@@ -2566,7 +2684,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7305
+     *     See proto/clarifai/api/service.proto;l=7356
      * @return The query.
      */
     @java.lang.Deprecated public java.lang.String getQuery() {
@@ -2589,7 +2707,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7305
+     *     See proto/clarifai/api/service.proto;l=7356
      * @return The bytes for query.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2613,7 +2731,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7305
+     *     See proto/clarifai/api/service.proto;l=7356
      * @param value The query to set.
      * @return This builder for chaining.
      */
@@ -2635,7 +2753,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7305
+     *     See proto/clarifai/api/service.proto;l=7356
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearQuery() {
@@ -2652,7 +2770,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7305
+     *     See proto/clarifai/api/service.proto;l=7356
      * @param value The bytes for query to set.
      * @return This builder for chaining.
      */
@@ -2677,7 +2795,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7308
+     *     See proto/clarifai/api/service.proto;l=7359
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -2700,7 +2818,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7308
+     *     See proto/clarifai/api/service.proto;l=7359
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2724,7 +2842,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7308
+     *     See proto/clarifai/api/service.proto;l=7359
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -2746,7 +2864,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7308
+     *     See proto/clarifai/api/service.proto;l=7359
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -2763,7 +2881,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7308
+     *     See proto/clarifai/api/service.proto;l=7359
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -2788,7 +2906,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string search_term = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7311
+     *     See proto/clarifai/api/service.proto;l=7362
      * @return The searchTerm.
      */
     @java.lang.Deprecated public java.lang.String getSearchTerm() {
@@ -2811,7 +2929,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string search_term = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7311
+     *     See proto/clarifai/api/service.proto;l=7362
      * @return The bytes for searchTerm.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2835,7 +2953,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string search_term = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7311
+     *     See proto/clarifai/api/service.proto;l=7362
      * @param value The searchTerm to set.
      * @return This builder for chaining.
      */
@@ -2857,7 +2975,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string search_term = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7311
+     *     See proto/clarifai/api/service.proto;l=7362
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearSearchTerm() {
@@ -2874,7 +2992,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string search_term = 12 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7311
+     *     See proto/clarifai/api/service.proto;l=7362
      * @param value The bytes for searchTerm to set.
      * @return This builder for chaining.
      */

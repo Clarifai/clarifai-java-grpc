@@ -87,6 +87,16 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
+   * If true, show replica counts for models.
+   * </pre>
+   *
+   * <code>bool show_replicas = 34;</code>
+   * @return The showReplicas.
+   */
+  boolean getShowReplicas();
+
+  /**
+   * <pre>
    * Sorting options:
    * Whether to sort in ascending order. If false, will order in descending order.
    * </pre>
@@ -192,6 +202,25 @@ public interface ListModelsRequestOrBuilder extends
    * @return The sortByStarCount.
    */
   boolean getSortByStarCount();
+
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 36;</code>
+   * @return Whether the sortByRelevance field is set.
+   */
+  boolean hasSortByRelevance();
+  /**
+   * <pre>
+   * Whether to order by search query relevance. Can only be used if search is not empty.
+   * </pre>
+   *
+   * <code>bool sort_by_relevance = 36;</code>
+   * @return The sortByRelevance.
+   */
+  boolean getSortByRelevance();
 
   /**
    * <pre>
@@ -488,7 +517,7 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>bool dont_fetch_from_main = 23 [deprecated = true];</code>
    * @deprecated clarifai.api.ListModelsRequest.dont_fetch_from_main is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6088
+   *     See proto/clarifai/api/service.proto;l=6144
    * @return The dontFetchFromMain.
    */
   @java.lang.Deprecated boolean getDontFetchFromMain();
@@ -504,113 +533,6 @@ public interface ListModelsRequestOrBuilder extends
    * @return The bookmark.
    */
   boolean getBookmark();
-
-  /**
-   * <pre>
-   * Searching options:
-   * Specify a search parameter in order to perform keyword search on the
-   * following fields of the model:
-   *   - id
-   *   - name
-   *   - description
-   *   - notes
-   *   - user_id (unless user_app_id.user_id is already set)
-   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
-   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
-   * NOTE: Both the list of fields searched and the exact keyword matching
-   * rules are subject to change and not guaranteed to be backwards-compatible.
-   * </pre>
-   *
-   * <code>string search = 27;</code>
-   * @return The search.
-   */
-  java.lang.String getSearch();
-  /**
-   * <pre>
-   * Searching options:
-   * Specify a search parameter in order to perform keyword search on the
-   * following fields of the model:
-   *   - id
-   *   - name
-   *   - description
-   *   - notes
-   *   - user_id (unless user_app_id.user_id is already set)
-   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
-   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
-   * NOTE: Both the list of fields searched and the exact keyword matching
-   * rules are subject to change and not guaranteed to be backwards-compatible.
-   * </pre>
-   *
-   * <code>string search = 27;</code>
-   * @return The bytes for search.
-   */
-  com.google.protobuf.ByteString
-      getSearchBytes();
-
-  /**
-   * <pre>
-   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-   * Deprecated: use search instead.
-   * </pre>
-   *
-   * <code>string query = 14 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6111
-   * @return The query.
-   */
-  @java.lang.Deprecated java.lang.String getQuery();
-  /**
-   * <pre>
-   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-   * Deprecated: use search instead.
-   * </pre>
-   *
-   * <code>string query = 14 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6111
-   * @return The bytes for query.
-   */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getQueryBytes();
-
-  /**
-   * <pre>
-   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * Deprecated: use search instead.
-   * </pre>
-   *
-   * <code>string name = 5 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6114
-   * @return The name.
-   */
-  @java.lang.Deprecated java.lang.String getName();
-  /**
-   * <pre>
-   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * Deprecated: use search instead.
-   * </pre>
-   *
-   * <code>string name = 5 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6114
-   * @return The bytes for name.
-   */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <pre>
-   * Extends the name filter to include the user_id of the application owner that the model belongs to.
-   * Deprecated: use search instead of name.
-   * </pre>
-   *
-   * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6117
-   * @return The filterByUserId.
-   */
-  @java.lang.Deprecated boolean getFilterByUserId();
 
   /**
    * <pre>
@@ -714,16 +636,6 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
-   * If true, show replica counts for models.
-   * </pre>
-   *
-   * <code>bool show_replicas = 34;</code>
-   * @return The showReplicas.
-   */
-  boolean getShowReplicas();
-
-  /**
-   * <pre>
    * Filter by visibility of the model. If set, only return models with the specified visibility.
    * </pre>
    *
@@ -748,6 +660,113 @@ public interface ListModelsRequestOrBuilder extends
    * <code>.clarifai.api.Visibility visibility = 35;</code>
    */
   com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the model:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 27;</code>
+   * @return The search.
+   */
+  java.lang.String getSearch();
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the model:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 27;</code>
+   * @return The bytes for search.
+   */
+  com.google.protobuf.ByteString
+      getSearchBytes();
+
+  /**
+   * <pre>
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6179
+   * @return The query.
+   */
+  @java.lang.Deprecated java.lang.String getQuery();
+  /**
+   * <pre>
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6179
+   * @return The bytes for query.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getQueryBytes();
+
+  /**
+   * <pre>
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6182
+   * @return The name.
+   */
+  @java.lang.Deprecated java.lang.String getName();
+  /**
+   * <pre>
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6182
+   * @return The bytes for name.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
+   * Extends the name filter to include the user_id of the application owner that the model belongs to.
+   * Deprecated: use search instead of name.
+   * </pre>
+   *
+   * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6185
+   * @return The filterByUserId.
+   */
+  @java.lang.Deprecated boolean getFilterByUserId();
 
   public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }
