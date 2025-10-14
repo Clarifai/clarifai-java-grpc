@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1456
+   *     See proto/clarifai/api/resources.proto;l=1473
    * @return The name.
    */
   @java.lang.Override
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1456
+   *     See proto/clarifai/api/resources.proto;l=1473
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1469
+   *     See proto/clarifai/api/resources.proto;l=1486
    * @return Whether the outputInfo field is set.
    */
   @java.lang.Override
@@ -942,7 +942,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1469
+   *     See proto/clarifai/api/resources.proto;l=1486
    * @return The outputInfo.
    */
   @java.lang.Override
@@ -1012,7 +1012,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1474
+   *     See proto/clarifai/api/resources.proto;l=1491
    * @return The displayName.
    */
   @java.lang.Override
@@ -1035,7 +1035,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1474
+   *     See proto/clarifai/api/resources.proto;l=1491
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -1443,7 +1443,7 @@ private static final long serialVersionUID = 0L;
    * Tags from toolkits category
    * </pre>
    *
-   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string toolkits = 20;</code>
    * @return A list containing the toolkits.
    */
   public com.google.protobuf.ProtocolStringList
@@ -1455,7 +1455,7 @@ private static final long serialVersionUID = 0L;
    * Tags from toolkits category
    * </pre>
    *
-   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string toolkits = 20;</code>
    * @return The count of toolkits.
    */
   public int getToolkitsCount() {
@@ -1466,7 +1466,7 @@ private static final long serialVersionUID = 0L;
    * Tags from toolkits category
    * </pre>
    *
-   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string toolkits = 20;</code>
    * @param index The index of the element to return.
    * @return The toolkits at the given index.
    */
@@ -1478,7 +1478,7 @@ private static final long serialVersionUID = 0L;
    * Tags from toolkits category
    * </pre>
    *
-   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string toolkits = 20;</code>
    * @param index The index of the value to return.
    * @return The bytes of the toolkits at the given index.
    */
@@ -1494,7 +1494,7 @@ private static final long serialVersionUID = 0L;
    * Tags from use_cases category
    * </pre>
    *
-   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string use_cases = 21;</code>
    * @return A list containing the useCases.
    */
   public com.google.protobuf.ProtocolStringList
@@ -1506,7 +1506,7 @@ private static final long serialVersionUID = 0L;
    * Tags from use_cases category
    * </pre>
    *
-   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string use_cases = 21;</code>
    * @return The count of useCases.
    */
   public int getUseCasesCount() {
@@ -1517,7 +1517,7 @@ private static final long serialVersionUID = 0L;
    * Tags from use_cases category
    * </pre>
    *
-   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string use_cases = 21;</code>
    * @param index The index of the element to return.
    * @return The useCases at the given index.
    */
@@ -1529,7 +1529,7 @@ private static final long serialVersionUID = 0L;
    * Tags from use_cases category
    * </pre>
    *
-   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string use_cases = 21;</code>
    * @param index The index of the value to return.
    * @return The bytes of the useCases at the given index.
    */
@@ -1545,7 +1545,7 @@ private static final long serialVersionUID = 0L;
    * Tags from languages category.
    * </pre>
    *
-   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string languages = 25;</code>
    * @return A list containing the languages.
    */
   public com.google.protobuf.ProtocolStringList
@@ -1557,7 +1557,7 @@ private static final long serialVersionUID = 0L;
    * Tags from languages category.
    * </pre>
    *
-   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string languages = 25;</code>
    * @return The count of languages.
    */
   public int getLanguagesCount() {
@@ -1568,7 +1568,7 @@ private static final long serialVersionUID = 0L;
    * Tags from languages category.
    * </pre>
    *
-   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string languages = 25;</code>
    * @param index The index of the element to return.
    * @return The languages at the given index.
    */
@@ -1580,7 +1580,7 @@ private static final long serialVersionUID = 0L;
    * Tags from languages category.
    * </pre>
    *
-   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string languages = 25;</code>
    * @param index The index of the value to return.
    * @return The bytes of the languages at the given index.
    */
@@ -1596,7 +1596,7 @@ private static final long serialVersionUID = 0L;
    * Tags from languages category with names, only used in responses.
    * </pre>
    *
-   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
    */
   @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.FullTag> getLanguagesFullList() {
@@ -1607,7 +1607,7 @@ private static final long serialVersionUID = 0L;
    * Tags from languages category with names, only used in responses.
    * </pre>
    *
-   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.FullTagOrBuilder> 
@@ -1619,7 +1619,7 @@ private static final long serialVersionUID = 0L;
    * Tags from languages category with names, only used in responses.
    * </pre>
    *
-   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
    */
   @java.lang.Override
   public int getLanguagesFullCount() {
@@ -1630,7 +1630,7 @@ private static final long serialVersionUID = 0L;
    * Tags from languages category with names, only used in responses.
    * </pre>
    *
-   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.FullTag getLanguagesFull(int index) {
@@ -1641,7 +1641,7 @@ private static final long serialVersionUID = 0L;
    * Tags from languages category with names, only used in responses.
    * </pre>
    *
-   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.FullTagOrBuilder getLanguagesFullOrBuilder(
@@ -1652,7 +1652,7 @@ private static final long serialVersionUID = 0L;
   public static final int CHECK_CONSENTS_FIELD_NUMBER = 32;
   private com.google.protobuf.LazyStringList checkConsents_;
   /**
-   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string check_consents = 32;</code>
    * @return A list containing the checkConsents.
    */
   public com.google.protobuf.ProtocolStringList
@@ -1660,14 +1660,14 @@ private static final long serialVersionUID = 0L;
     return checkConsents_;
   }
   /**
-   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string check_consents = 32;</code>
    * @return The count of checkConsents.
    */
   public int getCheckConsentsCount() {
     return checkConsents_.size();
   }
   /**
-   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string check_consents = 32;</code>
    * @param index The index of the element to return.
    * @return The checkConsents at the given index.
    */
@@ -1675,7 +1675,7 @@ private static final long serialVersionUID = 0L;
     return checkConsents_.get(index);
   }
   /**
-   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string check_consents = 32;</code>
    * @param index The index of the value to return.
    * @return The bytes of the checkConsents at the given index.
    */
@@ -3369,7 +3369,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1456
+     *     See proto/clarifai/api/resources.proto;l=1473
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -3391,7 +3391,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1456
+     *     See proto/clarifai/api/resources.proto;l=1473
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -3414,7 +3414,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1456
+     *     See proto/clarifai/api/resources.proto;l=1473
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -3435,7 +3435,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1456
+     *     See proto/clarifai/api/resources.proto;l=1473
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -3451,7 +3451,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1456
+     *     See proto/clarifai/api/resources.proto;l=1473
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -3920,7 +3920,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1469
+     *     See proto/clarifai/api/resources.proto;l=1486
      * @return Whether the outputInfo field is set.
      */
     @java.lang.Deprecated public boolean hasOutputInfo() {
@@ -3934,7 +3934,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1469
+     *     See proto/clarifai/api/resources.proto;l=1486
      * @return The outputInfo.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
@@ -4249,7 +4249,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1474
+     *     See proto/clarifai/api/resources.proto;l=1491
      * @return The displayName.
      */
     @java.lang.Deprecated public java.lang.String getDisplayName() {
@@ -4271,7 +4271,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1474
+     *     See proto/clarifai/api/resources.proto;l=1491
      * @return The bytes for displayName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -4294,7 +4294,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1474
+     *     See proto/clarifai/api/resources.proto;l=1491
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -4315,7 +4315,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1474
+     *     See proto/clarifai/api/resources.proto;l=1491
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDisplayName() {
@@ -4331,7 +4331,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1474
+     *     See proto/clarifai/api/resources.proto;l=1491
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -5460,7 +5460,7 @@ private static final long serialVersionUID = 0L;
      * Tags from toolkits category
      * </pre>
      *
-     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string toolkits = 20;</code>
      * @return A list containing the toolkits.
      */
     public com.google.protobuf.ProtocolStringList
@@ -5472,7 +5472,7 @@ private static final long serialVersionUID = 0L;
      * Tags from toolkits category
      * </pre>
      *
-     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string toolkits = 20;</code>
      * @return The count of toolkits.
      */
     public int getToolkitsCount() {
@@ -5483,7 +5483,7 @@ private static final long serialVersionUID = 0L;
      * Tags from toolkits category
      * </pre>
      *
-     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string toolkits = 20;</code>
      * @param index The index of the element to return.
      * @return The toolkits at the given index.
      */
@@ -5495,7 +5495,7 @@ private static final long serialVersionUID = 0L;
      * Tags from toolkits category
      * </pre>
      *
-     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string toolkits = 20;</code>
      * @param index The index of the value to return.
      * @return The bytes of the toolkits at the given index.
      */
@@ -5508,7 +5508,7 @@ private static final long serialVersionUID = 0L;
      * Tags from toolkits category
      * </pre>
      *
-     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string toolkits = 20;</code>
      * @param index The index to set the value at.
      * @param value The toolkits to set.
      * @return This builder for chaining.
@@ -5528,7 +5528,7 @@ private static final long serialVersionUID = 0L;
      * Tags from toolkits category
      * </pre>
      *
-     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string toolkits = 20;</code>
      * @param value The toolkits to add.
      * @return This builder for chaining.
      */
@@ -5547,7 +5547,7 @@ private static final long serialVersionUID = 0L;
      * Tags from toolkits category
      * </pre>
      *
-     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string toolkits = 20;</code>
      * @param values The toolkits to add.
      * @return This builder for chaining.
      */
@@ -5564,7 +5564,7 @@ private static final long serialVersionUID = 0L;
      * Tags from toolkits category
      * </pre>
      *
-     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string toolkits = 20;</code>
      * @return This builder for chaining.
      */
     public Builder clearToolkits() {
@@ -5578,7 +5578,7 @@ private static final long serialVersionUID = 0L;
      * Tags from toolkits category
      * </pre>
      *
-     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string toolkits = 20;</code>
      * @param value The bytes of the toolkits to add.
      * @return This builder for chaining.
      */
@@ -5606,7 +5606,7 @@ private static final long serialVersionUID = 0L;
      * Tags from use_cases category
      * </pre>
      *
-     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string use_cases = 21;</code>
      * @return A list containing the useCases.
      */
     public com.google.protobuf.ProtocolStringList
@@ -5618,7 +5618,7 @@ private static final long serialVersionUID = 0L;
      * Tags from use_cases category
      * </pre>
      *
-     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string use_cases = 21;</code>
      * @return The count of useCases.
      */
     public int getUseCasesCount() {
@@ -5629,7 +5629,7 @@ private static final long serialVersionUID = 0L;
      * Tags from use_cases category
      * </pre>
      *
-     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string use_cases = 21;</code>
      * @param index The index of the element to return.
      * @return The useCases at the given index.
      */
@@ -5641,7 +5641,7 @@ private static final long serialVersionUID = 0L;
      * Tags from use_cases category
      * </pre>
      *
-     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string use_cases = 21;</code>
      * @param index The index of the value to return.
      * @return The bytes of the useCases at the given index.
      */
@@ -5654,7 +5654,7 @@ private static final long serialVersionUID = 0L;
      * Tags from use_cases category
      * </pre>
      *
-     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string use_cases = 21;</code>
      * @param index The index to set the value at.
      * @param value The useCases to set.
      * @return This builder for chaining.
@@ -5674,7 +5674,7 @@ private static final long serialVersionUID = 0L;
      * Tags from use_cases category
      * </pre>
      *
-     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string use_cases = 21;</code>
      * @param value The useCases to add.
      * @return This builder for chaining.
      */
@@ -5693,7 +5693,7 @@ private static final long serialVersionUID = 0L;
      * Tags from use_cases category
      * </pre>
      *
-     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string use_cases = 21;</code>
      * @param values The useCases to add.
      * @return This builder for chaining.
      */
@@ -5710,7 +5710,7 @@ private static final long serialVersionUID = 0L;
      * Tags from use_cases category
      * </pre>
      *
-     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string use_cases = 21;</code>
      * @return This builder for chaining.
      */
     public Builder clearUseCases() {
@@ -5724,7 +5724,7 @@ private static final long serialVersionUID = 0L;
      * Tags from use_cases category
      * </pre>
      *
-     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string use_cases = 21;</code>
      * @param value The bytes of the useCases to add.
      * @return This builder for chaining.
      */
@@ -5752,7 +5752,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category.
      * </pre>
      *
-     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string languages = 25;</code>
      * @return A list containing the languages.
      */
     public com.google.protobuf.ProtocolStringList
@@ -5764,7 +5764,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category.
      * </pre>
      *
-     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string languages = 25;</code>
      * @return The count of languages.
      */
     public int getLanguagesCount() {
@@ -5775,7 +5775,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category.
      * </pre>
      *
-     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string languages = 25;</code>
      * @param index The index of the element to return.
      * @return The languages at the given index.
      */
@@ -5787,7 +5787,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category.
      * </pre>
      *
-     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string languages = 25;</code>
      * @param index The index of the value to return.
      * @return The bytes of the languages at the given index.
      */
@@ -5800,7 +5800,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category.
      * </pre>
      *
-     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string languages = 25;</code>
      * @param index The index to set the value at.
      * @param value The languages to set.
      * @return This builder for chaining.
@@ -5820,7 +5820,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category.
      * </pre>
      *
-     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string languages = 25;</code>
      * @param value The languages to add.
      * @return This builder for chaining.
      */
@@ -5839,7 +5839,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category.
      * </pre>
      *
-     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string languages = 25;</code>
      * @param values The languages to add.
      * @return This builder for chaining.
      */
@@ -5856,7 +5856,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category.
      * </pre>
      *
-     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string languages = 25;</code>
      * @return This builder for chaining.
      */
     public Builder clearLanguages() {
@@ -5870,7 +5870,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category.
      * </pre>
      *
-     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string languages = 25;</code>
      * @param value The bytes of the languages to add.
      * @return This builder for chaining.
      */
@@ -5903,7 +5903,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public java.util.List<com.clarifai.grpc.api.FullTag> getLanguagesFullList() {
       if (languagesFullBuilder_ == null) {
@@ -5917,7 +5917,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public int getLanguagesFullCount() {
       if (languagesFullBuilder_ == null) {
@@ -5931,7 +5931,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public com.clarifai.grpc.api.FullTag getLanguagesFull(int index) {
       if (languagesFullBuilder_ == null) {
@@ -5945,7 +5945,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public Builder setLanguagesFull(
         int index, com.clarifai.grpc.api.FullTag value) {
@@ -5966,7 +5966,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public Builder setLanguagesFull(
         int index, com.clarifai.grpc.api.FullTag.Builder builderForValue) {
@@ -5984,7 +5984,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public Builder addLanguagesFull(com.clarifai.grpc.api.FullTag value) {
       if (languagesFullBuilder_ == null) {
@@ -6004,7 +6004,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public Builder addLanguagesFull(
         int index, com.clarifai.grpc.api.FullTag value) {
@@ -6025,7 +6025,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public Builder addLanguagesFull(
         com.clarifai.grpc.api.FullTag.Builder builderForValue) {
@@ -6043,7 +6043,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public Builder addLanguagesFull(
         int index, com.clarifai.grpc.api.FullTag.Builder builderForValue) {
@@ -6061,7 +6061,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public Builder addAllLanguagesFull(
         java.lang.Iterable<? extends com.clarifai.grpc.api.FullTag> values) {
@@ -6080,7 +6080,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public Builder clearLanguagesFull() {
       if (languagesFullBuilder_ == null) {
@@ -6097,7 +6097,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public Builder removeLanguagesFull(int index) {
       if (languagesFullBuilder_ == null) {
@@ -6114,7 +6114,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public com.clarifai.grpc.api.FullTag.Builder getLanguagesFullBuilder(
         int index) {
@@ -6125,7 +6125,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public com.clarifai.grpc.api.FullTagOrBuilder getLanguagesFullOrBuilder(
         int index) {
@@ -6139,7 +6139,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.FullTagOrBuilder> 
          getLanguagesFullOrBuilderList() {
@@ -6154,7 +6154,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public com.clarifai.grpc.api.FullTag.Builder addLanguagesFullBuilder() {
       return getLanguagesFullFieldBuilder().addBuilder(
@@ -6165,7 +6165,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public com.clarifai.grpc.api.FullTag.Builder addLanguagesFullBuilder(
         int index) {
@@ -6177,7 +6177,7 @@ private static final long serialVersionUID = 0L;
      * Tags from languages category with names, only used in responses.
      * </pre>
      *
-     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated .clarifai.api.FullTag languages_full = 31;</code>
      */
     public java.util.List<com.clarifai.grpc.api.FullTag.Builder> 
          getLanguagesFullBuilderList() {
@@ -6206,7 +6206,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string check_consents = 32;</code>
      * @return A list containing the checkConsents.
      */
     public com.google.protobuf.ProtocolStringList
@@ -6214,14 +6214,14 @@ private static final long serialVersionUID = 0L;
       return checkConsents_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string check_consents = 32;</code>
      * @return The count of checkConsents.
      */
     public int getCheckConsentsCount() {
       return checkConsents_.size();
     }
     /**
-     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string check_consents = 32;</code>
      * @param index The index of the element to return.
      * @return The checkConsents at the given index.
      */
@@ -6229,7 +6229,7 @@ private static final long serialVersionUID = 0L;
       return checkConsents_.get(index);
     }
     /**
-     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string check_consents = 32;</code>
      * @param index The index of the value to return.
      * @return The bytes of the checkConsents at the given index.
      */
@@ -6238,7 +6238,7 @@ private static final long serialVersionUID = 0L;
       return checkConsents_.getByteString(index);
     }
     /**
-     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string check_consents = 32;</code>
      * @param index The index to set the value at.
      * @param value The checkConsents to set.
      * @return This builder for chaining.
@@ -6254,7 +6254,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string check_consents = 32;</code>
      * @param value The checkConsents to add.
      * @return This builder for chaining.
      */
@@ -6269,7 +6269,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string check_consents = 32;</code>
      * @param values The checkConsents to add.
      * @return This builder for chaining.
      */
@@ -6282,7 +6282,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string check_consents = 32;</code>
      * @return This builder for chaining.
      */
     public Builder clearCheckConsents() {
@@ -6292,7 +6292,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string check_consents = 32;</code>
      * @param value The bytes of the checkConsents to add.
      * @return This builder for chaining.
      */

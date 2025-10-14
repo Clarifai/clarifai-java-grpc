@@ -122,6 +122,19 @@ private static final long serialVersionUID = 0L;
             datasetIds_.add(s);
             break;
           }
+          case 66: {
+            com.clarifai.grpc.api.InputSettings.Builder subBuilder = null;
+            if (settings_ != null) {
+              subBuilder = settings_.toBuilder();
+            }
+            settings_ = input.readMessage(com.clarifai.grpc.api.InputSettings.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(settings_);
+              settings_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -439,6 +452,44 @@ private static final long serialVersionUID = 0L;
     return datasetIds_.getByteString(index);
   }
 
+  public static final int SETTINGS_FIELD_NUMBER = 8;
+  private com.clarifai.grpc.api.InputSettings settings_;
+  /**
+   * <pre>
+   * Global settings for annotation tracks.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputSettings settings = 8;</code>
+   * @return Whether the settings field is set.
+   */
+  @java.lang.Override
+  public boolean hasSettings() {
+    return settings_ != null;
+  }
+  /**
+   * <pre>
+   * Global settings for annotation tracks.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputSettings settings = 8;</code>
+   * @return The settings.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.InputSettings getSettings() {
+    return settings_ == null ? com.clarifai.grpc.api.InputSettings.getDefaultInstance() : settings_;
+  }
+  /**
+   * <pre>
+   * Global settings for annotation tracks.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputSettings settings = 8;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.InputSettingsOrBuilder getSettingsOrBuilder() {
+    return getSettings();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -470,6 +521,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < datasetIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, datasetIds_.getRaw(i));
+    }
+    if (settings_ != null) {
+      output.writeMessage(8, getSettings());
     }
     unknownFields.writeTo(output);
   }
@@ -506,6 +560,10 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getDatasetIdsList().size();
+    }
+    if (settings_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getSettings());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -546,6 +604,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDatasetIdsList()
         .equals(other.getDatasetIdsList())) return false;
+    if (hasSettings() != other.hasSettings()) return false;
+    if (hasSettings()) {
+      if (!getSettings()
+          .equals(other.getSettings())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -578,6 +641,10 @@ private static final long serialVersionUID = 0L;
     if (getDatasetIdsCount() > 0) {
       hash = (37 * hash) + DATASET_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getDatasetIdsList().hashCode();
+    }
+    if (hasSettings()) {
+      hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSettings().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -744,6 +811,12 @@ private static final long serialVersionUID = 0L;
       }
       datasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (settingsBuilder_ == null) {
+        settings_ = null;
+      } else {
+        settings_ = null;
+        settingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -797,6 +870,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.datasetIds_ = datasetIds_;
+      if (settingsBuilder_ == null) {
+        result.settings_ = settings_;
+      } else {
+        result.settings_ = settingsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -870,6 +948,9 @@ private static final long serialVersionUID = 0L;
           datasetIds_.addAll(other.datasetIds_);
         }
         onChanged();
+      }
+      if (other.hasSettings()) {
+        mergeSettings(other.getSettings());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1842,6 +1923,161 @@ private static final long serialVersionUID = 0L;
       datasetIds_.add(value);
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.InputSettings settings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.InputSettings, com.clarifai.grpc.api.InputSettings.Builder, com.clarifai.grpc.api.InputSettingsOrBuilder> settingsBuilder_;
+    /**
+     * <pre>
+     * Global settings for annotation tracks.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputSettings settings = 8;</code>
+     * @return Whether the settings field is set.
+     */
+    public boolean hasSettings() {
+      return settingsBuilder_ != null || settings_ != null;
+    }
+    /**
+     * <pre>
+     * Global settings for annotation tracks.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputSettings settings = 8;</code>
+     * @return The settings.
+     */
+    public com.clarifai.grpc.api.InputSettings getSettings() {
+      if (settingsBuilder_ == null) {
+        return settings_ == null ? com.clarifai.grpc.api.InputSettings.getDefaultInstance() : settings_;
+      } else {
+        return settingsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Global settings for annotation tracks.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputSettings settings = 8;</code>
+     */
+    public Builder setSettings(com.clarifai.grpc.api.InputSettings value) {
+      if (settingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settings_ = value;
+        onChanged();
+      } else {
+        settingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Global settings for annotation tracks.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputSettings settings = 8;</code>
+     */
+    public Builder setSettings(
+        com.clarifai.grpc.api.InputSettings.Builder builderForValue) {
+      if (settingsBuilder_ == null) {
+        settings_ = builderForValue.build();
+        onChanged();
+      } else {
+        settingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Global settings for annotation tracks.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputSettings settings = 8;</code>
+     */
+    public Builder mergeSettings(com.clarifai.grpc.api.InputSettings value) {
+      if (settingsBuilder_ == null) {
+        if (settings_ != null) {
+          settings_ =
+            com.clarifai.grpc.api.InputSettings.newBuilder(settings_).mergeFrom(value).buildPartial();
+        } else {
+          settings_ = value;
+        }
+        onChanged();
+      } else {
+        settingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Global settings for annotation tracks.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputSettings settings = 8;</code>
+     */
+    public Builder clearSettings() {
+      if (settingsBuilder_ == null) {
+        settings_ = null;
+        onChanged();
+      } else {
+        settings_ = null;
+        settingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Global settings for annotation tracks.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputSettings settings = 8;</code>
+     */
+    public com.clarifai.grpc.api.InputSettings.Builder getSettingsBuilder() {
+      
+      onChanged();
+      return getSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Global settings for annotation tracks.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputSettings settings = 8;</code>
+     */
+    public com.clarifai.grpc.api.InputSettingsOrBuilder getSettingsOrBuilder() {
+      if (settingsBuilder_ != null) {
+        return settingsBuilder_.getMessageOrBuilder();
+      } else {
+        return settings_ == null ?
+            com.clarifai.grpc.api.InputSettings.getDefaultInstance() : settings_;
+      }
+    }
+    /**
+     * <pre>
+     * Global settings for annotation tracks.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputSettings settings = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.InputSettings, com.clarifai.grpc.api.InputSettings.Builder, com.clarifai.grpc.api.InputSettingsOrBuilder> 
+        getSettingsFieldBuilder() {
+      if (settingsBuilder_ == null) {
+        settingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.InputSettings, com.clarifai.grpc.api.InputSettings.Builder, com.clarifai.grpc.api.InputSettingsOrBuilder>(
+                getSettings(),
+                getParentForChildren(),
+                isClean());
+        settings_ = null;
+      }
+      return settingsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

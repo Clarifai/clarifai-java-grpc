@@ -206,4 +206,31 @@ public interface InputOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDatasetIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Global settings for annotation tracks.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputSettings settings = 8;</code>
+   * @return Whether the settings field is set.
+   */
+  boolean hasSettings();
+  /**
+   * <pre>
+   * Global settings for annotation tracks.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputSettings settings = 8;</code>
+   * @return The settings.
+   */
+  com.clarifai.grpc.api.InputSettings getSettings();
+  /**
+   * <pre>
+   * Global settings for annotation tracks.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputSettings settings = 8;</code>
+   */
+  com.clarifai.grpc.api.InputSettingsOrBuilder getSettingsOrBuilder();
 }
