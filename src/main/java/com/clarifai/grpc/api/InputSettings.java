@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private InputSettings() {
-    pinnedConceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    pinnedConcepts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -74,12 +74,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              pinnedConceptIds_ = new com.google.protobuf.LazyStringArrayList();
+              pinnedConcepts_ = new java.util.ArrayList<com.clarifai.grpc.api.Concept>();
               mutable_bitField0_ |= 0x00000001;
             }
-            pinnedConceptIds_.add(s);
+            pinnedConcepts_.add(
+                input.readMessage(com.clarifai.grpc.api.Concept.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        pinnedConceptIds_ = pinnedConceptIds_.getUnmodifiableView();
+        pinnedConcepts_ = java.util.Collections.unmodifiableList(pinnedConcepts_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -189,55 +189,64 @@ private static final long serialVersionUID = 0L;
     return sampleRateFrame_;
   }
 
-  public static final int PINNED_CONCEPT_IDS_FIELD_NUMBER = 4;
-  private com.google.protobuf.LazyStringList pinnedConceptIds_;
+  public static final int PINNED_CONCEPTS_FIELD_NUMBER = 4;
+  private java.util.List<com.clarifai.grpc.api.Concept> pinnedConcepts_;
   /**
    * <pre>
    * Pinned concept ids
    * </pre>
    *
-   * <code>repeated string pinned_concept_ids = 4;</code>
-   * @return A list containing the pinnedConceptIds.
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getPinnedConceptIdsList() {
-    return pinnedConceptIds_;
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.Concept> getPinnedConceptsList() {
+    return pinnedConcepts_;
   }
   /**
    * <pre>
    * Pinned concept ids
    * </pre>
    *
-   * <code>repeated string pinned_concept_ids = 4;</code>
-   * @return The count of pinnedConceptIds.
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
    */
-  public int getPinnedConceptIdsCount() {
-    return pinnedConceptIds_.size();
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.ConceptOrBuilder> 
+      getPinnedConceptsOrBuilderList() {
+    return pinnedConcepts_;
   }
   /**
    * <pre>
    * Pinned concept ids
    * </pre>
    *
-   * <code>repeated string pinned_concept_ids = 4;</code>
-   * @param index The index of the element to return.
-   * @return The pinnedConceptIds at the given index.
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
    */
-  public java.lang.String getPinnedConceptIds(int index) {
-    return pinnedConceptIds_.get(index);
+  @java.lang.Override
+  public int getPinnedConceptsCount() {
+    return pinnedConcepts_.size();
   }
   /**
    * <pre>
    * Pinned concept ids
    * </pre>
    *
-   * <code>repeated string pinned_concept_ids = 4;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the pinnedConceptIds at the given index.
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getPinnedConceptIdsBytes(int index) {
-    return pinnedConceptIds_.getByteString(index);
+  @java.lang.Override
+  public com.clarifai.grpc.api.Concept getPinnedConcepts(int index) {
+    return pinnedConcepts_.get(index);
+  }
+  /**
+   * <pre>
+   * Pinned concept ids
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ConceptOrBuilder getPinnedConceptsOrBuilder(
+      int index) {
+    return pinnedConcepts_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -263,8 +272,8 @@ private static final long serialVersionUID = 0L;
     if (sampleRateFrame_ != 0) {
       output.writeUInt32(3, sampleRateFrame_);
     }
-    for (int i = 0; i < pinnedConceptIds_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pinnedConceptIds_.getRaw(i));
+    for (int i = 0; i < pinnedConcepts_.size(); i++) {
+      output.writeMessage(4, pinnedConcepts_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -287,13 +296,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, sampleRateFrame_);
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < pinnedConceptIds_.size(); i++) {
-        dataSize += computeStringSizeNoTag(pinnedConceptIds_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getPinnedConceptIdsList().size();
+    for (int i = 0; i < pinnedConcepts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, pinnedConcepts_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -319,8 +324,8 @@ private static final long serialVersionUID = 0L;
         != other.getSampleRateMs()) return false;
     if (getSampleRateFrame()
         != other.getSampleRateFrame()) return false;
-    if (!getPinnedConceptIdsList()
-        .equals(other.getPinnedConceptIdsList())) return false;
+    if (!getPinnedConceptsList()
+        .equals(other.getPinnedConceptsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -340,9 +345,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSampleRateMs();
     hash = (37 * hash) + SAMPLE_RATE_FRAME_FIELD_NUMBER;
     hash = (53 * hash) + getSampleRateFrame();
-    if (getPinnedConceptIdsCount() > 0) {
-      hash = (37 * hash) + PINNED_CONCEPT_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getPinnedConceptIdsList().hashCode();
+    if (getPinnedConceptsCount() > 0) {
+      hash = (37 * hash) + PINNED_CONCEPTS_FIELD_NUMBER;
+      hash = (53 * hash) + getPinnedConceptsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -472,6 +477,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getPinnedConceptsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -487,8 +493,12 @@ private static final long serialVersionUID = 0L;
 
       sampleRateFrame_ = 0;
 
-      pinnedConceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      if (pinnedConceptsBuilder_ == null) {
+        pinnedConcepts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        pinnedConceptsBuilder_.clear();
+      }
       return this;
     }
 
@@ -523,11 +533,15 @@ private static final long serialVersionUID = 0L;
       }
       result.sampleRateMs_ = sampleRateMs_;
       result.sampleRateFrame_ = sampleRateFrame_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        pinnedConceptIds_ = pinnedConceptIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (pinnedConceptsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          pinnedConcepts_ = java.util.Collections.unmodifiableList(pinnedConcepts_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.pinnedConcepts_ = pinnedConcepts_;
+      } else {
+        result.pinnedConcepts_ = pinnedConceptsBuilder_.build();
       }
-      result.pinnedConceptIds_ = pinnedConceptIds_;
       onBuilt();
       return result;
     }
@@ -585,15 +599,31 @@ private static final long serialVersionUID = 0L;
       if (other.getSampleRateFrame() != 0) {
         setSampleRateFrame(other.getSampleRateFrame());
       }
-      if (!other.pinnedConceptIds_.isEmpty()) {
-        if (pinnedConceptIds_.isEmpty()) {
-          pinnedConceptIds_ = other.pinnedConceptIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensurePinnedConceptIdsIsMutable();
-          pinnedConceptIds_.addAll(other.pinnedConceptIds_);
+      if (pinnedConceptsBuilder_ == null) {
+        if (!other.pinnedConcepts_.isEmpty()) {
+          if (pinnedConcepts_.isEmpty()) {
+            pinnedConcepts_ = other.pinnedConcepts_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePinnedConceptsIsMutable();
+            pinnedConcepts_.addAll(other.pinnedConcepts_);
+          }
+          onChanged();
         }
-        onChanged();
+      } else {
+        if (!other.pinnedConcepts_.isEmpty()) {
+          if (pinnedConceptsBuilder_.isEmpty()) {
+            pinnedConceptsBuilder_.dispose();
+            pinnedConceptsBuilder_ = null;
+            pinnedConcepts_ = other.pinnedConcepts_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            pinnedConceptsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPinnedConceptsFieldBuilder() : null;
+          } else {
+            pinnedConceptsBuilder_.addAllMessages(other.pinnedConcepts_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -872,79 +902,79 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList pinnedConceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensurePinnedConceptIdsIsMutable() {
+    private java.util.List<com.clarifai.grpc.api.Concept> pinnedConcepts_ =
+      java.util.Collections.emptyList();
+    private void ensurePinnedConceptsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        pinnedConceptIds_ = new com.google.protobuf.LazyStringArrayList(pinnedConceptIds_);
+        pinnedConcepts_ = new java.util.ArrayList<com.clarifai.grpc.api.Concept>(pinnedConcepts_);
         bitField0_ |= 0x00000001;
        }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> pinnedConceptsBuilder_;
+
     /**
      * <pre>
      * Pinned concept ids
      * </pre>
      *
-     * <code>repeated string pinned_concept_ids = 4;</code>
-     * @return A list containing the pinnedConceptIds.
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getPinnedConceptIdsList() {
-      return pinnedConceptIds_.getUnmodifiableView();
+    public java.util.List<com.clarifai.grpc.api.Concept> getPinnedConceptsList() {
+      if (pinnedConceptsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pinnedConcepts_);
+      } else {
+        return pinnedConceptsBuilder_.getMessageList();
+      }
     }
     /**
      * <pre>
      * Pinned concept ids
      * </pre>
      *
-     * <code>repeated string pinned_concept_ids = 4;</code>
-     * @return The count of pinnedConceptIds.
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      */
-    public int getPinnedConceptIdsCount() {
-      return pinnedConceptIds_.size();
+    public int getPinnedConceptsCount() {
+      if (pinnedConceptsBuilder_ == null) {
+        return pinnedConcepts_.size();
+      } else {
+        return pinnedConceptsBuilder_.getCount();
+      }
     }
     /**
      * <pre>
      * Pinned concept ids
      * </pre>
      *
-     * <code>repeated string pinned_concept_ids = 4;</code>
-     * @param index The index of the element to return.
-     * @return The pinnedConceptIds at the given index.
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      */
-    public java.lang.String getPinnedConceptIds(int index) {
-      return pinnedConceptIds_.get(index);
+    public com.clarifai.grpc.api.Concept getPinnedConcepts(int index) {
+      if (pinnedConceptsBuilder_ == null) {
+        return pinnedConcepts_.get(index);
+      } else {
+        return pinnedConceptsBuilder_.getMessage(index);
+      }
     }
     /**
      * <pre>
      * Pinned concept ids
      * </pre>
      *
-     * <code>repeated string pinned_concept_ids = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the pinnedConceptIds at the given index.
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getPinnedConceptIdsBytes(int index) {
-      return pinnedConceptIds_.getByteString(index);
-    }
-    /**
-     * <pre>
-     * Pinned concept ids
-     * </pre>
-     *
-     * <code>repeated string pinned_concept_ids = 4;</code>
-     * @param index The index to set the value at.
-     * @param value The pinnedConceptIds to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPinnedConceptIds(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePinnedConceptIdsIsMutable();
-      pinnedConceptIds_.set(index, value);
-      onChanged();
+    public Builder setPinnedConcepts(
+        int index, com.clarifai.grpc.api.Concept value) {
+      if (pinnedConceptsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePinnedConceptsIsMutable();
+        pinnedConcepts_.set(index, value);
+        onChanged();
+      } else {
+        pinnedConceptsBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
@@ -952,18 +982,17 @@ private static final long serialVersionUID = 0L;
      * Pinned concept ids
      * </pre>
      *
-     * <code>repeated string pinned_concept_ids = 4;</code>
-     * @param value The pinnedConceptIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      */
-    public Builder addPinnedConceptIds(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePinnedConceptIdsIsMutable();
-      pinnedConceptIds_.add(value);
-      onChanged();
+    public Builder setPinnedConcepts(
+        int index, com.clarifai.grpc.api.Concept.Builder builderForValue) {
+      if (pinnedConceptsBuilder_ == null) {
+        ensurePinnedConceptsIsMutable();
+        pinnedConcepts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pinnedConceptsBuilder_.setMessage(index, builderForValue.build());
+      }
       return this;
     }
     /**
@@ -971,16 +1000,19 @@ private static final long serialVersionUID = 0L;
      * Pinned concept ids
      * </pre>
      *
-     * <code>repeated string pinned_concept_ids = 4;</code>
-     * @param values The pinnedConceptIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      */
-    public Builder addAllPinnedConceptIds(
-        java.lang.Iterable<java.lang.String> values) {
-      ensurePinnedConceptIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, pinnedConceptIds_);
-      onChanged();
+    public Builder addPinnedConcepts(com.clarifai.grpc.api.Concept value) {
+      if (pinnedConceptsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePinnedConceptsIsMutable();
+        pinnedConcepts_.add(value);
+        onChanged();
+      } else {
+        pinnedConceptsBuilder_.addMessage(value);
+      }
       return this;
     }
     /**
@@ -988,13 +1020,20 @@ private static final long serialVersionUID = 0L;
      * Pinned concept ids
      * </pre>
      *
-     * <code>repeated string pinned_concept_ids = 4;</code>
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      */
-    public Builder clearPinnedConceptIds() {
-      pinnedConceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
+    public Builder addPinnedConcepts(
+        int index, com.clarifai.grpc.api.Concept value) {
+      if (pinnedConceptsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePinnedConceptsIsMutable();
+        pinnedConcepts_.add(index, value);
+        onChanged();
+      } else {
+        pinnedConceptsBuilder_.addMessage(index, value);
+      }
       return this;
     }
     /**
@@ -1002,20 +1041,177 @@ private static final long serialVersionUID = 0L;
      * Pinned concept ids
      * </pre>
      *
-     * <code>repeated string pinned_concept_ids = 4;</code>
-     * @param value The bytes of the pinnedConceptIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
      */
-    public Builder addPinnedConceptIdsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensurePinnedConceptIdsIsMutable();
-      pinnedConceptIds_.add(value);
-      onChanged();
+    public Builder addPinnedConcepts(
+        com.clarifai.grpc.api.Concept.Builder builderForValue) {
+      if (pinnedConceptsBuilder_ == null) {
+        ensurePinnedConceptsIsMutable();
+        pinnedConcepts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pinnedConceptsBuilder_.addMessage(builderForValue.build());
+      }
       return this;
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public Builder addPinnedConcepts(
+        int index, com.clarifai.grpc.api.Concept.Builder builderForValue) {
+      if (pinnedConceptsBuilder_ == null) {
+        ensurePinnedConceptsIsMutable();
+        pinnedConcepts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pinnedConceptsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public Builder addAllPinnedConcepts(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Concept> values) {
+      if (pinnedConceptsBuilder_ == null) {
+        ensurePinnedConceptsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pinnedConcepts_);
+        onChanged();
+      } else {
+        pinnedConceptsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public Builder clearPinnedConcepts() {
+      if (pinnedConceptsBuilder_ == null) {
+        pinnedConcepts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        pinnedConceptsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public Builder removePinnedConcepts(int index) {
+      if (pinnedConceptsBuilder_ == null) {
+        ensurePinnedConceptsIsMutable();
+        pinnedConcepts_.remove(index);
+        onChanged();
+      } else {
+        pinnedConceptsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public com.clarifai.grpc.api.Concept.Builder getPinnedConceptsBuilder(
+        int index) {
+      return getPinnedConceptsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public com.clarifai.grpc.api.ConceptOrBuilder getPinnedConceptsOrBuilder(
+        int index) {
+      if (pinnedConceptsBuilder_ == null) {
+        return pinnedConcepts_.get(index);  } else {
+        return pinnedConceptsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.ConceptOrBuilder> 
+         getPinnedConceptsOrBuilderList() {
+      if (pinnedConceptsBuilder_ != null) {
+        return pinnedConceptsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pinnedConcepts_);
+      }
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public com.clarifai.grpc.api.Concept.Builder addPinnedConceptsBuilder() {
+      return getPinnedConceptsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Concept.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public com.clarifai.grpc.api.Concept.Builder addPinnedConceptsBuilder(
+        int index) {
+      return getPinnedConceptsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Concept.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Pinned concept ids
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Concept.Builder> 
+         getPinnedConceptsBuilderList() {
+      return getPinnedConceptsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> 
+        getPinnedConceptsFieldBuilder() {
+      if (pinnedConceptsBuilder_ == null) {
+        pinnedConceptsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder>(
+                pinnedConcepts_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        pinnedConcepts_ = null;
+      }
+      return pinnedConceptsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

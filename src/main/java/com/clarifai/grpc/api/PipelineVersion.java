@@ -148,6 +148,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 90: {
+            com.clarifai.grpc.api.PipelineVersionConfig.Builder subBuilder = null;
+            if (config_ != null) {
+              subBuilder = config_.toBuilder();
+            }
+            config_ = input.readMessage(com.clarifai.grpc.api.PipelineVersionConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(config_);
+              config_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -603,6 +616,44 @@ private static final long serialVersionUID = 0L;
     return getModifiedAt();
   }
 
+  public static final int CONFIG_FIELD_NUMBER = 11;
+  private com.clarifai.grpc.api.PipelineVersionConfig config_;
+  /**
+   * <pre>
+   * Pipeline version configuration including step secrets
+   * </pre>
+   *
+   * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+   * @return Whether the config field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfig() {
+    return config_ != null;
+  }
+  /**
+   * <pre>
+   * Pipeline version configuration including step secrets
+   * </pre>
+   *
+   * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+   * @return The config.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.PipelineVersionConfig getConfig() {
+    return config_ == null ? com.clarifai.grpc.api.PipelineVersionConfig.getDefaultInstance() : config_;
+  }
+  /**
+   * <pre>
+   * Pipeline version configuration including step secrets
+   * </pre>
+   *
+   * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.PipelineVersionConfigOrBuilder getConfigOrBuilder() {
+    return getConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -647,6 +698,9 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       output.writeMessage(10, getModifiedAt());
     }
+    if (config_ != null) {
+      output.writeMessage(11, getConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -690,6 +744,10 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getModifiedAt());
+    }
+    if (config_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -741,6 +799,11 @@ private static final long serialVersionUID = 0L;
       if (!getModifiedAt()
           .equals(other.getModifiedAt())) return false;
     }
+    if (hasConfig() != other.hasConfig()) return false;
+    if (hasConfig()) {
+      if (!getConfig()
+          .equals(other.getConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -781,6 +844,10 @@ private static final long serialVersionUID = 0L;
     if (hasModifiedAt()) {
       hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getModifiedAt().hashCode();
+    }
+    if (hasConfig()) {
+      hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -955,6 +1022,12 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
         modifiedAtBuilder_ = null;
       }
+      if (configBuilder_ == null) {
+        config_ = null;
+      } else {
+        config_ = null;
+        configBuilder_ = null;
+      }
       return this;
     }
 
@@ -1010,6 +1083,11 @@ private static final long serialVersionUID = 0L;
         result.modifiedAt_ = modifiedAt_;
       } else {
         result.modifiedAt_ = modifiedAtBuilder_.build();
+      }
+      if (configBuilder_ == null) {
+        result.config_ = config_;
+      } else {
+        result.config_ = configBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1093,6 +1171,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModifiedAt()) {
         mergeModifiedAt(other.getModifiedAt());
+      }
+      if (other.hasConfig()) {
+        mergeConfig(other.getConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2383,6 +2464,161 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
       }
       return modifiedAtBuilder_;
+    }
+
+    private com.clarifai.grpc.api.PipelineVersionConfig config_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.PipelineVersionConfig, com.clarifai.grpc.api.PipelineVersionConfig.Builder, com.clarifai.grpc.api.PipelineVersionConfigOrBuilder> configBuilder_;
+    /**
+     * <pre>
+     * Pipeline version configuration including step secrets
+     * </pre>
+     *
+     * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     * @return Whether the config field is set.
+     */
+    public boolean hasConfig() {
+      return configBuilder_ != null || config_ != null;
+    }
+    /**
+     * <pre>
+     * Pipeline version configuration including step secrets
+     * </pre>
+     *
+     * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     * @return The config.
+     */
+    public com.clarifai.grpc.api.PipelineVersionConfig getConfig() {
+      if (configBuilder_ == null) {
+        return config_ == null ? com.clarifai.grpc.api.PipelineVersionConfig.getDefaultInstance() : config_;
+      } else {
+        return configBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Pipeline version configuration including step secrets
+     * </pre>
+     *
+     * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     */
+    public Builder setConfig(com.clarifai.grpc.api.PipelineVersionConfig value) {
+      if (configBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        config_ = value;
+        onChanged();
+      } else {
+        configBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Pipeline version configuration including step secrets
+     * </pre>
+     *
+     * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     */
+    public Builder setConfig(
+        com.clarifai.grpc.api.PipelineVersionConfig.Builder builderForValue) {
+      if (configBuilder_ == null) {
+        config_ = builderForValue.build();
+        onChanged();
+      } else {
+        configBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Pipeline version configuration including step secrets
+     * </pre>
+     *
+     * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     */
+    public Builder mergeConfig(com.clarifai.grpc.api.PipelineVersionConfig value) {
+      if (configBuilder_ == null) {
+        if (config_ != null) {
+          config_ =
+            com.clarifai.grpc.api.PipelineVersionConfig.newBuilder(config_).mergeFrom(value).buildPartial();
+        } else {
+          config_ = value;
+        }
+        onChanged();
+      } else {
+        configBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Pipeline version configuration including step secrets
+     * </pre>
+     *
+     * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     */
+    public Builder clearConfig() {
+      if (configBuilder_ == null) {
+        config_ = null;
+        onChanged();
+      } else {
+        config_ = null;
+        configBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Pipeline version configuration including step secrets
+     * </pre>
+     *
+     * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     */
+    public com.clarifai.grpc.api.PipelineVersionConfig.Builder getConfigBuilder() {
+      
+      onChanged();
+      return getConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Pipeline version configuration including step secrets
+     * </pre>
+     *
+     * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     */
+    public com.clarifai.grpc.api.PipelineVersionConfigOrBuilder getConfigOrBuilder() {
+      if (configBuilder_ != null) {
+        return configBuilder_.getMessageOrBuilder();
+      } else {
+        return config_ == null ?
+            com.clarifai.grpc.api.PipelineVersionConfig.getDefaultInstance() : config_;
+      }
+    }
+    /**
+     * <pre>
+     * Pipeline version configuration including step secrets
+     * </pre>
+     *
+     * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.PipelineVersionConfig, com.clarifai.grpc.api.PipelineVersionConfig.Builder, com.clarifai.grpc.api.PipelineVersionConfigOrBuilder> 
+        getConfigFieldBuilder() {
+      if (configBuilder_ == null) {
+        configBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.PipelineVersionConfig, com.clarifai.grpc.api.PipelineVersionConfig.Builder, com.clarifai.grpc.api.PipelineVersionConfigOrBuilder>(
+                getConfig(),
+                getParentForChildren(),
+                isClean());
+        config_ = null;
+      }
+      return configBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

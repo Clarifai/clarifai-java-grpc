@@ -5,7 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * DEPRECATED: no longer support importing models from third party toolkits
+ * DEPRECATED: no longer support importing models from third-party toolkits
  * </pre>
  *
  * Protobuf type {@code clarifai.api.ImportInfo}
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * DEPRECATED: no longer support importing models from third party toolkits
+   * DEPRECATED: no longer support importing models from third-party toolkits
    * </pre>
    *
    * Protobuf type {@code clarifai.api.ImportInfo}

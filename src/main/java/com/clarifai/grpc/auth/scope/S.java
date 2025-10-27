@@ -814,6 +814,18 @@ public enum S
    * <code>UserMetrics_Get = 163 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   UserMetrics_Get(163),
+  /**
+   * <code>AnnotationTracks_Get = 166 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  AnnotationTracks_Get(166),
+  /**
+   * <code>AnnotationTracks_Add = 167 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  AnnotationTracks_Add(167),
+  /**
+   * <code>AnnotationTracks_Delete = 168 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  AnnotationTracks_Delete(168),
   UNRECOGNIZED(-1),
   ;
 
@@ -1590,6 +1602,18 @@ public enum S
    * <code>UserMetrics_Get = 163 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int UserMetrics_Get_VALUE = 163;
+  /**
+   * <code>AnnotationTracks_Get = 166 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int AnnotationTracks_Get_VALUE = 166;
+  /**
+   * <code>AnnotationTracks_Add = 167 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int AnnotationTracks_Add_VALUE = 167;
+  /**
+   * <code>AnnotationTracks_Delete = 168 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int AnnotationTracks_Delete_VALUE = 168;
 
 
   public final int getNumber() {
@@ -1730,6 +1754,9 @@ public enum S
       case 161: return Secrets_Add;
       case 162: return Secrets_Delete;
       case 163: return UserMetrics_Get;
+      case 166: return AnnotationTracks_Get;
+      case 167: return AnnotationTracks_Add;
+      case 168: return AnnotationTracks_Delete;
       default: return null;
     }
   }

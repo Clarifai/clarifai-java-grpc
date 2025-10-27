@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.FrameInfo.index is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=798
+   *     See proto/clarifai/api/resources.proto;l=799
    * @return The index.
    */
   @java.lang.Override
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.FrameInfo.index is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=798
+     *     See proto/clarifai/api/resources.proto;l=799
      * @return The index.
      */
     @java.lang.Override
@@ -521,7 +521,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.FrameInfo.index is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=798
+     *     See proto/clarifai/api/resources.proto;l=799
      * @param value The index to set.
      * @return This builder for chaining.
      */
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.FrameInfo.index is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=798
+     *     See proto/clarifai/api/resources.proto;l=799
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearIndex() {

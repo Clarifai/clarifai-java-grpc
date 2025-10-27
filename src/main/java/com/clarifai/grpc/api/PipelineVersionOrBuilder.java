@@ -242,4 +242,31 @@ public interface PipelineVersionOrBuilder extends
    * <code>.google.protobuf.Timestamp modified_at = 10;</code>
    */
   com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
+
+  /**
+   * <pre>
+   * Pipeline version configuration including step secrets
+   * </pre>
+   *
+   * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+   * @return Whether the config field is set.
+   */
+  boolean hasConfig();
+  /**
+   * <pre>
+   * Pipeline version configuration including step secrets
+   * </pre>
+   *
+   * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+   * @return The config.
+   */
+  com.clarifai.grpc.api.PipelineVersionConfig getConfig();
+  /**
+   * <pre>
+   * Pipeline version configuration including step secrets
+   * </pre>
+   *
+   * <code>.clarifai.api.PipelineVersionConfig config = 11;</code>
+   */
+  com.clarifai.grpc.api.PipelineVersionConfigOrBuilder getConfigOrBuilder();
 }

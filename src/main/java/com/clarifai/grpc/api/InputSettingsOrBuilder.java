@@ -61,39 +61,42 @@ public interface InputSettingsOrBuilder extends
    * Pinned concept ids
    * </pre>
    *
-   * <code>repeated string pinned_concept_ids = 4;</code>
-   * @return A list containing the pinnedConceptIds.
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
    */
-  java.util.List<java.lang.String>
-      getPinnedConceptIdsList();
+  java.util.List<com.clarifai.grpc.api.Concept> 
+      getPinnedConceptsList();
   /**
    * <pre>
    * Pinned concept ids
    * </pre>
    *
-   * <code>repeated string pinned_concept_ids = 4;</code>
-   * @return The count of pinnedConceptIds.
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
    */
-  int getPinnedConceptIdsCount();
+  com.clarifai.grpc.api.Concept getPinnedConcepts(int index);
   /**
    * <pre>
    * Pinned concept ids
    * </pre>
    *
-   * <code>repeated string pinned_concept_ids = 4;</code>
-   * @param index The index of the element to return.
-   * @return The pinnedConceptIds at the given index.
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
    */
-  java.lang.String getPinnedConceptIds(int index);
+  int getPinnedConceptsCount();
   /**
    * <pre>
    * Pinned concept ids
    * </pre>
    *
-   * <code>repeated string pinned_concept_ids = 4;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the pinnedConceptIds at the given index.
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPinnedConceptIdsBytes(int index);
+  java.util.List<? extends com.clarifai.grpc.api.ConceptOrBuilder> 
+      getPinnedConceptsOrBuilderList();
+  /**
+   * <pre>
+   * Pinned concept ids
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Concept pinned_concepts = 4;</code>
+   */
+  com.clarifai.grpc.api.ConceptOrBuilder getPinnedConceptsOrBuilder(
+      int index);
 }
