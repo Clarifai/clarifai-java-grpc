@@ -210,4 +210,58 @@ public interface PipelineVersionRunOrBuilder extends
    * <code>.google.protobuf.Timestamp modified_at = 8;</code>
    */
   com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
+
+  /**
+   * <pre>
+   * Optional: Overrides to input arguments for the orchestration system.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+   * @return Whether the inputArgsOverride field is set.
+   */
+  boolean hasInputArgsOverride();
+  /**
+   * <pre>
+   * Optional: Overrides to input arguments for the orchestration system.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+   * @return The inputArgsOverride.
+   */
+  com.clarifai.grpc.api.OrchestrationArgsOverride getInputArgsOverride();
+  /**
+   * <pre>
+   * Optional: Overrides to input arguments for the orchestration system.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+   */
+  com.clarifai.grpc.api.OrchestrationArgsOverrideOrBuilder getInputArgsOverrideOrBuilder();
+
+  /**
+   * <pre>
+   * Final merged orchestration spec snapshot submitted to backend.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+   * @return Whether the orchestrationSpec field is set.
+   */
+  boolean hasOrchestrationSpec();
+  /**
+   * <pre>
+   * Final merged orchestration spec snapshot submitted to backend.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+   * @return The orchestrationSpec.
+   */
+  com.clarifai.grpc.api.OrchestrationSpec getOrchestrationSpec();
+  /**
+   * <pre>
+   * Final merged orchestration spec snapshot submitted to backend.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+   */
+  com.clarifai.grpc.api.OrchestrationSpecOrBuilder getOrchestrationSpecOrBuilder();
 }

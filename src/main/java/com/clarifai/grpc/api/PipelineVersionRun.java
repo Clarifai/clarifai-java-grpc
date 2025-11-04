@@ -132,6 +132,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 74: {
+            com.clarifai.grpc.api.OrchestrationArgsOverride.Builder subBuilder = null;
+            if (inputArgsOverride_ != null) {
+              subBuilder = inputArgsOverride_.toBuilder();
+            }
+            inputArgsOverride_ = input.readMessage(com.clarifai.grpc.api.OrchestrationArgsOverride.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputArgsOverride_);
+              inputArgsOverride_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 82: {
+            com.clarifai.grpc.api.OrchestrationSpec.Builder subBuilder = null;
+            if (orchestrationSpec_ != null) {
+              subBuilder = orchestrationSpec_.toBuilder();
+            }
+            orchestrationSpec_ = input.readMessage(com.clarifai.grpc.api.OrchestrationSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(orchestrationSpec_);
+              orchestrationSpec_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -511,6 +537,82 @@ private static final long serialVersionUID = 0L;
     return getModifiedAt();
   }
 
+  public static final int INPUT_ARGS_OVERRIDE_FIELD_NUMBER = 9;
+  private com.clarifai.grpc.api.OrchestrationArgsOverride inputArgsOverride_;
+  /**
+   * <pre>
+   * Optional: Overrides to input arguments for the orchestration system.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+   * @return Whether the inputArgsOverride field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputArgsOverride() {
+    return inputArgsOverride_ != null;
+  }
+  /**
+   * <pre>
+   * Optional: Overrides to input arguments for the orchestration system.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+   * @return The inputArgsOverride.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OrchestrationArgsOverride getInputArgsOverride() {
+    return inputArgsOverride_ == null ? com.clarifai.grpc.api.OrchestrationArgsOverride.getDefaultInstance() : inputArgsOverride_;
+  }
+  /**
+   * <pre>
+   * Optional: Overrides to input arguments for the orchestration system.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OrchestrationArgsOverrideOrBuilder getInputArgsOverrideOrBuilder() {
+    return getInputArgsOverride();
+  }
+
+  public static final int ORCHESTRATION_SPEC_FIELD_NUMBER = 10;
+  private com.clarifai.grpc.api.OrchestrationSpec orchestrationSpec_;
+  /**
+   * <pre>
+   * Final merged orchestration spec snapshot submitted to backend.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+   * @return Whether the orchestrationSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrchestrationSpec() {
+    return orchestrationSpec_ != null;
+  }
+  /**
+   * <pre>
+   * Final merged orchestration spec snapshot submitted to backend.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+   * @return The orchestrationSpec.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OrchestrationSpec getOrchestrationSpec() {
+    return orchestrationSpec_ == null ? com.clarifai.grpc.api.OrchestrationSpec.getDefaultInstance() : orchestrationSpec_;
+  }
+  /**
+   * <pre>
+   * Final merged orchestration spec snapshot submitted to backend.
+   * </pre>
+   *
+   * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OrchestrationSpecOrBuilder getOrchestrationSpecOrBuilder() {
+    return getOrchestrationSpec();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -549,6 +651,12 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       output.writeMessage(8, getModifiedAt());
     }
+    if (inputArgsOverride_ != null) {
+      output.writeMessage(9, getInputArgsOverride());
+    }
+    if (orchestrationSpec_ != null) {
+      output.writeMessage(10, getOrchestrationSpec());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -586,6 +694,14 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getModifiedAt());
+    }
+    if (inputArgsOverride_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getInputArgsOverride());
+    }
+    if (orchestrationSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getOrchestrationSpec());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -630,6 +746,16 @@ private static final long serialVersionUID = 0L;
       if (!getModifiedAt()
           .equals(other.getModifiedAt())) return false;
     }
+    if (hasInputArgsOverride() != other.hasInputArgsOverride()) return false;
+    if (hasInputArgsOverride()) {
+      if (!getInputArgsOverride()
+          .equals(other.getInputArgsOverride())) return false;
+    }
+    if (hasOrchestrationSpec() != other.hasOrchestrationSpec()) return false;
+    if (hasOrchestrationSpec()) {
+      if (!getOrchestrationSpec()
+          .equals(other.getOrchestrationSpec())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -666,6 +792,14 @@ private static final long serialVersionUID = 0L;
     if (hasModifiedAt()) {
       hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getModifiedAt().hashCode();
+    }
+    if (hasInputArgsOverride()) {
+      hash = (37 * hash) + INPUT_ARGS_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + getInputArgsOverride().hashCode();
+    }
+    if (hasOrchestrationSpec()) {
+      hash = (37 * hash) + ORCHESTRATION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getOrchestrationSpec().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -837,6 +971,18 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
         modifiedAtBuilder_ = null;
       }
+      if (inputArgsOverrideBuilder_ == null) {
+        inputArgsOverride_ = null;
+      } else {
+        inputArgsOverride_ = null;
+        inputArgsOverrideBuilder_ = null;
+      }
+      if (orchestrationSpecBuilder_ == null) {
+        orchestrationSpec_ = null;
+      } else {
+        orchestrationSpec_ = null;
+        orchestrationSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -895,6 +1041,16 @@ private static final long serialVersionUID = 0L;
         result.modifiedAt_ = modifiedAt_;
       } else {
         result.modifiedAt_ = modifiedAtBuilder_.build();
+      }
+      if (inputArgsOverrideBuilder_ == null) {
+        result.inputArgsOverride_ = inputArgsOverride_;
+      } else {
+        result.inputArgsOverride_ = inputArgsOverrideBuilder_.build();
+      }
+      if (orchestrationSpecBuilder_ == null) {
+        result.orchestrationSpec_ = orchestrationSpec_;
+      } else {
+        result.orchestrationSpec_ = orchestrationSpecBuilder_.build();
       }
       onBuilt();
       return result;
@@ -993,6 +1149,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModifiedAt()) {
         mergeModifiedAt(other.getModifiedAt());
+      }
+      if (other.hasInputArgsOverride()) {
+        mergeInputArgsOverride(other.getInputArgsOverride());
+      }
+      if (other.hasOrchestrationSpec()) {
+        mergeOrchestrationSpec(other.getOrchestrationSpec());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2222,6 +2384,316 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
       }
       return modifiedAtBuilder_;
+    }
+
+    private com.clarifai.grpc.api.OrchestrationArgsOverride inputArgsOverride_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OrchestrationArgsOverride, com.clarifai.grpc.api.OrchestrationArgsOverride.Builder, com.clarifai.grpc.api.OrchestrationArgsOverrideOrBuilder> inputArgsOverrideBuilder_;
+    /**
+     * <pre>
+     * Optional: Overrides to input arguments for the orchestration system.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     * @return Whether the inputArgsOverride field is set.
+     */
+    public boolean hasInputArgsOverride() {
+      return inputArgsOverrideBuilder_ != null || inputArgsOverride_ != null;
+    }
+    /**
+     * <pre>
+     * Optional: Overrides to input arguments for the orchestration system.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     * @return The inputArgsOverride.
+     */
+    public com.clarifai.grpc.api.OrchestrationArgsOverride getInputArgsOverride() {
+      if (inputArgsOverrideBuilder_ == null) {
+        return inputArgsOverride_ == null ? com.clarifai.grpc.api.OrchestrationArgsOverride.getDefaultInstance() : inputArgsOverride_;
+      } else {
+        return inputArgsOverrideBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional: Overrides to input arguments for the orchestration system.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     */
+    public Builder setInputArgsOverride(com.clarifai.grpc.api.OrchestrationArgsOverride value) {
+      if (inputArgsOverrideBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputArgsOverride_ = value;
+        onChanged();
+      } else {
+        inputArgsOverrideBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional: Overrides to input arguments for the orchestration system.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     */
+    public Builder setInputArgsOverride(
+        com.clarifai.grpc.api.OrchestrationArgsOverride.Builder builderForValue) {
+      if (inputArgsOverrideBuilder_ == null) {
+        inputArgsOverride_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputArgsOverrideBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional: Overrides to input arguments for the orchestration system.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     */
+    public Builder mergeInputArgsOverride(com.clarifai.grpc.api.OrchestrationArgsOverride value) {
+      if (inputArgsOverrideBuilder_ == null) {
+        if (inputArgsOverride_ != null) {
+          inputArgsOverride_ =
+            com.clarifai.grpc.api.OrchestrationArgsOverride.newBuilder(inputArgsOverride_).mergeFrom(value).buildPartial();
+        } else {
+          inputArgsOverride_ = value;
+        }
+        onChanged();
+      } else {
+        inputArgsOverrideBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional: Overrides to input arguments for the orchestration system.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     */
+    public Builder clearInputArgsOverride() {
+      if (inputArgsOverrideBuilder_ == null) {
+        inputArgsOverride_ = null;
+        onChanged();
+      } else {
+        inputArgsOverride_ = null;
+        inputArgsOverrideBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional: Overrides to input arguments for the orchestration system.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     */
+    public com.clarifai.grpc.api.OrchestrationArgsOverride.Builder getInputArgsOverrideBuilder() {
+      
+      onChanged();
+      return getInputArgsOverrideFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional: Overrides to input arguments for the orchestration system.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     */
+    public com.clarifai.grpc.api.OrchestrationArgsOverrideOrBuilder getInputArgsOverrideOrBuilder() {
+      if (inputArgsOverrideBuilder_ != null) {
+        return inputArgsOverrideBuilder_.getMessageOrBuilder();
+      } else {
+        return inputArgsOverride_ == null ?
+            com.clarifai.grpc.api.OrchestrationArgsOverride.getDefaultInstance() : inputArgsOverride_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional: Overrides to input arguments for the orchestration system.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationArgsOverride input_args_override = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OrchestrationArgsOverride, com.clarifai.grpc.api.OrchestrationArgsOverride.Builder, com.clarifai.grpc.api.OrchestrationArgsOverrideOrBuilder> 
+        getInputArgsOverrideFieldBuilder() {
+      if (inputArgsOverrideBuilder_ == null) {
+        inputArgsOverrideBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.OrchestrationArgsOverride, com.clarifai.grpc.api.OrchestrationArgsOverride.Builder, com.clarifai.grpc.api.OrchestrationArgsOverrideOrBuilder>(
+                getInputArgsOverride(),
+                getParentForChildren(),
+                isClean());
+        inputArgsOverride_ = null;
+      }
+      return inputArgsOverrideBuilder_;
+    }
+
+    private com.clarifai.grpc.api.OrchestrationSpec orchestrationSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OrchestrationSpec, com.clarifai.grpc.api.OrchestrationSpec.Builder, com.clarifai.grpc.api.OrchestrationSpecOrBuilder> orchestrationSpecBuilder_;
+    /**
+     * <pre>
+     * Final merged orchestration spec snapshot submitted to backend.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     * @return Whether the orchestrationSpec field is set.
+     */
+    public boolean hasOrchestrationSpec() {
+      return orchestrationSpecBuilder_ != null || orchestrationSpec_ != null;
+    }
+    /**
+     * <pre>
+     * Final merged orchestration spec snapshot submitted to backend.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     * @return The orchestrationSpec.
+     */
+    public com.clarifai.grpc.api.OrchestrationSpec getOrchestrationSpec() {
+      if (orchestrationSpecBuilder_ == null) {
+        return orchestrationSpec_ == null ? com.clarifai.grpc.api.OrchestrationSpec.getDefaultInstance() : orchestrationSpec_;
+      } else {
+        return orchestrationSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Final merged orchestration spec snapshot submitted to backend.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     */
+    public Builder setOrchestrationSpec(com.clarifai.grpc.api.OrchestrationSpec value) {
+      if (orchestrationSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        orchestrationSpec_ = value;
+        onChanged();
+      } else {
+        orchestrationSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Final merged orchestration spec snapshot submitted to backend.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     */
+    public Builder setOrchestrationSpec(
+        com.clarifai.grpc.api.OrchestrationSpec.Builder builderForValue) {
+      if (orchestrationSpecBuilder_ == null) {
+        orchestrationSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        orchestrationSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Final merged orchestration spec snapshot submitted to backend.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     */
+    public Builder mergeOrchestrationSpec(com.clarifai.grpc.api.OrchestrationSpec value) {
+      if (orchestrationSpecBuilder_ == null) {
+        if (orchestrationSpec_ != null) {
+          orchestrationSpec_ =
+            com.clarifai.grpc.api.OrchestrationSpec.newBuilder(orchestrationSpec_).mergeFrom(value).buildPartial();
+        } else {
+          orchestrationSpec_ = value;
+        }
+        onChanged();
+      } else {
+        orchestrationSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Final merged orchestration spec snapshot submitted to backend.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     */
+    public Builder clearOrchestrationSpec() {
+      if (orchestrationSpecBuilder_ == null) {
+        orchestrationSpec_ = null;
+        onChanged();
+      } else {
+        orchestrationSpec_ = null;
+        orchestrationSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Final merged orchestration spec snapshot submitted to backend.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     */
+    public com.clarifai.grpc.api.OrchestrationSpec.Builder getOrchestrationSpecBuilder() {
+      
+      onChanged();
+      return getOrchestrationSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Final merged orchestration spec snapshot submitted to backend.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     */
+    public com.clarifai.grpc.api.OrchestrationSpecOrBuilder getOrchestrationSpecOrBuilder() {
+      if (orchestrationSpecBuilder_ != null) {
+        return orchestrationSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return orchestrationSpec_ == null ?
+            com.clarifai.grpc.api.OrchestrationSpec.getDefaultInstance() : orchestrationSpec_;
+      }
+    }
+    /**
+     * <pre>
+     * Final merged orchestration spec snapshot submitted to backend.
+     * </pre>
+     *
+     * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OrchestrationSpec, com.clarifai.grpc.api.OrchestrationSpec.Builder, com.clarifai.grpc.api.OrchestrationSpecOrBuilder> 
+        getOrchestrationSpecFieldBuilder() {
+      if (orchestrationSpecBuilder_ == null) {
+        orchestrationSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.OrchestrationSpec, com.clarifai.grpc.api.OrchestrationSpec.Builder, com.clarifai.grpc.api.OrchestrationSpecOrBuilder>(
+                getOrchestrationSpec(),
+                getParentForChildren(),
+                isClean());
+        orchestrationSpec_ = null;
+      }
+      return orchestrationSpecBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
