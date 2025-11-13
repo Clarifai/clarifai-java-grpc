@@ -7269,6 +7269,37 @@ public final class V2Grpc {
     return getDeleteComputeClustersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchComputeClustersRequest,
+      com.clarifai.grpc.api.MultiComputeClusterResponse> getPatchComputeClustersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchComputeClusters",
+      requestType = com.clarifai.grpc.api.PatchComputeClustersRequest.class,
+      responseType = com.clarifai.grpc.api.MultiComputeClusterResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchComputeClustersRequest,
+      com.clarifai.grpc.api.MultiComputeClusterResponse> getPatchComputeClustersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchComputeClustersRequest, com.clarifai.grpc.api.MultiComputeClusterResponse> getPatchComputeClustersMethod;
+    if ((getPatchComputeClustersMethod = V2Grpc.getPatchComputeClustersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchComputeClustersMethod = V2Grpc.getPatchComputeClustersMethod) == null) {
+          V2Grpc.getPatchComputeClustersMethod = getPatchComputeClustersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchComputeClustersRequest, com.clarifai.grpc.api.MultiComputeClusterResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchComputeClusters"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchComputeClustersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiComputeClusterResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchComputeClusters"))
+              .build();
+        }
+      }
+    }
+    return getPatchComputeClustersMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetNodepoolRequest,
       com.clarifai.grpc.api.SingleNodepoolResponse> getGetNodepoolMethod;
 
@@ -11190,6 +11221,13 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public void patchComputeClusters(com.clarifai.grpc.api.PatchComputeClustersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiComputeClusterResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchComputeClustersMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * Nodepools CRUD
      * </pre>
@@ -13177,6 +13215,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeleteComputeClustersRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_COMPUTE_CLUSTERS)))
+          .addMethod(
+            getPatchComputeClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchComputeClustersRequest,
+                com.clarifai.grpc.api.MultiComputeClusterResponse>(
+                  this, METHODID_PATCH_COMPUTE_CLUSTERS)))
           .addMethod(
             getGetNodepoolMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -16174,6 +16219,14 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public void patchComputeClusters(com.clarifai.grpc.api.PatchComputeClustersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiComputeClusterResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPatchComputeClustersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * Nodepools CRUD
      * </pre>
@@ -18958,6 +19011,13 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.status.BaseResponse deleteComputeClusters(com.clarifai.grpc.api.DeleteComputeClustersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteComputeClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiComputeClusterResponse patchComputeClusters(com.clarifai.grpc.api.PatchComputeClustersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchComputeClustersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -21906,6 +21966,14 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiComputeClusterResponse> patchComputeClusters(
+        com.clarifai.grpc.api.PatchComputeClustersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPatchComputeClustersMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * Nodepools CRUD
      * </pre>
@@ -22509,56 +22577,57 @@ public final class V2Grpc {
   private static final int METHODID_LIST_COMPUTE_CLUSTERS = 228;
   private static final int METHODID_POST_COMPUTE_CLUSTERS = 229;
   private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 230;
-  private static final int METHODID_GET_NODEPOOL = 231;
-  private static final int METHODID_LIST_NODEPOOLS = 232;
-  private static final int METHODID_POST_NODEPOOLS = 233;
-  private static final int METHODID_PATCH_NODEPOOLS = 234;
-  private static final int METHODID_DELETE_NODEPOOLS = 235;
-  private static final int METHODID_GET_DEPLOYMENT = 236;
-  private static final int METHODID_LIST_DEPLOYMENTS = 237;
-  private static final int METHODID_POST_DEPLOYMENTS = 238;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 239;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 240;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 241;
-  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 242;
-  private static final int METHODID_POST_LOG_ENTRIES = 243;
-  private static final int METHODID_LIST_LOG_ENTRIES = 244;
-  private static final int METHODID_STREAM_LOG_ENTRIES = 245;
-  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 246;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 247;
-  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 248;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 249;
-  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 250;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 251;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 252;
-  private static final int METHODID_POST_PIPELINES = 253;
-  private static final int METHODID_GET_PIPELINE = 254;
-  private static final int METHODID_LIST_PIPELINES = 255;
-  private static final int METHODID_PATCH_PIPELINES = 256;
-  private static final int METHODID_DELETE_PIPELINES = 257;
-  private static final int METHODID_GET_PIPELINE_VERSION = 258;
-  private static final int METHODID_LIST_PIPELINE_VERSIONS = 259;
-  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 260;
-  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 261;
-  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 262;
-  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 263;
-  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 264;
-  private static final int METHODID_POST_PIPELINE_STEPS = 265;
-  private static final int METHODID_GET_PIPELINE_STEP = 266;
-  private static final int METHODID_LIST_PIPELINE_STEPS = 267;
-  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 268;
-  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 269;
-  private static final int METHODID_GET_SECRET = 270;
-  private static final int METHODID_LIST_SECRETS = 271;
-  private static final int METHODID_POST_SECRETS = 272;
-  private static final int METHODID_PATCH_SECRETS = 273;
-  private static final int METHODID_DELETE_SECRETS = 274;
-  private static final int METHODID_POST_METRICS_QUERY = 275;
-  private static final int METHODID_LIST_METRIC_LABELS = 276;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 277;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 278;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 279;
-  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 280;
+  private static final int METHODID_PATCH_COMPUTE_CLUSTERS = 231;
+  private static final int METHODID_GET_NODEPOOL = 232;
+  private static final int METHODID_LIST_NODEPOOLS = 233;
+  private static final int METHODID_POST_NODEPOOLS = 234;
+  private static final int METHODID_PATCH_NODEPOOLS = 235;
+  private static final int METHODID_DELETE_NODEPOOLS = 236;
+  private static final int METHODID_GET_DEPLOYMENT = 237;
+  private static final int METHODID_LIST_DEPLOYMENTS = 238;
+  private static final int METHODID_POST_DEPLOYMENTS = 239;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 240;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 241;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 242;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 243;
+  private static final int METHODID_POST_LOG_ENTRIES = 244;
+  private static final int METHODID_LIST_LOG_ENTRIES = 245;
+  private static final int METHODID_STREAM_LOG_ENTRIES = 246;
+  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 247;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 248;
+  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 249;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 250;
+  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 251;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 252;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 253;
+  private static final int METHODID_POST_PIPELINES = 254;
+  private static final int METHODID_GET_PIPELINE = 255;
+  private static final int METHODID_LIST_PIPELINES = 256;
+  private static final int METHODID_PATCH_PIPELINES = 257;
+  private static final int METHODID_DELETE_PIPELINES = 258;
+  private static final int METHODID_GET_PIPELINE_VERSION = 259;
+  private static final int METHODID_LIST_PIPELINE_VERSIONS = 260;
+  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 261;
+  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 262;
+  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 263;
+  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 264;
+  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 265;
+  private static final int METHODID_POST_PIPELINE_STEPS = 266;
+  private static final int METHODID_GET_PIPELINE_STEP = 267;
+  private static final int METHODID_LIST_PIPELINE_STEPS = 268;
+  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 269;
+  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 270;
+  private static final int METHODID_GET_SECRET = 271;
+  private static final int METHODID_LIST_SECRETS = 272;
+  private static final int METHODID_POST_SECRETS = 273;
+  private static final int METHODID_PATCH_SECRETS = 274;
+  private static final int METHODID_DELETE_SECRETS = 275;
+  private static final int METHODID_POST_METRICS_QUERY = 276;
+  private static final int METHODID_LIST_METRIC_LABELS = 277;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 278;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 279;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 280;
+  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 281;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -23501,6 +23570,10 @@ public final class V2Grpc {
           serviceImpl.deleteComputeClusters((com.clarifai.grpc.api.DeleteComputeClustersRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
+        case METHODID_PATCH_COMPUTE_CLUSTERS:
+          serviceImpl.patchComputeClusters((com.clarifai.grpc.api.PatchComputeClustersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiComputeClusterResponse>) responseObserver);
+          break;
         case METHODID_GET_NODEPOOL:
           serviceImpl.getNodepool((com.clarifai.grpc.api.GetNodepoolRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleNodepoolResponse>) responseObserver);
@@ -23992,6 +24065,7 @@ public final class V2Grpc {
               .addMethod(getListComputeClustersMethod())
               .addMethod(getPostComputeClustersMethod())
               .addMethod(getDeleteComputeClustersMethod())
+              .addMethod(getPatchComputeClustersMethod())
               .addMethod(getGetNodepoolMethod())
               .addMethod(getListNodepoolsMethod())
               .addMethod(getPostNodepoolsMethod())

@@ -55,7 +55,7 @@ private static final long serialVersionUID = 0L;
                   StepVersionSecretsDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000001;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.clarifai.grpc.api.StepSecretConfig>
+            com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Struct>
             stepVersionSecrets__ = input.readMessage(
                 StepVersionSecretsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             stepVersionSecrets_.getMutableMap().put(
@@ -111,18 +111,18 @@ private static final long serialVersionUID = 0L;
   public static final int STEP_VERSION_SECRETS_FIELD_NUMBER = 1;
   private static final class StepVersionSecretsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.clarifai.grpc.api.StepSecretConfig> defaultEntry =
+        java.lang.String, com.google.protobuf.Struct> defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.clarifai.grpc.api.StepSecretConfig>newDefaultInstance(
+            .<java.lang.String, com.google.protobuf.Struct>newDefaultInstance(
                 com.clarifai.grpc.api.Resources.internal_static_clarifai_api_PipelineVersionConfig_StepVersionSecretsEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.clarifai.grpc.api.StepSecretConfig.getDefaultInstance());
+                com.google.protobuf.Struct.getDefaultInstance());
   }
   private com.google.protobuf.MapField<
-      java.lang.String, com.clarifai.grpc.api.StepSecretConfig> stepVersionSecrets_;
-  private com.google.protobuf.MapField<java.lang.String, com.clarifai.grpc.api.StepSecretConfig>
+      java.lang.String, com.google.protobuf.Struct> stepVersionSecrets_;
+  private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Struct>
   internalGetStepVersionSecrets() {
     if (stepVersionSecrets_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
@@ -136,13 +136,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * StepVersionSecrets maps step version references to their secret configurations
-   * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-   * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-   * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+   * StepVersionSecrets maps step names to their secret configurations
+   * Using google.protobuf.Struct to create the desired flat JSON structure
+   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
    * </pre>
    *
-   * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+   * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
    */
 
   @java.lang.Override
@@ -156,60 +156,60 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> getStepVersionSecrets() {
+  public java.util.Map<java.lang.String, com.google.protobuf.Struct> getStepVersionSecrets() {
     return getStepVersionSecretsMap();
   }
   /**
    * <pre>
-   * StepVersionSecrets maps step version references to their secret configurations
-   * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-   * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-   * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+   * StepVersionSecrets maps step names to their secret configurations
+   * Using google.protobuf.Struct to create the desired flat JSON structure
+   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
    * </pre>
    *
-   * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+   * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
    */
   @java.lang.Override
 
-  public java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> getStepVersionSecretsMap() {
+  public java.util.Map<java.lang.String, com.google.protobuf.Struct> getStepVersionSecretsMap() {
     return internalGetStepVersionSecrets().getMap();
   }
   /**
    * <pre>
-   * StepVersionSecrets maps step version references to their secret configurations
-   * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-   * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-   * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+   * StepVersionSecrets maps step names to their secret configurations
+   * Using google.protobuf.Struct to create the desired flat JSON structure
+   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
    * </pre>
    *
-   * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+   * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
    */
   @java.lang.Override
 
-  public com.clarifai.grpc.api.StepSecretConfig getStepVersionSecretsOrDefault(
+  public com.google.protobuf.Struct getStepVersionSecretsOrDefault(
       java.lang.String key,
-      com.clarifai.grpc.api.StepSecretConfig defaultValue) {
+      com.google.protobuf.Struct defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> map =
+    java.util.Map<java.lang.String, com.google.protobuf.Struct> map =
         internalGetStepVersionSecrets().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
    * <pre>
-   * StepVersionSecrets maps step version references to their secret configurations
-   * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-   * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-   * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+   * StepVersionSecrets maps step names to their secret configurations
+   * Using google.protobuf.Struct to create the desired flat JSON structure
+   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
    * </pre>
    *
-   * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+   * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
    */
   @java.lang.Override
 
-  public com.clarifai.grpc.api.StepSecretConfig getStepVersionSecretsOrThrow(
+  public com.google.protobuf.Struct getStepVersionSecretsOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> map =
+    java.util.Map<java.lang.String, com.google.protobuf.Struct> map =
         internalGetStepVersionSecrets().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
@@ -246,9 +246,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (java.util.Map.Entry<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> entry
+    for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Struct> entry
          : internalGetStepVersionSecrets().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.clarifai.grpc.api.StepSecretConfig>
+      com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Struct>
       stepVersionSecrets__ = StepVersionSecretsDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
@@ -554,8 +554,8 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     private com.google.protobuf.MapField<
-        java.lang.String, com.clarifai.grpc.api.StepSecretConfig> stepVersionSecrets_;
-    private com.google.protobuf.MapField<java.lang.String, com.clarifai.grpc.api.StepSecretConfig>
+        java.lang.String, com.google.protobuf.Struct> stepVersionSecrets_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Struct>
     internalGetStepVersionSecrets() {
       if (stepVersionSecrets_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
       }
       return stepVersionSecrets_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.clarifai.grpc.api.StepSecretConfig>
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Struct>
     internalGetMutableStepVersionSecrets() {
       onChanged();;
       if (stepVersionSecrets_ == null) {
@@ -581,13 +581,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      * </pre>
      *
-     * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
      */
 
     @java.lang.Override
@@ -601,60 +601,60 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> getStepVersionSecrets() {
+    public java.util.Map<java.lang.String, com.google.protobuf.Struct> getStepVersionSecrets() {
       return getStepVersionSecretsMap();
     }
     /**
      * <pre>
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      * </pre>
      *
-     * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> getStepVersionSecretsMap() {
+    public java.util.Map<java.lang.String, com.google.protobuf.Struct> getStepVersionSecretsMap() {
       return internalGetStepVersionSecrets().getMap();
     }
     /**
      * <pre>
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      * </pre>
      *
-     * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
      */
     @java.lang.Override
 
-    public com.clarifai.grpc.api.StepSecretConfig getStepVersionSecretsOrDefault(
+    public com.google.protobuf.Struct getStepVersionSecretsOrDefault(
         java.lang.String key,
-        com.clarifai.grpc.api.StepSecretConfig defaultValue) {
+        com.google.protobuf.Struct defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> map =
+      java.util.Map<java.lang.String, com.google.protobuf.Struct> map =
           internalGetStepVersionSecrets().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
      * <pre>
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      * </pre>
      *
-     * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
      */
     @java.lang.Override
 
-    public com.clarifai.grpc.api.StepSecretConfig getStepVersionSecretsOrThrow(
+    public com.google.protobuf.Struct getStepVersionSecretsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> map =
+      java.util.Map<java.lang.String, com.google.protobuf.Struct> map =
           internalGetStepVersionSecrets().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -669,13 +669,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      * </pre>
      *
-     * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
      */
 
     public Builder removeStepVersionSecrets(
@@ -689,23 +689,23 @@ private static final long serialVersionUID = 0L;
      * Use alternate mutation accessors instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig>
+    public java.util.Map<java.lang.String, com.google.protobuf.Struct>
     getMutableStepVersionSecrets() {
       return internalGetMutableStepVersionSecrets().getMutableMap();
     }
     /**
      * <pre>
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      * </pre>
      *
-     * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
      */
     public Builder putStepVersionSecrets(
         java.lang.String key,
-        com.clarifai.grpc.api.StepSecretConfig value) {
+        com.google.protobuf.Struct value) {
       if (key == null) { throw new NullPointerException("map key"); }
       if (value == null) {
   throw new NullPointerException("map value");
@@ -717,17 +717,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * StepVersionSecrets maps step version references to their secret configurations
-     * The outer map key is the step version reference (e.g. "step1" or the step version ID)
-     * The inner map key is the secret name (e.g. "EMAIL_PROVIDER_API_KEY")
-     * The inner map value is the secret reference (e.g. "users/1/secrets/secret-1")
+     * StepVersionSecrets maps step names to their secret configurations
+     * Using google.protobuf.Struct to create the desired flat JSON structure
+     * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
+     * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
      * </pre>
      *
-     * <code>map&lt;string, .clarifai.api.StepSecretConfig&gt; step_version_secrets = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
      */
 
     public Builder putAllStepVersionSecrets(
-        java.util.Map<java.lang.String, com.clarifai.grpc.api.StepSecretConfig> values) {
+        java.util.Map<java.lang.String, com.google.protobuf.Struct> values) {
       internalGetMutableStepVersionSecrets().getMutableMap()
           .putAll(values);
       return this;

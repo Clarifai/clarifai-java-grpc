@@ -320,7 +320,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4905
+   *     See proto/clarifai/api/service.proto;l=4926
    * @return The query.
    */
   @java.lang.Deprecated java.lang.String getQuery();
@@ -332,7 +332,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4905
+   *     See proto/clarifai/api/service.proto;l=4926
    * @return The bytes for query.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -346,7 +346,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4908
+   *     See proto/clarifai/api/service.proto;l=4929
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -358,7 +358,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4908
+   *     See proto/clarifai/api/service.proto;l=4929
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -372,7 +372,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4911
+   *     See proto/clarifai/api/service.proto;l=4932
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -384,7 +384,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4911
+   *     See proto/clarifai/api/service.proto;l=4932
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

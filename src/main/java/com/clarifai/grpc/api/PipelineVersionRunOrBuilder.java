@@ -241,6 +241,7 @@ public interface PipelineVersionRunOrBuilder extends
   /**
    * <pre>
    * Final merged orchestration spec snapshot submitted to backend.
+   * This field is read-only and cannot be set during creation.
    * </pre>
    *
    * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
@@ -250,6 +251,7 @@ public interface PipelineVersionRunOrBuilder extends
   /**
    * <pre>
    * Final merged orchestration spec snapshot submitted to backend.
+   * This field is read-only and cannot be set during creation.
    * </pre>
    *
    * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
@@ -259,6 +261,7 @@ public interface PipelineVersionRunOrBuilder extends
   /**
    * <pre>
    * Final merged orchestration spec snapshot submitted to backend.
+   * This field is read-only and cannot be set during creation.
    * </pre>
    *
    * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>

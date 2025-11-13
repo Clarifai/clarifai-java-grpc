@@ -409,7 +409,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.PostWorkflowResultsRequest.favor_clarifai_workflows is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7451
+   *     See proto/clarifai/api/service.proto;l=7472
    * @return The favorClarifaiWorkflows.
    */
   @java.lang.Override
@@ -1909,7 +1909,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.PostWorkflowResultsRequest.favor_clarifai_workflows is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7451
+     *     See proto/clarifai/api/service.proto;l=7472
      * @return The favorClarifaiWorkflows.
      */
     @java.lang.Override
@@ -1923,7 +1923,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.PostWorkflowResultsRequest.favor_clarifai_workflows is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7451
+     *     See proto/clarifai/api/service.proto;l=7472
      * @param value The favorClarifaiWorkflows to set.
      * @return This builder for chaining.
      */
@@ -1940,7 +1940,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool favor_clarifai_workflows = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.PostWorkflowResultsRequest.favor_clarifai_workflows is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7451
+     *     See proto/clarifai/api/service.proto;l=7472
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearFavorClarifaiWorkflows() {
