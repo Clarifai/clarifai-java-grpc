@@ -10,14 +10,14 @@ public interface LabelCountOrBuilder extends
   /**
    * <code>string concept_name = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2231
+   *     See proto/clarifai/api/resources.proto;l=2217
    * @return The conceptName.
    */
   @java.lang.Deprecated java.lang.String getConceptName();
   /**
    * <code>string concept_name = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2231
+   *     See proto/clarifai/api/resources.proto;l=2217
    * @return The bytes for conceptName.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

@@ -1840,6 +1840,7 @@ public enum StatusCode
   /**
    * <pre>
    * License Related Status Code 600xx
+   * DEPRECATED: License feature is fully deprecated now.
    * </pre>
    *
    * <code>LICENSE_ACTIVE = 60000;</code>
@@ -4115,6 +4116,7 @@ public enum StatusCode
   /**
    * <pre>
    * License Related Status Code 600xx
+   * DEPRECATED: License feature is fully deprecated now.
    * </pre>
    *
    * <code>LICENSE_ACTIVE = 60000;</code>

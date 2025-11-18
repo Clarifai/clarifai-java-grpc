@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>string concept_name = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2231
+   *     See proto/clarifai/api/resources.proto;l=2217
    * @return The conceptName.
    */
   @java.lang.Override
@@ -135,7 +135,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>string concept_name = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2231
+   *     See proto/clarifai/api/resources.proto;l=2217
    * @return The bytes for conceptName.
    */
   @java.lang.Override
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string concept_name = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2231
+     *     See proto/clarifai/api/resources.proto;l=2217
      * @return The conceptName.
      */
     @java.lang.Deprecated public java.lang.String getConceptName() {
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string concept_name = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2231
+     *     See proto/clarifai/api/resources.proto;l=2217
      * @return The bytes for conceptName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -584,7 +584,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string concept_name = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2231
+     *     See proto/clarifai/api/resources.proto;l=2217
      * @param value The conceptName to set.
      * @return This builder for chaining.
      */
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string concept_name = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2231
+     *     See proto/clarifai/api/resources.proto;l=2217
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearConceptName() {
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string concept_name = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2231
+     *     See proto/clarifai/api/resources.proto;l=2217
      * @param value The bytes for conceptName to set.
      * @return This builder for chaining.
      */

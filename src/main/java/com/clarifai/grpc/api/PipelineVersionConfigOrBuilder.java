@@ -11,8 +11,8 @@ public interface PipelineVersionConfigOrBuilder extends
    * <pre>
    * StepVersionSecrets maps step names to their secret configurations
    * Using google.protobuf.Struct to create the desired flat JSON structure
-   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
-   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
+   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}}
+   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}}
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
@@ -22,8 +22,8 @@ public interface PipelineVersionConfigOrBuilder extends
    * <pre>
    * StepVersionSecrets maps step names to their secret configurations
    * Using google.protobuf.Struct to create the desired flat JSON structure
-   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
-   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
+   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}}
+   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}}
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
@@ -40,8 +40,8 @@ public interface PipelineVersionConfigOrBuilder extends
    * <pre>
    * StepVersionSecrets maps step names to their secret configurations
    * Using google.protobuf.Struct to create the desired flat JSON structure
-   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
-   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
+   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}}
+   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}}
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
@@ -52,8 +52,8 @@ public interface PipelineVersionConfigOrBuilder extends
    * <pre>
    * StepVersionSecrets maps step names to their secret configurations
    * Using google.protobuf.Struct to create the desired flat JSON structure
-   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
-   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
+   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}}
+   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}}
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>
@@ -68,8 +68,8 @@ com.google.protobuf.Struct defaultValue);
    * <pre>
    * StepVersionSecrets maps step names to their secret configurations
    * Using google.protobuf.Struct to create the desired flat JSON structure
-   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}} 
-   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}} 
+   * This produces: {stepName: {secretName: "users/user-name/secrets/key"}}
+   * example: {"step-0": {"API_KEY": "users/user-name/secrets/key"}}
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Struct&gt; step_version_secrets = 1;</code>

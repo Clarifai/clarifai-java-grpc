@@ -750,4 +750,31 @@ public interface DataOrBuilder extends
    */
   com.google.protobuf.ByteString
       getStringValueBytes();
+
+  /**
+   * <pre>
+   * To handle Input and output json
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_value = 26;</code>
+   * @return Whether the structValue field is set.
+   */
+  boolean hasStructValue();
+  /**
+   * <pre>
+   * To handle Input and output json
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_value = 26;</code>
+   * @return The structValue.
+   */
+  com.google.protobuf.Struct getStructValue();
+  /**
+   * <pre>
+   * To handle Input and output json
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_value = 26;</code>
+   */
+  com.google.protobuf.StructOrBuilder getStructValueOrBuilder();
 }

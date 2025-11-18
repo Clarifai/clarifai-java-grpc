@@ -135,7 +135,7 @@ public enum DeployRestriction
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(7);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final DeployRestriction[] VALUES = values();

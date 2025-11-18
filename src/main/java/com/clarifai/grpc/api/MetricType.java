@@ -94,7 +94,7 @@ public enum MetricType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(21);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(19);
   }
 
   private static final MetricType[] VALUES = values();

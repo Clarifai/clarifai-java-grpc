@@ -1027,7 +1027,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2145
+   *     See proto/clarifai/api/resources.proto;l=2131
    * @return Whether the importInfo field is set.
    */
   @java.lang.Override
@@ -1042,7 +1042,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
    * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2145
+   *     See proto/clarifai/api/resources.proto;l=2131
    * @return The importInfo.
    */
   @java.lang.Override
@@ -4527,7 +4527,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2145
+     *     See proto/clarifai/api/resources.proto;l=2131
      * @return Whether the importInfo field is set.
      */
     @java.lang.Deprecated public boolean hasImportInfo() {
@@ -4541,7 +4541,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.ImportInfo import_info = 22 [deprecated = true];</code>
      * @deprecated clarifai.api.ModelVersion.import_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2145
+     *     See proto/clarifai/api/resources.proto;l=2131
      * @return The importInfo.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo getImportInfo() {

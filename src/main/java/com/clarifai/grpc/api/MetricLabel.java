@@ -121,7 +121,7 @@ public enum MetricLabel
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(22);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(20);
   }
 
   private static final MetricLabel[] VALUES = values();

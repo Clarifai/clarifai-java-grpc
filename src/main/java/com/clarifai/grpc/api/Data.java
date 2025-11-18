@@ -282,6 +282,19 @@ private static final long serialVersionUID = 0L;
             stringValue_ = s;
             break;
           }
+          case 210: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (structValue_ != null) {
+              subBuilder = structValue_.toBuilder();
+            }
+            structValue_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(structValue_);
+              structValue_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1392,6 +1405,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int STRUCT_VALUE_FIELD_NUMBER = 26;
+  private com.google.protobuf.Struct structValue_;
+  /**
+   * <pre>
+   * To handle Input and output json
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_value = 26;</code>
+   * @return Whether the structValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasStructValue() {
+    return structValue_ != null;
+  }
+  /**
+   * <pre>
+   * To handle Input and output json
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_value = 26;</code>
+   * @return The structValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getStructValue() {
+    return structValue_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structValue_;
+  }
+  /**
+   * <pre>
+   * To handle Input and output json
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_value = 26;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getStructValueOrBuilder() {
+    return getStructValue();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1474,6 +1525,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stringValue_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, stringValue_);
+    }
+    if (structValue_ != null) {
+      output.writeMessage(26, getStructValue());
     }
     unknownFields.writeTo(output);
   }
@@ -1575,6 +1629,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stringValue_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, stringValue_);
     }
+    if (structValue_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(26, getStructValue());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1658,6 +1716,11 @@ private static final long serialVersionUID = 0L;
         != other.getBoolValue()) return false;
     if (!getStringValue()
         .equals(other.getStringValue())) return false;
+    if (hasStructValue() != other.hasStructValue()) return false;
+    if (hasStructValue()) {
+      if (!getStructValue()
+          .equals(other.getStructValue())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1754,6 +1817,10 @@ private static final long serialVersionUID = 0L;
         getBoolValue());
     hash = (37 * hash) + STRING_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getStringValue().hashCode();
+    if (hasStructValue()) {
+      hash = (37 * hash) + STRUCT_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getStructValue().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2020,6 +2087,12 @@ private static final long serialVersionUID = 0L;
 
       stringValue_ = "";
 
+      if (structValueBuilder_ == null) {
+        structValue_ = null;
+      } else {
+        structValue_ = null;
+        structValueBuilder_ = null;
+      }
       return this;
     }
 
@@ -2186,6 +2259,11 @@ private static final long serialVersionUID = 0L;
       result.bytesValue_ = bytesValue_;
       result.boolValue_ = boolValue_;
       result.stringValue_ = stringValue_;
+      if (structValueBuilder_ == null) {
+        result.structValue_ = structValue_;
+      } else {
+        result.structValue_ = structValueBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2556,6 +2634,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getStringValue().isEmpty()) {
         stringValue_ = other.stringValue_;
         onChanged();
+      }
+      if (other.hasStructValue()) {
+        mergeStructValue(other.getStructValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7409,6 +7490,161 @@ private static final long serialVersionUID = 0L;
       stringValue_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct structValue_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> structValueBuilder_;
+    /**
+     * <pre>
+     * To handle Input and output json
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_value = 26;</code>
+     * @return Whether the structValue field is set.
+     */
+    public boolean hasStructValue() {
+      return structValueBuilder_ != null || structValue_ != null;
+    }
+    /**
+     * <pre>
+     * To handle Input and output json
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_value = 26;</code>
+     * @return The structValue.
+     */
+    public com.google.protobuf.Struct getStructValue() {
+      if (structValueBuilder_ == null) {
+        return structValue_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structValue_;
+      } else {
+        return structValueBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * To handle Input and output json
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_value = 26;</code>
+     */
+    public Builder setStructValue(com.google.protobuf.Struct value) {
+      if (structValueBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        structValue_ = value;
+        onChanged();
+      } else {
+        structValueBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle Input and output json
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_value = 26;</code>
+     */
+    public Builder setStructValue(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (structValueBuilder_ == null) {
+        structValue_ = builderForValue.build();
+        onChanged();
+      } else {
+        structValueBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle Input and output json
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_value = 26;</code>
+     */
+    public Builder mergeStructValue(com.google.protobuf.Struct value) {
+      if (structValueBuilder_ == null) {
+        if (structValue_ != null) {
+          structValue_ =
+            com.google.protobuf.Struct.newBuilder(structValue_).mergeFrom(value).buildPartial();
+        } else {
+          structValue_ = value;
+        }
+        onChanged();
+      } else {
+        structValueBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle Input and output json
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_value = 26;</code>
+     */
+    public Builder clearStructValue() {
+      if (structValueBuilder_ == null) {
+        structValue_ = null;
+        onChanged();
+      } else {
+        structValue_ = null;
+        structValueBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle Input and output json
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_value = 26;</code>
+     */
+    public com.google.protobuf.Struct.Builder getStructValueBuilder() {
+      
+      onChanged();
+      return getStructValueFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * To handle Input and output json
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_value = 26;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getStructValueOrBuilder() {
+      if (structValueBuilder_ != null) {
+        return structValueBuilder_.getMessageOrBuilder();
+      } else {
+        return structValue_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : structValue_;
+      }
+    }
+    /**
+     * <pre>
+     * To handle Input and output json
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_value = 26;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getStructValueFieldBuilder() {
+      if (structValueBuilder_ == null) {
+        structValueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getStructValue(),
+                getParentForChildren(),
+                isClean());
+        structValue_ = null;
+      }
+      return structValueBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
