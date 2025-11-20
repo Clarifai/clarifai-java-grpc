@@ -20,7 +20,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MetricsSummary() {
-    lopqMetrics_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -43,7 +42,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -94,15 +92,6 @@ private static final long serialVersionUID = 0L;
             macroAvgRecall_ = input.readFloat();
             break;
           }
-          case 74: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              lopqMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.LOPQEvalResult>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            lopqMetrics_.add(
-                input.readMessage(com.clarifai.grpc.api.LOPQEvalResult.parser(), extensionRegistry));
-            break;
-          }
           case 85: {
 
             meanAvgPrecisionIou50_ = input.readFloat();
@@ -130,9 +119,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        lopqMetrics_ = java.util.Collections.unmodifiableList(lopqMetrics_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -155,7 +141,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>float top1_accuracy = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2363
+   *     See proto/clarifai/api/resources.proto;l=2328
    * @return The top1Accuracy.
    */
   @java.lang.Override
@@ -168,7 +154,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>float top5_accuracy = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2364
+   *     See proto/clarifai/api/resources.proto;l=2329
    * @return The top5Accuracy.
    */
   @java.lang.Override
@@ -264,46 +250,6 @@ private static final long serialVersionUID = 0L;
     return meanAvgPrecisionIouRange_;
   }
 
-  public static final int LOPQ_METRICS_FIELD_NUMBER = 9;
-  private java.util.List<com.clarifai.grpc.api.LOPQEvalResult> lopqMetrics_;
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.clarifai.grpc.api.LOPQEvalResult> getLopqMetricsList() {
-    return lopqMetrics_;
-  }
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.clarifai.grpc.api.LOPQEvalResultOrBuilder> 
-      getLopqMetricsOrBuilderList() {
-    return lopqMetrics_;
-  }
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  @java.lang.Override
-  public int getLopqMetricsCount() {
-    return lopqMetrics_.size();
-  }
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.LOPQEvalResult getLopqMetrics(int index) {
-    return lopqMetrics_.get(index);
-  }
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.LOPQEvalResultOrBuilder getLopqMetricsOrBuilder(
-      int index) {
-    return lopqMetrics_.get(index);
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -341,9 +287,6 @@ private static final long serialVersionUID = 0L;
     }
     if (java.lang.Float.floatToRawIntBits(macroAvgRecall_) != 0) {
       output.writeFloat(8, macroAvgRecall_);
-    }
-    for (int i = 0; i < lopqMetrics_.size(); i++) {
-      output.writeMessage(9, lopqMetrics_.get(i));
     }
     if (java.lang.Float.floatToRawIntBits(meanAvgPrecisionIou50_) != 0) {
       output.writeFloat(10, meanAvgPrecisionIou50_);
@@ -391,10 +334,6 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(macroAvgRecall_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(8, macroAvgRecall_);
-    }
-    for (int i = 0; i < lopqMetrics_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, lopqMetrics_.get(i));
     }
     if (java.lang.Float.floatToRawIntBits(meanAvgPrecisionIou50_) != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -449,8 +388,6 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getMeanAvgPrecisionIouRange())
         != java.lang.Float.floatToIntBits(
             other.getMeanAvgPrecisionIouRange())) return false;
-    if (!getLopqMetricsList()
-        .equals(other.getLopqMetricsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -492,10 +429,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MEAN_AVG_PRECISION_IOU_RANGE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getMeanAvgPrecisionIouRange());
-    if (getLopqMetricsCount() > 0) {
-      hash = (37 * hash) + LOPQ_METRICS_FIELD_NUMBER;
-      hash = (53 * hash) + getLopqMetricsList().hashCode();
-    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -628,7 +561,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getLopqMetricsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -654,12 +586,6 @@ private static final long serialVersionUID = 0L;
 
       meanAvgPrecisionIouRange_ = 0F;
 
-      if (lopqMetricsBuilder_ == null) {
-        lopqMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        lopqMetricsBuilder_.clear();
-      }
       return this;
     }
 
@@ -686,7 +612,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.MetricsSummary buildPartial() {
       com.clarifai.grpc.api.MetricsSummary result = new com.clarifai.grpc.api.MetricsSummary(this);
-      int from_bitField0_ = bitField0_;
       result.top1Accuracy_ = top1Accuracy_;
       result.top5Accuracy_ = top5Accuracy_;
       result.macroAvgRocAuc_ = macroAvgRocAuc_;
@@ -697,15 +622,6 @@ private static final long serialVersionUID = 0L;
       result.macroAvgRecall_ = macroAvgRecall_;
       result.meanAvgPrecisionIou50_ = meanAvgPrecisionIou50_;
       result.meanAvgPrecisionIouRange_ = meanAvgPrecisionIouRange_;
-      if (lopqMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          lopqMetrics_ = java.util.Collections.unmodifiableList(lopqMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.lopqMetrics_ = lopqMetrics_;
-      } else {
-        result.lopqMetrics_ = lopqMetricsBuilder_.build();
-      }
       onBuilt();
       return result;
     }
@@ -784,32 +700,6 @@ private static final long serialVersionUID = 0L;
       if (other.getMeanAvgPrecisionIouRange() != 0F) {
         setMeanAvgPrecisionIouRange(other.getMeanAvgPrecisionIouRange());
       }
-      if (lopqMetricsBuilder_ == null) {
-        if (!other.lopqMetrics_.isEmpty()) {
-          if (lopqMetrics_.isEmpty()) {
-            lopqMetrics_ = other.lopqMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureLopqMetricsIsMutable();
-            lopqMetrics_.addAll(other.lopqMetrics_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.lopqMetrics_.isEmpty()) {
-          if (lopqMetricsBuilder_.isEmpty()) {
-            lopqMetricsBuilder_.dispose();
-            lopqMetricsBuilder_ = null;
-            lopqMetrics_ = other.lopqMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            lopqMetricsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getLopqMetricsFieldBuilder() : null;
-          } else {
-            lopqMetricsBuilder_.addAllMessages(other.lopqMetrics_);
-          }
-        }
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -838,13 +728,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private float top1Accuracy_ ;
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2363
+     *     See proto/clarifai/api/resources.proto;l=2328
      * @return The top1Accuracy.
      */
     @java.lang.Override
@@ -854,7 +743,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2363
+     *     See proto/clarifai/api/resources.proto;l=2328
      * @param value The top1Accuracy to set.
      * @return This builder for chaining.
      */
@@ -867,7 +756,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2363
+     *     See proto/clarifai/api/resources.proto;l=2328
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTop1Accuracy() {
@@ -881,7 +770,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2364
+     *     See proto/clarifai/api/resources.proto;l=2329
      * @return The top5Accuracy.
      */
     @java.lang.Override
@@ -891,7 +780,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2364
+     *     See proto/clarifai/api/resources.proto;l=2329
      * @param value The top5Accuracy to set.
      * @return This builder for chaining.
      */
@@ -904,7 +793,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2364
+     *     See proto/clarifai/api/resources.proto;l=2329
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTop5Accuracy() {
@@ -1160,246 +1049,6 @@ private static final long serialVersionUID = 0L;
       meanAvgPrecisionIouRange_ = 0F;
       onChanged();
       return this;
-    }
-
-    private java.util.List<com.clarifai.grpc.api.LOPQEvalResult> lopqMetrics_ =
-      java.util.Collections.emptyList();
-    private void ensureLopqMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        lopqMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.LOPQEvalResult>(lopqMetrics_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.LOPQEvalResult, com.clarifai.grpc.api.LOPQEvalResult.Builder, com.clarifai.grpc.api.LOPQEvalResultOrBuilder> lopqMetricsBuilder_;
-
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public java.util.List<com.clarifai.grpc.api.LOPQEvalResult> getLopqMetricsList() {
-      if (lopqMetricsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(lopqMetrics_);
-      } else {
-        return lopqMetricsBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public int getLopqMetricsCount() {
-      if (lopqMetricsBuilder_ == null) {
-        return lopqMetrics_.size();
-      } else {
-        return lopqMetricsBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public com.clarifai.grpc.api.LOPQEvalResult getLopqMetrics(int index) {
-      if (lopqMetricsBuilder_ == null) {
-        return lopqMetrics_.get(index);
-      } else {
-        return lopqMetricsBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public Builder setLopqMetrics(
-        int index, com.clarifai.grpc.api.LOPQEvalResult value) {
-      if (lopqMetricsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureLopqMetricsIsMutable();
-        lopqMetrics_.set(index, value);
-        onChanged();
-      } else {
-        lopqMetricsBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public Builder setLopqMetrics(
-        int index, com.clarifai.grpc.api.LOPQEvalResult.Builder builderForValue) {
-      if (lopqMetricsBuilder_ == null) {
-        ensureLopqMetricsIsMutable();
-        lopqMetrics_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        lopqMetricsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public Builder addLopqMetrics(com.clarifai.grpc.api.LOPQEvalResult value) {
-      if (lopqMetricsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureLopqMetricsIsMutable();
-        lopqMetrics_.add(value);
-        onChanged();
-      } else {
-        lopqMetricsBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public Builder addLopqMetrics(
-        int index, com.clarifai.grpc.api.LOPQEvalResult value) {
-      if (lopqMetricsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureLopqMetricsIsMutable();
-        lopqMetrics_.add(index, value);
-        onChanged();
-      } else {
-        lopqMetricsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public Builder addLopqMetrics(
-        com.clarifai.grpc.api.LOPQEvalResult.Builder builderForValue) {
-      if (lopqMetricsBuilder_ == null) {
-        ensureLopqMetricsIsMutable();
-        lopqMetrics_.add(builderForValue.build());
-        onChanged();
-      } else {
-        lopqMetricsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public Builder addLopqMetrics(
-        int index, com.clarifai.grpc.api.LOPQEvalResult.Builder builderForValue) {
-      if (lopqMetricsBuilder_ == null) {
-        ensureLopqMetricsIsMutable();
-        lopqMetrics_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        lopqMetricsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public Builder addAllLopqMetrics(
-        java.lang.Iterable<? extends com.clarifai.grpc.api.LOPQEvalResult> values) {
-      if (lopqMetricsBuilder_ == null) {
-        ensureLopqMetricsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, lopqMetrics_);
-        onChanged();
-      } else {
-        lopqMetricsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public Builder clearLopqMetrics() {
-      if (lopqMetricsBuilder_ == null) {
-        lopqMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        lopqMetricsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public Builder removeLopqMetrics(int index) {
-      if (lopqMetricsBuilder_ == null) {
-        ensureLopqMetricsIsMutable();
-        lopqMetrics_.remove(index);
-        onChanged();
-      } else {
-        lopqMetricsBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public com.clarifai.grpc.api.LOPQEvalResult.Builder getLopqMetricsBuilder(
-        int index) {
-      return getLopqMetricsFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public com.clarifai.grpc.api.LOPQEvalResultOrBuilder getLopqMetricsOrBuilder(
-        int index) {
-      if (lopqMetricsBuilder_ == null) {
-        return lopqMetrics_.get(index);  } else {
-        return lopqMetricsBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public java.util.List<? extends com.clarifai.grpc.api.LOPQEvalResultOrBuilder> 
-         getLopqMetricsOrBuilderList() {
-      if (lopqMetricsBuilder_ != null) {
-        return lopqMetricsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(lopqMetrics_);
-      }
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public com.clarifai.grpc.api.LOPQEvalResult.Builder addLopqMetricsBuilder() {
-      return getLopqMetricsFieldBuilder().addBuilder(
-          com.clarifai.grpc.api.LOPQEvalResult.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public com.clarifai.grpc.api.LOPQEvalResult.Builder addLopqMetricsBuilder(
-        int index) {
-      return getLopqMetricsFieldBuilder().addBuilder(
-          index, com.clarifai.grpc.api.LOPQEvalResult.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-     */
-    public java.util.List<com.clarifai.grpc.api.LOPQEvalResult.Builder> 
-         getLopqMetricsBuilderList() {
-      return getLopqMetricsFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.LOPQEvalResult, com.clarifai.grpc.api.LOPQEvalResult.Builder, com.clarifai.grpc.api.LOPQEvalResultOrBuilder> 
-        getLopqMetricsFieldBuilder() {
-      if (lopqMetricsBuilder_ == null) {
-        lopqMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.clarifai.grpc.api.LOPQEvalResult, com.clarifai.grpc.api.LOPQEvalResult.Builder, com.clarifai.grpc.api.LOPQEvalResultOrBuilder>(
-                lopqMetrics_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
-        lopqMetrics_ = null;
-      }
-      return lopqMetricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

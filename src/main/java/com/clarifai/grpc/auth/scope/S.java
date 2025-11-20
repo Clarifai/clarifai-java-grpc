@@ -245,6 +245,10 @@ public enum S
    */
   Workflows_Delete(21),
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>WorkflowMetrics_Get = 96 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   WorkflowMetrics_Get(96),
@@ -505,6 +509,7 @@ public enum S
   /**
    * <pre>
    * CRUD on FindDuplicateAnnotationsJobs table
+   * DEPRECATED
    * </pre>
    *
    * <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
@@ -1036,6 +1041,10 @@ public enum S
    */
   public static final int Workflows_Delete_VALUE = 21;
   /**
+   * <pre>
+   * DEPRECATED
+   * </pre>
+   *
    * <code>WorkflowMetrics_Get = 96 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int WorkflowMetrics_Get_VALUE = 96;
@@ -1293,6 +1302,7 @@ public enum S
   /**
    * <pre>
    * CRUD on FindDuplicateAnnotationsJobs table
+   * DEPRECATED
    * </pre>
    *
    * <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>

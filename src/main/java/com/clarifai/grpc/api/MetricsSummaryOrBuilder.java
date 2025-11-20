@@ -10,7 +10,7 @@ public interface MetricsSummaryOrBuilder extends
   /**
    * <code>float top1_accuracy = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2363
+   *     See proto/clarifai/api/resources.proto;l=2328
    * @return The top1Accuracy.
    */
   @java.lang.Deprecated float getTop1Accuracy();
@@ -18,7 +18,7 @@ public interface MetricsSummaryOrBuilder extends
   /**
    * <code>float top5_accuracy = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2364
+   *     See proto/clarifai/api/resources.proto;l=2329
    * @return The top5Accuracy.
    */
   @java.lang.Deprecated float getTop5Accuracy();
@@ -70,28 +70,4 @@ public interface MetricsSummaryOrBuilder extends
    * @return The meanAvgPrecisionIouRange.
    */
   float getMeanAvgPrecisionIouRange();
-
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  java.util.List<com.clarifai.grpc.api.LOPQEvalResult> 
-      getLopqMetricsList();
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  com.clarifai.grpc.api.LOPQEvalResult getLopqMetrics(int index);
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  int getLopqMetricsCount();
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  java.util.List<? extends com.clarifai.grpc.api.LOPQEvalResultOrBuilder> 
-      getLopqMetricsOrBuilderList();
-  /**
-   * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
-   */
-  com.clarifai.grpc.api.LOPQEvalResultOrBuilder getLopqMetricsOrBuilder(
-      int index);
 }
