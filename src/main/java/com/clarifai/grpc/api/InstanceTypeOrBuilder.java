@@ -203,4 +203,24 @@ public interface InstanceTypeOrBuilder extends
    */
   com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Hardware architecture of the instance type (e.g., "linux/amd64", "linux/arm64").
+   * </pre>
+   *
+   * <code>string architecture = 10;</code>
+   * @return The architecture.
+   */
+  java.lang.String getArchitecture();
+  /**
+   * <pre>
+   * Hardware architecture of the instance type (e.g., "linux/amd64", "linux/arm64").
+   * </pre>
+   *
+   * <code>string architecture = 10;</code>
+   * @return The bytes for architecture.
+   */
+  com.google.protobuf.ByteString
+      getArchitectureBytes();
 }

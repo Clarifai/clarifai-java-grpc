@@ -831,6 +831,22 @@ public enum S
    * <code>AnnotationTracks_Delete = 168 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   AnnotationTracks_Delete(168),
+  /**
+   * <code>PipelineSteps_Delete = 169 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Add];</code>
+   */
+  PipelineSteps_Delete(169),
+  /**
+   * <code>Artifacts_Get = 170 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Artifacts_Get(170),
+  /**
+   * <code>Artifacts_Add = 171 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Get];</code>
+   */
+  Artifacts_Add(171),
+  /**
+   * <code>Artifacts_Delete = 172 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Add];</code>
+   */
+  Artifacts_Delete(172),
   UNRECOGNIZED(-1),
   ;
 
@@ -1624,6 +1640,22 @@ public enum S
    * <code>AnnotationTracks_Delete = 168 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int AnnotationTracks_Delete_VALUE = 168;
+  /**
+   * <code>PipelineSteps_Delete = 169 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = PipelineSteps_Add];</code>
+   */
+  public static final int PipelineSteps_Delete_VALUE = 169;
+  /**
+   * <code>Artifacts_Get = 170 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Artifacts_Get_VALUE = 170;
+  /**
+   * <code>Artifacts_Add = 171 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Get];</code>
+   */
+  public static final int Artifacts_Add_VALUE = 171;
+  /**
+   * <code>Artifacts_Delete = 172 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Add];</code>
+   */
+  public static final int Artifacts_Delete_VALUE = 172;
 
 
   public final int getNumber() {
@@ -1767,6 +1799,10 @@ public enum S
       case 166: return AnnotationTracks_Get;
       case 167: return AnnotationTracks_Add;
       case 168: return AnnotationTracks_Delete;
+      case 169: return PipelineSteps_Delete;
+      case 170: return Artifacts_Get;
+      case 171: return Artifacts_Add;
+      case 172: return Artifacts_Delete;
       default: return null;
     }
   }

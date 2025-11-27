@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     dockerImageName_ = "";
     dockerImageTag_ = "";
     dockerImageDigest_ = "";
+    platform_ = "";
   }
 
   @java.lang.Override
@@ -67,6 +68,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             dockerImageDigest_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            platform_ = s;
             break;
           }
           default: {
@@ -241,6 +248,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PLATFORM_FIELD_NUMBER = 4;
+  private volatile java.lang.Object platform_;
+  /**
+   * <pre>
+   * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+   * </pre>
+   *
+   * <code>string platform = 4;</code>
+   * @return The platform.
+   */
+  @java.lang.Override
+  public java.lang.String getPlatform() {
+    java.lang.Object ref = platform_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      platform_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+   * </pre>
+   *
+   * <code>string platform = 4;</code>
+   * @return The bytes for platform.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPlatformBytes() {
+    java.lang.Object ref = platform_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      platform_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -264,6 +317,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dockerImageDigest_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dockerImageDigest_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(platform_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, platform_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -281,6 +337,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dockerImageDigest_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dockerImageDigest_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(platform_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, platform_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -303,6 +362,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDockerImageTag())) return false;
     if (!getDockerImageDigest()
         .equals(other.getDockerImageDigest())) return false;
+    if (!getPlatform()
+        .equals(other.getPlatform())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -320,6 +381,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDockerImageTag().hashCode();
     hash = (37 * hash) + DOCKER_IMAGE_DIGEST_FIELD_NUMBER;
     hash = (53 * hash) + getDockerImageDigest().hashCode();
+    hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
+    hash = (53 * hash) + getPlatform().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -459,6 +522,8 @@ private static final long serialVersionUID = 0L;
 
       dockerImageDigest_ = "";
 
+      platform_ = "";
+
       return this;
     }
 
@@ -488,6 +553,7 @@ private static final long serialVersionUID = 0L;
       result.dockerImageName_ = dockerImageName_;
       result.dockerImageTag_ = dockerImageTag_;
       result.dockerImageDigest_ = dockerImageDigest_;
+      result.platform_ = platform_;
       onBuilt();
       return result;
     }
@@ -546,6 +612,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDockerImageDigest().isEmpty()) {
         dockerImageDigest_ = other.dockerImageDigest_;
+        onChanged();
+      }
+      if (!other.getPlatform().isEmpty()) {
+        platform_ = other.platform_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -861,6 +931,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       dockerImageDigest_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object platform_ = "";
+    /**
+     * <pre>
+     * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+     * </pre>
+     *
+     * <code>string platform = 4;</code>
+     * @return The platform.
+     */
+    public java.lang.String getPlatform() {
+      java.lang.Object ref = platform_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        platform_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+     * </pre>
+     *
+     * <code>string platform = 4;</code>
+     * @return The bytes for platform.
+     */
+    public com.google.protobuf.ByteString
+        getPlatformBytes() {
+      java.lang.Object ref = platform_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        platform_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+     * </pre>
+     *
+     * <code>string platform = 4;</code>
+     * @param value The platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatform(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      platform_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+     * </pre>
+     *
+     * <code>string platform = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPlatform() {
+      
+      platform_ = getDefaultInstance().getPlatform();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+     * </pre>
+     *
+     * <code>string platform = 4;</code>
+     * @param value The bytes for platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatformBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      platform_ = value;
       onChanged();
       return this;
     }

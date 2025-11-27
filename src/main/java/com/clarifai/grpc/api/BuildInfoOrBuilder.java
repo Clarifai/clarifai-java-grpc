@@ -66,4 +66,24 @@ public interface BuildInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDockerImageDigestBytes();
+
+  /**
+   * <pre>
+   * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+   * </pre>
+   *
+   * <code>string platform = 4;</code>
+   * @return The platform.
+   */
+  java.lang.String getPlatform();
+  /**
+   * <pre>
+   * Platform(s) the model was built for (e.g., "linux/amd64,linux/arm64")
+   * </pre>
+   *
+   * <code>string platform = 4;</code>
+   * @return The bytes for platform.
+   */
+  com.google.protobuf.ByteString
+      getPlatformBytes();
 }
