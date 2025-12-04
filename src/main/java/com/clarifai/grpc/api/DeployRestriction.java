@@ -40,6 +40,14 @@ public enum DeployRestriction
    * <code>DEDICATED_COMPUTE_ONLY = 3;</code>
    */
   DEDICATED_COMPUTE_ONLY(3),
+  /**
+   * <pre>
+   * Model can only be used on dedicated compute resources owned by the model owner.
+   * </pre>
+   *
+   * <code>MODEL_OWNER_DEDICATED_COMPUTE_ONLY = 4;</code>
+   */
+  MODEL_OWNER_DEDICATED_COMPUTE_ONLY(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -75,6 +83,14 @@ public enum DeployRestriction
    * <code>DEDICATED_COMPUTE_ONLY = 3;</code>
    */
   public static final int DEDICATED_COMPUTE_ONLY_VALUE = 3;
+  /**
+   * <pre>
+   * Model can only be used on dedicated compute resources owned by the model owner.
+   * </pre>
+   *
+   * <code>MODEL_OWNER_DEDICATED_COMPUTE_ONLY = 4;</code>
+   */
+  public static final int MODEL_OWNER_DEDICATED_COMPUTE_ONLY_VALUE = 4;
 
 
   public final int getNumber() {
@@ -105,6 +121,7 @@ public enum DeployRestriction
       case 1: return NO_LIMITS;
       case 2: return SHARED_COMPUTE_ONLY;
       case 3: return DEDICATED_COMPUTE_ONLY;
+      case 4: return MODEL_OWNER_DEDICATED_COMPUTE_ONLY;
       default: return null;
     }
   }

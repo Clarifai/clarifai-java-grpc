@@ -2813,112 +2813,113 @@ public final class Resources {
       "IFAI_DATA_JSON\020\003\022\010\n\004COCO\020\002*\\\n\013LicenseTyp" +
       "e\022\030\n\024UNKNOWN_LICENSE_TYPE\020\000\022\017\n\013FIRST_PAR" +
       "TY\020\001\022\017\n\013OPEN_SOURCE\020\002\022\021\n\rCLOSED_SOURCE\020\003" +
-      "*v\n\021DeployRestriction\022\035\n\031USAGE_RESTRICTI" +
-      "ON_NOT_SET\020\000\022\r\n\tNO_LIMITS\020\001\022\027\n\023SHARED_CO" +
-      "MPUTE_ONLY\020\002\022\032\n\026DEDICATED_COMPUTE_ONLY\020\003" +
-      "*P\n\010DataType\022\r\n\tUNDEFINED\020\000\022\n\n\006STRING\020\001\022" +
-      "\t\n\005UINT8\020\002\022\t\n\005INT32\020\003\022\t\n\005INT64\020\004\022\010\n\004FP32" +
-      "\020\005*\217\001\n\017ValueComparator\022\035\n\031CONCEPT_THRESH" +
-      "OLD_NOT_SET\020\000\022\020\n\014GREATER_THAN\020\001\022\031\n\025GREAT" +
-      "ER_THAN_OR_EQUAL\020\002\022\r\n\tLESS_THAN\020\003\022\026\n\022LES" +
-      "S_THAN_OR_EQUAL\020\004\022\t\n\005EQUAL\020\005*\201\001\n\016Evaluat" +
-      "ionType\022\r\n\tUndefined\020\000\022\022\n\016Classification" +
-      "\020\001\022\r\n\tDetection\020\002\022\020\n\014Segmentation\020\003\022\016\n\nC" +
-      "lustering\020\004\022\013\n\007Tracker\020\005\022\016\n\nGeneration\020\006" +
-      "*f\n\014APIEventType\022\032\n\026API_EVENT_TYPE_NOT_S" +
-      "ET\020\000\022\023\n\017ON_PREM_PREDICT\020\001\022\021\n\rON_PREM_TRA" +
-      "IN\020\002\022\022\n\016ON_PREM_SEARCH\020\003*<\n\021UsageInterva" +
-      "lType\022\t\n\005undef\020\000\022\007\n\003day\020\001\022\t\n\005month\020\002\022\010\n\004" +
-      "year\020\003*}\n\022AnnotationDataType\022 \n\034ANNOTATI" +
-      "ON_DATA_TYPE_NOT_SET\020\000\022\007\n\003TAG\020\001\022\020\n\014BOUND" +
-      "ING_BOX\020\002\022\013\n\007POLYGON\020\004\022\t\n\005POINT\020\010\022\010\n\004SPA" +
-      "N\020\020\022\010\n\004MASK\020 *\035\n\010RoleType\022\010\n\004TEAM\020\000\022\007\n\003O" +
-      "RG\020\001*$\n\020StatValueAggType\022\007\n\003SUM\020\000\022\007\n\003AVG" +
-      "\020\001*`\n\017StatTimeAggType\022\017\n\013NO_TIME_AGG\020\000\022\010" +
-      "\n\004YEAR\020\001\022\t\n\005MONTH\020\002\022\010\n\004WEEK\020\003\022\007\n\003DAY\020\004\022\010" +
-      "\n\004HOUR\020\005\022\n\n\006MINUTE\020\006*b\n\023ValidationErrorT" +
-      "ype\022!\n\035VALIDATION_ERROR_TYPE_NOT_SET\020\000\022\016" +
-      "\n\nRESTRICTED\020\001\022\014\n\010DATABASE\020\002\022\n\n\006FORMAT\020\003" +
-      "*[\n\031InputIDConflictResolution\022(\n$INPUT_I" +
-      "D_CONFLICT_RESOLUTION_NOT_SET\020\000\022\010\n\004SKIP\020" +
-      "\001\022\n\n\006SUFFIX\020\002*s\n\020RunnerMethodType\022\013\n\007UNK" +
-      "NOWN\020\000\022\017\n\013UNARY_UNARY\020\001\022\023\n\017UNARY_STREAMI" +
-      "NG\020\002\022\023\n\017STREAMING_UNARY\020\003\022\027\n\023STREAMING_S" +
-      "TREAMING\020\004*\352\024\n\tEventType\022\026\n\022EVENT_TYPE_N" +
-      "OT_SET\020\000\022:\n\027ORGANIZATION_MEMBER_ADD\020d\032\035\302" +
-      ">\032Organization members added\022F\n\032ORGANIZA" +
-      "TION_MEMBER_CHANGE\020e\032&\302>#Organization me" +
-      "mbers\' roles changed\022?\n\032ORGANIZATION_MEM" +
-      "BER_REMOVE\020f\032\037\302>\034Organization members re" +
-      "moved\022U\n%ORGANIZATION_MEMBER_INVITATION_" +
-      "CREATE\020g\032*\302>\'Organization member invitat" +
-      "ions created\022V\n%ORGANIZATION_MEMBER_INVI" +
-      "TATION_CANCEL\020h\032+\302>(Organization member " +
-      "invitations canceled\022V\n%ORGANIZATION_MEM" +
-      "BER_INVITATION_ACCEPT\020i\032+\302>(Organization" +
-      " member invitations accepted\022W\n&ORGANIZA" +
-      "TION_MEMBER_INVITATION_DECLINE\020j\032+\302>(Org" +
-      "anization member invitations declined\022;\n" +
-      "\030ORGANIZATION_TEAM_CREATE\020k\032\035\302>\032Organiza" +
-      "tion teams created\022;\n\030ORGANIZATION_TEAM_" +
-      "UPDATE\020l\032\035\302>\032Organization teams updated\022" +
-      ";\n\030ORGANIZATION_TEAM_DELETE\020m\032\035\302>\032Organi" +
-      "zation teams deleted\022D\n\034ORGANIZATION_TEA" +
-      "M_MEMBER_ADD\020n\032\"\302>\037Organization team mem" +
-      "bers added\022I\n\037ORGANIZATION_TEAM_MEMBER_R" +
-      "EMOVE\020o\032$\302>!Organization team members re" +
-      "moved\022F\n\031ORGANIZATION_TEAM_APP_ADD\020p\032\'\302>" +
-      "$Organization team applications added\022K\n" +
-      "\034ORGANIZATION_TEAM_APP_REMOVE\020q\032)\302>&Orga" +
-      "nization team applications removed\022&\n\rMO" +
-      "DULE_CREATE\020\310\001\032\022\302>\017Modules created\022&\n\rMO" +
-      "DULE_UPDATE\020\311\001\032\022\302>\017Modules updated\022&\n\rMO" +
-      "DULE_DELETE\020\312\001\032\022\302>\017Modules deleted\0226\n\025MO" +
-      "DULE_VERSION_CREATE\020\313\001\032\032\302>\027Module versio" +
-      "ns created\0226\n\025MODULE_VERSION_UPDATE\020\314\001\032\032" +
-      "\302>\027Module versions updated\0226\n\025MODULE_VER" +
-      "SION_DELETE\020\315\001\032\032\302>\027Module versions delet" +
-      "ed\022$\n\014MODEL_CREATE\020\254\002\032\021\302>\016Models created" +
-      "\022$\n\014MODEL_UPDATE\020\255\002\032\021\302>\016Models updated\022$" +
-      "\n\014MODEL_DELETE\020\256\002\032\021\302>\016Models deleted\0224\n\024" +
-      "MODEL_VERSION_CREATE\020\257\002\032\031\302>\026Model versio" +
-      "ns created\0224\n\024MODEL_VERSION_UPDATE\020\260\002\032\031\302" +
-      ">\026Model versions updated\0224\n\024MODEL_VERSIO" +
-      "N_DELETE\020\261\002\032\031\302>\026Model versions deleted\022*" +
-      "\n\017WORKFLOW_CREATE\020\220\003\032\024\302>\021Workflows creat" +
-      "ed\022*\n\017WORKFLOW_UPDATE\020\221\003\032\024\302>\021Workflows u" +
-      "pdated\022*\n\017WORKFLOW_DELETE\020\222\003\032\024\302>\021Workflo" +
-      "ws deleted\022:\n\027WORKFLOW_VERSION_CREATE\020\223\003" +
-      "\032\034\302>\031Workflow versions created\022:\n\027WORKFL" +
-      "OW_VERSION_UPDATE\020\224\003\032\034\302>\031Workflow versio" +
-      "ns updated\022:\n\027WORKFLOW_VERSION_DELETE\020\225\003" +
-      "\032\034\302>\031Workflow versions deleted\0220\n\022APPLIC" +
-      "ATION_CREATE\020\330\004\032\027\302>\024Applications created" +
-      "\0220\n\022APPLICATION_UPDATE\020\331\004\032\027\302>\024Applicatio" +
-      "ns updated\0220\n\022APPLICATION_DELETE\020\332\004\032\027\302>\024" +
-      "Applications deleted\022-\n\020COLLABORATOR_ADD" +
-      "\020\274\005\032\026\302>\023Collaborators added\0222\n\023COLLABORA" +
-      "TOR_UPDATE\020\275\005\032\030\302>\025Collaborators updated\022" +
-      "2\n\023COLLABORATOR_REMOVE\020\276\005\032\030\302>\025Collaborat" +
-      "ors removed\022\"\n\013USER_UPDATE\020\240\006\032\020\302>\rUsers " +
-      "updated\0228\n\026COMPUTE_CLUSTER_CREATE\020\204\007\032\033\302>" +
-      "\030Compute clusters created\0228\n\026COMPUTE_CLU" +
-      "STER_DELETE\020\205\007\032\033\302>\030Compute clusters dele" +
-      "ted\022*\n\017NODEPOOL_CREATE\020\350\007\032\024\302>\021Nodepools " +
-      "created\022*\n\017NODEPOOL_UPDATE\020\351\007\032\024\302>\021Nodepo" +
-      "ols updated\022*\n\017NODEPOOL_DELETE\020\352\007\032\024\302>\021No" +
-      "depools deleted\022.\n\021DEPLOYMENT_CREATE\020\314\010\032" +
-      "\026\302>\023Deployments created\022.\n\021DEPLOYMENT_UP" +
-      "DATE\020\315\010\032\026\302>\023Deployments updated\022.\n\021DEPLO" +
-      "YMENT_DELETE\020\316\010\032\026\302>\023Deployments deleted*" +
-      "Q\n\nMetricType\022\027\n\023METRIC_TYPE_NOT_SET\020\000\022\027" +
-      "\n\023MODEL_REQUEST_COUNT\020\001\022\021\n\rMODEL_LATENCY" +
-      "\020\002*|\n\013MetricLabel\022\030\n\024METRIC_LABEL_NOT_SE" +
-      "T\020\000\022\n\n\006APP_ID\020\001\022\014\n\010MODEL_ID\020\002\022\024\n\020MODEL_V" +
-      "ERSION_ID\020\003\022\022\n\016CALLER_USER_ID\020\004\022\017\n\013WORKF" +
-      "LOW_ID\020\005BY\n\025com.clarifai.grpc.apiP\001Z7git" +
-      "hub.com/Clarifai/clarifai-go-grpc/proto/" +
-      "clarifai/api\242\002\004CAIPb\006proto3"
+      "*\236\001\n\021DeployRestriction\022\035\n\031USAGE_RESTRICT" +
+      "ION_NOT_SET\020\000\022\r\n\tNO_LIMITS\020\001\022\027\n\023SHARED_C" +
+      "OMPUTE_ONLY\020\002\022\032\n\026DEDICATED_COMPUTE_ONLY\020" +
+      "\003\022&\n\"MODEL_OWNER_DEDICATED_COMPUTE_ONLY\020" +
+      "\004*P\n\010DataType\022\r\n\tUNDEFINED\020\000\022\n\n\006STRING\020\001" +
+      "\022\t\n\005UINT8\020\002\022\t\n\005INT32\020\003\022\t\n\005INT64\020\004\022\010\n\004FP3" +
+      "2\020\005*\217\001\n\017ValueComparator\022\035\n\031CONCEPT_THRES" +
+      "HOLD_NOT_SET\020\000\022\020\n\014GREATER_THAN\020\001\022\031\n\025GREA" +
+      "TER_THAN_OR_EQUAL\020\002\022\r\n\tLESS_THAN\020\003\022\026\n\022LE" +
+      "SS_THAN_OR_EQUAL\020\004\022\t\n\005EQUAL\020\005*\201\001\n\016Evalua" +
+      "tionType\022\r\n\tUndefined\020\000\022\022\n\016Classificatio" +
+      "n\020\001\022\r\n\tDetection\020\002\022\020\n\014Segmentation\020\003\022\016\n\n" +
+      "Clustering\020\004\022\013\n\007Tracker\020\005\022\016\n\nGeneration\020" +
+      "\006*f\n\014APIEventType\022\032\n\026API_EVENT_TYPE_NOT_" +
+      "SET\020\000\022\023\n\017ON_PREM_PREDICT\020\001\022\021\n\rON_PREM_TR" +
+      "AIN\020\002\022\022\n\016ON_PREM_SEARCH\020\003*<\n\021UsageInterv" +
+      "alType\022\t\n\005undef\020\000\022\007\n\003day\020\001\022\t\n\005month\020\002\022\010\n" +
+      "\004year\020\003*}\n\022AnnotationDataType\022 \n\034ANNOTAT" +
+      "ION_DATA_TYPE_NOT_SET\020\000\022\007\n\003TAG\020\001\022\020\n\014BOUN" +
+      "DING_BOX\020\002\022\013\n\007POLYGON\020\004\022\t\n\005POINT\020\010\022\010\n\004SP" +
+      "AN\020\020\022\010\n\004MASK\020 *\035\n\010RoleType\022\010\n\004TEAM\020\000\022\007\n\003" +
+      "ORG\020\001*$\n\020StatValueAggType\022\007\n\003SUM\020\000\022\007\n\003AV" +
+      "G\020\001*`\n\017StatTimeAggType\022\017\n\013NO_TIME_AGG\020\000\022" +
+      "\010\n\004YEAR\020\001\022\t\n\005MONTH\020\002\022\010\n\004WEEK\020\003\022\007\n\003DAY\020\004\022" +
+      "\010\n\004HOUR\020\005\022\n\n\006MINUTE\020\006*b\n\023ValidationError" +
+      "Type\022!\n\035VALIDATION_ERROR_TYPE_NOT_SET\020\000\022" +
+      "\016\n\nRESTRICTED\020\001\022\014\n\010DATABASE\020\002\022\n\n\006FORMAT\020" +
+      "\003*[\n\031InputIDConflictResolution\022(\n$INPUT_" +
+      "ID_CONFLICT_RESOLUTION_NOT_SET\020\000\022\010\n\004SKIP" +
+      "\020\001\022\n\n\006SUFFIX\020\002*s\n\020RunnerMethodType\022\013\n\007UN" +
+      "KNOWN\020\000\022\017\n\013UNARY_UNARY\020\001\022\023\n\017UNARY_STREAM" +
+      "ING\020\002\022\023\n\017STREAMING_UNARY\020\003\022\027\n\023STREAMING_" +
+      "STREAMING\020\004*\352\024\n\tEventType\022\026\n\022EVENT_TYPE_" +
+      "NOT_SET\020\000\022:\n\027ORGANIZATION_MEMBER_ADD\020d\032\035" +
+      "\302>\032Organization members added\022F\n\032ORGANIZ" +
+      "ATION_MEMBER_CHANGE\020e\032&\302>#Organization m" +
+      "embers\' roles changed\022?\n\032ORGANIZATION_ME" +
+      "MBER_REMOVE\020f\032\037\302>\034Organization members r" +
+      "emoved\022U\n%ORGANIZATION_MEMBER_INVITATION" +
+      "_CREATE\020g\032*\302>\'Organization member invita" +
+      "tions created\022V\n%ORGANIZATION_MEMBER_INV" +
+      "ITATION_CANCEL\020h\032+\302>(Organization member" +
+      " invitations canceled\022V\n%ORGANIZATION_ME" +
+      "MBER_INVITATION_ACCEPT\020i\032+\302>(Organizatio" +
+      "n member invitations accepted\022W\n&ORGANIZ" +
+      "ATION_MEMBER_INVITATION_DECLINE\020j\032+\302>(Or" +
+      "ganization member invitations declined\022;" +
+      "\n\030ORGANIZATION_TEAM_CREATE\020k\032\035\302>\032Organiz" +
+      "ation teams created\022;\n\030ORGANIZATION_TEAM" +
+      "_UPDATE\020l\032\035\302>\032Organization teams updated" +
+      "\022;\n\030ORGANIZATION_TEAM_DELETE\020m\032\035\302>\032Organ" +
+      "ization teams deleted\022D\n\034ORGANIZATION_TE" +
+      "AM_MEMBER_ADD\020n\032\"\302>\037Organization team me" +
+      "mbers added\022I\n\037ORGANIZATION_TEAM_MEMBER_" +
+      "REMOVE\020o\032$\302>!Organization team members r" +
+      "emoved\022F\n\031ORGANIZATION_TEAM_APP_ADD\020p\032\'\302" +
+      ">$Organization team applications added\022K" +
+      "\n\034ORGANIZATION_TEAM_APP_REMOVE\020q\032)\302>&Org" +
+      "anization team applications removed\022&\n\rM" +
+      "ODULE_CREATE\020\310\001\032\022\302>\017Modules created\022&\n\rM" +
+      "ODULE_UPDATE\020\311\001\032\022\302>\017Modules updated\022&\n\rM" +
+      "ODULE_DELETE\020\312\001\032\022\302>\017Modules deleted\0226\n\025M" +
+      "ODULE_VERSION_CREATE\020\313\001\032\032\302>\027Module versi" +
+      "ons created\0226\n\025MODULE_VERSION_UPDATE\020\314\001\032" +
+      "\032\302>\027Module versions updated\0226\n\025MODULE_VE" +
+      "RSION_DELETE\020\315\001\032\032\302>\027Module versions dele" +
+      "ted\022$\n\014MODEL_CREATE\020\254\002\032\021\302>\016Models create" +
+      "d\022$\n\014MODEL_UPDATE\020\255\002\032\021\302>\016Models updated\022" +
+      "$\n\014MODEL_DELETE\020\256\002\032\021\302>\016Models deleted\0224\n" +
+      "\024MODEL_VERSION_CREATE\020\257\002\032\031\302>\026Model versi" +
+      "ons created\0224\n\024MODEL_VERSION_UPDATE\020\260\002\032\031" +
+      "\302>\026Model versions updated\0224\n\024MODEL_VERSI" +
+      "ON_DELETE\020\261\002\032\031\302>\026Model versions deleted\022" +
+      "*\n\017WORKFLOW_CREATE\020\220\003\032\024\302>\021Workflows crea" +
+      "ted\022*\n\017WORKFLOW_UPDATE\020\221\003\032\024\302>\021Workflows " +
+      "updated\022*\n\017WORKFLOW_DELETE\020\222\003\032\024\302>\021Workfl" +
+      "ows deleted\022:\n\027WORKFLOW_VERSION_CREATE\020\223" +
+      "\003\032\034\302>\031Workflow versions created\022:\n\027WORKF" +
+      "LOW_VERSION_UPDATE\020\224\003\032\034\302>\031Workflow versi" +
+      "ons updated\022:\n\027WORKFLOW_VERSION_DELETE\020\225" +
+      "\003\032\034\302>\031Workflow versions deleted\0220\n\022APPLI" +
+      "CATION_CREATE\020\330\004\032\027\302>\024Applications create" +
+      "d\0220\n\022APPLICATION_UPDATE\020\331\004\032\027\302>\024Applicati" +
+      "ons updated\0220\n\022APPLICATION_DELETE\020\332\004\032\027\302>" +
+      "\024Applications deleted\022-\n\020COLLABORATOR_AD" +
+      "D\020\274\005\032\026\302>\023Collaborators added\0222\n\023COLLABOR" +
+      "ATOR_UPDATE\020\275\005\032\030\302>\025Collaborators updated" +
+      "\0222\n\023COLLABORATOR_REMOVE\020\276\005\032\030\302>\025Collabora" +
+      "tors removed\022\"\n\013USER_UPDATE\020\240\006\032\020\302>\rUsers" +
+      " updated\0228\n\026COMPUTE_CLUSTER_CREATE\020\204\007\032\033\302" +
+      ">\030Compute clusters created\0228\n\026COMPUTE_CL" +
+      "USTER_DELETE\020\205\007\032\033\302>\030Compute clusters del" +
+      "eted\022*\n\017NODEPOOL_CREATE\020\350\007\032\024\302>\021Nodepools" +
+      " created\022*\n\017NODEPOOL_UPDATE\020\351\007\032\024\302>\021Nodep" +
+      "ools updated\022*\n\017NODEPOOL_DELETE\020\352\007\032\024\302>\021N" +
+      "odepools deleted\022.\n\021DEPLOYMENT_CREATE\020\314\010" +
+      "\032\026\302>\023Deployments created\022.\n\021DEPLOYMENT_U" +
+      "PDATE\020\315\010\032\026\302>\023Deployments updated\022.\n\021DEPL" +
+      "OYMENT_DELETE\020\316\010\032\026\302>\023Deployments deleted" +
+      "*Q\n\nMetricType\022\027\n\023METRIC_TYPE_NOT_SET\020\000\022" +
+      "\027\n\023MODEL_REQUEST_COUNT\020\001\022\021\n\rMODEL_LATENC" +
+      "Y\020\002*|\n\013MetricLabel\022\030\n\024METRIC_LABEL_NOT_S" +
+      "ET\020\000\022\n\n\006APP_ID\020\001\022\014\n\010MODEL_ID\020\002\022\024\n\020MODEL_" +
+      "VERSION_ID\020\003\022\022\n\016CALLER_USER_ID\020\004\022\017\n\013WORK" +
+      "FLOW_ID\020\005BY\n\025com.clarifai.grpc.apiP\001Z7gi" +
+      "thub.com/Clarifai/clarifai-go-grpc/proto" +
+      "/clarifai/api\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
