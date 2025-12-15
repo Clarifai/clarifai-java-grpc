@@ -186,6 +186,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.SpecialHandling.parser(), extensionRegistry));
             break;
           }
+          case 130: {
+            com.clarifai.grpc.api.Worker.Builder subBuilder = null;
+            if (desiredWorker_ != null) {
+              subBuilder = desiredWorker_.toBuilder();
+            }
+            desiredWorker_ = input.readMessage(com.clarifai.grpc.api.Worker.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(desiredWorker_);
+              desiredWorker_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -883,6 +896,32 @@ private static final long serialVersionUID = 0L;
     return getWorker();
   }
 
+  public static final int DESIRED_WORKER_FIELD_NUMBER = 16;
+  private com.clarifai.grpc.api.Worker desiredWorker_;
+  /**
+   * <code>.clarifai.api.Worker desired_worker = 16;</code>
+   * @return Whether the desiredWorker field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredWorker() {
+    return desiredWorker_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Worker desired_worker = 16;</code>
+   * @return The desiredWorker.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Worker getDesiredWorker() {
+    return desiredWorker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : desiredWorker_;
+  }
+  /**
+   * <code>.clarifai.api.Worker desired_worker = 16;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkerOrBuilder getDesiredWorkerOrBuilder() {
+    return getDesiredWorker();
+  }
+
   public static final int CREATED_AT_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp createdAt_;
   /**
@@ -1087,6 +1126,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < specialHandling_.size(); i++) {
       output.writeMessage(15, specialHandling_.get(i));
     }
+    if (desiredWorker_ != null) {
+      output.writeMessage(16, getDesiredWorker());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1145,6 +1187,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, specialHandling_.get(i));
     }
+    if (desiredWorker_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getDesiredWorker());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1188,6 +1234,11 @@ private static final long serialVersionUID = 0L;
     if (hasWorker()) {
       if (!getWorker()
           .equals(other.getWorker())) return false;
+    }
+    if (hasDesiredWorker() != other.hasDesiredWorker()) return false;
+    if (hasDesiredWorker()) {
+      if (!getDesiredWorker()
+          .equals(other.getDesiredWorker())) return false;
     }
     if (hasCreatedAt() != other.hasCreatedAt()) return false;
     if (hasCreatedAt()) {
@@ -1241,6 +1292,10 @@ private static final long serialVersionUID = 0L;
     if (hasWorker()) {
       hash = (37 * hash) + WORKER_FIELD_NUMBER;
       hash = (53 * hash) + getWorker().hashCode();
+    }
+    if (hasDesiredWorker()) {
+      hash = (37 * hash) + DESIRED_WORKER_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredWorker().hashCode();
     }
     if (hasCreatedAt()) {
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
@@ -1436,6 +1491,12 @@ private static final long serialVersionUID = 0L;
         worker_ = null;
         workerBuilder_ = null;
       }
+      if (desiredWorkerBuilder_ == null) {
+        desiredWorker_ = null;
+      } else {
+        desiredWorker_ = null;
+        desiredWorkerBuilder_ = null;
+      }
       if (createdAtBuilder_ == null) {
         createdAt_ = null;
       } else {
@@ -1515,6 +1576,11 @@ private static final long serialVersionUID = 0L;
         result.worker_ = worker_;
       } else {
         result.worker_ = workerBuilder_.build();
+      }
+      if (desiredWorkerBuilder_ == null) {
+        result.desiredWorker_ = desiredWorker_;
+      } else {
+        result.desiredWorker_ = desiredWorkerBuilder_.build();
       }
       if (createdAtBuilder_ == null) {
         result.createdAt_ = createdAt_;
@@ -1636,6 +1702,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasWorker()) {
         mergeWorker(other.getWorker());
+      }
+      if (other.hasDesiredWorker()) {
+        mergeDesiredWorker(other.getDesiredWorker());
       }
       if (other.hasCreatedAt()) {
         mergeCreatedAt(other.getCreatedAt());
@@ -3118,6 +3187,125 @@ private static final long serialVersionUID = 0L;
         worker_ = null;
       }
       return workerBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Worker desiredWorker_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> desiredWorkerBuilder_;
+    /**
+     * <code>.clarifai.api.Worker desired_worker = 16;</code>
+     * @return Whether the desiredWorker field is set.
+     */
+    public boolean hasDesiredWorker() {
+      return desiredWorkerBuilder_ != null || desiredWorker_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Worker desired_worker = 16;</code>
+     * @return The desiredWorker.
+     */
+    public com.clarifai.grpc.api.Worker getDesiredWorker() {
+      if (desiredWorkerBuilder_ == null) {
+        return desiredWorker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : desiredWorker_;
+      } else {
+        return desiredWorkerBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Worker desired_worker = 16;</code>
+     */
+    public Builder setDesiredWorker(com.clarifai.grpc.api.Worker value) {
+      if (desiredWorkerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredWorker_ = value;
+        onChanged();
+      } else {
+        desiredWorkerBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Worker desired_worker = 16;</code>
+     */
+    public Builder setDesiredWorker(
+        com.clarifai.grpc.api.Worker.Builder builderForValue) {
+      if (desiredWorkerBuilder_ == null) {
+        desiredWorker_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredWorkerBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Worker desired_worker = 16;</code>
+     */
+    public Builder mergeDesiredWorker(com.clarifai.grpc.api.Worker value) {
+      if (desiredWorkerBuilder_ == null) {
+        if (desiredWorker_ != null) {
+          desiredWorker_ =
+            com.clarifai.grpc.api.Worker.newBuilder(desiredWorker_).mergeFrom(value).buildPartial();
+        } else {
+          desiredWorker_ = value;
+        }
+        onChanged();
+      } else {
+        desiredWorkerBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Worker desired_worker = 16;</code>
+     */
+    public Builder clearDesiredWorker() {
+      if (desiredWorkerBuilder_ == null) {
+        desiredWorker_ = null;
+        onChanged();
+      } else {
+        desiredWorker_ = null;
+        desiredWorkerBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Worker desired_worker = 16;</code>
+     */
+    public com.clarifai.grpc.api.Worker.Builder getDesiredWorkerBuilder() {
+      
+      onChanged();
+      return getDesiredWorkerFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Worker desired_worker = 16;</code>
+     */
+    public com.clarifai.grpc.api.WorkerOrBuilder getDesiredWorkerOrBuilder() {
+      if (desiredWorkerBuilder_ != null) {
+        return desiredWorkerBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredWorker_ == null ?
+            com.clarifai.grpc.api.Worker.getDefaultInstance() : desiredWorker_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Worker desired_worker = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> 
+        getDesiredWorkerFieldBuilder() {
+      if (desiredWorkerBuilder_ == null) {
+        desiredWorkerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder>(
+                getDesiredWorker(),
+                getParentForChildren(),
+                isClean());
+        desiredWorker_ = null;
+      }
+      return desiredWorkerBuilder_;
     }
 
     private com.google.protobuf.Timestamp createdAt_;

@@ -46,4 +46,48 @@ public interface CloudProviderOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <pre>
+   * List of special handling instructions for this cloud provider.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.SpecialHandling> 
+      getSpecialHandlingList();
+  /**
+   * <pre>
+   * List of special handling instructions for this cloud provider.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandling getSpecialHandling(int index);
+  /**
+   * <pre>
+   * List of special handling instructions for this cloud provider.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   */
+  int getSpecialHandlingCount();
+  /**
+   * <pre>
+   * List of special handling instructions for this cloud provider.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
+      getSpecialHandlingOrBuilderList();
+  /**
+   * <pre>
+   * List of special handling instructions for this cloud provider.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   */
+  com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
+      int index);
 }

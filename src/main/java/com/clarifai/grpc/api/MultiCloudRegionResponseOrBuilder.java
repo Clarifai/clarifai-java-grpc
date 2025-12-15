@@ -23,27 +23,59 @@ public interface MultiCloudRegionResponseOrBuilder extends
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 
   /**
-   * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+   *     See proto/clarifai/api/service.proto;l=8708
    * @return A list containing the regions.
    */
-  java.util.List<java.lang.String>
+  @java.lang.Deprecated java.util.List<java.lang.String>
       getRegionsList();
   /**
-   * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+   *     See proto/clarifai/api/service.proto;l=8708
    * @return The count of regions.
    */
-  int getRegionsCount();
+  @java.lang.Deprecated int getRegionsCount();
   /**
-   * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+   *     See proto/clarifai/api/service.proto;l=8708
    * @param index The index of the element to return.
    * @return The regions at the given index.
    */
-  java.lang.String getRegions(int index);
+  @java.lang.Deprecated java.lang.String getRegions(int index);
   /**
-   * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+   *     See proto/clarifai/api/service.proto;l=8708
    * @param index The index of the value to return.
    * @return The bytes of the regions at the given index.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getRegionsBytes(int index);
+
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  java.util.List<com.clarifai.grpc.api.CloudRegion> 
+      getCloudRegionsList();
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  com.clarifai.grpc.api.CloudRegion getCloudRegions(int index);
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  int getCloudRegionsCount();
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.CloudRegionOrBuilder> 
+      getCloudRegionsOrBuilderList();
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  com.clarifai.grpc.api.CloudRegionOrBuilder getCloudRegionsOrBuilder(
+      int index);
 }

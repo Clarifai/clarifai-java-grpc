@@ -118,6 +118,10 @@ private static final long serialVersionUID = 0L;
      * <code>CONTACT_SALES = 1;</code>
      */
     CONTACT_SALES(1),
+    /**
+     * <code>INTERNAL_ONLY = 2;</code>
+     */
+    INTERNAL_ONLY(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -129,6 +133,10 @@ private static final long serialVersionUID = 0L;
      * <code>CONTACT_SALES = 1;</code>
      */
     public static final int CONTACT_SALES_VALUE = 1;
+    /**
+     * <code>INTERNAL_ONLY = 2;</code>
+     */
+    public static final int INTERNAL_ONLY_VALUE = 2;
 
 
     public final int getNumber() {
@@ -157,6 +165,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return REASON_NOT_SET;
         case 1: return CONTACT_SALES;
+        case 2: return INTERNAL_ONLY;
         default: return null;
       }
     }

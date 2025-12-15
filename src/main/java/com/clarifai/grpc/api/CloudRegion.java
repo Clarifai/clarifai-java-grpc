@@ -5,24 +5,22 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * CloudProvider represents the entity that provides the infrastructure where the Nodepools are deployed.
- * This could be a public cloud provider like AWS, GCP, Azure, etc., or a self-hosted infrastructure.
+ * CloudRegion represents a region where compute resources can be deployed.
  * </pre>
  *
- * Protobuf type {@code clarifai.api.CloudProvider}
+ * Protobuf type {@code clarifai.api.CloudRegion}
  */
-public final class CloudProvider extends
+public final class CloudRegion extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.CloudProvider)
-    CloudProviderOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.CloudRegion)
+    CloudRegionOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CloudProvider.newBuilder() to construct.
-  private CloudProvider(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CloudRegion.newBuilder() to construct.
+  private CloudRegion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CloudProvider() {
+  private CloudRegion() {
     id_ = "";
-    name_ = "";
     specialHandling_ = java.util.Collections.emptyList();
   }
 
@@ -30,7 +28,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CloudProvider();
+    return new CloudRegion();
   }
 
   @java.lang.Override
@@ -38,7 +36,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CloudProvider(
+  private CloudRegion(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -64,12 +62,6 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 26: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               specialHandling_ = new java.util.ArrayList<com.clarifai.grpc.api.SpecialHandling>();
               mutable_bitField0_ |= 0x00000001;
@@ -104,22 +96,22 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.CloudProvider.class, com.clarifai.grpc.api.CloudProvider.Builder.class);
+            com.clarifai.grpc.api.CloudRegion.class, com.clarifai.grpc.api.CloudRegion.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   * Unique identifier of the cloud provider.
+   * Unique identifier of the region.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -140,7 +132,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Unique identifier of the cloud provider.
+   * Unique identifier of the region.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -161,60 +153,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
-  /**
-   * <pre>
-   * Name of the cloud provider.
-   * </pre>
-   *
-   * <code>string name = 2;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Name of the cloud provider.
-   * </pre>
-   *
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SPECIAL_HANDLING_FIELD_NUMBER = 3;
+  public static final int SPECIAL_HANDLING_FIELD_NUMBER = 2;
   private java.util.List<com.clarifai.grpc.api.SpecialHandling> specialHandling_;
   /**
    * <pre>
-   * List of special handling instructions for this cloud provider.
+   * List of special handling instructions for this region.
    * </pre>
    *
-   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
    */
   @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.SpecialHandling> getSpecialHandlingList() {
@@ -222,10 +168,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of special handling instructions for this cloud provider.
+   * List of special handling instructions for this region.
    * </pre>
    *
-   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
@@ -234,10 +180,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of special handling instructions for this cloud provider.
+   * List of special handling instructions for this region.
    * </pre>
    *
-   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
    */
   @java.lang.Override
   public int getSpecialHandlingCount() {
@@ -245,10 +191,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of special handling instructions for this cloud provider.
+   * List of special handling instructions for this region.
    * </pre>
    *
-   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.SpecialHandling getSpecialHandling(int index) {
@@ -256,10 +202,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of special handling instructions for this cloud provider.
+   * List of special handling instructions for this region.
    * </pre>
    *
-   * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+   * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
@@ -284,11 +230,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-    }
     for (int i = 0; i < specialHandling_.size(); i++) {
-      output.writeMessage(3, specialHandling_.get(i));
+      output.writeMessage(2, specialHandling_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -302,12 +245,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-    }
     for (int i = 0; i < specialHandling_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, specialHandling_.get(i));
+        .computeMessageSize(2, specialHandling_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -319,15 +259,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.CloudProvider)) {
+    if (!(obj instanceof com.clarifai.grpc.api.CloudRegion)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.CloudProvider other = (com.clarifai.grpc.api.CloudProvider) obj;
+    com.clarifai.grpc.api.CloudRegion other = (com.clarifai.grpc.api.CloudRegion) obj;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
     if (!getSpecialHandlingList()
         .equals(other.getSpecialHandlingList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -343,8 +281,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
     if (getSpecialHandlingCount() > 0) {
       hash = (37 * hash) + SPECIAL_HANDLING_FIELD_NUMBER;
       hash = (53 * hash) + getSpecialHandlingList().hashCode();
@@ -354,69 +290,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.CloudRegion parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseDelimitedFrom(
+  public static com.clarifai.grpc.api.CloudRegion parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.CloudProvider parseFrom(
+  public static com.clarifai.grpc.api.CloudRegion parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -429,7 +365,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.CloudProvider prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.CloudRegion prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -446,30 +382,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * CloudProvider represents the entity that provides the infrastructure where the Nodepools are deployed.
-   * This could be a public cloud provider like AWS, GCP, Azure, etc., or a self-hosted infrastructure.
+   * CloudRegion represents a region where compute resources can be deployed.
    * </pre>
    *
-   * Protobuf type {@code clarifai.api.CloudProvider}
+   * Protobuf type {@code clarifai.api.CloudRegion}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.CloudProvider)
-      com.clarifai.grpc.api.CloudProviderOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.CloudRegion)
+      com.clarifai.grpc.api.CloudRegionOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.CloudProvider.class, com.clarifai.grpc.api.CloudProvider.Builder.class);
+              com.clarifai.grpc.api.CloudRegion.class, com.clarifai.grpc.api.CloudRegion.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.CloudProvider.newBuilder()
+    // Construct using com.clarifai.grpc.api.CloudRegion.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -490,8 +425,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
-      name_ = "";
-
       if (specialHandlingBuilder_ == null) {
         specialHandling_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -504,17 +437,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.CloudProvider getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.CloudProvider.getDefaultInstance();
+    public com.clarifai.grpc.api.CloudRegion getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.CloudRegion.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.CloudProvider build() {
-      com.clarifai.grpc.api.CloudProvider result = buildPartial();
+    public com.clarifai.grpc.api.CloudRegion build() {
+      com.clarifai.grpc.api.CloudRegion result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -522,11 +455,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.CloudProvider buildPartial() {
-      com.clarifai.grpc.api.CloudProvider result = new com.clarifai.grpc.api.CloudProvider(this);
+    public com.clarifai.grpc.api.CloudRegion buildPartial() {
+      com.clarifai.grpc.api.CloudRegion result = new com.clarifai.grpc.api.CloudRegion(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
-      result.name_ = name_;
       if (specialHandlingBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           specialHandling_ = java.util.Collections.unmodifiableList(specialHandling_);
@@ -574,22 +506,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.CloudProvider) {
-        return mergeFrom((com.clarifai.grpc.api.CloudProvider)other);
+      if (other instanceof com.clarifai.grpc.api.CloudRegion) {
+        return mergeFrom((com.clarifai.grpc.api.CloudRegion)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.CloudProvider other) {
-      if (other == com.clarifai.grpc.api.CloudProvider.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.CloudRegion other) {
+      if (other == com.clarifai.grpc.api.CloudRegion.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
-        onChanged();
-      }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
         onChanged();
       }
       if (specialHandlingBuilder_ == null) {
@@ -633,11 +561,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.CloudProvider parsedMessage = null;
+      com.clarifai.grpc.api.CloudRegion parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.CloudProvider) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.CloudRegion) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -651,7 +579,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * Unique identifier of the cloud provider.
+     * Unique identifier of the region.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -671,7 +599,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unique identifier of the cloud provider.
+     * Unique identifier of the region.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -692,7 +620,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unique identifier of the cloud provider.
+     * Unique identifier of the region.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -711,7 +639,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unique identifier of the cloud provider.
+     * Unique identifier of the region.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -725,7 +653,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unique identifier of the cloud provider.
+     * Unique identifier of the region.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -744,102 +672,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
-    /**
-     * <pre>
-     * Name of the cloud provider.
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Name of the cloud provider.
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Name of the cloud provider.
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Name of the cloud provider.
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Name of the cloud provider.
-     * </pre>
-     *
-     * <code>string name = 2;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<com.clarifai.grpc.api.SpecialHandling> specialHandling_ =
       java.util.Collections.emptyList();
     private void ensureSpecialHandlingIsMutable() {
@@ -854,10 +686,10 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public java.util.List<com.clarifai.grpc.api.SpecialHandling> getSpecialHandlingList() {
       if (specialHandlingBuilder_ == null) {
@@ -868,10 +700,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public int getSpecialHandlingCount() {
       if (specialHandlingBuilder_ == null) {
@@ -882,10 +714,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public com.clarifai.grpc.api.SpecialHandling getSpecialHandling(int index) {
       if (specialHandlingBuilder_ == null) {
@@ -896,10 +728,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public Builder setSpecialHandling(
         int index, com.clarifai.grpc.api.SpecialHandling value) {
@@ -917,10 +749,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public Builder setSpecialHandling(
         int index, com.clarifai.grpc.api.SpecialHandling.Builder builderForValue) {
@@ -935,10 +767,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public Builder addSpecialHandling(com.clarifai.grpc.api.SpecialHandling value) {
       if (specialHandlingBuilder_ == null) {
@@ -955,10 +787,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public Builder addSpecialHandling(
         int index, com.clarifai.grpc.api.SpecialHandling value) {
@@ -976,10 +808,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public Builder addSpecialHandling(
         com.clarifai.grpc.api.SpecialHandling.Builder builderForValue) {
@@ -994,10 +826,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public Builder addSpecialHandling(
         int index, com.clarifai.grpc.api.SpecialHandling.Builder builderForValue) {
@@ -1012,10 +844,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public Builder addAllSpecialHandling(
         java.lang.Iterable<? extends com.clarifai.grpc.api.SpecialHandling> values) {
@@ -1031,10 +863,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public Builder clearSpecialHandling() {
       if (specialHandlingBuilder_ == null) {
@@ -1048,10 +880,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public Builder removeSpecialHandling(int index) {
       if (specialHandlingBuilder_ == null) {
@@ -1065,10 +897,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public com.clarifai.grpc.api.SpecialHandling.Builder getSpecialHandlingBuilder(
         int index) {
@@ -1076,10 +908,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
         int index) {
@@ -1090,10 +922,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.SpecialHandlingOrBuilder> 
          getSpecialHandlingOrBuilderList() {
@@ -1105,10 +937,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public com.clarifai.grpc.api.SpecialHandling.Builder addSpecialHandlingBuilder() {
       return getSpecialHandlingFieldBuilder().addBuilder(
@@ -1116,10 +948,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public com.clarifai.grpc.api.SpecialHandling.Builder addSpecialHandlingBuilder(
         int index) {
@@ -1128,10 +960,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of special handling instructions for this cloud provider.
+     * List of special handling instructions for this region.
      * </pre>
      *
-     * <code>repeated .clarifai.api.SpecialHandling special_handling = 3;</code>
+     * <code>repeated .clarifai.api.SpecialHandling special_handling = 2;</code>
      */
     public java.util.List<com.clarifai.grpc.api.SpecialHandling.Builder> 
          getSpecialHandlingBuilderList() {
@@ -1164,41 +996,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.CloudProvider)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.CloudRegion)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.CloudProvider)
-  private static final com.clarifai.grpc.api.CloudProvider DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.CloudRegion)
+  private static final com.clarifai.grpc.api.CloudRegion DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.CloudProvider();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.CloudRegion();
   }
 
-  public static com.clarifai.grpc.api.CloudProvider getDefaultInstance() {
+  public static com.clarifai.grpc.api.CloudRegion getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CloudProvider>
-      PARSER = new com.google.protobuf.AbstractParser<CloudProvider>() {
+  private static final com.google.protobuf.Parser<CloudRegion>
+      PARSER = new com.google.protobuf.AbstractParser<CloudRegion>() {
     @java.lang.Override
-    public CloudProvider parsePartialFrom(
+    public CloudRegion parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CloudProvider(input, extensionRegistry);
+      return new CloudRegion(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CloudProvider> parser() {
+  public static com.google.protobuf.Parser<CloudRegion> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CloudProvider> getParserForType() {
+  public com.google.protobuf.Parser<CloudRegion> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.CloudProvider getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.CloudRegion getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

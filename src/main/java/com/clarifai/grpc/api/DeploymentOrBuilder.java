@@ -273,6 +273,21 @@ public interface DeploymentOrBuilder extends
   com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder();
 
   /**
+   * <code>.clarifai.api.Worker desired_worker = 16;</code>
+   * @return Whether the desiredWorker field is set.
+   */
+  boolean hasDesiredWorker();
+  /**
+   * <code>.clarifai.api.Worker desired_worker = 16;</code>
+   * @return The desiredWorker.
+   */
+  com.clarifai.grpc.api.Worker getDesiredWorker();
+  /**
+   * <code>.clarifai.api.Worker desired_worker = 16;</code>
+   */
+  com.clarifai.grpc.api.WorkerOrBuilder getDesiredWorkerOrBuilder();
+
+  /**
    * <pre>
    * When the deployment was created.
    * </pre>

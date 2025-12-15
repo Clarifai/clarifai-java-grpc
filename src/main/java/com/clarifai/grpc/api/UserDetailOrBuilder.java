@@ -195,4 +195,14 @@ public interface UserDetailOrBuilder extends
    * <code>.clarifai.api.CommitmentValue commitment_value = 14;</code>
    */
   com.clarifai.grpc.api.CommitmentValueOrBuilder getCommitmentValueOrBuilder();
+
+  /**
+   * <pre>
+   * For phone number verification, true if the phone number has been verified
+   * </pre>
+   *
+   * <code>bool phone_verified = 15;</code>
+   * @return The phoneVerified.
+   */
+  boolean getPhoneVerified();
 }

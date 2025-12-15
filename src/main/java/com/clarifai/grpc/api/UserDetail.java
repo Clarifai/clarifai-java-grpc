@@ -180,6 +180,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 120: {
+
+            phoneVerified_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -602,6 +607,21 @@ private static final long serialVersionUID = 0L;
     return getCommitmentValue();
   }
 
+  public static final int PHONE_VERIFIED_FIELD_NUMBER = 15;
+  private boolean phoneVerified_;
+  /**
+   * <pre>
+   * For phone number verification, true if the phone number has been verified
+   * </pre>
+   *
+   * <code>bool phone_verified = 15;</code>
+   * @return The phoneVerified.
+   */
+  @java.lang.Override
+  public boolean getPhoneVerified() {
+    return phoneVerified_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -654,6 +674,9 @@ private static final long serialVersionUID = 0L;
     }
     if (commitmentValue_ != null) {
       output.writeMessage(14, getCommitmentValue());
+    }
+    if (phoneVerified_ != false) {
+      output.writeBool(15, phoneVerified_);
     }
     unknownFields.writeTo(output);
   }
@@ -711,6 +734,10 @@ private static final long serialVersionUID = 0L;
     if (commitmentValue_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getCommitmentValue());
+    }
+    if (phoneVerified_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, phoneVerified_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -771,6 +798,8 @@ private static final long serialVersionUID = 0L;
       if (!getCommitmentValue()
           .equals(other.getCommitmentValue())) return false;
     }
+    if (getPhoneVerified()
+        != other.getPhoneVerified()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -823,6 +852,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COMMITMENT_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getCommitmentValue().hashCode();
     }
+    hash = (37 * hash) + PHONE_VERIFIED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getPhoneVerified());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1016,6 +1048,8 @@ private static final long serialVersionUID = 0L;
         commitmentValue_ = null;
         commitmentValueBuilder_ = null;
       }
+      phoneVerified_ = false;
+
       return this;
     }
 
@@ -1088,6 +1122,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.commitmentValue_ = commitmentValueBuilder_.build();
       }
+      result.phoneVerified_ = phoneVerified_;
       onBuilt();
       return result;
     }
@@ -1201,6 +1236,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCommitmentValue()) {
         mergeCommitmentValue(other.getCommitmentValue());
+      }
+      if (other.getPhoneVerified() != false) {
+        setPhoneVerified(other.getPhoneVerified());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2595,6 +2633,49 @@ private static final long serialVersionUID = 0L;
         commitmentValue_ = null;
       }
       return commitmentValueBuilder_;
+    }
+
+    private boolean phoneVerified_ ;
+    /**
+     * <pre>
+     * For phone number verification, true if the phone number has been verified
+     * </pre>
+     *
+     * <code>bool phone_verified = 15;</code>
+     * @return The phoneVerified.
+     */
+    @java.lang.Override
+    public boolean getPhoneVerified() {
+      return phoneVerified_;
+    }
+    /**
+     * <pre>
+     * For phone number verification, true if the phone number has been verified
+     * </pre>
+     *
+     * <code>bool phone_verified = 15;</code>
+     * @param value The phoneVerified to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhoneVerified(boolean value) {
+      
+      phoneVerified_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For phone number verification, true if the phone number has been verified
+     * </pre>
+     *
+     * <code>bool phone_verified = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPhoneVerified() {
+      
+      phoneVerified_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private MultiCloudRegionResponse() {
     regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    cloudRegions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -72,6 +73,15 @@ private static final long serialVersionUID = 0L;
             regions_.add(s);
             break;
           }
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              cloudRegions_ = new java.util.ArrayList<com.clarifai.grpc.api.CloudRegion>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            cloudRegions_.add(
+                input.readMessage(com.clarifai.grpc.api.CloudRegion.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -91,6 +101,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         regions_ = regions_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        cloudRegions_ = java.util.Collections.unmodifiableList(cloudRegions_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -138,36 +151,84 @@ private static final long serialVersionUID = 0L;
   public static final int REGIONS_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList regions_;
   /**
-   * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+   *     See proto/clarifai/api/service.proto;l=8708
    * @return A list containing the regions.
    */
-  public com.google.protobuf.ProtocolStringList
+  @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
       getRegionsList() {
     return regions_;
   }
   /**
-   * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+   *     See proto/clarifai/api/service.proto;l=8708
    * @return The count of regions.
    */
-  public int getRegionsCount() {
+  @java.lang.Deprecated public int getRegionsCount() {
     return regions_.size();
   }
   /**
-   * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+   *     See proto/clarifai/api/service.proto;l=8708
    * @param index The index of the element to return.
    * @return The regions at the given index.
    */
-  public java.lang.String getRegions(int index) {
+  @java.lang.Deprecated public java.lang.String getRegions(int index) {
     return regions_.get(index);
   }
   /**
-   * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+   *     See proto/clarifai/api/service.proto;l=8708
    * @param index The index of the value to return.
    * @return The bytes of the regions at the given index.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getRegionsBytes(int index) {
     return regions_.getByteString(index);
+  }
+
+  public static final int CLOUD_REGIONS_FIELD_NUMBER = 3;
+  private java.util.List<com.clarifai.grpc.api.CloudRegion> cloudRegions_;
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.CloudRegion> getCloudRegionsList() {
+    return cloudRegions_;
+  }
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.CloudRegionOrBuilder> 
+      getCloudRegionsOrBuilderList() {
+    return cloudRegions_;
+  }
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public int getCloudRegionsCount() {
+    return cloudRegions_.size();
+  }
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CloudRegion getCloudRegions(int index) {
+    return cloudRegions_.get(index);
+  }
+  /**
+   * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.CloudRegionOrBuilder getCloudRegionsOrBuilder(
+      int index) {
+    return cloudRegions_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -190,6 +251,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < regions_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, regions_.getRaw(i));
     }
+    for (int i = 0; i < cloudRegions_.size(); i++) {
+      output.writeMessage(3, cloudRegions_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -210,6 +274,10 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getRegionsList().size();
+    }
+    for (int i = 0; i < cloudRegions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, cloudRegions_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -233,6 +301,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRegionsList()
         .equals(other.getRegionsList())) return false;
+    if (!getCloudRegionsList()
+        .equals(other.getCloudRegionsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -251,6 +321,10 @@ private static final long serialVersionUID = 0L;
     if (getRegionsCount() > 0) {
       hash = (37 * hash) + REGIONS_FIELD_NUMBER;
       hash = (53 * hash) + getRegionsList().hashCode();
+    }
+    if (getCloudRegionsCount() > 0) {
+      hash = (37 * hash) + CLOUD_REGIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudRegionsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -380,6 +454,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getCloudRegionsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -393,6 +468,12 @@ private static final long serialVersionUID = 0L;
       }
       regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (cloudRegionsBuilder_ == null) {
+        cloudRegions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        cloudRegionsBuilder_.clear();
+      }
       return this;
     }
 
@@ -430,6 +511,15 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.regions_ = regions_;
+      if (cloudRegionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          cloudRegions_ = java.util.Collections.unmodifiableList(cloudRegions_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.cloudRegions_ = cloudRegions_;
+      } else {
+        result.cloudRegions_ = cloudRegionsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -490,6 +580,32 @@ private static final long serialVersionUID = 0L;
           regions_.addAll(other.regions_);
         }
         onChanged();
+      }
+      if (cloudRegionsBuilder_ == null) {
+        if (!other.cloudRegions_.isEmpty()) {
+          if (cloudRegions_.isEmpty()) {
+            cloudRegions_ = other.cloudRegions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureCloudRegionsIsMutable();
+            cloudRegions_.addAll(other.cloudRegions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cloudRegions_.isEmpty()) {
+          if (cloudRegionsBuilder_.isEmpty()) {
+            cloudRegionsBuilder_.dispose();
+            cloudRegionsBuilder_ = null;
+            cloudRegions_ = other.cloudRegions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            cloudRegionsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCloudRegionsFieldBuilder() : null;
+          } else {
+            cloudRegionsBuilder_.addAllMessages(other.cloudRegions_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -648,44 +764,54 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+     *     See proto/clarifai/api/service.proto;l=8708
      * @return A list containing the regions.
      */
-    public com.google.protobuf.ProtocolStringList
+    @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
         getRegionsList() {
       return regions_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+     *     See proto/clarifai/api/service.proto;l=8708
      * @return The count of regions.
      */
-    public int getRegionsCount() {
+    @java.lang.Deprecated public int getRegionsCount() {
       return regions_.size();
     }
     /**
-     * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+     *     See proto/clarifai/api/service.proto;l=8708
      * @param index The index of the element to return.
      * @return The regions at the given index.
      */
-    public java.lang.String getRegions(int index) {
+    @java.lang.Deprecated public java.lang.String getRegions(int index) {
       return regions_.get(index);
     }
     /**
-     * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+     *     See proto/clarifai/api/service.proto;l=8708
      * @param index The index of the value to return.
      * @return The bytes of the regions at the given index.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getRegionsBytes(int index) {
       return regions_.getByteString(index);
     }
     /**
-     * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+     *     See proto/clarifai/api/service.proto;l=8708
      * @param index The index to set the value at.
      * @param value The regions to set.
      * @return This builder for chaining.
      */
-    public Builder setRegions(
+    @java.lang.Deprecated public Builder setRegions(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -696,11 +822,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+     *     See proto/clarifai/api/service.proto;l=8708
      * @param value The regions to add.
      * @return This builder for chaining.
      */
-    public Builder addRegions(
+    @java.lang.Deprecated public Builder addRegions(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -711,11 +839,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+     *     See proto/clarifai/api/service.proto;l=8708
      * @param values The regions to add.
      * @return This builder for chaining.
      */
-    public Builder addAllRegions(
+    @java.lang.Deprecated public Builder addAllRegions(
         java.lang.Iterable<java.lang.String> values) {
       ensureRegionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -724,21 +854,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+     *     See proto/clarifai/api/service.proto;l=8708
      * @return This builder for chaining.
      */
-    public Builder clearRegions() {
+    @java.lang.Deprecated public Builder clearRegions() {
       regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string regions = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
+     *     See proto/clarifai/api/service.proto;l=8708
      * @param value The bytes of the regions to add.
      * @return This builder for chaining.
      */
-    public Builder addRegionsBytes(
+    @java.lang.Deprecated public Builder addRegionsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -748,6 +882,246 @@ private static final long serialVersionUID = 0L;
       regions_.add(value);
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.CloudRegion> cloudRegions_ =
+      java.util.Collections.emptyList();
+    private void ensureCloudRegionsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        cloudRegions_ = new java.util.ArrayList<com.clarifai.grpc.api.CloudRegion>(cloudRegions_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.CloudRegion, com.clarifai.grpc.api.CloudRegion.Builder, com.clarifai.grpc.api.CloudRegionOrBuilder> cloudRegionsBuilder_;
+
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.CloudRegion> getCloudRegionsList() {
+      if (cloudRegionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cloudRegions_);
+      } else {
+        return cloudRegionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public int getCloudRegionsCount() {
+      if (cloudRegionsBuilder_ == null) {
+        return cloudRegions_.size();
+      } else {
+        return cloudRegionsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.CloudRegion getCloudRegions(int index) {
+      if (cloudRegionsBuilder_ == null) {
+        return cloudRegions_.get(index);
+      } else {
+        return cloudRegionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder setCloudRegions(
+        int index, com.clarifai.grpc.api.CloudRegion value) {
+      if (cloudRegionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCloudRegionsIsMutable();
+        cloudRegions_.set(index, value);
+        onChanged();
+      } else {
+        cloudRegionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder setCloudRegions(
+        int index, com.clarifai.grpc.api.CloudRegion.Builder builderForValue) {
+      if (cloudRegionsBuilder_ == null) {
+        ensureCloudRegionsIsMutable();
+        cloudRegions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cloudRegionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addCloudRegions(com.clarifai.grpc.api.CloudRegion value) {
+      if (cloudRegionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCloudRegionsIsMutable();
+        cloudRegions_.add(value);
+        onChanged();
+      } else {
+        cloudRegionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addCloudRegions(
+        int index, com.clarifai.grpc.api.CloudRegion value) {
+      if (cloudRegionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCloudRegionsIsMutable();
+        cloudRegions_.add(index, value);
+        onChanged();
+      } else {
+        cloudRegionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addCloudRegions(
+        com.clarifai.grpc.api.CloudRegion.Builder builderForValue) {
+      if (cloudRegionsBuilder_ == null) {
+        ensureCloudRegionsIsMutable();
+        cloudRegions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cloudRegionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addCloudRegions(
+        int index, com.clarifai.grpc.api.CloudRegion.Builder builderForValue) {
+      if (cloudRegionsBuilder_ == null) {
+        ensureCloudRegionsIsMutable();
+        cloudRegions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cloudRegionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addAllCloudRegions(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.CloudRegion> values) {
+      if (cloudRegionsBuilder_ == null) {
+        ensureCloudRegionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cloudRegions_);
+        onChanged();
+      } else {
+        cloudRegionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder clearCloudRegions() {
+      if (cloudRegionsBuilder_ == null) {
+        cloudRegions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        cloudRegionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder removeCloudRegions(int index) {
+      if (cloudRegionsBuilder_ == null) {
+        ensureCloudRegionsIsMutable();
+        cloudRegions_.remove(index);
+        onChanged();
+      } else {
+        cloudRegionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.CloudRegion.Builder getCloudRegionsBuilder(
+        int index) {
+      return getCloudRegionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.CloudRegionOrBuilder getCloudRegionsOrBuilder(
+        int index) {
+      if (cloudRegionsBuilder_ == null) {
+        return cloudRegions_.get(index);  } else {
+        return cloudRegionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.CloudRegionOrBuilder> 
+         getCloudRegionsOrBuilderList() {
+      if (cloudRegionsBuilder_ != null) {
+        return cloudRegionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cloudRegions_);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.CloudRegion.Builder addCloudRegionsBuilder() {
+      return getCloudRegionsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.CloudRegion.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.CloudRegion.Builder addCloudRegionsBuilder(
+        int index) {
+      return getCloudRegionsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.CloudRegion.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.CloudRegion cloud_regions = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.CloudRegion.Builder> 
+         getCloudRegionsBuilderList() {
+      return getCloudRegionsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.CloudRegion, com.clarifai.grpc.api.CloudRegion.Builder, com.clarifai.grpc.api.CloudRegionOrBuilder> 
+        getCloudRegionsFieldBuilder() {
+      if (cloudRegionsBuilder_ == null) {
+        cloudRegionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.CloudRegion, com.clarifai.grpc.api.CloudRegion.Builder, com.clarifai.grpc.api.CloudRegionOrBuilder>(
+                cloudRegions_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        cloudRegions_ = null;
+      }
+      return cloudRegionsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

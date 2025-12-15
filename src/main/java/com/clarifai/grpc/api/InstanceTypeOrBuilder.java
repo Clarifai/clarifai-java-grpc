@@ -223,4 +223,34 @@ public interface InstanceTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getArchitectureBytes();
+
+  /**
+   * <pre>
+   * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+   * This represents the actual resources available for user workloads.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+   * @return Whether the availableComputeInfo field is set.
+   */
+  boolean hasAvailableComputeInfo();
+  /**
+   * <pre>
+   * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+   * This represents the actual resources available for user workloads.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+   * @return The availableComputeInfo.
+   */
+  com.clarifai.grpc.api.ComputeInfo getAvailableComputeInfo();
+  /**
+   * <pre>
+   * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+   * This represents the actual resources available for user workloads.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+   */
+  com.clarifai.grpc.api.ComputeInfoOrBuilder getAvailableComputeInfoOrBuilder();
 }

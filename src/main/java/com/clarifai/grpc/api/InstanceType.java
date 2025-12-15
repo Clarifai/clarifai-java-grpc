@@ -145,6 +145,19 @@ private static final long serialVersionUID = 0L;
             architecture_ = s;
             break;
           }
+          case 90: {
+            com.clarifai.grpc.api.ComputeInfo.Builder subBuilder = null;
+            if (availableComputeInfo_ != null) {
+              subBuilder = availableComputeInfo_.toBuilder();
+            }
+            availableComputeInfo_ = input.readMessage(com.clarifai.grpc.api.ComputeInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(availableComputeInfo_);
+              availableComputeInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -604,6 +617,47 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int AVAILABLE_COMPUTE_INFO_FIELD_NUMBER = 11;
+  private com.clarifai.grpc.api.ComputeInfo availableComputeInfo_;
+  /**
+   * <pre>
+   * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+   * This represents the actual resources available for user workloads.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+   * @return Whether the availableComputeInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasAvailableComputeInfo() {
+    return availableComputeInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+   * This represents the actual resources available for user workloads.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+   * @return The availableComputeInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ComputeInfo getAvailableComputeInfo() {
+    return availableComputeInfo_ == null ? com.clarifai.grpc.api.ComputeInfo.getDefaultInstance() : availableComputeInfo_;
+  }
+  /**
+   * <pre>
+   * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+   * This represents the actual resources available for user workloads.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ComputeInfoOrBuilder getAvailableComputeInfoOrBuilder() {
+    return getAvailableComputeInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -648,6 +702,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(architecture_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, architecture_);
     }
+    if (availableComputeInfo_ != null) {
+      output.writeMessage(11, getAvailableComputeInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -690,6 +747,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(architecture_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, architecture_);
+    }
+    if (availableComputeInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getAvailableComputeInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -735,6 +796,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSpecialHandlingList())) return false;
     if (!getArchitecture()
         .equals(other.getArchitecture())) return false;
+    if (hasAvailableComputeInfo() != other.hasAvailableComputeInfo()) return false;
+    if (hasAvailableComputeInfo()) {
+      if (!getAvailableComputeInfo()
+          .equals(other.getAvailableComputeInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -774,6 +840,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + ARCHITECTURE_FIELD_NUMBER;
     hash = (53 * hash) + getArchitecture().hashCode();
+    if (hasAvailableComputeInfo()) {
+      hash = (37 * hash) + AVAILABLE_COMPUTE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailableComputeInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -949,6 +1019,12 @@ private static final long serialVersionUID = 0L;
       }
       architecture_ = "";
 
+      if (availableComputeInfoBuilder_ == null) {
+        availableComputeInfo_ = null;
+      } else {
+        availableComputeInfo_ = null;
+        availableComputeInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1006,6 +1082,11 @@ private static final long serialVersionUID = 0L;
         result.specialHandling_ = specialHandlingBuilder_.build();
       }
       result.architecture_ = architecture_;
+      if (availableComputeInfoBuilder_ == null) {
+        result.availableComputeInfo_ = availableComputeInfo_;
+      } else {
+        result.availableComputeInfo_ = availableComputeInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1112,6 +1193,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getArchitecture().isEmpty()) {
         architecture_ = other.architecture_;
         onChanged();
+      }
+      if (other.hasAvailableComputeInfo()) {
+        mergeAvailableComputeInfo(other.getAvailableComputeInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2418,6 +2502,170 @@ private static final long serialVersionUID = 0L;
       architecture_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.ComputeInfo availableComputeInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder> availableComputeInfoBuilder_;
+    /**
+     * <pre>
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     * @return Whether the availableComputeInfo field is set.
+     */
+    public boolean hasAvailableComputeInfo() {
+      return availableComputeInfoBuilder_ != null || availableComputeInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     * @return The availableComputeInfo.
+     */
+    public com.clarifai.grpc.api.ComputeInfo getAvailableComputeInfo() {
+      if (availableComputeInfoBuilder_ == null) {
+        return availableComputeInfo_ == null ? com.clarifai.grpc.api.ComputeInfo.getDefaultInstance() : availableComputeInfo_;
+      } else {
+        return availableComputeInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     */
+    public Builder setAvailableComputeInfo(com.clarifai.grpc.api.ComputeInfo value) {
+      if (availableComputeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        availableComputeInfo_ = value;
+        onChanged();
+      } else {
+        availableComputeInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     */
+    public Builder setAvailableComputeInfo(
+        com.clarifai.grpc.api.ComputeInfo.Builder builderForValue) {
+      if (availableComputeInfoBuilder_ == null) {
+        availableComputeInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        availableComputeInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     */
+    public Builder mergeAvailableComputeInfo(com.clarifai.grpc.api.ComputeInfo value) {
+      if (availableComputeInfoBuilder_ == null) {
+        if (availableComputeInfo_ != null) {
+          availableComputeInfo_ =
+            com.clarifai.grpc.api.ComputeInfo.newBuilder(availableComputeInfo_).mergeFrom(value).buildPartial();
+        } else {
+          availableComputeInfo_ = value;
+        }
+        onChanged();
+      } else {
+        availableComputeInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     */
+    public Builder clearAvailableComputeInfo() {
+      if (availableComputeInfoBuilder_ == null) {
+        availableComputeInfo_ = null;
+        onChanged();
+      } else {
+        availableComputeInfo_ = null;
+        availableComputeInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     */
+    public com.clarifai.grpc.api.ComputeInfo.Builder getAvailableComputeInfoBuilder() {
+      
+      onChanged();
+      return getAvailableComputeInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     */
+    public com.clarifai.grpc.api.ComputeInfoOrBuilder getAvailableComputeInfoOrBuilder() {
+      if (availableComputeInfoBuilder_ != null) {
+        return availableComputeInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return availableComputeInfo_ == null ?
+            com.clarifai.grpc.api.ComputeInfo.getDefaultInstance() : availableComputeInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Available compute info after accounting for system overhead (daemonsets, kubelet, etc.).
+     * This represents the actual resources available for user workloads.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo available_compute_info = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder> 
+        getAvailableComputeInfoFieldBuilder() {
+      if (availableComputeInfoBuilder_ == null) {
+        availableComputeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder>(
+                getAvailableComputeInfo(),
+                getParentForChildren(),
+                isClean());
+        availableComputeInfo_ = null;
+      }
+      return availableComputeInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

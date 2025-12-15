@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>float top1_accuracy = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2331
+   *     See proto/clarifai/api/resources.proto;l=2332
    * @return The top1Accuracy.
    */
   @java.lang.Override
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>float top5_accuracy = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2332
+   *     See proto/clarifai/api/resources.proto;l=2333
    * @return The top5Accuracy.
    */
   @java.lang.Override
@@ -733,7 +733,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2331
+     *     See proto/clarifai/api/resources.proto;l=2332
      * @return The top1Accuracy.
      */
     @java.lang.Override
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2331
+     *     See proto/clarifai/api/resources.proto;l=2332
      * @param value The top1Accuracy to set.
      * @return This builder for chaining.
      */
@@ -756,7 +756,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2331
+     *     See proto/clarifai/api/resources.proto;l=2332
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTop1Accuracy() {
@@ -770,7 +770,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2332
+     *     See proto/clarifai/api/resources.proto;l=2333
      * @return The top5Accuracy.
      */
     @java.lang.Override
@@ -780,7 +780,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2332
+     *     See proto/clarifai/api/resources.proto;l=2333
      * @param value The top5Accuracy to set.
      * @return This builder for chaining.
      */
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2332
+     *     See proto/clarifai/api/resources.proto;l=2333
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTop5Accuracy() {
