@@ -73,6 +73,11 @@ private static final long serialVersionUID = 0L;
             inputs_ = input.readInt64();
             break;
           }
+          case 48: {
+
+            pipelines_ = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -162,6 +167,17 @@ private static final long serialVersionUID = 0L;
     return inputs_;
   }
 
+  public static final int PIPELINES_FIELD_NUMBER = 6;
+  private long pipelines_;
+  /**
+   * <code>int64 pipelines = 6;</code>
+   * @return The pipelines.
+   */
+  @java.lang.Override
+  public long getPipelines() {
+    return pipelines_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +206,9 @@ private static final long serialVersionUID = 0L;
     }
     if (inputs_ != 0L) {
       output.writeInt64(5, inputs_);
+    }
+    if (pipelines_ != 0L) {
+      output.writeInt64(6, pipelines_);
     }
     unknownFields.writeTo(output);
   }
@@ -220,6 +239,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, inputs_);
     }
+    if (pipelines_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, pipelines_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -245,6 +268,8 @@ private static final long serialVersionUID = 0L;
         != other.getModules()) return false;
     if (getInputs()
         != other.getInputs()) return false;
+    if (getPipelines()
+        != other.getPipelines()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -271,6 +296,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INPUTS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getInputs());
+    hash = (37 * hash) + PIPELINES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getPipelines());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -414,6 +442,8 @@ private static final long serialVersionUID = 0L;
 
       inputs_ = 0L;
 
+      pipelines_ = 0L;
+
       return this;
     }
 
@@ -445,6 +475,7 @@ private static final long serialVersionUID = 0L;
       result.workflows_ = workflows_;
       result.modules_ = modules_;
       result.inputs_ = inputs_;
+      result.pipelines_ = pipelines_;
       onBuilt();
       return result;
     }
@@ -507,6 +538,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getInputs() != 0L) {
         setInputs(other.getInputs());
+      }
+      if (other.getPipelines() != 0L) {
+        setPipelines(other.getPipelines());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -688,6 +722,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearInputs() {
       
       inputs_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long pipelines_ ;
+    /**
+     * <code>int64 pipelines = 6;</code>
+     * @return The pipelines.
+     */
+    @java.lang.Override
+    public long getPipelines() {
+      return pipelines_;
+    }
+    /**
+     * <code>int64 pipelines = 6;</code>
+     * @param value The pipelines to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelines(long value) {
+      
+      pipelines_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 pipelines = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPipelines() {
+      
+      pipelines_ = 0L;
       onChanged();
       return this;
     }

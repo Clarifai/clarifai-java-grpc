@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private StreamTrackAnnotationsSearchesRequest() {
     inputId_ = "";
-    trackId_ = "";
+    trackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     annotationType_ = 0;
   }
 
@@ -45,6 +45,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,8 +77,11 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            trackId_ = s;
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              trackIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            trackIds_.add(s);
             break;
           }
           case 32: {
@@ -136,6 +140,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        trackIds_ = trackIds_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -225,50 +232,55 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TRACK_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object trackId_;
+  public static final int TRACK_IDS_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList trackIds_;
   /**
    * <pre>
-   * Filter annotations by track_id
+   * Filter annotations by track_ids
    * </pre>
    *
-   * <code>string track_id = 3;</code>
-   * @return The trackId.
+   * <code>repeated string track_ids = 3;</code>
+   * @return A list containing the trackIds.
    */
-  @java.lang.Override
-  public java.lang.String getTrackId() {
-    java.lang.Object ref = trackId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      trackId_ = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getTrackIdsList() {
+    return trackIds_;
   }
   /**
    * <pre>
-   * Filter annotations by track_id
+   * Filter annotations by track_ids
    * </pre>
    *
-   * <code>string track_id = 3;</code>
-   * @return The bytes for trackId.
+   * <code>repeated string track_ids = 3;</code>
+   * @return The count of trackIds.
    */
-  @java.lang.Override
+  public int getTrackIdsCount() {
+    return trackIds_.size();
+  }
+  /**
+   * <pre>
+   * Filter annotations by track_ids
+   * </pre>
+   *
+   * <code>repeated string track_ids = 3;</code>
+   * @param index The index of the element to return.
+   * @return The trackIds at the given index.
+   */
+  public java.lang.String getTrackIds(int index) {
+    return trackIds_.get(index);
+  }
+  /**
+   * <pre>
+   * Filter annotations by track_ids
+   * </pre>
+   *
+   * <code>repeated string track_ids = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the trackIds at the given index.
+   */
   public com.google.protobuf.ByteString
-      getTrackIdBytes() {
-    java.lang.Object ref = trackId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      trackId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getTrackIdsBytes(int index) {
+    return trackIds_.getByteString(index);
   }
 
   public static final int FRAME_NUMBER_START_FIELD_NUMBER = 4;
@@ -331,6 +343,12 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_FRAMES_FIELD_NUMBER = 7;
   private int maxFrames_;
   /**
+   * <pre>
+   * Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
+   * For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
+   * Default and max: 10800 frames (3 minutes at 60 FPS)
+   * </pre>
+   *
    * <code>uint32 max_frames = 7;</code>
    * @return The maxFrames.
    */
@@ -342,6 +360,11 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_DURATION_FIELD_NUMBER = 8;
   private int maxDuration_;
   /**
+   * <pre>
+   * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
+   * Default and max: 180000 ms (3 minutes)
+   * </pre>
+   *
    * <code>uint32 max_duration = 8;</code>
    * @return The maxDuration.
    */
@@ -414,8 +437,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, trackId_);
+    for (int i = 0; i < trackIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, trackIds_.getRaw(i));
     }
     if (frameNumberStart_ != 0) {
       output.writeUInt32(4, frameNumberStart_);
@@ -451,8 +474,13 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inputId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, trackId_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < trackIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(trackIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTrackIdsList().size();
     }
     if (frameNumberStart_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -500,8 +528,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getInputId()
         .equals(other.getInputId())) return false;
-    if (!getTrackId()
-        .equals(other.getTrackId())) return false;
+    if (!getTrackIdsList()
+        .equals(other.getTrackIdsList())) return false;
     if (getFrameNumberStart()
         != other.getFrameNumberStart()) return false;
     if (getFrameTimeStart()
@@ -533,8 +561,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + INPUT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getInputId().hashCode();
-    hash = (37 * hash) + TRACK_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTrackId().hashCode();
+    if (getTrackIdsCount() > 0) {
+      hash = (37 * hash) + TRACK_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getTrackIdsList().hashCode();
+    }
     hash = (37 * hash) + FRAME_NUMBER_START_FIELD_NUMBER;
     hash = (53 * hash) + getFrameNumberStart();
     hash = (37 * hash) + FRAME_TIME_START_FIELD_NUMBER;
@@ -694,8 +724,8 @@ private static final long serialVersionUID = 0L;
       }
       inputId_ = "";
 
-      trackId_ = "";
-
+      trackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       frameNumberStart_ = 0;
 
       frameTimeStart_ = 0;
@@ -738,13 +768,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest buildPartial() {
       com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest result = new com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest(this);
+      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.inputId_ = inputId_;
-      result.trackId_ = trackId_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        trackIds_ = trackIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.trackIds_ = trackIds_;
       result.frameNumberStart_ = frameNumberStart_;
       result.frameTimeStart_ = frameTimeStart_;
       result.annotationType_ = annotationType_;
@@ -810,8 +845,14 @@ private static final long serialVersionUID = 0L;
         inputId_ = other.inputId_;
         onChanged();
       }
-      if (!other.getTrackId().isEmpty()) {
-        trackId_ = other.trackId_;
+      if (!other.trackIds_.isEmpty()) {
+        if (trackIds_.isEmpty()) {
+          trackIds_ = other.trackIds_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureTrackIdsIsMutable();
+          trackIds_.addAll(other.trackIds_);
+        }
         onChanged();
       }
       if (other.getFrameNumberStart() != 0) {
@@ -860,6 +901,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1076,98 +1118,148 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object trackId_ = "";
-    /**
-     * <pre>
-     * Filter annotations by track_id
-     * </pre>
-     *
-     * <code>string track_id = 3;</code>
-     * @return The trackId.
-     */
-    public java.lang.String getTrackId() {
-      java.lang.Object ref = trackId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        trackId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private com.google.protobuf.LazyStringList trackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureTrackIdsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        trackIds_ = new com.google.protobuf.LazyStringArrayList(trackIds_);
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
      * <pre>
-     * Filter annotations by track_id
+     * Filter annotations by track_ids
      * </pre>
      *
-     * <code>string track_id = 3;</code>
-     * @return The bytes for trackId.
+     * <code>repeated string track_ids = 3;</code>
+     * @return A list containing the trackIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTrackIdsList() {
+      return trackIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Filter annotations by track_ids
+     * </pre>
+     *
+     * <code>repeated string track_ids = 3;</code>
+     * @return The count of trackIds.
+     */
+    public int getTrackIdsCount() {
+      return trackIds_.size();
+    }
+    /**
+     * <pre>
+     * Filter annotations by track_ids
+     * </pre>
+     *
+     * <code>repeated string track_ids = 3;</code>
+     * @param index The index of the element to return.
+     * @return The trackIds at the given index.
+     */
+    public java.lang.String getTrackIds(int index) {
+      return trackIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Filter annotations by track_ids
+     * </pre>
+     *
+     * <code>repeated string track_ids = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the trackIds at the given index.
      */
     public com.google.protobuf.ByteString
-        getTrackIdBytes() {
-      java.lang.Object ref = trackId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        trackId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getTrackIdsBytes(int index) {
+      return trackIds_.getByteString(index);
     }
     /**
      * <pre>
-     * Filter annotations by track_id
+     * Filter annotations by track_ids
      * </pre>
      *
-     * <code>string track_id = 3;</code>
-     * @param value The trackId to set.
+     * <code>repeated string track_ids = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The trackIds to set.
      * @return This builder for chaining.
      */
-    public Builder setTrackId(
+    public Builder setTrackIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTrackIdsIsMutable();
+      trackIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter annotations by track_ids
+     * </pre>
+     *
+     * <code>repeated string track_ids = 3;</code>
+     * @param value The trackIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTrackIds(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
-      trackId_ = value;
+  ensureTrackIdsIsMutable();
+      trackIds_.add(value);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Filter annotations by track_id
+     * Filter annotations by track_ids
      * </pre>
      *
-     * <code>string track_id = 3;</code>
+     * <code>repeated string track_ids = 3;</code>
+     * @param values The trackIds to add.
      * @return This builder for chaining.
      */
-    public Builder clearTrackId() {
-      
-      trackId_ = getDefaultInstance().getTrackId();
+    public Builder addAllTrackIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureTrackIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, trackIds_);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Filter annotations by track_id
+     * Filter annotations by track_ids
      * </pre>
      *
-     * <code>string track_id = 3;</code>
-     * @param value The bytes for trackId to set.
+     * <code>repeated string track_ids = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder setTrackIdBytes(
+    public Builder clearTrackIds() {
+      trackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter annotations by track_ids
+     * </pre>
+     *
+     * <code>repeated string track_ids = 3;</code>
+     * @param value The bytes of the trackIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTrackIdsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
-      trackId_ = value;
+      ensureTrackIdsIsMutable();
+      trackIds_.add(value);
       onChanged();
       return this;
     }
@@ -1334,6 +1426,12 @@ private static final long serialVersionUID = 0L;
 
     private int maxFrames_ ;
     /**
+     * <pre>
+     * Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
+     * For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
+     * Default and max: 10800 frames (3 minutes at 60 FPS)
+     * </pre>
+     *
      * <code>uint32 max_frames = 7;</code>
      * @return The maxFrames.
      */
@@ -1342,6 +1440,12 @@ private static final long serialVersionUID = 0L;
       return maxFrames_;
     }
     /**
+     * <pre>
+     * Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
+     * For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
+     * Default and max: 10800 frames (3 minutes at 60 FPS)
+     * </pre>
+     *
      * <code>uint32 max_frames = 7;</code>
      * @param value The maxFrames to set.
      * @return This builder for chaining.
@@ -1353,6 +1457,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
+     * For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
+     * Default and max: 10800 frames (3 minutes at 60 FPS)
+     * </pre>
+     *
      * <code>uint32 max_frames = 7;</code>
      * @return This builder for chaining.
      */
@@ -1365,6 +1475,11 @@ private static final long serialVersionUID = 0L;
 
     private int maxDuration_ ;
     /**
+     * <pre>
+     * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
+     * Default and max: 180000 ms (3 minutes)
+     * </pre>
+     *
      * <code>uint32 max_duration = 8;</code>
      * @return The maxDuration.
      */
@@ -1373,6 +1488,11 @@ private static final long serialVersionUID = 0L;
       return maxDuration_;
     }
     /**
+     * <pre>
+     * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
+     * Default and max: 180000 ms (3 minutes)
+     * </pre>
+     *
      * <code>uint32 max_duration = 8;</code>
      * @param value The maxDuration to set.
      * @return This builder for chaining.
@@ -1384,6 +1504,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
+     * Default and max: 180000 ms (3 minutes)
+     * </pre>
+     *
      * <code>uint32 max_duration = 8;</code>
      * @return This builder for chaining.
      */

@@ -44,23 +44,44 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Filter annotations by track_id
+   * Filter annotations by track_ids
    * </pre>
    *
-   * <code>string track_id = 3;</code>
-   * @return The trackId.
+   * <code>repeated string track_ids = 3;</code>
+   * @return A list containing the trackIds.
    */
-  java.lang.String getTrackId();
+  java.util.List<java.lang.String>
+      getTrackIdsList();
   /**
    * <pre>
-   * Filter annotations by track_id
+   * Filter annotations by track_ids
    * </pre>
    *
-   * <code>string track_id = 3;</code>
-   * @return The bytes for trackId.
+   * <code>repeated string track_ids = 3;</code>
+   * @return The count of trackIds.
+   */
+  int getTrackIdsCount();
+  /**
+   * <pre>
+   * Filter annotations by track_ids
+   * </pre>
+   *
+   * <code>repeated string track_ids = 3;</code>
+   * @param index The index of the element to return.
+   * @return The trackIds at the given index.
+   */
+  java.lang.String getTrackIds(int index);
+  /**
+   * <pre>
+   * Filter annotations by track_ids
+   * </pre>
+   *
+   * <code>repeated string track_ids = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the trackIds at the given index.
    */
   com.google.protobuf.ByteString
-      getTrackIdBytes();
+      getTrackIdsBytes(int index);
 
   /**
    * <pre>
@@ -102,12 +123,23 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
   com.clarifai.grpc.api.AnnotationDataType getAnnotationType();
 
   /**
+   * <pre>
+   * Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
+   * For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
+   * Default and max: 10800 frames (3 minutes at 60 FPS)
+   * </pre>
+   *
    * <code>uint32 max_frames = 7;</code>
    * @return The maxFrames.
    */
   int getMaxFrames();
 
   /**
+   * <pre>
+   * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
+   * Default and max: 180000 ms (3 minutes)
+   * </pre>
+   *
    * <code>uint32 max_duration = 8;</code>
    * @return The maxDuration.
    */

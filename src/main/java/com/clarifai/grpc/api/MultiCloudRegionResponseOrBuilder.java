@@ -25,7 +25,7 @@ public interface MultiCloudRegionResponseOrBuilder extends
   /**
    * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8708
+   *     See proto/clarifai/api/service.proto;l=8726
    * @return A list containing the regions.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -33,14 +33,14 @@ public interface MultiCloudRegionResponseOrBuilder extends
   /**
    * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8708
+   *     See proto/clarifai/api/service.proto;l=8726
    * @return The count of regions.
    */
   @java.lang.Deprecated int getRegionsCount();
   /**
    * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8708
+   *     See proto/clarifai/api/service.proto;l=8726
    * @param index The index of the element to return.
    * @return The regions at the given index.
    */
@@ -48,7 +48,7 @@ public interface MultiCloudRegionResponseOrBuilder extends
   /**
    * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8708
+   *     See proto/clarifai/api/service.proto;l=8726
    * @param index The index of the value to return.
    * @return The bytes of the regions at the given index.
    */

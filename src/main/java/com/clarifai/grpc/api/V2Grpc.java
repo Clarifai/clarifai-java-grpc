@@ -605,28 +605,28 @@ public final class V2Grpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest,
-      com.clarifai.grpc.api.SingleAnnotationResponse> getStreamTrackAnnotationsSearchesMethod;
+      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse> getStreamTrackAnnotationsSearchesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "StreamTrackAnnotationsSearches",
       requestType = com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest.class,
-      responseType = com.clarifai.grpc.api.SingleAnnotationResponse.class,
+      responseType = com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest,
-      com.clarifai.grpc.api.SingleAnnotationResponse> getStreamTrackAnnotationsSearchesMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest, com.clarifai.grpc.api.SingleAnnotationResponse> getStreamTrackAnnotationsSearchesMethod;
+      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse> getStreamTrackAnnotationsSearchesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest, com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse> getStreamTrackAnnotationsSearchesMethod;
     if ((getStreamTrackAnnotationsSearchesMethod = V2Grpc.getStreamTrackAnnotationsSearchesMethod) == null) {
       synchronized (V2Grpc.class) {
         if ((getStreamTrackAnnotationsSearchesMethod = V2Grpc.getStreamTrackAnnotationsSearchesMethod) == null) {
           V2Grpc.getStreamTrackAnnotationsSearchesMethod = getStreamTrackAnnotationsSearchesMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest, com.clarifai.grpc.api.SingleAnnotationResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest, com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StreamTrackAnnotationsSearches"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest.getDefaultInstance()))
               .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleAnnotationResponse.getDefaultInstance()))
+                  com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("StreamTrackAnnotationsSearches"))
               .build();
         }
@@ -9223,7 +9223,7 @@ public final class V2Grpc {
      * </pre>
      */
     public void streamTrackAnnotationsSearches(com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAnnotationResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStreamTrackAnnotationsSearchesMethod(), responseObserver);
     }
 
@@ -11979,7 +11979,7 @@ public final class V2Grpc {
             io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest,
-                com.clarifai.grpc.api.SingleAnnotationResponse>(
+                com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse>(
                   this, METHODID_STREAM_TRACK_ANNOTATIONS_SEARCHES)))
           .addMethod(
             getPostAnnotationsMethod(),
@@ -14102,7 +14102,7 @@ public final class V2Grpc {
      * </pre>
      */
     public void streamTrackAnnotationsSearches(com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAnnotationResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getStreamTrackAnnotationsSearchesMethod(), getCallOptions()), request, responseObserver);
     }
@@ -17203,7 +17203,7 @@ public final class V2Grpc {
      * Stream video track annotations for a specific input one-by-one.
      * </pre>
      */
-    public java.util.Iterator<com.clarifai.grpc.api.SingleAnnotationResponse> streamTrackAnnotationsSearches(
+    public java.util.Iterator<com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse> streamTrackAnnotationsSearches(
         com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getStreamTrackAnnotationsSearchesMethod(), getCallOptions(), request);
@@ -23160,7 +23160,7 @@ public final class V2Grpc {
           break;
         case METHODID_STREAM_TRACK_ANNOTATIONS_SEARCHES:
           serviceImpl.streamTrackAnnotationsSearches((com.clarifai.grpc.api.StreamTrackAnnotationsSearchesRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAnnotationResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse>) responseObserver);
           break;
         case METHODID_POST_ANNOTATIONS:
           serviceImpl.postAnnotations((com.clarifai.grpc.api.PostAnnotationsRequest) request,

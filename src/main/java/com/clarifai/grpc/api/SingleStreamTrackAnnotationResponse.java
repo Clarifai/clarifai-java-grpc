@@ -5,28 +5,28 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * ResourceCountResponse
+ * SingleStreamTrackAnnotationResponse similar to SingleAnnotationResponse but with an extra field
  * </pre>
  *
- * Protobuf type {@code clarifai.api.GetResourceCountsResponse}
+ * Protobuf type {@code clarifai.api.SingleStreamTrackAnnotationResponse}
  */
-public final class GetResourceCountsResponse extends
+public final class SingleStreamTrackAnnotationResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.GetResourceCountsResponse)
-    GetResourceCountsResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.SingleStreamTrackAnnotationResponse)
+    SingleStreamTrackAnnotationResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetResourceCountsResponse.newBuilder() to construct.
-  private GetResourceCountsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SingleStreamTrackAnnotationResponse.newBuilder() to construct.
+  private SingleStreamTrackAnnotationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetResourceCountsResponse() {
+  private SingleStreamTrackAnnotationResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetResourceCountsResponse();
+    return new SingleStreamTrackAnnotationResponse();
   }
 
   @java.lang.Override
@@ -34,7 +34,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetResourceCountsResponse(
+  private SingleStreamTrackAnnotationResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -65,34 +65,22 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
+          case 18: {
+            com.clarifai.grpc.api.Annotation.Builder subBuilder = null;
+            if (annotation_ != null) {
+              subBuilder = annotation_.toBuilder();
+            }
+            annotation_ = input.readMessage(com.clarifai.grpc.api.Annotation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(annotation_);
+              annotation_ = subBuilder.buildPartial();
+            }
 
-            datasets_ = input.readInt64();
             break;
           }
           case 24: {
 
-            models_ = input.readInt64();
-            break;
-          }
-          case 32: {
-
-            workflows_ = input.readInt64();
-            break;
-          }
-          case 40: {
-
-            modules_ = input.readInt64();
-            break;
-          }
-          case 48: {
-
-            inputs_ = input.readInt64();
-            break;
-          }
-          case 56: {
-
-            pipelines_ = input.readInt64();
+            frameFullyProcessed_ = input.readBool();
             break;
           }
           default: {
@@ -118,15 +106,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetResourceCountsResponse_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetResourceCountsResponse_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.GetResourceCountsResponse.class, com.clarifai.grpc.api.GetResourceCountsResponse.Builder.class);
+            com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.class, com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.Builder.class);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -155,70 +143,46 @@ private static final long serialVersionUID = 0L;
     return getStatus();
   }
 
-  public static final int DATASETS_FIELD_NUMBER = 2;
-  private long datasets_;
+  public static final int ANNOTATION_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.Annotation annotation_;
   /**
-   * <code>int64 datasets = 2;</code>
-   * @return The datasets.
+   * <code>.clarifai.api.Annotation annotation = 2;</code>
+   * @return Whether the annotation field is set.
    */
   @java.lang.Override
-  public long getDatasets() {
-    return datasets_;
+  public boolean hasAnnotation() {
+    return annotation_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Annotation annotation = 2;</code>
+   * @return The annotation.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Annotation getAnnotation() {
+    return annotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
+  }
+  /**
+   * <code>.clarifai.api.Annotation annotation = 2;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder() {
+    return getAnnotation();
   }
 
-  public static final int MODELS_FIELD_NUMBER = 3;
-  private long models_;
+  public static final int FRAME_FULLY_PROCESSED_FIELD_NUMBER = 3;
+  private boolean frameFullyProcessed_;
   /**
-   * <code>int64 models = 3;</code>
-   * @return The models.
+   * <pre>
+   * Indicates if this frame has been fully processed
+   * Needed in case client needs to decide whether to stop and wait for more data or continue playback
+   * </pre>
+   *
+   * <code>bool frame_fully_processed = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The frameFullyProcessed.
    */
   @java.lang.Override
-  public long getModels() {
-    return models_;
-  }
-
-  public static final int WORKFLOWS_FIELD_NUMBER = 4;
-  private long workflows_;
-  /**
-   * <code>int64 workflows = 4;</code>
-   * @return The workflows.
-   */
-  @java.lang.Override
-  public long getWorkflows() {
-    return workflows_;
-  }
-
-  public static final int MODULES_FIELD_NUMBER = 5;
-  private long modules_;
-  /**
-   * <code>int64 modules = 5;</code>
-   * @return The modules.
-   */
-  @java.lang.Override
-  public long getModules() {
-    return modules_;
-  }
-
-  public static final int INPUTS_FIELD_NUMBER = 6;
-  private long inputs_;
-  /**
-   * <code>int64 inputs = 6;</code>
-   * @return The inputs.
-   */
-  @java.lang.Override
-  public long getInputs() {
-    return inputs_;
-  }
-
-  public static final int PIPELINES_FIELD_NUMBER = 7;
-  private long pipelines_;
-  /**
-   * <code>int64 pipelines = 7;</code>
-   * @return The pipelines.
-   */
-  @java.lang.Override
-  public long getPipelines() {
-    return pipelines_;
+  public boolean getFrameFullyProcessed() {
+    return frameFullyProcessed_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -238,23 +202,11 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(1, getStatus());
     }
-    if (datasets_ != 0L) {
-      output.writeInt64(2, datasets_);
+    if (annotation_ != null) {
+      output.writeMessage(2, getAnnotation());
     }
-    if (models_ != 0L) {
-      output.writeInt64(3, models_);
-    }
-    if (workflows_ != 0L) {
-      output.writeInt64(4, workflows_);
-    }
-    if (modules_ != 0L) {
-      output.writeInt64(5, modules_);
-    }
-    if (inputs_ != 0L) {
-      output.writeInt64(6, inputs_);
-    }
-    if (pipelines_ != 0L) {
-      output.writeInt64(7, pipelines_);
+    if (frameFullyProcessed_ != false) {
+      output.writeBool(3, frameFullyProcessed_);
     }
     unknownFields.writeTo(output);
   }
@@ -269,29 +221,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getStatus());
     }
-    if (datasets_ != 0L) {
+    if (annotation_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, datasets_);
+        .computeMessageSize(2, getAnnotation());
     }
-    if (models_ != 0L) {
+    if (frameFullyProcessed_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, models_);
-    }
-    if (workflows_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, workflows_);
-    }
-    if (modules_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, modules_);
-    }
-    if (inputs_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, inputs_);
-    }
-    if (pipelines_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, pipelines_);
+        .computeBoolSize(3, frameFullyProcessed_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -303,28 +239,23 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.GetResourceCountsResponse)) {
+    if (!(obj instanceof com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.GetResourceCountsResponse other = (com.clarifai.grpc.api.GetResourceCountsResponse) obj;
+    com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse other = (com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse) obj;
 
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (!getStatus()
           .equals(other.getStatus())) return false;
     }
-    if (getDatasets()
-        != other.getDatasets()) return false;
-    if (getModels()
-        != other.getModels()) return false;
-    if (getWorkflows()
-        != other.getWorkflows()) return false;
-    if (getModules()
-        != other.getModules()) return false;
-    if (getInputs()
-        != other.getInputs()) return false;
-    if (getPipelines()
-        != other.getPipelines()) return false;
+    if (hasAnnotation() != other.hasAnnotation()) return false;
+    if (hasAnnotation()) {
+      if (!getAnnotation()
+          .equals(other.getAnnotation())) return false;
+    }
+    if (getFrameFullyProcessed()
+        != other.getFrameFullyProcessed()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -340,92 +271,81 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
     }
-    hash = (37 * hash) + DATASETS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getDatasets());
-    hash = (37 * hash) + MODELS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getModels());
-    hash = (37 * hash) + WORKFLOWS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getWorkflows());
-    hash = (37 * hash) + MODULES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getModules());
-    hash = (37 * hash) + INPUTS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getInputs());
-    hash = (37 * hash) + PIPELINES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getPipelines());
+    if (hasAnnotation()) {
+      hash = (37 * hash) + ANNOTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAnnotation().hashCode();
+    }
+    hash = (37 * hash) + FRAME_FULLY_PROCESSED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getFrameFullyProcessed());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseDelimitedFrom(
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetResourceCountsResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -438,7 +358,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.GetResourceCountsResponse prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -455,29 +375,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ResourceCountResponse
+   * SingleStreamTrackAnnotationResponse similar to SingleAnnotationResponse but with an extra field
    * </pre>
    *
-   * Protobuf type {@code clarifai.api.GetResourceCountsResponse}
+   * Protobuf type {@code clarifai.api.SingleStreamTrackAnnotationResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.GetResourceCountsResponse)
-      com.clarifai.grpc.api.GetResourceCountsResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.SingleStreamTrackAnnotationResponse)
+      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetResourceCountsResponse_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetResourceCountsResponse_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.GetResourceCountsResponse.class, com.clarifai.grpc.api.GetResourceCountsResponse.Builder.class);
+              com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.class, com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.GetResourceCountsResponse.newBuilder()
+    // Construct using com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -501,17 +421,13 @@ private static final long serialVersionUID = 0L;
         status_ = null;
         statusBuilder_ = null;
       }
-      datasets_ = 0L;
-
-      models_ = 0L;
-
-      workflows_ = 0L;
-
-      modules_ = 0L;
-
-      inputs_ = 0L;
-
-      pipelines_ = 0L;
+      if (annotationBuilder_ == null) {
+        annotation_ = null;
+      } else {
+        annotation_ = null;
+        annotationBuilder_ = null;
+      }
+      frameFullyProcessed_ = false;
 
       return this;
     }
@@ -519,17 +435,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetResourceCountsResponse_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetResourceCountsResponse getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.GetResourceCountsResponse.getDefaultInstance();
+    public com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetResourceCountsResponse build() {
-      com.clarifai.grpc.api.GetResourceCountsResponse result = buildPartial();
+    public com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse build() {
+      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -537,19 +453,19 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetResourceCountsResponse buildPartial() {
-      com.clarifai.grpc.api.GetResourceCountsResponse result = new com.clarifai.grpc.api.GetResourceCountsResponse(this);
+    public com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse buildPartial() {
+      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse result = new com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse(this);
       if (statusBuilder_ == null) {
         result.status_ = status_;
       } else {
         result.status_ = statusBuilder_.build();
       }
-      result.datasets_ = datasets_;
-      result.models_ = models_;
-      result.workflows_ = workflows_;
-      result.modules_ = modules_;
-      result.inputs_ = inputs_;
-      result.pipelines_ = pipelines_;
+      if (annotationBuilder_ == null) {
+        result.annotation_ = annotation_;
+      } else {
+        result.annotation_ = annotationBuilder_.build();
+      }
+      result.frameFullyProcessed_ = frameFullyProcessed_;
       onBuilt();
       return result;
     }
@@ -588,36 +504,24 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.GetResourceCountsResponse) {
-        return mergeFrom((com.clarifai.grpc.api.GetResourceCountsResponse)other);
+      if (other instanceof com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse) {
+        return mergeFrom((com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.GetResourceCountsResponse other) {
-      if (other == com.clarifai.grpc.api.GetResourceCountsResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse other) {
+      if (other == com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.getDefaultInstance()) return this;
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
-      if (other.getDatasets() != 0L) {
-        setDatasets(other.getDatasets());
+      if (other.hasAnnotation()) {
+        mergeAnnotation(other.getAnnotation());
       }
-      if (other.getModels() != 0L) {
-        setModels(other.getModels());
-      }
-      if (other.getWorkflows() != 0L) {
-        setWorkflows(other.getWorkflows());
-      }
-      if (other.getModules() != 0L) {
-        setModules(other.getModules());
-      }
-      if (other.getInputs() != 0L) {
-        setInputs(other.getInputs());
-      }
-      if (other.getPipelines() != 0L) {
-        setPipelines(other.getPipelines());
+      if (other.getFrameFullyProcessed() != false) {
+        setFrameFullyProcessed(other.getFrameFullyProcessed());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -634,11 +538,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.GetResourceCountsResponse parsedMessage = null;
+      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.GetResourceCountsResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -767,188 +671,167 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_;
     }
 
-    private long datasets_ ;
+    private com.clarifai.grpc.api.Annotation annotation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder> annotationBuilder_;
     /**
-     * <code>int64 datasets = 2;</code>
-     * @return The datasets.
+     * <code>.clarifai.api.Annotation annotation = 2;</code>
+     * @return Whether the annotation field is set.
      */
-    @java.lang.Override
-    public long getDatasets() {
-      return datasets_;
+    public boolean hasAnnotation() {
+      return annotationBuilder_ != null || annotation_ != null;
     }
     /**
-     * <code>int64 datasets = 2;</code>
-     * @param value The datasets to set.
-     * @return This builder for chaining.
+     * <code>.clarifai.api.Annotation annotation = 2;</code>
+     * @return The annotation.
      */
-    public Builder setDatasets(long value) {
-      
-      datasets_ = value;
-      onChanged();
+    public com.clarifai.grpc.api.Annotation getAnnotation() {
+      if (annotationBuilder_ == null) {
+        return annotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
+      } else {
+        return annotationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Annotation annotation = 2;</code>
+     */
+    public Builder setAnnotation(com.clarifai.grpc.api.Annotation value) {
+      if (annotationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        annotation_ = value;
+        onChanged();
+      } else {
+        annotationBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int64 datasets = 2;</code>
-     * @return This builder for chaining.
+     * <code>.clarifai.api.Annotation annotation = 2;</code>
      */
-    public Builder clearDatasets() {
-      
-      datasets_ = 0L;
-      onChanged();
+    public Builder setAnnotation(
+        com.clarifai.grpc.api.Annotation.Builder builderForValue) {
+      if (annotationBuilder_ == null) {
+        annotation_ = builderForValue.build();
+        onChanged();
+      } else {
+        annotationBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <code>.clarifai.api.Annotation annotation = 2;</code>
+     */
+    public Builder mergeAnnotation(com.clarifai.grpc.api.Annotation value) {
+      if (annotationBuilder_ == null) {
+        if (annotation_ != null) {
+          annotation_ =
+            com.clarifai.grpc.api.Annotation.newBuilder(annotation_).mergeFrom(value).buildPartial();
+        } else {
+          annotation_ = value;
+        }
+        onChanged();
+      } else {
+        annotationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Annotation annotation = 2;</code>
+     */
+    public Builder clearAnnotation() {
+      if (annotationBuilder_ == null) {
+        annotation_ = null;
+        onChanged();
+      } else {
+        annotation_ = null;
+        annotationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Annotation annotation = 2;</code>
+     */
+    public com.clarifai.grpc.api.Annotation.Builder getAnnotationBuilder() {
+      
+      onChanged();
+      return getAnnotationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Annotation annotation = 2;</code>
+     */
+    public com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder() {
+      if (annotationBuilder_ != null) {
+        return annotationBuilder_.getMessageOrBuilder();
+      } else {
+        return annotation_ == null ?
+            com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Annotation annotation = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder> 
+        getAnnotationFieldBuilder() {
+      if (annotationBuilder_ == null) {
+        annotationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder>(
+                getAnnotation(),
+                getParentForChildren(),
+                isClean());
+        annotation_ = null;
+      }
+      return annotationBuilder_;
     }
 
-    private long models_ ;
+    private boolean frameFullyProcessed_ ;
     /**
-     * <code>int64 models = 3;</code>
-     * @return The models.
+     * <pre>
+     * Indicates if this frame has been fully processed
+     * Needed in case client needs to decide whether to stop and wait for more data or continue playback
+     * </pre>
+     *
+     * <code>bool frame_fully_processed = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The frameFullyProcessed.
      */
     @java.lang.Override
-    public long getModels() {
-      return models_;
+    public boolean getFrameFullyProcessed() {
+      return frameFullyProcessed_;
     }
     /**
-     * <code>int64 models = 3;</code>
-     * @param value The models to set.
+     * <pre>
+     * Indicates if this frame has been fully processed
+     * Needed in case client needs to decide whether to stop and wait for more data or continue playback
+     * </pre>
+     *
+     * <code>bool frame_fully_processed = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The frameFullyProcessed to set.
      * @return This builder for chaining.
      */
-    public Builder setModels(long value) {
+    public Builder setFrameFullyProcessed(boolean value) {
       
-      models_ = value;
+      frameFullyProcessed_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 models = 3;</code>
+     * <pre>
+     * Indicates if this frame has been fully processed
+     * Needed in case client needs to decide whether to stop and wait for more data or continue playback
+     * </pre>
+     *
+     * <code>bool frame_fully_processed = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearModels() {
+    public Builder clearFrameFullyProcessed() {
       
-      models_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long workflows_ ;
-    /**
-     * <code>int64 workflows = 4;</code>
-     * @return The workflows.
-     */
-    @java.lang.Override
-    public long getWorkflows() {
-      return workflows_;
-    }
-    /**
-     * <code>int64 workflows = 4;</code>
-     * @param value The workflows to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWorkflows(long value) {
-      
-      workflows_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 workflows = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearWorkflows() {
-      
-      workflows_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long modules_ ;
-    /**
-     * <code>int64 modules = 5;</code>
-     * @return The modules.
-     */
-    @java.lang.Override
-    public long getModules() {
-      return modules_;
-    }
-    /**
-     * <code>int64 modules = 5;</code>
-     * @param value The modules to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModules(long value) {
-      
-      modules_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 modules = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearModules() {
-      
-      modules_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long inputs_ ;
-    /**
-     * <code>int64 inputs = 6;</code>
-     * @return The inputs.
-     */
-    @java.lang.Override
-    public long getInputs() {
-      return inputs_;
-    }
-    /**
-     * <code>int64 inputs = 6;</code>
-     * @param value The inputs to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInputs(long value) {
-      
-      inputs_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 inputs = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearInputs() {
-      
-      inputs_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long pipelines_ ;
-    /**
-     * <code>int64 pipelines = 7;</code>
-     * @return The pipelines.
-     */
-    @java.lang.Override
-    public long getPipelines() {
-      return pipelines_;
-    }
-    /**
-     * <code>int64 pipelines = 7;</code>
-     * @param value The pipelines to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPipelines(long value) {
-      
-      pipelines_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 pipelines = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPipelines() {
-      
-      pipelines_ = 0L;
+      frameFullyProcessed_ = false;
       onChanged();
       return this;
     }
@@ -965,41 +848,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.GetResourceCountsResponse)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.SingleStreamTrackAnnotationResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.GetResourceCountsResponse)
-  private static final com.clarifai.grpc.api.GetResourceCountsResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.SingleStreamTrackAnnotationResponse)
+  private static final com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.GetResourceCountsResponse();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse();
   }
 
-  public static com.clarifai.grpc.api.GetResourceCountsResponse getDefaultInstance() {
+  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetResourceCountsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetResourceCountsResponse>() {
+  private static final com.google.protobuf.Parser<SingleStreamTrackAnnotationResponse>
+      PARSER = new com.google.protobuf.AbstractParser<SingleStreamTrackAnnotationResponse>() {
     @java.lang.Override
-    public GetResourceCountsResponse parsePartialFrom(
+    public SingleStreamTrackAnnotationResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetResourceCountsResponse(input, extensionRegistry);
+      return new SingleStreamTrackAnnotationResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetResourceCountsResponse> parser() {
+  public static com.google.protobuf.Parser<SingleStreamTrackAnnotationResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetResourceCountsResponse> getParserForType() {
+  public com.google.protobuf.Parser<SingleStreamTrackAnnotationResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.GetResourceCountsResponse getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

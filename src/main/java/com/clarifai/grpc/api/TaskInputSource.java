@@ -133,6 +133,14 @@ private static final long serialVersionUID = 0L;
      * <code>DATASET = 3;</code>
      */
     DATASET(3),
+    /**
+     * <pre>
+     * Single input (e.g. video livestream input)
+     * </pre>
+     *
+     * <code>INPUT = 4;</code>
+     */
+    INPUT(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -164,6 +172,14 @@ private static final long serialVersionUID = 0L;
      * <code>DATASET = 3;</code>
      */
     public static final int DATASET_VALUE = 3;
+    /**
+     * <pre>
+     * Single input (e.g. video livestream input)
+     * </pre>
+     *
+     * <code>INPUT = 4;</code>
+     */
+    public static final int INPUT_VALUE = 4;
 
 
     public final int getNumber() {
@@ -194,6 +210,7 @@ private static final long serialVersionUID = 0L;
         case 1: return ALL_INPUTS;
         case 2: return SAVED_SEARCH;
         case 3: return DATASET;
+        case 4: return INPUT;
         default: return null;
       }
     }

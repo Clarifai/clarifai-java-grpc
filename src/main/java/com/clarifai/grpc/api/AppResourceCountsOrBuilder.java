@@ -36,4 +36,10 @@ public interface AppResourceCountsOrBuilder extends
    * @return The inputs.
    */
   long getInputs();
+
+  /**
+   * <code>int64 pipelines = 6;</code>
+   * @return The pipelines.
+   */
+  long getPipelines();
 }

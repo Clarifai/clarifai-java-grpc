@@ -101,13 +101,16 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+   * Deprecated: Not used.
    * </pre>
    *
-   * <code>float sample_percentage = 1;</code>
+   * <code>float sample_percentage = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskReviewManualStrategyInfo.sample_percentage is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3592
    * @return The samplePercentage.
    */
   @java.lang.Override
-  public float getSamplePercentage() {
+  @java.lang.Deprecated public float getSamplePercentage() {
     return samplePercentage_;
   }
 
@@ -118,11 +121,13 @@ private static final long serialVersionUID = 0L;
    * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
    * </pre>
    *
-   * <code>int32 approval_threshold = 2;</code>
+   * <code>int32 approval_threshold = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskReviewManualStrategyInfo.approval_threshold is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3595
    * @return The approvalThreshold.
    */
   @java.lang.Override
-  public int getApprovalThreshold() {
+  @java.lang.Deprecated public int getApprovalThreshold() {
     return approvalThreshold_;
   }
 
@@ -455,25 +460,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+     * Deprecated: Not used.
      * </pre>
      *
-     * <code>float sample_percentage = 1;</code>
+     * <code>float sample_percentage = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskReviewManualStrategyInfo.sample_percentage is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3592
      * @return The samplePercentage.
      */
     @java.lang.Override
-    public float getSamplePercentage() {
+    @java.lang.Deprecated public float getSamplePercentage() {
       return samplePercentage_;
     }
     /**
      * <pre>
      * This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+     * Deprecated: Not used.
      * </pre>
      *
-     * <code>float sample_percentage = 1;</code>
+     * <code>float sample_percentage = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskReviewManualStrategyInfo.sample_percentage is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3592
      * @param value The samplePercentage to set.
      * @return This builder for chaining.
      */
-    public Builder setSamplePercentage(float value) {
+    @java.lang.Deprecated public Builder setSamplePercentage(float value) {
       
       samplePercentage_ = value;
       onChanged();
@@ -482,12 +493,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+     * Deprecated: Not used.
      * </pre>
      *
-     * <code>float sample_percentage = 1;</code>
+     * <code>float sample_percentage = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskReviewManualStrategyInfo.sample_percentage is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3592
      * @return This builder for chaining.
      */
-    public Builder clearSamplePercentage() {
+    @java.lang.Deprecated public Builder clearSamplePercentage() {
       
       samplePercentage_ = 0F;
       onChanged();
@@ -500,11 +514,13 @@ private static final long serialVersionUID = 0L;
      * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      * </pre>
      *
-     * <code>int32 approval_threshold = 2;</code>
+     * <code>int32 approval_threshold = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskReviewManualStrategyInfo.approval_threshold is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3595
      * @return The approvalThreshold.
      */
     @java.lang.Override
-    public int getApprovalThreshold() {
+    @java.lang.Deprecated public int getApprovalThreshold() {
       return approvalThreshold_;
     }
     /**
@@ -512,11 +528,13 @@ private static final long serialVersionUID = 0L;
      * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      * </pre>
      *
-     * <code>int32 approval_threshold = 2;</code>
+     * <code>int32 approval_threshold = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskReviewManualStrategyInfo.approval_threshold is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3595
      * @param value The approvalThreshold to set.
      * @return This builder for chaining.
      */
-    public Builder setApprovalThreshold(int value) {
+    @java.lang.Deprecated public Builder setApprovalThreshold(int value) {
       
       approvalThreshold_ = value;
       onChanged();
@@ -527,10 +545,12 @@ private static final long serialVersionUID = 0L;
      * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      * </pre>
      *
-     * <code>int32 approval_threshold = 2;</code>
+     * <code>int32 approval_threshold = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskReviewManualStrategyInfo.approval_threshold is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3595
      * @return This builder for chaining.
      */
-    public Builder clearApprovalThreshold() {
+    @java.lang.Deprecated public Builder clearApprovalThreshold() {
       
       approvalThreshold_ = 0;
       onChanged();

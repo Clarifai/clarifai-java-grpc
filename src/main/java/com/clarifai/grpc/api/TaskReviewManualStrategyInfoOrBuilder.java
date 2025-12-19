@@ -10,20 +10,25 @@ public interface TaskReviewManualStrategyInfoOrBuilder extends
   /**
    * <pre>
    * This field represents the percentage of inputs that will be reviewed by reviewers. It is a value between 0 and 1.
+   * Deprecated: Not used.
    * </pre>
    *
-   * <code>float sample_percentage = 1;</code>
+   * <code>float sample_percentage = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskReviewManualStrategyInfo.sample_percentage is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3592
    * @return The samplePercentage.
    */
-  float getSamplePercentage();
+  @java.lang.Deprecated float getSamplePercentage();
 
   /**
    * <pre>
    * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
    * </pre>
    *
-   * <code>int32 approval_threshold = 2;</code>
+   * <code>int32 approval_threshold = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskReviewManualStrategyInfo.approval_threshold is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3595
    * @return The approvalThreshold.
    */
-  int getApprovalThreshold();
+  @java.lang.Deprecated int getApprovalThreshold();
 }

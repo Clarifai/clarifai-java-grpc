@@ -51,4 +51,10 @@ public interface GetResourceCountsResponseOrBuilder extends
    * @return The inputs.
    */
   long getInputs();
+
+  /**
+   * <code>int64 pipelines = 7;</code>
+   * @return The pipelines.
+   */
+  long getPipelines();
 }

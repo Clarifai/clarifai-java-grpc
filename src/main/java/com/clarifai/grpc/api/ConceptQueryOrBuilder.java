@@ -54,7 +54,7 @@ public interface ConceptQueryOrBuilder extends
    *
    * <code>string workflow_id = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=560
+   *     See proto/clarifai/api/resources.proto;l=561
    * @return The workflowId.
    */
   @java.lang.Deprecated java.lang.String getWorkflowId();
@@ -65,7 +65,7 @@ public interface ConceptQueryOrBuilder extends
    *
    * <code>string workflow_id = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=560
+   *     See proto/clarifai/api/resources.proto;l=561
    * @return The bytes for workflowId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
