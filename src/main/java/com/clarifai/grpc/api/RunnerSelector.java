@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Runner runner_;
   /**
    * <pre>
-   * Optionally a partcular runner within the nodepool.
+   * Optionally a particular runner within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Runner runner = 2;</code>
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optionally a partcular runner within the nodepool.
+   * Optionally a particular runner within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Runner runner = 2;</code>
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optionally a partcular runner within the nodepool.
+   * Optionally a particular runner within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Runner runner = 2;</code>
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Deployment deployment_;
   /**
    * <pre>
-   * Optionally a partcular deployment within the nodepool.
+   * Optionally a particular deployment within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optionally a partcular deployment within the nodepool.
+   * Optionally a particular deployment within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -244,7 +244,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optionally a partcular deployment within the nodepool.
+   * Optionally a particular deployment within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -826,7 +826,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Runner, com.clarifai.grpc.api.Runner.Builder, com.clarifai.grpc.api.RunnerOrBuilder> runnerBuilder_;
     /**
      * <pre>
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Runner runner = 2;</code>
@@ -837,7 +837,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Runner runner = 2;</code>
@@ -852,7 +852,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Runner runner = 2;</code>
@@ -872,7 +872,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Runner runner = 2;</code>
@@ -890,7 +890,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Runner runner = 2;</code>
@@ -912,7 +912,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Runner runner = 2;</code>
@@ -930,7 +930,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Runner runner = 2;</code>
@@ -942,7 +942,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Runner runner = 2;</code>
@@ -957,7 +957,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular runner within the nodepool.
+     * Optionally a particular runner within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Runner runner = 2;</code>
@@ -981,7 +981,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Deployment, com.clarifai.grpc.api.Deployment.Builder, com.clarifai.grpc.api.DeploymentOrBuilder> deploymentBuilder_;
     /**
      * <pre>
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -992,7 +992,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -1007,7 +1007,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -1027,7 +1027,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -1045,7 +1045,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -1067,7 +1067,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -1085,7 +1085,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -1097,7 +1097,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -1112,7 +1112,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optionally a partcular deployment within the nodepool.
+     * Optionally a particular deployment within the nodepool.
      * </pre>
      *
      * <code>.clarifai.api.Deployment deployment = 3;</code>

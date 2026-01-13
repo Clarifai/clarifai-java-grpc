@@ -8261,6 +8261,37 @@ public final class V2Grpc {
     return getPatchPipelineVersionRunsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse> getListPipelineVersionRunStatusLogsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPipelineVersionRunStatusLogs",
+      requestType = com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest,
+      com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse> getListPipelineVersionRunStatusLogsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest, com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse> getListPipelineVersionRunStatusLogsMethod;
+    if ((getListPipelineVersionRunStatusLogsMethod = V2Grpc.getListPipelineVersionRunStatusLogsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListPipelineVersionRunStatusLogsMethod = V2Grpc.getListPipelineVersionRunStatusLogsMethod) == null) {
+          V2Grpc.getListPipelineVersionRunStatusLogsMethod = getListPipelineVersionRunStatusLogsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest, com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPipelineVersionRunStatusLogs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListPipelineVersionRunStatusLogs"))
+              .build();
+        }
+      }
+    }
+    return getListPipelineVersionRunStatusLogsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelineStepsRequest,
       com.clarifai.grpc.api.MultiPipelineStepResponse> getPostPipelineStepsMethod;
 
@@ -11666,6 +11697,13 @@ public final class V2Grpc {
 
     /**
      */
+    public void listPipelineVersionRunStatusLogs(com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPipelineVersionRunStatusLogsMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void postPipelineSteps(com.clarifai.grpc.api.PostPipelineStepsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineStepResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostPipelineStepsMethod(), responseObserver);
@@ -13703,6 +13741,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PatchPipelineVersionRunsRequest,
                 com.clarifai.grpc.api.MultiPipelineVersionRunResponse>(
                   this, METHODID_PATCH_PIPELINE_VERSION_RUNS)))
+          .addMethod(
+            getListPipelineVersionRunStatusLogsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest,
+                com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse>(
+                  this, METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS)))
           .addMethod(
             getPostPipelineStepsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -16792,6 +16837,14 @@ public final class V2Grpc {
 
     /**
      */
+    public void listPipelineVersionRunStatusLogs(com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPipelineVersionRunStatusLogsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void postPipelineSteps(com.clarifai.grpc.api.PostPipelineStepsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineStepResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -19607,6 +19660,13 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiPipelineVersionRunResponse patchPipelineVersionRuns(com.clarifai.grpc.api.PatchPipelineVersionRunsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPatchPipelineVersionRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse listPipelineVersionRunStatusLogs(com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPipelineVersionRunStatusLogsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -22608,6 +22668,14 @@ public final class V2Grpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse> listPipelineVersionRunStatusLogs(
+        com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPipelineVersionRunStatusLogsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineStepResponse> postPipelineSteps(
         com.clarifai.grpc.api.PostPipelineStepsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -23038,32 +23106,33 @@ public final class V2Grpc {
   private static final int METHODID_GET_PIPELINE_VERSION_RUN = 260;
   private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 261;
   private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 262;
-  private static final int METHODID_POST_PIPELINE_STEPS = 263;
-  private static final int METHODID_GET_PIPELINE_STEP = 264;
-  private static final int METHODID_LIST_PIPELINE_STEPS = 265;
-  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 266;
-  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 267;
-  private static final int METHODID_DELETE_PIPELINE_STEPS = 268;
-  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 269;
-  private static final int METHODID_POST_ARTIFACTS = 270;
-  private static final int METHODID_GET_ARTIFACT = 271;
-  private static final int METHODID_LIST_ARTIFACTS = 272;
-  private static final int METHODID_DELETE_ARTIFACT = 273;
-  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 274;
-  private static final int METHODID_GET_ARTIFACT_VERSION = 275;
-  private static final int METHODID_DELETE_ARTIFACT_VERSION = 276;
-  private static final int METHODID_GET_SECRET = 277;
-  private static final int METHODID_LIST_SECRETS = 278;
-  private static final int METHODID_POST_SECRETS = 279;
-  private static final int METHODID_PATCH_SECRETS = 280;
-  private static final int METHODID_DELETE_SECRETS = 281;
-  private static final int METHODID_POST_METRICS_QUERY = 282;
-  private static final int METHODID_LIST_METRIC_LABELS = 283;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 284;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 285;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 286;
-  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 287;
-  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 288;
+  private static final int METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS = 263;
+  private static final int METHODID_POST_PIPELINE_STEPS = 264;
+  private static final int METHODID_GET_PIPELINE_STEP = 265;
+  private static final int METHODID_LIST_PIPELINE_STEPS = 266;
+  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 267;
+  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 268;
+  private static final int METHODID_DELETE_PIPELINE_STEPS = 269;
+  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 270;
+  private static final int METHODID_POST_ARTIFACTS = 271;
+  private static final int METHODID_GET_ARTIFACT = 272;
+  private static final int METHODID_LIST_ARTIFACTS = 273;
+  private static final int METHODID_DELETE_ARTIFACT = 274;
+  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 275;
+  private static final int METHODID_GET_ARTIFACT_VERSION = 276;
+  private static final int METHODID_DELETE_ARTIFACT_VERSION = 277;
+  private static final int METHODID_GET_SECRET = 278;
+  private static final int METHODID_LIST_SECRETS = 279;
+  private static final int METHODID_POST_SECRETS = 280;
+  private static final int METHODID_PATCH_SECRETS = 281;
+  private static final int METHODID_DELETE_SECRETS = 282;
+  private static final int METHODID_POST_METRICS_QUERY = 283;
+  private static final int METHODID_LIST_METRIC_LABELS = 284;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 285;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 286;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 287;
+  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 288;
+  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 289;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -24134,6 +24203,10 @@ public final class V2Grpc {
           serviceImpl.patchPipelineVersionRuns((com.clarifai.grpc.api.PatchPipelineVersionRunsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunResponse>) responseObserver);
           break;
+        case METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS:
+          serviceImpl.listPipelineVersionRunStatusLogs((com.clarifai.grpc.api.ListPipelineVersionRunStatusLogsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineVersionRunStatusLogResponse>) responseObserver);
+          break;
         case METHODID_POST_PIPELINE_STEPS:
           serviceImpl.postPipelineSteps((com.clarifai.grpc.api.PostPipelineStepsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineStepResponse>) responseObserver);
@@ -24560,6 +24633,7 @@ public final class V2Grpc {
               .addMethod(getGetPipelineVersionRunMethod())
               .addMethod(getPostPipelineVersionRunsMethod())
               .addMethod(getPatchPipelineVersionRunsMethod())
+              .addMethod(getListPipelineVersionRunStatusLogsMethod())
               .addMethod(getPostPipelineStepsMethod())
               .addMethod(getGetPipelineStepMethod())
               .addMethod(getListPipelineStepsMethod())

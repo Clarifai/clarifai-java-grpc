@@ -158,6 +158,45 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 90: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (startedAt_ != null) {
+              subBuilder = startedAt_.toBuilder();
+            }
+            startedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(startedAt_);
+              startedAt_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 98: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (endedAt_ != null) {
+              subBuilder = endedAt_.toBuilder();
+            }
+            endedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(endedAt_);
+              endedAt_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 106: {
+            com.google.protobuf.Duration.Builder subBuilder = null;
+            if (totalRunDuration_ != null) {
+              subBuilder = totalRunDuration_.toBuilder();
+            }
+            totalRunDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(totalRunDuration_);
+              totalRunDuration_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -616,6 +655,120 @@ private static final long serialVersionUID = 0L;
     return getOrchestrationSpec();
   }
 
+  public static final int STARTED_AT_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp startedAt_;
+  /**
+   * <pre>
+   * When the pipeline run started executing (first JOB_RUNNING status)
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp started_at = 11;</code>
+   * @return Whether the startedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartedAt() {
+    return startedAt_ != null;
+  }
+  /**
+   * <pre>
+   * When the pipeline run started executing (first JOB_RUNNING status)
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp started_at = 11;</code>
+   * @return The startedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getStartedAt() {
+    return startedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
+  }
+  /**
+   * <pre>
+   * When the pipeline run started executing (first JOB_RUNNING status)
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp started_at = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getStartedAtOrBuilder() {
+    return getStartedAt();
+  }
+
+  public static final int ENDED_AT_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp endedAt_;
+  /**
+   * <pre>
+   * When the pipeline run finished executing (terminal status)  
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+   * @return Whether the endedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndedAt() {
+    return endedAt_ != null;
+  }
+  /**
+   * <pre>
+   * When the pipeline run finished executing (terminal status)  
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+   * @return The endedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getEndedAt() {
+    return endedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endedAt_;
+  }
+  /**
+   * <pre>
+   * When the pipeline run finished executing (terminal status)  
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getEndedAtOrBuilder() {
+    return getEndedAt();
+  }
+
+  public static final int TOTAL_RUN_DURATION_FIELD_NUMBER = 13;
+  private com.google.protobuf.Duration totalRunDuration_;
+  /**
+   * <pre>
+   * Total cumulative run duration excluding pause time
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+   * @return Whether the totalRunDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalRunDuration() {
+    return totalRunDuration_ != null;
+  }
+  /**
+   * <pre>
+   * Total cumulative run duration excluding pause time
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+   * @return The totalRunDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTotalRunDuration() {
+    return totalRunDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : totalRunDuration_;
+  }
+  /**
+   * <pre>
+   * Total cumulative run duration excluding pause time
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTotalRunDurationOrBuilder() {
+    return getTotalRunDuration();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -659,6 +812,15 @@ private static final long serialVersionUID = 0L;
     }
     if (orchestrationSpec_ != null) {
       output.writeMessage(10, getOrchestrationSpec());
+    }
+    if (startedAt_ != null) {
+      output.writeMessage(11, getStartedAt());
+    }
+    if (endedAt_ != null) {
+      output.writeMessage(12, getEndedAt());
+    }
+    if (totalRunDuration_ != null) {
+      output.writeMessage(13, getTotalRunDuration());
     }
     unknownFields.writeTo(output);
   }
@@ -705,6 +867,18 @@ private static final long serialVersionUID = 0L;
     if (orchestrationSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getOrchestrationSpec());
+    }
+    if (startedAt_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getStartedAt());
+    }
+    if (endedAt_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getEndedAt());
+    }
+    if (totalRunDuration_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getTotalRunDuration());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -759,6 +933,21 @@ private static final long serialVersionUID = 0L;
       if (!getOrchestrationSpec()
           .equals(other.getOrchestrationSpec())) return false;
     }
+    if (hasStartedAt() != other.hasStartedAt()) return false;
+    if (hasStartedAt()) {
+      if (!getStartedAt()
+          .equals(other.getStartedAt())) return false;
+    }
+    if (hasEndedAt() != other.hasEndedAt()) return false;
+    if (hasEndedAt()) {
+      if (!getEndedAt()
+          .equals(other.getEndedAt())) return false;
+    }
+    if (hasTotalRunDuration() != other.hasTotalRunDuration()) return false;
+    if (hasTotalRunDuration()) {
+      if (!getTotalRunDuration()
+          .equals(other.getTotalRunDuration())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -803,6 +992,18 @@ private static final long serialVersionUID = 0L;
     if (hasOrchestrationSpec()) {
       hash = (37 * hash) + ORCHESTRATION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getOrchestrationSpec().hashCode();
+    }
+    if (hasStartedAt()) {
+      hash = (37 * hash) + STARTED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getStartedAt().hashCode();
+    }
+    if (hasEndedAt()) {
+      hash = (37 * hash) + ENDED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getEndedAt().hashCode();
+    }
+    if (hasTotalRunDuration()) {
+      hash = (37 * hash) + TOTAL_RUN_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalRunDuration().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -986,6 +1187,24 @@ private static final long serialVersionUID = 0L;
         orchestrationSpec_ = null;
         orchestrationSpecBuilder_ = null;
       }
+      if (startedAtBuilder_ == null) {
+        startedAt_ = null;
+      } else {
+        startedAt_ = null;
+        startedAtBuilder_ = null;
+      }
+      if (endedAtBuilder_ == null) {
+        endedAt_ = null;
+      } else {
+        endedAt_ = null;
+        endedAtBuilder_ = null;
+      }
+      if (totalRunDurationBuilder_ == null) {
+        totalRunDuration_ = null;
+      } else {
+        totalRunDuration_ = null;
+        totalRunDurationBuilder_ = null;
+      }
       return this;
     }
 
@@ -1054,6 +1273,21 @@ private static final long serialVersionUID = 0L;
         result.orchestrationSpec_ = orchestrationSpec_;
       } else {
         result.orchestrationSpec_ = orchestrationSpecBuilder_.build();
+      }
+      if (startedAtBuilder_ == null) {
+        result.startedAt_ = startedAt_;
+      } else {
+        result.startedAt_ = startedAtBuilder_.build();
+      }
+      if (endedAtBuilder_ == null) {
+        result.endedAt_ = endedAt_;
+      } else {
+        result.endedAt_ = endedAtBuilder_.build();
+      }
+      if (totalRunDurationBuilder_ == null) {
+        result.totalRunDuration_ = totalRunDuration_;
+      } else {
+        result.totalRunDuration_ = totalRunDurationBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1158,6 +1392,15 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasOrchestrationSpec()) {
         mergeOrchestrationSpec(other.getOrchestrationSpec());
+      }
+      if (other.hasStartedAt()) {
+        mergeStartedAt(other.getStartedAt());
+      }
+      if (other.hasEndedAt()) {
+        mergeEndedAt(other.getEndedAt());
+      }
+      if (other.hasTotalRunDuration()) {
+        mergeTotalRunDuration(other.getTotalRunDuration());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2706,6 +2949,471 @@ private static final long serialVersionUID = 0L;
         orchestrationSpec_ = null;
       }
       return orchestrationSpecBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp startedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startedAtBuilder_;
+    /**
+     * <pre>
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp started_at = 11;</code>
+     * @return Whether the startedAt field is set.
+     */
+    public boolean hasStartedAt() {
+      return startedAtBuilder_ != null || startedAt_ != null;
+    }
+    /**
+     * <pre>
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp started_at = 11;</code>
+     * @return The startedAt.
+     */
+    public com.google.protobuf.Timestamp getStartedAt() {
+      if (startedAtBuilder_ == null) {
+        return startedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
+      } else {
+        return startedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp started_at = 11;</code>
+     */
+    public Builder setStartedAt(com.google.protobuf.Timestamp value) {
+      if (startedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startedAt_ = value;
+        onChanged();
+      } else {
+        startedAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp started_at = 11;</code>
+     */
+    public Builder setStartedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (startedAtBuilder_ == null) {
+        startedAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        startedAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp started_at = 11;</code>
+     */
+    public Builder mergeStartedAt(com.google.protobuf.Timestamp value) {
+      if (startedAtBuilder_ == null) {
+        if (startedAt_ != null) {
+          startedAt_ =
+            com.google.protobuf.Timestamp.newBuilder(startedAt_).mergeFrom(value).buildPartial();
+        } else {
+          startedAt_ = value;
+        }
+        onChanged();
+      } else {
+        startedAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp started_at = 11;</code>
+     */
+    public Builder clearStartedAt() {
+      if (startedAtBuilder_ == null) {
+        startedAt_ = null;
+        onChanged();
+      } else {
+        startedAt_ = null;
+        startedAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp started_at = 11;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getStartedAtBuilder() {
+      
+      onChanged();
+      return getStartedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp started_at = 11;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getStartedAtOrBuilder() {
+      if (startedAtBuilder_ != null) {
+        return startedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return startedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When the pipeline run started executing (first JOB_RUNNING status)
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp started_at = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getStartedAtFieldBuilder() {
+      if (startedAtBuilder_ == null) {
+        startedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getStartedAt(),
+                getParentForChildren(),
+                isClean());
+        startedAt_ = null;
+      }
+      return startedAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp endedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endedAtBuilder_;
+    /**
+     * <pre>
+     * When the pipeline run finished executing (terminal status)  
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     * @return Whether the endedAt field is set.
+     */
+    public boolean hasEndedAt() {
+      return endedAtBuilder_ != null || endedAt_ != null;
+    }
+    /**
+     * <pre>
+     * When the pipeline run finished executing (terminal status)  
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     * @return The endedAt.
+     */
+    public com.google.protobuf.Timestamp getEndedAt() {
+      if (endedAtBuilder_ == null) {
+        return endedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endedAt_;
+      } else {
+        return endedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When the pipeline run finished executing (terminal status)  
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     */
+    public Builder setEndedAt(com.google.protobuf.Timestamp value) {
+      if (endedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endedAt_ = value;
+        onChanged();
+      } else {
+        endedAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the pipeline run finished executing (terminal status)  
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     */
+    public Builder setEndedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (endedAtBuilder_ == null) {
+        endedAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        endedAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the pipeline run finished executing (terminal status)  
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     */
+    public Builder mergeEndedAt(com.google.protobuf.Timestamp value) {
+      if (endedAtBuilder_ == null) {
+        if (endedAt_ != null) {
+          endedAt_ =
+            com.google.protobuf.Timestamp.newBuilder(endedAt_).mergeFrom(value).buildPartial();
+        } else {
+          endedAt_ = value;
+        }
+        onChanged();
+      } else {
+        endedAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the pipeline run finished executing (terminal status)  
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     */
+    public Builder clearEndedAt() {
+      if (endedAtBuilder_ == null) {
+        endedAt_ = null;
+        onChanged();
+      } else {
+        endedAt_ = null;
+        endedAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the pipeline run finished executing (terminal status)  
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getEndedAtBuilder() {
+      
+      onChanged();
+      return getEndedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When the pipeline run finished executing (terminal status)  
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getEndedAtOrBuilder() {
+      if (endedAtBuilder_ != null) {
+        return endedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return endedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : endedAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When the pipeline run finished executing (terminal status)  
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getEndedAtFieldBuilder() {
+      if (endedAtBuilder_ == null) {
+        endedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getEndedAt(),
+                getParentForChildren(),
+                isClean());
+        endedAt_ = null;
+      }
+      return endedAtBuilder_;
+    }
+
+    private com.google.protobuf.Duration totalRunDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> totalRunDurationBuilder_;
+    /**
+     * <pre>
+     * Total cumulative run duration excluding pause time
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     * @return Whether the totalRunDuration field is set.
+     */
+    public boolean hasTotalRunDuration() {
+      return totalRunDurationBuilder_ != null || totalRunDuration_ != null;
+    }
+    /**
+     * <pre>
+     * Total cumulative run duration excluding pause time
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     * @return The totalRunDuration.
+     */
+    public com.google.protobuf.Duration getTotalRunDuration() {
+      if (totalRunDurationBuilder_ == null) {
+        return totalRunDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : totalRunDuration_;
+      } else {
+        return totalRunDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Total cumulative run duration excluding pause time
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     */
+    public Builder setTotalRunDuration(com.google.protobuf.Duration value) {
+      if (totalRunDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        totalRunDuration_ = value;
+        onChanged();
+      } else {
+        totalRunDurationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Total cumulative run duration excluding pause time
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     */
+    public Builder setTotalRunDuration(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (totalRunDurationBuilder_ == null) {
+        totalRunDuration_ = builderForValue.build();
+        onChanged();
+      } else {
+        totalRunDurationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Total cumulative run duration excluding pause time
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     */
+    public Builder mergeTotalRunDuration(com.google.protobuf.Duration value) {
+      if (totalRunDurationBuilder_ == null) {
+        if (totalRunDuration_ != null) {
+          totalRunDuration_ =
+            com.google.protobuf.Duration.newBuilder(totalRunDuration_).mergeFrom(value).buildPartial();
+        } else {
+          totalRunDuration_ = value;
+        }
+        onChanged();
+      } else {
+        totalRunDurationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Total cumulative run duration excluding pause time
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     */
+    public Builder clearTotalRunDuration() {
+      if (totalRunDurationBuilder_ == null) {
+        totalRunDuration_ = null;
+        onChanged();
+      } else {
+        totalRunDuration_ = null;
+        totalRunDurationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Total cumulative run duration excluding pause time
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     */
+    public com.google.protobuf.Duration.Builder getTotalRunDurationBuilder() {
+      
+      onChanged();
+      return getTotalRunDurationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Total cumulative run duration excluding pause time
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getTotalRunDurationOrBuilder() {
+      if (totalRunDurationBuilder_ != null) {
+        return totalRunDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return totalRunDuration_ == null ?
+            com.google.protobuf.Duration.getDefaultInstance() : totalRunDuration_;
+      }
+    }
+    /**
+     * <pre>
+     * Total cumulative run duration excluding pause time
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+        getTotalRunDurationFieldBuilder() {
+      if (totalRunDurationBuilder_ == null) {
+        totalRunDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                getTotalRunDuration(),
+                getParentForChildren(),
+                isClean());
+        totalRunDuration_ = null;
+      }
+      return totalRunDurationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

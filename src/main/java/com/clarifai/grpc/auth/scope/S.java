@@ -847,6 +847,14 @@ public enum S
    * <code>Artifacts_Delete = 172 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Add];</code>
    */
   Artifacts_Delete(172),
+  /**
+   * <pre>
+   * Pipeline version run status logs (audit trail)
+   * </pre>
+   *
+   * <code>PipelineVersionRunStatusLogs_Get = 173 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  PipelineVersionRunStatusLogs_Get(173),
   UNRECOGNIZED(-1),
   ;
 
@@ -1656,6 +1664,14 @@ public enum S
    * <code>Artifacts_Delete = 172 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Artifacts_Add];</code>
    */
   public static final int Artifacts_Delete_VALUE = 172;
+  /**
+   * <pre>
+   * Pipeline version run status logs (audit trail)
+   * </pre>
+   *
+   * <code>PipelineVersionRunStatusLogs_Get = 173 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int PipelineVersionRunStatusLogs_Get_VALUE = 173;
 
 
   public final int getNumber() {
@@ -1803,6 +1819,7 @@ public enum S
       case 170: return Artifacts_Get;
       case 171: return Artifacts_Add;
       case 172: return Artifacts_Delete;
+      case 173: return PipelineVersionRunStatusLogs_Get;
       default: return null;
     }
   }

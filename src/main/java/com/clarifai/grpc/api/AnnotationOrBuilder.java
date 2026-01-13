@@ -108,7 +108,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>string user_id = 15 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.user_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=37
+   *     See proto/clarifai/api/resources.proto;l=38
    * @return The userId.
    */
   @java.lang.Deprecated java.lang.String getUserId();
@@ -119,7 +119,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>string user_id = 15 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.user_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=37
+   *     See proto/clarifai/api/resources.proto;l=38
    * @return The bytes for userId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -132,7 +132,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>string model_version_id = 16 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=40
+   *     See proto/clarifai/api/resources.proto;l=41
    * @return The modelVersionId.
    */
   @java.lang.Deprecated java.lang.String getModelVersionId();
@@ -143,7 +143,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>string model_version_id = 16 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=40
+   *     See proto/clarifai/api/resources.proto;l=41
    * @return The bytes for modelVersionId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -156,7 +156,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=43
+   *     See proto/clarifai/api/resources.proto;l=44
    * @return The embedModelVersionId.
    */
   @java.lang.Deprecated java.lang.String getEmbedModelVersionId();
@@ -167,7 +167,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=43
+   *     See proto/clarifai/api/resources.proto;l=44
    * @return The bytes for embedModelVersionId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -274,7 +274,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>bool trusted = 10 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.trusted is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=60
+   *     See proto/clarifai/api/resources.proto;l=61
    * @return The trusted.
    */
   @java.lang.Deprecated boolean getTrusted();

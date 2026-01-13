@@ -34,7 +34,7 @@ public interface TaskWorkerOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3430
+   *     See proto/clarifai/api/resources.proto;l=3431
    * @return A list containing the userIds.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -47,7 +47,7 @@ public interface TaskWorkerOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3430
+   *     See proto/clarifai/api/resources.proto;l=3431
    * @return The count of userIds.
    */
   @java.lang.Deprecated int getUserIdsCount();
@@ -59,7 +59,7 @@ public interface TaskWorkerOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3430
+   *     See proto/clarifai/api/resources.proto;l=3431
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
@@ -72,7 +72,7 @@ public interface TaskWorkerOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3430
+   *     See proto/clarifai/api/resources.proto;l=3431
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
@@ -247,6 +247,60 @@ public interface TaskWorkerOrBuilder extends
    * @return The type.
    */
   com.clarifai.grpc.api.TaskWorker.WorkerType getType();
+
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.RunnerSelector> 
+      getRunnerSelectorsList();
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  com.clarifai.grpc.api.RunnerSelector getRunnerSelectors(int index);
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  int getRunnerSelectorsCount();
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.RunnerSelectorOrBuilder> 
+      getRunnerSelectorsOrBuilderList();
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorsOrBuilder(
+      int index);
 
   public com.clarifai.grpc.api.TaskWorker.StrategyInfoCase getStrategyInfoCase();
 }

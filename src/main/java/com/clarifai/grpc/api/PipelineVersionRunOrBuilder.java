@@ -267,4 +267,85 @@ public interface PipelineVersionRunOrBuilder extends
    * <code>.clarifai.api.OrchestrationSpec orchestration_spec = 10;</code>
    */
   com.clarifai.grpc.api.OrchestrationSpecOrBuilder getOrchestrationSpecOrBuilder();
+
+  /**
+   * <pre>
+   * When the pipeline run started executing (first JOB_RUNNING status)
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp started_at = 11;</code>
+   * @return Whether the startedAt field is set.
+   */
+  boolean hasStartedAt();
+  /**
+   * <pre>
+   * When the pipeline run started executing (first JOB_RUNNING status)
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp started_at = 11;</code>
+   * @return The startedAt.
+   */
+  com.google.protobuf.Timestamp getStartedAt();
+  /**
+   * <pre>
+   * When the pipeline run started executing (first JOB_RUNNING status)
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp started_at = 11;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getStartedAtOrBuilder();
+
+  /**
+   * <pre>
+   * When the pipeline run finished executing (terminal status)  
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+   * @return Whether the endedAt field is set.
+   */
+  boolean hasEndedAt();
+  /**
+   * <pre>
+   * When the pipeline run finished executing (terminal status)  
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+   * @return The endedAt.
+   */
+  com.google.protobuf.Timestamp getEndedAt();
+  /**
+   * <pre>
+   * When the pipeline run finished executing (terminal status)  
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp ended_at = 12;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getEndedAtOrBuilder();
+
+  /**
+   * <pre>
+   * Total cumulative run duration excluding pause time
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+   * @return Whether the totalRunDuration field is set.
+   */
+  boolean hasTotalRunDuration();
+  /**
+   * <pre>
+   * Total cumulative run duration excluding pause time
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+   * @return The totalRunDuration.
+   */
+  com.google.protobuf.Duration getTotalRunDuration();
+  /**
+   * <pre>
+   * Total cumulative run duration excluding pause time
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_run_duration = 13;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTotalRunDurationOrBuilder();
 }

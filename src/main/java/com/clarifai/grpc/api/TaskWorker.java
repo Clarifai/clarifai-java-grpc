@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     users_ = java.util.Collections.emptyList();
     workers_ = java.util.Collections.emptyList();
     type_ = 0;
+    runnerSelectors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -111,6 +112,15 @@ private static final long serialVersionUID = 0L;
             type_ = rawValue;
             break;
           }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              runnerSelectors_ = new java.util.ArrayList<com.clarifai.grpc.api.RunnerSelector>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            runnerSelectors_.add(
+                input.readMessage(com.clarifai.grpc.api.RunnerSelector.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -136,6 +146,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         workers_ = java.util.Collections.unmodifiableList(workers_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        runnerSelectors_ = java.util.Collections.unmodifiableList(runnerSelectors_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -529,7 +542,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3430
+   *     See proto/clarifai/api/resources.proto;l=3431
    * @return A list containing the userIds.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -544,7 +557,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3430
+   *     See proto/clarifai/api/resources.proto;l=3431
    * @return The count of userIds.
    */
   @java.lang.Deprecated public int getUserIdsCount() {
@@ -558,7 +571,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3430
+   *     See proto/clarifai/api/resources.proto;l=3431
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
@@ -573,7 +586,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3430
+   *     See proto/clarifai/api/resources.proto;l=3431
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
@@ -807,6 +820,76 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.clarifai.grpc.api.TaskWorker.WorkerType.UNRECOGNIZED : result;
   }
 
+  public static final int RUNNER_SELECTORS_FIELD_NUMBER = 9;
+  private java.util.List<com.clarifai.grpc.api.RunnerSelector> runnerSelectors_;
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.RunnerSelector> getRunnerSelectorsList() {
+    return runnerSelectors_;
+  }
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.RunnerSelectorOrBuilder> 
+      getRunnerSelectorsOrBuilderList() {
+    return runnerSelectors_;
+  }
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  @java.lang.Override
+  public int getRunnerSelectorsCount() {
+    return runnerSelectors_.size();
+  }
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerSelector getRunnerSelectors(int index) {
+    return runnerSelectors_.get(index);
+  }
+  /**
+   * <pre>
+   * Runner selectors is used to select specific runners for the workers of this task.
+   * The index of runner_selectors corresponds to the index of workers.
+   * In other words: runner_selectors[i] is the runner selector for workers[i].
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorsOrBuilder(
+      int index) {
+    return runnerSelectors_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -838,6 +921,9 @@ private static final long serialVersionUID = 0L;
     }
     if (type_ != com.clarifai.grpc.api.TaskWorker.WorkerType.WORKER_TYPE_NOT_SET.getNumber()) {
       output.writeEnum(8, type_);
+    }
+    for (int i = 0; i < runnerSelectors_.size(); i++) {
+      output.writeMessage(9, runnerSelectors_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -876,6 +962,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, type_);
     }
+    for (int i = 0; i < runnerSelectors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, runnerSelectors_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -899,6 +989,8 @@ private static final long serialVersionUID = 0L;
     if (!getWorkersList()
         .equals(other.getWorkersList())) return false;
     if (type_ != other.type_) return false;
+    if (!getRunnerSelectorsList()
+        .equals(other.getRunnerSelectorsList())) return false;
     if (!getStrategyInfoCase().equals(other.getStrategyInfoCase())) return false;
     switch (strategyInfoCase_) {
       case 3:
@@ -935,6 +1027,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    if (getRunnerSelectorsCount() > 0) {
+      hash = (37 * hash) + RUNNER_SELECTORS_FIELD_NUMBER;
+      hash = (53 * hash) + getRunnerSelectorsList().hashCode();
+    }
     switch (strategyInfoCase_) {
       case 3:
         hash = (37 * hash) + PARTITIONED_STRATEGY_INFO_FIELD_NUMBER;
@@ -1077,6 +1173,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getUsersFieldBuilder();
         getWorkersFieldBuilder();
+        getRunnerSelectorsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1100,6 +1197,12 @@ private static final long serialVersionUID = 0L;
       }
       type_ = 0;
 
+      if (runnerSelectorsBuilder_ == null) {
+        runnerSelectors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        runnerSelectorsBuilder_.clear();
+      }
       strategyInfoCase_ = 0;
       strategyInfo_ = null;
       return this;
@@ -1161,6 +1264,15 @@ private static final long serialVersionUID = 0L;
         result.workers_ = workersBuilder_.build();
       }
       result.type_ = type_;
+      if (runnerSelectorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          runnerSelectors_ = java.util.Collections.unmodifiableList(runnerSelectors_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.runnerSelectors_ = runnerSelectors_;
+      } else {
+        result.runnerSelectors_ = runnerSelectorsBuilder_.build();
+      }
       result.strategyInfoCase_ = strategyInfoCase_;
       onBuilt();
       return result;
@@ -1277,6 +1389,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
+      }
+      if (runnerSelectorsBuilder_ == null) {
+        if (!other.runnerSelectors_.isEmpty()) {
+          if (runnerSelectors_.isEmpty()) {
+            runnerSelectors_ = other.runnerSelectors_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureRunnerSelectorsIsMutable();
+            runnerSelectors_.addAll(other.runnerSelectors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.runnerSelectors_.isEmpty()) {
+          if (runnerSelectorsBuilder_.isEmpty()) {
+            runnerSelectorsBuilder_.dispose();
+            runnerSelectorsBuilder_ = null;
+            runnerSelectors_ = other.runnerSelectors_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            runnerSelectorsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getRunnerSelectorsFieldBuilder() : null;
+          } else {
+            runnerSelectorsBuilder_.addAllMessages(other.runnerSelectors_);
+          }
+        }
       }
       switch (other.getStrategyInfoCase()) {
         case PARTITIONED_STRATEGY_INFO: {
@@ -1421,7 +1559,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3430
+     *     See proto/clarifai/api/resources.proto;l=3431
      * @return A list containing the userIds.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -1436,7 +1574,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3430
+     *     See proto/clarifai/api/resources.proto;l=3431
      * @return The count of userIds.
      */
     @java.lang.Deprecated public int getUserIdsCount() {
@@ -1450,7 +1588,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3430
+     *     See proto/clarifai/api/resources.proto;l=3431
      * @param index The index of the element to return.
      * @return The userIds at the given index.
      */
@@ -1465,7 +1603,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3430
+     *     See proto/clarifai/api/resources.proto;l=3431
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
      */
@@ -1481,7 +1619,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3430
+     *     See proto/clarifai/api/resources.proto;l=3431
      * @param index The index to set the value at.
      * @param value The userIds to set.
      * @return This builder for chaining.
@@ -1504,7 +1642,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3430
+     *     See proto/clarifai/api/resources.proto;l=3431
      * @param value The userIds to add.
      * @return This builder for chaining.
      */
@@ -1526,7 +1664,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3430
+     *     See proto/clarifai/api/resources.proto;l=3431
      * @param values The userIds to add.
      * @return This builder for chaining.
      */
@@ -1546,7 +1684,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3430
+     *     See proto/clarifai/api/resources.proto;l=3431
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearUserIds() {
@@ -1563,7 +1701,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3430
+     *     See proto/clarifai/api/resources.proto;l=3431
      * @param value The bytes of the userIds to add.
      * @return This builder for chaining.
      */
@@ -2584,6 +2722,354 @@ private static final long serialVersionUID = 0L;
       type_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.RunnerSelector> runnerSelectors_ =
+      java.util.Collections.emptyList();
+    private void ensureRunnerSelectorsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        runnerSelectors_ = new java.util.ArrayList<com.clarifai.grpc.api.RunnerSelector>(runnerSelectors_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder> runnerSelectorsBuilder_;
+
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.RunnerSelector> getRunnerSelectorsList() {
+      if (runnerSelectorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(runnerSelectors_);
+      } else {
+        return runnerSelectorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public int getRunnerSelectorsCount() {
+      if (runnerSelectorsBuilder_ == null) {
+        return runnerSelectors_.size();
+      } else {
+        return runnerSelectorsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelector getRunnerSelectors(int index) {
+      if (runnerSelectorsBuilder_ == null) {
+        return runnerSelectors_.get(index);
+      } else {
+        return runnerSelectorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public Builder setRunnerSelectors(
+        int index, com.clarifai.grpc.api.RunnerSelector value) {
+      if (runnerSelectorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.set(index, value);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public Builder setRunnerSelectors(
+        int index, com.clarifai.grpc.api.RunnerSelector.Builder builderForValue) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public Builder addRunnerSelectors(com.clarifai.grpc.api.RunnerSelector value) {
+      if (runnerSelectorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.add(value);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public Builder addRunnerSelectors(
+        int index, com.clarifai.grpc.api.RunnerSelector value) {
+      if (runnerSelectorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.add(index, value);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public Builder addRunnerSelectors(
+        com.clarifai.grpc.api.RunnerSelector.Builder builderForValue) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public Builder addRunnerSelectors(
+        int index, com.clarifai.grpc.api.RunnerSelector.Builder builderForValue) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public Builder addAllRunnerSelectors(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.RunnerSelector> values) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, runnerSelectors_);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public Builder clearRunnerSelectors() {
+      if (runnerSelectorsBuilder_ == null) {
+        runnerSelectors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public Builder removeRunnerSelectors(int index) {
+      if (runnerSelectorsBuilder_ == null) {
+        ensureRunnerSelectorsIsMutable();
+        runnerSelectors_.remove(index);
+        onChanged();
+      } else {
+        runnerSelectorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelector.Builder getRunnerSelectorsBuilder(
+        int index) {
+      return getRunnerSelectorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorsOrBuilder(
+        int index) {
+      if (runnerSelectorsBuilder_ == null) {
+        return runnerSelectors_.get(index);  } else {
+        return runnerSelectorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.RunnerSelectorOrBuilder> 
+         getRunnerSelectorsOrBuilderList() {
+      if (runnerSelectorsBuilder_ != null) {
+        return runnerSelectorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(runnerSelectors_);
+      }
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelector.Builder addRunnerSelectorsBuilder() {
+      return getRunnerSelectorsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.RunnerSelector.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelector.Builder addRunnerSelectorsBuilder(
+        int index) {
+      return getRunnerSelectorsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.RunnerSelector.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Runner selectors is used to select specific runners for the workers of this task.
+     * The index of runner_selectors corresponds to the index of workers.
+     * In other words: runner_selectors[i] is the runner selector for workers[i].
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.RunnerSelector runner_selectors = 9;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.RunnerSelector.Builder> 
+         getRunnerSelectorsBuilderList() {
+      return getRunnerSelectorsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder> 
+        getRunnerSelectorsFieldBuilder() {
+      if (runnerSelectorsBuilder_ == null) {
+        runnerSelectorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder>(
+                runnerSelectors_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        runnerSelectors_ = null;
+      }
+      return runnerSelectorsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

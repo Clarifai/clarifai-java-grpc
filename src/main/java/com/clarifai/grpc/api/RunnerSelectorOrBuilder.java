@@ -45,7 +45,7 @@ public interface RunnerSelectorOrBuilder extends
 
   /**
    * <pre>
-   * Optionally a partcular runner within the nodepool.
+   * Optionally a particular runner within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Runner runner = 2;</code>
@@ -54,7 +54,7 @@ public interface RunnerSelectorOrBuilder extends
   boolean hasRunner();
   /**
    * <pre>
-   * Optionally a partcular runner within the nodepool.
+   * Optionally a particular runner within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Runner runner = 2;</code>
@@ -63,7 +63,7 @@ public interface RunnerSelectorOrBuilder extends
   com.clarifai.grpc.api.Runner getRunner();
   /**
    * <pre>
-   * Optionally a partcular runner within the nodepool.
+   * Optionally a particular runner within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Runner runner = 2;</code>
@@ -72,7 +72,7 @@ public interface RunnerSelectorOrBuilder extends
 
   /**
    * <pre>
-   * Optionally a partcular deployment within the nodepool.
+   * Optionally a particular deployment within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -81,7 +81,7 @@ public interface RunnerSelectorOrBuilder extends
   boolean hasDeployment();
   /**
    * <pre>
-   * Optionally a partcular deployment within the nodepool.
+   * Optionally a particular deployment within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Deployment deployment = 3;</code>
@@ -90,7 +90,7 @@ public interface RunnerSelectorOrBuilder extends
   com.clarifai.grpc.api.Deployment getDeployment();
   /**
    * <pre>
-   * Optionally a partcular deployment within the nodepool.
+   * Optionally a particular deployment within the nodepool.
    * </pre>
    *
    * <code>.clarifai.api.Deployment deployment = 3;</code>

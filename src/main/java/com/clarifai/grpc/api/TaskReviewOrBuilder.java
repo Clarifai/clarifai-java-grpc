@@ -34,7 +34,7 @@ public interface TaskReviewOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3559
+   *     See proto/clarifai/api/resources.proto;l=3565
    * @return A list containing the userIds.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -47,7 +47,7 @@ public interface TaskReviewOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3559
+   *     See proto/clarifai/api/resources.proto;l=3565
    * @return The count of userIds.
    */
   @java.lang.Deprecated int getUserIdsCount();
@@ -59,7 +59,7 @@ public interface TaskReviewOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3559
+   *     See proto/clarifai/api/resources.proto;l=3565
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
@@ -72,7 +72,7 @@ public interface TaskReviewOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3559
+   *     See proto/clarifai/api/resources.proto;l=3565
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
