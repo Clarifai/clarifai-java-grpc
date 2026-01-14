@@ -3,8 +3,8 @@
 
 package com.clarifai.grpc.api;
 
-public interface SingleStreamTrackAnnotationResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.SingleStreamTrackAnnotationResponse)
+public interface SingleStreamAnnotationResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.SingleStreamAnnotationResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

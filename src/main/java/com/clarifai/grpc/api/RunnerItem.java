@@ -109,6 +109,20 @@ private static final long serialVersionUID = 0L;
             requestCase_ = 5;
             break;
           }
+          case 50: {
+            com.clarifai.grpc.api.AutoAnnotationRequest.Builder subBuilder = null;
+            if (requestCase_ == 6) {
+              subBuilder = ((com.clarifai.grpc.api.AutoAnnotationRequest) request_).toBuilder();
+            }
+            request_ =
+                input.readMessage(com.clarifai.grpc.api.AutoAnnotationRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.AutoAnnotationRequest) request_);
+              request_ = subBuilder.buildPartial();
+            }
+            requestCase_ = 6;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -150,6 +164,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     POST_MODEL_OUTPUTS_REQUEST(4),
     SYNC_STATE_REQUEST(5),
+    AUTO_ANNOTATION_REQUEST(6),
     REQUEST_NOT_SET(0);
     private final int value;
     private RequestCase(int value) {
@@ -169,6 +184,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 4: return POST_MODEL_OUTPUTS_REQUEST;
         case 5: return SYNC_STATE_REQUEST;
+        case 6: return AUTO_ANNOTATION_REQUEST;
         case 0: return REQUEST_NOT_SET;
         default: return null;
       }
@@ -400,6 +416,49 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.SyncStateRequest.getDefaultInstance();
   }
 
+  public static final int AUTO_ANNOTATION_REQUEST_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * Auto annotation request from a user.
+   * </pre>
+   *
+   * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+   * @return Whether the autoAnnotationRequest field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoAnnotationRequest() {
+    return requestCase_ == 6;
+  }
+  /**
+   * <pre>
+   * Auto annotation request from a user.
+   * </pre>
+   *
+   * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+   * @return The autoAnnotationRequest.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AutoAnnotationRequest getAutoAnnotationRequest() {
+    if (requestCase_ == 6) {
+       return (com.clarifai.grpc.api.AutoAnnotationRequest) request_;
+    }
+    return com.clarifai.grpc.api.AutoAnnotationRequest.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Auto annotation request from a user.
+   * </pre>
+   *
+   * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AutoAnnotationRequestOrBuilder getAutoAnnotationRequestOrBuilder() {
+    if (requestCase_ == 6) {
+       return (com.clarifai.grpc.api.AutoAnnotationRequest) request_;
+    }
+    return com.clarifai.grpc.api.AutoAnnotationRequest.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -429,6 +488,9 @@ private static final long serialVersionUID = 0L;
     if (requestCase_ == 5) {
       output.writeMessage(5, (com.clarifai.grpc.api.SyncStateRequest) request_);
     }
+    if (requestCase_ == 6) {
+      output.writeMessage(6, (com.clarifai.grpc.api.AutoAnnotationRequest) request_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -455,6 +517,10 @@ private static final long serialVersionUID = 0L;
     if (requestCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (com.clarifai.grpc.api.SyncStateRequest) request_);
+    }
+    if (requestCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, (com.clarifai.grpc.api.AutoAnnotationRequest) request_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -490,6 +556,10 @@ private static final long serialVersionUID = 0L;
         if (!getSyncStateRequest()
             .equals(other.getSyncStateRequest())) return false;
         break;
+      case 6:
+        if (!getAutoAnnotationRequest()
+            .equals(other.getAutoAnnotationRequest())) return false;
+        break;
       case 0:
       default:
     }
@@ -520,6 +590,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         hash = (37 * hash) + SYNC_STATE_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getSyncStateRequest().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + AUTO_ANNOTATION_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getAutoAnnotationRequest().hashCode();
         break;
       case 0:
       default:
@@ -722,6 +796,13 @@ private static final long serialVersionUID = 0L;
           result.request_ = syncStateRequestBuilder_.build();
         }
       }
+      if (requestCase_ == 6) {
+        if (autoAnnotationRequestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = autoAnnotationRequestBuilder_.build();
+        }
+      }
       result.requestCase_ = requestCase_;
       onBuilt();
       return result;
@@ -789,6 +870,10 @@ private static final long serialVersionUID = 0L;
         }
         case SYNC_STATE_REQUEST: {
           mergeSyncStateRequest(other.getSyncStateRequest());
+          break;
+        }
+        case AUTO_ANNOTATION_REQUEST: {
+          mergeAutoAnnotationRequest(other.getAutoAnnotationRequest());
           break;
         }
         case REQUEST_NOT_SET: {
@@ -1540,6 +1625,184 @@ private static final long serialVersionUID = 0L;
       requestCase_ = 5;
       onChanged();;
       return syncStateRequestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AutoAnnotationRequest, com.clarifai.grpc.api.AutoAnnotationRequest.Builder, com.clarifai.grpc.api.AutoAnnotationRequestOrBuilder> autoAnnotationRequestBuilder_;
+    /**
+     * <pre>
+     * Auto annotation request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     * @return Whether the autoAnnotationRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoAnnotationRequest() {
+      return requestCase_ == 6;
+    }
+    /**
+     * <pre>
+     * Auto annotation request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     * @return The autoAnnotationRequest.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.AutoAnnotationRequest getAutoAnnotationRequest() {
+      if (autoAnnotationRequestBuilder_ == null) {
+        if (requestCase_ == 6) {
+          return (com.clarifai.grpc.api.AutoAnnotationRequest) request_;
+        }
+        return com.clarifai.grpc.api.AutoAnnotationRequest.getDefaultInstance();
+      } else {
+        if (requestCase_ == 6) {
+          return autoAnnotationRequestBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.AutoAnnotationRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Auto annotation request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     */
+    public Builder setAutoAnnotationRequest(com.clarifai.grpc.api.AutoAnnotationRequest value) {
+      if (autoAnnotationRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        request_ = value;
+        onChanged();
+      } else {
+        autoAnnotationRequestBuilder_.setMessage(value);
+      }
+      requestCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * Auto annotation request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     */
+    public Builder setAutoAnnotationRequest(
+        com.clarifai.grpc.api.AutoAnnotationRequest.Builder builderForValue) {
+      if (autoAnnotationRequestBuilder_ == null) {
+        request_ = builderForValue.build();
+        onChanged();
+      } else {
+        autoAnnotationRequestBuilder_.setMessage(builderForValue.build());
+      }
+      requestCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * Auto annotation request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     */
+    public Builder mergeAutoAnnotationRequest(com.clarifai.grpc.api.AutoAnnotationRequest value) {
+      if (autoAnnotationRequestBuilder_ == null) {
+        if (requestCase_ == 6 &&
+            request_ != com.clarifai.grpc.api.AutoAnnotationRequest.getDefaultInstance()) {
+          request_ = com.clarifai.grpc.api.AutoAnnotationRequest.newBuilder((com.clarifai.grpc.api.AutoAnnotationRequest) request_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          request_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestCase_ == 6) {
+          autoAnnotationRequestBuilder_.mergeFrom(value);
+        } else {
+          autoAnnotationRequestBuilder_.setMessage(value);
+        }
+      }
+      requestCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * Auto annotation request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     */
+    public Builder clearAutoAnnotationRequest() {
+      if (autoAnnotationRequestBuilder_ == null) {
+        if (requestCase_ == 6) {
+          requestCase_ = 0;
+          request_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestCase_ == 6) {
+          requestCase_ = 0;
+          request_ = null;
+        }
+        autoAnnotationRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Auto annotation request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     */
+    public com.clarifai.grpc.api.AutoAnnotationRequest.Builder getAutoAnnotationRequestBuilder() {
+      return getAutoAnnotationRequestFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Auto annotation request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.AutoAnnotationRequestOrBuilder getAutoAnnotationRequestOrBuilder() {
+      if ((requestCase_ == 6) && (autoAnnotationRequestBuilder_ != null)) {
+        return autoAnnotationRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestCase_ == 6) {
+          return (com.clarifai.grpc.api.AutoAnnotationRequest) request_;
+        }
+        return com.clarifai.grpc.api.AutoAnnotationRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Auto annotation request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AutoAnnotationRequest, com.clarifai.grpc.api.AutoAnnotationRequest.Builder, com.clarifai.grpc.api.AutoAnnotationRequestOrBuilder> 
+        getAutoAnnotationRequestFieldBuilder() {
+      if (autoAnnotationRequestBuilder_ == null) {
+        if (!(requestCase_ == 6)) {
+          request_ = com.clarifai.grpc.api.AutoAnnotationRequest.getDefaultInstance();
+        }
+        autoAnnotationRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.AutoAnnotationRequest, com.clarifai.grpc.api.AutoAnnotationRequest.Builder, com.clarifai.grpc.api.AutoAnnotationRequestOrBuilder>(
+                (com.clarifai.grpc.api.AutoAnnotationRequest) request_,
+                getParentForChildren(),
+                isClean());
+        request_ = null;
+      }
+      requestCase_ = 6;
+      onChanged();;
+      return autoAnnotationRequestBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

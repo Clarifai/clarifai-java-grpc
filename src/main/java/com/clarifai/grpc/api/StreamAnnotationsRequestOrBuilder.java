@@ -3,8 +3,8 @@
 
 package com.clarifai.grpc.api;
 
-public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.StreamTrackAnnotationsSearchesRequest)
+public interface StreamAnnotationsRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.StreamAnnotationsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -24,7 +24,7 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
 
   /**
    * <pre>
-   * The input ID containing the video track annotations to stream
+   * The input ID containing the annotations to stream
    * </pre>
    *
    * <code>string input_id = 2;</code>
@@ -33,7 +33,7 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
   java.lang.String getInputId();
   /**
    * <pre>
-   * The input ID containing the video track annotations to stream
+   * The input ID containing the annotations to stream
    * </pre>
    *
    * <code>string input_id = 2;</code>
@@ -44,7 +44,8 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Filter annotations by track_ids
+   * Filter annotations by track_ids (optional - omit to stream all tracks for the input).
+   * This is useful for historical playback where you want to stream all annotations in a time range.
    * </pre>
    *
    * <code>repeated string track_ids = 3;</code>
@@ -54,7 +55,8 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
       getTrackIdsList();
   /**
    * <pre>
-   * Filter annotations by track_ids
+   * Filter annotations by track_ids (optional - omit to stream all tracks for the input).
+   * This is useful for historical playback where you want to stream all annotations in a time range.
    * </pre>
    *
    * <code>repeated string track_ids = 3;</code>
@@ -63,7 +65,8 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
   int getTrackIdsCount();
   /**
    * <pre>
-   * Filter annotations by track_ids
+   * Filter annotations by track_ids (optional - omit to stream all tracks for the input).
+   * This is useful for historical playback where you want to stream all annotations in a time range.
    * </pre>
    *
    * <code>repeated string track_ids = 3;</code>
@@ -73,7 +76,8 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
   java.lang.String getTrackIds(int index);
   /**
    * <pre>
-   * Filter annotations by track_ids
+   * Filter annotations by track_ids (optional - omit to stream all tracks for the input).
+   * This is useful for historical playback where you want to stream all annotations in a time range.
    * </pre>
    *
    * <code>repeated string track_ids = 3;</code>
@@ -126,7 +130,7 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
    * <pre>
    * Maximum number of frames to return. Returns annotations from frames in range [frame_number_start, frame_number_start + max_frames - 1] (inclusive on both ends).
    * For example: frame_number_start=5, max_frames=3 returns frames 5, 6, and 7.
-   * Default and max: 10800 frames (3 minutes at 60 FPS)
+   * Default and max: 216000 frames (60 minutes at 60 FPS)
    * </pre>
    *
    * <code>uint32 max_frames = 7;</code>
@@ -137,7 +141,7 @@ public interface StreamTrackAnnotationsSearchesRequestOrBuilder extends
   /**
    * <pre>
    * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
-   * Default and max: 180000 ms (3 minutes)
+   * Default and max: 3600000 ms (60 minutes)
    * </pre>
    *
    * <code>uint32 max_duration = 8;</code>

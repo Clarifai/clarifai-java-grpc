@@ -128,5 +128,32 @@ public interface RunnerItemOrBuilder extends
    */
   com.clarifai.grpc.api.SyncStateRequestOrBuilder getSyncStateRequestOrBuilder();
 
+  /**
+   * <pre>
+   * Auto annotation request from a user.
+   * </pre>
+   *
+   * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+   * @return Whether the autoAnnotationRequest field is set.
+   */
+  boolean hasAutoAnnotationRequest();
+  /**
+   * <pre>
+   * Auto annotation request from a user.
+   * </pre>
+   *
+   * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+   * @return The autoAnnotationRequest.
+   */
+  com.clarifai.grpc.api.AutoAnnotationRequest getAutoAnnotationRequest();
+  /**
+   * <pre>
+   * Auto annotation request from a user.
+   * </pre>
+   *
+   * <code>.clarifai.api.AutoAnnotationRequest auto_annotation_request = 6;</code>
+   */
+  com.clarifai.grpc.api.AutoAnnotationRequestOrBuilder getAutoAnnotationRequestOrBuilder();
+
   public com.clarifai.grpc.api.RunnerItem.RequestCase getRequestCase();
 }

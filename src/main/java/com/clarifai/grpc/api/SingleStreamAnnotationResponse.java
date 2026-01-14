@@ -5,28 +5,28 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * SingleStreamTrackAnnotationResponse similar to SingleAnnotationResponse but with an extra field
+ * SingleStreamAnnotationResponse similar to SingleAnnotationResponse but with an extra field
  * </pre>
  *
- * Protobuf type {@code clarifai.api.SingleStreamTrackAnnotationResponse}
+ * Protobuf type {@code clarifai.api.SingleStreamAnnotationResponse}
  */
-public final class SingleStreamTrackAnnotationResponse extends
+public final class SingleStreamAnnotationResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.SingleStreamTrackAnnotationResponse)
-    SingleStreamTrackAnnotationResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.SingleStreamAnnotationResponse)
+    SingleStreamAnnotationResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SingleStreamTrackAnnotationResponse.newBuilder() to construct.
-  private SingleStreamTrackAnnotationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SingleStreamAnnotationResponse.newBuilder() to construct.
+  private SingleStreamAnnotationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SingleStreamTrackAnnotationResponse() {
+  private SingleStreamAnnotationResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new SingleStreamTrackAnnotationResponse();
+    return new SingleStreamAnnotationResponse();
   }
 
   @java.lang.Override
@@ -34,7 +34,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SingleStreamTrackAnnotationResponse(
+  private SingleStreamAnnotationResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -106,15 +106,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamAnnotationResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamAnnotationResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.class, com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.Builder.class);
+            com.clarifai.grpc.api.SingleStreamAnnotationResponse.class, com.clarifai.grpc.api.SingleStreamAnnotationResponse.Builder.class);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -239,10 +239,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse)) {
+    if (!(obj instanceof com.clarifai.grpc.api.SingleStreamAnnotationResponse)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse other = (com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse) obj;
+    com.clarifai.grpc.api.SingleStreamAnnotationResponse other = (com.clarifai.grpc.api.SingleStreamAnnotationResponse) obj;
 
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
@@ -283,69 +283,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseDelimitedFrom(
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -358,7 +358,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.SingleStreamAnnotationResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -375,29 +375,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * SingleStreamTrackAnnotationResponse similar to SingleAnnotationResponse but with an extra field
+   * SingleStreamAnnotationResponse similar to SingleAnnotationResponse but with an extra field
    * </pre>
    *
-   * Protobuf type {@code clarifai.api.SingleStreamTrackAnnotationResponse}
+   * Protobuf type {@code clarifai.api.SingleStreamAnnotationResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.SingleStreamTrackAnnotationResponse)
-      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.SingleStreamAnnotationResponse)
+      com.clarifai.grpc.api.SingleStreamAnnotationResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamAnnotationResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamAnnotationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.class, com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.Builder.class);
+              com.clarifai.grpc.api.SingleStreamAnnotationResponse.class, com.clarifai.grpc.api.SingleStreamAnnotationResponse.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.newBuilder()
+    // Construct using com.clarifai.grpc.api.SingleStreamAnnotationResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -435,17 +435,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamTrackAnnotationResponse_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleStreamAnnotationResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.getDefaultInstance();
+    public com.clarifai.grpc.api.SingleStreamAnnotationResponse getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.SingleStreamAnnotationResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse build() {
-      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse result = buildPartial();
+    public com.clarifai.grpc.api.SingleStreamAnnotationResponse build() {
+      com.clarifai.grpc.api.SingleStreamAnnotationResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -453,8 +453,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse buildPartial() {
-      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse result = new com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse(this);
+    public com.clarifai.grpc.api.SingleStreamAnnotationResponse buildPartial() {
+      com.clarifai.grpc.api.SingleStreamAnnotationResponse result = new com.clarifai.grpc.api.SingleStreamAnnotationResponse(this);
       if (statusBuilder_ == null) {
         result.status_ = status_;
       } else {
@@ -504,16 +504,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse) {
-        return mergeFrom((com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse)other);
+      if (other instanceof com.clarifai.grpc.api.SingleStreamAnnotationResponse) {
+        return mergeFrom((com.clarifai.grpc.api.SingleStreamAnnotationResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse other) {
-      if (other == com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.SingleStreamAnnotationResponse other) {
+      if (other == com.clarifai.grpc.api.SingleStreamAnnotationResponse.getDefaultInstance()) return this;
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
@@ -538,11 +538,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse parsedMessage = null;
+      com.clarifai.grpc.api.SingleStreamAnnotationResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.SingleStreamAnnotationResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -848,41 +848,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.SingleStreamTrackAnnotationResponse)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.SingleStreamAnnotationResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.SingleStreamTrackAnnotationResponse)
-  private static final com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.SingleStreamAnnotationResponse)
+  private static final com.clarifai.grpc.api.SingleStreamAnnotationResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.SingleStreamAnnotationResponse();
   }
 
-  public static com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse getDefaultInstance() {
+  public static com.clarifai.grpc.api.SingleStreamAnnotationResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SingleStreamTrackAnnotationResponse>
-      PARSER = new com.google.protobuf.AbstractParser<SingleStreamTrackAnnotationResponse>() {
+  private static final com.google.protobuf.Parser<SingleStreamAnnotationResponse>
+      PARSER = new com.google.protobuf.AbstractParser<SingleStreamAnnotationResponse>() {
     @java.lang.Override
-    public SingleStreamTrackAnnotationResponse parsePartialFrom(
+    public SingleStreamAnnotationResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SingleStreamTrackAnnotationResponse(input, extensionRegistry);
+      return new SingleStreamAnnotationResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SingleStreamTrackAnnotationResponse> parser() {
+  public static com.google.protobuf.Parser<SingleStreamAnnotationResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SingleStreamTrackAnnotationResponse> getParserForType() {
+  public com.google.protobuf.Parser<SingleStreamAnnotationResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.SingleStreamTrackAnnotationResponse getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.SingleStreamAnnotationResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
