@@ -190,8 +190,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object action_;
   /**
    * <pre>
-   * The action to perform on the patched objects
-   * For now, only 'overwrite' action is supported
+   * The action to perform on the patched tasks
+   * Supported operations:
+   * * 'overwrite' - overwrite the task with the fields provided in the request
+   * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+   * For now, the 'merge' operation only supports updating task status.
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -212,8 +215,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The action to perform on the patched objects
-   * For now, only 'overwrite' action is supported
+   * The action to perform on the patched tasks
+   * Supported operations:
+   * * 'overwrite' - overwrite the task with the fields provided in the request
+   * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+   * For now, the 'merge' operation only supports updating task status.
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -989,8 +995,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object action_ = "";
     /**
      * <pre>
-     * The action to perform on the patched objects
-     * For now, only 'overwrite' action is supported
+     * The action to perform on the patched tasks
+     * Supported operations:
+     * * 'overwrite' - overwrite the task with the fields provided in the request
+     * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+     * For now, the 'merge' operation only supports updating task status.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1010,8 +1019,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The action to perform on the patched objects
-     * For now, only 'overwrite' action is supported
+     * The action to perform on the patched tasks
+     * Supported operations:
+     * * 'overwrite' - overwrite the task with the fields provided in the request
+     * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+     * For now, the 'merge' operation only supports updating task status.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1032,8 +1044,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The action to perform on the patched objects
-     * For now, only 'overwrite' action is supported
+     * The action to perform on the patched tasks
+     * Supported operations:
+     * * 'overwrite' - overwrite the task with the fields provided in the request
+     * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+     * For now, the 'merge' operation only supports updating task status.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1052,8 +1067,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The action to perform on the patched objects
-     * For now, only 'overwrite' action is supported
+     * The action to perform on the patched tasks
+     * Supported operations:
+     * * 'overwrite' - overwrite the task with the fields provided in the request
+     * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+     * For now, the 'merge' operation only supports updating task status.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1067,8 +1085,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The action to perform on the patched objects
-     * For now, only 'overwrite' action is supported
+     * The action to perform on the patched tasks
+     * Supported operations:
+     * * 'overwrite' - overwrite the task with the fields provided in the request
+     * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+     * For now, the 'merge' operation only supports updating task status.
      * </pre>
      *
      * <code>string action = 3;</code>

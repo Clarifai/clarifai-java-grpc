@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string app_pat = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8526
+   *     See proto/clarifai/api/service.proto;l=8531
    * @return The appPat.
    */
   @java.lang.Override
@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string app_pat = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8526
+   *     See proto/clarifai/api/service.proto;l=8531
    * @return The bytes for appPat.
    */
   @java.lang.Override
@@ -1185,7 +1185,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string app_pat = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8526
+     *     See proto/clarifai/api/service.proto;l=8531
      * @return The appPat.
      */
     @java.lang.Deprecated public java.lang.String getAppPat() {
@@ -1208,7 +1208,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string app_pat = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8526
+     *     See proto/clarifai/api/service.proto;l=8531
      * @return The bytes for appPat.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1232,7 +1232,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string app_pat = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8526
+     *     See proto/clarifai/api/service.proto;l=8531
      * @param value The appPat to set.
      * @return This builder for chaining.
      */
@@ -1254,7 +1254,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string app_pat = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8526
+     *     See proto/clarifai/api/service.proto;l=8531
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearAppPat() {
@@ -1271,7 +1271,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string app_pat = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.PostInputsDataSourcesRequest.app_pat is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8526
+     *     See proto/clarifai/api/service.proto;l=8531
      * @param value The bytes for appPat to set.
      * @return This builder for chaining.
      */

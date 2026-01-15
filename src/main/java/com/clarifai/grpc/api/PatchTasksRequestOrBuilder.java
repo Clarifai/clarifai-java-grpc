@@ -48,8 +48,11 @@ public interface PatchTasksRequestOrBuilder extends
 
   /**
    * <pre>
-   * The action to perform on the patched objects
-   * For now, only 'overwrite' action is supported
+   * The action to perform on the patched tasks
+   * Supported operations:
+   * * 'overwrite' - overwrite the task with the fields provided in the request
+   * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+   * For now, the 'merge' operation only supports updating task status.
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -58,8 +61,11 @@ public interface PatchTasksRequestOrBuilder extends
   java.lang.String getAction();
   /**
    * <pre>
-   * The action to perform on the patched objects
-   * For now, only 'overwrite' action is supported
+   * The action to perform on the patched tasks
+   * Supported operations:
+   * * 'overwrite' - overwrite the task with the fields provided in the request
+   * * 'merge' - update only the fields provided in the request, leave other fields unchanged
+   * For now, the 'merge' operation only supports updating task status.
    * </pre>
    *
    * <code>string action = 3;</code>

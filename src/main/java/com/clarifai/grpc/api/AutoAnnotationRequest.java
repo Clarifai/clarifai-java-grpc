@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AutoAnnotationRequest() {
+    authorizationValue_ = "";
   }
 
   @java.lang.Override
@@ -62,16 +63,22 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.Builder subBuilder = null;
-            if (postAnnotationsInfo_ != null) {
-              subBuilder = postAnnotationsInfo_.toBuilder();
+            com.clarifai.grpc.api.Task.Builder subBuilder = null;
+            if (task_ != null) {
+              subBuilder = task_.toBuilder();
             }
-            postAnnotationsInfo_ = input.readMessage(com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.parser(), extensionRegistry);
+            task_ = input.readMessage(com.clarifai.grpc.api.Task.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(postAnnotationsInfo_);
-              postAnnotationsInfo_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(task_);
+              task_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            authorizationValue_ = s;
             break;
           }
           default: {
@@ -108,1006 +115,11 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.AutoAnnotationRequest.class, com.clarifai.grpc.api.AutoAnnotationRequest.Builder.class);
   }
 
-  public interface PostAnnotationsInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return Whether the userAppId field is set.
-     */
-    boolean hasUserAppId();
-    /**
-     * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return The userAppId.
-     */
-    com.clarifai.grpc.api.UserAppIDSet getUserAppId();
-    /**
-     * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     */
-    com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
-
-    /**
-     * <pre>
-     * Authorization value to be used when calling PostAnnotations endpoint.
-     * </pre>
-     *
-     * <code>string authorization_value = 2;</code>
-     * @return The authorizationValue.
-     */
-    java.lang.String getAuthorizationValue();
-    /**
-     * <pre>
-     * Authorization value to be used when calling PostAnnotations endpoint.
-     * </pre>
-     *
-     * <code>string authorization_value = 2;</code>
-     * @return The bytes for authorizationValue.
-     */
-    com.google.protobuf.ByteString
-        getAuthorizationValueBytes();
-
-    /**
-     * <pre>
-     * Task ID linked to the annotations being created.
-     * </pre>
-     *
-     * <code>string task_id = 3;</code>
-     * @return The taskId.
-     */
-    java.lang.String getTaskId();
-    /**
-     * <pre>
-     * Task ID linked to the annotations being created.
-     * </pre>
-     *
-     * <code>string task_id = 3;</code>
-     * @return The bytes for taskId.
-     */
-    com.google.protobuf.ByteString
-        getTaskIdBytes();
-  }
-  /**
-   * Protobuf type {@code clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo}
-   */
-  public static final class PostAnnotationsInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo)
-      PostAnnotationsInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use PostAnnotationsInfo.newBuilder() to construct.
-    private PostAnnotationsInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PostAnnotationsInfo() {
-      authorizationValue_ = "";
-      taskId_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PostAnnotationsInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private PostAnnotationsInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.clarifai.grpc.api.UserAppIDSet.Builder subBuilder = null;
-              if (userAppId_ != null) {
-                subBuilder = userAppId_.toBuilder();
-              }
-              userAppId_ = input.readMessage(com.clarifai.grpc.api.UserAppIDSet.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(userAppId_);
-                userAppId_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              authorizationValue_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              taskId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_AutoAnnotationRequest_PostAnnotationsInfo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_AutoAnnotationRequest_PostAnnotationsInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.class, com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.Builder.class);
-    }
-
-    public static final int USER_APP_ID_FIELD_NUMBER = 1;
-    private com.clarifai.grpc.api.UserAppIDSet userAppId_;
-    /**
-     * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return Whether the userAppId field is set.
-     */
-    @java.lang.Override
-    public boolean hasUserAppId() {
-      return userAppId_ != null;
-    }
-    /**
-     * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     * @return The userAppId.
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
-      return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
-    }
-    /**
-     * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
-      return getUserAppId();
-    }
-
-    public static final int AUTHORIZATION_VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object authorizationValue_;
-    /**
-     * <pre>
-     * Authorization value to be used when calling PostAnnotations endpoint.
-     * </pre>
-     *
-     * <code>string authorization_value = 2;</code>
-     * @return The authorizationValue.
-     */
-    @java.lang.Override
-    public java.lang.String getAuthorizationValue() {
-      java.lang.Object ref = authorizationValue_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        authorizationValue_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Authorization value to be used when calling PostAnnotations endpoint.
-     * </pre>
-     *
-     * <code>string authorization_value = 2;</code>
-     * @return The bytes for authorizationValue.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAuthorizationValueBytes() {
-      java.lang.Object ref = authorizationValue_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        authorizationValue_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TASK_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object taskId_;
-    /**
-     * <pre>
-     * Task ID linked to the annotations being created.
-     * </pre>
-     *
-     * <code>string task_id = 3;</code>
-     * @return The taskId.
-     */
-    @java.lang.Override
-    public java.lang.String getTaskId() {
-      java.lang.Object ref = taskId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Task ID linked to the annotations being created.
-     * </pre>
-     *
-     * <code>string task_id = 3;</code>
-     * @return The bytes for taskId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTaskIdBytes() {
-      java.lang.Object ref = taskId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (userAppId_ != null) {
-        output.writeMessage(1, getUserAppId());
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationValue_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, authorizationValue_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (userAppId_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getUserAppId());
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationValue_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, authorizationValue_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo)) {
-        return super.equals(obj);
-      }
-      com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo other = (com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo) obj;
-
-      if (hasUserAppId() != other.hasUserAppId()) return false;
-      if (hasUserAppId()) {
-        if (!getUserAppId()
-            .equals(other.getUserAppId())) return false;
-      }
-      if (!getAuthorizationValue()
-          .equals(other.getAuthorizationValue())) return false;
-      if (!getTaskId()
-          .equals(other.getTaskId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasUserAppId()) {
-        hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getUserAppId().hashCode();
-      }
-      hash = (37 * hash) + AUTHORIZATION_VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthorizationValue().hashCode();
-      hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTaskId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo)
-        com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.clarifai.grpc.api.Service.internal_static_clarifai_api_AutoAnnotationRequest_PostAnnotationsInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.clarifai.grpc.api.Service.internal_static_clarifai_api_AutoAnnotationRequest_PostAnnotationsInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.class, com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.Builder.class);
-      }
-
-      // Construct using com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (userAppIdBuilder_ == null) {
-          userAppId_ = null;
-        } else {
-          userAppId_ = null;
-          userAppIdBuilder_ = null;
-        }
-        authorizationValue_ = "";
-
-        taskId_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.clarifai.grpc.api.Service.internal_static_clarifai_api_AutoAnnotationRequest_PostAnnotationsInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo getDefaultInstanceForType() {
-        return com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo build() {
-        com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo buildPartial() {
-        com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo result = new com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo(this);
-        if (userAppIdBuilder_ == null) {
-          result.userAppId_ = userAppId_;
-        } else {
-          result.userAppId_ = userAppIdBuilder_.build();
-        }
-        result.authorizationValue_ = authorizationValue_;
-        result.taskId_ = taskId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo) {
-          return mergeFrom((com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo other) {
-        if (other == com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.getDefaultInstance()) return this;
-        if (other.hasUserAppId()) {
-          mergeUserAppId(other.getUserAppId());
-        }
-        if (!other.getAuthorizationValue().isEmpty()) {
-          authorizationValue_ = other.authorizationValue_;
-          onChanged();
-        }
-        if (!other.getTaskId().isEmpty()) {
-          taskId_ = other.taskId_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.clarifai.grpc.api.UserAppIDSet userAppId_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
-      /**
-       * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-       * @return Whether the userAppId field is set.
-       */
-      public boolean hasUserAppId() {
-        return userAppIdBuilder_ != null || userAppId_ != null;
-      }
-      /**
-       * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-       * @return The userAppId.
-       */
-      public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
-        if (userAppIdBuilder_ == null) {
-          return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
-        } else {
-          return userAppIdBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-       */
-      public Builder setUserAppId(com.clarifai.grpc.api.UserAppIDSet value) {
-        if (userAppIdBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          userAppId_ = value;
-          onChanged();
-        } else {
-          userAppIdBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-       */
-      public Builder setUserAppId(
-          com.clarifai.grpc.api.UserAppIDSet.Builder builderForValue) {
-        if (userAppIdBuilder_ == null) {
-          userAppId_ = builderForValue.build();
-          onChanged();
-        } else {
-          userAppIdBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-       */
-      public Builder mergeUserAppId(com.clarifai.grpc.api.UserAppIDSet value) {
-        if (userAppIdBuilder_ == null) {
-          if (userAppId_ != null) {
-            userAppId_ =
-              com.clarifai.grpc.api.UserAppIDSet.newBuilder(userAppId_).mergeFrom(value).buildPartial();
-          } else {
-            userAppId_ = value;
-          }
-          onChanged();
-        } else {
-          userAppIdBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-       */
-      public Builder clearUserAppId() {
-        if (userAppIdBuilder_ == null) {
-          userAppId_ = null;
-          onChanged();
-        } else {
-          userAppId_ = null;
-          userAppIdBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-       */
-      public com.clarifai.grpc.api.UserAppIDSet.Builder getUserAppIdBuilder() {
-        
-        onChanged();
-        return getUserAppIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-       */
-      public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
-        if (userAppIdBuilder_ != null) {
-          return userAppIdBuilder_.getMessageOrBuilder();
-        } else {
-          return userAppId_ == null ?
-              com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
-        }
-      }
-      /**
-       * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> 
-          getUserAppIdFieldBuilder() {
-        if (userAppIdBuilder_ == null) {
-          userAppIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder>(
-                  getUserAppId(),
-                  getParentForChildren(),
-                  isClean());
-          userAppId_ = null;
-        }
-        return userAppIdBuilder_;
-      }
-
-      private java.lang.Object authorizationValue_ = "";
-      /**
-       * <pre>
-       * Authorization value to be used when calling PostAnnotations endpoint.
-       * </pre>
-       *
-       * <code>string authorization_value = 2;</code>
-       * @return The authorizationValue.
-       */
-      public java.lang.String getAuthorizationValue() {
-        java.lang.Object ref = authorizationValue_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          authorizationValue_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Authorization value to be used when calling PostAnnotations endpoint.
-       * </pre>
-       *
-       * <code>string authorization_value = 2;</code>
-       * @return The bytes for authorizationValue.
-       */
-      public com.google.protobuf.ByteString
-          getAuthorizationValueBytes() {
-        java.lang.Object ref = authorizationValue_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          authorizationValue_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Authorization value to be used when calling PostAnnotations endpoint.
-       * </pre>
-       *
-       * <code>string authorization_value = 2;</code>
-       * @param value The authorizationValue to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAuthorizationValue(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        authorizationValue_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Authorization value to be used when calling PostAnnotations endpoint.
-       * </pre>
-       *
-       * <code>string authorization_value = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAuthorizationValue() {
-        
-        authorizationValue_ = getDefaultInstance().getAuthorizationValue();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Authorization value to be used when calling PostAnnotations endpoint.
-       * </pre>
-       *
-       * <code>string authorization_value = 2;</code>
-       * @param value The bytes for authorizationValue to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAuthorizationValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        authorizationValue_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object taskId_ = "";
-      /**
-       * <pre>
-       * Task ID linked to the annotations being created.
-       * </pre>
-       *
-       * <code>string task_id = 3;</code>
-       * @return The taskId.
-       */
-      public java.lang.String getTaskId() {
-        java.lang.Object ref = taskId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          taskId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Task ID linked to the annotations being created.
-       * </pre>
-       *
-       * <code>string task_id = 3;</code>
-       * @return The bytes for taskId.
-       */
-      public com.google.protobuf.ByteString
-          getTaskIdBytes() {
-        java.lang.Object ref = taskId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          taskId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Task ID linked to the annotations being created.
-       * </pre>
-       *
-       * <code>string task_id = 3;</code>
-       * @param value The taskId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTaskId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        taskId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Task ID linked to the annotations being created.
-       * </pre>
-       *
-       * <code>string task_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTaskId() {
-        
-        taskId_ = getDefaultInstance().getTaskId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Task ID linked to the annotations being created.
-       * </pre>
-       *
-       * <code>string task_id = 3;</code>
-       * @param value The bytes for taskId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTaskIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        taskId_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo)
-    private static final com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo();
-    }
-
-    public static com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PostAnnotationsInfo>
-        PARSER = new com.google.protobuf.AbstractParser<PostAnnotationsInfo>() {
-      @java.lang.Override
-      public PostAnnotationsInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PostAnnotationsInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<PostAnnotationsInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PostAnnotationsInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public static final int POST_MODEL_OUTPUTS_REQUEST_FIELD_NUMBER = 1;
   private com.clarifai.grpc.api.PostModelOutputsRequest postModelOutputsRequest_;
   /**
    * <pre>
-   * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+   * Perform prediction request and call PostAnnotations endpoint using prediction results.
    * </pre>
    *
    * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1119,7 +131,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+   * Perform prediction request and call PostAnnotations endpoint using prediction results.
    * </pre>
    *
    * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1131,7 +143,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+   * Perform prediction request and call PostAnnotations endpoint using prediction results.
    * </pre>
    *
    * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1141,30 +153,88 @@ private static final long serialVersionUID = 0L;
     return getPostModelOutputsRequest();
   }
 
-  public static final int POST_ANNOTATIONS_INFO_FIELD_NUMBER = 2;
-  private com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo postAnnotationsInfo_;
+  public static final int TASK_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.Task task_;
   /**
-   * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
-   * @return Whether the postAnnotationsInfo field is set.
+   * <pre>
+   * Task used to create annotations .
+   * </pre>
+   *
+   * <code>.clarifai.api.Task task = 2;</code>
+   * @return Whether the task field is set.
    */
   @java.lang.Override
-  public boolean hasPostAnnotationsInfo() {
-    return postAnnotationsInfo_ != null;
+  public boolean hasTask() {
+    return task_ != null;
   }
   /**
-   * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
-   * @return The postAnnotationsInfo.
+   * <pre>
+   * Task used to create annotations .
+   * </pre>
+   *
+   * <code>.clarifai.api.Task task = 2;</code>
+   * @return The task.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo getPostAnnotationsInfo() {
-    return postAnnotationsInfo_ == null ? com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.getDefaultInstance() : postAnnotationsInfo_;
+  public com.clarifai.grpc.api.Task getTask() {
+    return task_ == null ? com.clarifai.grpc.api.Task.getDefaultInstance() : task_;
   }
   /**
-   * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+   * <pre>
+   * Task used to create annotations .
+   * </pre>
+   *
+   * <code>.clarifai.api.Task task = 2;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfoOrBuilder getPostAnnotationsInfoOrBuilder() {
-    return getPostAnnotationsInfo();
+  public com.clarifai.grpc.api.TaskOrBuilder getTaskOrBuilder() {
+    return getTask();
+  }
+
+  public static final int AUTHORIZATION_VALUE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object authorizationValue_;
+  /**
+   * <pre>
+   * Authorization value to be used when calling PostAnnotations endpoint.
+   * </pre>
+   *
+   * <code>string authorization_value = 3;</code>
+   * @return The authorizationValue.
+   */
+  @java.lang.Override
+  public java.lang.String getAuthorizationValue() {
+    java.lang.Object ref = authorizationValue_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      authorizationValue_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Authorization value to be used when calling PostAnnotations endpoint.
+   * </pre>
+   *
+   * <code>string authorization_value = 3;</code>
+   * @return The bytes for authorizationValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAuthorizationValueBytes() {
+    java.lang.Object ref = authorizationValue_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      authorizationValue_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1184,8 +254,11 @@ private static final long serialVersionUID = 0L;
     if (postModelOutputsRequest_ != null) {
       output.writeMessage(1, getPostModelOutputsRequest());
     }
-    if (postAnnotationsInfo_ != null) {
-      output.writeMessage(2, getPostAnnotationsInfo());
+    if (task_ != null) {
+      output.writeMessage(2, getTask());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationValue_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, authorizationValue_);
     }
     unknownFields.writeTo(output);
   }
@@ -1200,9 +273,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getPostModelOutputsRequest());
     }
-    if (postAnnotationsInfo_ != null) {
+    if (task_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getPostAnnotationsInfo());
+        .computeMessageSize(2, getTask());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizationValue_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, authorizationValue_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1224,11 +300,13 @@ private static final long serialVersionUID = 0L;
       if (!getPostModelOutputsRequest()
           .equals(other.getPostModelOutputsRequest())) return false;
     }
-    if (hasPostAnnotationsInfo() != other.hasPostAnnotationsInfo()) return false;
-    if (hasPostAnnotationsInfo()) {
-      if (!getPostAnnotationsInfo()
-          .equals(other.getPostAnnotationsInfo())) return false;
+    if (hasTask() != other.hasTask()) return false;
+    if (hasTask()) {
+      if (!getTask()
+          .equals(other.getTask())) return false;
     }
+    if (!getAuthorizationValue()
+        .equals(other.getAuthorizationValue())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1244,10 +322,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + POST_MODEL_OUTPUTS_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getPostModelOutputsRequest().hashCode();
     }
-    if (hasPostAnnotationsInfo()) {
-      hash = (37 * hash) + POST_ANNOTATIONS_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getPostAnnotationsInfo().hashCode();
+    if (hasTask()) {
+      hash = (37 * hash) + TASK_FIELD_NUMBER;
+      hash = (53 * hash) + getTask().hashCode();
     }
+    hash = (37 * hash) + AUTHORIZATION_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getAuthorizationValue().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1387,12 +467,14 @@ private static final long serialVersionUID = 0L;
         postModelOutputsRequest_ = null;
         postModelOutputsRequestBuilder_ = null;
       }
-      if (postAnnotationsInfoBuilder_ == null) {
-        postAnnotationsInfo_ = null;
+      if (taskBuilder_ == null) {
+        task_ = null;
       } else {
-        postAnnotationsInfo_ = null;
-        postAnnotationsInfoBuilder_ = null;
+        task_ = null;
+        taskBuilder_ = null;
       }
+      authorizationValue_ = "";
+
       return this;
     }
 
@@ -1424,11 +506,12 @@ private static final long serialVersionUID = 0L;
       } else {
         result.postModelOutputsRequest_ = postModelOutputsRequestBuilder_.build();
       }
-      if (postAnnotationsInfoBuilder_ == null) {
-        result.postAnnotationsInfo_ = postAnnotationsInfo_;
+      if (taskBuilder_ == null) {
+        result.task_ = task_;
       } else {
-        result.postAnnotationsInfo_ = postAnnotationsInfoBuilder_.build();
+        result.task_ = taskBuilder_.build();
       }
+      result.authorizationValue_ = authorizationValue_;
       onBuilt();
       return result;
     }
@@ -1480,8 +563,12 @@ private static final long serialVersionUID = 0L;
       if (other.hasPostModelOutputsRequest()) {
         mergePostModelOutputsRequest(other.getPostModelOutputsRequest());
       }
-      if (other.hasPostAnnotationsInfo()) {
-        mergePostAnnotationsInfo(other.getPostAnnotationsInfo());
+      if (other.hasTask()) {
+        mergeTask(other.getTask());
+      }
+      if (!other.getAuthorizationValue().isEmpty()) {
+        authorizationValue_ = other.authorizationValue_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1517,7 +604,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.PostModelOutputsRequest, com.clarifai.grpc.api.PostModelOutputsRequest.Builder, com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder> postModelOutputsRequestBuilder_;
     /**
      * <pre>
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      * </pre>
      *
      * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1528,7 +615,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      * </pre>
      *
      * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1543,7 +630,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      * </pre>
      *
      * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1563,7 +650,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      * </pre>
      *
      * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1581,7 +668,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      * </pre>
      *
      * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1603,7 +690,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      * </pre>
      *
      * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1621,7 +708,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      * </pre>
      *
      * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1633,7 +720,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      * </pre>
      *
      * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1648,7 +735,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+     * Perform prediction request and call PostAnnotations endpoint using prediction results.
      * </pre>
      *
      * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -1667,123 +754,255 @@ private static final long serialVersionUID = 0L;
       return postModelOutputsRequestBuilder_;
     }
 
-    private com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo postAnnotationsInfo_;
+    private com.clarifai.grpc.api.Task task_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo, com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.Builder, com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfoOrBuilder> postAnnotationsInfoBuilder_;
+        com.clarifai.grpc.api.Task, com.clarifai.grpc.api.Task.Builder, com.clarifai.grpc.api.TaskOrBuilder> taskBuilder_;
     /**
-     * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
-     * @return Whether the postAnnotationsInfo field is set.
+     * <pre>
+     * Task used to create annotations .
+     * </pre>
+     *
+     * <code>.clarifai.api.Task task = 2;</code>
+     * @return Whether the task field is set.
      */
-    public boolean hasPostAnnotationsInfo() {
-      return postAnnotationsInfoBuilder_ != null || postAnnotationsInfo_ != null;
+    public boolean hasTask() {
+      return taskBuilder_ != null || task_ != null;
     }
     /**
-     * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
-     * @return The postAnnotationsInfo.
+     * <pre>
+     * Task used to create annotations .
+     * </pre>
+     *
+     * <code>.clarifai.api.Task task = 2;</code>
+     * @return The task.
      */
-    public com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo getPostAnnotationsInfo() {
-      if (postAnnotationsInfoBuilder_ == null) {
-        return postAnnotationsInfo_ == null ? com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.getDefaultInstance() : postAnnotationsInfo_;
+    public com.clarifai.grpc.api.Task getTask() {
+      if (taskBuilder_ == null) {
+        return task_ == null ? com.clarifai.grpc.api.Task.getDefaultInstance() : task_;
       } else {
-        return postAnnotationsInfoBuilder_.getMessage();
+        return taskBuilder_.getMessage();
       }
     }
     /**
-     * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+     * <pre>
+     * Task used to create annotations .
+     * </pre>
+     *
+     * <code>.clarifai.api.Task task = 2;</code>
      */
-    public Builder setPostAnnotationsInfo(com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo value) {
-      if (postAnnotationsInfoBuilder_ == null) {
+    public Builder setTask(com.clarifai.grpc.api.Task value) {
+      if (taskBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        postAnnotationsInfo_ = value;
+        task_ = value;
         onChanged();
       } else {
-        postAnnotationsInfoBuilder_.setMessage(value);
+        taskBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+     * <pre>
+     * Task used to create annotations .
+     * </pre>
+     *
+     * <code>.clarifai.api.Task task = 2;</code>
      */
-    public Builder setPostAnnotationsInfo(
-        com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.Builder builderForValue) {
-      if (postAnnotationsInfoBuilder_ == null) {
-        postAnnotationsInfo_ = builderForValue.build();
+    public Builder setTask(
+        com.clarifai.grpc.api.Task.Builder builderForValue) {
+      if (taskBuilder_ == null) {
+        task_ = builderForValue.build();
         onChanged();
       } else {
-        postAnnotationsInfoBuilder_.setMessage(builderForValue.build());
+        taskBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+     * <pre>
+     * Task used to create annotations .
+     * </pre>
+     *
+     * <code>.clarifai.api.Task task = 2;</code>
      */
-    public Builder mergePostAnnotationsInfo(com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo value) {
-      if (postAnnotationsInfoBuilder_ == null) {
-        if (postAnnotationsInfo_ != null) {
-          postAnnotationsInfo_ =
-            com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.newBuilder(postAnnotationsInfo_).mergeFrom(value).buildPartial();
+    public Builder mergeTask(com.clarifai.grpc.api.Task value) {
+      if (taskBuilder_ == null) {
+        if (task_ != null) {
+          task_ =
+            com.clarifai.grpc.api.Task.newBuilder(task_).mergeFrom(value).buildPartial();
         } else {
-          postAnnotationsInfo_ = value;
+          task_ = value;
         }
         onChanged();
       } else {
-        postAnnotationsInfoBuilder_.mergeFrom(value);
+        taskBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+     * <pre>
+     * Task used to create annotations .
+     * </pre>
+     *
+     * <code>.clarifai.api.Task task = 2;</code>
      */
-    public Builder clearPostAnnotationsInfo() {
-      if (postAnnotationsInfoBuilder_ == null) {
-        postAnnotationsInfo_ = null;
+    public Builder clearTask() {
+      if (taskBuilder_ == null) {
+        task_ = null;
         onChanged();
       } else {
-        postAnnotationsInfo_ = null;
-        postAnnotationsInfoBuilder_ = null;
+        task_ = null;
+        taskBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+     * <pre>
+     * Task used to create annotations .
+     * </pre>
+     *
+     * <code>.clarifai.api.Task task = 2;</code>
      */
-    public com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.Builder getPostAnnotationsInfoBuilder() {
+    public com.clarifai.grpc.api.Task.Builder getTaskBuilder() {
       
       onChanged();
-      return getPostAnnotationsInfoFieldBuilder().getBuilder();
+      return getTaskFieldBuilder().getBuilder();
     }
     /**
-     * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+     * <pre>
+     * Task used to create annotations .
+     * </pre>
+     *
+     * <code>.clarifai.api.Task task = 2;</code>
      */
-    public com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfoOrBuilder getPostAnnotationsInfoOrBuilder() {
-      if (postAnnotationsInfoBuilder_ != null) {
-        return postAnnotationsInfoBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.TaskOrBuilder getTaskOrBuilder() {
+      if (taskBuilder_ != null) {
+        return taskBuilder_.getMessageOrBuilder();
       } else {
-        return postAnnotationsInfo_ == null ?
-            com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.getDefaultInstance() : postAnnotationsInfo_;
+        return task_ == null ?
+            com.clarifai.grpc.api.Task.getDefaultInstance() : task_;
       }
     }
     /**
-     * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+     * <pre>
+     * Task used to create annotations .
+     * </pre>
+     *
+     * <code>.clarifai.api.Task task = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo, com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.Builder, com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfoOrBuilder> 
-        getPostAnnotationsInfoFieldBuilder() {
-      if (postAnnotationsInfoBuilder_ == null) {
-        postAnnotationsInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo, com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo.Builder, com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfoOrBuilder>(
-                getPostAnnotationsInfo(),
+        com.clarifai.grpc.api.Task, com.clarifai.grpc.api.Task.Builder, com.clarifai.grpc.api.TaskOrBuilder> 
+        getTaskFieldBuilder() {
+      if (taskBuilder_ == null) {
+        taskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Task, com.clarifai.grpc.api.Task.Builder, com.clarifai.grpc.api.TaskOrBuilder>(
+                getTask(),
                 getParentForChildren(),
                 isClean());
-        postAnnotationsInfo_ = null;
+        task_ = null;
       }
-      return postAnnotationsInfoBuilder_;
+      return taskBuilder_;
+    }
+
+    private java.lang.Object authorizationValue_ = "";
+    /**
+     * <pre>
+     * Authorization value to be used when calling PostAnnotations endpoint.
+     * </pre>
+     *
+     * <code>string authorization_value = 3;</code>
+     * @return The authorizationValue.
+     */
+    public java.lang.String getAuthorizationValue() {
+      java.lang.Object ref = authorizationValue_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authorizationValue_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Authorization value to be used when calling PostAnnotations endpoint.
+     * </pre>
+     *
+     * <code>string authorization_value = 3;</code>
+     * @return The bytes for authorizationValue.
+     */
+    public com.google.protobuf.ByteString
+        getAuthorizationValueBytes() {
+      java.lang.Object ref = authorizationValue_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authorizationValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Authorization value to be used when calling PostAnnotations endpoint.
+     * </pre>
+     *
+     * <code>string authorization_value = 3;</code>
+     * @param value The authorizationValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorizationValue(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      authorizationValue_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Authorization value to be used when calling PostAnnotations endpoint.
+     * </pre>
+     *
+     * <code>string authorization_value = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthorizationValue() {
+      
+      authorizationValue_ = getDefaultInstance().getAuthorizationValue();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Authorization value to be used when calling PostAnnotations endpoint.
+     * </pre>
+     *
+     * <code>string authorization_value = 3;</code>
+     * @param value The bytes for authorizationValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorizationValueBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      authorizationValue_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

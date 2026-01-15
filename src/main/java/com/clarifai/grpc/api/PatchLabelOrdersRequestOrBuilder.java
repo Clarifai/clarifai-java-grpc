@@ -49,7 +49,7 @@ public interface PatchLabelOrdersRequestOrBuilder extends
   /**
    * <pre>
    * The action to perform on the patched objects
-   * For now actions 'merge', 'overwrite', and 'remove' are supported
+   * For now, only 'overwrite' option is supported
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -59,7 +59,7 @@ public interface PatchLabelOrdersRequestOrBuilder extends
   /**
    * <pre>
    * The action to perform on the patched objects
-   * For now actions 'merge', 'overwrite', and 'remove' are supported
+   * For now, only 'overwrite' option is supported
    * </pre>
    *
    * <code>string action = 3;</code>

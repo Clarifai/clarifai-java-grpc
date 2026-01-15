@@ -9,7 +9,7 @@ public interface AutoAnnotationRequestOrBuilder extends
 
   /**
    * <pre>
-   * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+   * Perform prediction request and call PostAnnotations endpoint using prediction results.
    * </pre>
    *
    * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -18,7 +18,7 @@ public interface AutoAnnotationRequestOrBuilder extends
   boolean hasPostModelOutputsRequest();
   /**
    * <pre>
-   * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+   * Perform prediction request and call PostAnnotations endpoint using prediction results.
    * </pre>
    *
    * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -27,7 +27,7 @@ public interface AutoAnnotationRequestOrBuilder extends
   com.clarifai.grpc.api.PostModelOutputsRequest getPostModelOutputsRequest();
   /**
    * <pre>
-   * Perform prediction request and call PostAnnotations endpoint using post_annotations_info and prediction results.
+   * Perform prediction request and call PostAnnotations endpoint using prediction results.
    * </pre>
    *
    * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 1;</code>
@@ -35,17 +35,49 @@ public interface AutoAnnotationRequestOrBuilder extends
   com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder getPostModelOutputsRequestOrBuilder();
 
   /**
-   * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
-   * @return Whether the postAnnotationsInfo field is set.
+   * <pre>
+   * Task used to create annotations .
+   * </pre>
+   *
+   * <code>.clarifai.api.Task task = 2;</code>
+   * @return Whether the task field is set.
    */
-  boolean hasPostAnnotationsInfo();
+  boolean hasTask();
   /**
-   * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
-   * @return The postAnnotationsInfo.
+   * <pre>
+   * Task used to create annotations .
+   * </pre>
+   *
+   * <code>.clarifai.api.Task task = 2;</code>
+   * @return The task.
    */
-  com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfo getPostAnnotationsInfo();
+  com.clarifai.grpc.api.Task getTask();
   /**
-   * <code>.clarifai.api.AutoAnnotationRequest.PostAnnotationsInfo post_annotations_info = 2;</code>
+   * <pre>
+   * Task used to create annotations .
+   * </pre>
+   *
+   * <code>.clarifai.api.Task task = 2;</code>
    */
-  com.clarifai.grpc.api.AutoAnnotationRequest.PostAnnotationsInfoOrBuilder getPostAnnotationsInfoOrBuilder();
+  com.clarifai.grpc.api.TaskOrBuilder getTaskOrBuilder();
+
+  /**
+   * <pre>
+   * Authorization value to be used when calling PostAnnotations endpoint.
+   * </pre>
+   *
+   * <code>string authorization_value = 3;</code>
+   * @return The authorizationValue.
+   */
+  java.lang.String getAuthorizationValue();
+  /**
+   * <pre>
+   * Authorization value to be used when calling PostAnnotations endpoint.
+   * </pre>
+   *
+   * <code>string authorization_value = 3;</code>
+   * @return The bytes for authorizationValue.
+   */
+  com.google.protobuf.ByteString
+      getAuthorizationValueBytes();
 }
