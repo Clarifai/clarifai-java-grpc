@@ -22,9 +22,6 @@ private static final long serialVersionUID = 0L;
   }
   private StreamLivestreamAnnotationsRequest() {
     inputId_ = "";
-    taskId_ = "";
-    trackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    annotationType_ = 0;
   }
 
   @java.lang.Override
@@ -47,7 +44,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -77,27 +73,6 @@ private static final long serialVersionUID = 0L;
             inputId_ = s;
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            taskId_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              trackIds_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            trackIds_.add(s);
-            break;
-          }
-          case 40: {
-            int rawValue = input.readEnum();
-
-            annotationType_ = rawValue;
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -115,9 +90,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        trackIds_ = trackIds_.getUnmodifiableView();
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -207,130 +179,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object taskId_;
-  /**
-   * <pre>
-   * (Optional) Filter by specific task ID if known
-   * </pre>
-   *
-   * <code>string task_id = 3;</code>
-   * @return The taskId.
-   */
-  @java.lang.Override
-  public java.lang.String getTaskId() {
-    java.lang.Object ref = taskId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      taskId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * (Optional) Filter by specific task ID if known
-   * </pre>
-   *
-   * <code>string task_id = 3;</code>
-   * @return The bytes for taskId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTaskIdBytes() {
-    java.lang.Object ref = taskId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      taskId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TRACK_IDS_FIELD_NUMBER = 4;
-  private com.google.protobuf.LazyStringList trackIds_;
-  /**
-   * <pre>
-   * (Optional) Filter annotations by track_ids
-   * </pre>
-   *
-   * <code>repeated string track_ids = 4;</code>
-   * @return A list containing the trackIds.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getTrackIdsList() {
-    return trackIds_;
-  }
-  /**
-   * <pre>
-   * (Optional) Filter annotations by track_ids
-   * </pre>
-   *
-   * <code>repeated string track_ids = 4;</code>
-   * @return The count of trackIds.
-   */
-  public int getTrackIdsCount() {
-    return trackIds_.size();
-  }
-  /**
-   * <pre>
-   * (Optional) Filter annotations by track_ids
-   * </pre>
-   *
-   * <code>repeated string track_ids = 4;</code>
-   * @param index The index of the element to return.
-   * @return The trackIds at the given index.
-   */
-  public java.lang.String getTrackIds(int index) {
-    return trackIds_.get(index);
-  }
-  /**
-   * <pre>
-   * (Optional) Filter annotations by track_ids
-   * </pre>
-   *
-   * <code>repeated string track_ids = 4;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the trackIds at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getTrackIdsBytes(int index) {
-    return trackIds_.getByteString(index);
-  }
-
-  public static final int ANNOTATION_TYPE_FIELD_NUMBER = 5;
-  private int annotationType_;
-  /**
-   * <pre>
-   * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-   * </pre>
-   *
-   * <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-   * @return The enum numeric value on the wire for annotationType.
-   */
-  @java.lang.Override public int getAnnotationTypeValue() {
-    return annotationType_;
-  }
-  /**
-   * <pre>
-   * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-   * </pre>
-   *
-   * <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-   * @return The annotationType.
-   */
-  @java.lang.Override public com.clarifai.grpc.api.AnnotationDataType getAnnotationType() {
-    @SuppressWarnings("deprecation")
-    com.clarifai.grpc.api.AnnotationDataType result = com.clarifai.grpc.api.AnnotationDataType.valueOf(annotationType_);
-    return result == null ? com.clarifai.grpc.api.AnnotationDataType.UNRECOGNIZED : result;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -351,15 +199,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskId_);
-    }
-    for (int i = 0; i < trackIds_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, trackIds_.getRaw(i));
-    }
-    if (annotationType_ != com.clarifai.grpc.api.AnnotationDataType.ANNOTATION_DATA_TYPE_NOT_SET.getNumber()) {
-      output.writeEnum(5, annotationType_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -375,21 +214,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inputId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskId_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < trackIds_.size(); i++) {
-        dataSize += computeStringSizeNoTag(trackIds_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getTrackIdsList().size();
-    }
-    if (annotationType_ != com.clarifai.grpc.api.AnnotationDataType.ANNOTATION_DATA_TYPE_NOT_SET.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, annotationType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -413,11 +237,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getInputId()
         .equals(other.getInputId())) return false;
-    if (!getTaskId()
-        .equals(other.getTaskId())) return false;
-    if (!getTrackIdsList()
-        .equals(other.getTrackIdsList())) return false;
-    if (annotationType_ != other.annotationType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -435,14 +254,6 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + INPUT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getInputId().hashCode();
-    hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskId().hashCode();
-    if (getTrackIdsCount() > 0) {
-      hash = (37 * hash) + TRACK_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getTrackIdsList().hashCode();
-    }
-    hash = (37 * hash) + ANNOTATION_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + annotationType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -589,12 +400,6 @@ private static final long serialVersionUID = 0L;
       }
       inputId_ = "";
 
-      taskId_ = "";
-
-      trackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      annotationType_ = 0;
-
       return this;
     }
 
@@ -621,20 +426,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.StreamLivestreamAnnotationsRequest buildPartial() {
       com.clarifai.grpc.api.StreamLivestreamAnnotationsRequest result = new com.clarifai.grpc.api.StreamLivestreamAnnotationsRequest(this);
-      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.inputId_ = inputId_;
-      result.taskId_ = taskId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        trackIds_ = trackIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.trackIds_ = trackIds_;
-      result.annotationType_ = annotationType_;
       onBuilt();
       return result;
     }
@@ -690,23 +487,6 @@ private static final long serialVersionUID = 0L;
         inputId_ = other.inputId_;
         onChanged();
       }
-      if (!other.getTaskId().isEmpty()) {
-        taskId_ = other.taskId_;
-        onChanged();
-      }
-      if (!other.trackIds_.isEmpty()) {
-        if (trackIds_.isEmpty()) {
-          trackIds_ = other.trackIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureTrackIdsIsMutable();
-          trackIds_.addAll(other.trackIds_);
-        }
-        onChanged();
-      }
-      if (other.annotationType_ != 0) {
-        setAnnotationTypeValue(other.getAnnotationTypeValue());
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -735,7 +515,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -948,322 +727,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       inputId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object taskId_ = "";
-    /**
-     * <pre>
-     * (Optional) Filter by specific task ID if known
-     * </pre>
-     *
-     * <code>string task_id = 3;</code>
-     * @return The taskId.
-     */
-    public java.lang.String getTaskId() {
-      java.lang.Object ref = taskId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * (Optional) Filter by specific task ID if known
-     * </pre>
-     *
-     * <code>string task_id = 3;</code>
-     * @return The bytes for taskId.
-     */
-    public com.google.protobuf.ByteString
-        getTaskIdBytes() {
-      java.lang.Object ref = taskId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * (Optional) Filter by specific task ID if known
-     * </pre>
-     *
-     * <code>string task_id = 3;</code>
-     * @param value The taskId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter by specific task ID if known
-     * </pre>
-     *
-     * <code>string task_id = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTaskId() {
-      
-      taskId_ = getDefaultInstance().getTaskId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter by specific task ID if known
-     * </pre>
-     *
-     * <code>string task_id = 3;</code>
-     * @param value The bytes for taskId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      taskId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList trackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureTrackIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        trackIds_ = new com.google.protobuf.LazyStringArrayList(trackIds_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-    /**
-     * <pre>
-     * (Optional) Filter annotations by track_ids
-     * </pre>
-     *
-     * <code>repeated string track_ids = 4;</code>
-     * @return A list containing the trackIds.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getTrackIdsList() {
-      return trackIds_.getUnmodifiableView();
-    }
-    /**
-     * <pre>
-     * (Optional) Filter annotations by track_ids
-     * </pre>
-     *
-     * <code>repeated string track_ids = 4;</code>
-     * @return The count of trackIds.
-     */
-    public int getTrackIdsCount() {
-      return trackIds_.size();
-    }
-    /**
-     * <pre>
-     * (Optional) Filter annotations by track_ids
-     * </pre>
-     *
-     * <code>repeated string track_ids = 4;</code>
-     * @param index The index of the element to return.
-     * @return The trackIds at the given index.
-     */
-    public java.lang.String getTrackIds(int index) {
-      return trackIds_.get(index);
-    }
-    /**
-     * <pre>
-     * (Optional) Filter annotations by track_ids
-     * </pre>
-     *
-     * <code>repeated string track_ids = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the trackIds at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getTrackIdsBytes(int index) {
-      return trackIds_.getByteString(index);
-    }
-    /**
-     * <pre>
-     * (Optional) Filter annotations by track_ids
-     * </pre>
-     *
-     * <code>repeated string track_ids = 4;</code>
-     * @param index The index to set the value at.
-     * @param value The trackIds to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTrackIds(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTrackIdsIsMutable();
-      trackIds_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter annotations by track_ids
-     * </pre>
-     *
-     * <code>repeated string track_ids = 4;</code>
-     * @param value The trackIds to add.
-     * @return This builder for chaining.
-     */
-    public Builder addTrackIds(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTrackIdsIsMutable();
-      trackIds_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter annotations by track_ids
-     * </pre>
-     *
-     * <code>repeated string track_ids = 4;</code>
-     * @param values The trackIds to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllTrackIds(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureTrackIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, trackIds_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter annotations by track_ids
-     * </pre>
-     *
-     * <code>repeated string track_ids = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTrackIds() {
-      trackIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter annotations by track_ids
-     * </pre>
-     *
-     * <code>repeated string track_ids = 4;</code>
-     * @param value The bytes of the trackIds to add.
-     * @return This builder for chaining.
-     */
-    public Builder addTrackIdsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureTrackIdsIsMutable();
-      trackIds_.add(value);
-      onChanged();
-      return this;
-    }
-
-    private int annotationType_ = 0;
-    /**
-     * <pre>
-     * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-     * </pre>
-     *
-     * <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-     * @return The enum numeric value on the wire for annotationType.
-     */
-    @java.lang.Override public int getAnnotationTypeValue() {
-      return annotationType_;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-     * </pre>
-     *
-     * <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-     * @param value The enum numeric value on the wire for annotationType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAnnotationTypeValue(int value) {
-      
-      annotationType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-     * </pre>
-     *
-     * <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-     * @return The annotationType.
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.AnnotationDataType getAnnotationType() {
-      @SuppressWarnings("deprecation")
-      com.clarifai.grpc.api.AnnotationDataType result = com.clarifai.grpc.api.AnnotationDataType.valueOf(annotationType_);
-      return result == null ? com.clarifai.grpc.api.AnnotationDataType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-     * </pre>
-     *
-     * <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-     * @param value The annotationType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAnnotationType(com.clarifai.grpc.api.AnnotationDataType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      annotationType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (Optional) Filter by annotation type (e.g., "bounding_box", "point", "mask")
-     * </pre>
-     *
-     * <code>.clarifai.api.AnnotationDataType annotation_type = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAnnotationType() {
-      
-      annotationType_ = 0;
       onChanged();
       return this;
     }
