@@ -297,7 +297,7 @@ public interface PipelineVersionRunOrBuilder extends
 
   /**
    * <pre>
-   * When the pipeline run finished executing (terminal status)  
+   * When the pipeline run finished executing (terminal status)
    * </pre>
    *
    * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -306,7 +306,7 @@ public interface PipelineVersionRunOrBuilder extends
   boolean hasEndedAt();
   /**
    * <pre>
-   * When the pipeline run finished executing (terminal status)  
+   * When the pipeline run finished executing (terminal status)
    * </pre>
    *
    * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -315,7 +315,7 @@ public interface PipelineVersionRunOrBuilder extends
   com.google.protobuf.Timestamp getEndedAt();
   /**
    * <pre>
-   * When the pipeline run finished executing (terminal status)  
+   * When the pipeline run finished executing (terminal status)
    * </pre>
    *
    * <code>.google.protobuf.Timestamp ended_at = 12;</code>

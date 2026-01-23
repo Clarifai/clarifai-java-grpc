@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     inputSourceType_ = 0;
     inputSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    workerIds_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -148,6 +149,15 @@ private static final long serialVersionUID = 0L;
             inputSourceIds_.add(s);
             break;
           }
+          case 98: {
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              workerIds_ = new java.util.ArrayList<com.clarifai.grpc.api.WorkerIDSet>();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            workerIds_.add(
+                input.readMessage(com.clarifai.grpc.api.WorkerIDSet.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -182,6 +192,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000020) != 0)) {
         inputSourceIds_ = inputSourceIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        workerIds_ = java.util.Collections.unmodifiableList(workerIds_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -263,48 +276,60 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Get tasks that have ANY user from this list assigned as worker.
+   * Deprecated: Use worker_ids.
    * </pre>
    *
-   * <code>repeated string worker_user_ids = 4;</code>
+   * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7731
    * @return A list containing the workerUserIds.
    */
-  public com.google.protobuf.ProtocolStringList
+  @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
       getWorkerUserIdsList() {
     return workerUserIds_;
   }
   /**
    * <pre>
    * Get tasks that have ANY user from this list assigned as worker.
+   * Deprecated: Use worker_ids.
    * </pre>
    *
-   * <code>repeated string worker_user_ids = 4;</code>
+   * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7731
    * @return The count of workerUserIds.
    */
-  public int getWorkerUserIdsCount() {
+  @java.lang.Deprecated public int getWorkerUserIdsCount() {
     return workerUserIds_.size();
   }
   /**
    * <pre>
    * Get tasks that have ANY user from this list assigned as worker.
+   * Deprecated: Use worker_ids.
    * </pre>
    *
-   * <code>repeated string worker_user_ids = 4;</code>
+   * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7731
    * @param index The index of the element to return.
    * @return The workerUserIds at the given index.
    */
-  public java.lang.String getWorkerUserIds(int index) {
+  @java.lang.Deprecated public java.lang.String getWorkerUserIds(int index) {
     return workerUserIds_.get(index);
   }
   /**
    * <pre>
    * Get tasks that have ANY user from this list assigned as worker.
+   * Deprecated: Use worker_ids.
    * </pre>
    *
-   * <code>repeated string worker_user_ids = 4;</code>
+   * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7731
    * @param index The index of the value to return.
    * @return The bytes of the workerUserIds at the given index.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getWorkerUserIdsBytes(int index) {
     return workerUserIds_.getByteString(index);
   }
@@ -655,6 +680,46 @@ private static final long serialVersionUID = 0L;
     return inputSourceIds_.getByteString(index);
   }
 
+  public static final int WORKER_IDS_FIELD_NUMBER = 12;
+  private java.util.List<com.clarifai.grpc.api.WorkerIDSet> workerIds_;
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.WorkerIDSet> getWorkerIdsList() {
+    return workerIds_;
+  }
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.WorkerIDSetOrBuilder> 
+      getWorkerIdsOrBuilderList() {
+    return workerIds_;
+  }
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  @java.lang.Override
+  public int getWorkerIdsCount() {
+    return workerIds_.size();
+  }
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkerIDSet getWorkerIds(int index) {
+    return workerIds_.get(index);
+  }
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkerIDSetOrBuilder getWorkerIdsOrBuilder(
+      int index) {
+    return workerIds_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -701,6 +766,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < inputSourceIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, inputSourceIds_.getRaw(i));
+    }
+    for (int i = 0; i < workerIds_.size(); i++) {
+      output.writeMessage(12, workerIds_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -779,6 +847,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getInputSourceIdsList().size();
     }
+    for (int i = 0; i < workerIds_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, workerIds_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -818,6 +890,8 @@ private static final long serialVersionUID = 0L;
     if (inputSourceType_ != other.inputSourceType_) return false;
     if (!getInputSourceIdsList()
         .equals(other.getInputSourceIdsList())) return false;
+    if (!getWorkerIdsList()
+        .equals(other.getWorkerIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -865,6 +939,10 @@ private static final long serialVersionUID = 0L;
     if (getInputSourceIdsCount() > 0) {
       hash = (37 * hash) + INPUT_SOURCE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getInputSourceIdsList().hashCode();
+    }
+    if (getWorkerIdsCount() > 0) {
+      hash = (37 * hash) + WORKER_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerIdsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -998,6 +1076,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getWorkerIdsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1029,6 +1108,12 @@ private static final long serialVersionUID = 0L;
 
       inputSourceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
+      if (workerIdsBuilder_ == null) {
+        workerIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      } else {
+        workerIdsBuilder_.clear();
+      }
       return this;
     }
 
@@ -1095,6 +1180,15 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.inputSourceIds_ = inputSourceIds_;
+      if (workerIdsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          workerIds_ = java.util.Collections.unmodifiableList(workerIds_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.workerIds_ = workerIds_;
+      } else {
+        result.workerIds_ = workerIdsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1217,6 +1311,32 @@ private static final long serialVersionUID = 0L;
           inputSourceIds_.addAll(other.inputSourceIds_);
         }
         onChanged();
+      }
+      if (workerIdsBuilder_ == null) {
+        if (!other.workerIds_.isEmpty()) {
+          if (workerIds_.isEmpty()) {
+            workerIds_ = other.workerIds_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureWorkerIdsIsMutable();
+            workerIds_.addAll(other.workerIds_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.workerIds_.isEmpty()) {
+          if (workerIdsBuilder_.isEmpty()) {
+            workerIdsBuilder_.dispose();
+            workerIdsBuilder_ = null;
+            workerIds_ = other.workerIds_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            workerIdsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getWorkerIdsFieldBuilder() : null;
+          } else {
+            workerIdsBuilder_.addAllMessages(other.workerIds_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1469,62 +1589,77 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      * </pre>
      *
-     * <code>repeated string worker_user_ids = 4;</code>
+     * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7731
      * @return A list containing the workerUserIds.
      */
-    public com.google.protobuf.ProtocolStringList
+    @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
         getWorkerUserIdsList() {
       return workerUserIds_.getUnmodifiableView();
     }
     /**
      * <pre>
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      * </pre>
      *
-     * <code>repeated string worker_user_ids = 4;</code>
+     * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7731
      * @return The count of workerUserIds.
      */
-    public int getWorkerUserIdsCount() {
+    @java.lang.Deprecated public int getWorkerUserIdsCount() {
       return workerUserIds_.size();
     }
     /**
      * <pre>
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      * </pre>
      *
-     * <code>repeated string worker_user_ids = 4;</code>
+     * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7731
      * @param index The index of the element to return.
      * @return The workerUserIds at the given index.
      */
-    public java.lang.String getWorkerUserIds(int index) {
+    @java.lang.Deprecated public java.lang.String getWorkerUserIds(int index) {
       return workerUserIds_.get(index);
     }
     /**
      * <pre>
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      * </pre>
      *
-     * <code>repeated string worker_user_ids = 4;</code>
+     * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7731
      * @param index The index of the value to return.
      * @return The bytes of the workerUserIds at the given index.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getWorkerUserIdsBytes(int index) {
       return workerUserIds_.getByteString(index);
     }
     /**
      * <pre>
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      * </pre>
      *
-     * <code>repeated string worker_user_ids = 4;</code>
+     * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7731
      * @param index The index to set the value at.
      * @param value The workerUserIds to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkerUserIds(
+    @java.lang.Deprecated public Builder setWorkerUserIds(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1537,13 +1672,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      * </pre>
      *
-     * <code>repeated string worker_user_ids = 4;</code>
+     * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7731
      * @param value The workerUserIds to add.
      * @return This builder for chaining.
      */
-    public Builder addWorkerUserIds(
+    @java.lang.Deprecated public Builder addWorkerUserIds(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1556,13 +1694,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      * </pre>
      *
-     * <code>repeated string worker_user_ids = 4;</code>
+     * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7731
      * @param values The workerUserIds to add.
      * @return This builder for chaining.
      */
-    public Builder addAllWorkerUserIds(
+    @java.lang.Deprecated public Builder addAllWorkerUserIds(
         java.lang.Iterable<java.lang.String> values) {
       ensureWorkerUserIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1573,12 +1714,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      * </pre>
      *
-     * <code>repeated string worker_user_ids = 4;</code>
+     * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7731
      * @return This builder for chaining.
      */
-    public Builder clearWorkerUserIds() {
+    @java.lang.Deprecated public Builder clearWorkerUserIds() {
       workerUserIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
@@ -1587,13 +1731,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Get tasks that have ANY user from this list assigned as worker.
+     * Deprecated: Use worker_ids.
      * </pre>
      *
-     * <code>repeated string worker_user_ids = 4;</code>
+     * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+     *     See proto/clarifai/api/service.proto;l=7731
      * @param value The bytes of the workerUserIds to add.
      * @return This builder for chaining.
      */
-    public Builder addWorkerUserIdsBytes(
+    @java.lang.Deprecated public Builder addWorkerUserIdsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2561,6 +2708,246 @@ private static final long serialVersionUID = 0L;
       inputSourceIds_.add(value);
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.WorkerIDSet> workerIds_ =
+      java.util.Collections.emptyList();
+    private void ensureWorkerIdsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        workerIds_ = new java.util.ArrayList<com.clarifai.grpc.api.WorkerIDSet>(workerIds_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.WorkerIDSet, com.clarifai.grpc.api.WorkerIDSet.Builder, com.clarifai.grpc.api.WorkerIDSetOrBuilder> workerIdsBuilder_;
+
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.WorkerIDSet> getWorkerIdsList() {
+      if (workerIdsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(workerIds_);
+      } else {
+        return workerIdsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public int getWorkerIdsCount() {
+      if (workerIdsBuilder_ == null) {
+        return workerIds_.size();
+      } else {
+        return workerIdsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public com.clarifai.grpc.api.WorkerIDSet getWorkerIds(int index) {
+      if (workerIdsBuilder_ == null) {
+        return workerIds_.get(index);
+      } else {
+        return workerIdsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public Builder setWorkerIds(
+        int index, com.clarifai.grpc.api.WorkerIDSet value) {
+      if (workerIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWorkerIdsIsMutable();
+        workerIds_.set(index, value);
+        onChanged();
+      } else {
+        workerIdsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public Builder setWorkerIds(
+        int index, com.clarifai.grpc.api.WorkerIDSet.Builder builderForValue) {
+      if (workerIdsBuilder_ == null) {
+        ensureWorkerIdsIsMutable();
+        workerIds_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        workerIdsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public Builder addWorkerIds(com.clarifai.grpc.api.WorkerIDSet value) {
+      if (workerIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWorkerIdsIsMutable();
+        workerIds_.add(value);
+        onChanged();
+      } else {
+        workerIdsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public Builder addWorkerIds(
+        int index, com.clarifai.grpc.api.WorkerIDSet value) {
+      if (workerIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWorkerIdsIsMutable();
+        workerIds_.add(index, value);
+        onChanged();
+      } else {
+        workerIdsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public Builder addWorkerIds(
+        com.clarifai.grpc.api.WorkerIDSet.Builder builderForValue) {
+      if (workerIdsBuilder_ == null) {
+        ensureWorkerIdsIsMutable();
+        workerIds_.add(builderForValue.build());
+        onChanged();
+      } else {
+        workerIdsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public Builder addWorkerIds(
+        int index, com.clarifai.grpc.api.WorkerIDSet.Builder builderForValue) {
+      if (workerIdsBuilder_ == null) {
+        ensureWorkerIdsIsMutable();
+        workerIds_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        workerIdsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public Builder addAllWorkerIds(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.WorkerIDSet> values) {
+      if (workerIdsBuilder_ == null) {
+        ensureWorkerIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, workerIds_);
+        onChanged();
+      } else {
+        workerIdsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public Builder clearWorkerIds() {
+      if (workerIdsBuilder_ == null) {
+        workerIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        workerIdsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public Builder removeWorkerIds(int index) {
+      if (workerIdsBuilder_ == null) {
+        ensureWorkerIdsIsMutable();
+        workerIds_.remove(index);
+        onChanged();
+      } else {
+        workerIdsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public com.clarifai.grpc.api.WorkerIDSet.Builder getWorkerIdsBuilder(
+        int index) {
+      return getWorkerIdsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public com.clarifai.grpc.api.WorkerIDSetOrBuilder getWorkerIdsOrBuilder(
+        int index) {
+      if (workerIdsBuilder_ == null) {
+        return workerIds_.get(index);  } else {
+        return workerIdsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.WorkerIDSetOrBuilder> 
+         getWorkerIdsOrBuilderList() {
+      if (workerIdsBuilder_ != null) {
+        return workerIdsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(workerIds_);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public com.clarifai.grpc.api.WorkerIDSet.Builder addWorkerIdsBuilder() {
+      return getWorkerIdsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.WorkerIDSet.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public com.clarifai.grpc.api.WorkerIDSet.Builder addWorkerIdsBuilder(
+        int index) {
+      return getWorkerIdsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.WorkerIDSet.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.WorkerIDSet.Builder> 
+         getWorkerIdsBuilderList() {
+      return getWorkerIdsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.WorkerIDSet, com.clarifai.grpc.api.WorkerIDSet.Builder, com.clarifai.grpc.api.WorkerIDSetOrBuilder> 
+        getWorkerIdsFieldBuilder() {
+      if (workerIdsBuilder_ == null) {
+        workerIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.WorkerIDSet, com.clarifai.grpc.api.WorkerIDSet.Builder, com.clarifai.grpc.api.WorkerIDSetOrBuilder>(
+                workerIds_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        workerIds_ = null;
+      }
+      return workerIdsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

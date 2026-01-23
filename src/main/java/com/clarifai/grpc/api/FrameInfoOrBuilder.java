@@ -17,7 +17,7 @@ public interface FrameInfoOrBuilder extends
    *
    * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.FrameInfo.index is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=803
+   *     See proto/clarifai/api/resources.proto;l=818
    * @return The index.
    */
   @java.lang.Deprecated int getIndex();

@@ -16,7 +16,7 @@ public interface TaskAIAssistantOrBuilder extends
    *
    * <code>string workflow_id = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3631
+   *     See proto/clarifai/api/resources.proto;l=3646
    * @return The workflowId.
    */
   @java.lang.Deprecated java.lang.String getWorkflowId();
@@ -29,7 +29,7 @@ public interface TaskAIAssistantOrBuilder extends
    *
    * <code>string workflow_id = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskAIAssistant.workflow_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3631
+   *     See proto/clarifai/api/resources.proto;l=3646
    * @return The bytes for workflowId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

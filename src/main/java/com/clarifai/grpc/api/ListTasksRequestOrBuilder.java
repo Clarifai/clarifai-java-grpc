@@ -47,42 +47,54 @@ public interface ListTasksRequestOrBuilder extends
   /**
    * <pre>
    * Get tasks that have ANY user from this list assigned as worker.
+   * Deprecated: Use worker_ids.
    * </pre>
    *
-   * <code>repeated string worker_user_ids = 4;</code>
+   * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7731
    * @return A list containing the workerUserIds.
    */
-  java.util.List<java.lang.String>
+  @java.lang.Deprecated java.util.List<java.lang.String>
       getWorkerUserIdsList();
   /**
    * <pre>
    * Get tasks that have ANY user from this list assigned as worker.
+   * Deprecated: Use worker_ids.
    * </pre>
    *
-   * <code>repeated string worker_user_ids = 4;</code>
+   * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7731
    * @return The count of workerUserIds.
    */
-  int getWorkerUserIdsCount();
+  @java.lang.Deprecated int getWorkerUserIdsCount();
   /**
    * <pre>
    * Get tasks that have ANY user from this list assigned as worker.
+   * Deprecated: Use worker_ids.
    * </pre>
    *
-   * <code>repeated string worker_user_ids = 4;</code>
+   * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7731
    * @param index The index of the element to return.
    * @return The workerUserIds at the given index.
    */
-  java.lang.String getWorkerUserIds(int index);
+  @java.lang.Deprecated java.lang.String getWorkerUserIds(int index);
   /**
    * <pre>
    * Get tasks that have ANY user from this list assigned as worker.
+   * Deprecated: Use worker_ids.
    * </pre>
    *
-   * <code>repeated string worker_user_ids = 4;</code>
+   * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
+   *     See proto/clarifai/api/service.proto;l=7731
    * @param index The index of the value to return.
    * @return The bytes of the workerUserIds at the given index.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getWorkerUserIdsBytes(int index);
 
   /**
@@ -367,4 +379,28 @@ public interface ListTasksRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getInputSourceIdsBytes(int index);
+
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.WorkerIDSet> 
+      getWorkerIdsList();
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  com.clarifai.grpc.api.WorkerIDSet getWorkerIds(int index);
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  int getWorkerIdsCount();
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.WorkerIDSetOrBuilder> 
+      getWorkerIdsOrBuilderList();
+  /**
+   * <code>repeated .clarifai.api.WorkerIDSet worker_ids = 12;</code>
+   */
+  com.clarifai.grpc.api.WorkerIDSetOrBuilder getWorkerIdsOrBuilder(
+      int index);
 }

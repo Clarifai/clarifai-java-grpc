@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp endedAt_;
   /**
    * <pre>
-   * When the pipeline run finished executing (terminal status)  
+   * When the pipeline run finished executing (terminal status)
    * </pre>
    *
    * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -709,7 +709,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the pipeline run finished executing (terminal status)  
+   * When the pipeline run finished executing (terminal status)
    * </pre>
    *
    * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -721,7 +721,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the pipeline run finished executing (terminal status)  
+   * When the pipeline run finished executing (terminal status)
    * </pre>
    *
    * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -3111,7 +3111,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endedAtBuilder_;
     /**
      * <pre>
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      * </pre>
      *
      * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -3122,7 +3122,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      * </pre>
      *
      * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -3137,7 +3137,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      * </pre>
      *
      * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -3157,7 +3157,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      * </pre>
      *
      * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -3175,7 +3175,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      * </pre>
      *
      * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -3197,7 +3197,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      * </pre>
      *
      * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -3215,7 +3215,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      * </pre>
      *
      * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -3227,7 +3227,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      * </pre>
      *
      * <code>.google.protobuf.Timestamp ended_at = 12;</code>
@@ -3242,7 +3242,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the pipeline run finished executing (terminal status)  
+     * When the pipeline run finished executing (terminal status)
      * </pre>
      *
      * <code>.google.protobuf.Timestamp ended_at = 12;</code>
