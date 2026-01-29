@@ -25,13 +25,13 @@ public interface FrameInfoOrBuilder extends
   /**
    * <pre>
    * time in the video in milliseconds. This is independent of the sampling rates used during
-   * processing.
+   * processing. Changed from uint32 to uint64 to support video livestreams longer than 49.7 days.
    * </pre>
    *
-   * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>uint64 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The time.
    */
-  int getTime();
+  long getTime();
 
   /**
    * <pre>

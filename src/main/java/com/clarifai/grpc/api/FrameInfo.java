@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            time_ = input.readUInt32();
+            time_ = input.readUInt64();
             break;
           }
           case 24: {
@@ -122,18 +122,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TIME_FIELD_NUMBER = 2;
-  private int time_;
+  private long time_;
   /**
    * <pre>
    * time in the video in milliseconds. This is independent of the sampling rates used during
-   * processing.
+   * processing. Changed from uint32 to uint64 to support video livestreams longer than 49.7 days.
    * </pre>
    *
-   * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>uint64 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The time.
    */
   @java.lang.Override
-  public int getTime() {
+  public long getTime() {
     return time_;
   }
 
@@ -170,8 +170,8 @@ private static final long serialVersionUID = 0L;
     if (index_ != 0) {
       output.writeUInt32(1, index_);
     }
-    if (time_ != 0) {
-      output.writeUInt32(2, time_);
+    if (time_ != 0L) {
+      output.writeUInt64(2, time_);
     }
     if (number_ != 0) {
       output.writeUInt32(3, number_);
@@ -189,9 +189,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(1, index_);
     }
-    if (time_ != 0) {
+    if (time_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, time_);
+        .computeUInt64Size(2, time_);
     }
     if (number_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -232,7 +232,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INDEX_FIELD_NUMBER;
     hash = (53 * hash) + getIndex();
     hash = (37 * hash) + TIME_FIELD_NUMBER;
-    hash = (53 * hash) + getTime();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTime());
     hash = (37 * hash) + NUMBER_FIELD_NUMBER;
     hash = (53 * hash) + getNumber();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -374,7 +375,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       index_ = 0;
 
-      time_ = 0;
+      time_ = 0L;
 
       number_ = 0;
 
@@ -458,7 +459,7 @@ private static final long serialVersionUID = 0L;
       if (other.getIndex() != 0) {
         setIndex(other.getIndex());
       }
-      if (other.getTime() != 0) {
+      if (other.getTime() != 0L) {
         setTime(other.getTime());
       }
       if (other.getNumber() != 0) {
@@ -551,31 +552,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int time_ ;
+    private long time_ ;
     /**
      * <pre>
      * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
+     * processing. Changed from uint32 to uint64 to support video livestreams longer than 49.7 days.
      * </pre>
      *
-     * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>uint64 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The time.
      */
     @java.lang.Override
-    public int getTime() {
+    public long getTime() {
       return time_;
     }
     /**
      * <pre>
      * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
+     * processing. Changed from uint32 to uint64 to support video livestreams longer than 49.7 days.
      * </pre>
      *
-     * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>uint64 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param value The time to set.
      * @return This builder for chaining.
      */
-    public Builder setTime(int value) {
+    public Builder setTime(long value) {
       
       time_ = value;
       onChanged();
@@ -584,15 +585,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
+     * processing. Changed from uint32 to uint64 to support video livestreams longer than 49.7 days.
      * </pre>
      *
-     * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>uint64 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return This builder for chaining.
      */
     public Builder clearTime() {
       
-      time_ = 0;
+      time_ = 0L;
       onChanged();
       return this;
     }

@@ -611,4 +611,14 @@ public interface ModelVersionOrBuilder extends
    */
   com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The number of threads to use for this model version.
+   * </pre>
+   *
+   * <code>int32 num_threads = 28;</code>
+   * @return The numThreads.
+   */
+  int getNumThreads();
 }

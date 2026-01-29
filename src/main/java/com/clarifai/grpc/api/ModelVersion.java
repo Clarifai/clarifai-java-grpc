@@ -307,6 +307,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.SpecialHandling.parser(), extensionRegistry));
             break;
           }
+          case 224: {
+
+            numThreads_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1304,6 +1309,21 @@ private static final long serialVersionUID = 0L;
     return specialHandling_.get(index);
   }
 
+  public static final int NUM_THREADS_FIELD_NUMBER = 28;
+  private int numThreads_;
+  /**
+   * <pre>
+   * The number of threads to use for this model version.
+   * </pre>
+   *
+   * <code>int32 num_threads = 28;</code>
+   * @return The numThreads.
+   */
+  @java.lang.Override
+  public int getNumThreads() {
+    return numThreads_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1389,6 +1409,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < specialHandling_.size(); i++) {
       output.writeMessage(27, specialHandling_.get(i));
+    }
+    if (numThreads_ != 0) {
+      output.writeInt32(28, numThreads_);
     }
     unknownFields.writeTo(output);
   }
@@ -1488,6 +1511,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < specialHandling_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(27, specialHandling_.get(i));
+    }
+    if (numThreads_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(28, numThreads_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1594,6 +1621,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMethodSignaturesList())) return false;
     if (!getSpecialHandlingList()
         .equals(other.getSpecialHandlingList())) return false;
+    if (getNumThreads()
+        != other.getNumThreads()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1685,6 +1714,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SPECIAL_HANDLING_FIELD_NUMBER;
       hash = (53 * hash) + getSpecialHandlingList().hashCode();
     }
+    hash = (37 * hash) + NUM_THREADS_FIELD_NUMBER;
+    hash = (53 * hash) + getNumThreads();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1936,6 +1967,8 @@ private static final long serialVersionUID = 0L;
       } else {
         specialHandlingBuilder_.clear();
       }
+      numThreads_ = 0;
+
       return this;
     }
 
@@ -2059,6 +2092,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.specialHandling_ = specialHandlingBuilder_.build();
       }
+      result.numThreads_ = numThreads_;
       onBuilt();
       return result;
     }
@@ -2230,6 +2264,9 @@ private static final long serialVersionUID = 0L;
             specialHandlingBuilder_.addAllMessages(other.specialHandling_);
           }
         }
+      }
+      if (other.getNumThreads() != 0) {
+        setNumThreads(other.getNumThreads());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5712,6 +5749,49 @@ private static final long serialVersionUID = 0L;
         specialHandling_ = null;
       }
       return specialHandlingBuilder_;
+    }
+
+    private int numThreads_ ;
+    /**
+     * <pre>
+     * The number of threads to use for this model version.
+     * </pre>
+     *
+     * <code>int32 num_threads = 28;</code>
+     * @return The numThreads.
+     */
+    @java.lang.Override
+    public int getNumThreads() {
+      return numThreads_;
+    }
+    /**
+     * <pre>
+     * The number of threads to use for this model version.
+     * </pre>
+     *
+     * <code>int32 num_threads = 28;</code>
+     * @param value The numThreads to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNumThreads(int value) {
+      
+      numThreads_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The number of threads to use for this model version.
+     * </pre>
+     *
+     * <code>int32 num_threads = 28;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNumThreads() {
+      
+      numThreads_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
