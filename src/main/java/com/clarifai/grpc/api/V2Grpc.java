@@ -2898,6 +2898,37 @@ public final class V2Grpc {
     return getPostModelMigrationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModelMigrationRequest,
+      com.clarifai.grpc.api.SingleModelResponse> getDeleteModelMigrationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteModelMigration",
+      requestType = com.clarifai.grpc.api.DeleteModelMigrationRequest.class,
+      responseType = com.clarifai.grpc.api.SingleModelResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModelMigrationRequest,
+      com.clarifai.grpc.api.SingleModelResponse> getDeleteModelMigrationMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModelMigrationRequest, com.clarifai.grpc.api.SingleModelResponse> getDeleteModelMigrationMethod;
+    if ((getDeleteModelMigrationMethod = V2Grpc.getDeleteModelMigrationMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteModelMigrationMethod = V2Grpc.getDeleteModelMigrationMethod) == null) {
+          V2Grpc.getDeleteModelMigrationMethod = getDeleteModelMigrationMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteModelMigrationRequest, com.clarifai.grpc.api.SingleModelResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteModelMigration"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteModelMigrationRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleModelResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteModelMigration"))
+              .build();
+        }
+      }
+    }
+    return getDeleteModelMigrationMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PutModelVersionExportsRequest,
       com.clarifai.grpc.api.SingleModelVersionExportResponse> getPutModelVersionExportsMethod;
 
@@ -10049,6 +10080,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Reverts a model migration from Docker format back to Triton format.
+     * </pre>
+     */
+    public void deleteModelMigration(com.clarifai.grpc.api.DeleteModelMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteModelMigrationMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Export a model
      * </pre>
      */
@@ -12573,6 +12614,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.SingleModelResponse>(
                   this, METHODID_POST_MODEL_MIGRATION)))
           .addMethod(
+            getDeleteModelMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteModelMigrationRequest,
+                com.clarifai.grpc.api.SingleModelResponse>(
+                  this, METHODID_DELETE_MODEL_MIGRATION)))
+          .addMethod(
             getPutModelVersionExportsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -15030,6 +15078,17 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostModelMigrationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Reverts a model migration from Docker format back to Triton format.
+     * </pre>
+     */
+    public void deleteModelMigration(com.clarifai.grpc.api.DeleteModelMigrationRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteModelMigrationMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -18061,6 +18120,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Reverts a model migration from Docker format back to Triton format.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleModelResponse deleteModelMigration(com.clarifai.grpc.api.DeleteModelMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteModelMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Export a model
      * </pre>
      */
@@ -20901,6 +20970,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Reverts a model migration from Docker format back to Triton format.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleModelResponse> deleteModelMigration(
+        com.clarifai.grpc.api.DeleteModelMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteModelMigrationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Export a model
      * </pre>
      */
@@ -23007,206 +23087,207 @@ public final class V2Grpc {
   private static final int METHODID_PATCH_MODEL_VERSIONS = 88;
   private static final int METHODID_DELETE_MODEL_VERSION = 89;
   private static final int METHODID_POST_MODEL_MIGRATION = 90;
-  private static final int METHODID_PUT_MODEL_VERSION_EXPORTS = 91;
-  private static final int METHODID_GET_MODEL_VERSION_EXPORT = 92;
-  private static final int METHODID_GET_MODEL_VERSION_METRICS = 93;
-  private static final int METHODID_POST_MODEL_VERSION_METRICS = 94;
-  private static final int METHODID_POST_MODEL_VERSION_EVALUATIONS = 95;
-  private static final int METHODID_LIST_MODEL_VERSION_EVALUATIONS = 96;
-  private static final int METHODID_GET_MODEL_VERSION_EVALUATION = 97;
-  private static final int METHODID_POST_EVALUATIONS = 98;
-  private static final int METHODID_LIST_EVALUATIONS = 99;
-  private static final int METHODID_GET_EVALUATION = 100;
-  private static final int METHODID_LIST_MODEL_REFERENCES = 101;
-  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 102;
-  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 103;
-  private static final int METHODID_GET_WORKFLOW = 104;
-  private static final int METHODID_LIST_WORKFLOWS = 105;
-  private static final int METHODID_POST_WORKFLOWS = 106;
-  private static final int METHODID_PATCH_WORKFLOWS = 107;
-  private static final int METHODID_PATCH_WORKFLOW_IDS = 108;
-  private static final int METHODID_DELETE_WORKFLOW = 109;
-  private static final int METHODID_DELETE_WORKFLOWS = 110;
-  private static final int METHODID_POST_WORKFLOW_RESULTS = 111;
-  private static final int METHODID_LIST_WORKFLOW_VERSIONS = 112;
-  private static final int METHODID_GET_WORKFLOW_VERSION = 113;
-  private static final int METHODID_DELETE_WORKFLOW_VERSIONS = 114;
-  private static final int METHODID_PATCH_WORKFLOW_VERSIONS = 115;
-  private static final int METHODID_GET_KEY = 116;
-  private static final int METHODID_LIST_KEYS = 117;
-  private static final int METHODID_LIST_APP_KEYS = 118;
-  private static final int METHODID_DELETE_KEY = 119;
-  private static final int METHODID_POST_KEYS = 120;
-  private static final int METHODID_PATCH_KEYS = 121;
-  private static final int METHODID_MY_SCOPES = 122;
-  private static final int METHODID_MY_SCOPES_USER = 123;
-  private static final int METHODID_MY_SCOPES_ROOT = 124;
-  private static final int METHODID_LIST_SCOPES = 125;
-  private static final int METHODID_GET_APP = 126;
-  private static final int METHODID_LIST_APPS = 127;
-  private static final int METHODID_DELETE_APP = 128;
-  private static final int METHODID_POST_APPS = 129;
-  private static final int METHODID_PATCH_APPS = 130;
-  private static final int METHODID_PATCH_APPS_DETAILS = 131;
-  private static final int METHODID_PATCH_APPS_IDS = 132;
-  private static final int METHODID_PATCH_APP = 133;
-  private static final int METHODID_POST_APPS_SEARCHES = 134;
-  private static final int METHODID_GET_USER = 135;
-  private static final int METHODID_POST_VALIDATE_PASSWORD = 136;
-  private static final int METHODID_GET_SEARCH = 137;
-  private static final int METHODID_LIST_SEARCHES = 138;
-  private static final int METHODID_PATCH_SEARCHES = 139;
-  private static final int METHODID_POST_SEARCHES = 140;
-  private static final int METHODID_POST_SEARCHES_BY_ID = 141;
-  private static final int METHODID_DELETE_SEARCH = 142;
-  private static final int METHODID_LIST_ANNOTATION_FILTERS = 143;
-  private static final int METHODID_GET_ANNOTATION_FILTER = 144;
-  private static final int METHODID_POST_ANNOTATION_FILTERS = 145;
-  private static final int METHODID_PATCH_ANNOTATION_FILTERS = 146;
-  private static final int METHODID_DELETE_ANNOTATION_FILTERS = 147;
-  private static final int METHODID_LIST_STATUS_CODES = 148;
-  private static final int METHODID_GET_STATUS_CODE = 149;
-  private static final int METHODID_LIST_COLLABORATORS = 150;
-  private static final int METHODID_POST_COLLABORATORS = 151;
-  private static final int METHODID_PATCH_COLLABORATORS = 152;
-  private static final int METHODID_DELETE_COLLABORATORS = 153;
-  private static final int METHODID_LIST_COLLABORATIONS = 154;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 155;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 156;
-  private static final int METHODID_GET_APP_DUPLICATION = 157;
-  private static final int METHODID_POST_TASKS = 158;
-  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 159;
-  private static final int METHODID_GET_TASK_INPUT_COUNT = 160;
-  private static final int METHODID_GET_TASK = 161;
-  private static final int METHODID_LIST_TASKS = 162;
-  private static final int METHODID_PATCH_TASKS = 163;
-  private static final int METHODID_DELETE_TASKS = 164;
-  private static final int METHODID_POST_LABEL_ORDERS = 165;
-  private static final int METHODID_GET_LABEL_ORDER = 166;
-  private static final int METHODID_LIST_LABEL_ORDERS = 167;
-  private static final int METHODID_PATCH_LABEL_ORDERS = 168;
-  private static final int METHODID_DELETE_LABEL_ORDERS = 169;
-  private static final int METHODID_POST_COLLECTORS = 170;
-  private static final int METHODID_GET_COLLECTOR = 171;
-  private static final int METHODID_LIST_COLLECTORS = 172;
-  private static final int METHODID_PATCH_COLLECTORS = 173;
-  private static final int METHODID_DELETE_COLLECTORS = 174;
-  private static final int METHODID_POST_STAT_VALUES = 175;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 176;
-  private static final int METHODID_GET_MODULE = 177;
-  private static final int METHODID_LIST_MODULES = 178;
-  private static final int METHODID_POST_MODULES = 179;
-  private static final int METHODID_PATCH_MODULES = 180;
-  private static final int METHODID_DELETE_MODULES = 181;
-  private static final int METHODID_GET_MODULE_VERSION = 182;
-  private static final int METHODID_LIST_MODULE_VERSIONS = 183;
-  private static final int METHODID_POST_MODULE_VERSIONS = 184;
-  private static final int METHODID_PATCH_MODULE_VERSIONS = 185;
-  private static final int METHODID_DELETE_MODULE_VERSIONS = 186;
-  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 187;
-  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 188;
-  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 189;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 190;
-  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 191;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 192;
-  private static final int METHODID_POST_BULK_OPERATIONS = 193;
-  private static final int METHODID_LIST_BULK_OPERATIONS = 194;
-  private static final int METHODID_GET_BULK_OPERATION = 195;
-  private static final int METHODID_CANCEL_BULK_OPERATIONS = 196;
-  private static final int METHODID_DELETE_BULK_OPERATIONS = 197;
-  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 198;
-  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 199;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 200;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 201;
-  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 202;
-  private static final int METHODID_POST_UPLOADS = 203;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 204;
-  private static final int METHODID_GET_UPLOAD = 205;
-  private static final int METHODID_LIST_UPLOADS = 206;
-  private static final int METHODID_DELETE_UPLOADS = 207;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 208;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 209;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 210;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 211;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 212;
-  private static final int METHODID_LIST_PIPELINE_VERSION_RUNS = 213;
-  private static final int METHODID_GET_RUNNER = 214;
-  private static final int METHODID_LIST_RUNNERS = 215;
-  private static final int METHODID_POST_RUNNERS = 216;
-  private static final int METHODID_PATCH_RUNNERS = 217;
-  private static final int METHODID_DELETE_RUNNERS = 218;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 219;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 220;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 221;
-  private static final int METHODID_LIST_CLOUD_PROVIDERS = 222;
-  private static final int METHODID_LIST_CLOUD_REGIONS = 223;
-  private static final int METHODID_LIST_INSTANCE_TYPES = 224;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 225;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 226;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 227;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 228;
-  private static final int METHODID_PATCH_COMPUTE_CLUSTERS = 229;
-  private static final int METHODID_GET_NODEPOOL = 230;
-  private static final int METHODID_LIST_NODEPOOLS = 231;
-  private static final int METHODID_POST_NODEPOOLS = 232;
-  private static final int METHODID_PATCH_NODEPOOLS = 233;
-  private static final int METHODID_DELETE_NODEPOOLS = 234;
-  private static final int METHODID_GET_DEPLOYMENT = 235;
-  private static final int METHODID_LIST_DEPLOYMENTS = 236;
-  private static final int METHODID_POST_DEPLOYMENTS = 237;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 238;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 239;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 240;
-  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 241;
-  private static final int METHODID_POST_LOG_ENTRIES = 242;
-  private static final int METHODID_LIST_LOG_ENTRIES = 243;
-  private static final int METHODID_STREAM_LOG_ENTRIES = 244;
-  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 245;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 246;
-  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 247;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 248;
-  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 249;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 250;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 251;
-  private static final int METHODID_POST_PIPELINES = 252;
-  private static final int METHODID_GET_PIPELINE = 253;
-  private static final int METHODID_LIST_PIPELINES = 254;
-  private static final int METHODID_PATCH_PIPELINES = 255;
-  private static final int METHODID_DELETE_PIPELINES = 256;
-  private static final int METHODID_GET_PIPELINE_VERSION = 257;
-  private static final int METHODID_LIST_PIPELINE_VERSIONS = 258;
-  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 259;
-  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 260;
-  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 261;
-  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 262;
-  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 263;
-  private static final int METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS = 264;
-  private static final int METHODID_POST_PIPELINE_STEPS = 265;
-  private static final int METHODID_GET_PIPELINE_STEP = 266;
-  private static final int METHODID_LIST_PIPELINE_STEPS = 267;
-  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 268;
-  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 269;
-  private static final int METHODID_DELETE_PIPELINE_STEPS = 270;
-  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 271;
-  private static final int METHODID_POST_ARTIFACTS = 272;
-  private static final int METHODID_GET_ARTIFACT = 273;
-  private static final int METHODID_LIST_ARTIFACTS = 274;
-  private static final int METHODID_DELETE_ARTIFACT = 275;
-  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 276;
-  private static final int METHODID_GET_ARTIFACT_VERSION = 277;
-  private static final int METHODID_DELETE_ARTIFACT_VERSION = 278;
-  private static final int METHODID_GET_SECRET = 279;
-  private static final int METHODID_LIST_SECRETS = 280;
-  private static final int METHODID_POST_SECRETS = 281;
-  private static final int METHODID_PATCH_SECRETS = 282;
-  private static final int METHODID_DELETE_SECRETS = 283;
-  private static final int METHODID_POST_METRICS_QUERY = 284;
-  private static final int METHODID_LIST_METRIC_LABELS = 285;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 286;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 287;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 288;
-  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 289;
-  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 290;
+  private static final int METHODID_DELETE_MODEL_MIGRATION = 91;
+  private static final int METHODID_PUT_MODEL_VERSION_EXPORTS = 92;
+  private static final int METHODID_GET_MODEL_VERSION_EXPORT = 93;
+  private static final int METHODID_GET_MODEL_VERSION_METRICS = 94;
+  private static final int METHODID_POST_MODEL_VERSION_METRICS = 95;
+  private static final int METHODID_POST_MODEL_VERSION_EVALUATIONS = 96;
+  private static final int METHODID_LIST_MODEL_VERSION_EVALUATIONS = 97;
+  private static final int METHODID_GET_MODEL_VERSION_EVALUATION = 98;
+  private static final int METHODID_POST_EVALUATIONS = 99;
+  private static final int METHODID_LIST_EVALUATIONS = 100;
+  private static final int METHODID_GET_EVALUATION = 101;
+  private static final int METHODID_LIST_MODEL_REFERENCES = 102;
+  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 103;
+  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 104;
+  private static final int METHODID_GET_WORKFLOW = 105;
+  private static final int METHODID_LIST_WORKFLOWS = 106;
+  private static final int METHODID_POST_WORKFLOWS = 107;
+  private static final int METHODID_PATCH_WORKFLOWS = 108;
+  private static final int METHODID_PATCH_WORKFLOW_IDS = 109;
+  private static final int METHODID_DELETE_WORKFLOW = 110;
+  private static final int METHODID_DELETE_WORKFLOWS = 111;
+  private static final int METHODID_POST_WORKFLOW_RESULTS = 112;
+  private static final int METHODID_LIST_WORKFLOW_VERSIONS = 113;
+  private static final int METHODID_GET_WORKFLOW_VERSION = 114;
+  private static final int METHODID_DELETE_WORKFLOW_VERSIONS = 115;
+  private static final int METHODID_PATCH_WORKFLOW_VERSIONS = 116;
+  private static final int METHODID_GET_KEY = 117;
+  private static final int METHODID_LIST_KEYS = 118;
+  private static final int METHODID_LIST_APP_KEYS = 119;
+  private static final int METHODID_DELETE_KEY = 120;
+  private static final int METHODID_POST_KEYS = 121;
+  private static final int METHODID_PATCH_KEYS = 122;
+  private static final int METHODID_MY_SCOPES = 123;
+  private static final int METHODID_MY_SCOPES_USER = 124;
+  private static final int METHODID_MY_SCOPES_ROOT = 125;
+  private static final int METHODID_LIST_SCOPES = 126;
+  private static final int METHODID_GET_APP = 127;
+  private static final int METHODID_LIST_APPS = 128;
+  private static final int METHODID_DELETE_APP = 129;
+  private static final int METHODID_POST_APPS = 130;
+  private static final int METHODID_PATCH_APPS = 131;
+  private static final int METHODID_PATCH_APPS_DETAILS = 132;
+  private static final int METHODID_PATCH_APPS_IDS = 133;
+  private static final int METHODID_PATCH_APP = 134;
+  private static final int METHODID_POST_APPS_SEARCHES = 135;
+  private static final int METHODID_GET_USER = 136;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 137;
+  private static final int METHODID_GET_SEARCH = 138;
+  private static final int METHODID_LIST_SEARCHES = 139;
+  private static final int METHODID_PATCH_SEARCHES = 140;
+  private static final int METHODID_POST_SEARCHES = 141;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 142;
+  private static final int METHODID_DELETE_SEARCH = 143;
+  private static final int METHODID_LIST_ANNOTATION_FILTERS = 144;
+  private static final int METHODID_GET_ANNOTATION_FILTER = 145;
+  private static final int METHODID_POST_ANNOTATION_FILTERS = 146;
+  private static final int METHODID_PATCH_ANNOTATION_FILTERS = 147;
+  private static final int METHODID_DELETE_ANNOTATION_FILTERS = 148;
+  private static final int METHODID_LIST_STATUS_CODES = 149;
+  private static final int METHODID_GET_STATUS_CODE = 150;
+  private static final int METHODID_LIST_COLLABORATORS = 151;
+  private static final int METHODID_POST_COLLABORATORS = 152;
+  private static final int METHODID_PATCH_COLLABORATORS = 153;
+  private static final int METHODID_DELETE_COLLABORATORS = 154;
+  private static final int METHODID_LIST_COLLABORATIONS = 155;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 156;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 157;
+  private static final int METHODID_GET_APP_DUPLICATION = 158;
+  private static final int METHODID_POST_TASKS = 159;
+  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 160;
+  private static final int METHODID_GET_TASK_INPUT_COUNT = 161;
+  private static final int METHODID_GET_TASK = 162;
+  private static final int METHODID_LIST_TASKS = 163;
+  private static final int METHODID_PATCH_TASKS = 164;
+  private static final int METHODID_DELETE_TASKS = 165;
+  private static final int METHODID_POST_LABEL_ORDERS = 166;
+  private static final int METHODID_GET_LABEL_ORDER = 167;
+  private static final int METHODID_LIST_LABEL_ORDERS = 168;
+  private static final int METHODID_PATCH_LABEL_ORDERS = 169;
+  private static final int METHODID_DELETE_LABEL_ORDERS = 170;
+  private static final int METHODID_POST_COLLECTORS = 171;
+  private static final int METHODID_GET_COLLECTOR = 172;
+  private static final int METHODID_LIST_COLLECTORS = 173;
+  private static final int METHODID_PATCH_COLLECTORS = 174;
+  private static final int METHODID_DELETE_COLLECTORS = 175;
+  private static final int METHODID_POST_STAT_VALUES = 176;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 177;
+  private static final int METHODID_GET_MODULE = 178;
+  private static final int METHODID_LIST_MODULES = 179;
+  private static final int METHODID_POST_MODULES = 180;
+  private static final int METHODID_PATCH_MODULES = 181;
+  private static final int METHODID_DELETE_MODULES = 182;
+  private static final int METHODID_GET_MODULE_VERSION = 183;
+  private static final int METHODID_LIST_MODULE_VERSIONS = 184;
+  private static final int METHODID_POST_MODULE_VERSIONS = 185;
+  private static final int METHODID_PATCH_MODULE_VERSIONS = 186;
+  private static final int METHODID_DELETE_MODULE_VERSIONS = 187;
+  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 188;
+  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 189;
+  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 190;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 191;
+  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 192;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 193;
+  private static final int METHODID_POST_BULK_OPERATIONS = 194;
+  private static final int METHODID_LIST_BULK_OPERATIONS = 195;
+  private static final int METHODID_GET_BULK_OPERATION = 196;
+  private static final int METHODID_CANCEL_BULK_OPERATIONS = 197;
+  private static final int METHODID_DELETE_BULK_OPERATIONS = 198;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 199;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 200;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 201;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 202;
+  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 203;
+  private static final int METHODID_POST_UPLOADS = 204;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 205;
+  private static final int METHODID_GET_UPLOAD = 206;
+  private static final int METHODID_LIST_UPLOADS = 207;
+  private static final int METHODID_DELETE_UPLOADS = 208;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 209;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 210;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 211;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 212;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 213;
+  private static final int METHODID_LIST_PIPELINE_VERSION_RUNS = 214;
+  private static final int METHODID_GET_RUNNER = 215;
+  private static final int METHODID_LIST_RUNNERS = 216;
+  private static final int METHODID_POST_RUNNERS = 217;
+  private static final int METHODID_PATCH_RUNNERS = 218;
+  private static final int METHODID_DELETE_RUNNERS = 219;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 220;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 221;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 222;
+  private static final int METHODID_LIST_CLOUD_PROVIDERS = 223;
+  private static final int METHODID_LIST_CLOUD_REGIONS = 224;
+  private static final int METHODID_LIST_INSTANCE_TYPES = 225;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 226;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 227;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 228;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 229;
+  private static final int METHODID_PATCH_COMPUTE_CLUSTERS = 230;
+  private static final int METHODID_GET_NODEPOOL = 231;
+  private static final int METHODID_LIST_NODEPOOLS = 232;
+  private static final int METHODID_POST_NODEPOOLS = 233;
+  private static final int METHODID_PATCH_NODEPOOLS = 234;
+  private static final int METHODID_DELETE_NODEPOOLS = 235;
+  private static final int METHODID_GET_DEPLOYMENT = 236;
+  private static final int METHODID_LIST_DEPLOYMENTS = 237;
+  private static final int METHODID_POST_DEPLOYMENTS = 238;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 239;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 240;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 241;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 242;
+  private static final int METHODID_POST_LOG_ENTRIES = 243;
+  private static final int METHODID_LIST_LOG_ENTRIES = 244;
+  private static final int METHODID_STREAM_LOG_ENTRIES = 245;
+  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 246;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 247;
+  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 248;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 249;
+  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 250;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 251;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 252;
+  private static final int METHODID_POST_PIPELINES = 253;
+  private static final int METHODID_GET_PIPELINE = 254;
+  private static final int METHODID_LIST_PIPELINES = 255;
+  private static final int METHODID_PATCH_PIPELINES = 256;
+  private static final int METHODID_DELETE_PIPELINES = 257;
+  private static final int METHODID_GET_PIPELINE_VERSION = 258;
+  private static final int METHODID_LIST_PIPELINE_VERSIONS = 259;
+  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 260;
+  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 261;
+  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 262;
+  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 263;
+  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 264;
+  private static final int METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS = 265;
+  private static final int METHODID_POST_PIPELINE_STEPS = 266;
+  private static final int METHODID_GET_PIPELINE_STEP = 267;
+  private static final int METHODID_LIST_PIPELINE_STEPS = 268;
+  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 269;
+  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 270;
+  private static final int METHODID_DELETE_PIPELINE_STEPS = 271;
+  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 272;
+  private static final int METHODID_POST_ARTIFACTS = 273;
+  private static final int METHODID_GET_ARTIFACT = 274;
+  private static final int METHODID_LIST_ARTIFACTS = 275;
+  private static final int METHODID_DELETE_ARTIFACT = 276;
+  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 277;
+  private static final int METHODID_GET_ARTIFACT_VERSION = 278;
+  private static final int METHODID_DELETE_ARTIFACT_VERSION = 279;
+  private static final int METHODID_GET_SECRET = 280;
+  private static final int METHODID_LIST_SECRETS = 281;
+  private static final int METHODID_POST_SECRETS = 282;
+  private static final int METHODID_PATCH_SECRETS = 283;
+  private static final int METHODID_DELETE_SECRETS = 284;
+  private static final int METHODID_POST_METRICS_QUERY = 285;
+  private static final int METHODID_LIST_METRIC_LABELS = 286;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 287;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 288;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 289;
+  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 290;
+  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 291;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -23587,6 +23668,10 @@ public final class V2Grpc {
           break;
         case METHODID_POST_MODEL_MIGRATION:
           serviceImpl.postModelMigration((com.clarifai.grpc.api.PostModelMigrationRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_MODEL_MIGRATION:
+          serviceImpl.deleteModelMigration((com.clarifai.grpc.api.DeleteModelMigrationRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelResponse>) responseObserver);
           break;
         case METHODID_PUT_MODEL_VERSION_EXPORTS:
@@ -24538,6 +24623,7 @@ public final class V2Grpc {
               .addMethod(getDeleteModelVersionMethod())
               .addMethod(getPostModelVersionsUploadMethod())
               .addMethod(getPostModelMigrationMethod())
+              .addMethod(getDeleteModelMigrationMethod())
               .addMethod(getPutModelVersionExportsMethod())
               .addMethod(getGetModelVersionExportMethod())
               .addMethod(getGetModelVersionMetricsMethod())
