@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private PostModelMigrationRequest() {
     modelId_ = "";
+    versionId_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             modelId_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            versionId_ = s;
             break;
           }
           default: {
@@ -166,6 +173,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int VERSION_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object versionId_;
+  /**
+   * <code>string version_id = 3;</code>
+   * @return The versionId.
+   */
+  @java.lang.Override
+  public java.lang.String getVersionId() {
+    java.lang.Object ref = versionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      versionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string version_id = 3;</code>
+   * @return The bytes for versionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getVersionIdBytes() {
+    java.lang.Object ref = versionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      versionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -186,6 +231,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, versionId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -201,6 +249,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, versionId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -224,6 +275,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelId()
         .equals(other.getModelId())) return false;
+    if (!getVersionId()
+        .equals(other.getVersionId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -241,6 +294,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getModelId().hashCode();
+    hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getVersionId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -382,6 +437,8 @@ private static final long serialVersionUID = 0L;
       }
       modelId_ = "";
 
+      versionId_ = "";
+
       return this;
     }
 
@@ -414,6 +471,7 @@ private static final long serialVersionUID = 0L;
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.modelId_ = modelId_;
+      result.versionId_ = versionId_;
       onBuilt();
       return result;
     }
@@ -467,6 +525,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getModelId().isEmpty()) {
         modelId_ = other.modelId_;
+        onChanged();
+      }
+      if (!other.getVersionId().isEmpty()) {
+        versionId_ = other.versionId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -689,6 +751,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       modelId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object versionId_ = "";
+    /**
+     * <code>string version_id = 3;</code>
+     * @return The versionId.
+     */
+    public java.lang.String getVersionId() {
+      java.lang.Object ref = versionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string version_id = 3;</code>
+     * @return The bytes for versionId.
+     */
+    public com.google.protobuf.ByteString
+        getVersionIdBytes() {
+      java.lang.Object ref = versionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        versionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string version_id = 3;</code>
+     * @param value The versionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      versionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string version_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVersionId() {
+      
+      versionId_ = getDefaultInstance().getVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string version_id = 3;</code>
+     * @param value The bytes for versionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      versionId_ = value;
       onChanged();
       return this;
     }

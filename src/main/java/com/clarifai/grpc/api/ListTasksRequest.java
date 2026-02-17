@@ -281,7 +281,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7743
+   *     See proto/clarifai/api/service.proto;l=7747
    * @return A list containing the workerUserIds.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7743
+   *     See proto/clarifai/api/service.proto;l=7747
    * @return The count of workerUserIds.
    */
   @java.lang.Deprecated public int getWorkerUserIdsCount() {
@@ -310,7 +310,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7743
+   *     See proto/clarifai/api/service.proto;l=7747
    * @param index The index of the element to return.
    * @return The workerUserIds at the given index.
    */
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-   *     See proto/clarifai/api/service.proto;l=7743
+   *     See proto/clarifai/api/service.proto;l=7747
    * @param index The index of the value to return.
    * @return The bytes of the workerUserIds at the given index.
    */
@@ -1594,7 +1594,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7743
+     *     See proto/clarifai/api/service.proto;l=7747
      * @return A list containing the workerUserIds.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -1609,7 +1609,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7743
+     *     See proto/clarifai/api/service.proto;l=7747
      * @return The count of workerUserIds.
      */
     @java.lang.Deprecated public int getWorkerUserIdsCount() {
@@ -1623,7 +1623,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7743
+     *     See proto/clarifai/api/service.proto;l=7747
      * @param index The index of the element to return.
      * @return The workerUserIds at the given index.
      */
@@ -1638,7 +1638,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7743
+     *     See proto/clarifai/api/service.proto;l=7747
      * @param index The index of the value to return.
      * @return The bytes of the workerUserIds at the given index.
      */
@@ -1654,7 +1654,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7743
+     *     See proto/clarifai/api/service.proto;l=7747
      * @param index The index to set the value at.
      * @param value The workerUserIds to set.
      * @return This builder for chaining.
@@ -1677,7 +1677,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7743
+     *     See proto/clarifai/api/service.proto;l=7747
      * @param value The workerUserIds to add.
      * @return This builder for chaining.
      */
@@ -1699,7 +1699,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7743
+     *     See proto/clarifai/api/service.proto;l=7747
      * @param values The workerUserIds to add.
      * @return This builder for chaining.
      */
@@ -1719,7 +1719,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7743
+     *     See proto/clarifai/api/service.proto;l=7747
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearWorkerUserIds() {
@@ -1736,7 +1736,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string worker_user_ids = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListTasksRequest.worker_user_ids is deprecated.
-     *     See proto/clarifai/api/service.proto;l=7743
+     *     See proto/clarifai/api/service.proto;l=7747
      * @param value The bytes of the workerUserIds to add.
      * @return This builder for chaining.
      */

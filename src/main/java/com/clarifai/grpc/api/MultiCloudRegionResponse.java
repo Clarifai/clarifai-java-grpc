@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8799
+   *     See proto/clarifai/api/service.proto;l=8803
    * @return A list containing the regions.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8799
+   *     See proto/clarifai/api/service.proto;l=8803
    * @return The count of regions.
    */
   @java.lang.Deprecated public int getRegionsCount() {
@@ -172,7 +172,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8799
+   *     See proto/clarifai/api/service.proto;l=8803
    * @param index The index of the element to return.
    * @return The regions at the given index.
    */
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-   *     See proto/clarifai/api/service.proto;l=8799
+   *     See proto/clarifai/api/service.proto;l=8803
    * @param index The index of the value to return.
    * @return The bytes of the regions at the given index.
    */
@@ -766,7 +766,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8799
+     *     See proto/clarifai/api/service.proto;l=8803
      * @return A list containing the regions.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -776,7 +776,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8799
+     *     See proto/clarifai/api/service.proto;l=8803
      * @return The count of regions.
      */
     @java.lang.Deprecated public int getRegionsCount() {
@@ -785,7 +785,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8799
+     *     See proto/clarifai/api/service.proto;l=8803
      * @param index The index of the element to return.
      * @return The regions at the given index.
      */
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8799
+     *     See proto/clarifai/api/service.proto;l=8803
      * @param index The index of the value to return.
      * @return The bytes of the regions at the given index.
      */
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8799
+     *     See proto/clarifai/api/service.proto;l=8803
      * @param index The index to set the value at.
      * @param value The regions to set.
      * @return This builder for chaining.
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8799
+     *     See proto/clarifai/api/service.proto;l=8803
      * @param value The regions to add.
      * @return This builder for chaining.
      */
@@ -841,7 +841,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8799
+     *     See proto/clarifai/api/service.proto;l=8803
      * @param values The regions to add.
      * @return This builder for chaining.
      */
@@ -856,7 +856,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8799
+     *     See proto/clarifai/api/service.proto;l=8803
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearRegions() {
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string regions = 2 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @deprecated clarifai.api.MultiCloudRegionResponse.regions is deprecated.
-     *     See proto/clarifai/api/service.proto;l=8799
+     *     See proto/clarifai/api/service.proto;l=8803
      * @param value The bytes of the regions to add.
      * @return This builder for chaining.
      */

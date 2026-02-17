@@ -33,4 +33,16 @@ public interface PostModelMigrationRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getModelIdBytes();
+
+  /**
+   * <code>string version_id = 3;</code>
+   * @return The versionId.
+   */
+  java.lang.String getVersionId();
+  /**
+   * <code>string version_id = 3;</code>
+   * @return The bytes for versionId.
+   */
+  com.google.protobuf.ByteString
+      getVersionIdBytes();
 }
