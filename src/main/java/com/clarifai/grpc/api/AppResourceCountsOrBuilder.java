@@ -26,12 +26,6 @@ public interface AppResourceCountsOrBuilder extends
   long getWorkflows();
 
   /**
-   * <code>int64 modules = 4;</code>
-   * @return The modules.
-   */
-  long getModules();
-
-  /**
    * <code>int64 inputs = 5;</code>
    * @return The inputs.
    */

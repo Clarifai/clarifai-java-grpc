@@ -315,4 +315,15 @@ public interface NodepoolOrBuilder extends
    */
   com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The current number of nodes in this nodepool. This value is queried from Prometheus metrics
+   * and represents the most recent node count reported by the compute plane.
+   * </pre>
+   *
+   * <code>uint32 node_count = 16;</code>
+   * @return The nodeCount.
+   */
+  int getNodeCount();
 }

@@ -131,10 +131,6 @@ private static final long serialVersionUID = 0L;
      * <code>dataset = 3;</code>
      */
     dataset(3),
-    /**
-     * <code>module = 4;</code>
-     */
-    module(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -154,10 +150,6 @@ private static final long serialVersionUID = 0L;
      * <code>dataset = 3;</code>
      */
     public static final int dataset_VALUE = 3;
-    /**
-     * <code>module = 4;</code>
-     */
-    public static final int module_VALUE = 4;
 
 
     public final int getNumber() {
@@ -188,7 +180,6 @@ private static final long serialVersionUID = 0L;
         case 1: return model;
         case 2: return workflow;
         case 3: return dataset;
-        case 4: return module;
         default: return null;
       }
     }

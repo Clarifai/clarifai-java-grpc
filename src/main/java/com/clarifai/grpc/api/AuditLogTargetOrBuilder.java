@@ -68,36 +68,6 @@ public interface AuditLogTargetOrBuilder extends
   com.clarifai.grpc.api.AppOrBuilder getAppOrBuilder();
 
   /**
-   * <code>.clarifai.api.Module module = 5;</code>
-   * @return Whether the module field is set.
-   */
-  boolean hasModule();
-  /**
-   * <code>.clarifai.api.Module module = 5;</code>
-   * @return The module.
-   */
-  com.clarifai.grpc.api.Module getModule();
-  /**
-   * <code>.clarifai.api.Module module = 5;</code>
-   */
-  com.clarifai.grpc.api.ModuleOrBuilder getModuleOrBuilder();
-
-  /**
-   * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-   * @return Whether the moduleVersion field is set.
-   */
-  boolean hasModuleVersion();
-  /**
-   * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-   * @return The moduleVersion.
-   */
-  com.clarifai.grpc.api.ModuleVersion getModuleVersion();
-  /**
-   * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-   */
-  com.clarifai.grpc.api.ModuleVersionOrBuilder getModuleVersionOrBuilder();
-
-  /**
    * <code>.clarifai.api.Workflow workflow = 7;</code>
    * @return Whether the workflow field is set.
    */

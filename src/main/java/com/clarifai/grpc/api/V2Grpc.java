@@ -5595,502 +5595,6 @@ public final class V2Grpc {
     return getPostStatValuesAggregateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleRequest,
-      com.clarifai.grpc.api.SingleModuleResponse> getGetModuleMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetModule",
-      requestType = com.clarifai.grpc.api.GetModuleRequest.class,
-      responseType = com.clarifai.grpc.api.SingleModuleResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleRequest,
-      com.clarifai.grpc.api.SingleModuleResponse> getGetModuleMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleRequest, com.clarifai.grpc.api.SingleModuleResponse> getGetModuleMethod;
-    if ((getGetModuleMethod = V2Grpc.getGetModuleMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getGetModuleMethod = V2Grpc.getGetModuleMethod) == null) {
-          V2Grpc.getGetModuleMethod = getGetModuleMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetModuleRequest, com.clarifai.grpc.api.SingleModuleResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModule"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.GetModuleRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleModuleResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetModule"))
-              .build();
-        }
-      }
-    }
-    return getGetModuleMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListModulesRequest,
-      com.clarifai.grpc.api.MultiModuleResponse> getListModulesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListModules",
-      requestType = com.clarifai.grpc.api.ListModulesRequest.class,
-      responseType = com.clarifai.grpc.api.MultiModuleResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListModulesRequest,
-      com.clarifai.grpc.api.MultiModuleResponse> getListModulesMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListModulesRequest, com.clarifai.grpc.api.MultiModuleResponse> getListModulesMethod;
-    if ((getListModulesMethod = V2Grpc.getListModulesMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getListModulesMethod = V2Grpc.getListModulesMethod) == null) {
-          V2Grpc.getListModulesMethod = getListModulesMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListModulesRequest, com.clarifai.grpc.api.MultiModuleResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListModules"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.ListModulesRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiModuleResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListModules"))
-              .build();
-        }
-      }
-    }
-    return getListModulesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModulesRequest,
-      com.clarifai.grpc.api.MultiModuleResponse> getPostModulesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostModules",
-      requestType = com.clarifai.grpc.api.PostModulesRequest.class,
-      responseType = com.clarifai.grpc.api.MultiModuleResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModulesRequest,
-      com.clarifai.grpc.api.MultiModuleResponse> getPostModulesMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModulesRequest, com.clarifai.grpc.api.MultiModuleResponse> getPostModulesMethod;
-    if ((getPostModulesMethod = V2Grpc.getPostModulesMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostModulesMethod = V2Grpc.getPostModulesMethod) == null) {
-          V2Grpc.getPostModulesMethod = getPostModulesMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostModulesRequest, com.clarifai.grpc.api.MultiModuleResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostModules"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostModulesRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiModuleResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostModules"))
-              .build();
-        }
-      }
-    }
-    return getPostModulesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchModulesRequest,
-      com.clarifai.grpc.api.MultiModuleResponse> getPatchModulesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PatchModules",
-      requestType = com.clarifai.grpc.api.PatchModulesRequest.class,
-      responseType = com.clarifai.grpc.api.MultiModuleResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchModulesRequest,
-      com.clarifai.grpc.api.MultiModuleResponse> getPatchModulesMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchModulesRequest, com.clarifai.grpc.api.MultiModuleResponse> getPatchModulesMethod;
-    if ((getPatchModulesMethod = V2Grpc.getPatchModulesMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPatchModulesMethod = V2Grpc.getPatchModulesMethod) == null) {
-          V2Grpc.getPatchModulesMethod = getPatchModulesMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchModulesRequest, com.clarifai.grpc.api.MultiModuleResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchModules"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PatchModulesRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiModuleResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchModules"))
-              .build();
-        }
-      }
-    }
-    return getPatchModulesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModulesRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteModulesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteModules",
-      requestType = com.clarifai.grpc.api.DeleteModulesRequest.class,
-      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModulesRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteModulesMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModulesRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteModulesMethod;
-    if ((getDeleteModulesMethod = V2Grpc.getDeleteModulesMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getDeleteModulesMethod = V2Grpc.getDeleteModulesMethod) == null) {
-          V2Grpc.getDeleteModulesMethod = getDeleteModulesMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteModulesRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteModules"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.DeleteModulesRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteModules"))
-              .build();
-        }
-      }
-    }
-    return getDeleteModulesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleVersionRequest,
-      com.clarifai.grpc.api.SingleModuleVersionResponse> getGetModuleVersionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetModuleVersion",
-      requestType = com.clarifai.grpc.api.GetModuleVersionRequest.class,
-      responseType = com.clarifai.grpc.api.SingleModuleVersionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleVersionRequest,
-      com.clarifai.grpc.api.SingleModuleVersionResponse> getGetModuleVersionMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleVersionRequest, com.clarifai.grpc.api.SingleModuleVersionResponse> getGetModuleVersionMethod;
-    if ((getGetModuleVersionMethod = V2Grpc.getGetModuleVersionMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getGetModuleVersionMethod = V2Grpc.getGetModuleVersionMethod) == null) {
-          V2Grpc.getGetModuleVersionMethod = getGetModuleVersionMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetModuleVersionRequest, com.clarifai.grpc.api.SingleModuleVersionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModuleVersion"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.GetModuleVersionRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleModuleVersionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetModuleVersion"))
-              .build();
-        }
-      }
-    }
-    return getGetModuleVersionMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiModuleVersionResponse> getListModuleVersionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListModuleVersions",
-      requestType = com.clarifai.grpc.api.ListModuleVersionsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiModuleVersionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiModuleVersionResponse> getListModuleVersionsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListModuleVersionsRequest, com.clarifai.grpc.api.MultiModuleVersionResponse> getListModuleVersionsMethod;
-    if ((getListModuleVersionsMethod = V2Grpc.getListModuleVersionsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getListModuleVersionsMethod = V2Grpc.getListModuleVersionsMethod) == null) {
-          V2Grpc.getListModuleVersionsMethod = getListModuleVersionsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListModuleVersionsRequest, com.clarifai.grpc.api.MultiModuleVersionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListModuleVersions"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.ListModuleVersionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiModuleVersionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListModuleVersions"))
-              .build();
-        }
-      }
-    }
-    return getListModuleVersionsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiModuleVersionResponse> getPostModuleVersionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostModuleVersions",
-      requestType = com.clarifai.grpc.api.PostModuleVersionsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiModuleVersionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiModuleVersionResponse> getPostModuleVersionsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModuleVersionsRequest, com.clarifai.grpc.api.MultiModuleVersionResponse> getPostModuleVersionsMethod;
-    if ((getPostModuleVersionsMethod = V2Grpc.getPostModuleVersionsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostModuleVersionsMethod = V2Grpc.getPostModuleVersionsMethod) == null) {
-          V2Grpc.getPostModuleVersionsMethod = getPostModuleVersionsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostModuleVersionsRequest, com.clarifai.grpc.api.MultiModuleVersionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostModuleVersions"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostModuleVersionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiModuleVersionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostModuleVersions"))
-              .build();
-        }
-      }
-    }
-    return getPostModuleVersionsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiModuleVersionResponse> getPatchModuleVersionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PatchModuleVersions",
-      requestType = com.clarifai.grpc.api.PatchModuleVersionsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiModuleVersionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiModuleVersionResponse> getPatchModuleVersionsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchModuleVersionsRequest, com.clarifai.grpc.api.MultiModuleVersionResponse> getPatchModuleVersionsMethod;
-    if ((getPatchModuleVersionsMethod = V2Grpc.getPatchModuleVersionsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPatchModuleVersionsMethod = V2Grpc.getPatchModuleVersionsMethod) == null) {
-          V2Grpc.getPatchModuleVersionsMethod = getPatchModuleVersionsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchModuleVersionsRequest, com.clarifai.grpc.api.MultiModuleVersionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchModuleVersions"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PatchModuleVersionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiModuleVersionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchModuleVersions"))
-              .build();
-        }
-      }
-    }
-    return getPatchModuleVersionsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModuleVersionsRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteModuleVersionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteModuleVersions",
-      requestType = com.clarifai.grpc.api.DeleteModuleVersionsRequest.class,
-      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModuleVersionsRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteModuleVersionsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModuleVersionsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteModuleVersionsMethod;
-    if ((getDeleteModuleVersionsMethod = V2Grpc.getDeleteModuleVersionsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getDeleteModuleVersionsMethod = V2Grpc.getDeleteModuleVersionsMethod) == null) {
-          V2Grpc.getDeleteModuleVersionsMethod = getDeleteModuleVersionsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteModuleVersionsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteModuleVersions"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.DeleteModuleVersionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteModuleVersions"))
-              .build();
-        }
-      }
-    }
-    return getDeleteModuleVersionsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleVersionUsageCountRequest,
-      com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> getGetModuleVersionUsageCountMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetModuleVersionUsageCount",
-      requestType = com.clarifai.grpc.api.GetModuleVersionUsageCountRequest.class,
-      responseType = com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleVersionUsageCountRequest,
-      com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> getGetModuleVersionUsageCountMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleVersionUsageCountRequest, com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> getGetModuleVersionUsageCountMethod;
-    if ((getGetModuleVersionUsageCountMethod = V2Grpc.getGetModuleVersionUsageCountMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getGetModuleVersionUsageCountMethod = V2Grpc.getGetModuleVersionUsageCountMethod) == null) {
-          V2Grpc.getGetModuleVersionUsageCountMethod = getGetModuleVersionUsageCountMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetModuleVersionUsageCountRequest, com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModuleVersionUsageCount"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.GetModuleVersionUsageCountRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetModuleVersionUsageCount"))
-              .build();
-        }
-      }
-    }
-    return getGetModuleVersionUsageCountMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInstalledModuleVersionRequest,
-      com.clarifai.grpc.api.SingleInstalledModuleVersionResponse> getGetInstalledModuleVersionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetInstalledModuleVersion",
-      requestType = com.clarifai.grpc.api.GetInstalledModuleVersionRequest.class,
-      responseType = com.clarifai.grpc.api.SingleInstalledModuleVersionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInstalledModuleVersionRequest,
-      com.clarifai.grpc.api.SingleInstalledModuleVersionResponse> getGetInstalledModuleVersionMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInstalledModuleVersionRequest, com.clarifai.grpc.api.SingleInstalledModuleVersionResponse> getGetInstalledModuleVersionMethod;
-    if ((getGetInstalledModuleVersionMethod = V2Grpc.getGetInstalledModuleVersionMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getGetInstalledModuleVersionMethod = V2Grpc.getGetInstalledModuleVersionMethod) == null) {
-          V2Grpc.getGetInstalledModuleVersionMethod = getGetInstalledModuleVersionMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetInstalledModuleVersionRequest, com.clarifai.grpc.api.SingleInstalledModuleVersionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetInstalledModuleVersion"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.GetInstalledModuleVersionRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleInstalledModuleVersionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetInstalledModuleVersion"))
-              .build();
-        }
-      }
-    }
-    return getGetInstalledModuleVersionMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListInstalledModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> getListInstalledModuleVersionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListInstalledModuleVersions",
-      requestType = com.clarifai.grpc.api.ListInstalledModuleVersionsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiInstalledModuleVersionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListInstalledModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> getListInstalledModuleVersionsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListInstalledModuleVersionsRequest, com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> getListInstalledModuleVersionsMethod;
-    if ((getListInstalledModuleVersionsMethod = V2Grpc.getListInstalledModuleVersionsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getListInstalledModuleVersionsMethod = V2Grpc.getListInstalledModuleVersionsMethod) == null) {
-          V2Grpc.getListInstalledModuleVersionsMethod = getListInstalledModuleVersionsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListInstalledModuleVersionsRequest, com.clarifai.grpc.api.MultiInstalledModuleVersionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListInstalledModuleVersions"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.ListInstalledModuleVersionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiInstalledModuleVersionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListInstalledModuleVersions"))
-              .build();
-        }
-      }
-    }
-    return getListInstalledModuleVersionsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInstalledModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> getPostInstalledModuleVersionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostInstalledModuleVersions",
-      requestType = com.clarifai.grpc.api.PostInstalledModuleVersionsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiInstalledModuleVersionResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInstalledModuleVersionsRequest,
-      com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> getPostInstalledModuleVersionsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInstalledModuleVersionsRequest, com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> getPostInstalledModuleVersionsMethod;
-    if ((getPostInstalledModuleVersionsMethod = V2Grpc.getPostInstalledModuleVersionsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostInstalledModuleVersionsMethod = V2Grpc.getPostInstalledModuleVersionsMethod) == null) {
-          V2Grpc.getPostInstalledModuleVersionsMethod = getPostInstalledModuleVersionsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostInstalledModuleVersionsRequest, com.clarifai.grpc.api.MultiInstalledModuleVersionResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostInstalledModuleVersions"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostInstalledModuleVersionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiInstalledModuleVersionResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostInstalledModuleVersions"))
-              .build();
-        }
-      }
-    }
-    return getPostInstalledModuleVersionsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteInstalledModuleVersionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteInstalledModuleVersions",
-      requestType = com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest.class,
-      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteInstalledModuleVersionsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteInstalledModuleVersionsMethod;
-    if ((getDeleteInstalledModuleVersionsMethod = V2Grpc.getDeleteInstalledModuleVersionsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getDeleteInstalledModuleVersionsMethod = V2Grpc.getDeleteInstalledModuleVersionsMethod) == null) {
-          V2Grpc.getDeleteInstalledModuleVersionsMethod = getDeleteInstalledModuleVersionsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteInstalledModuleVersions"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteInstalledModuleVersions"))
-              .build();
-        }
-      }
-    }
-    return getDeleteInstalledModuleVersionsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest,
-      com.clarifai.grpc.api.SingleKeyResponse> getPostInstalledModuleVersionsKeyMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostInstalledModuleVersionsKey",
-      requestType = com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest.class,
-      responseType = com.clarifai.grpc.api.SingleKeyResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest,
-      com.clarifai.grpc.api.SingleKeyResponse> getPostInstalledModuleVersionsKeyMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest, com.clarifai.grpc.api.SingleKeyResponse> getPostInstalledModuleVersionsKeyMethod;
-    if ((getPostInstalledModuleVersionsKeyMethod = V2Grpc.getPostInstalledModuleVersionsKeyMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostInstalledModuleVersionsKeyMethod = V2Grpc.getPostInstalledModuleVersionsKeyMethod) == null) {
-          V2Grpc.getPostInstalledModuleVersionsKeyMethod = getPostInstalledModuleVersionsKeyMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest, com.clarifai.grpc.api.SingleKeyResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostInstalledModuleVersionsKey"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleKeyResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostInstalledModuleVersionsKey"))
-              .build();
-        }
-      }
-    }
-    return getPostInstalledModuleVersionsKeyMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostBulkOperationsRequest,
       com.clarifai.grpc.api.MultiBulkOperationsResponse> getPostBulkOperationsMethod;
 
@@ -7765,6 +7269,37 @@ public final class V2Grpc {
     return getPostComputePlaneMetricsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostRunnerReplicaTaskMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostRunnerReplicaTaskMetrics",
+      requestType = com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostRunnerReplicaTaskMetricsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest, com.clarifai.grpc.api.status.BaseResponse> getPostRunnerReplicaTaskMetricsMethod;
+    if ((getPostRunnerReplicaTaskMetricsMethod = V2Grpc.getPostRunnerReplicaTaskMetricsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostRunnerReplicaTaskMetricsMethod = V2Grpc.getPostRunnerReplicaTaskMetricsMethod) == null) {
+          V2Grpc.getPostRunnerReplicaTaskMetricsMethod = getPostRunnerReplicaTaskMetricsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostRunnerReplicaTaskMetrics"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostRunnerReplicaTaskMetrics"))
+              .build();
+        }
+      }
+    }
+    return getPostRunnerReplicaTaskMetricsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowVersionEvaluationsRequest,
       com.clarifai.grpc.api.MultiWorkflowVersionEvaluationResponse> getPostWorkflowVersionEvaluationsMethod;
 
@@ -9322,8 +8857,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Stream live video annotations as they are being created by the runner.
-     * This endpoint reads from Redis instead of the database for real-time streaming.
+     * Stream live video annotations as soon as they are available.
+     * This endpoint will NOT replay old annotations, but only stream new annotations that are generated after the stream is opened.
      * </pre>
      */
     public void streamLivestreamAnnotations(com.clarifai.grpc.api.StreamLivestreamAnnotationsRequest request,
@@ -10973,169 +10508,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific module from an app.
-     * </pre>
-     */
-    public void getModule(com.clarifai.grpc.api.GetModuleRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetModuleMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List all the modules in community, by user or by app.
-     * </pre>
-     */
-    public void listModules(com.clarifai.grpc.api.ListModulesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListModulesMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Add a modules to an app.
-     * </pre>
-     */
-    public void postModules(com.clarifai.grpc.api.PostModulesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostModulesMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Patch one or more modules.
-     * </pre>
-     */
-    public void patchModules(com.clarifai.grpc.api.PatchModulesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchModulesMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Delete multiple modules in one request.
-     * </pre>
-     */
-    public void deleteModules(com.clarifai.grpc.api.DeleteModulesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteModulesMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get a specific module version for a module.
-     * </pre>
-     */
-    public void getModuleVersion(com.clarifai.grpc.api.GetModuleVersionRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetModuleVersionMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List all the modules versions for a given module.
-     * </pre>
-     */
-    public void listModuleVersions(com.clarifai.grpc.api.ListModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListModuleVersionsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Create a new module version to trigger training of the module.
-     * </pre>
-     */
-    public void postModuleVersions(com.clarifai.grpc.api.PostModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostModuleVersionsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Modify details of an existing module version.
-     * </pre>
-     */
-    public void patchModuleVersions(com.clarifai.grpc.api.PatchModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchModuleVersionsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Delete a multiple module version.
-     * </pre>
-     */
-    public void deleteModuleVersions(com.clarifai.grpc.api.DeleteModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteModuleVersionsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get usage count for specific module version.
-     * </pre>
-     */
-    public void getModuleVersionUsageCount(com.clarifai.grpc.api.GetModuleVersionUsageCountRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetModuleVersionUsageCountMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get installed modules vesrions for an app.
-     * </pre>
-     */
-    public void getInstalledModuleVersion(com.clarifai.grpc.api.GetInstalledModuleVersionRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleInstalledModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetInstalledModuleVersionMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List installed modules vesrions for an app.
-     * </pre>
-     */
-    public void listInstalledModuleVersions(com.clarifai.grpc.api.ListInstalledModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListInstalledModuleVersionsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Install a new module version which will deploy the specific ModuleVersion to the app in the url.
-     * </pre>
-     */
-    public void postInstalledModuleVersions(com.clarifai.grpc.api.PostInstalledModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostInstalledModuleVersionsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Uninstall an installed module version which will deploy the specific ModuleVersion to the app
-     * in the url.
-     * This cleaned up any associated caller keys so needs the Keys_Delete scope.
-     * </pre>
-     */
-    public void deleteInstalledModuleVersions(com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteInstalledModuleVersionsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Assign a key that the caller owns to be used when accessing this installed module version
-     * If this endpoint is called with a different key then it overwrites what is there.
-     * </pre>
-     */
-    public void postInstalledModuleVersionsKey(com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleKeyResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostInstalledModuleVersionsKeyMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * Perform bulk operations on a list of inputs based on input source.
      * Operation include add, update, delete of concepts, metadata and geo data.
      * This is an Asynchronous process. Use ListBulkOperations or GetBulkOperation to check the status.
@@ -11650,6 +11022,16 @@ public final class V2Grpc {
     public void postComputePlaneMetrics(com.clarifai.grpc.api.PostComputePlaneMetricsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostComputePlaneMetricsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post task metrics from runner replicas.
+     * </pre>
+     */
+    public void postRunnerReplicaTaskMetrics(com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostRunnerReplicaTaskMetricsMethod(), responseObserver);
     }
 
     /**
@@ -13223,118 +12605,6 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiStatValueAggregateResponse>(
                   this, METHODID_POST_STAT_VALUES_AGGREGATE)))
           .addMethod(
-            getGetModuleMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.GetModuleRequest,
-                com.clarifai.grpc.api.SingleModuleResponse>(
-                  this, METHODID_GET_MODULE)))
-          .addMethod(
-            getListModulesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.ListModulesRequest,
-                com.clarifai.grpc.api.MultiModuleResponse>(
-                  this, METHODID_LIST_MODULES)))
-          .addMethod(
-            getPostModulesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PostModulesRequest,
-                com.clarifai.grpc.api.MultiModuleResponse>(
-                  this, METHODID_POST_MODULES)))
-          .addMethod(
-            getPatchModulesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PatchModulesRequest,
-                com.clarifai.grpc.api.MultiModuleResponse>(
-                  this, METHODID_PATCH_MODULES)))
-          .addMethod(
-            getDeleteModulesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.DeleteModulesRequest,
-                com.clarifai.grpc.api.status.BaseResponse>(
-                  this, METHODID_DELETE_MODULES)))
-          .addMethod(
-            getGetModuleVersionMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.GetModuleVersionRequest,
-                com.clarifai.grpc.api.SingleModuleVersionResponse>(
-                  this, METHODID_GET_MODULE_VERSION)))
-          .addMethod(
-            getListModuleVersionsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.ListModuleVersionsRequest,
-                com.clarifai.grpc.api.MultiModuleVersionResponse>(
-                  this, METHODID_LIST_MODULE_VERSIONS)))
-          .addMethod(
-            getPostModuleVersionsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PostModuleVersionsRequest,
-                com.clarifai.grpc.api.MultiModuleVersionResponse>(
-                  this, METHODID_POST_MODULE_VERSIONS)))
-          .addMethod(
-            getPatchModuleVersionsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PatchModuleVersionsRequest,
-                com.clarifai.grpc.api.MultiModuleVersionResponse>(
-                  this, METHODID_PATCH_MODULE_VERSIONS)))
-          .addMethod(
-            getDeleteModuleVersionsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.DeleteModuleVersionsRequest,
-                com.clarifai.grpc.api.status.BaseResponse>(
-                  this, METHODID_DELETE_MODULE_VERSIONS)))
-          .addMethod(
-            getGetModuleVersionUsageCountMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.GetModuleVersionUsageCountRequest,
-                com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse>(
-                  this, METHODID_GET_MODULE_VERSION_USAGE_COUNT)))
-          .addMethod(
-            getGetInstalledModuleVersionMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.GetInstalledModuleVersionRequest,
-                com.clarifai.grpc.api.SingleInstalledModuleVersionResponse>(
-                  this, METHODID_GET_INSTALLED_MODULE_VERSION)))
-          .addMethod(
-            getListInstalledModuleVersionsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.ListInstalledModuleVersionsRequest,
-                com.clarifai.grpc.api.MultiInstalledModuleVersionResponse>(
-                  this, METHODID_LIST_INSTALLED_MODULE_VERSIONS)))
-          .addMethod(
-            getPostInstalledModuleVersionsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PostInstalledModuleVersionsRequest,
-                com.clarifai.grpc.api.MultiInstalledModuleVersionResponse>(
-                  this, METHODID_POST_INSTALLED_MODULE_VERSIONS)))
-          .addMethod(
-            getDeleteInstalledModuleVersionsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest,
-                com.clarifai.grpc.api.status.BaseResponse>(
-                  this, METHODID_DELETE_INSTALLED_MODULE_VERSIONS)))
-          .addMethod(
-            getPostInstalledModuleVersionsKeyMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest,
-                com.clarifai.grpc.api.SingleKeyResponse>(
-                  this, METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY)))
-          .addMethod(
             getPostBulkOperationsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -13712,6 +12982,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostComputePlaneMetricsRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_POST_COMPUTE_PLANE_METRICS)))
+          .addMethod(
+            getPostRunnerReplicaTaskMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_POST_RUNNER_REPLICA_TASK_METRICS)))
           .addMethod(
             getPostWorkflowVersionEvaluationsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -14251,8 +13528,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Stream live video annotations as they are being created by the runner.
-     * This endpoint reads from Redis instead of the database for real-time streaming.
+     * Stream live video annotations as soon as they are available.
+     * This endpoint will NOT replay old annotations, but only stream new annotations that are generated after the stream is opened.
      * </pre>
      */
     public void streamLivestreamAnnotations(com.clarifai.grpc.api.StreamLivestreamAnnotationsRequest request,
@@ -16062,185 +15339,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific module from an app.
-     * </pre>
-     */
-    public void getModule(com.clarifai.grpc.api.GetModuleRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetModuleMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List all the modules in community, by user or by app.
-     * </pre>
-     */
-    public void listModules(com.clarifai.grpc.api.ListModulesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListModulesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Add a modules to an app.
-     * </pre>
-     */
-    public void postModules(com.clarifai.grpc.api.PostModulesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostModulesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Patch one or more modules.
-     * </pre>
-     */
-    public void patchModules(com.clarifai.grpc.api.PatchModulesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPatchModulesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Delete multiple modules in one request.
-     * </pre>
-     */
-    public void deleteModules(com.clarifai.grpc.api.DeleteModulesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteModulesMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get a specific module version for a module.
-     * </pre>
-     */
-    public void getModuleVersion(com.clarifai.grpc.api.GetModuleVersionRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetModuleVersionMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List all the modules versions for a given module.
-     * </pre>
-     */
-    public void listModuleVersions(com.clarifai.grpc.api.ListModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListModuleVersionsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Create a new module version to trigger training of the module.
-     * </pre>
-     */
-    public void postModuleVersions(com.clarifai.grpc.api.PostModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostModuleVersionsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Modify details of an existing module version.
-     * </pre>
-     */
-    public void patchModuleVersions(com.clarifai.grpc.api.PatchModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPatchModuleVersionsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Delete a multiple module version.
-     * </pre>
-     */
-    public void deleteModuleVersions(com.clarifai.grpc.api.DeleteModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteModuleVersionsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get usage count for specific module version.
-     * </pre>
-     */
-    public void getModuleVersionUsageCount(com.clarifai.grpc.api.GetModuleVersionUsageCountRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetModuleVersionUsageCountMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get installed modules vesrions for an app.
-     * </pre>
-     */
-    public void getInstalledModuleVersion(com.clarifai.grpc.api.GetInstalledModuleVersionRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleInstalledModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetInstalledModuleVersionMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List installed modules vesrions for an app.
-     * </pre>
-     */
-    public void listInstalledModuleVersions(com.clarifai.grpc.api.ListInstalledModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListInstalledModuleVersionsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Install a new module version which will deploy the specific ModuleVersion to the app in the url.
-     * </pre>
-     */
-    public void postInstalledModuleVersions(com.clarifai.grpc.api.PostInstalledModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostInstalledModuleVersionsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Uninstall an installed module version which will deploy the specific ModuleVersion to the app
-     * in the url.
-     * This cleaned up any associated caller keys so needs the Keys_Delete scope.
-     * </pre>
-     */
-    public void deleteInstalledModuleVersions(com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteInstalledModuleVersionsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Assign a key that the caller owns to be used when accessing this installed module version
-     * If this endpoint is called with a different key then it overwrites what is there.
-     * </pre>
-     */
-    public void postInstalledModuleVersionsKey(com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleKeyResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostInstalledModuleVersionsKeyMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
      * Perform bulk operations on a list of inputs based on input source.
      * Operation include add, update, delete of concepts, metadata and geo data.
      * This is an Asynchronous process. Use ListBulkOperations or GetBulkOperation to check the status.
@@ -16809,6 +15907,17 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostComputePlaneMetricsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post task metrics from runner replicas.
+     * </pre>
+     */
+    public void postRunnerReplicaTaskMetrics(com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostRunnerReplicaTaskMetricsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -17384,8 +16493,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Stream live video annotations as they are being created by the runner.
-     * This endpoint reads from Redis instead of the database for real-time streaming.
+     * Stream live video annotations as soon as they are available.
+     * This endpoint will NOT replay old annotations, but only stream new annotations that are generated after the stream is opened.
      * </pre>
      */
     public java.util.Iterator<com.clarifai.grpc.api.SingleStreamAnnotationResponse> streamLivestreamAnnotations(
@@ -19013,169 +18122,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific module from an app.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.SingleModuleResponse getModule(com.clarifai.grpc.api.GetModuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetModuleMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * List all the modules in community, by user or by app.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiModuleResponse listModules(com.clarifai.grpc.api.ListModulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListModulesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Add a modules to an app.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiModuleResponse postModules(com.clarifai.grpc.api.PostModulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostModulesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Patch one or more modules.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiModuleResponse patchModules(com.clarifai.grpc.api.PatchModulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPatchModulesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Delete multiple modules in one request.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.status.BaseResponse deleteModules(com.clarifai.grpc.api.DeleteModulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteModulesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Get a specific module version for a module.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.SingleModuleVersionResponse getModuleVersion(com.clarifai.grpc.api.GetModuleVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetModuleVersionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * List all the modules versions for a given module.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiModuleVersionResponse listModuleVersions(com.clarifai.grpc.api.ListModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListModuleVersionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Create a new module version to trigger training of the module.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiModuleVersionResponse postModuleVersions(com.clarifai.grpc.api.PostModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostModuleVersionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Modify details of an existing module version.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiModuleVersionResponse patchModuleVersions(com.clarifai.grpc.api.PatchModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPatchModuleVersionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Delete a multiple module version.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.status.BaseResponse deleteModuleVersions(com.clarifai.grpc.api.DeleteModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteModuleVersionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Get usage count for specific module version.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse getModuleVersionUsageCount(com.clarifai.grpc.api.GetModuleVersionUsageCountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetModuleVersionUsageCountMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Get installed modules vesrions for an app.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.SingleInstalledModuleVersionResponse getInstalledModuleVersion(com.clarifai.grpc.api.GetInstalledModuleVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetInstalledModuleVersionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * List installed modules vesrions for an app.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiInstalledModuleVersionResponse listInstalledModuleVersions(com.clarifai.grpc.api.ListInstalledModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListInstalledModuleVersionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Install a new module version which will deploy the specific ModuleVersion to the app in the url.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiInstalledModuleVersionResponse postInstalledModuleVersions(com.clarifai.grpc.api.PostInstalledModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostInstalledModuleVersionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Uninstall an installed module version which will deploy the specific ModuleVersion to the app
-     * in the url.
-     * This cleaned up any associated caller keys so needs the Keys_Delete scope.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.status.BaseResponse deleteInstalledModuleVersions(com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteInstalledModuleVersionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Assign a key that the caller owns to be used when accessing this installed module version
-     * If this endpoint is called with a different key then it overwrites what is there.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.SingleKeyResponse postInstalledModuleVersionsKey(com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostInstalledModuleVersionsKeyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
      * Perform bulk operations on a list of inputs based on input source.
      * Operation include add, update, delete of concepts, metadata and geo data.
      * This is an Asynchronous process. Use ListBulkOperations or GetBulkOperation to check the status.
@@ -19676,6 +18622,16 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.status.BaseResponse postComputePlaneMetrics(com.clarifai.grpc.api.PostComputePlaneMetricsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostComputePlaneMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Post task metrics from runner replicas.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse postRunnerReplicaTaskMetrics(com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostRunnerReplicaTaskMetricsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -21950,185 +20906,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific module from an app.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleModuleResponse> getModule(
-        com.clarifai.grpc.api.GetModuleRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetModuleMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * List all the modules in community, by user or by app.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModuleResponse> listModules(
-        com.clarifai.grpc.api.ListModulesRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListModulesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Add a modules to an app.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModuleResponse> postModules(
-        com.clarifai.grpc.api.PostModulesRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostModulesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Patch one or more modules.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModuleResponse> patchModules(
-        com.clarifai.grpc.api.PatchModulesRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPatchModulesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Delete multiple modules in one request.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteModules(
-        com.clarifai.grpc.api.DeleteModulesRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteModulesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Get a specific module version for a module.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleModuleVersionResponse> getModuleVersion(
-        com.clarifai.grpc.api.GetModuleVersionRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetModuleVersionMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * List all the modules versions for a given module.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModuleVersionResponse> listModuleVersions(
-        com.clarifai.grpc.api.ListModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListModuleVersionsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Create a new module version to trigger training of the module.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModuleVersionResponse> postModuleVersions(
-        com.clarifai.grpc.api.PostModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostModuleVersionsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Modify details of an existing module version.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModuleVersionResponse> patchModuleVersions(
-        com.clarifai.grpc.api.PatchModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPatchModuleVersionsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Delete a multiple module version.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteModuleVersions(
-        com.clarifai.grpc.api.DeleteModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteModuleVersionsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Get usage count for specific module version.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> getModuleVersionUsageCount(
-        com.clarifai.grpc.api.GetModuleVersionUsageCountRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetModuleVersionUsageCountMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Get installed modules vesrions for an app.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleInstalledModuleVersionResponse> getInstalledModuleVersion(
-        com.clarifai.grpc.api.GetInstalledModuleVersionRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetInstalledModuleVersionMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * List installed modules vesrions for an app.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> listInstalledModuleVersions(
-        com.clarifai.grpc.api.ListInstalledModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListInstalledModuleVersionsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Install a new module version which will deploy the specific ModuleVersion to the app in the url.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInstalledModuleVersionResponse> postInstalledModuleVersions(
-        com.clarifai.grpc.api.PostInstalledModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostInstalledModuleVersionsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Uninstall an installed module version which will deploy the specific ModuleVersion to the app
-     * in the url.
-     * This cleaned up any associated caller keys so needs the Keys_Delete scope.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteInstalledModuleVersions(
-        com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteInstalledModuleVersionsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Assign a key that the caller owns to be used when accessing this installed module version
-     * If this endpoint is called with a different key then it overwrites what is there.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleKeyResponse> postInstalledModuleVersionsKey(
-        com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostInstalledModuleVersionsKeyMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * Perform bulk operations on a list of inputs based on input source.
      * Operation include add, update, delete of concepts, metadata and geo data.
      * This is an Asynchronous process. Use ListBulkOperations or GetBulkOperation to check the status.
@@ -22676,6 +21453,17 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Post task metrics from runner replicas.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> postRunnerReplicaTaskMetrics(
+        com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostRunnerReplicaTaskMetricsMethod(), getCallOptions()), request);
+    }
+
+    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiWorkflowVersionEvaluationResponse> postWorkflowVersionEvaluations(
         com.clarifai.grpc.api.PostWorkflowVersionEvaluationsRequest request) {
@@ -23174,120 +21962,105 @@ public final class V2Grpc {
   private static final int METHODID_DELETE_COLLECTORS = 175;
   private static final int METHODID_POST_STAT_VALUES = 176;
   private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 177;
-  private static final int METHODID_GET_MODULE = 178;
-  private static final int METHODID_LIST_MODULES = 179;
-  private static final int METHODID_POST_MODULES = 180;
-  private static final int METHODID_PATCH_MODULES = 181;
-  private static final int METHODID_DELETE_MODULES = 182;
-  private static final int METHODID_GET_MODULE_VERSION = 183;
-  private static final int METHODID_LIST_MODULE_VERSIONS = 184;
-  private static final int METHODID_POST_MODULE_VERSIONS = 185;
-  private static final int METHODID_PATCH_MODULE_VERSIONS = 186;
-  private static final int METHODID_DELETE_MODULE_VERSIONS = 187;
-  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 188;
-  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 189;
-  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 190;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 191;
-  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 192;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 193;
-  private static final int METHODID_POST_BULK_OPERATIONS = 194;
-  private static final int METHODID_LIST_BULK_OPERATIONS = 195;
-  private static final int METHODID_GET_BULK_OPERATION = 196;
-  private static final int METHODID_CANCEL_BULK_OPERATIONS = 197;
-  private static final int METHODID_DELETE_BULK_OPERATIONS = 198;
-  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 199;
-  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 200;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 201;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 202;
-  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 203;
-  private static final int METHODID_POST_UPLOADS = 204;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 205;
-  private static final int METHODID_GET_UPLOAD = 206;
-  private static final int METHODID_LIST_UPLOADS = 207;
-  private static final int METHODID_DELETE_UPLOADS = 208;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 209;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 210;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 211;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 212;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 213;
-  private static final int METHODID_LIST_PIPELINE_VERSION_RUNS = 214;
-  private static final int METHODID_GET_RUNNER = 215;
-  private static final int METHODID_LIST_RUNNERS = 216;
-  private static final int METHODID_POST_RUNNERS = 217;
-  private static final int METHODID_PATCH_RUNNERS = 218;
-  private static final int METHODID_DELETE_RUNNERS = 219;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 220;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 221;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 222;
-  private static final int METHODID_LIST_CLOUD_PROVIDERS = 223;
-  private static final int METHODID_LIST_CLOUD_REGIONS = 224;
-  private static final int METHODID_LIST_INSTANCE_TYPES = 225;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 226;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 227;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 228;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 229;
-  private static final int METHODID_PATCH_COMPUTE_CLUSTERS = 230;
-  private static final int METHODID_GET_NODEPOOL = 231;
-  private static final int METHODID_LIST_NODEPOOLS = 232;
-  private static final int METHODID_POST_NODEPOOLS = 233;
-  private static final int METHODID_PATCH_NODEPOOLS = 234;
-  private static final int METHODID_DELETE_NODEPOOLS = 235;
-  private static final int METHODID_GET_DEPLOYMENT = 236;
-  private static final int METHODID_LIST_DEPLOYMENTS = 237;
-  private static final int METHODID_POST_DEPLOYMENTS = 238;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 239;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 240;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 241;
-  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 242;
-  private static final int METHODID_POST_LOG_ENTRIES = 243;
-  private static final int METHODID_LIST_LOG_ENTRIES = 244;
-  private static final int METHODID_STREAM_LOG_ENTRIES = 245;
-  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 246;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 247;
-  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 248;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 249;
-  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 250;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 251;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 252;
-  private static final int METHODID_POST_PIPELINES = 253;
-  private static final int METHODID_GET_PIPELINE = 254;
-  private static final int METHODID_LIST_PIPELINES = 255;
-  private static final int METHODID_PATCH_PIPELINES = 256;
-  private static final int METHODID_DELETE_PIPELINES = 257;
-  private static final int METHODID_GET_PIPELINE_VERSION = 258;
-  private static final int METHODID_LIST_PIPELINE_VERSIONS = 259;
-  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 260;
-  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 261;
-  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 262;
-  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 263;
-  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 264;
-  private static final int METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS = 265;
-  private static final int METHODID_POST_PIPELINE_STEPS = 266;
-  private static final int METHODID_GET_PIPELINE_STEP = 267;
-  private static final int METHODID_LIST_PIPELINE_STEPS = 268;
-  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 269;
-  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 270;
-  private static final int METHODID_DELETE_PIPELINE_STEPS = 271;
-  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 272;
-  private static final int METHODID_POST_ARTIFACTS = 273;
-  private static final int METHODID_GET_ARTIFACT = 274;
-  private static final int METHODID_LIST_ARTIFACTS = 275;
-  private static final int METHODID_DELETE_ARTIFACT = 276;
-  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 277;
-  private static final int METHODID_GET_ARTIFACT_VERSION = 278;
-  private static final int METHODID_DELETE_ARTIFACT_VERSION = 279;
-  private static final int METHODID_GET_SECRET = 280;
-  private static final int METHODID_LIST_SECRETS = 281;
-  private static final int METHODID_POST_SECRETS = 282;
-  private static final int METHODID_PATCH_SECRETS = 283;
-  private static final int METHODID_DELETE_SECRETS = 284;
-  private static final int METHODID_POST_METRICS_QUERY = 285;
-  private static final int METHODID_LIST_METRIC_LABELS = 286;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 287;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 288;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 289;
-  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 290;
-  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 291;
+  private static final int METHODID_POST_BULK_OPERATIONS = 178;
+  private static final int METHODID_LIST_BULK_OPERATIONS = 179;
+  private static final int METHODID_GET_BULK_OPERATION = 180;
+  private static final int METHODID_CANCEL_BULK_OPERATIONS = 181;
+  private static final int METHODID_DELETE_BULK_OPERATIONS = 182;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 183;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 184;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 185;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 186;
+  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 187;
+  private static final int METHODID_POST_UPLOADS = 188;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 189;
+  private static final int METHODID_GET_UPLOAD = 190;
+  private static final int METHODID_LIST_UPLOADS = 191;
+  private static final int METHODID_DELETE_UPLOADS = 192;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 193;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 194;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 195;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 196;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 197;
+  private static final int METHODID_LIST_PIPELINE_VERSION_RUNS = 198;
+  private static final int METHODID_GET_RUNNER = 199;
+  private static final int METHODID_LIST_RUNNERS = 200;
+  private static final int METHODID_POST_RUNNERS = 201;
+  private static final int METHODID_PATCH_RUNNERS = 202;
+  private static final int METHODID_DELETE_RUNNERS = 203;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 204;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 205;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 206;
+  private static final int METHODID_LIST_CLOUD_PROVIDERS = 207;
+  private static final int METHODID_LIST_CLOUD_REGIONS = 208;
+  private static final int METHODID_LIST_INSTANCE_TYPES = 209;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 210;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 211;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 212;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 213;
+  private static final int METHODID_PATCH_COMPUTE_CLUSTERS = 214;
+  private static final int METHODID_GET_NODEPOOL = 215;
+  private static final int METHODID_LIST_NODEPOOLS = 216;
+  private static final int METHODID_POST_NODEPOOLS = 217;
+  private static final int METHODID_PATCH_NODEPOOLS = 218;
+  private static final int METHODID_DELETE_NODEPOOLS = 219;
+  private static final int METHODID_GET_DEPLOYMENT = 220;
+  private static final int METHODID_LIST_DEPLOYMENTS = 221;
+  private static final int METHODID_POST_DEPLOYMENTS = 222;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 223;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 224;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 225;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 226;
+  private static final int METHODID_POST_LOG_ENTRIES = 227;
+  private static final int METHODID_LIST_LOG_ENTRIES = 228;
+  private static final int METHODID_STREAM_LOG_ENTRIES = 229;
+  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 230;
+  private static final int METHODID_POST_RUNNER_REPLICA_TASK_METRICS = 231;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 232;
+  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 233;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 234;
+  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 235;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 236;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 237;
+  private static final int METHODID_POST_PIPELINES = 238;
+  private static final int METHODID_GET_PIPELINE = 239;
+  private static final int METHODID_LIST_PIPELINES = 240;
+  private static final int METHODID_PATCH_PIPELINES = 241;
+  private static final int METHODID_DELETE_PIPELINES = 242;
+  private static final int METHODID_GET_PIPELINE_VERSION = 243;
+  private static final int METHODID_LIST_PIPELINE_VERSIONS = 244;
+  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 245;
+  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 246;
+  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 247;
+  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 248;
+  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 249;
+  private static final int METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS = 250;
+  private static final int METHODID_POST_PIPELINE_STEPS = 251;
+  private static final int METHODID_GET_PIPELINE_STEP = 252;
+  private static final int METHODID_LIST_PIPELINE_STEPS = 253;
+  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 254;
+  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 255;
+  private static final int METHODID_DELETE_PIPELINE_STEPS = 256;
+  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 257;
+  private static final int METHODID_POST_ARTIFACTS = 258;
+  private static final int METHODID_GET_ARTIFACT = 259;
+  private static final int METHODID_LIST_ARTIFACTS = 260;
+  private static final int METHODID_DELETE_ARTIFACT = 261;
+  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 262;
+  private static final int METHODID_GET_ARTIFACT_VERSION = 263;
+  private static final int METHODID_DELETE_ARTIFACT_VERSION = 264;
+  private static final int METHODID_GET_SECRET = 265;
+  private static final int METHODID_LIST_SECRETS = 266;
+  private static final int METHODID_POST_SECRETS = 267;
+  private static final int METHODID_PATCH_SECRETS = 268;
+  private static final int METHODID_DELETE_SECRETS = 269;
+  private static final int METHODID_POST_METRICS_QUERY = 270;
+  private static final int METHODID_LIST_METRIC_LABELS = 271;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 272;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 273;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 274;
+  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 275;
+  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 276;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -24018,70 +22791,6 @@ public final class V2Grpc {
           serviceImpl.postStatValuesAggregate((com.clarifai.grpc.api.PostStatValuesAggregateRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueAggregateResponse>) responseObserver);
           break;
-        case METHODID_GET_MODULE:
-          serviceImpl.getModule((com.clarifai.grpc.api.GetModuleRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleResponse>) responseObserver);
-          break;
-        case METHODID_LIST_MODULES:
-          serviceImpl.listModules((com.clarifai.grpc.api.ListModulesRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleResponse>) responseObserver);
-          break;
-        case METHODID_POST_MODULES:
-          serviceImpl.postModules((com.clarifai.grpc.api.PostModulesRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleResponse>) responseObserver);
-          break;
-        case METHODID_PATCH_MODULES:
-          serviceImpl.patchModules((com.clarifai.grpc.api.PatchModulesRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleResponse>) responseObserver);
-          break;
-        case METHODID_DELETE_MODULES:
-          serviceImpl.deleteModules((com.clarifai.grpc.api.DeleteModulesRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
-          break;
-        case METHODID_GET_MODULE_VERSION:
-          serviceImpl.getModuleVersion((com.clarifai.grpc.api.GetModuleVersionRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleVersionResponse>) responseObserver);
-          break;
-        case METHODID_LIST_MODULE_VERSIONS:
-          serviceImpl.listModuleVersions((com.clarifai.grpc.api.ListModuleVersionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleVersionResponse>) responseObserver);
-          break;
-        case METHODID_POST_MODULE_VERSIONS:
-          serviceImpl.postModuleVersions((com.clarifai.grpc.api.PostModuleVersionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleVersionResponse>) responseObserver);
-          break;
-        case METHODID_PATCH_MODULE_VERSIONS:
-          serviceImpl.patchModuleVersions((com.clarifai.grpc.api.PatchModuleVersionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModuleVersionResponse>) responseObserver);
-          break;
-        case METHODID_DELETE_MODULE_VERSIONS:
-          serviceImpl.deleteModuleVersions((com.clarifai.grpc.api.DeleteModuleVersionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
-          break;
-        case METHODID_GET_MODULE_VERSION_USAGE_COUNT:
-          serviceImpl.getModuleVersionUsageCount((com.clarifai.grpc.api.GetModuleVersionUsageCountRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse>) responseObserver);
-          break;
-        case METHODID_GET_INSTALLED_MODULE_VERSION:
-          serviceImpl.getInstalledModuleVersion((com.clarifai.grpc.api.GetInstalledModuleVersionRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleInstalledModuleVersionResponse>) responseObserver);
-          break;
-        case METHODID_LIST_INSTALLED_MODULE_VERSIONS:
-          serviceImpl.listInstalledModuleVersions((com.clarifai.grpc.api.ListInstalledModuleVersionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstalledModuleVersionResponse>) responseObserver);
-          break;
-        case METHODID_POST_INSTALLED_MODULE_VERSIONS:
-          serviceImpl.postInstalledModuleVersions((com.clarifai.grpc.api.PostInstalledModuleVersionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstalledModuleVersionResponse>) responseObserver);
-          break;
-        case METHODID_DELETE_INSTALLED_MODULE_VERSIONS:
-          serviceImpl.deleteInstalledModuleVersions((com.clarifai.grpc.api.DeleteInstalledModuleVersionsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
-          break;
-        case METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY:
-          serviceImpl.postInstalledModuleVersionsKey((com.clarifai.grpc.api.PostInstalledModuleVersionsKeyRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleKeyResponse>) responseObserver);
-          break;
         case METHODID_POST_BULK_OPERATIONS:
           serviceImpl.postBulkOperations((com.clarifai.grpc.api.PostBulkOperationsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiBulkOperationsResponse>) responseObserver);
@@ -24292,6 +23001,10 @@ public final class V2Grpc {
           break;
         case METHODID_POST_COMPUTE_PLANE_METRICS:
           serviceImpl.postComputePlaneMetrics((com.clarifai.grpc.api.PostComputePlaneMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_POST_RUNNER_REPLICA_TASK_METRICS:
+          serviceImpl.postRunnerReplicaTaskMetrics((com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
         case METHODID_POST_WORKFLOW_VERSION_EVALUATIONS:
@@ -24710,22 +23423,6 @@ public final class V2Grpc {
               .addMethod(getDeleteCollectorsMethod())
               .addMethod(getPostStatValuesMethod())
               .addMethod(getPostStatValuesAggregateMethod())
-              .addMethod(getGetModuleMethod())
-              .addMethod(getListModulesMethod())
-              .addMethod(getPostModulesMethod())
-              .addMethod(getPatchModulesMethod())
-              .addMethod(getDeleteModulesMethod())
-              .addMethod(getGetModuleVersionMethod())
-              .addMethod(getListModuleVersionsMethod())
-              .addMethod(getPostModuleVersionsMethod())
-              .addMethod(getPatchModuleVersionsMethod())
-              .addMethod(getDeleteModuleVersionsMethod())
-              .addMethod(getGetModuleVersionUsageCountMethod())
-              .addMethod(getGetInstalledModuleVersionMethod())
-              .addMethod(getListInstalledModuleVersionsMethod())
-              .addMethod(getPostInstalledModuleVersionsMethod())
-              .addMethod(getDeleteInstalledModuleVersionsMethod())
-              .addMethod(getPostInstalledModuleVersionsKeyMethod())
               .addMethod(getPostBulkOperationsMethod())
               .addMethod(getListBulkOperationsMethod())
               .addMethod(getGetBulkOperationMethod())
@@ -24780,6 +23477,7 @@ public final class V2Grpc {
               .addMethod(getListLogEntriesMethod())
               .addMethod(getStreamLogEntriesMethod())
               .addMethod(getPostComputePlaneMetricsMethod())
+              .addMethod(getPostRunnerReplicaTaskMetricsMethod())
               .addMethod(getPostWorkflowVersionEvaluationsMethod())
               .addMethod(getGetWorkflowVersionEvaluationMethod())
               .addMethod(getListWorkflowVersionEvaluationsMethod())

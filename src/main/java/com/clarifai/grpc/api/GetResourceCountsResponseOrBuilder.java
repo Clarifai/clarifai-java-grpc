@@ -41,12 +41,6 @@ public interface GetResourceCountsResponseOrBuilder extends
   long getWorkflows();
 
   /**
-   * <code>int64 modules = 5;</code>
-   * @return The modules.
-   */
-  long getModules();
-
-  /**
    * <code>int64 inputs = 6;</code>
    * @return The inputs.
    */

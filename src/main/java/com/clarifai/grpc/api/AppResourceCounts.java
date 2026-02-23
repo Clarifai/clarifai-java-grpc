@@ -63,11 +63,6 @@ private static final long serialVersionUID = 0L;
             workflows_ = input.readInt64();
             break;
           }
-          case 32: {
-
-            modules_ = input.readInt64();
-            break;
-          }
           case 40: {
 
             inputs_ = input.readInt64();
@@ -145,17 +140,6 @@ private static final long serialVersionUID = 0L;
     return workflows_;
   }
 
-  public static final int MODULES_FIELD_NUMBER = 4;
-  private long modules_;
-  /**
-   * <code>int64 modules = 4;</code>
-   * @return The modules.
-   */
-  @java.lang.Override
-  public long getModules() {
-    return modules_;
-  }
-
   public static final int INPUTS_FIELD_NUMBER = 5;
   private long inputs_;
   /**
@@ -201,9 +185,6 @@ private static final long serialVersionUID = 0L;
     if (workflows_ != 0L) {
       output.writeInt64(3, workflows_);
     }
-    if (modules_ != 0L) {
-      output.writeInt64(4, modules_);
-    }
     if (inputs_ != 0L) {
       output.writeInt64(5, inputs_);
     }
@@ -230,10 +211,6 @@ private static final long serialVersionUID = 0L;
     if (workflows_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, workflows_);
-    }
-    if (modules_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, modules_);
     }
     if (inputs_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -264,8 +241,6 @@ private static final long serialVersionUID = 0L;
         != other.getModels()) return false;
     if (getWorkflows()
         != other.getWorkflows()) return false;
-    if (getModules()
-        != other.getModules()) return false;
     if (getInputs()
         != other.getInputs()) return false;
     if (getPipelines()
@@ -290,9 +265,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + WORKFLOWS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getWorkflows());
-    hash = (37 * hash) + MODULES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getModules());
     hash = (37 * hash) + INPUTS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getInputs());
@@ -438,8 +410,6 @@ private static final long serialVersionUID = 0L;
 
       workflows_ = 0L;
 
-      modules_ = 0L;
-
       inputs_ = 0L;
 
       pipelines_ = 0L;
@@ -473,7 +443,6 @@ private static final long serialVersionUID = 0L;
       result.datasets_ = datasets_;
       result.models_ = models_;
       result.workflows_ = workflows_;
-      result.modules_ = modules_;
       result.inputs_ = inputs_;
       result.pipelines_ = pipelines_;
       onBuilt();
@@ -532,9 +501,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getWorkflows() != 0L) {
         setWorkflows(other.getWorkflows());
-      }
-      if (other.getModules() != 0L) {
-        setModules(other.getModules());
       }
       if (other.getInputs() != 0L) {
         setInputs(other.getInputs());
@@ -660,37 +626,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearWorkflows() {
       
       workflows_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long modules_ ;
-    /**
-     * <code>int64 modules = 4;</code>
-     * @return The modules.
-     */
-    @java.lang.Override
-    public long getModules() {
-      return modules_;
-    }
-    /**
-     * <code>int64 modules = 4;</code>
-     * @param value The modules to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModules(long value) {
-      
-      modules_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 modules = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearModules() {
-      
-      modules_ = 0L;
       onChanged();
       return this;
     }

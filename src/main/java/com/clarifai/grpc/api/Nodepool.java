@@ -187,6 +187,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.SpecialHandling.parser(), extensionRegistry));
             break;
           }
+          case 128: {
+
+            nodeCount_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -706,6 +711,22 @@ private static final long serialVersionUID = 0L;
     return specialHandling_.get(index);
   }
 
+  public static final int NODE_COUNT_FIELD_NUMBER = 16;
+  private int nodeCount_;
+  /**
+   * <pre>
+   * The current number of nodes in this nodepool. This value is queried from Prometheus metrics
+   * and represents the most recent node count reported by the compute plane.
+   * </pre>
+   *
+   * <code>uint32 node_count = 16;</code>
+   * @return The nodeCount.
+   */
+  @java.lang.Override
+  public int getNodeCount() {
+    return nodeCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -761,6 +782,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < specialHandling_.size(); i++) {
       output.writeMessage(15, specialHandling_.get(i));
+    }
+    if (nodeCount_ != 0) {
+      output.writeUInt32(16, nodeCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -825,6 +849,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, specialHandling_.get(i));
     }
+    if (nodeCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(16, nodeCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -886,6 +914,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getSpecialHandlingList()
         .equals(other.getSpecialHandlingList())) return false;
+    if (getNodeCount()
+        != other.getNodeCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -941,6 +971,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SPECIAL_HANDLING_FIELD_NUMBER;
       hash = (53 * hash) + getSpecialHandlingList().hashCode();
     }
+    hash = (37 * hash) + NODE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getNodeCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1142,6 +1174,8 @@ private static final long serialVersionUID = 0L;
       } else {
         specialHandlingBuilder_.clear();
       }
+      nodeCount_ = 0;
+
       return this;
     }
 
@@ -1223,6 +1257,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.specialHandling_ = specialHandlingBuilder_.build();
       }
+      result.nodeCount_ = nodeCount_;
       onBuilt();
       return result;
     }
@@ -1360,6 +1395,9 @@ private static final long serialVersionUID = 0L;
             specialHandlingBuilder_.addAllMessages(other.specialHandling_);
           }
         }
+      }
+      if (other.getNodeCount() != 0) {
+        setNodeCount(other.getNodeCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3232,6 +3270,52 @@ private static final long serialVersionUID = 0L;
         specialHandling_ = null;
       }
       return specialHandlingBuilder_;
+    }
+
+    private int nodeCount_ ;
+    /**
+     * <pre>
+     * The current number of nodes in this nodepool. This value is queried from Prometheus metrics
+     * and represents the most recent node count reported by the compute plane.
+     * </pre>
+     *
+     * <code>uint32 node_count = 16;</code>
+     * @return The nodeCount.
+     */
+    @java.lang.Override
+    public int getNodeCount() {
+      return nodeCount_;
+    }
+    /**
+     * <pre>
+     * The current number of nodes in this nodepool. This value is queried from Prometheus metrics
+     * and represents the most recent node count reported by the compute plane.
+     * </pre>
+     *
+     * <code>uint32 node_count = 16;</code>
+     * @param value The nodeCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeCount(int value) {
+      
+      nodeCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The current number of nodes in this nodepool. This value is queried from Prometheus metrics
+     * and represents the most recent node count reported by the compute plane.
+     * </pre>
+     *
+     * <code>uint32 node_count = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNodeCount() {
+      
+      nodeCount_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

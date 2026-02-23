@@ -77,10 +77,10 @@ public interface PostTrackAnnotationsSearchesRequestOrBuilder extends
    * Filter annotations starting from this time in milliseconds (inclusive)
    * </pre>
    *
-   * <code>uint32 frame_time_start = 5;</code>
+   * <code>uint64 frame_time_start = 5;</code>
    * @return The frameTimeStart.
    */
-  int getFrameTimeStart();
+  long getFrameTimeStart();
 
   /**
    * <pre>
@@ -116,10 +116,10 @@ public interface PostTrackAnnotationsSearchesRequestOrBuilder extends
    * Maximum duration in milliseconds to return (default and max: 3000)
    * </pre>
    *
-   * <code>uint32 max_duration = 8;</code>
+   * <code>uint64 max_duration = 8;</code>
    * @return The maxDuration.
    */
-  int getMaxDuration();
+  long getMaxDuration();
 
   /**
    * <pre>

@@ -63,6 +63,11 @@ private static final long serialVersionUID = 0L;
             podsRunning_ = input.readUInt32();
             break;
           }
+          case 24: {
+
+            totalPodsRunningTimeS_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +124,22 @@ private static final long serialVersionUID = 0L;
     return podsRunning_;
   }
 
+  public static final int TOTAL_PODS_RUNNING_TIME_S_FIELD_NUMBER = 3;
+  private int totalPodsRunningTimeS_;
+  /**
+   * <pre>
+   * Cumulative total time (in seconds) that pods have been running for this runner.
+   * This accumulates across scale-up/down cycles and is reported by the agent.
+   * </pre>
+   *
+   * <code>uint32 total_pods_running_time_s = 3;</code>
+   * @return The totalPodsRunningTimeS.
+   */
+  @java.lang.Override
+  public int getTotalPodsRunningTimeS() {
+    return totalPodsRunningTimeS_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -139,6 +160,9 @@ private static final long serialVersionUID = 0L;
     if (podsRunning_ != 0) {
       output.writeUInt32(2, podsRunning_);
     }
+    if (totalPodsRunningTimeS_ != 0) {
+      output.writeUInt32(3, totalPodsRunningTimeS_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -155,6 +179,10 @@ private static final long serialVersionUID = 0L;
     if (podsRunning_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, podsRunning_);
+    }
+    if (totalPodsRunningTimeS_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(3, totalPodsRunningTimeS_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -175,6 +203,8 @@ private static final long serialVersionUID = 0L;
         != other.getPodsTotal()) return false;
     if (getPodsRunning()
         != other.getPodsRunning()) return false;
+    if (getTotalPodsRunningTimeS()
+        != other.getTotalPodsRunningTimeS()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -190,6 +220,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPodsTotal();
     hash = (37 * hash) + PODS_RUNNING_FIELD_NUMBER;
     hash = (53 * hash) + getPodsRunning();
+    hash = (37 * hash) + TOTAL_PODS_RUNNING_TIME_S_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalPodsRunningTimeS();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -332,6 +364,8 @@ private static final long serialVersionUID = 0L;
 
       podsRunning_ = 0;
 
+      totalPodsRunningTimeS_ = 0;
+
       return this;
     }
 
@@ -360,6 +394,7 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.RunnerMetrics result = new com.clarifai.grpc.api.RunnerMetrics(this);
       result.podsTotal_ = podsTotal_;
       result.podsRunning_ = podsRunning_;
+      result.totalPodsRunningTimeS_ = totalPodsRunningTimeS_;
       onBuilt();
       return result;
     }
@@ -413,6 +448,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPodsRunning() != 0) {
         setPodsRunning(other.getPodsRunning());
+      }
+      if (other.getTotalPodsRunningTimeS() != 0) {
+        setTotalPodsRunningTimeS(other.getTotalPodsRunningTimeS());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -501,6 +539,52 @@ private static final long serialVersionUID = 0L;
     public Builder clearPodsRunning() {
       
       podsRunning_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int totalPodsRunningTimeS_ ;
+    /**
+     * <pre>
+     * Cumulative total time (in seconds) that pods have been running for this runner.
+     * This accumulates across scale-up/down cycles and is reported by the agent.
+     * </pre>
+     *
+     * <code>uint32 total_pods_running_time_s = 3;</code>
+     * @return The totalPodsRunningTimeS.
+     */
+    @java.lang.Override
+    public int getTotalPodsRunningTimeS() {
+      return totalPodsRunningTimeS_;
+    }
+    /**
+     * <pre>
+     * Cumulative total time (in seconds) that pods have been running for this runner.
+     * This accumulates across scale-up/down cycles and is reported by the agent.
+     * </pre>
+     *
+     * <code>uint32 total_pods_running_time_s = 3;</code>
+     * @param value The totalPodsRunningTimeS to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalPodsRunningTimeS(int value) {
+      
+      totalPodsRunningTimeS_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Cumulative total time (in seconds) that pods have been running for this runner.
+     * This accumulates across scale-up/down cycles and is reported by the agent.
+     * </pre>
+     *
+     * <code>uint32 total_pods_running_time_s = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalPodsRunningTimeS() {
+      
+      totalPodsRunningTimeS_ = 0;
       onChanged();
       return this;
     }

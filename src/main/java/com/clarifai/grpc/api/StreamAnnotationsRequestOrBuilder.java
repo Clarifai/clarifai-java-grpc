@@ -102,10 +102,10 @@ public interface StreamAnnotationsRequestOrBuilder extends
    * Filter annotations starting from this time in milliseconds (inclusive)
    * </pre>
    *
-   * <code>uint32 frame_time_start = 5;</code>
+   * <code>uint64 frame_time_start = 5;</code>
    * @return The frameTimeStart.
    */
-  int getFrameTimeStart();
+  long getFrameTimeStart();
 
   /**
    * <pre>
@@ -144,10 +144,10 @@ public interface StreamAnnotationsRequestOrBuilder extends
    * Default and max: 3600000 ms (60 minutes)
    * </pre>
    *
-   * <code>uint32 max_duration = 8;</code>
+   * <code>uint64 max_duration = 8;</code>
    * @return The maxDuration.
    */
-  int getMaxDuration();
+  long getMaxDuration();
 
   /**
    * <pre>

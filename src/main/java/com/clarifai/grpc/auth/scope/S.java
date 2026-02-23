@@ -245,12 +245,9 @@ public enum S
    */
   Workflows_Delete(21),
   /**
-   * <pre>
-   * DEPRECATED
-   * </pre>
-   *
-   * <code>WorkflowMetrics_Get = 96 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>WorkflowMetrics_Get = 96 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
+  @java.lang.Deprecated
   WorkflowMetrics_Get(96),
   /**
    * <code>WorkflowMetrics_Add = 97 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Get];</code>
@@ -509,11 +506,11 @@ public enum S
   /**
    * <pre>
    * CRUD on FindDuplicateAnnotationsJobs table
-   * DEPRECATED
    * </pre>
    *
-   * <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
+   * <code>FindDuplicateAnnotationsJobs_Add = 102 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
    */
+  @java.lang.Deprecated
   FindDuplicateAnnotationsJobs_Add(102),
   /**
    * <code>FindDuplicateAnnotationsJobs_Get = 103 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
@@ -540,48 +537,54 @@ public enum S
    * Write to the modules DB tables.
    * </pre>
    *
-   * <code>Modules_Add = 108 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>Modules_Add = 108 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
+  @java.lang.Deprecated
   Modules_Add(108),
   /**
    * <pre>
    * Read from the modules and modules versions DB tables.
    * </pre>
    *
-   * <code>Modules_Get = 109 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Modules_Get = 109 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
+  @java.lang.Deprecated
   Modules_Get(109),
   /**
    * <pre>
    * To delete we need read/write.
    * </pre>
    *
-   * <code>Modules_Delete = 110 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>Modules_Delete = 110 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
+  @java.lang.Deprecated
   Modules_Delete(110),
   /**
    * <pre>
    * Write to the InstalledModuleVersions DB tables.
    * </pre>
    *
-   * <code>InstalledModuleVersions_Add = 111 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>InstalledModuleVersions_Add = 111 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
+  @java.lang.Deprecated
   InstalledModuleVersions_Add(111),
   /**
    * <pre>
    * Read from the InstalledModuleVersions and InstalledModuleVersions versions DB tables.
    * </pre>
    *
-   * <code>InstalledModuleVersions_Get = 112 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>InstalledModuleVersions_Get = 112 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
+  @java.lang.Deprecated
   InstalledModuleVersions_Get(112),
   /**
    * <pre>
    * To delete we need read/write.
    * </pre>
    *
-   * <code>InstalledModuleVersions_Delete = 113 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>InstalledModuleVersions_Delete = 113 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
+  @java.lang.Deprecated
   InstalledModuleVersions_Delete(113),
   /**
    * <pre>
@@ -1065,13 +1068,9 @@ public enum S
    */
   public static final int Workflows_Delete_VALUE = 21;
   /**
-   * <pre>
-   * DEPRECATED
-   * </pre>
-   *
-   * <code>WorkflowMetrics_Get = 96 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>WorkflowMetrics_Get = 96 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
-  public static final int WorkflowMetrics_Get_VALUE = 96;
+  @java.lang.Deprecated public static final int WorkflowMetrics_Get_VALUE = 96;
   /**
    * <code>WorkflowMetrics_Add = 97 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Get];</code>
    */
@@ -1326,12 +1325,11 @@ public enum S
   /**
    * <pre>
    * CRUD on FindDuplicateAnnotationsJobs table
-   * DEPRECATED
    * </pre>
    *
-   * <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
+   * <code>FindDuplicateAnnotationsJobs_Add = 102 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
    */
-  public static final int FindDuplicateAnnotationsJobs_Add_VALUE = 102;
+  @java.lang.Deprecated public static final int FindDuplicateAnnotationsJobs_Add_VALUE = 102;
   /**
    * <code>FindDuplicateAnnotationsJobs_Get = 103 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
@@ -1357,49 +1355,49 @@ public enum S
    * Write to the modules DB tables.
    * </pre>
    *
-   * <code>Modules_Add = 108 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>Modules_Add = 108 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
-  public static final int Modules_Add_VALUE = 108;
+  @java.lang.Deprecated public static final int Modules_Add_VALUE = 108;
   /**
    * <pre>
    * Read from the modules and modules versions DB tables.
    * </pre>
    *
-   * <code>Modules_Get = 109 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Modules_Get = 109 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
-  public static final int Modules_Get_VALUE = 109;
+  @java.lang.Deprecated public static final int Modules_Get_VALUE = 109;
   /**
    * <pre>
    * To delete we need read/write.
    * </pre>
    *
-   * <code>Modules_Delete = 110 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>Modules_Delete = 110 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
-  public static final int Modules_Delete_VALUE = 110;
+  @java.lang.Deprecated public static final int Modules_Delete_VALUE = 110;
   /**
    * <pre>
    * Write to the InstalledModuleVersions DB tables.
    * </pre>
    *
-   * <code>InstalledModuleVersions_Add = 111 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>InstalledModuleVersions_Add = 111 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
-  public static final int InstalledModuleVersions_Add_VALUE = 111;
+  @java.lang.Deprecated public static final int InstalledModuleVersions_Add_VALUE = 111;
   /**
    * <pre>
    * Read from the InstalledModuleVersions and InstalledModuleVersions versions DB tables.
    * </pre>
    *
-   * <code>InstalledModuleVersions_Get = 112 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>InstalledModuleVersions_Get = 112 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
-  public static final int InstalledModuleVersions_Get_VALUE = 112;
+  @java.lang.Deprecated public static final int InstalledModuleVersions_Get_VALUE = 112;
   /**
    * <pre>
    * To delete we need read/write.
    * </pre>
    *
-   * <code>InstalledModuleVersions_Delete = 113 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   * <code>InstalledModuleVersions_Delete = 113 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
    */
-  public static final int InstalledModuleVersions_Delete_VALUE = 113;
+  @java.lang.Deprecated public static final int InstalledModuleVersions_Delete_VALUE = 113;
   /**
    * <pre>
    * Make an rpc to our search services.

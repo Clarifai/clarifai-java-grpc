@@ -199,6 +199,24 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 138: {
+            com.google.protobuf.Duration.Builder subBuilder = null;
+            if (emailReminderAfter_ != null) {
+              subBuilder = emailReminderAfter_.toBuilder();
+            }
+            emailReminderAfter_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(emailReminderAfter_);
+              emailReminderAfter_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 144: {
+
+            gracefulDeploy_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1002,7 +1020,7 @@ private static final long serialVersionUID = 0L;
   private boolean deployLatestVersion_;
   /**
    * <pre>
-   * When to always deploy latest model version
+   * Whether to always deploy latest model version
    * </pre>
    *
    * <code>bool deploy_latest_version = 14;</code>
@@ -1073,6 +1091,65 @@ private static final long serialVersionUID = 0L;
     return specialHandling_.get(index);
   }
 
+  public static final int EMAIL_REMINDER_AFTER_FIELD_NUMBER = 17;
+  private com.google.protobuf.Duration emailReminderAfter_;
+  /**
+   * <pre>
+   * Duration after which to send a reminder email if pods are still running.
+   * If set, users will receive a one-time email notification when any runner
+   * under this deployment has been running longer than this duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+   * @return Whether the emailReminderAfter field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmailReminderAfter() {
+    return emailReminderAfter_ != null;
+  }
+  /**
+   * <pre>
+   * Duration after which to send a reminder email if pods are still running.
+   * If set, users will receive a one-time email notification when any runner
+   * under this deployment has been running longer than this duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+   * @return The emailReminderAfter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getEmailReminderAfter() {
+    return emailReminderAfter_ == null ? com.google.protobuf.Duration.getDefaultInstance() : emailReminderAfter_;
+  }
+  /**
+   * <pre>
+   * Duration after which to send a reminder email if pods are still running.
+   * If set, users will receive a one-time email notification when any runner
+   * under this deployment has been running longer than this duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getEmailReminderAfterOrBuilder() {
+    return getEmailReminderAfter();
+  }
+
+  public static final int GRACEFUL_DEPLOY_FIELD_NUMBER = 18;
+  private boolean gracefulDeploy_;
+  /**
+   * <pre>
+   * Whether to gracefully deploy a new worker
+   * </pre>
+   *
+   * <code>bool graceful_deploy = 18;</code>
+   * @return The gracefulDeploy.
+   */
+  @java.lang.Override
+  public boolean getGracefulDeploy() {
+    return gracefulDeploy_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1128,6 +1205,12 @@ private static final long serialVersionUID = 0L;
     }
     if (desiredWorker_ != null) {
       output.writeMessage(16, getDesiredWorker());
+    }
+    if (emailReminderAfter_ != null) {
+      output.writeMessage(17, getEmailReminderAfter());
+    }
+    if (gracefulDeploy_ != false) {
+      output.writeBool(18, gracefulDeploy_);
     }
     unknownFields.writeTo(output);
   }
@@ -1190,6 +1273,14 @@ private static final long serialVersionUID = 0L;
     if (desiredWorker_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getDesiredWorker());
+    }
+    if (emailReminderAfter_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getEmailReminderAfter());
+    }
+    if (gracefulDeploy_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(18, gracefulDeploy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1254,6 +1345,13 @@ private static final long serialVersionUID = 0L;
         != other.getDeployLatestVersion()) return false;
     if (!getSpecialHandlingList()
         .equals(other.getSpecialHandlingList())) return false;
+    if (hasEmailReminderAfter() != other.hasEmailReminderAfter()) return false;
+    if (hasEmailReminderAfter()) {
+      if (!getEmailReminderAfter()
+          .equals(other.getEmailReminderAfter())) return false;
+    }
+    if (getGracefulDeploy()
+        != other.getGracefulDeploy()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1312,6 +1410,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SPECIAL_HANDLING_FIELD_NUMBER;
       hash = (53 * hash) + getSpecialHandlingList().hashCode();
     }
+    if (hasEmailReminderAfter()) {
+      hash = (37 * hash) + EMAIL_REMINDER_AFTER_FIELD_NUMBER;
+      hash = (53 * hash) + getEmailReminderAfter().hashCode();
+    }
+    hash = (37 * hash) + GRACEFUL_DEPLOY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getGracefulDeploy());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1517,6 +1622,14 @@ private static final long serialVersionUID = 0L;
       } else {
         specialHandlingBuilder_.clear();
       }
+      if (emailReminderAfterBuilder_ == null) {
+        emailReminderAfter_ = null;
+      } else {
+        emailReminderAfter_ = null;
+        emailReminderAfterBuilder_ = null;
+      }
+      gracefulDeploy_ = false;
+
       return this;
     }
 
@@ -1602,6 +1715,12 @@ private static final long serialVersionUID = 0L;
       } else {
         result.specialHandling_ = specialHandlingBuilder_.build();
       }
+      if (emailReminderAfterBuilder_ == null) {
+        result.emailReminderAfter_ = emailReminderAfter_;
+      } else {
+        result.emailReminderAfter_ = emailReminderAfterBuilder_.build();
+      }
+      result.gracefulDeploy_ = gracefulDeploy_;
       onBuilt();
       return result;
     }
@@ -1740,6 +1859,12 @@ private static final long serialVersionUID = 0L;
             specialHandlingBuilder_.addAllMessages(other.specialHandling_);
           }
         }
+      }
+      if (other.hasEmailReminderAfter()) {
+        mergeEmailReminderAfter(other.getEmailReminderAfter());
+      }
+      if (other.getGracefulDeploy() != false) {
+        setGracefulDeploy(other.getGracefulDeploy());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3621,7 +3746,7 @@ private static final long serialVersionUID = 0L;
     private boolean deployLatestVersion_ ;
     /**
      * <pre>
-     * When to always deploy latest model version
+     * Whether to always deploy latest model version
      * </pre>
      *
      * <code>bool deploy_latest_version = 14;</code>
@@ -3633,7 +3758,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When to always deploy latest model version
+     * Whether to always deploy latest model version
      * </pre>
      *
      * <code>bool deploy_latest_version = 14;</code>
@@ -3648,7 +3773,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When to always deploy latest model version
+     * Whether to always deploy latest model version
      * </pre>
      *
      * <code>bool deploy_latest_version = 14;</code>
@@ -3971,6 +4096,222 @@ private static final long serialVersionUID = 0L;
         specialHandling_ = null;
       }
       return specialHandlingBuilder_;
+    }
+
+    private com.google.protobuf.Duration emailReminderAfter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> emailReminderAfterBuilder_;
+    /**
+     * <pre>
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     * @return Whether the emailReminderAfter field is set.
+     */
+    public boolean hasEmailReminderAfter() {
+      return emailReminderAfterBuilder_ != null || emailReminderAfter_ != null;
+    }
+    /**
+     * <pre>
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     * @return The emailReminderAfter.
+     */
+    public com.google.protobuf.Duration getEmailReminderAfter() {
+      if (emailReminderAfterBuilder_ == null) {
+        return emailReminderAfter_ == null ? com.google.protobuf.Duration.getDefaultInstance() : emailReminderAfter_;
+      } else {
+        return emailReminderAfterBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     */
+    public Builder setEmailReminderAfter(com.google.protobuf.Duration value) {
+      if (emailReminderAfterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        emailReminderAfter_ = value;
+        onChanged();
+      } else {
+        emailReminderAfterBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     */
+    public Builder setEmailReminderAfter(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (emailReminderAfterBuilder_ == null) {
+        emailReminderAfter_ = builderForValue.build();
+        onChanged();
+      } else {
+        emailReminderAfterBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     */
+    public Builder mergeEmailReminderAfter(com.google.protobuf.Duration value) {
+      if (emailReminderAfterBuilder_ == null) {
+        if (emailReminderAfter_ != null) {
+          emailReminderAfter_ =
+            com.google.protobuf.Duration.newBuilder(emailReminderAfter_).mergeFrom(value).buildPartial();
+        } else {
+          emailReminderAfter_ = value;
+        }
+        onChanged();
+      } else {
+        emailReminderAfterBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     */
+    public Builder clearEmailReminderAfter() {
+      if (emailReminderAfterBuilder_ == null) {
+        emailReminderAfter_ = null;
+        onChanged();
+      } else {
+        emailReminderAfter_ = null;
+        emailReminderAfterBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     */
+    public com.google.protobuf.Duration.Builder getEmailReminderAfterBuilder() {
+      
+      onChanged();
+      return getEmailReminderAfterFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getEmailReminderAfterOrBuilder() {
+      if (emailReminderAfterBuilder_ != null) {
+        return emailReminderAfterBuilder_.getMessageOrBuilder();
+      } else {
+        return emailReminderAfter_ == null ?
+            com.google.protobuf.Duration.getDefaultInstance() : emailReminderAfter_;
+      }
+    }
+    /**
+     * <pre>
+     * Duration after which to send a reminder email if pods are still running.
+     * If set, users will receive a one-time email notification when any runner
+     * under this deployment has been running longer than this duration.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+        getEmailReminderAfterFieldBuilder() {
+      if (emailReminderAfterBuilder_ == null) {
+        emailReminderAfterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                getEmailReminderAfter(),
+                getParentForChildren(),
+                isClean());
+        emailReminderAfter_ = null;
+      }
+      return emailReminderAfterBuilder_;
+    }
+
+    private boolean gracefulDeploy_ ;
+    /**
+     * <pre>
+     * Whether to gracefully deploy a new worker
+     * </pre>
+     *
+     * <code>bool graceful_deploy = 18;</code>
+     * @return The gracefulDeploy.
+     */
+    @java.lang.Override
+    public boolean getGracefulDeploy() {
+      return gracefulDeploy_;
+    }
+    /**
+     * <pre>
+     * Whether to gracefully deploy a new worker
+     * </pre>
+     *
+     * <code>bool graceful_deploy = 18;</code>
+     * @param value The gracefulDeploy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGracefulDeploy(boolean value) {
+      
+      gracefulDeploy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to gracefully deploy a new worker
+     * </pre>
+     *
+     * <code>bool graceful_deploy = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGracefulDeploy() {
+      
+      gracefulDeploy_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

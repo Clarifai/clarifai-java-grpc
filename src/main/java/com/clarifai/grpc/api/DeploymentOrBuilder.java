@@ -343,7 +343,7 @@ public interface DeploymentOrBuilder extends
 
   /**
    * <pre>
-   * When to always deploy latest model version
+   * Whether to always deploy latest model version
    * </pre>
    *
    * <code>bool deploy_latest_version = 14;</code>
@@ -394,4 +394,47 @@ public interface DeploymentOrBuilder extends
    */
   com.clarifai.grpc.api.SpecialHandlingOrBuilder getSpecialHandlingOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Duration after which to send a reminder email if pods are still running.
+   * If set, users will receive a one-time email notification when any runner
+   * under this deployment has been running longer than this duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+   * @return Whether the emailReminderAfter field is set.
+   */
+  boolean hasEmailReminderAfter();
+  /**
+   * <pre>
+   * Duration after which to send a reminder email if pods are still running.
+   * If set, users will receive a one-time email notification when any runner
+   * under this deployment has been running longer than this duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+   * @return The emailReminderAfter.
+   */
+  com.google.protobuf.Duration getEmailReminderAfter();
+  /**
+   * <pre>
+   * Duration after which to send a reminder email if pods are still running.
+   * If set, users will receive a one-time email notification when any runner
+   * under this deployment has been running longer than this duration.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration email_reminder_after = 17;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getEmailReminderAfterOrBuilder();
+
+  /**
+   * <pre>
+   * Whether to gracefully deploy a new worker
+   * </pre>
+   *
+   * <code>bool graceful_deploy = 18;</code>
+   * @return The gracefulDeploy.
+   */
+  boolean getGracefulDeploy();
 }

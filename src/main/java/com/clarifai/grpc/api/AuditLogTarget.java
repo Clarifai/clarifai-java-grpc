@@ -109,34 +109,6 @@ private static final long serialVersionUID = 0L;
             targetCase_ = 4;
             break;
           }
-          case 42: {
-            com.clarifai.grpc.api.Module.Builder subBuilder = null;
-            if (targetCase_ == 5) {
-              subBuilder = ((com.clarifai.grpc.api.Module) target_).toBuilder();
-            }
-            target_ =
-                input.readMessage(com.clarifai.grpc.api.Module.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.clarifai.grpc.api.Module) target_);
-              target_ = subBuilder.buildPartial();
-            }
-            targetCase_ = 5;
-            break;
-          }
-          case 50: {
-            com.clarifai.grpc.api.ModuleVersion.Builder subBuilder = null;
-            if (targetCase_ == 6) {
-              subBuilder = ((com.clarifai.grpc.api.ModuleVersion) target_).toBuilder();
-            }
-            target_ =
-                input.readMessage(com.clarifai.grpc.api.ModuleVersion.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.clarifai.grpc.api.ModuleVersion) target_);
-              target_ = subBuilder.buildPartial();
-            }
-            targetCase_ = 6;
-            break;
-          }
           case 58: {
             com.clarifai.grpc.api.Workflow.Builder subBuilder = null;
             if (targetCase_ == 7) {
@@ -278,8 +250,6 @@ private static final long serialVersionUID = 0L;
     ROLE(2),
     TEAM(3),
     APP(4),
-    MODULE(5),
-    MODULE_VERSION(6),
     WORKFLOW(7),
     WORKFLOW_VERSION(8),
     MODEL(9),
@@ -308,8 +278,6 @@ private static final long serialVersionUID = 0L;
         case 2: return ROLE;
         case 3: return TEAM;
         case 4: return APP;
-        case 5: return MODULE;
-        case 6: return MODULE_VERSION;
         case 7: return WORKFLOW;
         case 8: return WORKFLOW_VERSION;
         case 9: return MODEL;
@@ -454,68 +422,6 @@ private static final long serialVersionUID = 0L;
        return (com.clarifai.grpc.api.App) target_;
     }
     return com.clarifai.grpc.api.App.getDefaultInstance();
-  }
-
-  public static final int MODULE_FIELD_NUMBER = 5;
-  /**
-   * <code>.clarifai.api.Module module = 5;</code>
-   * @return Whether the module field is set.
-   */
-  @java.lang.Override
-  public boolean hasModule() {
-    return targetCase_ == 5;
-  }
-  /**
-   * <code>.clarifai.api.Module module = 5;</code>
-   * @return The module.
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.Module getModule() {
-    if (targetCase_ == 5) {
-       return (com.clarifai.grpc.api.Module) target_;
-    }
-    return com.clarifai.grpc.api.Module.getDefaultInstance();
-  }
-  /**
-   * <code>.clarifai.api.Module module = 5;</code>
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.ModuleOrBuilder getModuleOrBuilder() {
-    if (targetCase_ == 5) {
-       return (com.clarifai.grpc.api.Module) target_;
-    }
-    return com.clarifai.grpc.api.Module.getDefaultInstance();
-  }
-
-  public static final int MODULE_VERSION_FIELD_NUMBER = 6;
-  /**
-   * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-   * @return Whether the moduleVersion field is set.
-   */
-  @java.lang.Override
-  public boolean hasModuleVersion() {
-    return targetCase_ == 6;
-  }
-  /**
-   * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-   * @return The moduleVersion.
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.ModuleVersion getModuleVersion() {
-    if (targetCase_ == 6) {
-       return (com.clarifai.grpc.api.ModuleVersion) target_;
-    }
-    return com.clarifai.grpc.api.ModuleVersion.getDefaultInstance();
-  }
-  /**
-   * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.ModuleVersionOrBuilder getModuleVersionOrBuilder() {
-    if (targetCase_ == 6) {
-       return (com.clarifai.grpc.api.ModuleVersion) target_;
-    }
-    return com.clarifai.grpc.api.ModuleVersion.getDefaultInstance();
   }
 
   public static final int WORKFLOW_FIELD_NUMBER = 7;
@@ -761,12 +667,6 @@ private static final long serialVersionUID = 0L;
     if (targetCase_ == 4) {
       output.writeMessage(4, (com.clarifai.grpc.api.App) target_);
     }
-    if (targetCase_ == 5) {
-      output.writeMessage(5, (com.clarifai.grpc.api.Module) target_);
-    }
-    if (targetCase_ == 6) {
-      output.writeMessage(6, (com.clarifai.grpc.api.ModuleVersion) target_);
-    }
     if (targetCase_ == 7) {
       output.writeMessage(7, (com.clarifai.grpc.api.Workflow) target_);
     }
@@ -812,14 +712,6 @@ private static final long serialVersionUID = 0L;
     if (targetCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.clarifai.grpc.api.App) target_);
-    }
-    if (targetCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.clarifai.grpc.api.Module) target_);
-    }
-    if (targetCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.clarifai.grpc.api.ModuleVersion) target_);
     }
     if (targetCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
@@ -882,14 +774,6 @@ private static final long serialVersionUID = 0L;
         if (!getApp()
             .equals(other.getApp())) return false;
         break;
-      case 5:
-        if (!getModule()
-            .equals(other.getModule())) return false;
-        break;
-      case 6:
-        if (!getModuleVersion()
-            .equals(other.getModuleVersion())) return false;
-        break;
       case 7:
         if (!getWorkflow()
             .equals(other.getWorkflow())) return false;
@@ -948,14 +832,6 @@ private static final long serialVersionUID = 0L;
       case 4:
         hash = (37 * hash) + APP_FIELD_NUMBER;
         hash = (53 * hash) + getApp().hashCode();
-        break;
-      case 5:
-        hash = (37 * hash) + MODULE_FIELD_NUMBER;
-        hash = (53 * hash) + getModule().hashCode();
-        break;
-      case 6:
-        hash = (37 * hash) + MODULE_VERSION_FIELD_NUMBER;
-        hash = (53 * hash) + getModuleVersion().hashCode();
         break;
       case 7:
         hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
@@ -1182,20 +1058,6 @@ private static final long serialVersionUID = 0L;
           result.target_ = appBuilder_.build();
         }
       }
-      if (targetCase_ == 5) {
-        if (moduleBuilder_ == null) {
-          result.target_ = target_;
-        } else {
-          result.target_ = moduleBuilder_.build();
-        }
-      }
-      if (targetCase_ == 6) {
-        if (moduleVersionBuilder_ == null) {
-          result.target_ = target_;
-        } else {
-          result.target_ = moduleVersionBuilder_.build();
-        }
-      }
       if (targetCase_ == 7) {
         if (workflowBuilder_ == null) {
           result.target_ = target_;
@@ -1309,14 +1171,6 @@ private static final long serialVersionUID = 0L;
         }
         case APP: {
           mergeApp(other.getApp());
-          break;
-        }
-        case MODULE: {
-          mergeModule(other.getModule());
-          break;
-        }
-        case MODULE_VERSION: {
-          mergeModuleVersion(other.getModuleVersion());
           break;
         }
         case WORKFLOW: {
@@ -1961,290 +1815,6 @@ private static final long serialVersionUID = 0L;
       targetCase_ = 4;
       onChanged();;
       return appBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Module, com.clarifai.grpc.api.Module.Builder, com.clarifai.grpc.api.ModuleOrBuilder> moduleBuilder_;
-    /**
-     * <code>.clarifai.api.Module module = 5;</code>
-     * @return Whether the module field is set.
-     */
-    @java.lang.Override
-    public boolean hasModule() {
-      return targetCase_ == 5;
-    }
-    /**
-     * <code>.clarifai.api.Module module = 5;</code>
-     * @return The module.
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.Module getModule() {
-      if (moduleBuilder_ == null) {
-        if (targetCase_ == 5) {
-          return (com.clarifai.grpc.api.Module) target_;
-        }
-        return com.clarifai.grpc.api.Module.getDefaultInstance();
-      } else {
-        if (targetCase_ == 5) {
-          return moduleBuilder_.getMessage();
-        }
-        return com.clarifai.grpc.api.Module.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.clarifai.api.Module module = 5;</code>
-     */
-    public Builder setModule(com.clarifai.grpc.api.Module value) {
-      if (moduleBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        target_ = value;
-        onChanged();
-      } else {
-        moduleBuilder_.setMessage(value);
-      }
-      targetCase_ = 5;
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.Module module = 5;</code>
-     */
-    public Builder setModule(
-        com.clarifai.grpc.api.Module.Builder builderForValue) {
-      if (moduleBuilder_ == null) {
-        target_ = builderForValue.build();
-        onChanged();
-      } else {
-        moduleBuilder_.setMessage(builderForValue.build());
-      }
-      targetCase_ = 5;
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.Module module = 5;</code>
-     */
-    public Builder mergeModule(com.clarifai.grpc.api.Module value) {
-      if (moduleBuilder_ == null) {
-        if (targetCase_ == 5 &&
-            target_ != com.clarifai.grpc.api.Module.getDefaultInstance()) {
-          target_ = com.clarifai.grpc.api.Module.newBuilder((com.clarifai.grpc.api.Module) target_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          target_ = value;
-        }
-        onChanged();
-      } else {
-        if (targetCase_ == 5) {
-          moduleBuilder_.mergeFrom(value);
-        } else {
-          moduleBuilder_.setMessage(value);
-        }
-      }
-      targetCase_ = 5;
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.Module module = 5;</code>
-     */
-    public Builder clearModule() {
-      if (moduleBuilder_ == null) {
-        if (targetCase_ == 5) {
-          targetCase_ = 0;
-          target_ = null;
-          onChanged();
-        }
-      } else {
-        if (targetCase_ == 5) {
-          targetCase_ = 0;
-          target_ = null;
-        }
-        moduleBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.Module module = 5;</code>
-     */
-    public com.clarifai.grpc.api.Module.Builder getModuleBuilder() {
-      return getModuleFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.clarifai.api.Module module = 5;</code>
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.ModuleOrBuilder getModuleOrBuilder() {
-      if ((targetCase_ == 5) && (moduleBuilder_ != null)) {
-        return moduleBuilder_.getMessageOrBuilder();
-      } else {
-        if (targetCase_ == 5) {
-          return (com.clarifai.grpc.api.Module) target_;
-        }
-        return com.clarifai.grpc.api.Module.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.clarifai.api.Module module = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Module, com.clarifai.grpc.api.Module.Builder, com.clarifai.grpc.api.ModuleOrBuilder> 
-        getModuleFieldBuilder() {
-      if (moduleBuilder_ == null) {
-        if (!(targetCase_ == 5)) {
-          target_ = com.clarifai.grpc.api.Module.getDefaultInstance();
-        }
-        moduleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Module, com.clarifai.grpc.api.Module.Builder, com.clarifai.grpc.api.ModuleOrBuilder>(
-                (com.clarifai.grpc.api.Module) target_,
-                getParentForChildren(),
-                isClean());
-        target_ = null;
-      }
-      targetCase_ = 5;
-      onChanged();;
-      return moduleBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.ModuleVersion, com.clarifai.grpc.api.ModuleVersion.Builder, com.clarifai.grpc.api.ModuleVersionOrBuilder> moduleVersionBuilder_;
-    /**
-     * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-     * @return Whether the moduleVersion field is set.
-     */
-    @java.lang.Override
-    public boolean hasModuleVersion() {
-      return targetCase_ == 6;
-    }
-    /**
-     * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-     * @return The moduleVersion.
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.ModuleVersion getModuleVersion() {
-      if (moduleVersionBuilder_ == null) {
-        if (targetCase_ == 6) {
-          return (com.clarifai.grpc.api.ModuleVersion) target_;
-        }
-        return com.clarifai.grpc.api.ModuleVersion.getDefaultInstance();
-      } else {
-        if (targetCase_ == 6) {
-          return moduleVersionBuilder_.getMessage();
-        }
-        return com.clarifai.grpc.api.ModuleVersion.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-     */
-    public Builder setModuleVersion(com.clarifai.grpc.api.ModuleVersion value) {
-      if (moduleVersionBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        target_ = value;
-        onChanged();
-      } else {
-        moduleVersionBuilder_.setMessage(value);
-      }
-      targetCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-     */
-    public Builder setModuleVersion(
-        com.clarifai.grpc.api.ModuleVersion.Builder builderForValue) {
-      if (moduleVersionBuilder_ == null) {
-        target_ = builderForValue.build();
-        onChanged();
-      } else {
-        moduleVersionBuilder_.setMessage(builderForValue.build());
-      }
-      targetCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-     */
-    public Builder mergeModuleVersion(com.clarifai.grpc.api.ModuleVersion value) {
-      if (moduleVersionBuilder_ == null) {
-        if (targetCase_ == 6 &&
-            target_ != com.clarifai.grpc.api.ModuleVersion.getDefaultInstance()) {
-          target_ = com.clarifai.grpc.api.ModuleVersion.newBuilder((com.clarifai.grpc.api.ModuleVersion) target_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          target_ = value;
-        }
-        onChanged();
-      } else {
-        if (targetCase_ == 6) {
-          moduleVersionBuilder_.mergeFrom(value);
-        } else {
-          moduleVersionBuilder_.setMessage(value);
-        }
-      }
-      targetCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-     */
-    public Builder clearModuleVersion() {
-      if (moduleVersionBuilder_ == null) {
-        if (targetCase_ == 6) {
-          targetCase_ = 0;
-          target_ = null;
-          onChanged();
-        }
-      } else {
-        if (targetCase_ == 6) {
-          targetCase_ = 0;
-          target_ = null;
-        }
-        moduleVersionBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-     */
-    public com.clarifai.grpc.api.ModuleVersion.Builder getModuleVersionBuilder() {
-      return getModuleVersionFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.ModuleVersionOrBuilder getModuleVersionOrBuilder() {
-      if ((targetCase_ == 6) && (moduleVersionBuilder_ != null)) {
-        return moduleVersionBuilder_.getMessageOrBuilder();
-      } else {
-        if (targetCase_ == 6) {
-          return (com.clarifai.grpc.api.ModuleVersion) target_;
-        }
-        return com.clarifai.grpc.api.ModuleVersion.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.clarifai.api.ModuleVersion module_version = 6;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.ModuleVersion, com.clarifai.grpc.api.ModuleVersion.Builder, com.clarifai.grpc.api.ModuleVersionOrBuilder> 
-        getModuleVersionFieldBuilder() {
-      if (moduleVersionBuilder_ == null) {
-        if (!(targetCase_ == 6)) {
-          target_ = com.clarifai.grpc.api.ModuleVersion.getDefaultInstance();
-        }
-        moduleVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.ModuleVersion, com.clarifai.grpc.api.ModuleVersion.Builder, com.clarifai.grpc.api.ModuleVersionOrBuilder>(
-                (com.clarifai.grpc.api.ModuleVersion) target_,
-                getParentForChildren(),
-                isClean());
-        target_ = null;
-      }
-      targetCase_ = 6;
-      onChanged();;
-      return moduleVersionBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

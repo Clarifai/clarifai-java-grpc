@@ -18,4 +18,15 @@ public interface RunnerMetricsOrBuilder extends
    * @return The podsRunning.
    */
   int getPodsRunning();
+
+  /**
+   * <pre>
+   * Cumulative total time (in seconds) that pods have been running for this runner.
+   * This accumulates across scale-up/down cycles and is reported by the agent.
+   * </pre>
+   *
+   * <code>uint32 total_pods_running_time_s = 3;</code>
+   * @return The totalPodsRunningTimeS.
+   */
+  int getTotalPodsRunningTimeS();
 }

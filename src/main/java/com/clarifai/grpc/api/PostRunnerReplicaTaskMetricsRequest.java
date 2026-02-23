@@ -4,30 +4,26 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- * PostInstalledModuleVersionsRequest to install a module version into the app in the URL
- * </pre>
- *
- * Protobuf type {@code clarifai.api.PostInstalledModuleVersionsRequest}
+ * Protobuf type {@code clarifai.api.PostRunnerReplicaTaskMetricsRequest}
  */
-public final class PostInstalledModuleVersionsRequest extends
+public final class PostRunnerReplicaTaskMetricsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.PostInstalledModuleVersionsRequest)
-    PostInstalledModuleVersionsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.PostRunnerReplicaTaskMetricsRequest)
+    PostRunnerReplicaTaskMetricsRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use PostInstalledModuleVersionsRequest.newBuilder() to construct.
-  private PostInstalledModuleVersionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PostRunnerReplicaTaskMetricsRequest.newBuilder() to construct.
+  private PostRunnerReplicaTaskMetricsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private PostInstalledModuleVersionsRequest() {
-    installedModuleVersions_ = java.util.Collections.emptyList();
+  private PostRunnerReplicaTaskMetricsRequest() {
+    runnerReplicaTaskMetrics_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new PostInstalledModuleVersionsRequest();
+    return new PostRunnerReplicaTaskMetricsRequest();
   }
 
   @java.lang.Override
@@ -35,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private PostInstalledModuleVersionsRequest(
+  private PostRunnerReplicaTaskMetricsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -69,11 +65,11 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              installedModuleVersions_ = new java.util.ArrayList<com.clarifai.grpc.api.InstalledModuleVersion>();
+              runnerReplicaTaskMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.RunnerReplicaTaskMetrics>();
               mutable_bitField0_ |= 0x00000001;
             }
-            installedModuleVersions_.add(
-                input.readMessage(com.clarifai.grpc.api.InstalledModuleVersion.parser(), extensionRegistry));
+            runnerReplicaTaskMetrics_.add(
+                input.readMessage(com.clarifai.grpc.api.RunnerReplicaTaskMetrics.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -94,7 +90,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        installedModuleVersions_ = java.util.Collections.unmodifiableList(installedModuleVersions_);
+        runnerReplicaTaskMetrics_ = java.util.Collections.unmodifiableList(runnerReplicaTaskMetrics_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -102,15 +98,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostInstalledModuleVersionsRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostRunnerReplicaTaskMetricsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostInstalledModuleVersionsRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostRunnerReplicaTaskMetricsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.PostInstalledModuleVersionsRequest.class, com.clarifai.grpc.api.PostInstalledModuleVersionsRequest.Builder.class);
+            com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest.class, com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -139,64 +135,64 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int INSTALLED_MODULE_VERSIONS_FIELD_NUMBER = 2;
-  private java.util.List<com.clarifai.grpc.api.InstalledModuleVersion> installedModuleVersions_;
+  public static final int RUNNER_REPLICA_TASK_METRICS_FIELD_NUMBER = 2;
+  private java.util.List<com.clarifai.grpc.api.RunnerReplicaTaskMetrics> runnerReplicaTaskMetrics_;
   /**
    * <pre>
-   * This allows you to create one or more module by posting it to the API.
+   * List of task metrics reported by runner replicas.
    * </pre>
    *
-   * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+   * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<com.clarifai.grpc.api.InstalledModuleVersion> getInstalledModuleVersionsList() {
-    return installedModuleVersions_;
+  public java.util.List<com.clarifai.grpc.api.RunnerReplicaTaskMetrics> getRunnerReplicaTaskMetricsList() {
+    return runnerReplicaTaskMetrics_;
   }
   /**
    * <pre>
-   * This allows you to create one or more module by posting it to the API.
+   * List of task metrics reported by runner replicas.
    * </pre>
    *
-   * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+   * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.clarifai.grpc.api.InstalledModuleVersionOrBuilder> 
-      getInstalledModuleVersionsOrBuilderList() {
-    return installedModuleVersions_;
+  public java.util.List<? extends com.clarifai.grpc.api.RunnerReplicaTaskMetricsOrBuilder> 
+      getRunnerReplicaTaskMetricsOrBuilderList() {
+    return runnerReplicaTaskMetrics_;
   }
   /**
    * <pre>
-   * This allows you to create one or more module by posting it to the API.
+   * List of task metrics reported by runner replicas.
    * </pre>
    *
-   * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+   * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
    */
   @java.lang.Override
-  public int getInstalledModuleVersionsCount() {
-    return installedModuleVersions_.size();
+  public int getRunnerReplicaTaskMetricsCount() {
+    return runnerReplicaTaskMetrics_.size();
   }
   /**
    * <pre>
-   * This allows you to create one or more module by posting it to the API.
+   * List of task metrics reported by runner replicas.
    * </pre>
    *
-   * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+   * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.InstalledModuleVersion getInstalledModuleVersions(int index) {
-    return installedModuleVersions_.get(index);
+  public com.clarifai.grpc.api.RunnerReplicaTaskMetrics getRunnerReplicaTaskMetrics(int index) {
+    return runnerReplicaTaskMetrics_.get(index);
   }
   /**
    * <pre>
-   * This allows you to create one or more module by posting it to the API.
+   * List of task metrics reported by runner replicas.
    * </pre>
    *
-   * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+   * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.InstalledModuleVersionOrBuilder getInstalledModuleVersionsOrBuilder(
+  public com.clarifai.grpc.api.RunnerReplicaTaskMetricsOrBuilder getRunnerReplicaTaskMetricsOrBuilder(
       int index) {
-    return installedModuleVersions_.get(index);
+    return runnerReplicaTaskMetrics_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -216,8 +212,8 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    for (int i = 0; i < installedModuleVersions_.size(); i++) {
-      output.writeMessage(2, installedModuleVersions_.get(i));
+    for (int i = 0; i < runnerReplicaTaskMetrics_.size(); i++) {
+      output.writeMessage(2, runnerReplicaTaskMetrics_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -232,9 +228,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    for (int i = 0; i < installedModuleVersions_.size(); i++) {
+    for (int i = 0; i < runnerReplicaTaskMetrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, installedModuleVersions_.get(i));
+        .computeMessageSize(2, runnerReplicaTaskMetrics_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -246,18 +242,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.PostInstalledModuleVersionsRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.PostInstalledModuleVersionsRequest other = (com.clarifai.grpc.api.PostInstalledModuleVersionsRequest) obj;
+    com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest other = (com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getInstalledModuleVersionsList()
-        .equals(other.getInstalledModuleVersionsList())) return false;
+    if (!getRunnerReplicaTaskMetricsList()
+        .equals(other.getRunnerReplicaTaskMetricsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -273,78 +269,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    if (getInstalledModuleVersionsCount() > 0) {
-      hash = (37 * hash) + INSTALLED_MODULE_VERSIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getInstalledModuleVersionsList().hashCode();
+    if (getRunnerReplicaTaskMetricsCount() > 0) {
+      hash = (37 * hash) + RUNNER_REPLICA_TASK_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getRunnerReplicaTaskMetricsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -357,7 +353,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.PostInstalledModuleVersionsRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -373,30 +369,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * PostInstalledModuleVersionsRequest to install a module version into the app in the URL
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.PostInstalledModuleVersionsRequest}
+   * Protobuf type {@code clarifai.api.PostRunnerReplicaTaskMetricsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.PostInstalledModuleVersionsRequest)
-      com.clarifai.grpc.api.PostInstalledModuleVersionsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.PostRunnerReplicaTaskMetricsRequest)
+      com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostInstalledModuleVersionsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostRunnerReplicaTaskMetricsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostInstalledModuleVersionsRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostRunnerReplicaTaskMetricsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.PostInstalledModuleVersionsRequest.class, com.clarifai.grpc.api.PostInstalledModuleVersionsRequest.Builder.class);
+              com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest.class, com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.PostInstalledModuleVersionsRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -409,7 +401,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getInstalledModuleVersionsFieldBuilder();
+        getRunnerReplicaTaskMetricsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -421,11 +413,11 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      if (installedModuleVersionsBuilder_ == null) {
-        installedModuleVersions_ = java.util.Collections.emptyList();
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        runnerReplicaTaskMetrics_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        installedModuleVersionsBuilder_.clear();
+        runnerReplicaTaskMetricsBuilder_.clear();
       }
       return this;
     }
@@ -433,17 +425,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostInstalledModuleVersionsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostRunnerReplicaTaskMetricsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PostInstalledModuleVersionsRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.PostInstalledModuleVersionsRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PostInstalledModuleVersionsRequest build() {
-      com.clarifai.grpc.api.PostInstalledModuleVersionsRequest result = buildPartial();
+    public com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest build() {
+      com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -451,22 +443,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PostInstalledModuleVersionsRequest buildPartial() {
-      com.clarifai.grpc.api.PostInstalledModuleVersionsRequest result = new com.clarifai.grpc.api.PostInstalledModuleVersionsRequest(this);
+    public com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest buildPartial() {
+      com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest result = new com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest(this);
       int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      if (installedModuleVersionsBuilder_ == null) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          installedModuleVersions_ = java.util.Collections.unmodifiableList(installedModuleVersions_);
+          runnerReplicaTaskMetrics_ = java.util.Collections.unmodifiableList(runnerReplicaTaskMetrics_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.installedModuleVersions_ = installedModuleVersions_;
+        result.runnerReplicaTaskMetrics_ = runnerReplicaTaskMetrics_;
       } else {
-        result.installedModuleVersions_ = installedModuleVersionsBuilder_.build();
+        result.runnerReplicaTaskMetrics_ = runnerReplicaTaskMetricsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -506,42 +498,42 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.PostInstalledModuleVersionsRequest) {
-        return mergeFrom((com.clarifai.grpc.api.PostInstalledModuleVersionsRequest)other);
+      if (other instanceof com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest) {
+        return mergeFrom((com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.PostInstalledModuleVersionsRequest other) {
-      if (other == com.clarifai.grpc.api.PostInstalledModuleVersionsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest other) {
+      if (other == com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (installedModuleVersionsBuilder_ == null) {
-        if (!other.installedModuleVersions_.isEmpty()) {
-          if (installedModuleVersions_.isEmpty()) {
-            installedModuleVersions_ = other.installedModuleVersions_;
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        if (!other.runnerReplicaTaskMetrics_.isEmpty()) {
+          if (runnerReplicaTaskMetrics_.isEmpty()) {
+            runnerReplicaTaskMetrics_ = other.runnerReplicaTaskMetrics_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureInstalledModuleVersionsIsMutable();
-            installedModuleVersions_.addAll(other.installedModuleVersions_);
+            ensureRunnerReplicaTaskMetricsIsMutable();
+            runnerReplicaTaskMetrics_.addAll(other.runnerReplicaTaskMetrics_);
           }
           onChanged();
         }
       } else {
-        if (!other.installedModuleVersions_.isEmpty()) {
-          if (installedModuleVersionsBuilder_.isEmpty()) {
-            installedModuleVersionsBuilder_.dispose();
-            installedModuleVersionsBuilder_ = null;
-            installedModuleVersions_ = other.installedModuleVersions_;
+        if (!other.runnerReplicaTaskMetrics_.isEmpty()) {
+          if (runnerReplicaTaskMetricsBuilder_.isEmpty()) {
+            runnerReplicaTaskMetricsBuilder_.dispose();
+            runnerReplicaTaskMetricsBuilder_ = null;
+            runnerReplicaTaskMetrics_ = other.runnerReplicaTaskMetrics_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            installedModuleVersionsBuilder_ = 
+            runnerReplicaTaskMetricsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getInstalledModuleVersionsFieldBuilder() : null;
+                 getRunnerReplicaTaskMetricsFieldBuilder() : null;
           } else {
-            installedModuleVersionsBuilder_.addAllMessages(other.installedModuleVersions_);
+            runnerReplicaTaskMetricsBuilder_.addAllMessages(other.runnerReplicaTaskMetrics_);
           }
         }
       }
@@ -560,11 +552,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.PostInstalledModuleVersionsRequest parsedMessage = null;
+      com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.PostInstalledModuleVersionsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -694,316 +686,316 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private java.util.List<com.clarifai.grpc.api.InstalledModuleVersion> installedModuleVersions_ =
+    private java.util.List<com.clarifai.grpc.api.RunnerReplicaTaskMetrics> runnerReplicaTaskMetrics_ =
       java.util.Collections.emptyList();
-    private void ensureInstalledModuleVersionsIsMutable() {
+    private void ensureRunnerReplicaTaskMetricsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        installedModuleVersions_ = new java.util.ArrayList<com.clarifai.grpc.api.InstalledModuleVersion>(installedModuleVersions_);
+        runnerReplicaTaskMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.RunnerReplicaTaskMetrics>(runnerReplicaTaskMetrics_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.InstalledModuleVersion, com.clarifai.grpc.api.InstalledModuleVersion.Builder, com.clarifai.grpc.api.InstalledModuleVersionOrBuilder> installedModuleVersionsBuilder_;
+        com.clarifai.grpc.api.RunnerReplicaTaskMetrics, com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder, com.clarifai.grpc.api.RunnerReplicaTaskMetricsOrBuilder> runnerReplicaTaskMetricsBuilder_;
 
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public java.util.List<com.clarifai.grpc.api.InstalledModuleVersion> getInstalledModuleVersionsList() {
-      if (installedModuleVersionsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(installedModuleVersions_);
+    public java.util.List<com.clarifai.grpc.api.RunnerReplicaTaskMetrics> getRunnerReplicaTaskMetricsList() {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(runnerReplicaTaskMetrics_);
       } else {
-        return installedModuleVersionsBuilder_.getMessageList();
+        return runnerReplicaTaskMetricsBuilder_.getMessageList();
       }
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public int getInstalledModuleVersionsCount() {
-      if (installedModuleVersionsBuilder_ == null) {
-        return installedModuleVersions_.size();
+    public int getRunnerReplicaTaskMetricsCount() {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        return runnerReplicaTaskMetrics_.size();
       } else {
-        return installedModuleVersionsBuilder_.getCount();
+        return runnerReplicaTaskMetricsBuilder_.getCount();
       }
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.InstalledModuleVersion getInstalledModuleVersions(int index) {
-      if (installedModuleVersionsBuilder_ == null) {
-        return installedModuleVersions_.get(index);
+    public com.clarifai.grpc.api.RunnerReplicaTaskMetrics getRunnerReplicaTaskMetrics(int index) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        return runnerReplicaTaskMetrics_.get(index);
       } else {
-        return installedModuleVersionsBuilder_.getMessage(index);
+        return runnerReplicaTaskMetricsBuilder_.getMessage(index);
       }
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public Builder setInstalledModuleVersions(
-        int index, com.clarifai.grpc.api.InstalledModuleVersion value) {
-      if (installedModuleVersionsBuilder_ == null) {
+    public Builder setRunnerReplicaTaskMetrics(
+        int index, com.clarifai.grpc.api.RunnerReplicaTaskMetrics value) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureInstalledModuleVersionsIsMutable();
-        installedModuleVersions_.set(index, value);
+        ensureRunnerReplicaTaskMetricsIsMutable();
+        runnerReplicaTaskMetrics_.set(index, value);
         onChanged();
       } else {
-        installedModuleVersionsBuilder_.setMessage(index, value);
+        runnerReplicaTaskMetricsBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public Builder setInstalledModuleVersions(
-        int index, com.clarifai.grpc.api.InstalledModuleVersion.Builder builderForValue) {
-      if (installedModuleVersionsBuilder_ == null) {
-        ensureInstalledModuleVersionsIsMutable();
-        installedModuleVersions_.set(index, builderForValue.build());
+    public Builder setRunnerReplicaTaskMetrics(
+        int index, com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder builderForValue) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        ensureRunnerReplicaTaskMetricsIsMutable();
+        runnerReplicaTaskMetrics_.set(index, builderForValue.build());
         onChanged();
       } else {
-        installedModuleVersionsBuilder_.setMessage(index, builderForValue.build());
+        runnerReplicaTaskMetricsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public Builder addInstalledModuleVersions(com.clarifai.grpc.api.InstalledModuleVersion value) {
-      if (installedModuleVersionsBuilder_ == null) {
+    public Builder addRunnerReplicaTaskMetrics(com.clarifai.grpc.api.RunnerReplicaTaskMetrics value) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureInstalledModuleVersionsIsMutable();
-        installedModuleVersions_.add(value);
+        ensureRunnerReplicaTaskMetricsIsMutable();
+        runnerReplicaTaskMetrics_.add(value);
         onChanged();
       } else {
-        installedModuleVersionsBuilder_.addMessage(value);
+        runnerReplicaTaskMetricsBuilder_.addMessage(value);
       }
       return this;
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public Builder addInstalledModuleVersions(
-        int index, com.clarifai.grpc.api.InstalledModuleVersion value) {
-      if (installedModuleVersionsBuilder_ == null) {
+    public Builder addRunnerReplicaTaskMetrics(
+        int index, com.clarifai.grpc.api.RunnerReplicaTaskMetrics value) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureInstalledModuleVersionsIsMutable();
-        installedModuleVersions_.add(index, value);
+        ensureRunnerReplicaTaskMetricsIsMutable();
+        runnerReplicaTaskMetrics_.add(index, value);
         onChanged();
       } else {
-        installedModuleVersionsBuilder_.addMessage(index, value);
+        runnerReplicaTaskMetricsBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public Builder addInstalledModuleVersions(
-        com.clarifai.grpc.api.InstalledModuleVersion.Builder builderForValue) {
-      if (installedModuleVersionsBuilder_ == null) {
-        ensureInstalledModuleVersionsIsMutable();
-        installedModuleVersions_.add(builderForValue.build());
+    public Builder addRunnerReplicaTaskMetrics(
+        com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder builderForValue) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        ensureRunnerReplicaTaskMetricsIsMutable();
+        runnerReplicaTaskMetrics_.add(builderForValue.build());
         onChanged();
       } else {
-        installedModuleVersionsBuilder_.addMessage(builderForValue.build());
+        runnerReplicaTaskMetricsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public Builder addInstalledModuleVersions(
-        int index, com.clarifai.grpc.api.InstalledModuleVersion.Builder builderForValue) {
-      if (installedModuleVersionsBuilder_ == null) {
-        ensureInstalledModuleVersionsIsMutable();
-        installedModuleVersions_.add(index, builderForValue.build());
+    public Builder addRunnerReplicaTaskMetrics(
+        int index, com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder builderForValue) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        ensureRunnerReplicaTaskMetricsIsMutable();
+        runnerReplicaTaskMetrics_.add(index, builderForValue.build());
         onChanged();
       } else {
-        installedModuleVersionsBuilder_.addMessage(index, builderForValue.build());
+        runnerReplicaTaskMetricsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public Builder addAllInstalledModuleVersions(
-        java.lang.Iterable<? extends com.clarifai.grpc.api.InstalledModuleVersion> values) {
-      if (installedModuleVersionsBuilder_ == null) {
-        ensureInstalledModuleVersionsIsMutable();
+    public Builder addAllRunnerReplicaTaskMetrics(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.RunnerReplicaTaskMetrics> values) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        ensureRunnerReplicaTaskMetricsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, installedModuleVersions_);
+            values, runnerReplicaTaskMetrics_);
         onChanged();
       } else {
-        installedModuleVersionsBuilder_.addAllMessages(values);
+        runnerReplicaTaskMetricsBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public Builder clearInstalledModuleVersions() {
-      if (installedModuleVersionsBuilder_ == null) {
-        installedModuleVersions_ = java.util.Collections.emptyList();
+    public Builder clearRunnerReplicaTaskMetrics() {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        runnerReplicaTaskMetrics_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        installedModuleVersionsBuilder_.clear();
+        runnerReplicaTaskMetricsBuilder_.clear();
       }
       return this;
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public Builder removeInstalledModuleVersions(int index) {
-      if (installedModuleVersionsBuilder_ == null) {
-        ensureInstalledModuleVersionsIsMutable();
-        installedModuleVersions_.remove(index);
+    public Builder removeRunnerReplicaTaskMetrics(int index) {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        ensureRunnerReplicaTaskMetricsIsMutable();
+        runnerReplicaTaskMetrics_.remove(index);
         onChanged();
       } else {
-        installedModuleVersionsBuilder_.remove(index);
+        runnerReplicaTaskMetricsBuilder_.remove(index);
       }
       return this;
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.InstalledModuleVersion.Builder getInstalledModuleVersionsBuilder(
+    public com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder getRunnerReplicaTaskMetricsBuilder(
         int index) {
-      return getInstalledModuleVersionsFieldBuilder().getBuilder(index);
+      return getRunnerReplicaTaskMetricsFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.InstalledModuleVersionOrBuilder getInstalledModuleVersionsOrBuilder(
+    public com.clarifai.grpc.api.RunnerReplicaTaskMetricsOrBuilder getRunnerReplicaTaskMetricsOrBuilder(
         int index) {
-      if (installedModuleVersionsBuilder_ == null) {
-        return installedModuleVersions_.get(index);  } else {
-        return installedModuleVersionsBuilder_.getMessageOrBuilder(index);
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        return runnerReplicaTaskMetrics_.get(index);  } else {
+        return runnerReplicaTaskMetricsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public java.util.List<? extends com.clarifai.grpc.api.InstalledModuleVersionOrBuilder> 
-         getInstalledModuleVersionsOrBuilderList() {
-      if (installedModuleVersionsBuilder_ != null) {
-        return installedModuleVersionsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.clarifai.grpc.api.RunnerReplicaTaskMetricsOrBuilder> 
+         getRunnerReplicaTaskMetricsOrBuilderList() {
+      if (runnerReplicaTaskMetricsBuilder_ != null) {
+        return runnerReplicaTaskMetricsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(installedModuleVersions_);
+        return java.util.Collections.unmodifiableList(runnerReplicaTaskMetrics_);
       }
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.InstalledModuleVersion.Builder addInstalledModuleVersionsBuilder() {
-      return getInstalledModuleVersionsFieldBuilder().addBuilder(
-          com.clarifai.grpc.api.InstalledModuleVersion.getDefaultInstance());
+    public com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder addRunnerReplicaTaskMetricsBuilder() {
+      return getRunnerReplicaTaskMetricsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.RunnerReplicaTaskMetrics.getDefaultInstance());
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.InstalledModuleVersion.Builder addInstalledModuleVersionsBuilder(
+    public com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder addRunnerReplicaTaskMetricsBuilder(
         int index) {
-      return getInstalledModuleVersionsFieldBuilder().addBuilder(
-          index, com.clarifai.grpc.api.InstalledModuleVersion.getDefaultInstance());
+      return getRunnerReplicaTaskMetricsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.RunnerReplicaTaskMetrics.getDefaultInstance());
     }
     /**
      * <pre>
-     * This allows you to create one or more module by posting it to the API.
+     * List of task metrics reported by runner replicas.
      * </pre>
      *
-     * <code>repeated .clarifai.api.InstalledModuleVersion installed_module_versions = 2;</code>
+     * <code>repeated .clarifai.api.RunnerReplicaTaskMetrics runner_replica_task_metrics = 2;</code>
      */
-    public java.util.List<com.clarifai.grpc.api.InstalledModuleVersion.Builder> 
-         getInstalledModuleVersionsBuilderList() {
-      return getInstalledModuleVersionsFieldBuilder().getBuilderList();
+    public java.util.List<com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder> 
+         getRunnerReplicaTaskMetricsBuilderList() {
+      return getRunnerReplicaTaskMetricsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.InstalledModuleVersion, com.clarifai.grpc.api.InstalledModuleVersion.Builder, com.clarifai.grpc.api.InstalledModuleVersionOrBuilder> 
-        getInstalledModuleVersionsFieldBuilder() {
-      if (installedModuleVersionsBuilder_ == null) {
-        installedModuleVersionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.clarifai.grpc.api.InstalledModuleVersion, com.clarifai.grpc.api.InstalledModuleVersion.Builder, com.clarifai.grpc.api.InstalledModuleVersionOrBuilder>(
-                installedModuleVersions_,
+        com.clarifai.grpc.api.RunnerReplicaTaskMetrics, com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder, com.clarifai.grpc.api.RunnerReplicaTaskMetricsOrBuilder> 
+        getRunnerReplicaTaskMetricsFieldBuilder() {
+      if (runnerReplicaTaskMetricsBuilder_ == null) {
+        runnerReplicaTaskMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.RunnerReplicaTaskMetrics, com.clarifai.grpc.api.RunnerReplicaTaskMetrics.Builder, com.clarifai.grpc.api.RunnerReplicaTaskMetricsOrBuilder>(
+                runnerReplicaTaskMetrics_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        installedModuleVersions_ = null;
+        runnerReplicaTaskMetrics_ = null;
       }
-      return installedModuleVersionsBuilder_;
+      return runnerReplicaTaskMetricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1018,41 +1010,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.PostInstalledModuleVersionsRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.PostRunnerReplicaTaskMetricsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.PostInstalledModuleVersionsRequest)
-  private static final com.clarifai.grpc.api.PostInstalledModuleVersionsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.PostRunnerReplicaTaskMetricsRequest)
+  private static final com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PostInstalledModuleVersionsRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest();
   }
 
-  public static com.clarifai.grpc.api.PostInstalledModuleVersionsRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PostInstalledModuleVersionsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<PostInstalledModuleVersionsRequest>() {
+  private static final com.google.protobuf.Parser<PostRunnerReplicaTaskMetricsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<PostRunnerReplicaTaskMetricsRequest>() {
     @java.lang.Override
-    public PostInstalledModuleVersionsRequest parsePartialFrom(
+    public PostRunnerReplicaTaskMetricsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PostInstalledModuleVersionsRequest(input, extensionRegistry);
+      return new PostRunnerReplicaTaskMetricsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<PostInstalledModuleVersionsRequest> parser() {
+  public static com.google.protobuf.Parser<PostRunnerReplicaTaskMetricsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<PostInstalledModuleVersionsRequest> getParserForType() {
+  public com.google.protobuf.Parser<PostRunnerReplicaTaskMetricsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.PostInstalledModuleVersionsRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.PostRunnerReplicaTaskMetricsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

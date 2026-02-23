@@ -91,7 +91,7 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
-            frameTimeStart_ = input.readUInt32();
+            frameTimeStart_ = input.readUInt64();
             break;
           }
           case 48: {
@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
           }
           case 64: {
 
-            maxDuration_ = input.readUInt32();
+            maxDuration_ = input.readUInt64();
             break;
           }
           case 74: {
@@ -303,17 +303,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FRAME_TIME_START_FIELD_NUMBER = 5;
-  private int frameTimeStart_;
+  private long frameTimeStart_;
   /**
    * <pre>
    * Filter annotations starting from this time in milliseconds (inclusive)
    * </pre>
    *
-   * <code>uint32 frame_time_start = 5;</code>
+   * <code>uint64 frame_time_start = 5;</code>
    * @return The frameTimeStart.
    */
   @java.lang.Override
-  public int getFrameTimeStart() {
+  public long getFrameTimeStart() {
     return frameTimeStart_;
   }
 
@@ -362,18 +362,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAX_DURATION_FIELD_NUMBER = 8;
-  private int maxDuration_;
+  private long maxDuration_;
   /**
    * <pre>
    * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
    * Default and max: 3600000 ms (60 minutes)
    * </pre>
    *
-   * <code>uint32 max_duration = 8;</code>
+   * <code>uint64 max_duration = 8;</code>
    * @return The maxDuration.
    */
   @java.lang.Override
-  public int getMaxDuration() {
+  public long getMaxDuration() {
     return maxDuration_;
   }
 
@@ -447,8 +447,8 @@ private static final long serialVersionUID = 0L;
     if (frameNumberStart_ != 0) {
       output.writeUInt32(4, frameNumberStart_);
     }
-    if (frameTimeStart_ != 0) {
-      output.writeUInt32(5, frameTimeStart_);
+    if (frameTimeStart_ != 0L) {
+      output.writeUInt64(5, frameTimeStart_);
     }
     if (annotationType_ != com.clarifai.grpc.api.AnnotationDataType.ANNOTATION_DATA_TYPE_NOT_SET.getNumber()) {
       output.writeEnum(6, annotationType_);
@@ -456,8 +456,8 @@ private static final long serialVersionUID = 0L;
     if (maxFrames_ != 0) {
       output.writeUInt32(7, maxFrames_);
     }
-    if (maxDuration_ != 0) {
-      output.writeUInt32(8, maxDuration_);
+    if (maxDuration_ != 0L) {
+      output.writeUInt64(8, maxDuration_);
     }
     if (worker_ != null) {
       output.writeMessage(9, getWorker());
@@ -490,9 +490,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(4, frameNumberStart_);
     }
-    if (frameTimeStart_ != 0) {
+    if (frameTimeStart_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(5, frameTimeStart_);
+        .computeUInt64Size(5, frameTimeStart_);
     }
     if (annotationType_ != com.clarifai.grpc.api.AnnotationDataType.ANNOTATION_DATA_TYPE_NOT_SET.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -502,9 +502,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(7, maxFrames_);
     }
-    if (maxDuration_ != 0) {
+    if (maxDuration_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(8, maxDuration_);
+        .computeUInt64Size(8, maxDuration_);
     }
     if (worker_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -572,13 +572,15 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FRAME_NUMBER_START_FIELD_NUMBER;
     hash = (53 * hash) + getFrameNumberStart();
     hash = (37 * hash) + FRAME_TIME_START_FIELD_NUMBER;
-    hash = (53 * hash) + getFrameTimeStart();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getFrameTimeStart());
     hash = (37 * hash) + ANNOTATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + annotationType_;
     hash = (37 * hash) + MAX_FRAMES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxFrames();
     hash = (37 * hash) + MAX_DURATION_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxDuration();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getMaxDuration());
     if (hasWorker()) {
       hash = (37 * hash) + WORKER_FIELD_NUMBER;
       hash = (53 * hash) + getWorker().hashCode();
@@ -732,13 +734,13 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       frameNumberStart_ = 0;
 
-      frameTimeStart_ = 0;
+      frameTimeStart_ = 0L;
 
       annotationType_ = 0;
 
       maxFrames_ = 0;
 
-      maxDuration_ = 0;
+      maxDuration_ = 0L;
 
       if (workerBuilder_ == null) {
         worker_ = null;
@@ -862,7 +864,7 @@ private static final long serialVersionUID = 0L;
       if (other.getFrameNumberStart() != 0) {
         setFrameNumberStart(other.getFrameNumberStart());
       }
-      if (other.getFrameTimeStart() != 0) {
+      if (other.getFrameTimeStart() != 0L) {
         setFrameTimeStart(other.getFrameTimeStart());
       }
       if (other.annotationType_ != 0) {
@@ -871,7 +873,7 @@ private static final long serialVersionUID = 0L;
       if (other.getMaxFrames() != 0) {
         setMaxFrames(other.getMaxFrames());
       }
-      if (other.getMaxDuration() != 0) {
+      if (other.getMaxDuration() != 0L) {
         setMaxDuration(other.getMaxDuration());
       }
       if (other.hasWorker()) {
@@ -1320,17 +1322,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int frameTimeStart_ ;
+    private long frameTimeStart_ ;
     /**
      * <pre>
      * Filter annotations starting from this time in milliseconds (inclusive)
      * </pre>
      *
-     * <code>uint32 frame_time_start = 5;</code>
+     * <code>uint64 frame_time_start = 5;</code>
      * @return The frameTimeStart.
      */
     @java.lang.Override
-    public int getFrameTimeStart() {
+    public long getFrameTimeStart() {
       return frameTimeStart_;
     }
     /**
@@ -1338,11 +1340,11 @@ private static final long serialVersionUID = 0L;
      * Filter annotations starting from this time in milliseconds (inclusive)
      * </pre>
      *
-     * <code>uint32 frame_time_start = 5;</code>
+     * <code>uint64 frame_time_start = 5;</code>
      * @param value The frameTimeStart to set.
      * @return This builder for chaining.
      */
-    public Builder setFrameTimeStart(int value) {
+    public Builder setFrameTimeStart(long value) {
       
       frameTimeStart_ = value;
       onChanged();
@@ -1353,12 +1355,12 @@ private static final long serialVersionUID = 0L;
      * Filter annotations starting from this time in milliseconds (inclusive)
      * </pre>
      *
-     * <code>uint32 frame_time_start = 5;</code>
+     * <code>uint64 frame_time_start = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearFrameTimeStart() {
       
-      frameTimeStart_ = 0;
+      frameTimeStart_ = 0L;
       onChanged();
       return this;
     }
@@ -1486,18 +1488,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int maxDuration_ ;
+    private long maxDuration_ ;
     /**
      * <pre>
      * Maximum duration in milliseconds to return. Returns annotations from time range [frame_time_start, frame_time_start + max_duration - 1] (inclusive on both ends).
      * Default and max: 3600000 ms (60 minutes)
      * </pre>
      *
-     * <code>uint32 max_duration = 8;</code>
+     * <code>uint64 max_duration = 8;</code>
      * @return The maxDuration.
      */
     @java.lang.Override
-    public int getMaxDuration() {
+    public long getMaxDuration() {
       return maxDuration_;
     }
     /**
@@ -1506,11 +1508,11 @@ private static final long serialVersionUID = 0L;
      * Default and max: 3600000 ms (60 minutes)
      * </pre>
      *
-     * <code>uint32 max_duration = 8;</code>
+     * <code>uint64 max_duration = 8;</code>
      * @param value The maxDuration to set.
      * @return This builder for chaining.
      */
-    public Builder setMaxDuration(int value) {
+    public Builder setMaxDuration(long value) {
       
       maxDuration_ = value;
       onChanged();
@@ -1522,12 +1524,12 @@ private static final long serialVersionUID = 0L;
      * Default and max: 3600000 ms (60 minutes)
      * </pre>
      *
-     * <code>uint32 max_duration = 8;</code>
+     * <code>uint64 max_duration = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxDuration() {
       
-      maxDuration_ = 0;
+      maxDuration_ = 0L;
       onChanged();
       return this;
     }
