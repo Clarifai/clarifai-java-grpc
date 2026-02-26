@@ -26,6 +26,8 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     instanceTypes_ = java.util.Collections.emptyList();
     specialHandling_ = java.util.Collections.emptyList();
+    status_ = 0;
+    statusDescription_ = "";
   }
 
   @java.lang.Override
@@ -192,6 +194,18 @@ private static final long serialVersionUID = 0L;
             nodeCount_ = input.readUInt32();
             break;
           }
+          case 136: {
+            int rawValue = input.readEnum();
+
+            status_ = rawValue;
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            statusDescription_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -230,6 +244,141 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Nodepool_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.Nodepool.class, com.clarifai.grpc.api.Nodepool.Builder.class);
+  }
+
+  /**
+   * Protobuf enum {@code clarifai.api.Nodepool.NodepoolStatus}
+   */
+  public enum NodepoolStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NODEPOOL_STATUS_UNKNOWN = 0;</code>
+     */
+    NODEPOOL_STATUS_UNKNOWN(0),
+    /**
+     * <code>NODEPOOL_STATUS_PENDING = 1;</code>
+     */
+    NODEPOOL_STATUS_PENDING(1),
+    /**
+     * <code>NODEPOOL_STATUS_READY = 2;</code>
+     */
+    NODEPOOL_STATUS_READY(2),
+    /**
+     * <code>NODEPOOL_STATUS_ERROR = 3;</code>
+     */
+    NODEPOOL_STATUS_ERROR(3),
+    /**
+     * <code>NODEPOOL_STATUS_DELETED = 4;</code>
+     */
+    NODEPOOL_STATUS_DELETED(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>NODEPOOL_STATUS_UNKNOWN = 0;</code>
+     */
+    public static final int NODEPOOL_STATUS_UNKNOWN_VALUE = 0;
+    /**
+     * <code>NODEPOOL_STATUS_PENDING = 1;</code>
+     */
+    public static final int NODEPOOL_STATUS_PENDING_VALUE = 1;
+    /**
+     * <code>NODEPOOL_STATUS_READY = 2;</code>
+     */
+    public static final int NODEPOOL_STATUS_READY_VALUE = 2;
+    /**
+     * <code>NODEPOOL_STATUS_ERROR = 3;</code>
+     */
+    public static final int NODEPOOL_STATUS_ERROR_VALUE = 3;
+    /**
+     * <code>NODEPOOL_STATUS_DELETED = 4;</code>
+     */
+    public static final int NODEPOOL_STATUS_DELETED_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static NodepoolStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static NodepoolStatus forNumber(int value) {
+      switch (value) {
+        case 0: return NODEPOOL_STATUS_UNKNOWN;
+        case 1: return NODEPOOL_STATUS_PENDING;
+        case 2: return NODEPOOL_STATUS_READY;
+        case 3: return NODEPOOL_STATUS_ERROR;
+        case 4: return NODEPOOL_STATUS_DELETED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<NodepoolStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        NodepoolStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<NodepoolStatus>() {
+            public NodepoolStatus findValueByNumber(int number) {
+              return NodepoolStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.Nodepool.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final NodepoolStatus[] VALUES = values();
+
+    public static NodepoolStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private NodepoolStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.Nodepool.NodepoolStatus)
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -727,6 +876,79 @@ private static final long serialVersionUID = 0L;
     return nodeCount_;
   }
 
+  public static final int STATUS_FIELD_NUMBER = 17;
+  private int status_;
+  /**
+   * <pre>
+   * Current status of the nodepool.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+   * @return The enum numeric value on the wire for status.
+   */
+  @java.lang.Override public int getStatusValue() {
+    return status_;
+  }
+  /**
+   * <pre>
+   * Current status of the nodepool.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+   * @return The status.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.Nodepool.NodepoolStatus getStatus() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.Nodepool.NodepoolStatus result = com.clarifai.grpc.api.Nodepool.NodepoolStatus.valueOf(status_);
+    return result == null ? com.clarifai.grpc.api.Nodepool.NodepoolStatus.UNRECOGNIZED : result;
+  }
+
+  public static final int STATUS_DESCRIPTION_FIELD_NUMBER = 18;
+  private volatile java.lang.Object statusDescription_;
+  /**
+   * <pre>
+   * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+   * </pre>
+   *
+   * <code>string status_description = 18;</code>
+   * @return The statusDescription.
+   */
+  @java.lang.Override
+  public java.lang.String getStatusDescription() {
+    java.lang.Object ref = statusDescription_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      statusDescription_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+   * </pre>
+   *
+   * <code>string status_description = 18;</code>
+   * @return The bytes for statusDescription.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusDescriptionBytes() {
+    java.lang.Object ref = statusDescription_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      statusDescription_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -785,6 +1007,12 @@ private static final long serialVersionUID = 0L;
     }
     if (nodeCount_ != 0) {
       output.writeUInt32(16, nodeCount_);
+    }
+    if (status_ != com.clarifai.grpc.api.Nodepool.NodepoolStatus.NODEPOOL_STATUS_UNKNOWN.getNumber()) {
+      output.writeEnum(17, status_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusDescription_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, statusDescription_);
     }
     unknownFields.writeTo(output);
   }
@@ -853,6 +1081,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(16, nodeCount_);
     }
+    if (status_ != com.clarifai.grpc.api.Nodepool.NodepoolStatus.NODEPOOL_STATUS_UNKNOWN.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(17, status_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusDescription_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, statusDescription_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -916,6 +1151,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSpecialHandlingList())) return false;
     if (getNodeCount()
         != other.getNodeCount()) return false;
+    if (status_ != other.status_) return false;
+    if (!getStatusDescription()
+        .equals(other.getStatusDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -973,6 +1211,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NODE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getNodeCount();
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + status_;
+    hash = (37 * hash) + STATUS_DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getStatusDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1176,6 +1418,10 @@ private static final long serialVersionUID = 0L;
       }
       nodeCount_ = 0;
 
+      status_ = 0;
+
+      statusDescription_ = "";
+
       return this;
     }
 
@@ -1258,6 +1504,8 @@ private static final long serialVersionUID = 0L;
         result.specialHandling_ = specialHandlingBuilder_.build();
       }
       result.nodeCount_ = nodeCount_;
+      result.status_ = status_;
+      result.statusDescription_ = statusDescription_;
       onBuilt();
       return result;
     }
@@ -1398,6 +1646,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getNodeCount() != 0) {
         setNodeCount(other.getNodeCount());
+      }
+      if (other.status_ != 0) {
+        setStatusValue(other.getStatusValue());
+      }
+      if (!other.getStatusDescription().isEmpty()) {
+        statusDescription_ = other.statusDescription_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3314,6 +3569,176 @@ private static final long serialVersionUID = 0L;
     public Builder clearNodeCount() {
       
       nodeCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int status_ = 0;
+    /**
+     * <pre>
+     * Current status of the nodepool.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <pre>
+     * Current status of the nodepool.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusValue(int value) {
+      
+      status_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Current status of the nodepool.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Nodepool.NodepoolStatus getStatus() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.Nodepool.NodepoolStatus result = com.clarifai.grpc.api.Nodepool.NodepoolStatus.valueOf(status_);
+      return result == null ? com.clarifai.grpc.api.Nodepool.NodepoolStatus.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Current status of the nodepool.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(com.clarifai.grpc.api.Nodepool.NodepoolStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      status_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Current status of the nodepool.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object statusDescription_ = "";
+    /**
+     * <pre>
+     * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+     * </pre>
+     *
+     * <code>string status_description = 18;</code>
+     * @return The statusDescription.
+     */
+    public java.lang.String getStatusDescription() {
+      java.lang.Object ref = statusDescription_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusDescription_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+     * </pre>
+     *
+     * <code>string status_description = 18;</code>
+     * @return The bytes for statusDescription.
+     */
+    public com.google.protobuf.ByteString
+        getStatusDescriptionBytes() {
+      java.lang.Object ref = statusDescription_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+     * </pre>
+     *
+     * <code>string status_description = 18;</code>
+     * @param value The statusDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      statusDescription_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+     * </pre>
+     *
+     * <code>string status_description = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusDescription() {
+      
+      statusDescription_ = getDefaultInstance().getStatusDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+     * </pre>
+     *
+     * <code>string status_description = 18;</code>
+     * @param value The bytes for statusDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      statusDescription_ = value;
       onChanged();
       return this;
     }

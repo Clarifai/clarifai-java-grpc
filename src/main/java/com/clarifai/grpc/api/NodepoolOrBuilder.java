@@ -326,4 +326,43 @@ public interface NodepoolOrBuilder extends
    * @return The nodeCount.
    */
   int getNodeCount();
+
+  /**
+   * <pre>
+   * Current status of the nodepool.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+  /**
+   * <pre>
+   * Current status of the nodepool.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool.NodepoolStatus status = 17;</code>
+   * @return The status.
+   */
+  com.clarifai.grpc.api.Nodepool.NodepoolStatus getStatus();
+
+  /**
+   * <pre>
+   * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+   * </pre>
+   *
+   * <code>string status_description = 18;</code>
+   * @return The statusDescription.
+   */
+  java.lang.String getStatusDescription();
+  /**
+   * <pre>
+   * Human-readable status description. Contains error details when status is NODEPOOL_STATUS_ERROR.
+   * </pre>
+   *
+   * <code>string status_description = 18;</code>
+   * @return The bytes for statusDescription.
+   */
+  com.google.protobuf.ByteString
+      getStatusDescriptionBytes();
 }

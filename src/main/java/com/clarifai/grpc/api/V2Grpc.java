@@ -6928,6 +6928,37 @@ public final class V2Grpc {
     return getDeleteNodepoolsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostNodepoolStatusRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostNodepoolStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostNodepoolStatus",
+      requestType = com.clarifai.grpc.api.PostNodepoolStatusRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostNodepoolStatusRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostNodepoolStatusMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostNodepoolStatusRequest, com.clarifai.grpc.api.status.BaseResponse> getPostNodepoolStatusMethod;
+    if ((getPostNodepoolStatusMethod = V2Grpc.getPostNodepoolStatusMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostNodepoolStatusMethod = V2Grpc.getPostNodepoolStatusMethod) == null) {
+          V2Grpc.getPostNodepoolStatusMethod = getPostNodepoolStatusMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostNodepoolStatusRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostNodepoolStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostNodepoolStatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostNodepoolStatus"))
+              .build();
+        }
+      }
+    }
+    return getPostNodepoolStatusMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetDeploymentRequest,
       com.clarifai.grpc.api.SingleDeploymentResponse> getGetDeploymentMethod;
 
@@ -8135,6 +8166,68 @@ public final class V2Grpc {
       }
     }
     return getDeletePipelineStepVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineTemplatesRequest,
+      com.clarifai.grpc.api.MultiPipelineTemplateResponse> getListPipelineTemplatesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPipelineTemplates",
+      requestType = com.clarifai.grpc.api.ListPipelineTemplatesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiPipelineTemplateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineTemplatesRequest,
+      com.clarifai.grpc.api.MultiPipelineTemplateResponse> getListPipelineTemplatesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListPipelineTemplatesRequest, com.clarifai.grpc.api.MultiPipelineTemplateResponse> getListPipelineTemplatesMethod;
+    if ((getListPipelineTemplatesMethod = V2Grpc.getListPipelineTemplatesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListPipelineTemplatesMethod = V2Grpc.getListPipelineTemplatesMethod) == null) {
+          V2Grpc.getListPipelineTemplatesMethod = getListPipelineTemplatesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListPipelineTemplatesRequest, com.clarifai.grpc.api.MultiPipelineTemplateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPipelineTemplates"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListPipelineTemplatesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiPipelineTemplateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListPipelineTemplates"))
+              .build();
+        }
+      }
+    }
+    return getListPipelineTemplatesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest,
+      com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse> getPostPipelineVersionRunFromTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostPipelineVersionRunFromTemplate",
+      requestType = com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest.class,
+      responseType = com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest,
+      com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse> getPostPipelineVersionRunFromTemplateMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest, com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse> getPostPipelineVersionRunFromTemplateMethod;
+    if ((getPostPipelineVersionRunFromTemplateMethod = V2Grpc.getPostPipelineVersionRunFromTemplateMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostPipelineVersionRunFromTemplateMethod = V2Grpc.getPostPipelineVersionRunFromTemplateMethod) == null) {
+          V2Grpc.getPostPipelineVersionRunFromTemplateMethod = getPostPipelineVersionRunFromTemplateMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest, com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostPipelineVersionRunFromTemplate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostPipelineVersionRunFromTemplate"))
+              .build();
+        }
+      }
+    }
+    return getPostPipelineVersionRunFromTemplateMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostArtifactsRequest,
@@ -10943,6 +11036,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Update nodepool status. Called by the agent to report nodepool health/errors.
+     * </pre>
+     */
+    public void postNodepoolStatus(com.clarifai.grpc.api.PostNodepoolStatusRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostNodepoolStatusMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Deployments CRUD
      * </pre>
      */
@@ -11228,6 +11331,27 @@ public final class V2Grpc {
     public void deletePipelineStepVersions(com.clarifai.grpc.api.DeletePipelineStepVersionsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePipelineStepVersionsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists pipeline templates, which are ready-to-use templates that can simply be run on demand.
+     * </pre>
+     */
+    public void listPipelineTemplates(com.clarifai.grpc.api.ListPipelineTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineTemplateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPipelineTemplatesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * This is a convenience endpoint for users to quickly get started with running pipelines.
+     * </pre>
+     */
+    public void postPipelineVersionRunFromTemplate(com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostPipelineVersionRunFromTemplateMethod(), responseObserver);
     }
 
     /**
@@ -12906,6 +13030,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_NODEPOOLS)))
           .addMethod(
+            getPostNodepoolStatusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostNodepoolStatusRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_POST_NODEPOOL_STATUS)))
+          .addMethod(
             getGetDeploymentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -13178,6 +13309,20 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeletePipelineStepVersionsRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_PIPELINE_STEP_VERSIONS)))
+          .addMethod(
+            getListPipelineTemplatesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListPipelineTemplatesRequest,
+                com.clarifai.grpc.api.MultiPipelineTemplateResponse>(
+                  this, METHODID_LIST_PIPELINE_TEMPLATES)))
+          .addMethod(
+            getPostPipelineVersionRunFromTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest,
+                com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse>(
+                  this, METHODID_POST_PIPELINE_VERSION_RUN_FROM_TEMPLATE)))
           .addMethod(
             getPostArtifactsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -15817,6 +15962,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Update nodepool status. Called by the agent to report nodepool health/errors.
+     * </pre>
+     */
+    public void postNodepoolStatus(com.clarifai.grpc.api.PostNodepoolStatusRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostNodepoolStatusMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Deployments CRUD
      * </pre>
      */
@@ -16141,6 +16297,29 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeletePipelineStepVersionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists pipeline templates, which are ready-to-use templates that can simply be run on demand.
+     * </pre>
+     */
+    public void listPipelineTemplates(com.clarifai.grpc.api.ListPipelineTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineTemplateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPipelineTemplatesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * This is a convenience endpoint for users to quickly get started with running pipelines.
+     * </pre>
+     */
+    public void postPipelineVersionRunFromTemplate(com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostPipelineVersionRunFromTemplateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -18542,6 +18721,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Update nodepool status. Called by the agent to report nodepool health/errors.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse postNodepoolStatus(com.clarifai.grpc.api.PostNodepoolStatusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostNodepoolStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Deployments CRUD
      * </pre>
      */
@@ -18814,6 +19003,27 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.status.BaseResponse deletePipelineStepVersions(com.clarifai.grpc.api.DeletePipelineStepVersionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeletePipelineStepVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lists pipeline templates, which are ready-to-use templates that can simply be run on demand.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiPipelineTemplateResponse listPipelineTemplates(com.clarifai.grpc.api.ListPipelineTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPipelineTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * This is a convenience endpoint for users to quickly get started with running pipelines.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse postPipelineVersionRunFromTemplate(com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostPipelineVersionRunFromTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -21368,6 +21578,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Update nodepool status. Called by the agent to report nodepool health/errors.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> postNodepoolStatus(
+        com.clarifai.grpc.api.PostNodepoolStatusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostNodepoolStatusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Deployments CRUD
      * </pre>
      */
@@ -21669,6 +21890,29 @@ public final class V2Grpc {
         com.clarifai.grpc.api.DeletePipelineStepVersionsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeletePipelineStepVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Lists pipeline templates, which are ready-to-use templates that can simply be run on demand.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiPipelineTemplateResponse> listPipelineTemplates(
+        com.clarifai.grpc.api.ListPipelineTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPipelineTemplatesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * This is a convenience endpoint for users to quickly get started with running pipelines.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse> postPipelineVersionRunFromTemplate(
+        com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostPipelineVersionRunFromTemplateMethod(), getCallOptions()), request);
     }
 
     /**
@@ -22004,63 +22248,66 @@ public final class V2Grpc {
   private static final int METHODID_POST_NODEPOOLS = 217;
   private static final int METHODID_PATCH_NODEPOOLS = 218;
   private static final int METHODID_DELETE_NODEPOOLS = 219;
-  private static final int METHODID_GET_DEPLOYMENT = 220;
-  private static final int METHODID_LIST_DEPLOYMENTS = 221;
-  private static final int METHODID_POST_DEPLOYMENTS = 222;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 223;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 224;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 225;
-  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 226;
-  private static final int METHODID_POST_LOG_ENTRIES = 227;
-  private static final int METHODID_LIST_LOG_ENTRIES = 228;
-  private static final int METHODID_STREAM_LOG_ENTRIES = 229;
-  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 230;
-  private static final int METHODID_POST_RUNNER_REPLICA_TASK_METRICS = 231;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 232;
-  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 233;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 234;
-  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 235;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 236;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 237;
-  private static final int METHODID_POST_PIPELINES = 238;
-  private static final int METHODID_GET_PIPELINE = 239;
-  private static final int METHODID_LIST_PIPELINES = 240;
-  private static final int METHODID_PATCH_PIPELINES = 241;
-  private static final int METHODID_DELETE_PIPELINES = 242;
-  private static final int METHODID_GET_PIPELINE_VERSION = 243;
-  private static final int METHODID_LIST_PIPELINE_VERSIONS = 244;
-  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 245;
-  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 246;
-  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 247;
-  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 248;
-  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 249;
-  private static final int METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS = 250;
-  private static final int METHODID_POST_PIPELINE_STEPS = 251;
-  private static final int METHODID_GET_PIPELINE_STEP = 252;
-  private static final int METHODID_LIST_PIPELINE_STEPS = 253;
-  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 254;
-  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 255;
-  private static final int METHODID_DELETE_PIPELINE_STEPS = 256;
-  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 257;
-  private static final int METHODID_POST_ARTIFACTS = 258;
-  private static final int METHODID_GET_ARTIFACT = 259;
-  private static final int METHODID_LIST_ARTIFACTS = 260;
-  private static final int METHODID_DELETE_ARTIFACT = 261;
-  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 262;
-  private static final int METHODID_GET_ARTIFACT_VERSION = 263;
-  private static final int METHODID_DELETE_ARTIFACT_VERSION = 264;
-  private static final int METHODID_GET_SECRET = 265;
-  private static final int METHODID_LIST_SECRETS = 266;
-  private static final int METHODID_POST_SECRETS = 267;
-  private static final int METHODID_PATCH_SECRETS = 268;
-  private static final int METHODID_DELETE_SECRETS = 269;
-  private static final int METHODID_POST_METRICS_QUERY = 270;
-  private static final int METHODID_LIST_METRIC_LABELS = 271;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 272;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 273;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 274;
-  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 275;
-  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 276;
+  private static final int METHODID_POST_NODEPOOL_STATUS = 220;
+  private static final int METHODID_GET_DEPLOYMENT = 221;
+  private static final int METHODID_LIST_DEPLOYMENTS = 222;
+  private static final int METHODID_POST_DEPLOYMENTS = 223;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 224;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 225;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 226;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 227;
+  private static final int METHODID_POST_LOG_ENTRIES = 228;
+  private static final int METHODID_LIST_LOG_ENTRIES = 229;
+  private static final int METHODID_STREAM_LOG_ENTRIES = 230;
+  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 231;
+  private static final int METHODID_POST_RUNNER_REPLICA_TASK_METRICS = 232;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 233;
+  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 234;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 235;
+  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 236;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 237;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 238;
+  private static final int METHODID_POST_PIPELINES = 239;
+  private static final int METHODID_GET_PIPELINE = 240;
+  private static final int METHODID_LIST_PIPELINES = 241;
+  private static final int METHODID_PATCH_PIPELINES = 242;
+  private static final int METHODID_DELETE_PIPELINES = 243;
+  private static final int METHODID_GET_PIPELINE_VERSION = 244;
+  private static final int METHODID_LIST_PIPELINE_VERSIONS = 245;
+  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 246;
+  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 247;
+  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 248;
+  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 249;
+  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 250;
+  private static final int METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS = 251;
+  private static final int METHODID_POST_PIPELINE_STEPS = 252;
+  private static final int METHODID_GET_PIPELINE_STEP = 253;
+  private static final int METHODID_LIST_PIPELINE_STEPS = 254;
+  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 255;
+  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 256;
+  private static final int METHODID_DELETE_PIPELINE_STEPS = 257;
+  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 258;
+  private static final int METHODID_LIST_PIPELINE_TEMPLATES = 259;
+  private static final int METHODID_POST_PIPELINE_VERSION_RUN_FROM_TEMPLATE = 260;
+  private static final int METHODID_POST_ARTIFACTS = 261;
+  private static final int METHODID_GET_ARTIFACT = 262;
+  private static final int METHODID_LIST_ARTIFACTS = 263;
+  private static final int METHODID_DELETE_ARTIFACT = 264;
+  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 265;
+  private static final int METHODID_GET_ARTIFACT_VERSION = 266;
+  private static final int METHODID_DELETE_ARTIFACT_VERSION = 267;
+  private static final int METHODID_GET_SECRET = 268;
+  private static final int METHODID_LIST_SECRETS = 269;
+  private static final int METHODID_POST_SECRETS = 270;
+  private static final int METHODID_PATCH_SECRETS = 271;
+  private static final int METHODID_DELETE_SECRETS = 272;
+  private static final int METHODID_POST_METRICS_QUERY = 273;
+  private static final int METHODID_LIST_METRIC_LABELS = 274;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 275;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 276;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 277;
+  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 278;
+  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 279;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -22959,6 +23206,10 @@ public final class V2Grpc {
           serviceImpl.deleteNodepools((com.clarifai.grpc.api.DeleteNodepoolsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
+        case METHODID_POST_NODEPOOL_STATUS:
+          serviceImpl.postNodepoolStatus((com.clarifai.grpc.api.PostNodepoolStatusRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
         case METHODID_GET_DEPLOYMENT:
           serviceImpl.getDeployment((com.clarifai.grpc.api.GetDeploymentRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleDeploymentResponse>) responseObserver);
@@ -23110,6 +23361,14 @@ public final class V2Grpc {
         case METHODID_DELETE_PIPELINE_STEP_VERSIONS:
           serviceImpl.deletePipelineStepVersions((com.clarifai.grpc.api.DeletePipelineStepVersionsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PIPELINE_TEMPLATES:
+          serviceImpl.listPipelineTemplates((com.clarifai.grpc.api.ListPipelineTemplatesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiPipelineTemplateResponse>) responseObserver);
+          break;
+        case METHODID_POST_PIPELINE_VERSION_RUN_FROM_TEMPLATE:
+          serviceImpl.postPipelineVersionRunFromTemplate((com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostPipelineVersionRunFromTemplateResponse>) responseObserver);
           break;
         case METHODID_POST_ARTIFACTS:
           serviceImpl.postArtifacts((com.clarifai.grpc.api.PostArtifactsRequest) request,
@@ -23466,6 +23725,7 @@ public final class V2Grpc {
               .addMethod(getPostNodepoolsMethod())
               .addMethod(getPatchNodepoolsMethod())
               .addMethod(getDeleteNodepoolsMethod())
+              .addMethod(getPostNodepoolStatusMethod())
               .addMethod(getGetDeploymentMethod())
               .addMethod(getListDeploymentsMethod())
               .addMethod(getPostDeploymentsMethod())
@@ -23505,6 +23765,8 @@ public final class V2Grpc {
               .addMethod(getGetPipelineStepVersionMethod())
               .addMethod(getDeletePipelineStepsMethod())
               .addMethod(getDeletePipelineStepVersionsMethod())
+              .addMethod(getListPipelineTemplatesMethod())
+              .addMethod(getPostPipelineVersionRunFromTemplateMethod())
               .addMethod(getPostArtifactsMethod())
               .addMethod(getGetArtifactMethod())
               .addMethod(getListArtifactsMethod())
