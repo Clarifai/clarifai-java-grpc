@@ -227,6 +227,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.DeploymentNodepool.parser(), extensionRegistry));
             break;
           }
+          case 162: {
+            com.clarifai.grpc.api.DeploymentMetrics.Builder subBuilder = null;
+            if (deploymentMetrics_ != null) {
+              subBuilder = deploymentMetrics_.toBuilder();
+            }
+            deploymentMetrics_ = input.readMessage(com.clarifai.grpc.api.DeploymentMetrics.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(deploymentMetrics_);
+              deploymentMetrics_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1203,6 +1216,44 @@ private static final long serialVersionUID = 0L;
     return deploymentNodepools_.get(index);
   }
 
+  public static final int DEPLOYMENT_METRICS_FIELD_NUMBER = 20;
+  private com.clarifai.grpc.api.DeploymentMetrics deploymentMetrics_;
+  /**
+   * <pre>
+   * Real-time metrics for this deployment, including the desired and live replica counts.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+   * @return Whether the deploymentMetrics field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeploymentMetrics() {
+    return deploymentMetrics_ != null;
+  }
+  /**
+   * <pre>
+   * Real-time metrics for this deployment, including the desired and live replica counts.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+   * @return The deploymentMetrics.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeploymentMetrics getDeploymentMetrics() {
+    return deploymentMetrics_ == null ? com.clarifai.grpc.api.DeploymentMetrics.getDefaultInstance() : deploymentMetrics_;
+  }
+  /**
+   * <pre>
+   * Real-time metrics for this deployment, including the desired and live replica counts.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeploymentMetricsOrBuilder getDeploymentMetricsOrBuilder() {
+    return getDeploymentMetrics();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1267,6 +1318,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < deploymentNodepools_.size(); i++) {
       output.writeMessage(19, deploymentNodepools_.get(i));
+    }
+    if (deploymentMetrics_ != null) {
+      output.writeMessage(20, getDeploymentMetrics());
     }
     unknownFields.writeTo(output);
   }
@@ -1342,6 +1396,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, deploymentNodepools_.get(i));
     }
+    if (deploymentMetrics_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getDeploymentMetrics());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1414,6 +1472,11 @@ private static final long serialVersionUID = 0L;
         != other.getGracefulDeploy()) return false;
     if (!getDeploymentNodepoolsList()
         .equals(other.getDeploymentNodepoolsList())) return false;
+    if (hasDeploymentMetrics() != other.hasDeploymentMetrics()) return false;
+    if (hasDeploymentMetrics()) {
+      if (!getDeploymentMetrics()
+          .equals(other.getDeploymentMetrics())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1482,6 +1545,10 @@ private static final long serialVersionUID = 0L;
     if (getDeploymentNodepoolsCount() > 0) {
       hash = (37 * hash) + DEPLOYMENT_NODEPOOLS_FIELD_NUMBER;
       hash = (53 * hash) + getDeploymentNodepoolsList().hashCode();
+    }
+    if (hasDeploymentMetrics()) {
+      hash = (37 * hash) + DEPLOYMENT_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getDeploymentMetrics().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1703,6 +1770,12 @@ private static final long serialVersionUID = 0L;
       } else {
         deploymentNodepoolsBuilder_.clear();
       }
+      if (deploymentMetricsBuilder_ == null) {
+        deploymentMetrics_ = null;
+      } else {
+        deploymentMetrics_ = null;
+        deploymentMetricsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1802,6 +1875,11 @@ private static final long serialVersionUID = 0L;
         result.deploymentNodepools_ = deploymentNodepools_;
       } else {
         result.deploymentNodepools_ = deploymentNodepoolsBuilder_.build();
+      }
+      if (deploymentMetricsBuilder_ == null) {
+        result.deploymentMetrics_ = deploymentMetrics_;
+      } else {
+        result.deploymentMetrics_ = deploymentMetricsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1973,6 +2051,9 @@ private static final long serialVersionUID = 0L;
             deploymentNodepoolsBuilder_.addAllMessages(other.deploymentNodepools_);
           }
         }
+      }
+      if (other.hasDeploymentMetrics()) {
+        mergeDeploymentMetrics(other.getDeploymentMetrics());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4660,6 +4741,161 @@ private static final long serialVersionUID = 0L;
         deploymentNodepools_ = null;
       }
       return deploymentNodepoolsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.DeploymentMetrics deploymentMetrics_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DeploymentMetrics, com.clarifai.grpc.api.DeploymentMetrics.Builder, com.clarifai.grpc.api.DeploymentMetricsOrBuilder> deploymentMetricsBuilder_;
+    /**
+     * <pre>
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     * @return Whether the deploymentMetrics field is set.
+     */
+    public boolean hasDeploymentMetrics() {
+      return deploymentMetricsBuilder_ != null || deploymentMetrics_ != null;
+    }
+    /**
+     * <pre>
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     * @return The deploymentMetrics.
+     */
+    public com.clarifai.grpc.api.DeploymentMetrics getDeploymentMetrics() {
+      if (deploymentMetricsBuilder_ == null) {
+        return deploymentMetrics_ == null ? com.clarifai.grpc.api.DeploymentMetrics.getDefaultInstance() : deploymentMetrics_;
+      } else {
+        return deploymentMetricsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     */
+    public Builder setDeploymentMetrics(com.clarifai.grpc.api.DeploymentMetrics value) {
+      if (deploymentMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentMetrics_ = value;
+        onChanged();
+      } else {
+        deploymentMetricsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     */
+    public Builder setDeploymentMetrics(
+        com.clarifai.grpc.api.DeploymentMetrics.Builder builderForValue) {
+      if (deploymentMetricsBuilder_ == null) {
+        deploymentMetrics_ = builderForValue.build();
+        onChanged();
+      } else {
+        deploymentMetricsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     */
+    public Builder mergeDeploymentMetrics(com.clarifai.grpc.api.DeploymentMetrics value) {
+      if (deploymentMetricsBuilder_ == null) {
+        if (deploymentMetrics_ != null) {
+          deploymentMetrics_ =
+            com.clarifai.grpc.api.DeploymentMetrics.newBuilder(deploymentMetrics_).mergeFrom(value).buildPartial();
+        } else {
+          deploymentMetrics_ = value;
+        }
+        onChanged();
+      } else {
+        deploymentMetricsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     */
+    public Builder clearDeploymentMetrics() {
+      if (deploymentMetricsBuilder_ == null) {
+        deploymentMetrics_ = null;
+        onChanged();
+      } else {
+        deploymentMetrics_ = null;
+        deploymentMetricsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     */
+    public com.clarifai.grpc.api.DeploymentMetrics.Builder getDeploymentMetricsBuilder() {
+      
+      onChanged();
+      return getDeploymentMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     */
+    public com.clarifai.grpc.api.DeploymentMetricsOrBuilder getDeploymentMetricsOrBuilder() {
+      if (deploymentMetricsBuilder_ != null) {
+        return deploymentMetricsBuilder_.getMessageOrBuilder();
+      } else {
+        return deploymentMetrics_ == null ?
+            com.clarifai.grpc.api.DeploymentMetrics.getDefaultInstance() : deploymentMetrics_;
+      }
+    }
+    /**
+     * <pre>
+     * Real-time metrics for this deployment, including the desired and live replica counts.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DeploymentMetrics, com.clarifai.grpc.api.DeploymentMetrics.Builder, com.clarifai.grpc.api.DeploymentMetricsOrBuilder> 
+        getDeploymentMetricsFieldBuilder() {
+      if (deploymentMetricsBuilder_ == null) {
+        deploymentMetricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DeploymentMetrics, com.clarifai.grpc.api.DeploymentMetrics.Builder, com.clarifai.grpc.api.DeploymentMetricsOrBuilder>(
+                getDeploymentMetrics(),
+                getParentForChildren(),
+                isClean());
+        deploymentMetrics_ = null;
+      }
+      return deploymentMetricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

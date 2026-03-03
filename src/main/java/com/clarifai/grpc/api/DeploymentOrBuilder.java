@@ -461,4 +461,31 @@ public interface DeploymentOrBuilder extends
    */
   com.clarifai.grpc.api.DeploymentNodepoolOrBuilder getDeploymentNodepoolsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Real-time metrics for this deployment, including the desired and live replica counts.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+   * @return Whether the deploymentMetrics field is set.
+   */
+  boolean hasDeploymentMetrics();
+  /**
+   * <pre>
+   * Real-time metrics for this deployment, including the desired and live replica counts.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+   * @return The deploymentMetrics.
+   */
+  com.clarifai.grpc.api.DeploymentMetrics getDeploymentMetrics();
+  /**
+   * <pre>
+   * Real-time metrics for this deployment, including the desired and live replica counts.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
+   */
+  com.clarifai.grpc.api.DeploymentMetricsOrBuilder getDeploymentMetricsOrBuilder();
 }

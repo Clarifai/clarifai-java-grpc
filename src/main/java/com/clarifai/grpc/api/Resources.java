@@ -1080,6 +1080,11 @@ public final class Resources {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_clarifai_api_AutoscaleConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_clarifai_api_DeploymentMetrics_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_clarifai_api_DeploymentMetrics_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_clarifai_api_Deployment_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -2524,26 +2529,30 @@ public final class Resources {
       "ry_seconds\030\003 \001(\r\022 \n\030scale_down_delay_sec" +
       "onds\030\004 \001(\r\022\036\n\026scale_up_delay_seconds\030\005 \001" +
       "(\r\022\027\n\017disable_packing\030\007 \001(\010\022#\n\033scale_to_" +
-      "zero_delay_seconds\030\010 \001(\rJ\004\010\006\020\007\"\232\007\n\nDeplo" +
-      "yment\022\n\n\002id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\t\0227\n\020au" +
-      "toscale_config\030\003 \001(\0132\035.clarifai.api.Auto" +
-      "scaleConfig\022-\n\tnodepools\030\004 \003(\0132\026.clarifa" +
-      "i.api.NodepoolB\002\030\001\022D\n\021scheduling_choice\030" +
-      "\007 \001(\0162).clarifai.api.Deployment.Scheduli" +
-      "ngChoice\022,\n\nvisibility\030\010 \001(\0132\030.clarifai." +
-      "api.Visibility\022)\n\010metadata\030\t \001(\0132\027.googl" +
-      "e.protobuf.Struct\022\023\n\013description\030\n \001(\t\022$" +
-      "\n\006worker\030\013 \001(\0132\024.clarifai.api.Worker\022,\n\016" +
-      "desired_worker\030\020 \001(\0132\024.clarifai.api.Work" +
-      "er\022.\n\ncreated_at\030\014 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022/\n\013modified_at\030\r \001(\0132\032.google" +
-      ".protobuf.Timestamp\022\035\n\025deploy_latest_ver" +
-      "sion\030\016 \001(\010\0227\n\020special_handling\030\017 \003(\0132\035.c" +
-      "larifai.api.SpecialHandling\0227\n\024email_rem" +
-      "inder_after\030\021 \001(\0132\031.google.protobuf.Dura" +
-      "tion\022\027\n\017graceful_deploy\030\022 \001(\010\022>\n\024deploym" +
-      "ent_nodepools\030\023 \003(\0132 .clarifai.api.Deplo" +
-      "ymentNodepool\"\247\001\n\020SchedulingChoice\022\035\n\031UN" +
+      "zero_delay_seconds\030\010 \001(\rJ\004\010\006\020\007\"a\n\021Deploy" +
+      "mentMetrics\022\030\n\020desired_replicas\030\001 \001(\r\022\025\n" +
+      "\rlive_replicas\030\002 \001(\r\022\033\n\023rollout_in_progr" +
+      "ess\030\003 \001(\010\"\327\007\n\nDeployment\022\n\n\002id\030\001 \001(\t\022\017\n\007" +
+      "user_id\030\002 \001(\t\0227\n\020autoscale_config\030\003 \001(\0132" +
+      "\035.clarifai.api.AutoscaleConfig\022-\n\tnodepo" +
+      "ols\030\004 \003(\0132\026.clarifai.api.NodepoolB\002\030\001\022D\n" +
+      "\021scheduling_choice\030\007 \001(\0162).clarifai.api." +
+      "Deployment.SchedulingChoice\022,\n\nvisibilit" +
+      "y\030\010 \001(\0132\030.clarifai.api.Visibility\022)\n\010met" +
+      "adata\030\t \001(\0132\027.google.protobuf.Struct\022\023\n\013" +
+      "description\030\n \001(\t\022$\n\006worker\030\013 \001(\0132\024.clar" +
+      "ifai.api.Worker\022,\n\016desired_worker\030\020 \001(\0132" +
+      "\024.clarifai.api.Worker\022.\n\ncreated_at\030\014 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022/\n\013modifie" +
+      "d_at\030\r \001(\0132\032.google.protobuf.Timestamp\022\035" +
+      "\n\025deploy_latest_version\030\016 \001(\010\0227\n\020special" +
+      "_handling\030\017 \003(\0132\035.clarifai.api.SpecialHa" +
+      "ndling\0227\n\024email_reminder_after\030\021 \001(\0132\031.g" +
+      "oogle.protobuf.Duration\022\027\n\017graceful_depl" +
+      "oy\030\022 \001(\010\022>\n\024deployment_nodepools\030\023 \003(\0132 " +
+      ".clarifai.api.DeploymentNodepool\022;\n\022depl" +
+      "oyment_metrics\030\024 \001(\0132\037.clarifai.api.Depl" +
+      "oymentMetrics\"\247\001\n\020SchedulingChoice\022\035\n\031UN" +
       "KNOWN_SCHEDULING_CHOICE\020\000\022\010\n\004FAIL\020\001\022\n\n\006R" +
       "ANDOM\020\002\022\t\n\005PRICE\020\003\022\017\n\013PERFORMANCE\020\004\022\013\n\007N" +
       "ETWORK\020\005\022\017\n\013UTILIZATION\020\006\022\017\n\013PREFER_SPOT" +
@@ -2608,11 +2617,11 @@ public final class Resources {
       "laneMetrics\0221\n\004meta\030\001 \001(\0132#.clarifai.api" +
       ".ComputeSourceMetadata\022\r\n\005cloud\030\002 \001(\t\022\016\n" +
       "\006region\030\003 \001(\t\022\025\n\rinstance_type\030\004 \001(\t\022\030\n\020" +
-      "reservation_type\030\005 \001(\t\022\031\n\021reservation_pr" +
+      "reservation_type\030\005 \001(\t\022\031\n\021reservation_pr",
       "ice\030\006 \001(\002\022\021\n\truntime_s\030\007 \001(\005\022-\n\ttimestam" +
       "p\030\010 \001(\0132\032.google.protobuf.Timestamp\022\022\n\ne" +
       "vent_type\030\t \001(\t\022-\n\013gpu_metrics\030\n \003(\0132\030.c" +
-      "larifai.api.GpuMetrics\022\020\n\010hostname\030\013 \001(\t",
+      "larifai.api.GpuMetrics\022\020\n\010hostname\030\013 \001(\t" +
       "\022-\n\013cpu_metrics\030\014 \003(\0132\030.clarifai.api.Cpu" +
       "Metrics\"\207\001\n\nGpuMetrics\022\014\n\004uuid\030\001 \001(\t\022\022\n\n" +
       "model_name\030\002 \001(\t\022\027\n\017utilization_pct\030\003 \001(" +
@@ -4300,116 +4309,122 @@ public final class Resources {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_AutoscaleConfig_descriptor,
         new java.lang.String[] { "MinReplicas", "MaxReplicas", "TrafficHistorySeconds", "ScaleDownDelaySeconds", "ScaleUpDelaySeconds", "DisablePacking", "ScaleToZeroDelaySeconds", });
-    internal_static_clarifai_api_Deployment_descriptor =
+    internal_static_clarifai_api_DeploymentMetrics_descriptor =
       getDescriptor().getMessageTypes().get(211);
+    internal_static_clarifai_api_DeploymentMetrics_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_clarifai_api_DeploymentMetrics_descriptor,
+        new java.lang.String[] { "DesiredReplicas", "LiveReplicas", "RolloutInProgress", });
+    internal_static_clarifai_api_Deployment_descriptor =
+      getDescriptor().getMessageTypes().get(212);
     internal_static_clarifai_api_Deployment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Deployment_descriptor,
-        new java.lang.String[] { "Id", "UserId", "AutoscaleConfig", "Nodepools", "SchedulingChoice", "Visibility", "Metadata", "Description", "Worker", "DesiredWorker", "CreatedAt", "ModifiedAt", "DeployLatestVersion", "SpecialHandling", "EmailReminderAfter", "GracefulDeploy", "DeploymentNodepools", });
+        new java.lang.String[] { "Id", "UserId", "AutoscaleConfig", "Nodepools", "SchedulingChoice", "Visibility", "Metadata", "Description", "Worker", "DesiredWorker", "CreatedAt", "ModifiedAt", "DeployLatestVersion", "SpecialHandling", "EmailReminderAfter", "GracefulDeploy", "DeploymentNodepools", "DeploymentMetrics", });
     internal_static_clarifai_api_DeploymentNodepool_descriptor =
-      getDescriptor().getMessageTypes().get(212);
+      getDescriptor().getMessageTypes().get(213);
     internal_static_clarifai_api_DeploymentNodepool_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeploymentNodepool_descriptor,
         new java.lang.String[] { "Id", "ComputeCluster", "Priority", "Nodepool", });
     internal_static_clarifai_api_RunnerSelector_descriptor =
-      getDescriptor().getMessageTypes().get(213);
+      getDescriptor().getMessageTypes().get(214);
     internal_static_clarifai_api_RunnerSelector_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_RunnerSelector_descriptor,
         new java.lang.String[] { "Nodepool", "Runner", "Deployment", });
     internal_static_clarifai_api_ProcessingInfo_descriptor =
-      getDescriptor().getMessageTypes().get(214);
+      getDescriptor().getMessageTypes().get(215);
     internal_static_clarifai_api_ProcessingInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ProcessingInfo_descriptor,
         new java.lang.String[] { "RunnerMethodType", "Status", "ProcessingId", });
     internal_static_clarifai_api_AuditLogTarget_descriptor =
-      getDescriptor().getMessageTypes().get(215);
+      getDescriptor().getMessageTypes().get(216);
     internal_static_clarifai_api_AuditLogTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_AuditLogTarget_descriptor,
         new java.lang.String[] { "User", "Role", "Team", "App", "Workflow", "WorkflowVersion", "Model", "ModelVersion", "ComputeCluster", "Nodepool", "Deployment", "Target", });
     internal_static_clarifai_api_AuditLogEntry_descriptor =
-      getDescriptor().getMessageTypes().get(216);
+      getDescriptor().getMessageTypes().get(217);
     internal_static_clarifai_api_AuditLogEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_AuditLogEntry_descriptor,
         new java.lang.String[] { "Timestamp", "User", "Operation", "Description", "Targets", "Details", "Success", "ReqId", "SourceIp", });
     internal_static_clarifai_api_AuditLogQuery_descriptor =
-      getDescriptor().getMessageTypes().get(217);
+      getDescriptor().getMessageTypes().get(218);
     internal_static_clarifai_api_AuditLogQuery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_AuditLogQuery_descriptor,
         new java.lang.String[] { "TimestampFrom", "TimestampTo", "UserIds", "Operations", "Targets", "Success", "SourceIps", });
     internal_static_clarifai_api_WorkflowVersionEvaluationMetric_descriptor =
-      getDescriptor().getMessageTypes().get(218);
+      getDescriptor().getMessageTypes().get(219);
     internal_static_clarifai_api_WorkflowVersionEvaluationMetric_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowVersionEvaluationMetric_descriptor,
         new java.lang.String[] { "Id", "Summary", "Description", "DataType", "VisualisationType", });
     internal_static_clarifai_api_WorkflowVersionEvaluationTemplate_descriptor =
-      getDescriptor().getMessageTypes().get(219);
+      getDescriptor().getMessageTypes().get(220);
     internal_static_clarifai_api_WorkflowVersionEvaluationTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowVersionEvaluationTemplate_descriptor,
         new java.lang.String[] { "Id", "Description", "TaskTypes", "WorkflowVersionEvaluationMetrics", });
     internal_static_clarifai_api_ComputePlaneMetrics_descriptor =
-      getDescriptor().getMessageTypes().get(220);
+      getDescriptor().getMessageTypes().get(221);
     internal_static_clarifai_api_ComputePlaneMetrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ComputePlaneMetrics_descriptor,
         new java.lang.String[] { "Meta", "Cloud", "Region", "InstanceType", "ReservationType", "ReservationPrice", "RuntimeS", "Timestamp", "EventType", "GpuMetrics", "Hostname", "CpuMetrics", });
     internal_static_clarifai_api_GpuMetrics_descriptor =
-      getDescriptor().getMessageTypes().get(221);
+      getDescriptor().getMessageTypes().get(222);
     internal_static_clarifai_api_GpuMetrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GpuMetrics_descriptor,
         new java.lang.String[] { "Uuid", "ModelName", "UtilizationPct", "TensorUtilizationPct", "MemoryUtilizationPct", });
     internal_static_clarifai_api_CpuMetrics_descriptor =
-      getDescriptor().getMessageTypes().get(222);
+      getDescriptor().getMessageTypes().get(223);
     internal_static_clarifai_api_CpuMetrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_CpuMetrics_descriptor,
         new java.lang.String[] { "Timestamp", "CpuUtilizationPct", "MemoryUtilizationPct", "Millicores", "MemoryBytes", });
     internal_static_clarifai_api_RunnerReplicaTaskMetrics_descriptor =
-      getDescriptor().getMessageTypes().get(223);
+      getDescriptor().getMessageTypes().get(224);
     internal_static_clarifai_api_RunnerReplicaTaskMetrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_RunnerReplicaTaskMetrics_descriptor,
         new java.lang.String[] { "TaskId", "StartTime", "EndTime", "StartFrameTime", "EndFrameTime", "FramesProcessed", "FramesDropped", "FramesSkipped", "AnnotationsUploaded", "AnnotationsFailed", "BatchesUploaded", "BatchesDropped", "AvgUploadLatency", "MaxUploadLatency", "LastUploadLatency", "AvgStreamDelay", "MaxStreamDelay", "LastStreamDelay", "PredictQueueSize", "UploadQueueSize", "CurrentFrameDropChance", });
     internal_static_clarifai_api_LogEntry_descriptor =
-      getDescriptor().getMessageTypes().get(224);
+      getDescriptor().getMessageTypes().get(225);
     internal_static_clarifai_api_LogEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_LogEntry_descriptor,
         new java.lang.String[] { "Message", "LogType", "Url", "Meta", });
     internal_static_clarifai_api_ComputeSourceMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(225);
+      getDescriptor().getMessageTypes().get(226);
     internal_static_clarifai_api_ComputeSourceMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ComputeSourceMetadata_descriptor,
         new java.lang.String[] { "UserAppId", "ModelId", "ModelVersionId", "WorkflowId", "ComputeClusterUserId", "ComputeClusterId", "NodepoolId", "RunnerId", "PipelineId", "PipelineVersionId", "PipelineVersionRunId", "PipelineStepId", "PipelineStepVersionId", });
     internal_static_clarifai_api_WorkflowVersionEvaluation_descriptor =
-      getDescriptor().getMessageTypes().get(226);
+      getDescriptor().getMessageTypes().get(227);
     internal_static_clarifai_api_WorkflowVersionEvaluation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowVersionEvaluation_descriptor,
         new java.lang.String[] { "Id", "WorkflowVersion", "TargetNodeId", "GroundTruthDatasetVersion", "PredictionsDatasetVersion", "WorkflowVersionEvaluationTemplate", "UserId", "AppId", "WorkflowEvaluationResult", "Status", "CreatedAt", "ModifiedAt", });
     internal_static_clarifai_api_WorkflowEvaluationResult_descriptor =
-      getDescriptor().getMessageTypes().get(227);
+      getDescriptor().getMessageTypes().get(228);
     internal_static_clarifai_api_WorkflowEvaluationResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowEvaluationResult_descriptor,
         new java.lang.String[] { "Summary", });
     internal_static_clarifai_api_WorkflowEvaluationResultSummary_descriptor =
-      getDescriptor().getMessageTypes().get(228);
+      getDescriptor().getMessageTypes().get(229);
     internal_static_clarifai_api_WorkflowEvaluationResultSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowEvaluationResultSummary_descriptor,
         new java.lang.String[] { "EvaluationMetricValues", });
     internal_static_clarifai_api_EvaluationMetricValue_descriptor =
-      getDescriptor().getMessageTypes().get(229);
+      getDescriptor().getMessageTypes().get(230);
     internal_static_clarifai_api_EvaluationMetricValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_EvaluationMetricValue_descriptor,
@@ -4421,7 +4436,7 @@ public final class Resources {
         internal_static_clarifai_api_EvaluationMetricValue_PerConceptValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_clarifai_api_InputEvaluationMetricValue_descriptor =
-      getDescriptor().getMessageTypes().get(230);
+      getDescriptor().getMessageTypes().get(231);
     internal_static_clarifai_api_InputEvaluationMetricValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_InputEvaluationMetricValue_descriptor,
@@ -4433,91 +4448,91 @@ public final class Resources {
         internal_static_clarifai_api_InputEvaluationMetricValue_PerRegionValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_clarifai_api_MetricValue_descriptor =
-      getDescriptor().getMessageTypes().get(231);
+      getDescriptor().getMessageTypes().get(232);
     internal_static_clarifai_api_MetricValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MetricValue_descriptor,
         new java.lang.String[] { "StringValue", "FloatValue", "IntValue", "MetricValue", });
     internal_static_clarifai_api_WorkflowEvaluationInputResult_descriptor =
-      getDescriptor().getMessageTypes().get(232);
+      getDescriptor().getMessageTypes().get(233);
     internal_static_clarifai_api_WorkflowEvaluationInputResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowEvaluationInputResult_descriptor,
         new java.lang.String[] { "InputEvaluationMetricValues", });
     internal_static_clarifai_api_WorkflowVersionEvaluationData_descriptor =
-      getDescriptor().getMessageTypes().get(233);
+      getDescriptor().getMessageTypes().get(234);
     internal_static_clarifai_api_WorkflowVersionEvaluationData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowVersionEvaluationData_descriptor,
         new java.lang.String[] { "Id", "Input", "GroundTruths", "Predictions", "WorkflowEvaluationSampleResult", });
     internal_static_clarifai_api_ArgoParameterOverride_descriptor =
-      getDescriptor().getMessageTypes().get(234);
+      getDescriptor().getMessageTypes().get(235);
     internal_static_clarifai_api_ArgoParameterOverride_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ArgoParameterOverride_descriptor,
         new java.lang.String[] { "Name", "Value", });
     internal_static_clarifai_api_ArgoArgsOverride_descriptor =
-      getDescriptor().getMessageTypes().get(235);
+      getDescriptor().getMessageTypes().get(236);
     internal_static_clarifai_api_ArgoArgsOverride_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ArgoArgsOverride_descriptor,
         new java.lang.String[] { "Parameters", });
     internal_static_clarifai_api_OrchestrationArgsOverride_descriptor =
-      getDescriptor().getMessageTypes().get(236);
+      getDescriptor().getMessageTypes().get(237);
     internal_static_clarifai_api_OrchestrationArgsOverride_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_OrchestrationArgsOverride_descriptor,
         new java.lang.String[] { "ArgoArgsOverride", "Override", });
     internal_static_clarifai_api_ArgoOrchestrationSpec_descriptor =
-      getDescriptor().getMessageTypes().get(237);
+      getDescriptor().getMessageTypes().get(238);
     internal_static_clarifai_api_ArgoOrchestrationSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ArgoOrchestrationSpec_descriptor,
         new java.lang.String[] { "ApiVersion", "SpecJson", });
     internal_static_clarifai_api_OrchestrationSpec_descriptor =
-      getDescriptor().getMessageTypes().get(238);
+      getDescriptor().getMessageTypes().get(239);
     internal_static_clarifai_api_OrchestrationSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_OrchestrationSpec_descriptor,
         new java.lang.String[] { "ArgoOrchestrationSpec", "Orchestration", });
     internal_static_clarifai_api_PipelineStepInputParam_descriptor =
-      getDescriptor().getMessageTypes().get(239);
+      getDescriptor().getMessageTypes().get(240);
     internal_static_clarifai_api_PipelineStepInputParam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PipelineStepInputParam_descriptor,
         new java.lang.String[] { "Name", "DefaultValue", "Description", "AcceptedValues", });
     internal_static_clarifai_api_PipelineStep_descriptor =
-      getDescriptor().getMessageTypes().get(240);
+      getDescriptor().getMessageTypes().get(241);
     internal_static_clarifai_api_PipelineStep_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PipelineStep_descriptor,
         new java.lang.String[] { "Id", "UserId", "Description", "PipelineStepVersion", "Visibility", "CreatedAt", "ModifiedAt", });
     internal_static_clarifai_api_OrchestrationStepSpec_descriptor =
-      getDescriptor().getMessageTypes().get(241);
+      getDescriptor().getMessageTypes().get(242);
     internal_static_clarifai_api_OrchestrationStepSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_OrchestrationStepSpec_descriptor,
         new java.lang.String[] { "ArgoOrchestrationStepSpec", "Orchestration", });
     internal_static_clarifai_api_ArgoOrchestrationStepSpec_descriptor =
-      getDescriptor().getMessageTypes().get(242);
+      getDescriptor().getMessageTypes().get(243);
     internal_static_clarifai_api_ArgoOrchestrationStepSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ArgoOrchestrationStepSpec_descriptor,
         new java.lang.String[] { "ApiVersion", "SpecJson", });
     internal_static_clarifai_api_PipelineStepVersion_descriptor =
-      getDescriptor().getMessageTypes().get(243);
+      getDescriptor().getMessageTypes().get(244);
     internal_static_clarifai_api_PipelineStepVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PipelineStepVersion_descriptor,
         new java.lang.String[] { "Id", "UserId", "AppId", "Description", "PipelineStep", "OrchestrationStepSpec", "PipelineStepInputParams", "Status", "PipelineStepComputeInfo", "BuildInfo", "Visibility", "CreatedAt", "ModifiedAt", });
     internal_static_clarifai_api_Pipeline_descriptor =
-      getDescriptor().getMessageTypes().get(244);
+      getDescriptor().getMessageTypes().get(245);
     internal_static_clarifai_api_Pipeline_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Pipeline_descriptor,
         new java.lang.String[] { "Id", "UserId", "AppId", "PipelineVersion", "Description", "Visibility", "Notes", "Metadata", "CreatedAt", "ModifiedAt", });
     internal_static_clarifai_api_PipelineVersionConfig_descriptor =
-      getDescriptor().getMessageTypes().get(245);
+      getDescriptor().getMessageTypes().get(246);
     internal_static_clarifai_api_PipelineVersionConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PipelineVersionConfig_descriptor,
@@ -4529,37 +4544,37 @@ public final class Resources {
         internal_static_clarifai_api_PipelineVersionConfig_StepVersionSecretsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_clarifai_api_PipelineVersion_descriptor =
-      getDescriptor().getMessageTypes().get(246);
+      getDescriptor().getMessageTypes().get(247);
     internal_static_clarifai_api_PipelineVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PipelineVersion_descriptor,
         new java.lang.String[] { "Id", "AppId", "UserId", "OrchestrationSpec", "PipelineId", "Description", "Visibility", "Metadata", "CreatedAt", "ModifiedAt", "Config", });
     internal_static_clarifai_api_OrchestrationStatus_descriptor =
-      getDescriptor().getMessageTypes().get(247);
+      getDescriptor().getMessageTypes().get(248);
     internal_static_clarifai_api_OrchestrationStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_OrchestrationStatus_descriptor,
         new java.lang.String[] { "ArgoStatus", "Status", "StatusDetails", });
     internal_static_clarifai_api_ArgoOrchestrationStatus_descriptor =
-      getDescriptor().getMessageTypes().get(248);
+      getDescriptor().getMessageTypes().get(249);
     internal_static_clarifai_api_ArgoOrchestrationStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ArgoOrchestrationStatus_descriptor,
         new java.lang.String[] { "Status", });
     internal_static_clarifai_api_PipelineVersionRun_descriptor =
-      getDescriptor().getMessageTypes().get(249);
+      getDescriptor().getMessageTypes().get(250);
     internal_static_clarifai_api_PipelineVersionRun_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PipelineVersionRun_descriptor,
         new java.lang.String[] { "Id", "PipelineVersion", "Nodepools", "OrchestrationStatus", "UserId", "AppId", "CreatedAt", "ModifiedAt", "InputArgsOverride", "OrchestrationSpec", "StartedAt", "EndedAt", "TotalRunDuration", });
     internal_static_clarifai_api_PipelineVersionRunStatusLog_descriptor =
-      getDescriptor().getMessageTypes().get(250);
+      getDescriptor().getMessageTypes().get(251);
     internal_static_clarifai_api_PipelineVersionRunStatusLog_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PipelineVersionRunStatusLog_descriptor,
         new java.lang.String[] { "Id", "PipelineVersionRunId", "Status", "Message", "TriggeredByUserId", "CreatedAt", });
     internal_static_clarifai_api_PipelineTemplateParameter_descriptor =
-      getDescriptor().getMessageTypes().get(251);
+      getDescriptor().getMessageTypes().get(252);
     internal_static_clarifai_api_PipelineTemplateParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PipelineTemplateParameter_descriptor,
@@ -4595,7 +4610,7 @@ public final class Resources {
         internal_static_clarifai_api_PipelineTemplateParameter_UIHints_descriptor,
         new java.lang.String[] { "Widget", "DataSource", "SerializeAsString", });
     internal_static_clarifai_api_PipelineTemplate_descriptor =
-      getDescriptor().getMessageTypes().get(252);
+      getDescriptor().getMessageTypes().get(253);
     internal_static_clarifai_api_PipelineTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PipelineTemplate_descriptor,
@@ -4607,13 +4622,13 @@ public final class Resources {
         internal_static_clarifai_api_PipelineTemplate_PipelineStepsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_clarifai_api_Secret_descriptor =
-      getDescriptor().getMessageTypes().get(253);
+      getDescriptor().getMessageTypes().get(254);
     internal_static_clarifai_api_Secret_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Secret_descriptor,
         new java.lang.String[] { "Id", "UserId", "Value", "Version", "Description", "CreatedAt", "ModifiedAt", "ExpiresAt", });
     internal_static_clarifai_api_MetricData_descriptor =
-      getDescriptor().getMessageTypes().get(254);
+      getDescriptor().getMessageTypes().get(255);
     internal_static_clarifai_api_MetricData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MetricData_descriptor,
@@ -4643,13 +4658,13 @@ public final class Resources {
         internal_static_clarifai_api_MetricData_MatrixData_TimeSeries_descriptor,
         new java.lang.String[] { "Labels", "Value", });
     internal_static_clarifai_api_MetricAggregate_descriptor =
-      getDescriptor().getMessageTypes().get(255);
+      getDescriptor().getMessageTypes().get(256);
     internal_static_clarifai_api_MetricAggregate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MetricAggregate_descriptor,
         new java.lang.String[] { "Operator", "Labels", });
     internal_static_clarifai_api_MetricFilter_descriptor =
-      getDescriptor().getMessageTypes().get(256);
+      getDescriptor().getMessageTypes().get(257);
     internal_static_clarifai_api_MetricFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MetricFilter_descriptor,
@@ -4661,13 +4676,13 @@ public final class Resources {
         internal_static_clarifai_api_MetricFilter_MultiValues_descriptor,
         new java.lang.String[] { "In", });
     internal_static_clarifai_api_MetricSearchQuery_descriptor =
-      getDescriptor().getMessageTypes().get(257);
+      getDescriptor().getMessageTypes().get(258);
     internal_static_clarifai_api_MetricSearchQuery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MetricSearchQuery_descriptor,
         new java.lang.String[] { "MetricType", "StartTime", "EndTime", "Resolution", "Filters", "Aggregate", });
     internal_static_clarifai_api_MetricTypeLabels_descriptor =
-      getDescriptor().getMessageTypes().get(258);
+      getDescriptor().getMessageTypes().get(259);
     internal_static_clarifai_api_MetricTypeLabels_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MetricTypeLabels_descriptor,
@@ -4679,13 +4694,13 @@ public final class Resources {
         internal_static_clarifai_api_MetricTypeLabels_LabelWithValues_descriptor,
         new java.lang.String[] { "Label", "Values", });
     internal_static_clarifai_api_Artifact_descriptor =
-      getDescriptor().getMessageTypes().get(259);
+      getDescriptor().getMessageTypes().get(260);
     internal_static_clarifai_api_Artifact_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Artifact_descriptor,
         new java.lang.String[] { "Id", "UserId", "AppId", "ArtifactVersion", "CreatedAt", "ModifiedAt", "DeletedAt", });
     internal_static_clarifai_api_ArtifactVersion_descriptor =
-      getDescriptor().getMessageTypes().get(260);
+      getDescriptor().getMessageTypes().get(261);
     internal_static_clarifai_api_ArtifactVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ArtifactVersion_descriptor,
