@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     schedulingChoice_ = 0;
     description_ = "";
     specialHandling_ = java.util.Collections.emptyList();
+    deploymentNodepools_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -217,6 +218,15 @@ private static final long serialVersionUID = 0L;
             gracefulDeploy_ = input.readBool();
             break;
           }
+          case 154: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              deploymentNodepools_ = new java.util.ArrayList<com.clarifai.grpc.api.DeploymentNodepool>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            deploymentNodepools_.add(
+                input.readMessage(com.clarifai.grpc.api.DeploymentNodepool.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -239,6 +249,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         specialHandling_ = java.util.Collections.unmodifiableList(specialHandling_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        deploymentNodepools_ = java.util.Collections.unmodifiableList(deploymentNodepools_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -637,88 +650,58 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.clarifai.grpc.api.Nodepool> nodepools_;
   /**
    * <pre>
-   * You can configure different autoscaling per nodepool(s).
-   * These nodepools have to be also owned by the same user_id/org as this deployment.
-   * If there is more than one nodepool we use the model's ComputeInfo to match
-   * with what the nodepool provides to decide which one can handle it combined with the
-   * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-   * we need a way to rank scheduling choices when we don't know how to decide (like a model
-   * supports
+   * Use DeploymentNodepools field instead
    * </pre>
    *
-   * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+   * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
    */
   @java.lang.Override
-  public java.util.List<com.clarifai.grpc.api.Nodepool> getNodepoolsList() {
+  @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.Nodepool> getNodepoolsList() {
     return nodepools_;
   }
   /**
    * <pre>
-   * You can configure different autoscaling per nodepool(s).
-   * These nodepools have to be also owned by the same user_id/org as this deployment.
-   * If there is more than one nodepool we use the model's ComputeInfo to match
-   * with what the nodepool provides to decide which one can handle it combined with the
-   * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-   * we need a way to rank scheduling choices when we don't know how to decide (like a model
-   * supports
+   * Use DeploymentNodepools field instead
    * </pre>
    *
-   * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+   * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.clarifai.grpc.api.NodepoolOrBuilder> 
+  @java.lang.Deprecated public java.util.List<? extends com.clarifai.grpc.api.NodepoolOrBuilder> 
       getNodepoolsOrBuilderList() {
     return nodepools_;
   }
   /**
    * <pre>
-   * You can configure different autoscaling per nodepool(s).
-   * These nodepools have to be also owned by the same user_id/org as this deployment.
-   * If there is more than one nodepool we use the model's ComputeInfo to match
-   * with what the nodepool provides to decide which one can handle it combined with the
-   * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-   * we need a way to rank scheduling choices when we don't know how to decide (like a model
-   * supports
+   * Use DeploymentNodepools field instead
    * </pre>
    *
-   * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+   * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
    */
   @java.lang.Override
-  public int getNodepoolsCount() {
+  @java.lang.Deprecated public int getNodepoolsCount() {
     return nodepools_.size();
   }
   /**
    * <pre>
-   * You can configure different autoscaling per nodepool(s).
-   * These nodepools have to be also owned by the same user_id/org as this deployment.
-   * If there is more than one nodepool we use the model's ComputeInfo to match
-   * with what the nodepool provides to decide which one can handle it combined with the
-   * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-   * we need a way to rank scheduling choices when we don't know how to decide (like a model
-   * supports
+   * Use DeploymentNodepools field instead
    * </pre>
    *
-   * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+   * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.Nodepool getNodepools(int index) {
+  @java.lang.Deprecated public com.clarifai.grpc.api.Nodepool getNodepools(int index) {
     return nodepools_.get(index);
   }
   /**
    * <pre>
-   * You can configure different autoscaling per nodepool(s).
-   * These nodepools have to be also owned by the same user_id/org as this deployment.
-   * If there is more than one nodepool we use the model's ComputeInfo to match
-   * with what the nodepool provides to decide which one can handle it combined with the
-   * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-   * we need a way to rank scheduling choices when we don't know how to decide (like a model
-   * supports
+   * Use DeploymentNodepools field instead
    * </pre>
    *
-   * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+   * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolsOrBuilder(
+  @java.lang.Deprecated public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolsOrBuilder(
       int index) {
     return nodepools_.get(index);
   }
@@ -1150,6 +1133,76 @@ private static final long serialVersionUID = 0L;
     return gracefulDeploy_;
   }
 
+  public static final int DEPLOYMENT_NODEPOOLS_FIELD_NUMBER = 19;
+  private java.util.List<com.clarifai.grpc.api.DeploymentNodepool> deploymentNodepools_;
+  /**
+   * <pre>
+   * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+   * When any priority value is non-zero, the response will populate this field instead
+   * of 'nodepools'.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.DeploymentNodepool> getDeploymentNodepoolsList() {
+    return deploymentNodepools_;
+  }
+  /**
+   * <pre>
+   * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+   * When any priority value is non-zero, the response will populate this field instead
+   * of 'nodepools'.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.DeploymentNodepoolOrBuilder> 
+      getDeploymentNodepoolsOrBuilderList() {
+    return deploymentNodepools_;
+  }
+  /**
+   * <pre>
+   * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+   * When any priority value is non-zero, the response will populate this field instead
+   * of 'nodepools'.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+   */
+  @java.lang.Override
+  public int getDeploymentNodepoolsCount() {
+    return deploymentNodepools_.size();
+  }
+  /**
+   * <pre>
+   * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+   * When any priority value is non-zero, the response will populate this field instead
+   * of 'nodepools'.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeploymentNodepool getDeploymentNodepools(int index) {
+    return deploymentNodepools_.get(index);
+  }
+  /**
+   * <pre>
+   * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+   * When any priority value is non-zero, the response will populate this field instead
+   * of 'nodepools'.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeploymentNodepoolOrBuilder getDeploymentNodepoolsOrBuilder(
+      int index) {
+    return deploymentNodepools_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1211,6 +1264,9 @@ private static final long serialVersionUID = 0L;
     }
     if (gracefulDeploy_ != false) {
       output.writeBool(18, gracefulDeploy_);
+    }
+    for (int i = 0; i < deploymentNodepools_.size(); i++) {
+      output.writeMessage(19, deploymentNodepools_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1282,6 +1338,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(18, gracefulDeploy_);
     }
+    for (int i = 0; i < deploymentNodepools_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, deploymentNodepools_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1352,6 +1412,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getGracefulDeploy()
         != other.getGracefulDeploy()) return false;
+    if (!getDeploymentNodepoolsList()
+        .equals(other.getDeploymentNodepoolsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1417,6 +1479,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + GRACEFUL_DEPLOY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getGracefulDeploy());
+    if (getDeploymentNodepoolsCount() > 0) {
+      hash = (37 * hash) + DEPLOYMENT_NODEPOOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getDeploymentNodepoolsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1553,6 +1619,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getNodepoolsFieldBuilder();
         getSpecialHandlingFieldBuilder();
+        getDeploymentNodepoolsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1630,6 +1697,12 @@ private static final long serialVersionUID = 0L;
       }
       gracefulDeploy_ = false;
 
+      if (deploymentNodepoolsBuilder_ == null) {
+        deploymentNodepools_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        deploymentNodepoolsBuilder_.clear();
+      }
       return this;
     }
 
@@ -1721,6 +1794,15 @@ private static final long serialVersionUID = 0L;
         result.emailReminderAfter_ = emailReminderAfterBuilder_.build();
       }
       result.gracefulDeploy_ = gracefulDeploy_;
+      if (deploymentNodepoolsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          deploymentNodepools_ = java.util.Collections.unmodifiableList(deploymentNodepools_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.deploymentNodepools_ = deploymentNodepools_;
+      } else {
+        result.deploymentNodepools_ = deploymentNodepoolsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1865,6 +1947,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getGracefulDeploy() != false) {
         setGracefulDeploy(other.getGracefulDeploy());
+      }
+      if (deploymentNodepoolsBuilder_ == null) {
+        if (!other.deploymentNodepools_.isEmpty()) {
+          if (deploymentNodepools_.isEmpty()) {
+            deploymentNodepools_ = other.deploymentNodepools_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureDeploymentNodepoolsIsMutable();
+            deploymentNodepools_.addAll(other.deploymentNodepools_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.deploymentNodepools_.isEmpty()) {
+          if (deploymentNodepoolsBuilder_.isEmpty()) {
+            deploymentNodepoolsBuilder_.dispose();
+            deploymentNodepoolsBuilder_ = null;
+            deploymentNodepools_ = other.deploymentNodepools_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            deploymentNodepoolsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getDeploymentNodepoolsFieldBuilder() : null;
+          } else {
+            deploymentNodepoolsBuilder_.addAllMessages(other.deploymentNodepools_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2257,18 +2365,12 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public java.util.List<com.clarifai.grpc.api.Nodepool> getNodepoolsList() {
+    @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.Nodepool> getNodepoolsList() {
       if (nodepoolsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(nodepools_);
       } else {
@@ -2277,18 +2379,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public int getNodepoolsCount() {
+    @java.lang.Deprecated public int getNodepoolsCount() {
       if (nodepoolsBuilder_ == null) {
         return nodepools_.size();
       } else {
@@ -2297,18 +2393,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Nodepool getNodepools(int index) {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Nodepool getNodepools(int index) {
       if (nodepoolsBuilder_ == null) {
         return nodepools_.get(index);
       } else {
@@ -2317,18 +2407,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public Builder setNodepools(
+    @java.lang.Deprecated public Builder setNodepools(
         int index, com.clarifai.grpc.api.Nodepool value) {
       if (nodepoolsBuilder_ == null) {
         if (value == null) {
@@ -2344,18 +2428,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public Builder setNodepools(
+    @java.lang.Deprecated public Builder setNodepools(
         int index, com.clarifai.grpc.api.Nodepool.Builder builderForValue) {
       if (nodepoolsBuilder_ == null) {
         ensureNodepoolsIsMutable();
@@ -2368,18 +2446,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public Builder addNodepools(com.clarifai.grpc.api.Nodepool value) {
+    @java.lang.Deprecated public Builder addNodepools(com.clarifai.grpc.api.Nodepool value) {
       if (nodepoolsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2394,18 +2466,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public Builder addNodepools(
+    @java.lang.Deprecated public Builder addNodepools(
         int index, com.clarifai.grpc.api.Nodepool value) {
       if (nodepoolsBuilder_ == null) {
         if (value == null) {
@@ -2421,18 +2487,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public Builder addNodepools(
+    @java.lang.Deprecated public Builder addNodepools(
         com.clarifai.grpc.api.Nodepool.Builder builderForValue) {
       if (nodepoolsBuilder_ == null) {
         ensureNodepoolsIsMutable();
@@ -2445,18 +2505,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public Builder addNodepools(
+    @java.lang.Deprecated public Builder addNodepools(
         int index, com.clarifai.grpc.api.Nodepool.Builder builderForValue) {
       if (nodepoolsBuilder_ == null) {
         ensureNodepoolsIsMutable();
@@ -2469,18 +2523,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public Builder addAllNodepools(
+    @java.lang.Deprecated public Builder addAllNodepools(
         java.lang.Iterable<? extends com.clarifai.grpc.api.Nodepool> values) {
       if (nodepoolsBuilder_ == null) {
         ensureNodepoolsIsMutable();
@@ -2494,18 +2542,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public Builder clearNodepools() {
+    @java.lang.Deprecated public Builder clearNodepools() {
       if (nodepoolsBuilder_ == null) {
         nodepools_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2517,18 +2559,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public Builder removeNodepools(int index) {
+    @java.lang.Deprecated public Builder removeNodepools(int index) {
       if (nodepoolsBuilder_ == null) {
         ensureNodepoolsIsMutable();
         nodepools_.remove(index);
@@ -2540,35 +2576,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Nodepool.Builder getNodepoolsBuilder(
+    @java.lang.Deprecated public com.clarifai.grpc.api.Nodepool.Builder getNodepoolsBuilder(
         int index) {
       return getNodepoolsFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolsOrBuilder(
+    @java.lang.Deprecated public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolsOrBuilder(
         int index) {
       if (nodepoolsBuilder_ == null) {
         return nodepools_.get(index);  } else {
@@ -2577,18 +2601,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public java.util.List<? extends com.clarifai.grpc.api.NodepoolOrBuilder> 
+    @java.lang.Deprecated public java.util.List<? extends com.clarifai.grpc.api.NodepoolOrBuilder> 
          getNodepoolsOrBuilderList() {
       if (nodepoolsBuilder_ != null) {
         return nodepoolsBuilder_.getMessageOrBuilderList();
@@ -2598,53 +2616,35 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Nodepool.Builder addNodepoolsBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Nodepool.Builder addNodepoolsBuilder() {
       return getNodepoolsFieldBuilder().addBuilder(
           com.clarifai.grpc.api.Nodepool.getDefaultInstance());
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Nodepool.Builder addNodepoolsBuilder(
+    @java.lang.Deprecated public com.clarifai.grpc.api.Nodepool.Builder addNodepoolsBuilder(
         int index) {
       return getNodepoolsFieldBuilder().addBuilder(
           index, com.clarifai.grpc.api.Nodepool.getDefaultInstance());
     }
     /**
      * <pre>
-     * You can configure different autoscaling per nodepool(s).
-     * These nodepools have to be also owned by the same user_id/org as this deployment.
-     * If there is more than one nodepool we use the model's ComputeInfo to match
-     * with what the nodepool provides to decide which one can handle it combined with the
-     * NodepoolRank below. Note: even within a single nodepool if it is heterogeneous then
-     * we need a way to rank scheduling choices when we don't know how to decide (like a model
-     * supports
+     * Use DeploymentNodepools field instead
      * </pre>
      *
-     * <code>repeated .clarifai.api.Nodepool nodepools = 4;</code>
+     * <code>repeated .clarifai.api.Nodepool nodepools = 4 [deprecated = true];</code>
      */
-    public java.util.List<com.clarifai.grpc.api.Nodepool.Builder> 
+    @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.Nodepool.Builder> 
          getNodepoolsBuilderList() {
       return getNodepoolsFieldBuilder().getBuilderList();
     }
@@ -4312,6 +4312,354 @@ private static final long serialVersionUID = 0L;
       gracefulDeploy_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.DeploymentNodepool> deploymentNodepools_ =
+      java.util.Collections.emptyList();
+    private void ensureDeploymentNodepoolsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        deploymentNodepools_ = new java.util.ArrayList<com.clarifai.grpc.api.DeploymentNodepool>(deploymentNodepools_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.DeploymentNodepool, com.clarifai.grpc.api.DeploymentNodepool.Builder, com.clarifai.grpc.api.DeploymentNodepoolOrBuilder> deploymentNodepoolsBuilder_;
+
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.DeploymentNodepool> getDeploymentNodepoolsList() {
+      if (deploymentNodepoolsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(deploymentNodepools_);
+      } else {
+        return deploymentNodepoolsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public int getDeploymentNodepoolsCount() {
+      if (deploymentNodepoolsBuilder_ == null) {
+        return deploymentNodepools_.size();
+      } else {
+        return deploymentNodepoolsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public com.clarifai.grpc.api.DeploymentNodepool getDeploymentNodepools(int index) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        return deploymentNodepools_.get(index);
+      } else {
+        return deploymentNodepoolsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public Builder setDeploymentNodepools(
+        int index, com.clarifai.grpc.api.DeploymentNodepool value) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDeploymentNodepoolsIsMutable();
+        deploymentNodepools_.set(index, value);
+        onChanged();
+      } else {
+        deploymentNodepoolsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public Builder setDeploymentNodepools(
+        int index, com.clarifai.grpc.api.DeploymentNodepool.Builder builderForValue) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        ensureDeploymentNodepoolsIsMutable();
+        deploymentNodepools_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        deploymentNodepoolsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public Builder addDeploymentNodepools(com.clarifai.grpc.api.DeploymentNodepool value) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDeploymentNodepoolsIsMutable();
+        deploymentNodepools_.add(value);
+        onChanged();
+      } else {
+        deploymentNodepoolsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public Builder addDeploymentNodepools(
+        int index, com.clarifai.grpc.api.DeploymentNodepool value) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDeploymentNodepoolsIsMutable();
+        deploymentNodepools_.add(index, value);
+        onChanged();
+      } else {
+        deploymentNodepoolsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public Builder addDeploymentNodepools(
+        com.clarifai.grpc.api.DeploymentNodepool.Builder builderForValue) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        ensureDeploymentNodepoolsIsMutable();
+        deploymentNodepools_.add(builderForValue.build());
+        onChanged();
+      } else {
+        deploymentNodepoolsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public Builder addDeploymentNodepools(
+        int index, com.clarifai.grpc.api.DeploymentNodepool.Builder builderForValue) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        ensureDeploymentNodepoolsIsMutable();
+        deploymentNodepools_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        deploymentNodepoolsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public Builder addAllDeploymentNodepools(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.DeploymentNodepool> values) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        ensureDeploymentNodepoolsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, deploymentNodepools_);
+        onChanged();
+      } else {
+        deploymentNodepoolsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public Builder clearDeploymentNodepools() {
+      if (deploymentNodepoolsBuilder_ == null) {
+        deploymentNodepools_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        deploymentNodepoolsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public Builder removeDeploymentNodepools(int index) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        ensureDeploymentNodepoolsIsMutable();
+        deploymentNodepools_.remove(index);
+        onChanged();
+      } else {
+        deploymentNodepoolsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public com.clarifai.grpc.api.DeploymentNodepool.Builder getDeploymentNodepoolsBuilder(
+        int index) {
+      return getDeploymentNodepoolsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public com.clarifai.grpc.api.DeploymentNodepoolOrBuilder getDeploymentNodepoolsOrBuilder(
+        int index) {
+      if (deploymentNodepoolsBuilder_ == null) {
+        return deploymentNodepools_.get(index);  } else {
+        return deploymentNodepoolsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.DeploymentNodepoolOrBuilder> 
+         getDeploymentNodepoolsOrBuilderList() {
+      if (deploymentNodepoolsBuilder_ != null) {
+        return deploymentNodepoolsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(deploymentNodepools_);
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public com.clarifai.grpc.api.DeploymentNodepool.Builder addDeploymentNodepoolsBuilder() {
+      return getDeploymentNodepoolsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.DeploymentNodepool.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public com.clarifai.grpc.api.DeploymentNodepool.Builder addDeploymentNodepoolsBuilder(
+        int index) {
+      return getDeploymentNodepoolsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.DeploymentNodepool.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Per-nodepool settings including priority. If set, 'nodepools' must not also be set.
+     * When any priority value is non-zero, the response will populate this field instead
+     * of 'nodepools'.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DeploymentNodepool deployment_nodepools = 19;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.DeploymentNodepool.Builder> 
+         getDeploymentNodepoolsBuilderList() {
+      return getDeploymentNodepoolsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.DeploymentNodepool, com.clarifai.grpc.api.DeploymentNodepool.Builder, com.clarifai.grpc.api.DeploymentNodepoolOrBuilder> 
+        getDeploymentNodepoolsFieldBuilder() {
+      if (deploymentNodepoolsBuilder_ == null) {
+        deploymentNodepoolsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.DeploymentNodepool, com.clarifai.grpc.api.DeploymentNodepool.Builder, com.clarifai.grpc.api.DeploymentNodepoolOrBuilder>(
+                deploymentNodepools_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        deploymentNodepools_ = null;
+      }
+      return deploymentNodepoolsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
