@@ -41,7 +41,7 @@ nexusPublishing {
 }
 
 group = 'com.clarifai'
-version = '12.2.1'
+version = '12.2.2'
 
 repositories {
     mavenCentral()

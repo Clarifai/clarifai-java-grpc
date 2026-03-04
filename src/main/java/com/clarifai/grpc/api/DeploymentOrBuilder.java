@@ -488,4 +488,27 @@ public interface DeploymentOrBuilder extends
    * <code>.clarifai.api.DeploymentMetrics deployment_metrics = 20;</code>
    */
   com.clarifai.grpc.api.DeploymentMetricsOrBuilder getDeploymentMetricsOrBuilder();
+
+  /**
+   * <pre>
+   * The current status of the deployment.
+   * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+   * The autoscale_config is preserved for when the deployment is enabled.
+   * </pre>
+   *
+   * <code>.clarifai.api.Deployment.Status status = 21;</code>
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+  /**
+   * <pre>
+   * The current status of the deployment.
+   * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+   * The autoscale_config is preserved for when the deployment is enabled.
+   * </pre>
+   *
+   * <code>.clarifai.api.Deployment.Status status = 21;</code>
+   * @return The status.
+   */
+  com.clarifai.grpc.api.Deployment.Status getStatus();
 }

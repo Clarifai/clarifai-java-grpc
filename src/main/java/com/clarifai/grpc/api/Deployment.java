@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     specialHandling_ = java.util.Collections.emptyList();
     deploymentNodepools_ = java.util.Collections.emptyList();
+    status_ = 0;
   }
 
   @java.lang.Override
@@ -240,6 +241,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 168: {
+            int rawValue = input.readEnum();
+
+            status_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -281,6 +288,134 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Deployment_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.Deployment.class, com.clarifai.grpc.api.Deployment.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Status of the deployment.
+   * </pre>
+   *
+   * Protobuf enum {@code clarifai.api.Deployment.Status}
+   */
+  public enum Status
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Default: deployment is enabled and can serve traffic.
+     * </pre>
+     *
+     * <code>ENABLED = 0;</code>
+     */
+    ENABLED(0),
+    /**
+     * <pre>
+     * Deployment is disabled: scaled to zero, traffic rejected.
+     * </pre>
+     *
+     * <code>DISABLED = 1;</code>
+     */
+    DISABLED(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Default: deployment is enabled and can serve traffic.
+     * </pre>
+     *
+     * <code>ENABLED = 0;</code>
+     */
+    public static final int ENABLED_VALUE = 0;
+    /**
+     * <pre>
+     * Deployment is disabled: scaled to zero, traffic rejected.
+     * </pre>
+     *
+     * <code>DISABLED = 1;</code>
+     */
+    public static final int DISABLED_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Status valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Status forNumber(int value) {
+      switch (value) {
+        case 0: return ENABLED;
+        case 1: return DISABLED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Status>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Status> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+            public Status findValueByNumber(int number) {
+              return Status.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.Deployment.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Status[] VALUES = values();
+
+    public static Status valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Status(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.Deployment.Status)
   }
 
   /**
@@ -503,7 +638,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Deployment.getDescriptor().getEnumTypes().get(0);
+      return com.clarifai.grpc.api.Deployment.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final SchedulingChoice[] VALUES = values();
@@ -1254,6 +1389,37 @@ private static final long serialVersionUID = 0L;
     return getDeploymentMetrics();
   }
 
+  public static final int STATUS_FIELD_NUMBER = 21;
+  private int status_;
+  /**
+   * <pre>
+   * The current status of the deployment.
+   * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+   * The autoscale_config is preserved for when the deployment is enabled.
+   * </pre>
+   *
+   * <code>.clarifai.api.Deployment.Status status = 21;</code>
+   * @return The enum numeric value on the wire for status.
+   */
+  @java.lang.Override public int getStatusValue() {
+    return status_;
+  }
+  /**
+   * <pre>
+   * The current status of the deployment.
+   * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+   * The autoscale_config is preserved for when the deployment is enabled.
+   * </pre>
+   *
+   * <code>.clarifai.api.Deployment.Status status = 21;</code>
+   * @return The status.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.Deployment.Status getStatus() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.Deployment.Status result = com.clarifai.grpc.api.Deployment.Status.valueOf(status_);
+    return result == null ? com.clarifai.grpc.api.Deployment.Status.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1321,6 +1487,9 @@ private static final long serialVersionUID = 0L;
     }
     if (deploymentMetrics_ != null) {
       output.writeMessage(20, getDeploymentMetrics());
+    }
+    if (status_ != com.clarifai.grpc.api.Deployment.Status.ENABLED.getNumber()) {
+      output.writeEnum(21, status_);
     }
     unknownFields.writeTo(output);
   }
@@ -1400,6 +1569,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, getDeploymentMetrics());
     }
+    if (status_ != com.clarifai.grpc.api.Deployment.Status.ENABLED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(21, status_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1477,6 +1650,7 @@ private static final long serialVersionUID = 0L;
       if (!getDeploymentMetrics()
           .equals(other.getDeploymentMetrics())) return false;
     }
+    if (status_ != other.status_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1550,6 +1724,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DEPLOYMENT_METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getDeploymentMetrics().hashCode();
     }
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + status_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1776,6 +1952,8 @@ private static final long serialVersionUID = 0L;
         deploymentMetrics_ = null;
         deploymentMetricsBuilder_ = null;
       }
+      status_ = 0;
+
       return this;
     }
 
@@ -1881,6 +2059,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.deploymentMetrics_ = deploymentMetricsBuilder_.build();
       }
+      result.status_ = status_;
       onBuilt();
       return result;
     }
@@ -2054,6 +2233,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDeploymentMetrics()) {
         mergeDeploymentMetrics(other.getDeploymentMetrics());
+      }
+      if (other.status_ != 0) {
+        setStatusValue(other.getStatusValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4896,6 +5078,90 @@ private static final long serialVersionUID = 0L;
         deploymentMetrics_ = null;
       }
       return deploymentMetricsBuilder_;
+    }
+
+    private int status_ = 0;
+    /**
+     * <pre>
+     * The current status of the deployment.
+     * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+     * The autoscale_config is preserved for when the deployment is enabled.
+     * </pre>
+     *
+     * <code>.clarifai.api.Deployment.Status status = 21;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <pre>
+     * The current status of the deployment.
+     * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+     * The autoscale_config is preserved for when the deployment is enabled.
+     * </pre>
+     *
+     * <code>.clarifai.api.Deployment.Status status = 21;</code>
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusValue(int value) {
+      
+      status_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The current status of the deployment.
+     * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+     * The autoscale_config is preserved for when the deployment is enabled.
+     * </pre>
+     *
+     * <code>.clarifai.api.Deployment.Status status = 21;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Deployment.Status getStatus() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.Deployment.Status result = com.clarifai.grpc.api.Deployment.Status.valueOf(status_);
+      return result == null ? com.clarifai.grpc.api.Deployment.Status.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The current status of the deployment.
+     * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+     * The autoscale_config is preserved for when the deployment is enabled.
+     * </pre>
+     *
+     * <code>.clarifai.api.Deployment.Status status = 21;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(com.clarifai.grpc.api.Deployment.Status value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      status_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The current status of the deployment.
+     * When disabled, all infrastructure is scaled to zero and prediction requests are rejected.
+     * The autoscale_config is preserved for when the deployment is enabled.
+     * </pre>
+     *
+     * <code>.clarifai.api.Deployment.Status status = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
