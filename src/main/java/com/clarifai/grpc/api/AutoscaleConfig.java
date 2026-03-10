@@ -90,6 +90,11 @@ private static final long serialVersionUID = 0L;
             scaleToZeroDelaySeconds_ = input.readUInt32();
             break;
           }
+          case 72: {
+
+            softMinReplicas_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -232,6 +237,25 @@ private static final long serialVersionUID = 0L;
     return scaleToZeroDelaySeconds_;
   }
 
+  public static final int SOFT_MIN_REPLICAS_FIELD_NUMBER = 9;
+  private int softMinReplicas_;
+  /**
+   * <pre>
+   * The soft minimum number of replicas for the runner.
+   * Unlike min_replicas (which is a hard floor the autoscaler never violates),
+   * soft_min_replicas is a target the autoscaler tries to maintain but can violate
+   * (e.g., scaling to zero during idle periods).
+   * A value of 0 means not set / disabled.
+   * </pre>
+   *
+   * <code>uint32 soft_min_replicas = 9;</code>
+   * @return The softMinReplicas.
+   */
+  @java.lang.Override
+  public int getSoftMinReplicas() {
+    return softMinReplicas_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -266,6 +290,9 @@ private static final long serialVersionUID = 0L;
     }
     if (scaleToZeroDelaySeconds_ != 0) {
       output.writeUInt32(8, scaleToZeroDelaySeconds_);
+    }
+    if (softMinReplicas_ != 0) {
+      output.writeUInt32(9, softMinReplicas_);
     }
     unknownFields.writeTo(output);
   }
@@ -304,6 +331,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(8, scaleToZeroDelaySeconds_);
     }
+    if (softMinReplicas_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(9, softMinReplicas_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -333,6 +364,8 @@ private static final long serialVersionUID = 0L;
         != other.getDisablePacking()) return false;
     if (getScaleToZeroDelaySeconds()
         != other.getScaleToZeroDelaySeconds()) return false;
+    if (getSoftMinReplicas()
+        != other.getSoftMinReplicas()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -359,6 +392,8 @@ private static final long serialVersionUID = 0L;
         getDisablePacking());
     hash = (37 * hash) + SCALE_TO_ZERO_DELAY_SECONDS_FIELD_NUMBER;
     hash = (53 * hash) + getScaleToZeroDelaySeconds();
+    hash = (37 * hash) + SOFT_MIN_REPLICAS_FIELD_NUMBER;
+    hash = (53 * hash) + getSoftMinReplicas();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -513,6 +548,8 @@ private static final long serialVersionUID = 0L;
 
       scaleToZeroDelaySeconds_ = 0;
 
+      softMinReplicas_ = 0;
+
       return this;
     }
 
@@ -546,6 +583,7 @@ private static final long serialVersionUID = 0L;
       result.scaleUpDelaySeconds_ = scaleUpDelaySeconds_;
       result.disablePacking_ = disablePacking_;
       result.scaleToZeroDelaySeconds_ = scaleToZeroDelaySeconds_;
+      result.softMinReplicas_ = softMinReplicas_;
       onBuilt();
       return result;
     }
@@ -614,6 +652,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getScaleToZeroDelaySeconds() != 0) {
         setScaleToZeroDelaySeconds(other.getScaleToZeroDelaySeconds());
+      }
+      if (other.getSoftMinReplicas() != 0) {
+        setSoftMinReplicas(other.getSoftMinReplicas());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -950,6 +991,61 @@ private static final long serialVersionUID = 0L;
     public Builder clearScaleToZeroDelaySeconds() {
       
       scaleToZeroDelaySeconds_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int softMinReplicas_ ;
+    /**
+     * <pre>
+     * The soft minimum number of replicas for the runner.
+     * Unlike min_replicas (which is a hard floor the autoscaler never violates),
+     * soft_min_replicas is a target the autoscaler tries to maintain but can violate
+     * (e.g., scaling to zero during idle periods).
+     * A value of 0 means not set / disabled.
+     * </pre>
+     *
+     * <code>uint32 soft_min_replicas = 9;</code>
+     * @return The softMinReplicas.
+     */
+    @java.lang.Override
+    public int getSoftMinReplicas() {
+      return softMinReplicas_;
+    }
+    /**
+     * <pre>
+     * The soft minimum number of replicas for the runner.
+     * Unlike min_replicas (which is a hard floor the autoscaler never violates),
+     * soft_min_replicas is a target the autoscaler tries to maintain but can violate
+     * (e.g., scaling to zero during idle periods).
+     * A value of 0 means not set / disabled.
+     * </pre>
+     *
+     * <code>uint32 soft_min_replicas = 9;</code>
+     * @param value The softMinReplicas to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSoftMinReplicas(int value) {
+      
+      softMinReplicas_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The soft minimum number of replicas for the runner.
+     * Unlike min_replicas (which is a hard floor the autoscaler never violates),
+     * soft_min_replicas is a target the autoscaler tries to maintain but can violate
+     * (e.g., scaling to zero during idle periods).
+     * A value of 0 means not set / disabled.
+     * </pre>
+     *
+     * <code>uint32 soft_min_replicas = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSoftMinReplicas() {
+      
+      softMinReplicas_ = 0;
       onChanged();
       return this;
     }

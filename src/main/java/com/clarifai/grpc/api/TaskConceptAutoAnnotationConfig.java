@@ -73,6 +73,32 @@ private static final long serialVersionUID = 0L;
             statusCode_ = rawValue;
             break;
           }
+          case 34: {
+            com.clarifai.grpc.api.utils.Time.TimeOfDayRange.Builder subBuilder = null;
+            if (timeOfDayRange_ != null) {
+              subBuilder = timeOfDayRange_.toBuilder();
+            }
+            timeOfDayRange_ = input.readMessage(com.clarifai.grpc.api.utils.Time.TimeOfDayRange.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(timeOfDayRange_);
+              timeOfDayRange_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 42: {
+            com.clarifai.grpc.api.Polygon.Builder subBuilder = null;
+            if (polygon_ != null) {
+              subBuilder = polygon_.toBuilder();
+            }
+            polygon_ = input.readMessage(com.clarifai.grpc.api.Polygon.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(polygon_);
+              polygon_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -193,6 +219,88 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
   }
 
+  public static final int TIME_OF_DAY_RANGE_FIELD_NUMBER = 4;
+  private com.clarifai.grpc.api.utils.Time.TimeOfDayRange timeOfDayRange_;
+  /**
+   * <pre>
+   * Task auto annotation for this concept only applies to this time of day range.
+   * When out of range, the task will not generate annotations for the concept.
+   * </pre>
+   *
+   * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+   * @return Whether the timeOfDayRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimeOfDayRange() {
+    return timeOfDayRange_ != null;
+  }
+  /**
+   * <pre>
+   * Task auto annotation for this concept only applies to this time of day range.
+   * When out of range, the task will not generate annotations for the concept.
+   * </pre>
+   *
+   * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+   * @return The timeOfDayRange.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.utils.Time.TimeOfDayRange getTimeOfDayRange() {
+    return timeOfDayRange_ == null ? com.clarifai.grpc.api.utils.Time.TimeOfDayRange.getDefaultInstance() : timeOfDayRange_;
+  }
+  /**
+   * <pre>
+   * Task auto annotation for this concept only applies to this time of day range.
+   * When out of range, the task will not generate annotations for the concept.
+   * </pre>
+   *
+   * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.utils.Time.TimeOfDayRangeOrBuilder getTimeOfDayRangeOrBuilder() {
+    return getTimeOfDayRange();
+  }
+
+  public static final int POLYGON_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.Polygon polygon_;
+  /**
+   * <pre>
+   * Filter out annotations that are out of this polygon.
+   * When it's set, only detection annotations that intersect the polygon will pass the filter.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   * @return Whether the polygon field is set.
+   */
+  @java.lang.Override
+  public boolean hasPolygon() {
+    return polygon_ != null;
+  }
+  /**
+   * <pre>
+   * Filter out annotations that are out of this polygon.
+   * When it's set, only detection annotations that intersect the polygon will pass the filter.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   * @return The polygon.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Polygon getPolygon() {
+    return polygon_ == null ? com.clarifai.grpc.api.Polygon.getDefaultInstance() : polygon_;
+  }
+  /**
+   * <pre>
+   * Filter out annotations that are out of this polygon.
+   * When it's set, only detection annotations that intersect the polygon will pass the filter.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.PolygonOrBuilder getPolygonOrBuilder() {
+    return getPolygon();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -216,6 +324,12 @@ private static final long serialVersionUID = 0L;
     if (statusCode_ != com.clarifai.grpc.api.status.StatusCode.ZERO.getNumber()) {
       output.writeEnum(3, statusCode_);
     }
+    if (timeOfDayRange_ != null) {
+      output.writeMessage(4, getTimeOfDayRange());
+    }
+    if (polygon_ != null) {
+      output.writeMessage(5, getPolygon());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -236,6 +350,14 @@ private static final long serialVersionUID = 0L;
     if (statusCode_ != com.clarifai.grpc.api.status.StatusCode.ZERO.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, statusCode_);
+    }
+    if (timeOfDayRange_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getTimeOfDayRange());
+    }
+    if (polygon_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getPolygon());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -260,6 +382,16 @@ private static final long serialVersionUID = 0L;
           .equals(other.getThresholdRange())) return false;
     }
     if (statusCode_ != other.statusCode_) return false;
+    if (hasTimeOfDayRange() != other.hasTimeOfDayRange()) return false;
+    if (hasTimeOfDayRange()) {
+      if (!getTimeOfDayRange()
+          .equals(other.getTimeOfDayRange())) return false;
+    }
+    if (hasPolygon() != other.hasPolygon()) return false;
+    if (hasPolygon()) {
+      if (!getPolygon()
+          .equals(other.getPolygon())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -279,6 +411,14 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + STATUS_CODE_FIELD_NUMBER;
     hash = (53 * hash) + statusCode_;
+    if (hasTimeOfDayRange()) {
+      hash = (37 * hash) + TIME_OF_DAY_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeOfDayRange().hashCode();
+    }
+    if (hasPolygon()) {
+      hash = (37 * hash) + POLYGON_FIELD_NUMBER;
+      hash = (53 * hash) + getPolygon().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -422,6 +562,18 @@ private static final long serialVersionUID = 0L;
       }
       statusCode_ = 0;
 
+      if (timeOfDayRangeBuilder_ == null) {
+        timeOfDayRange_ = null;
+      } else {
+        timeOfDayRange_ = null;
+        timeOfDayRangeBuilder_ = null;
+      }
+      if (polygonBuilder_ == null) {
+        polygon_ = null;
+      } else {
+        polygon_ = null;
+        polygonBuilder_ = null;
+      }
       return this;
     }
 
@@ -455,6 +607,16 @@ private static final long serialVersionUID = 0L;
         result.thresholdRange_ = thresholdRangeBuilder_.build();
       }
       result.statusCode_ = statusCode_;
+      if (timeOfDayRangeBuilder_ == null) {
+        result.timeOfDayRange_ = timeOfDayRange_;
+      } else {
+        result.timeOfDayRange_ = timeOfDayRangeBuilder_.build();
+      }
+      if (polygonBuilder_ == null) {
+        result.polygon_ = polygon_;
+      } else {
+        result.polygon_ = polygonBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -511,6 +673,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.statusCode_ != 0) {
         setStatusCodeValue(other.getStatusCodeValue());
+      }
+      if (other.hasTimeOfDayRange()) {
+        mergeTimeOfDayRange(other.getTimeOfDayRange());
+      }
+      if (other.hasPolygon()) {
+        mergePolygon(other.getPolygon());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -829,6 +997,334 @@ private static final long serialVersionUID = 0L;
       statusCode_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.utils.Time.TimeOfDayRange timeOfDayRange_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.utils.Time.TimeOfDayRange, com.clarifai.grpc.api.utils.Time.TimeOfDayRange.Builder, com.clarifai.grpc.api.utils.Time.TimeOfDayRangeOrBuilder> timeOfDayRangeBuilder_;
+    /**
+     * <pre>
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     * </pre>
+     *
+     * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     * @return Whether the timeOfDayRange field is set.
+     */
+    public boolean hasTimeOfDayRange() {
+      return timeOfDayRangeBuilder_ != null || timeOfDayRange_ != null;
+    }
+    /**
+     * <pre>
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     * </pre>
+     *
+     * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     * @return The timeOfDayRange.
+     */
+    public com.clarifai.grpc.api.utils.Time.TimeOfDayRange getTimeOfDayRange() {
+      if (timeOfDayRangeBuilder_ == null) {
+        return timeOfDayRange_ == null ? com.clarifai.grpc.api.utils.Time.TimeOfDayRange.getDefaultInstance() : timeOfDayRange_;
+      } else {
+        return timeOfDayRangeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     * </pre>
+     *
+     * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     */
+    public Builder setTimeOfDayRange(com.clarifai.grpc.api.utils.Time.TimeOfDayRange value) {
+      if (timeOfDayRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        timeOfDayRange_ = value;
+        onChanged();
+      } else {
+        timeOfDayRangeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     * </pre>
+     *
+     * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     */
+    public Builder setTimeOfDayRange(
+        com.clarifai.grpc.api.utils.Time.TimeOfDayRange.Builder builderForValue) {
+      if (timeOfDayRangeBuilder_ == null) {
+        timeOfDayRange_ = builderForValue.build();
+        onChanged();
+      } else {
+        timeOfDayRangeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     * </pre>
+     *
+     * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     */
+    public Builder mergeTimeOfDayRange(com.clarifai.grpc.api.utils.Time.TimeOfDayRange value) {
+      if (timeOfDayRangeBuilder_ == null) {
+        if (timeOfDayRange_ != null) {
+          timeOfDayRange_ =
+            com.clarifai.grpc.api.utils.Time.TimeOfDayRange.newBuilder(timeOfDayRange_).mergeFrom(value).buildPartial();
+        } else {
+          timeOfDayRange_ = value;
+        }
+        onChanged();
+      } else {
+        timeOfDayRangeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     * </pre>
+     *
+     * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     */
+    public Builder clearTimeOfDayRange() {
+      if (timeOfDayRangeBuilder_ == null) {
+        timeOfDayRange_ = null;
+        onChanged();
+      } else {
+        timeOfDayRange_ = null;
+        timeOfDayRangeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     * </pre>
+     *
+     * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     */
+    public com.clarifai.grpc.api.utils.Time.TimeOfDayRange.Builder getTimeOfDayRangeBuilder() {
+      
+      onChanged();
+      return getTimeOfDayRangeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     * </pre>
+     *
+     * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     */
+    public com.clarifai.grpc.api.utils.Time.TimeOfDayRangeOrBuilder getTimeOfDayRangeOrBuilder() {
+      if (timeOfDayRangeBuilder_ != null) {
+        return timeOfDayRangeBuilder_.getMessageOrBuilder();
+      } else {
+        return timeOfDayRange_ == null ?
+            com.clarifai.grpc.api.utils.Time.TimeOfDayRange.getDefaultInstance() : timeOfDayRange_;
+      }
+    }
+    /**
+     * <pre>
+     * Task auto annotation for this concept only applies to this time of day range.
+     * When out of range, the task will not generate annotations for the concept.
+     * </pre>
+     *
+     * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.utils.Time.TimeOfDayRange, com.clarifai.grpc.api.utils.Time.TimeOfDayRange.Builder, com.clarifai.grpc.api.utils.Time.TimeOfDayRangeOrBuilder> 
+        getTimeOfDayRangeFieldBuilder() {
+      if (timeOfDayRangeBuilder_ == null) {
+        timeOfDayRangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.utils.Time.TimeOfDayRange, com.clarifai.grpc.api.utils.Time.TimeOfDayRange.Builder, com.clarifai.grpc.api.utils.Time.TimeOfDayRangeOrBuilder>(
+                getTimeOfDayRange(),
+                getParentForChildren(),
+                isClean());
+        timeOfDayRange_ = null;
+      }
+      return timeOfDayRangeBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Polygon polygon_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Polygon, com.clarifai.grpc.api.Polygon.Builder, com.clarifai.grpc.api.PolygonOrBuilder> polygonBuilder_;
+    /**
+     * <pre>
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     * @return Whether the polygon field is set.
+     */
+    public boolean hasPolygon() {
+      return polygonBuilder_ != null || polygon_ != null;
+    }
+    /**
+     * <pre>
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     * @return The polygon.
+     */
+    public com.clarifai.grpc.api.Polygon getPolygon() {
+      if (polygonBuilder_ == null) {
+        return polygon_ == null ? com.clarifai.grpc.api.Polygon.getDefaultInstance() : polygon_;
+      } else {
+        return polygonBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public Builder setPolygon(com.clarifai.grpc.api.Polygon value) {
+      if (polygonBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        polygon_ = value;
+        onChanged();
+      } else {
+        polygonBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public Builder setPolygon(
+        com.clarifai.grpc.api.Polygon.Builder builderForValue) {
+      if (polygonBuilder_ == null) {
+        polygon_ = builderForValue.build();
+        onChanged();
+      } else {
+        polygonBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public Builder mergePolygon(com.clarifai.grpc.api.Polygon value) {
+      if (polygonBuilder_ == null) {
+        if (polygon_ != null) {
+          polygon_ =
+            com.clarifai.grpc.api.Polygon.newBuilder(polygon_).mergeFrom(value).buildPartial();
+        } else {
+          polygon_ = value;
+        }
+        onChanged();
+      } else {
+        polygonBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public Builder clearPolygon() {
+      if (polygonBuilder_ == null) {
+        polygon_ = null;
+        onChanged();
+      } else {
+        polygon_ = null;
+        polygonBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public com.clarifai.grpc.api.Polygon.Builder getPolygonBuilder() {
+      
+      onChanged();
+      return getPolygonFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public com.clarifai.grpc.api.PolygonOrBuilder getPolygonOrBuilder() {
+      if (polygonBuilder_ != null) {
+        return polygonBuilder_.getMessageOrBuilder();
+      } else {
+        return polygon_ == null ?
+            com.clarifai.grpc.api.Polygon.getDefaultInstance() : polygon_;
+      }
+    }
+    /**
+     * <pre>
+     * Filter out annotations that are out of this polygon.
+     * When it's set, only detection annotations that intersect the polygon will pass the filter.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Polygon, com.clarifai.grpc.api.Polygon.Builder, com.clarifai.grpc.api.PolygonOrBuilder> 
+        getPolygonFieldBuilder() {
+      if (polygonBuilder_ == null) {
+        polygonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Polygon, com.clarifai.grpc.api.Polygon.Builder, com.clarifai.grpc.api.PolygonOrBuilder>(
+                getPolygon(),
+                getParentForChildren(),
+                isClean());
+        polygon_ = null;
+      }
+      return polygonBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

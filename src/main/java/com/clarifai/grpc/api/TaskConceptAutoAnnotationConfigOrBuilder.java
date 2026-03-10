@@ -68,4 +68,64 @@ public interface TaskConceptAutoAnnotationConfigOrBuilder extends
    * @return The statusCode.
    */
   com.clarifai.grpc.api.status.StatusCode getStatusCode();
+
+  /**
+   * <pre>
+   * Task auto annotation for this concept only applies to this time of day range.
+   * When out of range, the task will not generate annotations for the concept.
+   * </pre>
+   *
+   * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+   * @return Whether the timeOfDayRange field is set.
+   */
+  boolean hasTimeOfDayRange();
+  /**
+   * <pre>
+   * Task auto annotation for this concept only applies to this time of day range.
+   * When out of range, the task will not generate annotations for the concept.
+   * </pre>
+   *
+   * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+   * @return The timeOfDayRange.
+   */
+  com.clarifai.grpc.api.utils.Time.TimeOfDayRange getTimeOfDayRange();
+  /**
+   * <pre>
+   * Task auto annotation for this concept only applies to this time of day range.
+   * When out of range, the task will not generate annotations for the concept.
+   * </pre>
+   *
+   * <code>.clarifai.api.utils.TimeOfDayRange time_of_day_range = 4;</code>
+   */
+  com.clarifai.grpc.api.utils.Time.TimeOfDayRangeOrBuilder getTimeOfDayRangeOrBuilder();
+
+  /**
+   * <pre>
+   * Filter out annotations that are out of this polygon.
+   * When it's set, only detection annotations that intersect the polygon will pass the filter.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   * @return Whether the polygon field is set.
+   */
+  boolean hasPolygon();
+  /**
+   * <pre>
+   * Filter out annotations that are out of this polygon.
+   * When it's set, only detection annotations that intersect the polygon will pass the filter.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   * @return The polygon.
+   */
+  com.clarifai.grpc.api.Polygon getPolygon();
+  /**
+   * <pre>
+   * Filter out annotations that are out of this polygon.
+   * When it's set, only detection annotations that intersect the polygon will pass the filter.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   */
+  com.clarifai.grpc.api.PolygonOrBuilder getPolygonOrBuilder();
 }

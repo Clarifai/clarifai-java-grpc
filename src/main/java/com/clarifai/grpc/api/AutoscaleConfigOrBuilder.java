@@ -79,4 +79,18 @@ public interface AutoscaleConfigOrBuilder extends
    * @return The scaleToZeroDelaySeconds.
    */
   int getScaleToZeroDelaySeconds();
+
+  /**
+   * <pre>
+   * The soft minimum number of replicas for the runner.
+   * Unlike min_replicas (which is a hard floor the autoscaler never violates),
+   * soft_min_replicas is a target the autoscaler tries to maintain but can violate
+   * (e.g., scaling to zero during idle periods).
+   * A value of 0 means not set / disabled.
+   * </pre>
+   *
+   * <code>uint32 soft_min_replicas = 9;</code>
+   * @return The softMinReplicas.
+   */
+  int getSoftMinReplicas();
 }
