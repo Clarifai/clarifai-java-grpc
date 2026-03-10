@@ -124,6 +124,11 @@ private static final long serialVersionUID = 0L;
             developerNotes_ = s;
             break;
           }
+          case 88: {
+
+            httpStatusCode_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -549,6 +554,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int HTTP_STATUS_CODE_FIELD_NUMBER = 11;
+  private int httpStatusCode_;
+  /**
+   * <pre>
+   * The HTTP status code of the response.
+   * </pre>
+   *
+   * <code>uint32 http_status_code = 11;</code>
+   * @return The httpStatusCode.
+   */
+  @java.lang.Override
+  public int getHttpStatusCode() {
+    return httpStatusCode_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -592,6 +612,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(developerNotes_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, developerNotes_);
+    }
+    if (httpStatusCode_ != 0) {
+      output.writeUInt32(11, httpStatusCode_);
     }
     unknownFields.writeTo(output);
   }
@@ -641,6 +664,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(developerNotes_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, developerNotes_);
     }
+    if (httpStatusCode_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(11, httpStatusCode_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -678,6 +705,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDeveloperNotes()
         .equals(other.getDeveloperNotes())) return false;
+    if (getHttpStatusCode()
+        != other.getHttpStatusCode()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -713,6 +742,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DEVELOPER_NOTES_FIELD_NUMBER;
     hash = (53 * hash) + getDeveloperNotes().hashCode();
+    hash = (37 * hash) + HTTP_STATUS_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getHttpStatusCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -870,6 +901,8 @@ private static final long serialVersionUID = 0L;
       }
       developerNotes_ = "";
 
+      httpStatusCode_ = 0;
+
       return this;
     }
 
@@ -915,6 +948,7 @@ private static final long serialVersionUID = 0L;
         result.redirectInfo_ = redirectInfoBuilder_.build();
       }
       result.developerNotes_ = developerNotes_;
+      result.httpStatusCode_ = httpStatusCode_;
       onBuilt();
       return result;
     }
@@ -1004,6 +1038,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getDeveloperNotes().isEmpty()) {
         developerNotes_ = other.developerNotes_;
         onChanged();
+      }
+      if (other.getHttpStatusCode() != 0) {
+        setHttpStatusCode(other.getHttpStatusCode());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2001,6 +2038,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       developerNotes_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int httpStatusCode_ ;
+    /**
+     * <pre>
+     * The HTTP status code of the response.
+     * </pre>
+     *
+     * <code>uint32 http_status_code = 11;</code>
+     * @return The httpStatusCode.
+     */
+    @java.lang.Override
+    public int getHttpStatusCode() {
+      return httpStatusCode_;
+    }
+    /**
+     * <pre>
+     * The HTTP status code of the response.
+     * </pre>
+     *
+     * <code>uint32 http_status_code = 11;</code>
+     * @param value The httpStatusCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHttpStatusCode(int value) {
+      
+      httpStatusCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The HTTP status code of the response.
+     * </pre>
+     *
+     * <code>uint32 http_status_code = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHttpStatusCode() {
+      
+      httpStatusCode_ = 0;
       onChanged();
       return this;
     }

@@ -225,4 +225,14 @@ public interface StatusOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDeveloperNotesBytes();
+
+  /**
+   * <pre>
+   * The HTTP status code of the response.
+   * </pre>
+   *
+   * <code>uint32 http_status_code = 11;</code>
+   * @return The httpStatusCode.
+   */
+  int getHttpStatusCode();
 }
