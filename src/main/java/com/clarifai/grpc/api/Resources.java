@@ -2954,7 +2954,7 @@ public final class Resources {
       "SUFFIX\020\002*s\n\020RunnerMethodType\022\013\n\007UNKNOWN\020" +
       "\000\022\017\n\013UNARY_UNARY\020\001\022\023\n\017UNARY_STREAMING\020\002\022" +
       "\023\n\017STREAMING_UNARY\020\003\022\027\n\023STREAMING_STREAM" +
-      "ING\020\004*\372\022\n\tEventType\022\026\n\022EVENT_TYPE_NOT_SE" +
+      "ING\020\004*\264\023\n\tEventType\022\026\n\022EVENT_TYPE_NOT_SE" +
       "T\020\000\022:\n\027ORGANIZATION_MEMBER_ADD\020d\032\035\302>\032Org" +
       "anization members added\022F\n\032ORGANIZATION_" +
       "MEMBER_CHANGE\020e\032&\302>#Organization members" +
@@ -3005,24 +3005,25 @@ public final class Resources {
       "OR_REMOVE\020\276\005\032\030\302>\025Collaborators removed\022\"" +
       "\n\013USER_UPDATE\020\240\006\032\020\302>\rUsers updated\0228\n\026CO" +
       "MPUTE_CLUSTER_CREATE\020\204\007\032\033\302>\030Compute clus" +
-      "ters created\0228\n\026COMPUTE_CLUSTER_DELETE\020\205" +
-      "\007\032\033\302>\030Compute clusters deleted\022*\n\017NODEPO" +
-      "OL_CREATE\020\350\007\032\024\302>\021Nodepools created\022*\n\017NO" +
-      "DEPOOL_UPDATE\020\351\007\032\024\302>\021Nodepools updated\022*" +
-      "\n\017NODEPOOL_DELETE\020\352\007\032\024\302>\021Nodepools delet" +
-      "ed\022.\n\021DEPLOYMENT_CREATE\020\314\010\032\026\302>\023Deploymen" +
-      "ts created\022.\n\021DEPLOYMENT_UPDATE\020\315\010\032\026\302>\023D" +
-      "eployments updated\022.\n\021DEPLOYMENT_DELETE\020" +
-      "\316\010\032\026\302>\023Deployments deleted\"\006\010\310\001\020\310\001\"\006\010\311\001\020" +
-      "\311\001\"\006\010\312\001\020\312\001\"\006\010\313\001\020\313\001\"\006\010\314\001\020\314\001\"\006\010\315\001\020\315\001*Q\n\nMe" +
-      "tricType\022\027\n\023METRIC_TYPE_NOT_SET\020\000\022\027\n\023MOD" +
-      "EL_REQUEST_COUNT\020\001\022\021\n\rMODEL_LATENCY\020\002*|\n" +
-      "\013MetricLabel\022\030\n\024METRIC_LABEL_NOT_SET\020\000\022\n",
-      "\n\006APP_ID\020\001\022\014\n\010MODEL_ID\020\002\022\024\n\020MODEL_VERSIO" +
-      "N_ID\020\003\022\022\n\016CALLER_USER_ID\020\004\022\017\n\013WORKFLOW_I" +
-      "D\020\005BY\n\025com.clarifai.grpc.apiP\001Z7github.c" +
-      "om/Clarifai/clarifai-go-grpc/proto/clari" +
-      "fai/api\242\002\004CAIPb\006proto3"
+      "ters created\0228\n\026COMPUTE_CLUSTER_UPDATE\020\206" +
+      "\007\032\033\302>\030Compute clusters updated\0228\n\026COMPUT" +
+      "E_CLUSTER_DELETE\020\205\007\032\033\302>\030Compute clusters" +
+      " deleted\022*\n\017NODEPOOL_CREATE\020\350\007\032\024\302>\021Nodep" +
+      "ools created\022*\n\017NODEPOOL_UPDATE\020\351\007\032\024\302>\021N" +
+      "odepools updated\022*\n\017NODEPOOL_DELETE\020\352\007\032\024" +
+      "\302>\021Nodepools deleted\022.\n\021DEPLOYMENT_CREAT" +
+      "E\020\314\010\032\026\302>\023Deployments created\022.\n\021DEPLOYME" +
+      "NT_UPDATE\020\315\010\032\026\302>\023Deployments updated\022.\n\021" +
+      "DEPLOYMENT_DELETE\020\316\010\032\026\302>\023Deployments del" +
+      "eted\"\006\010\310\001\020\310\001\"\006\010\311\001\020\311\001\"\006\010\312\001\020\312\001\"\006\010\313\001\020\313\001\"\006\010\314" +
+      "\001\020\314\001\"\006\010\315\001\020\315\001*Q\n\nMetricType\022\027\n\023METRIC_TYP" +
+      "E_NOT_SET\020\000\022\027\n\023MODEL_REQUEST_COUNT\020\001\022\021\n\r",
+      "MODEL_LATENCY\020\002*|\n\013MetricLabel\022\030\n\024METRIC" +
+      "_LABEL_NOT_SET\020\000\022\n\n\006APP_ID\020\001\022\014\n\010MODEL_ID" +
+      "\020\002\022\024\n\020MODEL_VERSION_ID\020\003\022\022\n\016CALLER_USER_" +
+      "ID\020\004\022\017\n\013WORKFLOW_ID\020\005BY\n\025com.clarifai.gr" +
+      "pc.apiP\001Z7github.com/Clarifai/clarifai-g" +
+      "o-grpc/proto/clarifai/api\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

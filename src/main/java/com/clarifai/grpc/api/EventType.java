@@ -177,6 +177,10 @@ public enum EventType
    */
   COMPUTE_CLUSTER_CREATE(900),
   /**
+   * <code>COMPUTE_CLUSTER_UPDATE = 902 [(.clarifai.api.utils.description) = "Compute clusters updated"];</code>
+   */
+  COMPUTE_CLUSTER_UPDATE(902),
+  /**
    * <code>COMPUTE_CLUSTER_DELETE = 901 [(.clarifai.api.utils.description) = "Compute clusters deleted"];</code>
    */
   COMPUTE_CLUSTER_DELETE(901),
@@ -384,6 +388,10 @@ public enum EventType
    */
   public static final int COMPUTE_CLUSTER_CREATE_VALUE = 900;
   /**
+   * <code>COMPUTE_CLUSTER_UPDATE = 902 [(.clarifai.api.utils.description) = "Compute clusters updated"];</code>
+   */
+  public static final int COMPUTE_CLUSTER_UPDATE_VALUE = 902;
+  /**
    * <code>COMPUTE_CLUSTER_DELETE = 901 [(.clarifai.api.utils.description) = "Compute clusters deleted"];</code>
    */
   public static final int COMPUTE_CLUSTER_DELETE_VALUE = 901;
@@ -480,6 +488,7 @@ public enum EventType
       case 702: return COLLABORATOR_REMOVE;
       case 800: return USER_UPDATE;
       case 900: return COMPUTE_CLUSTER_CREATE;
+      case 902: return COMPUTE_CLUSTER_UPDATE;
       case 901: return COMPUTE_CLUSTER_DELETE;
       case 1000: return NODEPOOL_CREATE;
       case 1001: return NODEPOOL_UPDATE;
