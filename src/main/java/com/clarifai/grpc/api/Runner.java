@@ -184,6 +184,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 112: {
+
+            minReplicas_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -761,6 +766,22 @@ private static final long serialVersionUID = 0L;
     return getRunnerMetrics();
   }
 
+  public static final int MIN_REPLICAS_FIELD_NUMBER = 14;
+  private int minReplicas_;
+  /**
+   * <pre>
+   * Hard minimum replicas from the deployment's autoscale config.
+   * The agent uses this to determine how many replicas are non-preemptable.
+   * </pre>
+   *
+   * <code>uint32 min_replicas = 14;</code>
+   * @return The minReplicas.
+   */
+  @java.lang.Override
+  public int getMinReplicas() {
+    return minReplicas_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -810,6 +831,9 @@ private static final long serialVersionUID = 0L;
     }
     if (runnerMetrics_ != null) {
       output.writeMessage(13, getRunnerMetrics());
+    }
+    if (minReplicas_ != 0) {
+      output.writeUInt32(14, minReplicas_);
     }
     unknownFields.writeTo(output);
   }
@@ -869,6 +893,10 @@ private static final long serialVersionUID = 0L;
     if (runnerMetrics_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getRunnerMetrics());
+    }
+    if (minReplicas_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(14, minReplicas_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -930,6 +958,8 @@ private static final long serialVersionUID = 0L;
       if (!getRunnerMetrics()
           .equals(other.getRunnerMetrics())) return false;
     }
+    if (getMinReplicas()
+        != other.getMinReplicas()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -983,6 +1013,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RUNNER_METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getRunnerMetrics().hashCode();
     }
+    hash = (37 * hash) + MIN_REPLICAS_FIELD_NUMBER;
+    hash = (53 * hash) + getMinReplicas();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1178,6 +1210,8 @@ private static final long serialVersionUID = 0L;
         runnerMetrics_ = null;
         runnerMetricsBuilder_ = null;
       }
+      minReplicas_ = 0;
+
       return this;
     }
 
@@ -1257,6 +1291,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.runnerMetrics_ = runnerMetricsBuilder_.build();
       }
+      result.minReplicas_ = minReplicas_;
       onBuilt();
       return result;
     }
@@ -1372,6 +1407,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasRunnerMetrics()) {
         mergeRunnerMetrics(other.getRunnerMetrics());
+      }
+      if (other.getMinReplicas() != 0) {
+        setMinReplicas(other.getMinReplicas());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3331,6 +3369,52 @@ private static final long serialVersionUID = 0L;
         runnerMetrics_ = null;
       }
       return runnerMetricsBuilder_;
+    }
+
+    private int minReplicas_ ;
+    /**
+     * <pre>
+     * Hard minimum replicas from the deployment's autoscale config.
+     * The agent uses this to determine how many replicas are non-preemptable.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 14;</code>
+     * @return The minReplicas.
+     */
+    @java.lang.Override
+    public int getMinReplicas() {
+      return minReplicas_;
+    }
+    /**
+     * <pre>
+     * Hard minimum replicas from the deployment's autoscale config.
+     * The agent uses this to determine how many replicas are non-preemptable.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 14;</code>
+     * @param value The minReplicas to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinReplicas(int value) {
+      
+      minReplicas_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Hard minimum replicas from the deployment's autoscale config.
+     * The agent uses this to determine how many replicas are non-preemptable.
+     * </pre>
+     *
+     * <code>uint32 min_replicas = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMinReplicas() {
+      
+      minReplicas_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

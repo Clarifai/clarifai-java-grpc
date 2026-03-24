@@ -383,4 +383,15 @@ public interface RunnerOrBuilder extends
    * <code>.clarifai.api.RunnerMetrics runner_metrics = 13;</code>
    */
   com.clarifai.grpc.api.RunnerMetricsOrBuilder getRunnerMetricsOrBuilder();
+
+  /**
+   * <pre>
+   * Hard minimum replicas from the deployment's autoscale config.
+   * The agent uses this to determine how many replicas are non-preemptable.
+   * </pre>
+   *
+   * <code>uint32 min_replicas = 14;</code>
+   * @return The minReplicas.
+   */
+  int getMinReplicas();
 }
