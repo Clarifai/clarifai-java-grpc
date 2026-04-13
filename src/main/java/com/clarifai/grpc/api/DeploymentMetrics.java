@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeploymentMetrics() {
+    nodepoolMetrics_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -43,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -68,6 +70,28 @@ private static final long serialVersionUID = 0L;
             rolloutInProgress_ = input.readBool();
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              nodepoolMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.NodepoolDeploymentMetrics>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            nodepoolMetrics_.add(
+                input.readMessage(com.clarifai.grpc.api.NodepoolDeploymentMetrics.parser(), extensionRegistry));
+            break;
+          }
+          case 42: {
+            com.clarifai.grpc.api.DeploymentMetricsSummary.Builder subBuilder = null;
+            if (aggregate_ != null) {
+              subBuilder = aggregate_.toBuilder();
+            }
+            aggregate_ = input.readMessage(com.clarifai.grpc.api.DeploymentMetricsSummary.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(aggregate_);
+              aggregate_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -85,6 +109,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        nodepoolMetrics_ = java.util.Collections.unmodifiableList(nodepoolMetrics_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -106,14 +133,16 @@ private static final long serialVersionUID = 0L;
   private int desiredReplicas_;
   /**
    * <pre>
-   * The number of replicas desired by the orchestrator.
+   * Deprecated: use aggregate instead.
    * </pre>
    *
-   * <code>uint32 desired_replicas = 1;</code>
+   * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4847
    * @return The desiredReplicas.
    */
   @java.lang.Override
-  public int getDesiredReplicas() {
+  @java.lang.Deprecated public int getDesiredReplicas() {
     return desiredReplicas_;
   }
 
@@ -121,14 +150,16 @@ private static final long serialVersionUID = 0L;
   private int liveReplicas_;
   /**
    * <pre>
-   * The actual number of live replicas connected and ready to process requests.
+   * Deprecated: use aggregate instead.
    * </pre>
    *
-   * <code>uint32 live_replicas = 2;</code>
+   * <code>uint32 live_replicas = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4849
    * @return The liveReplicas.
    */
   @java.lang.Override
-  public int getLiveReplicas() {
+  @java.lang.Deprecated public int getLiveReplicas() {
     return liveReplicas_;
   }
 
@@ -136,15 +167,115 @@ private static final long serialVersionUID = 0L;
   private boolean rolloutInProgress_;
   /**
    * <pre>
-   * If true, the deployment is currently rolling out a new version.
+   * Deprecated: use aggregate instead.
    * </pre>
    *
-   * <code>bool rollout_in_progress = 3;</code>
+   * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4851
    * @return The rolloutInProgress.
    */
   @java.lang.Override
-  public boolean getRolloutInProgress() {
+  @java.lang.Deprecated public boolean getRolloutInProgress() {
     return rolloutInProgress_;
+  }
+
+  public static final int NODEPOOL_METRICS_FIELD_NUMBER = 4;
+  private java.util.List<com.clarifai.grpc.api.NodepoolDeploymentMetrics> nodepoolMetrics_;
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.NodepoolDeploymentMetrics> getNodepoolMetricsList() {
+    return nodepoolMetrics_;
+  }
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.NodepoolDeploymentMetricsOrBuilder> 
+      getNodepoolMetricsOrBuilderList() {
+    return nodepoolMetrics_;
+  }
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  @java.lang.Override
+  public int getNodepoolMetricsCount() {
+    return nodepoolMetrics_.size();
+  }
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.NodepoolDeploymentMetrics getNodepoolMetrics(int index) {
+    return nodepoolMetrics_.get(index);
+  }
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.NodepoolDeploymentMetricsOrBuilder getNodepoolMetricsOrBuilder(
+      int index) {
+    return nodepoolMetrics_.get(index);
+  }
+
+  public static final int AGGREGATE_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.DeploymentMetricsSummary aggregate_;
+  /**
+   * <pre>
+   * Aggregate metrics across all nodepools.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+   * @return Whether the aggregate field is set.
+   */
+  @java.lang.Override
+  public boolean hasAggregate() {
+    return aggregate_ != null;
+  }
+  /**
+   * <pre>
+   * Aggregate metrics across all nodepools.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+   * @return The aggregate.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeploymentMetricsSummary getAggregate() {
+    return aggregate_ == null ? com.clarifai.grpc.api.DeploymentMetricsSummary.getDefaultInstance() : aggregate_;
+  }
+  /**
+   * <pre>
+   * Aggregate metrics across all nodepools.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeploymentMetricsSummaryOrBuilder getAggregateOrBuilder() {
+    return getAggregate();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -170,6 +301,12 @@ private static final long serialVersionUID = 0L;
     if (rolloutInProgress_ != false) {
       output.writeBool(3, rolloutInProgress_);
     }
+    for (int i = 0; i < nodepoolMetrics_.size(); i++) {
+      output.writeMessage(4, nodepoolMetrics_.get(i));
+    }
+    if (aggregate_ != null) {
+      output.writeMessage(5, getAggregate());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -190,6 +327,14 @@ private static final long serialVersionUID = 0L;
     if (rolloutInProgress_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, rolloutInProgress_);
+    }
+    for (int i = 0; i < nodepoolMetrics_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, nodepoolMetrics_.get(i));
+    }
+    if (aggregate_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getAggregate());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -212,6 +357,13 @@ private static final long serialVersionUID = 0L;
         != other.getLiveReplicas()) return false;
     if (getRolloutInProgress()
         != other.getRolloutInProgress()) return false;
+    if (!getNodepoolMetricsList()
+        .equals(other.getNodepoolMetricsList())) return false;
+    if (hasAggregate() != other.hasAggregate()) return false;
+    if (hasAggregate()) {
+      if (!getAggregate()
+          .equals(other.getAggregate())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -230,6 +382,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ROLLOUT_IN_PROGRESS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getRolloutInProgress());
+    if (getNodepoolMetricsCount() > 0) {
+      hash = (37 * hash) + NODEPOOL_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getNodepoolMetricsList().hashCode();
+    }
+    if (hasAggregate()) {
+      hash = (37 * hash) + AGGREGATE_FIELD_NUMBER;
+      hash = (53 * hash) + getAggregate().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -363,6 +523,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getNodepoolMetricsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -374,6 +535,18 @@ private static final long serialVersionUID = 0L;
 
       rolloutInProgress_ = false;
 
+      if (nodepoolMetricsBuilder_ == null) {
+        nodepoolMetrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        nodepoolMetricsBuilder_.clear();
+      }
+      if (aggregateBuilder_ == null) {
+        aggregate_ = null;
+      } else {
+        aggregate_ = null;
+        aggregateBuilder_ = null;
+      }
       return this;
     }
 
@@ -400,9 +573,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.DeploymentMetrics buildPartial() {
       com.clarifai.grpc.api.DeploymentMetrics result = new com.clarifai.grpc.api.DeploymentMetrics(this);
+      int from_bitField0_ = bitField0_;
       result.desiredReplicas_ = desiredReplicas_;
       result.liveReplicas_ = liveReplicas_;
       result.rolloutInProgress_ = rolloutInProgress_;
+      if (nodepoolMetricsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          nodepoolMetrics_ = java.util.Collections.unmodifiableList(nodepoolMetrics_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.nodepoolMetrics_ = nodepoolMetrics_;
+      } else {
+        result.nodepoolMetrics_ = nodepoolMetricsBuilder_.build();
+      }
+      if (aggregateBuilder_ == null) {
+        result.aggregate_ = aggregate_;
+      } else {
+        result.aggregate_ = aggregateBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -460,6 +648,35 @@ private static final long serialVersionUID = 0L;
       if (other.getRolloutInProgress() != false) {
         setRolloutInProgress(other.getRolloutInProgress());
       }
+      if (nodepoolMetricsBuilder_ == null) {
+        if (!other.nodepoolMetrics_.isEmpty()) {
+          if (nodepoolMetrics_.isEmpty()) {
+            nodepoolMetrics_ = other.nodepoolMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureNodepoolMetricsIsMutable();
+            nodepoolMetrics_.addAll(other.nodepoolMetrics_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.nodepoolMetrics_.isEmpty()) {
+          if (nodepoolMetricsBuilder_.isEmpty()) {
+            nodepoolMetricsBuilder_.dispose();
+            nodepoolMetricsBuilder_ = null;
+            nodepoolMetrics_ = other.nodepoolMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            nodepoolMetricsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getNodepoolMetricsFieldBuilder() : null;
+          } else {
+            nodepoolMetricsBuilder_.addAllMessages(other.nodepoolMetrics_);
+          }
+        }
+      }
+      if (other.hasAggregate()) {
+        mergeAggregate(other.getAggregate());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -488,30 +705,35 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int desiredReplicas_ ;
     /**
      * <pre>
-     * The number of replicas desired by the orchestrator.
+     * Deprecated: use aggregate instead.
      * </pre>
      *
-     * <code>uint32 desired_replicas = 1;</code>
+     * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4847
      * @return The desiredReplicas.
      */
     @java.lang.Override
-    public int getDesiredReplicas() {
+    @java.lang.Deprecated public int getDesiredReplicas() {
       return desiredReplicas_;
     }
     /**
      * <pre>
-     * The number of replicas desired by the orchestrator.
+     * Deprecated: use aggregate instead.
      * </pre>
      *
-     * <code>uint32 desired_replicas = 1;</code>
+     * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4847
      * @param value The desiredReplicas to set.
      * @return This builder for chaining.
      */
-    public Builder setDesiredReplicas(int value) {
+    @java.lang.Deprecated public Builder setDesiredReplicas(int value) {
       
       desiredReplicas_ = value;
       onChanged();
@@ -519,13 +741,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The number of replicas desired by the orchestrator.
+     * Deprecated: use aggregate instead.
      * </pre>
      *
-     * <code>uint32 desired_replicas = 1;</code>
+     * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4847
      * @return This builder for chaining.
      */
-    public Builder clearDesiredReplicas() {
+    @java.lang.Deprecated public Builder clearDesiredReplicas() {
       
       desiredReplicas_ = 0;
       onChanged();
@@ -535,26 +759,30 @@ private static final long serialVersionUID = 0L;
     private int liveReplicas_ ;
     /**
      * <pre>
-     * The actual number of live replicas connected and ready to process requests.
+     * Deprecated: use aggregate instead.
      * </pre>
      *
-     * <code>uint32 live_replicas = 2;</code>
+     * <code>uint32 live_replicas = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4849
      * @return The liveReplicas.
      */
     @java.lang.Override
-    public int getLiveReplicas() {
+    @java.lang.Deprecated public int getLiveReplicas() {
       return liveReplicas_;
     }
     /**
      * <pre>
-     * The actual number of live replicas connected and ready to process requests.
+     * Deprecated: use aggregate instead.
      * </pre>
      *
-     * <code>uint32 live_replicas = 2;</code>
+     * <code>uint32 live_replicas = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4849
      * @param value The liveReplicas to set.
      * @return This builder for chaining.
      */
-    public Builder setLiveReplicas(int value) {
+    @java.lang.Deprecated public Builder setLiveReplicas(int value) {
       
       liveReplicas_ = value;
       onChanged();
@@ -562,13 +790,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The actual number of live replicas connected and ready to process requests.
+     * Deprecated: use aggregate instead.
      * </pre>
      *
-     * <code>uint32 live_replicas = 2;</code>
+     * <code>uint32 live_replicas = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4849
      * @return This builder for chaining.
      */
-    public Builder clearLiveReplicas() {
+    @java.lang.Deprecated public Builder clearLiveReplicas() {
       
       liveReplicas_ = 0;
       onChanged();
@@ -578,26 +808,30 @@ private static final long serialVersionUID = 0L;
     private boolean rolloutInProgress_ ;
     /**
      * <pre>
-     * If true, the deployment is currently rolling out a new version.
+     * Deprecated: use aggregate instead.
      * </pre>
      *
-     * <code>bool rollout_in_progress = 3;</code>
+     * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4851
      * @return The rolloutInProgress.
      */
     @java.lang.Override
-    public boolean getRolloutInProgress() {
+    @java.lang.Deprecated public boolean getRolloutInProgress() {
       return rolloutInProgress_;
     }
     /**
      * <pre>
-     * If true, the deployment is currently rolling out a new version.
+     * Deprecated: use aggregate instead.
      * </pre>
      *
-     * <code>bool rollout_in_progress = 3;</code>
+     * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4851
      * @param value The rolloutInProgress to set.
      * @return This builder for chaining.
      */
-    public Builder setRolloutInProgress(boolean value) {
+    @java.lang.Deprecated public Builder setRolloutInProgress(boolean value) {
       
       rolloutInProgress_ = value;
       onChanged();
@@ -605,17 +839,486 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If true, the deployment is currently rolling out a new version.
+     * Deprecated: use aggregate instead.
      * </pre>
      *
-     * <code>bool rollout_in_progress = 3;</code>
+     * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4851
      * @return This builder for chaining.
      */
-    public Builder clearRolloutInProgress() {
+    @java.lang.Deprecated public Builder clearRolloutInProgress() {
       
       rolloutInProgress_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.NodepoolDeploymentMetrics> nodepoolMetrics_ =
+      java.util.Collections.emptyList();
+    private void ensureNodepoolMetricsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        nodepoolMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.NodepoolDeploymentMetrics>(nodepoolMetrics_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.NodepoolDeploymentMetrics, com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder, com.clarifai.grpc.api.NodepoolDeploymentMetricsOrBuilder> nodepoolMetricsBuilder_;
+
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.NodepoolDeploymentMetrics> getNodepoolMetricsList() {
+      if (nodepoolMetricsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(nodepoolMetrics_);
+      } else {
+        return nodepoolMetricsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public int getNodepoolMetricsCount() {
+      if (nodepoolMetricsBuilder_ == null) {
+        return nodepoolMetrics_.size();
+      } else {
+        return nodepoolMetricsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.NodepoolDeploymentMetrics getNodepoolMetrics(int index) {
+      if (nodepoolMetricsBuilder_ == null) {
+        return nodepoolMetrics_.get(index);
+      } else {
+        return nodepoolMetricsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public Builder setNodepoolMetrics(
+        int index, com.clarifai.grpc.api.NodepoolDeploymentMetrics value) {
+      if (nodepoolMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNodepoolMetricsIsMutable();
+        nodepoolMetrics_.set(index, value);
+        onChanged();
+      } else {
+        nodepoolMetricsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public Builder setNodepoolMetrics(
+        int index, com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder builderForValue) {
+      if (nodepoolMetricsBuilder_ == null) {
+        ensureNodepoolMetricsIsMutable();
+        nodepoolMetrics_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        nodepoolMetricsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public Builder addNodepoolMetrics(com.clarifai.grpc.api.NodepoolDeploymentMetrics value) {
+      if (nodepoolMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNodepoolMetricsIsMutable();
+        nodepoolMetrics_.add(value);
+        onChanged();
+      } else {
+        nodepoolMetricsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public Builder addNodepoolMetrics(
+        int index, com.clarifai.grpc.api.NodepoolDeploymentMetrics value) {
+      if (nodepoolMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNodepoolMetricsIsMutable();
+        nodepoolMetrics_.add(index, value);
+        onChanged();
+      } else {
+        nodepoolMetricsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public Builder addNodepoolMetrics(
+        com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder builderForValue) {
+      if (nodepoolMetricsBuilder_ == null) {
+        ensureNodepoolMetricsIsMutable();
+        nodepoolMetrics_.add(builderForValue.build());
+        onChanged();
+      } else {
+        nodepoolMetricsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public Builder addNodepoolMetrics(
+        int index, com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder builderForValue) {
+      if (nodepoolMetricsBuilder_ == null) {
+        ensureNodepoolMetricsIsMutable();
+        nodepoolMetrics_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        nodepoolMetricsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public Builder addAllNodepoolMetrics(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.NodepoolDeploymentMetrics> values) {
+      if (nodepoolMetricsBuilder_ == null) {
+        ensureNodepoolMetricsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, nodepoolMetrics_);
+        onChanged();
+      } else {
+        nodepoolMetricsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public Builder clearNodepoolMetrics() {
+      if (nodepoolMetricsBuilder_ == null) {
+        nodepoolMetrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        nodepoolMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public Builder removeNodepoolMetrics(int index) {
+      if (nodepoolMetricsBuilder_ == null) {
+        ensureNodepoolMetricsIsMutable();
+        nodepoolMetrics_.remove(index);
+        onChanged();
+      } else {
+        nodepoolMetricsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder getNodepoolMetricsBuilder(
+        int index) {
+      return getNodepoolMetricsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.NodepoolDeploymentMetricsOrBuilder getNodepoolMetricsOrBuilder(
+        int index) {
+      if (nodepoolMetricsBuilder_ == null) {
+        return nodepoolMetrics_.get(index);  } else {
+        return nodepoolMetricsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.NodepoolDeploymentMetricsOrBuilder> 
+         getNodepoolMetricsOrBuilderList() {
+      if (nodepoolMetricsBuilder_ != null) {
+        return nodepoolMetricsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(nodepoolMetrics_);
+      }
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder addNodepoolMetricsBuilder() {
+      return getNodepoolMetricsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.NodepoolDeploymentMetrics.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder addNodepoolMetricsBuilder(
+        int index) {
+      return getNodepoolMetricsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.NodepoolDeploymentMetrics.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Per-nodepool breakdown of metrics.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder> 
+         getNodepoolMetricsBuilderList() {
+      return getNodepoolMetricsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.NodepoolDeploymentMetrics, com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder, com.clarifai.grpc.api.NodepoolDeploymentMetricsOrBuilder> 
+        getNodepoolMetricsFieldBuilder() {
+      if (nodepoolMetricsBuilder_ == null) {
+        nodepoolMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.NodepoolDeploymentMetrics, com.clarifai.grpc.api.NodepoolDeploymentMetrics.Builder, com.clarifai.grpc.api.NodepoolDeploymentMetricsOrBuilder>(
+                nodepoolMetrics_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        nodepoolMetrics_ = null;
+      }
+      return nodepoolMetricsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.DeploymentMetricsSummary aggregate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DeploymentMetricsSummary, com.clarifai.grpc.api.DeploymentMetricsSummary.Builder, com.clarifai.grpc.api.DeploymentMetricsSummaryOrBuilder> aggregateBuilder_;
+    /**
+     * <pre>
+     * Aggregate metrics across all nodepools.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     * @return Whether the aggregate field is set.
+     */
+    public boolean hasAggregate() {
+      return aggregateBuilder_ != null || aggregate_ != null;
+    }
+    /**
+     * <pre>
+     * Aggregate metrics across all nodepools.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     * @return The aggregate.
+     */
+    public com.clarifai.grpc.api.DeploymentMetricsSummary getAggregate() {
+      if (aggregateBuilder_ == null) {
+        return aggregate_ == null ? com.clarifai.grpc.api.DeploymentMetricsSummary.getDefaultInstance() : aggregate_;
+      } else {
+        return aggregateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Aggregate metrics across all nodepools.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     */
+    public Builder setAggregate(com.clarifai.grpc.api.DeploymentMetricsSummary value) {
+      if (aggregateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        aggregate_ = value;
+        onChanged();
+      } else {
+        aggregateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Aggregate metrics across all nodepools.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     */
+    public Builder setAggregate(
+        com.clarifai.grpc.api.DeploymentMetricsSummary.Builder builderForValue) {
+      if (aggregateBuilder_ == null) {
+        aggregate_ = builderForValue.build();
+        onChanged();
+      } else {
+        aggregateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Aggregate metrics across all nodepools.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     */
+    public Builder mergeAggregate(com.clarifai.grpc.api.DeploymentMetricsSummary value) {
+      if (aggregateBuilder_ == null) {
+        if (aggregate_ != null) {
+          aggregate_ =
+            com.clarifai.grpc.api.DeploymentMetricsSummary.newBuilder(aggregate_).mergeFrom(value).buildPartial();
+        } else {
+          aggregate_ = value;
+        }
+        onChanged();
+      } else {
+        aggregateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Aggregate metrics across all nodepools.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     */
+    public Builder clearAggregate() {
+      if (aggregateBuilder_ == null) {
+        aggregate_ = null;
+        onChanged();
+      } else {
+        aggregate_ = null;
+        aggregateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Aggregate metrics across all nodepools.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     */
+    public com.clarifai.grpc.api.DeploymentMetricsSummary.Builder getAggregateBuilder() {
+      
+      onChanged();
+      return getAggregateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Aggregate metrics across all nodepools.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     */
+    public com.clarifai.grpc.api.DeploymentMetricsSummaryOrBuilder getAggregateOrBuilder() {
+      if (aggregateBuilder_ != null) {
+        return aggregateBuilder_.getMessageOrBuilder();
+      } else {
+        return aggregate_ == null ?
+            com.clarifai.grpc.api.DeploymentMetricsSummary.getDefaultInstance() : aggregate_;
+      }
+    }
+    /**
+     * <pre>
+     * Aggregate metrics across all nodepools.
+     * </pre>
+     *
+     * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DeploymentMetricsSummary, com.clarifai.grpc.api.DeploymentMetricsSummary.Builder, com.clarifai.grpc.api.DeploymentMetricsSummaryOrBuilder> 
+        getAggregateFieldBuilder() {
+      if (aggregateBuilder_ == null) {
+        aggregateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DeploymentMetricsSummary, com.clarifai.grpc.api.DeploymentMetricsSummary.Builder, com.clarifai.grpc.api.DeploymentMetricsSummaryOrBuilder>(
+                getAggregate(),
+                getParentForChildren(),
+                isClean());
+        aggregate_ = null;
+      }
+      return aggregateBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

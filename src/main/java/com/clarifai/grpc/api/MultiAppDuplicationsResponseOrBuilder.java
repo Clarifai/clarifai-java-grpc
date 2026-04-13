@@ -3,7 +3,7 @@
 
 package com.clarifai.grpc.api;
 
-public interface MultiAppDuplicationsResponseOrBuilder extends
+@java.lang.Deprecated public interface MultiAppDuplicationsResponseOrBuilder extends
     // @@protoc_insertion_point(interface_extends:clarifai.api.MultiAppDuplicationsResponse)
     com.google.protobuf.MessageOrBuilder {
 

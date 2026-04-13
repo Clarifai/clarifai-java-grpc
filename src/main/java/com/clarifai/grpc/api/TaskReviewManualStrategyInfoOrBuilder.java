@@ -15,7 +15,7 @@ public interface TaskReviewManualStrategyInfoOrBuilder extends
    *
    * <code>float sample_percentage = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReviewManualStrategyInfo.sample_percentage is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3617
+   *     See proto/clarifai/api/resources.proto;l=3592
    * @return The samplePercentage.
    */
   @java.lang.Deprecated float getSamplePercentage();
@@ -27,7 +27,7 @@ public interface TaskReviewManualStrategyInfoOrBuilder extends
    *
    * <code>int32 approval_threshold = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReviewManualStrategyInfo.approval_threshold is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3620
+   *     See proto/clarifai/api/resources.proto;l=3595
    * @return The approvalThreshold.
    */
   @java.lang.Deprecated int getApprovalThreshold();

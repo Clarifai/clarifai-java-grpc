@@ -5378,161 +5378,6 @@ public final class V2Grpc {
     return getDeleteLabelOrdersMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollectorsRequest,
-      com.clarifai.grpc.api.MultiCollectorResponse> getPostCollectorsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostCollectors",
-      requestType = com.clarifai.grpc.api.PostCollectorsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiCollectorResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollectorsRequest,
-      com.clarifai.grpc.api.MultiCollectorResponse> getPostCollectorsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse> getPostCollectorsMethod;
-    if ((getPostCollectorsMethod = V2Grpc.getPostCollectorsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostCollectorsMethod = V2Grpc.getPostCollectorsMethod) == null) {
-          V2Grpc.getPostCollectorsMethod = getPostCollectorsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostCollectors"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostCollectorsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiCollectorResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostCollectors"))
-              .build();
-        }
-      }
-    }
-    return getPostCollectorsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetCollectorRequest,
-      com.clarifai.grpc.api.SingleCollectorResponse> getGetCollectorMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetCollector",
-      requestType = com.clarifai.grpc.api.GetCollectorRequest.class,
-      responseType = com.clarifai.grpc.api.SingleCollectorResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetCollectorRequest,
-      com.clarifai.grpc.api.SingleCollectorResponse> getGetCollectorMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetCollectorRequest, com.clarifai.grpc.api.SingleCollectorResponse> getGetCollectorMethod;
-    if ((getGetCollectorMethod = V2Grpc.getGetCollectorMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getGetCollectorMethod = V2Grpc.getGetCollectorMethod) == null) {
-          V2Grpc.getGetCollectorMethod = getGetCollectorMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetCollectorRequest, com.clarifai.grpc.api.SingleCollectorResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCollector"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.GetCollectorRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleCollectorResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetCollector"))
-              .build();
-        }
-      }
-    }
-    return getGetCollectorMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollectorsRequest,
-      com.clarifai.grpc.api.MultiCollectorResponse> getListCollectorsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListCollectors",
-      requestType = com.clarifai.grpc.api.ListCollectorsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiCollectorResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollectorsRequest,
-      com.clarifai.grpc.api.MultiCollectorResponse> getListCollectorsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse> getListCollectorsMethod;
-    if ((getListCollectorsMethod = V2Grpc.getListCollectorsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getListCollectorsMethod = V2Grpc.getListCollectorsMethod) == null) {
-          V2Grpc.getListCollectorsMethod = getListCollectorsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCollectors"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.ListCollectorsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiCollectorResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListCollectors"))
-              .build();
-        }
-      }
-    }
-    return getListCollectorsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchCollectorsRequest,
-      com.clarifai.grpc.api.MultiCollectorResponse> getPatchCollectorsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PatchCollectors",
-      requestType = com.clarifai.grpc.api.PatchCollectorsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiCollectorResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchCollectorsRequest,
-      com.clarifai.grpc.api.MultiCollectorResponse> getPatchCollectorsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse> getPatchCollectorsMethod;
-    if ((getPatchCollectorsMethod = V2Grpc.getPatchCollectorsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPatchCollectorsMethod = V2Grpc.getPatchCollectorsMethod) == null) {
-          V2Grpc.getPatchCollectorsMethod = getPatchCollectorsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchCollectors"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PatchCollectorsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiCollectorResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchCollectors"))
-              .build();
-        }
-      }
-    }
-    return getPatchCollectorsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteCollectorsRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteCollectorsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteCollectors",
-      requestType = com.clarifai.grpc.api.DeleteCollectorsRequest.class,
-      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteCollectorsRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteCollectorsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteCollectorsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteCollectorsMethod;
-    if ((getDeleteCollectorsMethod = V2Grpc.getDeleteCollectorsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getDeleteCollectorsMethod = V2Grpc.getDeleteCollectorsMethod) == null) {
-          V2Grpc.getDeleteCollectorsMethod = getDeleteCollectorsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteCollectorsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCollectors"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.DeleteCollectorsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteCollectors"))
-              .build();
-        }
-      }
-    }
-    return getDeleteCollectorsMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostStatValuesRequest,
       com.clarifai.grpc.api.MultiStatValueResponse> getPostStatValuesMethod;
 
@@ -10365,18 +10210,12 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * PostAppDuplications starts async app duplication jobs which copy resources
-     * (inputs, annotations, models etc) from one application to another. It can
-     * also create the destination application if it does not exist, with fields
-     * (description, metadata etc) copied from the source application.
-     * A duplication job can be started by any user that can read from the source
-     * application (the target of this call) and can create and write to the
-     * destination application. The duplication is associated with the user that
-     * created it, so in order to read the status and progress of the job, that
-     * user's ID has to be used in the call to GetAppDuplication, which might be
-     * different to the source application owner ID in this call.
+     * (inputs, annotations, models etc) from one application to another.
      * </pre>
      */
+    @java.lang.Deprecated
     public void postAppDuplications(com.clarifai.grpc.api.PostAppDuplicationsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostAppDuplicationsMethod(), responseObserver);
@@ -10384,9 +10223,11 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * ListAppDuplications lists all app duplication jobs created by the user.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAppDuplications(com.clarifai.grpc.api.ListAppDuplicationsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAppDuplicationsMethod(), responseObserver);
@@ -10394,9 +10235,11 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * GetAppDuplication returns an app duplication job created by the user.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAppDuplication(com.clarifai.grpc.api.GetAppDuplicationRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAppDuplicationResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAppDuplicationMethod(), responseObserver);
@@ -10521,62 +10364,6 @@ public final class V2Grpc {
     public void deleteLabelOrders(com.clarifai.grpc.api.DeleteLabelOrdersRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteLabelOrdersMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Add a list of Collectors to an app.
-     * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
-     * endpoint.
-     * Those current scopes are listed here as a hard requirement.
-     * They are needed when adding the collectors just so we now that you have permission with
-     * that key at least to do the writing to this app with POST /inputs.
-     * </pre>
-     */
-    public void postCollectors(com.clarifai.grpc.api.PostCollectorsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostCollectorsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get a specific collector from an app.
-     * </pre>
-     */
-    public void getCollector(com.clarifai.grpc.api.GetCollectorRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleCollectorResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCollectorMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List all the collectors.
-     * </pre>
-     */
-    public void listCollectors(com.clarifai.grpc.api.ListCollectorsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListCollectorsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Patch one or more collectors.
-     * </pre>
-     */
-    public void patchCollectors(com.clarifai.grpc.api.PatchCollectorsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchCollectorsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Delete multiple collectors in one request.
-     * This call is asynchronous. Use DeleteCollector if you want a synchronous version.
-     * </pre>
-     */
-    public void deleteCollectors(com.clarifai.grpc.api.DeleteCollectorsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteCollectorsMethod(), responseObserver);
     }
 
     /**
@@ -11345,7 +11132,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate.
      * This is a convenience endpoint for users to quickly get started with running pipelines.
      * </pre>
      */
@@ -12679,41 +12466,6 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeleteLabelOrdersRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_LABEL_ORDERS)))
-          .addMethod(
-            getPostCollectorsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PostCollectorsRequest,
-                com.clarifai.grpc.api.MultiCollectorResponse>(
-                  this, METHODID_POST_COLLECTORS)))
-          .addMethod(
-            getGetCollectorMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.GetCollectorRequest,
-                com.clarifai.grpc.api.SingleCollectorResponse>(
-                  this, METHODID_GET_COLLECTOR)))
-          .addMethod(
-            getListCollectorsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.ListCollectorsRequest,
-                com.clarifai.grpc.api.MultiCollectorResponse>(
-                  this, METHODID_LIST_COLLECTORS)))
-          .addMethod(
-            getPatchCollectorsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PatchCollectorsRequest,
-                com.clarifai.grpc.api.MultiCollectorResponse>(
-                  this, METHODID_PATCH_COLLECTORS)))
-          .addMethod(
-            getDeleteCollectorsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.DeleteCollectorsRequest,
-                com.clarifai.grpc.api.status.BaseResponse>(
-                  this, METHODID_DELETE_COLLECTORS)))
           .addMethod(
             getPostStatValuesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -15226,18 +14978,12 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * PostAppDuplications starts async app duplication jobs which copy resources
-     * (inputs, annotations, models etc) from one application to another. It can
-     * also create the destination application if it does not exist, with fields
-     * (description, metadata etc) copied from the source application.
-     * A duplication job can be started by any user that can read from the source
-     * application (the target of this call) and can create and write to the
-     * destination application. The duplication is associated with the user that
-     * created it, so in order to read the status and progress of the job, that
-     * user's ID has to be used in the call to GetAppDuplication, which might be
-     * different to the source application owner ID in this call.
+     * (inputs, annotations, models etc) from one application to another.
      * </pre>
      */
+    @java.lang.Deprecated
     public void postAppDuplications(com.clarifai.grpc.api.PostAppDuplicationsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -15246,9 +14992,11 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * ListAppDuplications lists all app duplication jobs created by the user.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAppDuplications(com.clarifai.grpc.api.ListAppDuplicationsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -15257,9 +15005,11 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * GetAppDuplication returns an app duplication job created by the user.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAppDuplication(com.clarifai.grpc.api.GetAppDuplicationRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAppDuplicationResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -15397,67 +15147,6 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteLabelOrdersMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Add a list of Collectors to an app.
-     * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
-     * endpoint.
-     * Those current scopes are listed here as a hard requirement.
-     * They are needed when adding the collectors just so we now that you have permission with
-     * that key at least to do the writing to this app with POST /inputs.
-     * </pre>
-     */
-    public void postCollectors(com.clarifai.grpc.api.PostCollectorsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostCollectorsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Get a specific collector from an app.
-     * </pre>
-     */
-    public void getCollector(com.clarifai.grpc.api.GetCollectorRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleCollectorResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetCollectorMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * List all the collectors.
-     * </pre>
-     */
-    public void listCollectors(com.clarifai.grpc.api.ListCollectorsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListCollectorsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Patch one or more collectors.
-     * </pre>
-     */
-    public void patchCollectors(com.clarifai.grpc.api.PatchCollectorsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPatchCollectorsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Delete multiple collectors in one request.
-     * This call is asynchronous. Use DeleteCollector if you want a synchronous version.
-     * </pre>
-     */
-    public void deleteCollectors(com.clarifai.grpc.api.DeleteCollectorsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteCollectorsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -16312,7 +16001,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate.
      * This is a convenience endpoint for users to quickly get started with running pipelines.
      * </pre>
      */
@@ -18065,18 +17754,12 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * PostAppDuplications starts async app duplication jobs which copy resources
-     * (inputs, annotations, models etc) from one application to another. It can
-     * also create the destination application if it does not exist, with fields
-     * (description, metadata etc) copied from the source application.
-     * A duplication job can be started by any user that can read from the source
-     * application (the target of this call) and can create and write to the
-     * destination application. The duplication is associated with the user that
-     * created it, so in order to read the status and progress of the job, that
-     * user's ID has to be used in the call to GetAppDuplication, which might be
-     * different to the source application owner ID in this call.
+     * (inputs, annotations, models etc) from one application to another.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.clarifai.grpc.api.MultiAppDuplicationsResponse postAppDuplications(com.clarifai.grpc.api.PostAppDuplicationsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostAppDuplicationsMethod(), getCallOptions(), request);
@@ -18084,9 +17767,11 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * ListAppDuplications lists all app duplication jobs created by the user.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.clarifai.grpc.api.MultiAppDuplicationsResponse listAppDuplications(com.clarifai.grpc.api.ListAppDuplicationsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAppDuplicationsMethod(), getCallOptions(), request);
@@ -18094,9 +17779,11 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * GetAppDuplication returns an app duplication job created by the user.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.clarifai.grpc.api.SingleAppDuplicationResponse getAppDuplication(com.clarifai.grpc.api.GetAppDuplicationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAppDuplicationMethod(), getCallOptions(), request);
@@ -18221,62 +17908,6 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.status.BaseResponse deleteLabelOrders(com.clarifai.grpc.api.DeleteLabelOrdersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteLabelOrdersMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Add a list of Collectors to an app.
-     * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
-     * endpoint.
-     * Those current scopes are listed here as a hard requirement.
-     * They are needed when adding the collectors just so we now that you have permission with
-     * that key at least to do the writing to this app with POST /inputs.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiCollectorResponse postCollectors(com.clarifai.grpc.api.PostCollectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostCollectorsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Get a specific collector from an app.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.SingleCollectorResponse getCollector(com.clarifai.grpc.api.GetCollectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetCollectorMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * List all the collectors.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiCollectorResponse listCollectors(com.clarifai.grpc.api.ListCollectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListCollectorsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Patch one or more collectors.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiCollectorResponse patchCollectors(com.clarifai.grpc.api.PatchCollectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPatchCollectorsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Delete multiple collectors in one request.
-     * This call is asynchronous. Use DeleteCollector if you want a synchronous version.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.status.BaseResponse deleteCollectors(com.clarifai.grpc.api.DeleteCollectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteCollectorsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -19017,7 +18648,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate.
      * This is a convenience endpoint for users to quickly get started with running pipelines.
      * </pre>
      */
@@ -20858,18 +20489,12 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * PostAppDuplications starts async app duplication jobs which copy resources
-     * (inputs, annotations, models etc) from one application to another. It can
-     * also create the destination application if it does not exist, with fields
-     * (description, metadata etc) copied from the source application.
-     * A duplication job can be started by any user that can read from the source
-     * application (the target of this call) and can create and write to the
-     * destination application. The duplication is associated with the user that
-     * created it, so in order to read the status and progress of the job, that
-     * user's ID has to be used in the call to GetAppDuplication, which might be
-     * different to the source application owner ID in this call.
+     * (inputs, annotations, models etc) from one application to another.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAppDuplicationsResponse> postAppDuplications(
         com.clarifai.grpc.api.PostAppDuplicationsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -20878,9 +20503,11 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * ListAppDuplications lists all app duplication jobs created by the user.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAppDuplicationsResponse> listAppDuplications(
         com.clarifai.grpc.api.ListAppDuplicationsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -20889,9 +20516,11 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Deprecated: App duplication is no longer supported.
      * GetAppDuplication returns an app duplication job created by the user.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleAppDuplicationResponse> getAppDuplication(
         com.clarifai.grpc.api.GetAppDuplicationRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -21029,67 +20658,6 @@ public final class V2Grpc {
         com.clarifai.grpc.api.DeleteLabelOrdersRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteLabelOrdersMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Add a list of Collectors to an app.
-     * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
-     * endpoint.
-     * Those current scopes are listed here as a hard requirement.
-     * They are needed when adding the collectors just so we now that you have permission with
-     * that key at least to do the writing to this app with POST /inputs.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollectorResponse> postCollectors(
-        com.clarifai.grpc.api.PostCollectorsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostCollectorsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Get a specific collector from an app.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleCollectorResponse> getCollector(
-        com.clarifai.grpc.api.GetCollectorRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetCollectorMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * List all the collectors.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollectorResponse> listCollectors(
-        com.clarifai.grpc.api.ListCollectorsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListCollectorsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Patch one or more collectors.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollectorResponse> patchCollectors(
-        com.clarifai.grpc.api.PatchCollectorsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPatchCollectorsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Delete multiple collectors in one request.
-     * This call is asynchronous. Use DeleteCollector if you want a synchronous version.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteCollectors(
-        com.clarifai.grpc.api.DeleteCollectorsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteCollectorsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -21905,7 +21473,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate. 
+     * Creates a Pipeline, PipelineVersion, and PipelineVersionRun from a PipelineTemplate.
      * This is a convenience endpoint for users to quickly get started with running pipelines.
      * </pre>
      */
@@ -22199,115 +21767,110 @@ public final class V2Grpc {
   private static final int METHODID_LIST_LABEL_ORDERS = 168;
   private static final int METHODID_PATCH_LABEL_ORDERS = 169;
   private static final int METHODID_DELETE_LABEL_ORDERS = 170;
-  private static final int METHODID_POST_COLLECTORS = 171;
-  private static final int METHODID_GET_COLLECTOR = 172;
-  private static final int METHODID_LIST_COLLECTORS = 173;
-  private static final int METHODID_PATCH_COLLECTORS = 174;
-  private static final int METHODID_DELETE_COLLECTORS = 175;
-  private static final int METHODID_POST_STAT_VALUES = 176;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 177;
-  private static final int METHODID_POST_BULK_OPERATIONS = 178;
-  private static final int METHODID_LIST_BULK_OPERATIONS = 179;
-  private static final int METHODID_GET_BULK_OPERATION = 180;
-  private static final int METHODID_CANCEL_BULK_OPERATIONS = 181;
-  private static final int METHODID_DELETE_BULK_OPERATIONS = 182;
-  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 183;
-  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 184;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 185;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 186;
-  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 187;
-  private static final int METHODID_POST_UPLOADS = 188;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 189;
-  private static final int METHODID_GET_UPLOAD = 190;
-  private static final int METHODID_LIST_UPLOADS = 191;
-  private static final int METHODID_DELETE_UPLOADS = 192;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 193;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 194;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 195;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 196;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 197;
-  private static final int METHODID_LIST_PIPELINE_VERSION_RUNS = 198;
-  private static final int METHODID_GET_RUNNER = 199;
-  private static final int METHODID_LIST_RUNNERS = 200;
-  private static final int METHODID_POST_RUNNERS = 201;
-  private static final int METHODID_PATCH_RUNNERS = 202;
-  private static final int METHODID_DELETE_RUNNERS = 203;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 204;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 205;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 206;
-  private static final int METHODID_LIST_CLOUD_PROVIDERS = 207;
-  private static final int METHODID_LIST_CLOUD_REGIONS = 208;
-  private static final int METHODID_LIST_INSTANCE_TYPES = 209;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 210;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 211;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 212;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 213;
-  private static final int METHODID_PATCH_COMPUTE_CLUSTERS = 214;
-  private static final int METHODID_GET_NODEPOOL = 215;
-  private static final int METHODID_LIST_NODEPOOLS = 216;
-  private static final int METHODID_POST_NODEPOOLS = 217;
-  private static final int METHODID_PATCH_NODEPOOLS = 218;
-  private static final int METHODID_DELETE_NODEPOOLS = 219;
-  private static final int METHODID_POST_NODEPOOL_STATUS = 220;
-  private static final int METHODID_GET_DEPLOYMENT = 221;
-  private static final int METHODID_LIST_DEPLOYMENTS = 222;
-  private static final int METHODID_POST_DEPLOYMENTS = 223;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 224;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 225;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 226;
-  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 227;
-  private static final int METHODID_POST_LOG_ENTRIES = 228;
-  private static final int METHODID_LIST_LOG_ENTRIES = 229;
-  private static final int METHODID_STREAM_LOG_ENTRIES = 230;
-  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 231;
-  private static final int METHODID_POST_RUNNER_REPLICA_TASK_METRICS = 232;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 233;
-  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 234;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 235;
-  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 236;
-  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 237;
-  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 238;
-  private static final int METHODID_POST_PIPELINES = 239;
-  private static final int METHODID_GET_PIPELINE = 240;
-  private static final int METHODID_LIST_PIPELINES = 241;
-  private static final int METHODID_PATCH_PIPELINES = 242;
-  private static final int METHODID_DELETE_PIPELINES = 243;
-  private static final int METHODID_GET_PIPELINE_VERSION = 244;
-  private static final int METHODID_LIST_PIPELINE_VERSIONS = 245;
-  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 246;
-  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 247;
-  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 248;
-  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 249;
-  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 250;
-  private static final int METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS = 251;
-  private static final int METHODID_POST_PIPELINE_STEPS = 252;
-  private static final int METHODID_GET_PIPELINE_STEP = 253;
-  private static final int METHODID_LIST_PIPELINE_STEPS = 254;
-  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 255;
-  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 256;
-  private static final int METHODID_DELETE_PIPELINE_STEPS = 257;
-  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 258;
-  private static final int METHODID_LIST_PIPELINE_TEMPLATES = 259;
-  private static final int METHODID_POST_PIPELINE_VERSION_RUN_FROM_TEMPLATE = 260;
-  private static final int METHODID_POST_ARTIFACTS = 261;
-  private static final int METHODID_GET_ARTIFACT = 262;
-  private static final int METHODID_LIST_ARTIFACTS = 263;
-  private static final int METHODID_DELETE_ARTIFACT = 264;
-  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 265;
-  private static final int METHODID_GET_ARTIFACT_VERSION = 266;
-  private static final int METHODID_DELETE_ARTIFACT_VERSION = 267;
-  private static final int METHODID_GET_SECRET = 268;
-  private static final int METHODID_LIST_SECRETS = 269;
-  private static final int METHODID_POST_SECRETS = 270;
-  private static final int METHODID_PATCH_SECRETS = 271;
-  private static final int METHODID_DELETE_SECRETS = 272;
-  private static final int METHODID_POST_METRICS_QUERY = 273;
-  private static final int METHODID_LIST_METRIC_LABELS = 274;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 275;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 276;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 277;
-  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 278;
-  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 279;
+  private static final int METHODID_POST_STAT_VALUES = 171;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 172;
+  private static final int METHODID_POST_BULK_OPERATIONS = 173;
+  private static final int METHODID_LIST_BULK_OPERATIONS = 174;
+  private static final int METHODID_GET_BULK_OPERATION = 175;
+  private static final int METHODID_CANCEL_BULK_OPERATIONS = 176;
+  private static final int METHODID_DELETE_BULK_OPERATIONS = 177;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 178;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 179;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 180;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 181;
+  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 182;
+  private static final int METHODID_POST_UPLOADS = 183;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 184;
+  private static final int METHODID_GET_UPLOAD = 185;
+  private static final int METHODID_LIST_UPLOADS = 186;
+  private static final int METHODID_DELETE_UPLOADS = 187;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 188;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 189;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 190;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 191;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 192;
+  private static final int METHODID_LIST_PIPELINE_VERSION_RUNS = 193;
+  private static final int METHODID_GET_RUNNER = 194;
+  private static final int METHODID_LIST_RUNNERS = 195;
+  private static final int METHODID_POST_RUNNERS = 196;
+  private static final int METHODID_PATCH_RUNNERS = 197;
+  private static final int METHODID_DELETE_RUNNERS = 198;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 199;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 200;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 201;
+  private static final int METHODID_LIST_CLOUD_PROVIDERS = 202;
+  private static final int METHODID_LIST_CLOUD_REGIONS = 203;
+  private static final int METHODID_LIST_INSTANCE_TYPES = 204;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 205;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 206;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 207;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 208;
+  private static final int METHODID_PATCH_COMPUTE_CLUSTERS = 209;
+  private static final int METHODID_GET_NODEPOOL = 210;
+  private static final int METHODID_LIST_NODEPOOLS = 211;
+  private static final int METHODID_POST_NODEPOOLS = 212;
+  private static final int METHODID_PATCH_NODEPOOLS = 213;
+  private static final int METHODID_DELETE_NODEPOOLS = 214;
+  private static final int METHODID_POST_NODEPOOL_STATUS = 215;
+  private static final int METHODID_GET_DEPLOYMENT = 216;
+  private static final int METHODID_LIST_DEPLOYMENTS = 217;
+  private static final int METHODID_POST_DEPLOYMENTS = 218;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 219;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 220;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 221;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 222;
+  private static final int METHODID_POST_LOG_ENTRIES = 223;
+  private static final int METHODID_LIST_LOG_ENTRIES = 224;
+  private static final int METHODID_STREAM_LOG_ENTRIES = 225;
+  private static final int METHODID_POST_COMPUTE_PLANE_METRICS = 226;
+  private static final int METHODID_POST_RUNNER_REPLICA_TASK_METRICS = 227;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATIONS = 228;
+  private static final int METHODID_GET_WORKFLOW_VERSION_EVALUATION = 229;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATIONS = 230;
+  private static final int METHODID_PATCH_WORKFLOW_VERSION_EVALUATIONS = 231;
+  private static final int METHODID_LIST_WORKFLOW_VERSION_EVALUATION_DATA = 232;
+  private static final int METHODID_POST_WORKFLOW_VERSION_EVALUATION_DATA = 233;
+  private static final int METHODID_POST_PIPELINES = 234;
+  private static final int METHODID_GET_PIPELINE = 235;
+  private static final int METHODID_LIST_PIPELINES = 236;
+  private static final int METHODID_PATCH_PIPELINES = 237;
+  private static final int METHODID_DELETE_PIPELINES = 238;
+  private static final int METHODID_GET_PIPELINE_VERSION = 239;
+  private static final int METHODID_LIST_PIPELINE_VERSIONS = 240;
+  private static final int METHODID_PATCH_PIPELINE_VERSIONS = 241;
+  private static final int METHODID_DELETE_PIPELINE_VERSIONS = 242;
+  private static final int METHODID_GET_PIPELINE_VERSION_RUN = 243;
+  private static final int METHODID_POST_PIPELINE_VERSION_RUNS = 244;
+  private static final int METHODID_PATCH_PIPELINE_VERSION_RUNS = 245;
+  private static final int METHODID_LIST_PIPELINE_VERSION_RUN_STATUS_LOGS = 246;
+  private static final int METHODID_POST_PIPELINE_STEPS = 247;
+  private static final int METHODID_GET_PIPELINE_STEP = 248;
+  private static final int METHODID_LIST_PIPELINE_STEPS = 249;
+  private static final int METHODID_LIST_PIPELINE_STEP_VERSIONS = 250;
+  private static final int METHODID_GET_PIPELINE_STEP_VERSION = 251;
+  private static final int METHODID_DELETE_PIPELINE_STEPS = 252;
+  private static final int METHODID_DELETE_PIPELINE_STEP_VERSIONS = 253;
+  private static final int METHODID_LIST_PIPELINE_TEMPLATES = 254;
+  private static final int METHODID_POST_PIPELINE_VERSION_RUN_FROM_TEMPLATE = 255;
+  private static final int METHODID_POST_ARTIFACTS = 256;
+  private static final int METHODID_GET_ARTIFACT = 257;
+  private static final int METHODID_LIST_ARTIFACTS = 258;
+  private static final int METHODID_DELETE_ARTIFACT = 259;
+  private static final int METHODID_LIST_ARTIFACT_VERSIONS = 260;
+  private static final int METHODID_GET_ARTIFACT_VERSION = 261;
+  private static final int METHODID_DELETE_ARTIFACT_VERSION = 262;
+  private static final int METHODID_GET_SECRET = 263;
+  private static final int METHODID_LIST_SECRETS = 264;
+  private static final int METHODID_POST_SECRETS = 265;
+  private static final int METHODID_PATCH_SECRETS = 266;
+  private static final int METHODID_DELETE_SECRETS = 267;
+  private static final int METHODID_POST_METRICS_QUERY = 268;
+  private static final int METHODID_LIST_METRIC_LABELS = 269;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 270;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 271;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 272;
+  private static final int METHODID_POST_PIPELINE_STEP_VERSIONS_UPLOAD = 273;
+  private static final int METHODID_POST_ARTIFACT_VERSIONS_UPLOAD = 274;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -23010,26 +22573,6 @@ public final class V2Grpc {
           serviceImpl.deleteLabelOrders((com.clarifai.grpc.api.DeleteLabelOrdersRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
-        case METHODID_POST_COLLECTORS:
-          serviceImpl.postCollectors((com.clarifai.grpc.api.PostCollectorsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse>) responseObserver);
-          break;
-        case METHODID_GET_COLLECTOR:
-          serviceImpl.getCollector((com.clarifai.grpc.api.GetCollectorRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleCollectorResponse>) responseObserver);
-          break;
-        case METHODID_LIST_COLLECTORS:
-          serviceImpl.listCollectors((com.clarifai.grpc.api.ListCollectorsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse>) responseObserver);
-          break;
-        case METHODID_PATCH_COLLECTORS:
-          serviceImpl.patchCollectors((com.clarifai.grpc.api.PatchCollectorsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse>) responseObserver);
-          break;
-        case METHODID_DELETE_COLLECTORS:
-          serviceImpl.deleteCollectors((com.clarifai.grpc.api.DeleteCollectorsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
-          break;
         case METHODID_POST_STAT_VALUES:
           serviceImpl.postStatValues((com.clarifai.grpc.api.PostStatValuesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueResponse>) responseObserver);
@@ -23675,11 +23218,6 @@ public final class V2Grpc {
               .addMethod(getListLabelOrdersMethod())
               .addMethod(getPatchLabelOrdersMethod())
               .addMethod(getDeleteLabelOrdersMethod())
-              .addMethod(getPostCollectorsMethod())
-              .addMethod(getGetCollectorMethod())
-              .addMethod(getListCollectorsMethod())
-              .addMethod(getPatchCollectorsMethod())
-              .addMethod(getDeleteCollectorsMethod())
               .addMethod(getPostStatValuesMethod())
               .addMethod(getPostStatValuesAggregateMethod())
               .addMethod(getPostBulkOperationsMethod())

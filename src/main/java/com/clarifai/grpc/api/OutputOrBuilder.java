@@ -187,4 +187,15 @@ public interface OutputOrBuilder extends
    * @return The completionTokens.
    */
   int getCompletionTokens();
+
+  /**
+   * <pre>
+   * Number of cached prompt tokens as reported by the model (subset of prompt_tokens).
+   * Cached tokens are prompt tokens served from the model's KV cache rather than recomputed.
+   * </pre>
+   *
+   * <code>uint32 cached_tokens = 9;</code>
+   * @return The cachedTokens.
+   */
+  int getCachedTokens();
 }

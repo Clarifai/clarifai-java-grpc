@@ -25,13 +25,9 @@ public enum MetricLabel
    */
   MODEL_VERSION_ID(3),
   /**
-   * <code>CALLER_USER_ID = 4;</code>
+   * <code>HTTP_STATUS = 4;</code>
    */
-  CALLER_USER_ID(4),
-  /**
-   * <code>WORKFLOW_ID = 5;</code>
-   */
-  WORKFLOW_ID(5),
+  HTTP_STATUS(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -52,13 +48,9 @@ public enum MetricLabel
    */
   public static final int MODEL_VERSION_ID_VALUE = 3;
   /**
-   * <code>CALLER_USER_ID = 4;</code>
+   * <code>HTTP_STATUS = 4;</code>
    */
-  public static final int CALLER_USER_ID_VALUE = 4;
-  /**
-   * <code>WORKFLOW_ID = 5;</code>
-   */
-  public static final int WORKFLOW_ID_VALUE = 5;
+  public static final int HTTP_STATUS_VALUE = 4;
 
 
   public final int getNumber() {
@@ -89,8 +81,7 @@ public enum MetricLabel
       case 1: return APP_ID;
       case 2: return MODEL_ID;
       case 3: return MODEL_VERSION_ID;
-      case 4: return CALLER_USER_ID;
-      case 5: return WORKFLOW_ID;
+      case 4: return HTTP_STATUS;
       default: return null;
     }
   }

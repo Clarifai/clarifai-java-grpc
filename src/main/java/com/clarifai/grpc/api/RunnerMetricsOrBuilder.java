@@ -29,4 +29,15 @@ public interface RunnerMetricsOrBuilder extends
    * @return The totalPodsRunningTimeS.
    */
   int getTotalPodsRunningTimeS();
+
+  /**
+   * <pre>
+   * Cumulative count of pods that have been preempted by the k8s scheduler.
+   * This accumulates across reconcile cycles and is reported by the agent.
+   * </pre>
+   *
+   * <code>uint32 pods_preempted_total = 4;</code>
+   * @return The podsPreemptedTotal.
+   */
+  int getPodsPreemptedTotal();
 }

@@ -143,7 +143,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4590
+   *     See proto/clarifai/api/resources.proto;l=4463
    * @return A list containing the labels.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -155,7 +155,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4590
+   *     See proto/clarifai/api/resources.proto;l=4463
    * @return The count of labels.
    */
   @java.lang.Deprecated int getLabelsCount();
@@ -166,7 +166,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4590
+   *     See proto/clarifai/api/resources.proto;l=4463
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -178,7 +178,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4590
+   *     See proto/clarifai/api/resources.proto;l=4463
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -394,4 +394,16 @@ public interface RunnerOrBuilder extends
    * @return The minReplicas.
    */
   int getMinReplicas();
+
+  /**
+   * <pre>
+   * The scheduling priority for this runner's k8s deployment.
+   * Valid values are 0-9, where higher values indicate higher priority.
+   * This value comes from the deployment nodepool's priority setting.
+   * </pre>
+   *
+   * <code>uint32 priority = 15;</code>
+   * @return The priority.
+   */
+  int getPriority();
 }

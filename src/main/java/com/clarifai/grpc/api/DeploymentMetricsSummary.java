@@ -5,29 +5,29 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * RunnerMetrics captures metrics and status for a Runner's underlying k8s deployment.
- * This allows tracking of deployment health, replica counts, and other relevant metrics.
+ * DeploymentMetricsSummary holds the core deployment metrics fields, reusable as both
+ * an aggregate across all nodepools and per-individual-nodepool metrics.
  * </pre>
  *
- * Protobuf type {@code clarifai.api.RunnerMetrics}
+ * Protobuf type {@code clarifai.api.DeploymentMetricsSummary}
  */
-public final class RunnerMetrics extends
+public final class DeploymentMetricsSummary extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.RunnerMetrics)
-    RunnerMetricsOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.DeploymentMetricsSummary)
+    DeploymentMetricsSummaryOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use RunnerMetrics.newBuilder() to construct.
-  private RunnerMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DeploymentMetricsSummary.newBuilder() to construct.
+  private DeploymentMetricsSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private RunnerMetrics() {
+  private DeploymentMetricsSummary() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new RunnerMetrics();
+    return new DeploymentMetricsSummary();
   }
 
   @java.lang.Override
@@ -35,7 +35,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private RunnerMetrics(
+  private DeploymentMetricsSummary(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -55,22 +55,17 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            podsTotal_ = input.readUInt32();
+            desiredReplicas_ = input.readUInt32();
             break;
           }
           case 16: {
 
-            podsRunning_ = input.readUInt32();
+            liveReplicas_ = input.readUInt32();
             break;
           }
           case 24: {
 
-            totalPodsRunningTimeS_ = input.readUInt32();
-            break;
-          }
-          case 32: {
-
-            podsPreemptedTotal_ = input.readUInt32();
+            rolloutInProgress_ = input.readBool();
             break;
           }
           default: {
@@ -96,69 +91,60 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_RunnerMetrics_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DeploymentMetricsSummary_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_RunnerMetrics_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DeploymentMetricsSummary_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.RunnerMetrics.class, com.clarifai.grpc.api.RunnerMetrics.Builder.class);
+            com.clarifai.grpc.api.DeploymentMetricsSummary.class, com.clarifai.grpc.api.DeploymentMetricsSummary.Builder.class);
   }
 
-  public static final int PODS_TOTAL_FIELD_NUMBER = 1;
-  private int podsTotal_;
-  /**
-   * <code>uint32 pods_total = 1;</code>
-   * @return The podsTotal.
-   */
-  @java.lang.Override
-  public int getPodsTotal() {
-    return podsTotal_;
-  }
-
-  public static final int PODS_RUNNING_FIELD_NUMBER = 2;
-  private int podsRunning_;
-  /**
-   * <code>uint32 pods_running = 2;</code>
-   * @return The podsRunning.
-   */
-  @java.lang.Override
-  public int getPodsRunning() {
-    return podsRunning_;
-  }
-
-  public static final int TOTAL_PODS_RUNNING_TIME_S_FIELD_NUMBER = 3;
-  private int totalPodsRunningTimeS_;
+  public static final int DESIRED_REPLICAS_FIELD_NUMBER = 1;
+  private int desiredReplicas_;
   /**
    * <pre>
-   * Cumulative total time (in seconds) that pods have been running for this runner.
-   * This accumulates across scale-up/down cycles and is reported by the agent.
+   * The number of replicas desired by the orchestrator.
    * </pre>
    *
-   * <code>uint32 total_pods_running_time_s = 3;</code>
-   * @return The totalPodsRunningTimeS.
+   * <code>uint32 desired_replicas = 1;</code>
+   * @return The desiredReplicas.
    */
   @java.lang.Override
-  public int getTotalPodsRunningTimeS() {
-    return totalPodsRunningTimeS_;
+  public int getDesiredReplicas() {
+    return desiredReplicas_;
   }
 
-  public static final int PODS_PREEMPTED_TOTAL_FIELD_NUMBER = 4;
-  private int podsPreemptedTotal_;
+  public static final int LIVE_REPLICAS_FIELD_NUMBER = 2;
+  private int liveReplicas_;
   /**
    * <pre>
-   * Cumulative count of pods that have been preempted by the k8s scheduler.
-   * This accumulates across reconcile cycles and is reported by the agent.
+   * The actual number of live replicas connected and ready to process requests.
    * </pre>
    *
-   * <code>uint32 pods_preempted_total = 4;</code>
-   * @return The podsPreemptedTotal.
+   * <code>uint32 live_replicas = 2;</code>
+   * @return The liveReplicas.
    */
   @java.lang.Override
-  public int getPodsPreemptedTotal() {
-    return podsPreemptedTotal_;
+  public int getLiveReplicas() {
+    return liveReplicas_;
+  }
+
+  public static final int ROLLOUT_IN_PROGRESS_FIELD_NUMBER = 3;
+  private boolean rolloutInProgress_;
+  /**
+   * <pre>
+   * If true, a new version is currently being rolled out.
+   * </pre>
+   *
+   * <code>bool rollout_in_progress = 3;</code>
+   * @return The rolloutInProgress.
+   */
+  @java.lang.Override
+  public boolean getRolloutInProgress() {
+    return rolloutInProgress_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -175,17 +161,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (podsTotal_ != 0) {
-      output.writeUInt32(1, podsTotal_);
+    if (desiredReplicas_ != 0) {
+      output.writeUInt32(1, desiredReplicas_);
     }
-    if (podsRunning_ != 0) {
-      output.writeUInt32(2, podsRunning_);
+    if (liveReplicas_ != 0) {
+      output.writeUInt32(2, liveReplicas_);
     }
-    if (totalPodsRunningTimeS_ != 0) {
-      output.writeUInt32(3, totalPodsRunningTimeS_);
-    }
-    if (podsPreemptedTotal_ != 0) {
-      output.writeUInt32(4, podsPreemptedTotal_);
+    if (rolloutInProgress_ != false) {
+      output.writeBool(3, rolloutInProgress_);
     }
     unknownFields.writeTo(output);
   }
@@ -196,21 +179,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (podsTotal_ != 0) {
+    if (desiredReplicas_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, podsTotal_);
+        .computeUInt32Size(1, desiredReplicas_);
     }
-    if (podsRunning_ != 0) {
+    if (liveReplicas_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, podsRunning_);
+        .computeUInt32Size(2, liveReplicas_);
     }
-    if (totalPodsRunningTimeS_ != 0) {
+    if (rolloutInProgress_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, totalPodsRunningTimeS_);
-    }
-    if (podsPreemptedTotal_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(4, podsPreemptedTotal_);
+        .computeBoolSize(3, rolloutInProgress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,19 +201,17 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.RunnerMetrics)) {
+    if (!(obj instanceof com.clarifai.grpc.api.DeploymentMetricsSummary)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.RunnerMetrics other = (com.clarifai.grpc.api.RunnerMetrics) obj;
+    com.clarifai.grpc.api.DeploymentMetricsSummary other = (com.clarifai.grpc.api.DeploymentMetricsSummary) obj;
 
-    if (getPodsTotal()
-        != other.getPodsTotal()) return false;
-    if (getPodsRunning()
-        != other.getPodsRunning()) return false;
-    if (getTotalPodsRunningTimeS()
-        != other.getTotalPodsRunningTimeS()) return false;
-    if (getPodsPreemptedTotal()
-        != other.getPodsPreemptedTotal()) return false;
+    if (getDesiredReplicas()
+        != other.getDesiredReplicas()) return false;
+    if (getLiveReplicas()
+        != other.getLiveReplicas()) return false;
+    if (getRolloutInProgress()
+        != other.getRolloutInProgress()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -246,82 +223,81 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PODS_TOTAL_FIELD_NUMBER;
-    hash = (53 * hash) + getPodsTotal();
-    hash = (37 * hash) + PODS_RUNNING_FIELD_NUMBER;
-    hash = (53 * hash) + getPodsRunning();
-    hash = (37 * hash) + TOTAL_PODS_RUNNING_TIME_S_FIELD_NUMBER;
-    hash = (53 * hash) + getTotalPodsRunningTimeS();
-    hash = (37 * hash) + PODS_PREEMPTED_TOTAL_FIELD_NUMBER;
-    hash = (53 * hash) + getPodsPreemptedTotal();
+    hash = (37 * hash) + DESIRED_REPLICAS_FIELD_NUMBER;
+    hash = (53 * hash) + getDesiredReplicas();
+    hash = (37 * hash) + LIVE_REPLICAS_FIELD_NUMBER;
+    hash = (53 * hash) + getLiveReplicas();
+    hash = (37 * hash) + ROLLOUT_IN_PROGRESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getRolloutInProgress());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseDelimitedFrom(
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.RunnerMetrics parseFrom(
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -334,7 +310,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.RunnerMetrics prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.DeploymentMetricsSummary prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -351,30 +327,30 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * RunnerMetrics captures metrics and status for a Runner's underlying k8s deployment.
-   * This allows tracking of deployment health, replica counts, and other relevant metrics.
+   * DeploymentMetricsSummary holds the core deployment metrics fields, reusable as both
+   * an aggregate across all nodepools and per-individual-nodepool metrics.
    * </pre>
    *
-   * Protobuf type {@code clarifai.api.RunnerMetrics}
+   * Protobuf type {@code clarifai.api.DeploymentMetricsSummary}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.RunnerMetrics)
-      com.clarifai.grpc.api.RunnerMetricsOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.DeploymentMetricsSummary)
+      com.clarifai.grpc.api.DeploymentMetricsSummaryOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_RunnerMetrics_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DeploymentMetricsSummary_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_RunnerMetrics_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DeploymentMetricsSummary_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.RunnerMetrics.class, com.clarifai.grpc.api.RunnerMetrics.Builder.class);
+              com.clarifai.grpc.api.DeploymentMetricsSummary.class, com.clarifai.grpc.api.DeploymentMetricsSummary.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.RunnerMetrics.newBuilder()
+    // Construct using com.clarifai.grpc.api.DeploymentMetricsSummary.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -392,13 +368,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      podsTotal_ = 0;
+      desiredReplicas_ = 0;
 
-      podsRunning_ = 0;
+      liveReplicas_ = 0;
 
-      totalPodsRunningTimeS_ = 0;
-
-      podsPreemptedTotal_ = 0;
+      rolloutInProgress_ = false;
 
       return this;
     }
@@ -406,17 +380,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_RunnerMetrics_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DeploymentMetricsSummary_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.RunnerMetrics getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.RunnerMetrics.getDefaultInstance();
+    public com.clarifai.grpc.api.DeploymentMetricsSummary getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.DeploymentMetricsSummary.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.RunnerMetrics build() {
-      com.clarifai.grpc.api.RunnerMetrics result = buildPartial();
+    public com.clarifai.grpc.api.DeploymentMetricsSummary build() {
+      com.clarifai.grpc.api.DeploymentMetricsSummary result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -424,12 +398,11 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.RunnerMetrics buildPartial() {
-      com.clarifai.grpc.api.RunnerMetrics result = new com.clarifai.grpc.api.RunnerMetrics(this);
-      result.podsTotal_ = podsTotal_;
-      result.podsRunning_ = podsRunning_;
-      result.totalPodsRunningTimeS_ = totalPodsRunningTimeS_;
-      result.podsPreemptedTotal_ = podsPreemptedTotal_;
+    public com.clarifai.grpc.api.DeploymentMetricsSummary buildPartial() {
+      com.clarifai.grpc.api.DeploymentMetricsSummary result = new com.clarifai.grpc.api.DeploymentMetricsSummary(this);
+      result.desiredReplicas_ = desiredReplicas_;
+      result.liveReplicas_ = liveReplicas_;
+      result.rolloutInProgress_ = rolloutInProgress_;
       onBuilt();
       return result;
     }
@@ -468,27 +441,24 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.RunnerMetrics) {
-        return mergeFrom((com.clarifai.grpc.api.RunnerMetrics)other);
+      if (other instanceof com.clarifai.grpc.api.DeploymentMetricsSummary) {
+        return mergeFrom((com.clarifai.grpc.api.DeploymentMetricsSummary)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.RunnerMetrics other) {
-      if (other == com.clarifai.grpc.api.RunnerMetrics.getDefaultInstance()) return this;
-      if (other.getPodsTotal() != 0) {
-        setPodsTotal(other.getPodsTotal());
+    public Builder mergeFrom(com.clarifai.grpc.api.DeploymentMetricsSummary other) {
+      if (other == com.clarifai.grpc.api.DeploymentMetricsSummary.getDefaultInstance()) return this;
+      if (other.getDesiredReplicas() != 0) {
+        setDesiredReplicas(other.getDesiredReplicas());
       }
-      if (other.getPodsRunning() != 0) {
-        setPodsRunning(other.getPodsRunning());
+      if (other.getLiveReplicas() != 0) {
+        setLiveReplicas(other.getLiveReplicas());
       }
-      if (other.getTotalPodsRunningTimeS() != 0) {
-        setTotalPodsRunningTimeS(other.getTotalPodsRunningTimeS());
-      }
-      if (other.getPodsPreemptedTotal() != 0) {
-        setPodsPreemptedTotal(other.getPodsPreemptedTotal());
+      if (other.getRolloutInProgress() != false) {
+        setRolloutInProgress(other.getRolloutInProgress());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -505,11 +475,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.RunnerMetrics parsedMessage = null;
+      com.clarifai.grpc.api.DeploymentMetricsSummary parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.RunnerMetrics) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.DeploymentMetricsSummary) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -519,156 +489,131 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int podsTotal_ ;
+    private int desiredReplicas_ ;
     /**
-     * <code>uint32 pods_total = 1;</code>
-     * @return The podsTotal.
+     * <pre>
+     * The number of replicas desired by the orchestrator.
+     * </pre>
+     *
+     * <code>uint32 desired_replicas = 1;</code>
+     * @return The desiredReplicas.
      */
     @java.lang.Override
-    public int getPodsTotal() {
-      return podsTotal_;
+    public int getDesiredReplicas() {
+      return desiredReplicas_;
     }
     /**
-     * <code>uint32 pods_total = 1;</code>
-     * @param value The podsTotal to set.
+     * <pre>
+     * The number of replicas desired by the orchestrator.
+     * </pre>
+     *
+     * <code>uint32 desired_replicas = 1;</code>
+     * @param value The desiredReplicas to set.
      * @return This builder for chaining.
      */
-    public Builder setPodsTotal(int value) {
+    public Builder setDesiredReplicas(int value) {
       
-      podsTotal_ = value;
+      desiredReplicas_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 pods_total = 1;</code>
+     * <pre>
+     * The number of replicas desired by the orchestrator.
+     * </pre>
+     *
+     * <code>uint32 desired_replicas = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPodsTotal() {
+    public Builder clearDesiredReplicas() {
       
-      podsTotal_ = 0;
+      desiredReplicas_ = 0;
       onChanged();
       return this;
     }
 
-    private int podsRunning_ ;
+    private int liveReplicas_ ;
     /**
-     * <code>uint32 pods_running = 2;</code>
-     * @return The podsRunning.
+     * <pre>
+     * The actual number of live replicas connected and ready to process requests.
+     * </pre>
+     *
+     * <code>uint32 live_replicas = 2;</code>
+     * @return The liveReplicas.
      */
     @java.lang.Override
-    public int getPodsRunning() {
-      return podsRunning_;
+    public int getLiveReplicas() {
+      return liveReplicas_;
     }
     /**
-     * <code>uint32 pods_running = 2;</code>
-     * @param value The podsRunning to set.
+     * <pre>
+     * The actual number of live replicas connected and ready to process requests.
+     * </pre>
+     *
+     * <code>uint32 live_replicas = 2;</code>
+     * @param value The liveReplicas to set.
      * @return This builder for chaining.
      */
-    public Builder setPodsRunning(int value) {
+    public Builder setLiveReplicas(int value) {
       
-      podsRunning_ = value;
+      liveReplicas_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 pods_running = 2;</code>
+     * <pre>
+     * The actual number of live replicas connected and ready to process requests.
+     * </pre>
+     *
+     * <code>uint32 live_replicas = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPodsRunning() {
+    public Builder clearLiveReplicas() {
       
-      podsRunning_ = 0;
+      liveReplicas_ = 0;
       onChanged();
       return this;
     }
 
-    private int totalPodsRunningTimeS_ ;
+    private boolean rolloutInProgress_ ;
     /**
      * <pre>
-     * Cumulative total time (in seconds) that pods have been running for this runner.
-     * This accumulates across scale-up/down cycles and is reported by the agent.
+     * If true, a new version is currently being rolled out.
      * </pre>
      *
-     * <code>uint32 total_pods_running_time_s = 3;</code>
-     * @return The totalPodsRunningTimeS.
+     * <code>bool rollout_in_progress = 3;</code>
+     * @return The rolloutInProgress.
      */
     @java.lang.Override
-    public int getTotalPodsRunningTimeS() {
-      return totalPodsRunningTimeS_;
+    public boolean getRolloutInProgress() {
+      return rolloutInProgress_;
     }
     /**
      * <pre>
-     * Cumulative total time (in seconds) that pods have been running for this runner.
-     * This accumulates across scale-up/down cycles and is reported by the agent.
+     * If true, a new version is currently being rolled out.
      * </pre>
      *
-     * <code>uint32 total_pods_running_time_s = 3;</code>
-     * @param value The totalPodsRunningTimeS to set.
+     * <code>bool rollout_in_progress = 3;</code>
+     * @param value The rolloutInProgress to set.
      * @return This builder for chaining.
      */
-    public Builder setTotalPodsRunningTimeS(int value) {
+    public Builder setRolloutInProgress(boolean value) {
       
-      totalPodsRunningTimeS_ = value;
+      rolloutInProgress_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Cumulative total time (in seconds) that pods have been running for this runner.
-     * This accumulates across scale-up/down cycles and is reported by the agent.
+     * If true, a new version is currently being rolled out.
      * </pre>
      *
-     * <code>uint32 total_pods_running_time_s = 3;</code>
+     * <code>bool rollout_in_progress = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTotalPodsRunningTimeS() {
+    public Builder clearRolloutInProgress() {
       
-      totalPodsRunningTimeS_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int podsPreemptedTotal_ ;
-    /**
-     * <pre>
-     * Cumulative count of pods that have been preempted by the k8s scheduler.
-     * This accumulates across reconcile cycles and is reported by the agent.
-     * </pre>
-     *
-     * <code>uint32 pods_preempted_total = 4;</code>
-     * @return The podsPreemptedTotal.
-     */
-    @java.lang.Override
-    public int getPodsPreemptedTotal() {
-      return podsPreemptedTotal_;
-    }
-    /**
-     * <pre>
-     * Cumulative count of pods that have been preempted by the k8s scheduler.
-     * This accumulates across reconcile cycles and is reported by the agent.
-     * </pre>
-     *
-     * <code>uint32 pods_preempted_total = 4;</code>
-     * @param value The podsPreemptedTotal to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPodsPreemptedTotal(int value) {
-      
-      podsPreemptedTotal_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Cumulative count of pods that have been preempted by the k8s scheduler.
-     * This accumulates across reconcile cycles and is reported by the agent.
-     * </pre>
-     *
-     * <code>uint32 pods_preempted_total = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPodsPreemptedTotal() {
-      
-      podsPreemptedTotal_ = 0;
+      rolloutInProgress_ = false;
       onChanged();
       return this;
     }
@@ -685,41 +630,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.RunnerMetrics)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.DeploymentMetricsSummary)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.RunnerMetrics)
-  private static final com.clarifai.grpc.api.RunnerMetrics DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.DeploymentMetricsSummary)
+  private static final com.clarifai.grpc.api.DeploymentMetricsSummary DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.RunnerMetrics();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.DeploymentMetricsSummary();
   }
 
-  public static com.clarifai.grpc.api.RunnerMetrics getDefaultInstance() {
+  public static com.clarifai.grpc.api.DeploymentMetricsSummary getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RunnerMetrics>
-      PARSER = new com.google.protobuf.AbstractParser<RunnerMetrics>() {
+  private static final com.google.protobuf.Parser<DeploymentMetricsSummary>
+      PARSER = new com.google.protobuf.AbstractParser<DeploymentMetricsSummary>() {
     @java.lang.Override
-    public RunnerMetrics parsePartialFrom(
+    public DeploymentMetricsSummary parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RunnerMetrics(input, extensionRegistry);
+      return new DeploymentMetricsSummary(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<RunnerMetrics> parser() {
+  public static com.google.protobuf.Parser<DeploymentMetricsSummary> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RunnerMetrics> getParserForType() {
+  public com.google.protobuf.Parser<DeploymentMetricsSummary> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.RunnerMetrics getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.DeploymentMetricsSummary getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

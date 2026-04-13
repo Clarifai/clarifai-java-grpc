@@ -9,31 +9,108 @@ public interface DeploymentMetricsOrBuilder extends
 
   /**
    * <pre>
-   * The number of replicas desired by the orchestrator.
+   * Deprecated: use aggregate instead.
    * </pre>
    *
-   * <code>uint32 desired_replicas = 1;</code>
+   * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4847
    * @return The desiredReplicas.
    */
-  int getDesiredReplicas();
+  @java.lang.Deprecated int getDesiredReplicas();
 
   /**
    * <pre>
-   * The actual number of live replicas connected and ready to process requests.
+   * Deprecated: use aggregate instead.
    * </pre>
    *
-   * <code>uint32 live_replicas = 2;</code>
+   * <code>uint32 live_replicas = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4849
    * @return The liveReplicas.
    */
-  int getLiveReplicas();
+  @java.lang.Deprecated int getLiveReplicas();
 
   /**
    * <pre>
-   * If true, the deployment is currently rolling out a new version.
+   * Deprecated: use aggregate instead.
    * </pre>
    *
-   * <code>bool rollout_in_progress = 3;</code>
+   * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4851
    * @return The rolloutInProgress.
    */
-  boolean getRolloutInProgress();
+  @java.lang.Deprecated boolean getRolloutInProgress();
+
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.NodepoolDeploymentMetrics> 
+      getNodepoolMetricsList();
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  com.clarifai.grpc.api.NodepoolDeploymentMetrics getNodepoolMetrics(int index);
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  int getNodepoolMetricsCount();
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.NodepoolDeploymentMetricsOrBuilder> 
+      getNodepoolMetricsOrBuilderList();
+  /**
+   * <pre>
+   * Per-nodepool breakdown of metrics.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.NodepoolDeploymentMetrics nodepool_metrics = 4;</code>
+   */
+  com.clarifai.grpc.api.NodepoolDeploymentMetricsOrBuilder getNodepoolMetricsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * Aggregate metrics across all nodepools.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+   * @return Whether the aggregate field is set.
+   */
+  boolean hasAggregate();
+  /**
+   * <pre>
+   * Aggregate metrics across all nodepools.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+   * @return The aggregate.
+   */
+  com.clarifai.grpc.api.DeploymentMetricsSummary getAggregate();
+  /**
+   * <pre>
+   * Aggregate metrics across all nodepools.
+   * </pre>
+   *
+   * <code>.clarifai.api.DeploymentMetricsSummary aggregate = 5;</code>
+   */
+  com.clarifai.grpc.api.DeploymentMetricsSummaryOrBuilder getAggregateOrBuilder();
 }

@@ -134,6 +134,11 @@ private static final long serialVersionUID = 0L;
             completionTokens_ = input.readUInt32();
             break;
           }
+          case 72: {
+
+            cachedTokens_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -440,6 +445,22 @@ private static final long serialVersionUID = 0L;
     return completionTokens_;
   }
 
+  public static final int CACHED_TOKENS_FIELD_NUMBER = 9;
+  private int cachedTokens_;
+  /**
+   * <pre>
+   * Number of cached prompt tokens as reported by the model (subset of prompt_tokens).
+   * Cached tokens are prompt tokens served from the model's KV cache rather than recomputed.
+   * </pre>
+   *
+   * <code>uint32 cached_tokens = 9;</code>
+   * @return The cachedTokens.
+   */
+  @java.lang.Override
+  public int getCachedTokens() {
+    return cachedTokens_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -477,6 +498,9 @@ private static final long serialVersionUID = 0L;
     }
     if (completionTokens_ != 0) {
       output.writeUInt32(8, completionTokens_);
+    }
+    if (cachedTokens_ != 0) {
+      output.writeUInt32(9, cachedTokens_);
     }
     unknownFields.writeTo(output);
   }
@@ -517,6 +541,10 @@ private static final long serialVersionUID = 0L;
     if (completionTokens_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(8, completionTokens_);
+    }
+    if (cachedTokens_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(9, cachedTokens_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -564,6 +592,8 @@ private static final long serialVersionUID = 0L;
         != other.getPromptTokens()) return false;
     if (getCompletionTokens()
         != other.getCompletionTokens()) return false;
+    if (getCachedTokens()
+        != other.getCachedTokens()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -601,6 +631,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPromptTokens();
     hash = (37 * hash) + COMPLETION_TOKENS_FIELD_NUMBER;
     hash = (53 * hash) + getCompletionTokens();
+    hash = (37 * hash) + CACHED_TOKENS_FIELD_NUMBER;
+    hash = (53 * hash) + getCachedTokens();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -774,6 +806,8 @@ private static final long serialVersionUID = 0L;
 
       completionTokens_ = 0;
 
+      cachedTokens_ = 0;
+
       return this;
     }
 
@@ -828,6 +862,7 @@ private static final long serialVersionUID = 0L;
       }
       result.promptTokens_ = promptTokens_;
       result.completionTokens_ = completionTokens_;
+      result.cachedTokens_ = cachedTokens_;
       onBuilt();
       return result;
     }
@@ -900,6 +935,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCompletionTokens() != 0) {
         setCompletionTokens(other.getCompletionTokens());
+      }
+      if (other.getCachedTokens() != 0) {
+        setCachedTokens(other.getCachedTokens());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1901,6 +1939,52 @@ private static final long serialVersionUID = 0L;
     public Builder clearCompletionTokens() {
       
       completionTokens_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int cachedTokens_ ;
+    /**
+     * <pre>
+     * Number of cached prompt tokens as reported by the model (subset of prompt_tokens).
+     * Cached tokens are prompt tokens served from the model's KV cache rather than recomputed.
+     * </pre>
+     *
+     * <code>uint32 cached_tokens = 9;</code>
+     * @return The cachedTokens.
+     */
+    @java.lang.Override
+    public int getCachedTokens() {
+      return cachedTokens_;
+    }
+    /**
+     * <pre>
+     * Number of cached prompt tokens as reported by the model (subset of prompt_tokens).
+     * Cached tokens are prompt tokens served from the model's KV cache rather than recomputed.
+     * </pre>
+     *
+     * <code>uint32 cached_tokens = 9;</code>
+     * @param value The cachedTokens to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCachedTokens(int value) {
+      
+      cachedTokens_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of cached prompt tokens as reported by the model (subset of prompt_tokens).
+     * Cached tokens are prompt tokens served from the model's KV cache rather than recomputed.
+     * </pre>
+     *
+     * <code>uint32 cached_tokens = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCachedTokens() {
+      
+      cachedTokens_ = 0;
       onChanged();
       return this;
     }

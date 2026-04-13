@@ -155,5 +155,32 @@ public interface RunnerItemOrBuilder extends
    */
   com.clarifai.grpc.api.AutoAnnotationRequestOrBuilder getAutoAnnotationRequestOrBuilder();
 
+  /**
+   * <pre>
+   * Metadata used for routing and other purposes.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   * <pre>
+   * Metadata used for routing and other purposes.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+   * @return The metadata.
+   */
+  com.clarifai.grpc.api.RunnerItemMetadata getMetadata();
+  /**
+   * <pre>
+   * Metadata used for routing and other purposes.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+   */
+  com.clarifai.grpc.api.RunnerItemMetadataOrBuilder getMetadataOrBuilder();
+
   public com.clarifai.grpc.api.RunnerItem.RequestCase getRequestCase();
 }

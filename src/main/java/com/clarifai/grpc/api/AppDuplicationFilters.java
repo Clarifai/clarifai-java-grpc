@@ -5,12 +5,13 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
+ * Deprecated: App duplication is no longer supported.
  * AppDuplicationFilters
  * </pre>
  *
  * Protobuf type {@code clarifai.api.AppDuplicationFilters}
  */
-public final class AppDuplicationFilters extends
+@java.lang.Deprecated public final class AppDuplicationFilters extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.AppDuplicationFilters)
     AppDuplicationFiltersOrBuilder {
@@ -115,8 +116,7 @@ private static final long serialVersionUID = 0L;
   private boolean copyInputs_;
   /**
    * <pre>
-   * Copy inputs. Requires that copy_concepts is also set.
-   * Note that this will still copy input-level annotations even if copy_annotations is not set.
+   * Copy inputs.
    * </pre>
    *
    * <code>bool copy_inputs = 1;</code>
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
   private boolean copyAnnotations_;
   /**
    * <pre>
-   * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
+   * Copy annotations.
    * </pre>
    *
    * <code>bool copy_annotations = 3;</code>
@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
   private boolean copyModels_;
   /**
    * <pre>
-   * Copy models. Requires that copy_concepts is also set.
+   * Copy models.
    * </pre>
    *
    * <code>bool copy_models = 4;</code>
@@ -393,6 +393,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated: App duplication is no longer supported.
    * AppDuplicationFilters
    * </pre>
    *
@@ -569,8 +570,7 @@ private static final long serialVersionUID = 0L;
     private boolean copyInputs_ ;
     /**
      * <pre>
-     * Copy inputs. Requires that copy_concepts is also set.
-     * Note that this will still copy input-level annotations even if copy_annotations is not set.
+     * Copy inputs.
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -582,8 +582,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy inputs. Requires that copy_concepts is also set.
-     * Note that this will still copy input-level annotations even if copy_annotations is not set.
+     * Copy inputs.
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -598,8 +597,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy inputs. Requires that copy_concepts is also set.
-     * Note that this will still copy input-level annotations even if copy_annotations is not set.
+     * Copy inputs.
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -658,7 +656,7 @@ private static final long serialVersionUID = 0L;
     private boolean copyAnnotations_ ;
     /**
      * <pre>
-     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
+     * Copy annotations.
      * </pre>
      *
      * <code>bool copy_annotations = 3;</code>
@@ -670,7 +668,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
+     * Copy annotations.
      * </pre>
      *
      * <code>bool copy_annotations = 3;</code>
@@ -685,7 +683,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
+     * Copy annotations.
      * </pre>
      *
      * <code>bool copy_annotations = 3;</code>
@@ -701,7 +699,7 @@ private static final long serialVersionUID = 0L;
     private boolean copyModels_ ;
     /**
      * <pre>
-     * Copy models. Requires that copy_concepts is also set.
+     * Copy models.
      * </pre>
      *
      * <code>bool copy_models = 4;</code>
@@ -713,7 +711,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy models. Requires that copy_concepts is also set.
+     * Copy models.
      * </pre>
      *
      * <code>bool copy_models = 4;</code>
@@ -728,7 +726,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy models. Requires that copy_concepts is also set.
+     * Copy models.
      * </pre>
      *
      * <code>bool copy_models = 4;</code>

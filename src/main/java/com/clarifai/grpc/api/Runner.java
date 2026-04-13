@@ -189,6 +189,11 @@ private static final long serialVersionUID = 0L;
             minReplicas_ = input.readUInt32();
             break;
           }
+          case 120: {
+
+            priority_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -452,7 +457,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4590
+   *     See proto/clarifai/api/resources.proto;l=4463
    * @return A list containing the labels.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -466,7 +471,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4590
+   *     See proto/clarifai/api/resources.proto;l=4463
    * @return The count of labels.
    */
   @java.lang.Deprecated public int getLabelsCount() {
@@ -479,7 +484,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4590
+   *     See proto/clarifai/api/resources.proto;l=4463
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -493,7 +498,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4590
+   *     See proto/clarifai/api/resources.proto;l=4463
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -782,6 +787,23 @@ private static final long serialVersionUID = 0L;
     return minReplicas_;
   }
 
+  public static final int PRIORITY_FIELD_NUMBER = 15;
+  private int priority_;
+  /**
+   * <pre>
+   * The scheduling priority for this runner's k8s deployment.
+   * Valid values are 0-9, where higher values indicate higher priority.
+   * This value comes from the deployment nodepool's priority setting.
+   * </pre>
+   *
+   * <code>uint32 priority = 15;</code>
+   * @return The priority.
+   */
+  @java.lang.Override
+  public int getPriority() {
+    return priority_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -834,6 +856,9 @@ private static final long serialVersionUID = 0L;
     }
     if (minReplicas_ != 0) {
       output.writeUInt32(14, minReplicas_);
+    }
+    if (priority_ != 0) {
+      output.writeUInt32(15, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -898,6 +923,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(14, minReplicas_);
     }
+    if (priority_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(15, priority_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -960,6 +989,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getMinReplicas()
         != other.getMinReplicas()) return false;
+    if (getPriority()
+        != other.getPriority()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1015,6 +1046,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MIN_REPLICAS_FIELD_NUMBER;
     hash = (53 * hash) + getMinReplicas();
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + getPriority();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1212,6 +1245,8 @@ private static final long serialVersionUID = 0L;
       }
       minReplicas_ = 0;
 
+      priority_ = 0;
+
       return this;
     }
 
@@ -1292,6 +1327,7 @@ private static final long serialVersionUID = 0L;
         result.runnerMetrics_ = runnerMetricsBuilder_.build();
       }
       result.minReplicas_ = minReplicas_;
+      result.priority_ = priority_;
       onBuilt();
       return result;
     }
@@ -1410,6 +1446,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMinReplicas() != 0) {
         setMinReplicas(other.getMinReplicas());
+      }
+      if (other.getPriority() != 0) {
+        setPriority(other.getPriority());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2135,7 +2174,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4590
+     *     See proto/clarifai/api/resources.proto;l=4463
      * @return A list containing the labels.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -2149,7 +2188,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4590
+     *     See proto/clarifai/api/resources.proto;l=4463
      * @return The count of labels.
      */
     @java.lang.Deprecated public int getLabelsCount() {
@@ -2162,7 +2201,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4590
+     *     See proto/clarifai/api/resources.proto;l=4463
      * @param index The index of the element to return.
      * @return The labels at the given index.
      */
@@ -2176,7 +2215,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4590
+     *     See proto/clarifai/api/resources.proto;l=4463
      * @param index The index of the value to return.
      * @return The bytes of the labels at the given index.
      */
@@ -2191,7 +2230,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4590
+     *     See proto/clarifai/api/resources.proto;l=4463
      * @param index The index to set the value at.
      * @param value The labels to set.
      * @return This builder for chaining.
@@ -2213,7 +2252,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4590
+     *     See proto/clarifai/api/resources.proto;l=4463
      * @param value The labels to add.
      * @return This builder for chaining.
      */
@@ -2234,7 +2273,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4590
+     *     See proto/clarifai/api/resources.proto;l=4463
      * @param values The labels to add.
      * @return This builder for chaining.
      */
@@ -2253,7 +2292,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4590
+     *     See proto/clarifai/api/resources.proto;l=4463
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearLabels() {
@@ -2269,7 +2308,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4590
+     *     See proto/clarifai/api/resources.proto;l=4463
      * @param value The bytes of the labels to add.
      * @return This builder for chaining.
      */
@@ -3413,6 +3452,55 @@ private static final long serialVersionUID = 0L;
     public Builder clearMinReplicas() {
       
       minReplicas_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int priority_ ;
+    /**
+     * <pre>
+     * The scheduling priority for this runner's k8s deployment.
+     * Valid values are 0-9, where higher values indicate higher priority.
+     * This value comes from the deployment nodepool's priority setting.
+     * </pre>
+     *
+     * <code>uint32 priority = 15;</code>
+     * @return The priority.
+     */
+    @java.lang.Override
+    public int getPriority() {
+      return priority_;
+    }
+    /**
+     * <pre>
+     * The scheduling priority for this runner's k8s deployment.
+     * Valid values are 0-9, where higher values indicate higher priority.
+     * This value comes from the deployment nodepool's priority setting.
+     * </pre>
+     *
+     * <code>uint32 priority = 15;</code>
+     * @param value The priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriority(int value) {
+      
+      priority_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The scheduling priority for this runner's k8s deployment.
+     * Valid values are 0-9, where higher values indicate higher priority.
+     * This value comes from the deployment nodepool's priority setting.
+     * </pre>
+     *
+     * <code>uint32 priority = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPriority() {
+      
+      priority_ = 0;
       onChanged();
       return this;
     }

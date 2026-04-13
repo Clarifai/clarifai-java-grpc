@@ -3,14 +3,13 @@
 
 package com.clarifai.grpc.api;
 
-public interface AppDuplicationFiltersOrBuilder extends
+@java.lang.Deprecated public interface AppDuplicationFiltersOrBuilder extends
     // @@protoc_insertion_point(interface_extends:clarifai.api.AppDuplicationFilters)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <pre>
-   * Copy inputs. Requires that copy_concepts is also set.
-   * Note that this will still copy input-level annotations even if copy_annotations is not set.
+   * Copy inputs.
    * </pre>
    *
    * <code>bool copy_inputs = 1;</code>
@@ -30,7 +29,7 @@ public interface AppDuplicationFiltersOrBuilder extends
 
   /**
    * <pre>
-   * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
+   * Copy annotations.
    * </pre>
    *
    * <code>bool copy_annotations = 3;</code>
@@ -40,7 +39,7 @@ public interface AppDuplicationFiltersOrBuilder extends
 
   /**
    * <pre>
-   * Copy models. Requires that copy_concepts is also set.
+   * Copy models.
    * </pre>
    *
    * <code>bool copy_models = 4;</code>

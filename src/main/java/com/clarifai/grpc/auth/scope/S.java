@@ -23,10 +23,7 @@ package com.clarifai.grpc.auth.scope;
  * also specify cl_depending_scopes for each API endpoint. Those cover cases where an endpoint
  * might need to access more than just that one resource type in order to operate (ie. API handlers
  * that make multiple DB calls of various resource types likely have more cl_depending_scopes than
- * the ones listed below). For example: PostCollectors to create a collector we make sure that you
- * can do model predictions, get concepts, etc. so that you don't have a collector that would be
- * useless at the end of that API handler but below you can see that the dependencies of Collector
- * scopes are only on other Collector scopes.
+ * the ones listed below).
  * </pre>
  *
  * Protobuf enum {@code clarifai.auth.scope.S}
@@ -313,27 +310,22 @@ public enum S
   Annotations_Delete(40),
   /**
    * <pre>
-   * Write to the collectors DB table.
+   * Deprecated: collectors feature has been removed.
    * </pre>
    *
-   * <code>Collectors_Add = 41 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+   * <code>Collectors_Add = 41 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
    */
+  @java.lang.Deprecated
   Collectors_Add(41),
   /**
-   * <pre>
-   * Read from the collectors DB table.
-   * </pre>
-   *
-   * <code>Collectors_Get = 42 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Collectors_Get = 42 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
+  @java.lang.Deprecated
   Collectors_Get(42),
   /**
-   * <pre>
-   * To delete we need read/write.
-   * </pre>
-   *
-   * <code>Collectors_Delete = 43 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+   * <code>Collectors_Delete = 43 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
    */
+  @java.lang.Deprecated
   Collectors_Delete(43),
   /**
    * <pre>
@@ -1132,28 +1124,20 @@ public enum S
   public static final int Annotations_Delete_VALUE = 40;
   /**
    * <pre>
-   * Write to the collectors DB table.
+   * Deprecated: collectors feature has been removed.
    * </pre>
    *
-   * <code>Collectors_Add = 41 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+   * <code>Collectors_Add = 41 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
    */
-  public static final int Collectors_Add_VALUE = 41;
+  @java.lang.Deprecated public static final int Collectors_Add_VALUE = 41;
   /**
-   * <pre>
-   * Read from the collectors DB table.
-   * </pre>
-   *
-   * <code>Collectors_Get = 42 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Collectors_Get = 42 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
-  public static final int Collectors_Get_VALUE = 42;
+  @java.lang.Deprecated public static final int Collectors_Get_VALUE = 42;
   /**
-   * <pre>
-   * To delete we need read/write.
-   * </pre>
-   *
-   * <code>Collectors_Delete = 43 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+   * <code>Collectors_Delete = 43 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
    */
-  public static final int Collectors_Delete_VALUE = 43;
+  @java.lang.Deprecated public static final int Collectors_Delete_VALUE = 43;
   /**
    * <pre>
    * Write to the apps DB table.

@@ -13,13 +13,21 @@ public enum MetricType
    */
   METRIC_TYPE_NOT_SET(0),
   /**
-   * <code>MODEL_REQUEST_COUNT = 1;</code>
+   * <code>MODEL_TTFT = 1;</code>
    */
-  MODEL_REQUEST_COUNT(1),
+  MODEL_TTFT(1),
   /**
-   * <code>MODEL_LATENCY = 2;</code>
+   * <code>MODEL_THROUGHPUT = 2;</code>
    */
-  MODEL_LATENCY(2),
+  MODEL_THROUGHPUT(2),
+  /**
+   * <code>MODEL_PROMPT_TOKEN_THROUGHPUT = 3;</code>
+   */
+  MODEL_PROMPT_TOKEN_THROUGHPUT(3),
+  /**
+   * <code>MODEL_COMPLETION_TOKEN_THROUGHPUT = 4;</code>
+   */
+  MODEL_COMPLETION_TOKEN_THROUGHPUT(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -28,13 +36,21 @@ public enum MetricType
    */
   public static final int METRIC_TYPE_NOT_SET_VALUE = 0;
   /**
-   * <code>MODEL_REQUEST_COUNT = 1;</code>
+   * <code>MODEL_TTFT = 1;</code>
    */
-  public static final int MODEL_REQUEST_COUNT_VALUE = 1;
+  public static final int MODEL_TTFT_VALUE = 1;
   /**
-   * <code>MODEL_LATENCY = 2;</code>
+   * <code>MODEL_THROUGHPUT = 2;</code>
    */
-  public static final int MODEL_LATENCY_VALUE = 2;
+  public static final int MODEL_THROUGHPUT_VALUE = 2;
+  /**
+   * <code>MODEL_PROMPT_TOKEN_THROUGHPUT = 3;</code>
+   */
+  public static final int MODEL_PROMPT_TOKEN_THROUGHPUT_VALUE = 3;
+  /**
+   * <code>MODEL_COMPLETION_TOKEN_THROUGHPUT = 4;</code>
+   */
+  public static final int MODEL_COMPLETION_TOKEN_THROUGHPUT_VALUE = 4;
 
 
   public final int getNumber() {
@@ -62,8 +78,10 @@ public enum MetricType
   public static MetricType forNumber(int value) {
     switch (value) {
       case 0: return METRIC_TYPE_NOT_SET;
-      case 1: return MODEL_REQUEST_COUNT;
-      case 2: return MODEL_LATENCY;
+      case 1: return MODEL_TTFT;
+      case 2: return MODEL_THROUGHPUT;
+      case 3: return MODEL_PROMPT_TOKEN_THROUGHPUT;
+      case 4: return MODEL_COMPLETION_TOKEN_THROUGHPUT;
       default: return null;
     }
   }

@@ -123,6 +123,19 @@ private static final long serialVersionUID = 0L;
             requestCase_ = 6;
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.RunnerItemMetadata.Builder subBuilder = null;
+            if (metadata_ != null) {
+              subBuilder = metadata_.toBuilder();
+            }
+            metadata_ = input.readMessage(com.clarifai.grpc.api.RunnerItemMetadata.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metadata_);
+              metadata_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -459,6 +472,44 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.AutoAnnotationRequest.getDefaultInstance();
   }
 
+  public static final int METADATA_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.RunnerItemMetadata metadata_;
+  /**
+   * <pre>
+   * Metadata used for routing and other purposes.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   * <pre>
+   * Metadata used for routing and other purposes.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerItemMetadata getMetadata() {
+    return metadata_ == null ? com.clarifai.grpc.api.RunnerItemMetadata.getDefaultInstance() : metadata_;
+  }
+  /**
+   * <pre>
+   * Metadata used for routing and other purposes.
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerItemMetadataOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -491,6 +542,9 @@ private static final long serialVersionUID = 0L;
     if (requestCase_ == 6) {
       output.writeMessage(6, (com.clarifai.grpc.api.AutoAnnotationRequest) request_);
     }
+    if (metadata_ != null) {
+      output.writeMessage(7, getMetadata());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -522,6 +576,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.clarifai.grpc.api.AutoAnnotationRequest) request_);
     }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getMetadata());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -545,6 +603,11 @@ private static final long serialVersionUID = 0L;
     if (hasProcessingInfo()) {
       if (!getProcessingInfo()
           .equals(other.getProcessingInfo())) return false;
+    }
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
     }
     if (!getRequestCase().equals(other.getRequestCase())) return false;
     switch (requestCase_) {
@@ -581,6 +644,10 @@ private static final long serialVersionUID = 0L;
     if (hasProcessingInfo()) {
       hash = (37 * hash) + PROCESSING_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getProcessingInfo().hashCode();
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
     switch (requestCase_) {
       case 4:
@@ -747,6 +814,12 @@ private static final long serialVersionUID = 0L;
         processingInfo_ = null;
         processingInfoBuilder_ = null;
       }
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
       requestCase_ = 0;
       request_ = null;
       return this;
@@ -802,6 +875,11 @@ private static final long serialVersionUID = 0L;
         } else {
           result.request_ = autoAnnotationRequestBuilder_.build();
         }
+      }
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
       }
       result.requestCase_ = requestCase_;
       onBuilt();
@@ -862,6 +940,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasProcessingInfo()) {
         mergeProcessingInfo(other.getProcessingInfo());
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
       }
       switch (other.getRequestCase()) {
         case POST_MODEL_OUTPUTS_REQUEST: {
@@ -1803,6 +1884,161 @@ private static final long serialVersionUID = 0L;
       requestCase_ = 6;
       onChanged();;
       return autoAnnotationRequestBuilder_;
+    }
+
+    private com.clarifai.grpc.api.RunnerItemMetadata metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerItemMetadata, com.clarifai.grpc.api.RunnerItemMetadata.Builder, com.clarifai.grpc.api.RunnerItemMetadataOrBuilder> metadataBuilder_;
+    /**
+     * <pre>
+     * Metadata used for routing and other purposes.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     * <pre>
+     * Metadata used for routing and other purposes.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     * @return The metadata.
+     */
+    public com.clarifai.grpc.api.RunnerItemMetadata getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.clarifai.grpc.api.RunnerItemMetadata.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Metadata used for routing and other purposes.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     */
+    public Builder setMetadata(com.clarifai.grpc.api.RunnerItemMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Metadata used for routing and other purposes.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     */
+    public Builder setMetadata(
+        com.clarifai.grpc.api.RunnerItemMetadata.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Metadata used for routing and other purposes.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     */
+    public Builder mergeMetadata(com.clarifai.grpc.api.RunnerItemMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+            com.clarifai.grpc.api.RunnerItemMetadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Metadata used for routing and other purposes.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Metadata used for routing and other purposes.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     */
+    public com.clarifai.grpc.api.RunnerItemMetadata.Builder getMetadataBuilder() {
+      
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Metadata used for routing and other purposes.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     */
+    public com.clarifai.grpc.api.RunnerItemMetadataOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ?
+            com.clarifai.grpc.api.RunnerItemMetadata.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     * <pre>
+     * Metadata used for routing and other purposes.
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerItemMetadata metadata = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerItemMetadata, com.clarifai.grpc.api.RunnerItemMetadata.Builder, com.clarifai.grpc.api.RunnerItemMetadataOrBuilder> 
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.RunnerItemMetadata, com.clarifai.grpc.api.RunnerItemMetadata.Builder, com.clarifai.grpc.api.RunnerItemMetadataOrBuilder>(
+                getMetadata(),
+                getParentForChildren(),
+                isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

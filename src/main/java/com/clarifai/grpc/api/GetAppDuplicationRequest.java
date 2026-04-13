@@ -5,12 +5,13 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
+ * Deprecated: App duplication is no longer supported.
  * Request to get an app duplication job.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.GetAppDuplicationRequest}
  */
-public final class GetAppDuplicationRequest extends
+@java.lang.Deprecated public final class GetAppDuplicationRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.GetAppDuplicationRequest)
     GetAppDuplicationRequestOrBuilder {
@@ -354,6 +355,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated: App duplication is no longer supported.
    * Request to get an app duplication job.
    * </pre>
    *
