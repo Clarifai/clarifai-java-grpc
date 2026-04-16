@@ -41,4 +41,17 @@ public interface StreamLivestreamAnnotationsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getInputIdBytes();
+
+  /**
+   * <pre>
+   * Optional minimum prediction confidence threshold (0.0 to 1.0).
+   * When set (&gt; 0), only annotations with at least one concept (tag) having
+   * metadata.prediction_score &gt;= this value are streamed.
+   * When unset (0), all annotations are streamed (backwards compatible).
+   * </pre>
+   *
+   * <code>float min_prediction_score = 3;</code>
+   * @return The minPredictionScore.
+   */
+  float getMinPredictionScore();
 }

@@ -28,6 +28,10 @@ public enum MetricType
    * <code>MODEL_COMPLETION_TOKEN_THROUGHPUT = 4;</code>
    */
   MODEL_COMPLETION_TOKEN_THROUGHPUT(4),
+  /**
+   * <code>MODEL_REQUEST_COUNT = 5;</code>
+   */
+  MODEL_REQUEST_COUNT(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -51,6 +55,10 @@ public enum MetricType
    * <code>MODEL_COMPLETION_TOKEN_THROUGHPUT = 4;</code>
    */
   public static final int MODEL_COMPLETION_TOKEN_THROUGHPUT_VALUE = 4;
+  /**
+   * <code>MODEL_REQUEST_COUNT = 5;</code>
+   */
+  public static final int MODEL_REQUEST_COUNT_VALUE = 5;
 
 
   public final int getNumber() {
@@ -82,6 +90,7 @@ public enum MetricType
       case 2: return MODEL_THROUGHPUT;
       case 3: return MODEL_PROMPT_TOKEN_THROUGHPUT;
       case 4: return MODEL_COMPLETION_TOKEN_THROUGHPUT;
+      case 5: return MODEL_REQUEST_COUNT;
       default: return null;
     }
   }

@@ -123,6 +123,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 85: {
+
+            minPredictionScore_ = input.readFloat();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -421,6 +426,24 @@ private static final long serialVersionUID = 0L;
     return getWorker();
   }
 
+  public static final int MIN_PREDICTION_SCORE_FIELD_NUMBER = 10;
+  private float minPredictionScore_;
+  /**
+   * <pre>
+   * Optional minimum prediction confidence threshold (0.0 to 1.0).
+   * When set (&gt; 0), only annotations with at least one concept (tag) having
+   * metadata.prediction_score &gt;= this value are returned.
+   * When unset (0), all annotations are returned (backwards compatible).
+   * </pre>
+   *
+   * <code>float min_prediction_score = 10;</code>
+   * @return The minPredictionScore.
+   */
+  @java.lang.Override
+  public float getMinPredictionScore() {
+    return minPredictionScore_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -461,6 +484,9 @@ private static final long serialVersionUID = 0L;
     }
     if (worker_ != null) {
       output.writeMessage(9, getWorker());
+    }
+    if (java.lang.Float.floatToRawIntBits(minPredictionScore_) != 0) {
+      output.writeFloat(10, minPredictionScore_);
     }
     unknownFields.writeTo(output);
   }
@@ -510,6 +536,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getWorker());
     }
+    if (java.lang.Float.floatToRawIntBits(minPredictionScore_) != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(10, minPredictionScore_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -548,6 +578,9 @@ private static final long serialVersionUID = 0L;
       if (!getWorker()
           .equals(other.getWorker())) return false;
     }
+    if (java.lang.Float.floatToIntBits(getMinPredictionScore())
+        != java.lang.Float.floatToIntBits(
+            other.getMinPredictionScore())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -585,6 +618,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WORKER_FIELD_NUMBER;
       hash = (53 * hash) + getWorker().hashCode();
     }
+    hash = (37 * hash) + MIN_PREDICTION_SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getMinPredictionScore());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -748,6 +784,8 @@ private static final long serialVersionUID = 0L;
         worker_ = null;
         workerBuilder_ = null;
       }
+      minPredictionScore_ = 0F;
+
       return this;
     }
 
@@ -796,6 +834,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.worker_ = workerBuilder_.build();
       }
+      result.minPredictionScore_ = minPredictionScore_;
       onBuilt();
       return result;
     }
@@ -878,6 +917,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasWorker()) {
         mergeWorker(other.getWorker());
+      }
+      if (other.getMinPredictionScore() != 0F) {
+        setMinPredictionScore(other.getMinPredictionScore());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1705,6 +1747,58 @@ private static final long serialVersionUID = 0L;
         worker_ = null;
       }
       return workerBuilder_;
+    }
+
+    private float minPredictionScore_ ;
+    /**
+     * <pre>
+     * Optional minimum prediction confidence threshold (0.0 to 1.0).
+     * When set (&gt; 0), only annotations with at least one concept (tag) having
+     * metadata.prediction_score &gt;= this value are returned.
+     * When unset (0), all annotations are returned (backwards compatible).
+     * </pre>
+     *
+     * <code>float min_prediction_score = 10;</code>
+     * @return The minPredictionScore.
+     */
+    @java.lang.Override
+    public float getMinPredictionScore() {
+      return minPredictionScore_;
+    }
+    /**
+     * <pre>
+     * Optional minimum prediction confidence threshold (0.0 to 1.0).
+     * When set (&gt; 0), only annotations with at least one concept (tag) having
+     * metadata.prediction_score &gt;= this value are returned.
+     * When unset (0), all annotations are returned (backwards compatible).
+     * </pre>
+     *
+     * <code>float min_prediction_score = 10;</code>
+     * @param value The minPredictionScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinPredictionScore(float value) {
+      
+      minPredictionScore_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional minimum prediction confidence threshold (0.0 to 1.0).
+     * When set (&gt; 0), only annotations with at least one concept (tag) having
+     * metadata.prediction_score &gt;= this value are returned.
+     * When unset (0), all annotations are returned (backwards compatible).
+     * </pre>
+     *
+     * <code>float min_prediction_score = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMinPredictionScore() {
+      
+      minPredictionScore_ = 0F;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

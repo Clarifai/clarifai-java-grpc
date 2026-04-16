@@ -181,4 +181,17 @@ public interface StreamAnnotationsRequestOrBuilder extends
    * <code>.clarifai.api.Worker worker = 9;</code>
    */
   com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder();
+
+  /**
+   * <pre>
+   * Optional minimum prediction confidence threshold (0.0 to 1.0).
+   * When set (&gt; 0), only annotations with at least one concept (tag) having
+   * metadata.prediction_score &gt;= this value are returned.
+   * When unset (0), all annotations are returned (backwards compatible).
+   * </pre>
+   *
+   * <code>float min_prediction_score = 10;</code>
+   * @return The minPredictionScore.
+   */
+  float getMinPredictionScore();
 }

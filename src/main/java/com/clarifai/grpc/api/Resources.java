@@ -3008,16 +3008,16 @@ public final class Resources {
       "E\020\315\010\032\026\302>\023Deployments updated\022.\n\021DEPLOYME" +
       "NT_DELETE\020\316\010\032\026\302>\023Deployments deleted\"\006\010\310" +
       "\001\020\310\001\"\006\010\311\001\020\311\001\"\006\010\312\001\020\312\001\"\006\010\313\001\020\313\001\"\006\010\314\001\020\314\001\"\006\010\315" +
-      "\001\020\315\001*\225\001\n\nMetricType\022\027\n\023METRIC_TYPE_NOT_S" +
+      "\001\020\315\001*\256\001\n\nMetricType\022\027\n\023METRIC_TYPE_NOT_S" +
       "ET\020\000\022\016\n\nMODEL_TTFT\020\001\022\024\n\020MODEL_THROUGHPUT" +
       "\020\002\022!\n\035MODEL_PROMPT_TOKEN_THROUGHPUT\020\003\022%\n" +
-      "!MODEL_COMPLETION_TOKEN_THROUGHPUT\020\004*h\n\013" +
-      "MetricLabel\022\030\n\024METRIC_LABEL_NOT_SET\020\000\022\n\n",
-      "\006APP_ID\020\001\022\014\n\010MODEL_ID\020\002\022\024\n\020MODEL_VERSION" +
-      "_ID\020\003\022\017\n\013HTTP_STATUS\020\004BY\n\025com.clarifai.g" +
-      "rpc.apiP\001Z7github.com/Clarifai/clarifai-" +
-      "go-grpc/proto/clarifai/api\242\002\004CAIPb\006proto" +
-      "3"
+      "!MODEL_COMPLETION_TOKEN_THROUGHPUT\020\004\022\027\n\023" +
+      "MODEL_REQUEST_COUNT\020\005*h\n\013MetricLabel\022\030\n\024",
+      "METRIC_LABEL_NOT_SET\020\000\022\n\n\006APP_ID\020\001\022\014\n\010MO" +
+      "DEL_ID\020\002\022\024\n\020MODEL_VERSION_ID\020\003\022\017\n\013HTTP_S" +
+      "TATUS\020\004BY\n\025com.clarifai.grpc.apiP\001Z7gith" +
+      "ub.com/Clarifai/clarifai-go-grpc/proto/c" +
+      "larifai/api\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
