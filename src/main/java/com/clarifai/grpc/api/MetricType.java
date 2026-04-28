@@ -13,6 +13,10 @@ public enum MetricType
    */
   METRIC_TYPE_NOT_SET(0),
   /**
+   * <pre>
+   * Model metrics: 1-50
+   * </pre>
+   *
    * <code>MODEL_TTFT = 1;</code>
    */
   MODEL_TTFT(1),
@@ -32,6 +36,38 @@ public enum MetricType
    * <code>MODEL_REQUEST_COUNT = 5;</code>
    */
   MODEL_REQUEST_COUNT(5),
+  /**
+   * <code>MODEL_E2E_LATENCY = 6;</code>
+   */
+  MODEL_E2E_LATENCY(6),
+  /**
+   * <pre>
+   * Nodepool metrics: 51-100
+   * </pre>
+   *
+   * <code>NODEPOOL_NODE_COUNT = 51;</code>
+   */
+  NODEPOOL_NODE_COUNT(51),
+  /**
+   * <code>NODEPOOL_GPU_UTILIZATION = 52;</code>
+   */
+  NODEPOOL_GPU_UTILIZATION(52),
+  /**
+   * <code>NODEPOOL_GPU_TENSOR_UTILIZATION = 53;</code>
+   */
+  NODEPOOL_GPU_TENSOR_UTILIZATION(53),
+  /**
+   * <code>NODEPOOL_GPU_MEMORY_UTILIZATION = 54;</code>
+   */
+  NODEPOOL_GPU_MEMORY_UTILIZATION(54),
+  /**
+   * <code>NODEPOOL_CPU_UTILIZATION = 55;</code>
+   */
+  NODEPOOL_CPU_UTILIZATION(55),
+  /**
+   * <code>NODEPOOL_MEMORY_UTILIZATION = 56;</code>
+   */
+  NODEPOOL_MEMORY_UTILIZATION(56),
   UNRECOGNIZED(-1),
   ;
 
@@ -40,6 +76,10 @@ public enum MetricType
    */
   public static final int METRIC_TYPE_NOT_SET_VALUE = 0;
   /**
+   * <pre>
+   * Model metrics: 1-50
+   * </pre>
+   *
    * <code>MODEL_TTFT = 1;</code>
    */
   public static final int MODEL_TTFT_VALUE = 1;
@@ -59,6 +99,38 @@ public enum MetricType
    * <code>MODEL_REQUEST_COUNT = 5;</code>
    */
   public static final int MODEL_REQUEST_COUNT_VALUE = 5;
+  /**
+   * <code>MODEL_E2E_LATENCY = 6;</code>
+   */
+  public static final int MODEL_E2E_LATENCY_VALUE = 6;
+  /**
+   * <pre>
+   * Nodepool metrics: 51-100
+   * </pre>
+   *
+   * <code>NODEPOOL_NODE_COUNT = 51;</code>
+   */
+  public static final int NODEPOOL_NODE_COUNT_VALUE = 51;
+  /**
+   * <code>NODEPOOL_GPU_UTILIZATION = 52;</code>
+   */
+  public static final int NODEPOOL_GPU_UTILIZATION_VALUE = 52;
+  /**
+   * <code>NODEPOOL_GPU_TENSOR_UTILIZATION = 53;</code>
+   */
+  public static final int NODEPOOL_GPU_TENSOR_UTILIZATION_VALUE = 53;
+  /**
+   * <code>NODEPOOL_GPU_MEMORY_UTILIZATION = 54;</code>
+   */
+  public static final int NODEPOOL_GPU_MEMORY_UTILIZATION_VALUE = 54;
+  /**
+   * <code>NODEPOOL_CPU_UTILIZATION = 55;</code>
+   */
+  public static final int NODEPOOL_CPU_UTILIZATION_VALUE = 55;
+  /**
+   * <code>NODEPOOL_MEMORY_UTILIZATION = 56;</code>
+   */
+  public static final int NODEPOOL_MEMORY_UTILIZATION_VALUE = 56;
 
 
   public final int getNumber() {
@@ -91,6 +163,13 @@ public enum MetricType
       case 3: return MODEL_PROMPT_TOKEN_THROUGHPUT;
       case 4: return MODEL_COMPLETION_TOKEN_THROUGHPUT;
       case 5: return MODEL_REQUEST_COUNT;
+      case 6: return MODEL_E2E_LATENCY;
+      case 51: return NODEPOOL_NODE_COUNT;
+      case 52: return NODEPOOL_GPU_UTILIZATION;
+      case 53: return NODEPOOL_GPU_TENSOR_UTILIZATION;
+      case 54: return NODEPOOL_GPU_MEMORY_UTILIZATION;
+      case 55: return NODEPOOL_CPU_UTILIZATION;
+      case 56: return NODEPOOL_MEMORY_UTILIZATION;
       default: return null;
     }
   }
@@ -121,7 +200,7 @@ public enum MetricType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(19);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(17);
   }
 
   private static final MetricType[] VALUES = values();

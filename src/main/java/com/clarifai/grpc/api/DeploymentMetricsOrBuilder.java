@@ -14,7 +14,7 @@ public interface DeploymentMetricsOrBuilder extends
    *
    * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4847
+   *     See proto/clarifai/api/resources.proto;l=4755
    * @return The desiredReplicas.
    */
   @java.lang.Deprecated int getDesiredReplicas();
@@ -26,7 +26,7 @@ public interface DeploymentMetricsOrBuilder extends
    *
    * <code>uint32 live_replicas = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4849
+   *     See proto/clarifai/api/resources.proto;l=4757
    * @return The liveReplicas.
    */
   @java.lang.Deprecated int getLiveReplicas();
@@ -38,7 +38,7 @@ public interface DeploymentMetricsOrBuilder extends
    *
    * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4851
+   *     See proto/clarifai/api/resources.proto;l=4759
    * @return The rolloutInProgress.
    */
   @java.lang.Deprecated boolean getRolloutInProgress();

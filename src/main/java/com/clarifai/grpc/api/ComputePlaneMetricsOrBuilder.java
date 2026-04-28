@@ -288,4 +288,16 @@ public interface ComputePlaneMetricsOrBuilder extends
    */
   com.clarifai.grpc.api.CpuMetricsOrBuilder getCpuMetricsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * When true, indicates this is the final metrics submission from a node that is being
+   * terminated. The handler should skip node count aggregation to avoid corrupting the
+   * count with a partial batch from the dying node.
+   * </pre>
+   *
+   * <code>bool is_final_metrics = 13;</code>
+   * @return The isFinalMetrics.
+   */
+  boolean getIsFinalMetrics();
 }

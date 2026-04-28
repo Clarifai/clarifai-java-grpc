@@ -138,7 +138,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4847
+   *     See proto/clarifai/api/resources.proto;l=4755
    * @return The desiredReplicas.
    */
   @java.lang.Override
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>uint32 live_replicas = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4849
+   *     See proto/clarifai/api/resources.proto;l=4757
    * @return The liveReplicas.
    */
   @java.lang.Override
@@ -172,7 +172,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4851
+   *     See proto/clarifai/api/resources.proto;l=4759
    * @return The rolloutInProgress.
    */
   @java.lang.Override
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4847
+     *     See proto/clarifai/api/resources.proto;l=4755
      * @return The desiredReplicas.
      */
     @java.lang.Override
@@ -729,7 +729,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4847
+     *     See proto/clarifai/api/resources.proto;l=4755
      * @param value The desiredReplicas to set.
      * @return This builder for chaining.
      */
@@ -746,7 +746,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 desired_replicas = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.DeploymentMetrics.desired_replicas is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4847
+     *     See proto/clarifai/api/resources.proto;l=4755
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDesiredReplicas() {
@@ -764,7 +764,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 live_replicas = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4849
+     *     See proto/clarifai/api/resources.proto;l=4757
      * @return The liveReplicas.
      */
     @java.lang.Override
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 live_replicas = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4849
+     *     See proto/clarifai/api/resources.proto;l=4757
      * @param value The liveReplicas to set.
      * @return This builder for chaining.
      */
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>uint32 live_replicas = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.DeploymentMetrics.live_replicas is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4849
+     *     See proto/clarifai/api/resources.proto;l=4757
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearLiveReplicas() {
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4851
+     *     See proto/clarifai/api/resources.proto;l=4759
      * @return The rolloutInProgress.
      */
     @java.lang.Override
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4851
+     *     See proto/clarifai/api/resources.proto;l=4759
      * @param value The rolloutInProgress to set.
      * @return This builder for chaining.
      */
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool rollout_in_progress = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.DeploymentMetrics.rollout_in_progress is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4851
+     *     See proto/clarifai/api/resources.proto;l=4759
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearRolloutInProgress() {

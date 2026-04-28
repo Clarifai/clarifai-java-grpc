@@ -152,6 +152,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.CpuMetrics.parser(), extensionRegistry));
             break;
           }
+          case 104: {
+
+            isFinalMetrics_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -694,6 +699,23 @@ private static final long serialVersionUID = 0L;
     return cpuMetrics_.get(index);
   }
 
+  public static final int IS_FINAL_METRICS_FIELD_NUMBER = 13;
+  private boolean isFinalMetrics_;
+  /**
+   * <pre>
+   * When true, indicates this is the final metrics submission from a node that is being
+   * terminated. The handler should skip node count aggregation to avoid corrupting the
+   * count with a partial batch from the dying node.
+   * </pre>
+   *
+   * <code>bool is_final_metrics = 13;</code>
+   * @return The isFinalMetrics.
+   */
+  @java.lang.Override
+  public boolean getIsFinalMetrics() {
+    return isFinalMetrics_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -743,6 +765,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < cpuMetrics_.size(); i++) {
       output.writeMessage(12, cpuMetrics_.get(i));
+    }
+    if (isFinalMetrics_ != false) {
+      output.writeBool(13, isFinalMetrics_);
     }
     unknownFields.writeTo(output);
   }
@@ -795,6 +820,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, cpuMetrics_.get(i));
     }
+    if (isFinalMetrics_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, isFinalMetrics_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -841,6 +870,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getHostname())) return false;
     if (!getCpuMetricsList()
         .equals(other.getCpuMetricsList())) return false;
+    if (getIsFinalMetrics()
+        != other.getIsFinalMetrics()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -885,6 +916,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CPU_METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getCpuMetricsList().hashCode();
     }
+    hash = (37 * hash) + IS_FINAL_METRICS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsFinalMetrics());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1065,6 +1099,8 @@ private static final long serialVersionUID = 0L;
       } else {
         cpuMetricsBuilder_.clear();
       }
+      isFinalMetrics_ = false;
+
       return this;
     }
 
@@ -1128,6 +1164,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.cpuMetrics_ = cpuMetricsBuilder_.build();
       }
+      result.isFinalMetrics_ = isFinalMetrics_;
       onBuilt();
       return result;
     }
@@ -1263,6 +1300,9 @@ private static final long serialVersionUID = 0L;
             cpuMetricsBuilder_.addAllMessages(other.cpuMetrics_);
           }
         }
+      }
+      if (other.getIsFinalMetrics() != false) {
+        setIsFinalMetrics(other.getIsFinalMetrics());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2888,6 +2928,55 @@ private static final long serialVersionUID = 0L;
         cpuMetrics_ = null;
       }
       return cpuMetricsBuilder_;
+    }
+
+    private boolean isFinalMetrics_ ;
+    /**
+     * <pre>
+     * When true, indicates this is the final metrics submission from a node that is being
+     * terminated. The handler should skip node count aggregation to avoid corrupting the
+     * count with a partial batch from the dying node.
+     * </pre>
+     *
+     * <code>bool is_final_metrics = 13;</code>
+     * @return The isFinalMetrics.
+     */
+    @java.lang.Override
+    public boolean getIsFinalMetrics() {
+      return isFinalMetrics_;
+    }
+    /**
+     * <pre>
+     * When true, indicates this is the final metrics submission from a node that is being
+     * terminated. The handler should skip node count aggregation to avoid corrupting the
+     * count with a partial batch from the dying node.
+     * </pre>
+     *
+     * <code>bool is_final_metrics = 13;</code>
+     * @param value The isFinalMetrics to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsFinalMetrics(boolean value) {
+      
+      isFinalMetrics_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * When true, indicates this is the final metrics submission from a node that is being
+     * terminated. The handler should skip node count aggregation to avoid corrupting the
+     * count with a partial batch from the dying node.
+     * </pre>
+     *
+     * <code>bool is_final_metrics = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsFinalMetrics() {
+      
+      isFinalMetrics_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

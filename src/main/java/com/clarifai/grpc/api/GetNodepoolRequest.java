@@ -80,6 +80,11 @@ private static final long serialVersionUID = 0L;
             nodepoolId_ = s;
             break;
           }
+          case 32: {
+
+            activeUsage_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -216,6 +221,22 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ACTIVE_USAGE_FIELD_NUMBER = 4;
+  private boolean activeUsage_;
+  /**
+   * <pre>
+   * Only return the nodepool if it is actively being used (having min_instances &gt; 0,
+   * runners with replicas &gt;= threshold or pipeline versions scheduled to run)
+   * </pre>
+   *
+   * <code>bool active_usage = 4;</code>
+   * @return The activeUsage.
+   */
+  @java.lang.Override
+  public boolean getActiveUsage() {
+    return activeUsage_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -239,6 +260,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nodepoolId_);
     }
+    if (activeUsage_ != false) {
+      output.writeBool(4, activeUsage_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -257,6 +281,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nodepoolId_);
+    }
+    if (activeUsage_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, activeUsage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -282,6 +310,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getComputeClusterId())) return false;
     if (!getNodepoolId()
         .equals(other.getNodepoolId())) return false;
+    if (getActiveUsage()
+        != other.getActiveUsage()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -301,6 +331,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getComputeClusterId().hashCode();
     hash = (37 * hash) + NODEPOOL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getNodepoolId().hashCode();
+    hash = (37 * hash) + ACTIVE_USAGE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getActiveUsage());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -449,6 +482,8 @@ private static final long serialVersionUID = 0L;
 
       nodepoolId_ = "";
 
+      activeUsage_ = false;
+
       return this;
     }
 
@@ -482,6 +517,7 @@ private static final long serialVersionUID = 0L;
       }
       result.computeClusterId_ = computeClusterId_;
       result.nodepoolId_ = nodepoolId_;
+      result.activeUsage_ = activeUsage_;
       onBuilt();
       return result;
     }
@@ -540,6 +576,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getNodepoolId().isEmpty()) {
         nodepoolId_ = other.nodepoolId_;
         onChanged();
+      }
+      if (other.getActiveUsage() != false) {
+        setActiveUsage(other.getActiveUsage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -837,6 +876,52 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       nodepoolId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean activeUsage_ ;
+    /**
+     * <pre>
+     * Only return the nodepool if it is actively being used (having min_instances &gt; 0,
+     * runners with replicas &gt;= threshold or pipeline versions scheduled to run)
+     * </pre>
+     *
+     * <code>bool active_usage = 4;</code>
+     * @return The activeUsage.
+     */
+    @java.lang.Override
+    public boolean getActiveUsage() {
+      return activeUsage_;
+    }
+    /**
+     * <pre>
+     * Only return the nodepool if it is actively being used (having min_instances &gt; 0,
+     * runners with replicas &gt;= threshold or pipeline versions scheduled to run)
+     * </pre>
+     *
+     * <code>bool active_usage = 4;</code>
+     * @param value The activeUsage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveUsage(boolean value) {
+      
+      activeUsage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Only return the nodepool if it is actively being used (having min_instances &gt; 0,
+     * runners with replicas &gt;= threshold or pipeline versions scheduled to run)
+     * </pre>
+     *
+     * <code>bool active_usage = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActiveUsage() {
+      
+      activeUsage_ = false;
       onChanged();
       return this;
     }

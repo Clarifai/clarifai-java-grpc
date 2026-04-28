@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4463
+   *     See proto/clarifai/api/resources.proto;l=4371
    * @return A list containing the labels.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -471,7 +471,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4463
+   *     See proto/clarifai/api/resources.proto;l=4371
    * @return The count of labels.
    */
   @java.lang.Deprecated public int getLabelsCount() {
@@ -484,7 +484,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4463
+   *     See proto/clarifai/api/resources.proto;l=4371
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4463
+   *     See proto/clarifai/api/resources.proto;l=4371
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -2174,7 +2174,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4463
+     *     See proto/clarifai/api/resources.proto;l=4371
      * @return A list containing the labels.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -2188,7 +2188,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4463
+     *     See proto/clarifai/api/resources.proto;l=4371
      * @return The count of labels.
      */
     @java.lang.Deprecated public int getLabelsCount() {
@@ -2201,7 +2201,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4463
+     *     See proto/clarifai/api/resources.proto;l=4371
      * @param index The index of the element to return.
      * @return The labels at the given index.
      */
@@ -2215,7 +2215,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4463
+     *     See proto/clarifai/api/resources.proto;l=4371
      * @param index The index of the value to return.
      * @return The bytes of the labels at the given index.
      */
@@ -2230,7 +2230,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4463
+     *     See proto/clarifai/api/resources.proto;l=4371
      * @param index The index to set the value at.
      * @param value The labels to set.
      * @return This builder for chaining.
@@ -2252,7 +2252,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4463
+     *     See proto/clarifai/api/resources.proto;l=4371
      * @param value The labels to add.
      * @return This builder for chaining.
      */
@@ -2273,7 +2273,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4463
+     *     See proto/clarifai/api/resources.proto;l=4371
      * @param values The labels to add.
      * @return This builder for chaining.
      */
@@ -2292,7 +2292,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4463
+     *     See proto/clarifai/api/resources.proto;l=4371
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearLabels() {
@@ -2308,7 +2308,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4463
+     *     See proto/clarifai/api/resources.proto;l=4371
      * @param value The bytes of the labels to add.
      * @return This builder for chaining.
      */

@@ -45,4 +45,15 @@ public interface GetNodepoolRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNodepoolIdBytes();
+
+  /**
+   * <pre>
+   * Only return the nodepool if it is actively being used (having min_instances &gt; 0,
+   * runners with replicas &gt;= threshold or pipeline versions scheduled to run)
+   * </pre>
+   *
+   * <code>bool active_usage = 4;</code>
+   * @return The activeUsage.
+   */
+  boolean getActiveUsage();
 }

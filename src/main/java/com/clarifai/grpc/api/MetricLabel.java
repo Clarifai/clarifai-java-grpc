@@ -28,6 +28,14 @@ public enum MetricLabel
    * <code>HTTP_STATUS = 4;</code>
    */
   HTTP_STATUS(4),
+  /**
+   * <code>COMPUTE_CLUSTER_ID = 5;</code>
+   */
+  COMPUTE_CLUSTER_ID(5),
+  /**
+   * <code>NODEPOOL_ID = 6;</code>
+   */
+  NODEPOOL_ID(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -51,6 +59,14 @@ public enum MetricLabel
    * <code>HTTP_STATUS = 4;</code>
    */
   public static final int HTTP_STATUS_VALUE = 4;
+  /**
+   * <code>COMPUTE_CLUSTER_ID = 5;</code>
+   */
+  public static final int COMPUTE_CLUSTER_ID_VALUE = 5;
+  /**
+   * <code>NODEPOOL_ID = 6;</code>
+   */
+  public static final int NODEPOOL_ID_VALUE = 6;
 
 
   public final int getNumber() {
@@ -82,6 +98,8 @@ public enum MetricLabel
       case 2: return MODEL_ID;
       case 3: return MODEL_VERSION_ID;
       case 4: return HTTP_STATUS;
+      case 5: return COMPUTE_CLUSTER_ID;
+      case 6: return NODEPOOL_ID;
       default: return null;
     }
   }
@@ -112,7 +130,7 @@ public enum MetricLabel
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(20);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(18);
   }
 
   private static final MetricLabel[] VALUES = values();

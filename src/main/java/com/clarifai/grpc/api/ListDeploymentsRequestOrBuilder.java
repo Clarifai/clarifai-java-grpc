@@ -165,4 +165,36 @@ public interface ListDeploymentsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getComputeClusterIdBytes();
+
+  /**
+   * <pre>
+   * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+   * provided scheduling priorities. Valid values are 0-9.
+   * </pre>
+   *
+   * <code>repeated uint32 scheduling_priorities = 8;</code>
+   * @return A list containing the schedulingPriorities.
+   */
+  java.util.List<java.lang.Integer> getSchedulingPrioritiesList();
+  /**
+   * <pre>
+   * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+   * provided scheduling priorities. Valid values are 0-9.
+   * </pre>
+   *
+   * <code>repeated uint32 scheduling_priorities = 8;</code>
+   * @return The count of schedulingPriorities.
+   */
+  int getSchedulingPrioritiesCount();
+  /**
+   * <pre>
+   * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+   * provided scheduling priorities. Valid values are 0-9.
+   * </pre>
+   *
+   * <code>repeated uint32 scheduling_priorities = 8;</code>
+   * @param index The index of the element to return.
+   * @return The schedulingPriorities at the given index.
+   */
+  int getSchedulingPriorities(int index);
 }

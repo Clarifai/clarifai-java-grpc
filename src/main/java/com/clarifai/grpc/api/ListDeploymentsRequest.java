@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     computeClusterId_ = "";
+    schedulingPriorities_ = emptyIntList();
   }
 
   @java.lang.Override
@@ -106,6 +107,27 @@ private static final long serialVersionUID = 0L;
             computeClusterId_ = s;
             break;
           }
+          case 64: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              schedulingPriorities_ = newIntList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            schedulingPriorities_.addInt(input.readUInt32());
+            break;
+          }
+          case 66: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+              schedulingPriorities_ = newIntList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              schedulingPriorities_.addInt(input.readUInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -128,6 +150,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         workflowVersionIds_ = workflowVersionIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        schedulingPriorities_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -398,6 +423,49 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SCHEDULING_PRIORITIES_FIELD_NUMBER = 8;
+  private com.google.protobuf.Internal.IntList schedulingPriorities_;
+  /**
+   * <pre>
+   * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+   * provided scheduling priorities. Valid values are 0-9.
+   * </pre>
+   *
+   * <code>repeated uint32 scheduling_priorities = 8;</code>
+   * @return A list containing the schedulingPriorities.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+      getSchedulingPrioritiesList() {
+    return schedulingPriorities_;
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+   * provided scheduling priorities. Valid values are 0-9.
+   * </pre>
+   *
+   * <code>repeated uint32 scheduling_priorities = 8;</code>
+   * @return The count of schedulingPriorities.
+   */
+  public int getSchedulingPrioritiesCount() {
+    return schedulingPriorities_.size();
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+   * provided scheduling priorities. Valid values are 0-9.
+   * </pre>
+   *
+   * <code>repeated uint32 scheduling_priorities = 8;</code>
+   * @param index The index of the element to return.
+   * @return The schedulingPriorities at the given index.
+   */
+  public int getSchedulingPriorities(int index) {
+    return schedulingPriorities_.getInt(index);
+  }
+  private int schedulingPrioritiesMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -412,6 +480,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
@@ -432,6 +501,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, computeClusterId_);
+    }
+    if (getSchedulingPrioritiesList().size() > 0) {
+      output.writeUInt32NoTag(66);
+      output.writeUInt32NoTag(schedulingPrioritiesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < schedulingPriorities_.size(); i++) {
+      output.writeUInt32NoTag(schedulingPriorities_.getInt(i));
     }
     unknownFields.writeTo(output);
   }
@@ -476,6 +552,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, computeClusterId_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < schedulingPriorities_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(schedulingPriorities_.getInt(i));
+      }
+      size += dataSize;
+      if (!getSchedulingPrioritiesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      schedulingPrioritiesMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -508,6 +598,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getWorkflowVersionIdsList())) return false;
     if (!getComputeClusterId()
         .equals(other.getComputeClusterId())) return false;
+    if (!getSchedulingPrioritiesList()
+        .equals(other.getSchedulingPrioritiesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -539,6 +631,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + COMPUTE_CLUSTER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getComputeClusterId().hashCode();
+    if (getSchedulingPrioritiesCount() > 0) {
+      hash = (37 * hash) + SCHEDULING_PRIORITIES_FIELD_NUMBER;
+      hash = (53 * hash) + getSchedulingPrioritiesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -690,6 +786,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       computeClusterId_ = "";
 
+      schedulingPriorities_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -736,6 +834,11 @@ private static final long serialVersionUID = 0L;
       }
       result.workflowVersionIds_ = workflowVersionIds_;
       result.computeClusterId_ = computeClusterId_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        schedulingPriorities_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.schedulingPriorities_ = schedulingPriorities_;
       onBuilt();
       return result;
     }
@@ -819,6 +922,16 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getComputeClusterId().isEmpty()) {
         computeClusterId_ = other.computeClusterId_;
+        onChanged();
+      }
+      if (!other.schedulingPriorities_.isEmpty()) {
+        if (schedulingPriorities_.isEmpty()) {
+          schedulingPriorities_ = other.schedulingPriorities_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureSchedulingPrioritiesIsMutable();
+          schedulingPriorities_.addAll(other.schedulingPriorities_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1542,6 +1655,120 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       computeClusterId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList schedulingPriorities_ = emptyIntList();
+    private void ensureSchedulingPrioritiesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        schedulingPriorities_ = mutableCopy(schedulingPriorities_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     * </pre>
+     *
+     * <code>repeated uint32 scheduling_priorities = 8;</code>
+     * @return A list containing the schedulingPriorities.
+     */
+    public java.util.List<java.lang.Integer>
+        getSchedulingPrioritiesList() {
+      return ((bitField0_ & 0x00000004) != 0) ?
+               java.util.Collections.unmodifiableList(schedulingPriorities_) : schedulingPriorities_;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     * </pre>
+     *
+     * <code>repeated uint32 scheduling_priorities = 8;</code>
+     * @return The count of schedulingPriorities.
+     */
+    public int getSchedulingPrioritiesCount() {
+      return schedulingPriorities_.size();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     * </pre>
+     *
+     * <code>repeated uint32 scheduling_priorities = 8;</code>
+     * @param index The index of the element to return.
+     * @return The schedulingPriorities at the given index.
+     */
+    public int getSchedulingPriorities(int index) {
+      return schedulingPriorities_.getInt(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     * </pre>
+     *
+     * <code>repeated uint32 scheduling_priorities = 8;</code>
+     * @param index The index to set the value at.
+     * @param value The schedulingPriorities to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchedulingPriorities(
+        int index, int value) {
+      ensureSchedulingPrioritiesIsMutable();
+      schedulingPriorities_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     * </pre>
+     *
+     * <code>repeated uint32 scheduling_priorities = 8;</code>
+     * @param value The schedulingPriorities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSchedulingPriorities(int value) {
+      ensureSchedulingPrioritiesIsMutable();
+      schedulingPriorities_.addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     * </pre>
+     *
+     * <code>repeated uint32 scheduling_priorities = 8;</code>
+     * @param values The schedulingPriorities to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSchedulingPriorities(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureSchedulingPrioritiesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, schedulingPriorities_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Scheduling priorities. To list all deployments with one of the
+     * provided scheduling priorities. Valid values are 0-9.
+     * </pre>
+     *
+     * <code>repeated uint32 scheduling_priorities = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSchedulingPriorities() {
+      schedulingPriorities_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
