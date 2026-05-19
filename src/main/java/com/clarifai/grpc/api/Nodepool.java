@@ -206,6 +206,11 @@ private static final long serialVersionUID = 0L;
             statusDescription_ = s;
             break;
           }
+          case 152: {
+
+            warmInstances_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -715,6 +720,23 @@ private static final long serialVersionUID = 0L;
     return enforcedMaxInstances_;
   }
 
+  public static final int WARM_INSTANCES_FIELD_NUMBER = 19;
+  private int warmInstances_;
+  /**
+   * <pre>
+   * Number of warm idle instances to keep in this nodepool.
+   * These allow the nodepool to have extra capacity ready for quickly scheduling additional runners.
+   * This is the user desired amount. See node_count for actual current number of nodes.
+   * </pre>
+   *
+   * <code>uint32 warm_instances = 19;</code>
+   * @return The warmInstances.
+   */
+  @java.lang.Override
+  public int getWarmInstances() {
+    return warmInstances_;
+  }
+
   public static final int VISIBILITY_FIELD_NUMBER = 11;
   private com.clarifai.grpc.api.Visibility visibility_;
   /**
@@ -1014,6 +1036,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusDescription_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, statusDescription_);
     }
+    if (warmInstances_ != 0) {
+      output.writeUInt32(19, warmInstances_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1088,6 +1113,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusDescription_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, statusDescription_);
     }
+    if (warmInstances_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(19, warmInstances_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1137,6 +1166,8 @@ private static final long serialVersionUID = 0L;
         != other.getEnforcedMinInstances()) return false;
     if (getEnforcedMaxInstances()
         != other.getEnforcedMaxInstances()) return false;
+    if (getWarmInstances()
+        != other.getWarmInstances()) return false;
     if (hasVisibility() != other.hasVisibility()) return false;
     if (hasVisibility()) {
       if (!getVisibility()
@@ -1197,6 +1228,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getEnforcedMinInstances();
     hash = (37 * hash) + ENFORCED_MAX_INSTANCES_FIELD_NUMBER;
     hash = (53 * hash) + getEnforcedMaxInstances();
+    hash = (37 * hash) + WARM_INSTANCES_FIELD_NUMBER;
+    hash = (53 * hash) + getWarmInstances();
     if (hasVisibility()) {
       hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
       hash = (53 * hash) + getVisibility().hashCode();
@@ -1398,6 +1431,8 @@ private static final long serialVersionUID = 0L;
 
       enforcedMaxInstances_ = 0;
 
+      warmInstances_ = 0;
+
       if (visibilityBuilder_ == null) {
         visibility_ = null;
       } else {
@@ -1484,6 +1519,7 @@ private static final long serialVersionUID = 0L;
       result.maxInstances_ = maxInstances_;
       result.enforcedMinInstances_ = enforcedMinInstances_;
       result.enforcedMaxInstances_ = enforcedMaxInstances_;
+      result.warmInstances_ = warmInstances_;
       if (visibilityBuilder_ == null) {
         result.visibility_ = visibility_;
       } else {
@@ -1611,6 +1647,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEnforcedMaxInstances() != 0) {
         setEnforcedMaxInstances(other.getEnforcedMaxInstances());
+      }
+      if (other.getWarmInstances() != 0) {
+        setWarmInstances(other.getWarmInstances());
       }
       if (other.hasVisibility()) {
         mergeVisibility(other.getVisibility());
@@ -2874,6 +2913,55 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnforcedMaxInstances() {
       
       enforcedMaxInstances_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int warmInstances_ ;
+    /**
+     * <pre>
+     * Number of warm idle instances to keep in this nodepool.
+     * These allow the nodepool to have extra capacity ready for quickly scheduling additional runners.
+     * This is the user desired amount. See node_count for actual current number of nodes.
+     * </pre>
+     *
+     * <code>uint32 warm_instances = 19;</code>
+     * @return The warmInstances.
+     */
+    @java.lang.Override
+    public int getWarmInstances() {
+      return warmInstances_;
+    }
+    /**
+     * <pre>
+     * Number of warm idle instances to keep in this nodepool.
+     * These allow the nodepool to have extra capacity ready for quickly scheduling additional runners.
+     * This is the user desired amount. See node_count for actual current number of nodes.
+     * </pre>
+     *
+     * <code>uint32 warm_instances = 19;</code>
+     * @param value The warmInstances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWarmInstances(int value) {
+      
+      warmInstances_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of warm idle instances to keep in this nodepool.
+     * These allow the nodepool to have extra capacity ready for quickly scheduling additional runners.
+     * This is the user desired amount. See node_count for actual current number of nodes.
+     * </pre>
+     *
+     * <code>uint32 warm_instances = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWarmInstances() {
+      
+      warmInstances_ = 0;
       onChanged();
       return this;
     }

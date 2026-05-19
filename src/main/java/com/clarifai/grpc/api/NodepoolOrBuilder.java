@@ -211,6 +211,18 @@ public interface NodepoolOrBuilder extends
 
   /**
    * <pre>
+   * Number of warm idle instances to keep in this nodepool.
+   * These allow the nodepool to have extra capacity ready for quickly scheduling additional runners.
+   * This is the user desired amount. See node_count for actual current number of nodes.
+   * </pre>
+   *
+   * <code>uint32 warm_instances = 19;</code>
+   * @return The warmInstances.
+   */
+  int getWarmInstances();
+
+  /**
+   * <pre>
    * The visibility field represents whether this message is privately/publicly visible.
    * To be visible to the public the App that contains it AND the User that contains the App must
    * also be publicly visible.
